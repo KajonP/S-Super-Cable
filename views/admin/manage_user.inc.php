@@ -56,7 +56,7 @@ try {
                                 <th>ชื่อ-นามสกุล</th>
                                 <th>Username</th>
                                 <th>สถานะ</th>
-                                <th>การกระทำh</th>
+                                <th>การกระทำ</th>
                                 </tr>
                             </thead>
                             <tbody>
