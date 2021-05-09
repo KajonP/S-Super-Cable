@@ -5,6 +5,7 @@ class Sales
     private $ID_Excel;
     private $Date_Sales;
     private $ID_Company;
+    private $Name_Company;
     private $ID_Employee;
     private $Result_Sales;
     private const TABLE = "sales";
@@ -34,6 +35,23 @@ class Sales
     {
         $this->ID_Company = $ID_Company;
     }
+    public function getName_Company(): string
+    {
+        return $this->Name_Company;
+    }
+    public function setName_Company(string $Name_Company)
+    {
+        $this->Name_Company;
+    }
+    public function getName_Employee(): string
+    {
+        return $this->Name_Employee;
+    }
+    public function setName_Employee(string $Name_Employee)
+    {
+        $this->Name_Employee;
+    }
+
     public function getID_Employee(): string
     {
         return $this->ID_Employee;
@@ -42,6 +60,7 @@ class Sales
     {
         $this->ID_Employee = $ID_Employee;
     }
+    
     public function getResult_Sales(): float
     {
         return $this->Result_Sales;
@@ -53,8 +72,12 @@ class Sales
     //----------- CRUD
     public static function findAll(): array {
         $con = Db::getInstance();
-        $query = "SELECT * FROM ".self::TABLE;
-        $stmt = $con->prepare($query);
+        //case: จัดการยอดขายเปลี่ยนไอดีบริษัทเป็นชื่อบริษัทเปลี่ยนไอดีพนักงานเป็นชื่อพนักงาน
+        $query = "SELECT ".self::TABLE.".* ,company.Name_Company,employee.Name_Employee  FROM ".self::TABLE." 
+        join company on ".self::TABLE.".ID_Company=company.ID_Company 
+        join employee on ".self::TABLE.".ID_Employee=employee.ID_Employee 
+         ";
+         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Sales");
         $stmt->execute();
         $salesList  = array();

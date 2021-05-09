@@ -53,19 +53,22 @@ try {
                                         <tr>
                                             <th>เลขที่</th>
                                             <th>วันที่ขาย</th>
-                                            <th>ไอดีบริษัท</th>
-                                            <th>ไอดีพนักงาน</th>
+                                            <th>ชื่อบริษัท</th>
+                                            <th>ชื่อพนักงาน</th>
                                             <th>ยอดขาย</th>
                                             <th>การกระทำ</th>
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        <?php
+                                        // print_r($sales);exit();
+                                        ?>
                                         <?php  $i = 1; foreach($sales as $key => $value) {?>
                                             <tr>
                                                 <td><?php echo $i++; ?></td>
                                                 <td><?php $date = date_create($value->getDate_Sales()); echo date_format($date, 'd/m/Y');?></td>
-                                                <td><?php echo $value->getID_Company();?></td>
-                                                <td><?php echo $value->getID_Employee();?></td>
+                                                <td><?php echo $value->getName_Company();?></td>
+                                                <td><?php echo $value->getName_Employee();?></td>
                                                 <td><?php echo number_format($value->getResult_Sales(),2);?></td>
                                                 <td class=" last">
                                                     <a href="#"  onclick="salesmanageShow('edit','<?php echo $value->getID_Excel();?>')">
