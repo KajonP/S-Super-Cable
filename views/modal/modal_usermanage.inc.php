@@ -38,7 +38,14 @@
                 <label for="Password_Employee" id="lbl_Password_Employee" class="col-form-label">Password:</label>
                  <!-- <input type="password" class="form-control" id="Password_Employee" name="Password_Employee" value="" > -->
                  <div class="input-group" id="Password_Employee"  required="required">
-                  <input class="form-control" name="Password_Employee" type="password">
+                  <input class="form-control" id="passEm" name="Password_Employee" type="password">
+                  <div class="input-group-append">
+                    <a href="" class="input-group-text"><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+                <label for="Password_Employee" id="lbl_Password_Employee" class="col-form-label">Confirm Password:</label>
+                <div class="input-group" id="Password_Employee_Confirm"  required="required">
+                  <input class="form-control" name="Password_Employee_Confirm"  data-rule-equalTo="#passEm" type="password">
                   <div class="input-group-append">
                     <a href="" class="input-group-text"><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
                   </div>

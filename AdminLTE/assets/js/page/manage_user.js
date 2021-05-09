@@ -63,6 +63,9 @@ var form_validte = $("#form_usermanage").validate({
         required: true,
         minlength: 3
       },
+      Password_Employee_Confirm : {
+        minlength : 3,
+     },
       Email_Employee: {
         required: true,
         minlength: 3
@@ -90,13 +93,19 @@ var form_validte = $("#form_usermanage").validate({
         required:  "กรุณาใส่ข้อมูล",
         minlength: "ข้อมูลต้องมีอย่าง 3 ตัวอักษร"
       },
+      Password_Employee_Confirm: {
+        required:  "กรุณาใส่ข้อมูล",
+        minlength: "ข้อมูลต้องมีอย่าง 3 ตัวอักษร",
+        equalTo: "กรุณากรอกรหัสผ่านให้เหมือนกัน"
+      },
       Email_Employee: {
         required:  "กรุณาใส่ข้อมูล",
         minlength: "ข้อมูลต้องมีอย่าง 3 ตัวอักษร"
       },
       action: "กรุณาใส่ข้อมูล"
     },errorPlacement: function(error, element) {
-        if (element.attr("name") == "Password_Employee" ){
+        if (element.attr("name") == "Password_Employee" || element.attr("name") == "Password_Employee_Confirm" ){
+            
             error.insertAfter(".error_replacement");
 
         }else{
@@ -334,6 +343,18 @@ $("#Password_Employee a").on('click', function(event) {
             $('#Password_Employee i').addClass( "fa-eye" );
         }
     });
+    $("#Password_Employee_Confirm a").on('click', function(event) {
+        event.preventDefault();
+        if($('#Password_Employee_Confirm input').attr("type") == "text"){
+            $('#Password_Employee_Confirm input').attr('type', 'password');
+            $('#Password_Employee_Confirm i').addClass( "fa-eye-slash" );
+            $('#Password_Employee_Confirm i').removeClass( "fa-eye" );
+        }else if($('#Password_Employee_Confirm input').attr("type") == "password"){
+            $('#Password_Employee_Confirm input').attr('type', 'text');
+            $('#Password_Employee_Confirm i').removeClass( "fa-eye-slash" );
+            $('#Password_Employee_Confirm i').addClass( "fa-eye" );
+        }
+    });
 function onaction_createorupdate(ID_Employee = null){
 
     var type = $('#button_usermanageModal').attr("data-status");
@@ -420,7 +441,7 @@ function onaction_createorupdate(ID_Employee = null){
                             Swal.fire({
                                 icon: 'error',
                               title: 'ขออภัย...',
-                              text: 'มีบางอย่างผิดพลาด',
+                              text: 'มีบางอย่างผิดพลาด , อาจจะมีข้อมูลอยู่ในฐานข้อมูลเเล้ว , โปรดลองอีกครั้ง',
                             }).then((result) => {
                                 location.reload();
 

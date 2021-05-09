@@ -173,9 +173,11 @@ class Employee
                 $new_password = $val;
                 $val = sha1($val);
             }
-            # ถ้า column แรกไม่ต้องเติมลูกน้ำ คอลัมน์อื่นเติมลูกน้ำ ..
-            $columns =  empty($columns) ? $columns .= $prop :  $columns .= "," .$prop;
-            $values .= "'$val',";
+            if($prop != "Password_Employee_Confirm"){
+                # ถ้า column แรกไม่ต้องเติมลูกน้ำ คอลัมน์อื่นเติมลูกน้ำ ..
+                $columns =  empty($columns) ? $columns .= $prop :  $columns .= "," .$prop;
+                $values .= "'$val',";
+            }
         }
         # autoincrement id employee
         // $ID_Employee = $this->findLastestIDByRole($params["User_Status_Employee"]);
@@ -183,6 +185,7 @@ class Employee
         // $values .= "'$ID_Employee',";
         $values = substr($values,0,-1);
         $query = "INSERT INTO ".self::TABLE."({$columns}) VALUES ($values)";
+        
         # execute query
         if($con->exec($query)){
             return array("status" => true  );
@@ -204,9 +207,12 @@ class Employee
                     $new_password = $val;
                     $val = sha1($val);
                 }
+
+                if($prop != "Password_Employee_Confirm"){
                     # ถ้า column แรกไม่ต้องเติมลูกน้ำ คอลัมน์อื่นเติมลูกน้ำ ..
                     $columns =  empty($columns) ? $columns .= $prop :  $columns .= "," .$prop;
                     $values .= "'$val',";
+                }
             }
             #เช็คว่ามี ID ส่งมาไหม
             if(!isset($v['ID_Employee'])){
@@ -260,7 +266,10 @@ class Employee
                     $new_password = $val;
                     $val = sha1($val);
                 }
-                $query .= " $prop='$val',";
+
+                if($prop != "Password_Employee_Confirm"){
+                    $query .= " $prop='$val',";
+                }
             }
         }
         $query = substr($query, 0, -1);
@@ -299,7 +308,10 @@ class Employee
                 $new_password = $val;
                 $val = sha1($val);
             }
-            $query .= " $prop='$val',";
+
+            if($prop != "Password_Employee_Confirm"){
+                $query .= " $prop='$val',";
+            }
         }
          # case : update picture employee
         if(!empty($FILES) && isset($FILES['name'])){
