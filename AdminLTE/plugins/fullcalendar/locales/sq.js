@@ -18,7 +18,7 @@ FullCalendar.globalLocales.push(function () {
     },
     weekText: 'Ja',
     allDayText: 'Gjithë ditën',
-    moreLinkText: function(n) {
+    moreLinkText(n) {
       return '+më tepër ' + n
     },
     noEventsText: 'Nuk ka evente për të shfaqur',

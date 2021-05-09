@@ -34,15 +34,13 @@ const Default = {
   content: '.card-body',
   loadInContent: true,
   loadOnInit: true,
-  loadErrorTemplate: true,
   responseType: '',
   overlayTemplate: '<div class="overlay"><i class="fas fa-2x fa-sync-alt fa-spin"></i></div>',
-  errorTemplate: '<span class="text-danger"></span>',
-  onLoadStart() {},
+  onLoadStart() {
+  },
   onLoadDone(response) {
     return response
-  },
-  onLoadFail(_jqXHR, _textStatus, _errorThrown) {}
+  }
 }
 
 class CardRefresh {
@@ -77,16 +75,6 @@ class CardRefresh {
       this._settings.onLoadDone.call($(this), response)
       this._removeOverlay()
     }, this._settings.responseType !== '' && this._settings.responseType)
-    .fail((jqXHR, textStatus, errorThrown) => {
-      this._removeOverlay()
-
-      if (this._settings.loadErrorTemplate) {
-        const msg = $(this._settings.errorTemplate).text(errorThrown)
-        this._parent.find(this._settings.content).empty().append(msg)
-      }
-
-      this._settings.onLoadFail.call($(this), jqXHR, textStatus, errorThrown)
-    })
 
     $(this._element).trigger($.Event(EVENT_LOADED))
   }
@@ -124,7 +112,7 @@ class CardRefresh {
       $(this).data(DATA_KEY, typeof config === 'string' ? data : config)
     }
 
-    if (typeof config === 'string' && /load/.test(config)) {
+    if (typeof config === 'string' && config.match(/load/)) {
       data[config]()
     } else {
       data._init($(this))

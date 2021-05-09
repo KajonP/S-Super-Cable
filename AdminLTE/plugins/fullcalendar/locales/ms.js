@@ -18,7 +18,7 @@ FullCalendar.globalLocales.push(function () {
     },
     weekText: 'Mg',
     allDayText: 'Sepanjang hari',
-    moreLinkText: function(n) {
+    moreLinkText(n) {
       return 'masih ada ' + n + ' acara'
     },
     noEventsText: 'Tiada peristiwa untuk dipaparkan',

@@ -18,7 +18,7 @@ FullCalendar.globalLocales.push(function () {
     },
     weekText: 'Týd',
     allDayText: 'Celý den',
-    moreLinkText: function(n) {
+    moreLinkText(n) {
       return '+další: ' + n
     },
     noEventsText: 'Žádné akce k zobrazení',

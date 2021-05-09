@@ -63,8 +63,8 @@ charts or filled areas).
             }
 
             datapoints.format.push({
-                x: s.bars.horizontal,
-                y: !s.bars.horizontal,
+                x: false,
+                y: true,
                 number: true,
                 required: false,
                 computeRange: s.yaxis.options.autoScale !== 'none',

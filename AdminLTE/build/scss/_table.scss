@@ -82,11 +82,11 @@
 [data-widget="expandable-table"] {
   cursor: pointer;
 
-  i.expandable-table-caret {
+  i {
     transition: transform $transition-speed linear;
   }
   &[aria-expanded="true"] {
-    td i.expandable-table-caret {
+    td > i {
       // stylelint-disable selector-max-attribute
       &[class*="right"] {
         transform: rotate(90deg);
@@ -123,7 +123,7 @@
   }
 }
 
-@include dark-mode () {
+.dark-mode {
   .table-bordered {
     &,
     td,

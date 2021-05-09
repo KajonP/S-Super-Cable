@@ -4,7 +4,6 @@
 
 const path = require('path')
 const fse = require('fs-extra')
-const fs = require('fs')
 const Plugins = require('./DocsPlugins')
 
 class Publish {
@@ -48,10 +47,6 @@ class Publish {
         console.error(`Error: ${error}`)
       }
     })
-
-    const insertText = '---\r\nlayout: page\r\ntitle: \r\n---\r\n'
-
-    fs.writeFileSync('docs/how-to-contribute.md', insertText + fs.readFileSync('.github/CONTRIBUTING.md', 'utf8'))
   }
 }
 

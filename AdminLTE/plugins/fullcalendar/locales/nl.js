@@ -8,7 +8,7 @@ FullCalendar.globalLocales.push(function () {
       doy: 4, // The week that contains Jan 4th is the first week of the year.
     },
     buttonText: {
-      prev: 'Vorige',
+      prev: 'Voorgaand',
       next: 'Volgende',
       today: 'Vandaag',
       year: 'Jaar',

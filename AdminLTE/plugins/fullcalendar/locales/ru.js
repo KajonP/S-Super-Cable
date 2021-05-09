@@ -18,7 +18,7 @@ FullCalendar.globalLocales.push(function () {
     },
     weekText: 'Нед',
     allDayText: 'Весь день',
-    moreLinkText: function(n) {
+    moreLinkText(n) {
       return '+ ещё ' + n
     },
     noEventsText: 'Нет событий для отображения',

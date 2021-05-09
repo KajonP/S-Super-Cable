@@ -19,7 +19,7 @@ FullCalendar.globalLocales.push(function () {
     },
     weekText: 'KW',
     allDayText: 'Ganztägig',
-    moreLinkText: function(n) {
+    moreLinkText(n) {
       return '+ weitere ' + n
     },
     noEventsText: 'Keine Ereignisse anzuzeigen',
