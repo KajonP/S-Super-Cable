@@ -26,6 +26,7 @@
 
 <!-- validate -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/additional-methods.js"></script>
 
 <!-- Main -->
 <script src="AdminLTE/assets/js/page/main.js"></script>

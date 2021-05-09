@@ -29,11 +29,11 @@
                     <?php
                     $pic = Router::getSourcePath(). "images/" .$employee->Picuture_Employee;
                     ?>
-                    <img id="thumnails-profile" browsid="profile"  class="thumnails-premise" src="<?= $pic ?>" alt="image" style=""/>
+                    <img id="thumnails_profile"  browsid="profile"  class="thumnails-premise" src="<?= $pic ?>" alt="image" style=""/>
             
-                    <input id="profile" name="profile" type="file"  style="display:none;" required="required"  >
-                 
-                    <label class="" style=" padding-top: 5px;">Profile Picture</label>
+                    <input id="profile" name="profile" type="file"  accept=".png, .jpg,.jpeg,.gif"style="" required="required"  >
+                    <!-- <br>
+                    <label class="" style=" padding-top: 5px;">Profile Picture</label> -->
             </div>
 
           <div class="form-group row">

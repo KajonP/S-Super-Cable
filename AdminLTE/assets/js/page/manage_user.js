@@ -15,7 +15,12 @@
         "bFilter":true,
         "bInfo" : true,
         "searching": true,
-
+        "language": {
+            "paginate": {
+                "previous": "ก่อนหน้า",
+                "next":"ถัดไป"
+            }
+        },
 
         // "responsive": true,
         rowReorder: {
@@ -31,6 +36,11 @@
 
     });
 
+  
+    // field: {
+    //     required: true,
+    //     extension: "xls|csv"
+    //   }
 var form_validte = $("#form_usermanage").validate({
     rules: {
       ID_Employee: {
@@ -226,9 +236,42 @@ $("#resetpassword").on('click', function(event) {
     $(this).hide();
 });
 
+
+// case: ตอนอัพโหลดไฟล์ excel validate ว่าใช่ไฟล์ excel ไหมถ้าไม่ใช่ขึ้นแจ้งเตือนว่า type ไม่ตรง
+$('#form_importexcel').validate({
+    rules: {
+        file: {
+            required: true,
+            extension: "xlsx|xls|csv|xlsm",
+           
+        }
+    },
+    messages: {
+        file: "กรุณาอัพโหลดไฟล์Excelที่นามสกุล .xlsx, .xlsm, .xls เท่านั้น."
+    },
+    errorPlacement: function (error, element) {
+        //แจ้งเตือนผิด format
+        Swal.fire({
+            icon: 'error',
+          title: 'ขออภัย...',
+            text: error.text(),
+        }).then((result) => {
+            // break
+            location.reload();
+
+        });
+    }
+});
+// eof
+
 $("#button_importuserModal").on('click', function(event) {
     var form_importexcel = $('#form_importexcel')[0];
     var formData_importexcel = new FormData(form_importexcel);
+    
+    // case: ตอนอัพโหลดไฟล์ excel validate ว่าใช่ไฟล์ excel ไหมถ้าไม่ใช่ขึ้นแจ้งเตือนว่า type ไม่ตรง
+       $("#form_importexcel").validate().form();
+    /* eof */
+
     var url_string  =  "index.php?controller=Admin&action=import_excel";
        if($('#form_importexcel input[type=file]').val() != ''){
         $.ajax({

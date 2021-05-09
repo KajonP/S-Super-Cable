@@ -11,7 +11,7 @@
           <form id="form_importexcel" method='post' action='' enctype="multipart/form-data">
             <p>ตัวอย่าง format การนำข้อมูลเข้าระบบ</p>
             <img src="<?php echo Router::getSourcePath(). "images/format_excel.png"?>" width="100%">  
-            <input type="file" name="file" id="file" value="" />
+            <input type="file" name="file" id="file" value="" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"  required="required"/>
           </form>
       </div>
       

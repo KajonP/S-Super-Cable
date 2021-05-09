@@ -58,6 +58,11 @@ var form_profile_validate = $("#form_profile").validate({
         required: true,
         minlength: 3
       },
+      profile: {
+        required: true,
+        extension: "jpg|jpeg|gif|png",
+      },
+     
       action: "required"
     },
     messages: {
@@ -82,6 +87,7 @@ var form_profile_validate = $("#form_profile").validate({
         required:  "กรุณาใส่ข้อมูล",
         minlength: "ข้อมูลต้องมีอย่าง 3 ตัวอักษร"
       },
+      profile : "กรุณาอัพโหลดไฟล์รูปภาพที่มีนามสกุลไฟล์คือ .png , .jpg ,.jpeg ,.gif เท่านั้น",
       action: "กรุณาใส่ข้อมูล"
 
     },errorPlacement: function(error, element) {

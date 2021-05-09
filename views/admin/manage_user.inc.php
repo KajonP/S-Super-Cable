@@ -69,10 +69,10 @@ try {
                                         <td><?php echo $value->getUser_Status_Employee();?></td>
                                         <td class=" last">
                                                 <a href="#"  onclick="usermanageShow('edit','<?php echo $value->getID_Employee();?>')">
-                                                    <button type="button" class="btn btn-round btn-warning" style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i class="fa fa-wrench"></i> เเก้ไข</button>
+                                                    <button type="button" class="btn btn-round btn-warning" style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;"><i class="fa fa-wrench"></i> เเก้ไข</button>
                                                 </a>
                                                 <a href="#" onclick="onaction_deleteuser('<?php echo $value->getID_Employee();?>')">
-                                                    <button type="button" class="btn btn-round btn-danger" style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i class="fa fa-trash"></i> ลบ</button>
+                                                    <button type="button" class="btn btn-round btn-danger" style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;"><i class="fa fa-trash"></i> ลบ</button>
                                                 </a>
                                         </td>
                                     </tr>

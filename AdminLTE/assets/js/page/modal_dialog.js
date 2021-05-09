@@ -1,7 +1,9 @@
-$('#thumnails-profile').click(function () {
+$('#thumnails_profile').click(function () {
 
 
     browsFile("profile", this.id);
+   
+    
 });
 
 
@@ -15,7 +17,19 @@ function browsFile(files, id){
 
 
 function readURL(input, id) {
-    console.log(input.files[0]);
+    
+    //case: อัพโหลดรูป validate ใช่ไฟล์ jpg,png,jpeg,gif ไหม ถ้าไม่ใช่ขึ้นแจ้งเตือน type ไม่ตรง
+    if(!$('#form_profile').validate().element('#profile')){
+        Swal.fire({
+            icon: 'error',
+          title: 'ขออภัย...',
+          text: 'กรุณาอัพโหลดไฟล์รูปภาพที่มีนามสกุลไฟล์คือ .png , .jpg ,.jpeg ,.gif เท่านั้น',
+        }).then((result) => {
+            return;
+
+        });
+    }
+
     if (input.files && input.files[0]) {
         var reader = new FileReader();
 
