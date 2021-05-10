@@ -1,18 +1,26 @@
 
+// var columns = [
+//   { "width": "5%" , "class": "text-left"},
+//   { "width": "5%" , "class": "text-center"},
+//   { "width": "5%"  , "class": "text-center"},
+//   { "width": "5%"  , "class": "text-left"},
+//   { "width": "5%"  , "class": "text-center"},
+//   { "width": "5%" , "class": "text-right"},
+//   { "width": "5%" , "class": "text-center"},
+//   { "width": "5%"  , "class": "text-center"},
+//   { "width": "5%"  , "class": "text-center"},
+//   { "width": "5%"  , "class": "text-center"},
+//   { "width": "5%"  , "class": "text-center"},
+//   { "width": "5%"  , "class": "text-center"},
+//   { "width": "5%"  , "class": "text-center"},
+
+// ]
 var columns = [
-  { "width": "5%" , "class": "text-left"},
-  { "width": "5%" , "class": "text-center"},
-  { "width": "5%"  , "class": "text-center"},
-  { "width": "5%"  , "class": "text-left"},
-  { "width": "5%"  , "class": "text-center"},
-  { "width": "5%" , "class": "text-right"},
-  { "width": "5%" , "class": "text-center"},
-  { "width": "5%"  , "class": "text-center"},
-  { "width": "5%"  , "class": "text-center"},
-  { "width": "5%"  , "class": "text-center"},
-  { "width": "5%"  , "class": "text-center"},
-  { "width": "5%"  , "class": "text-center"},
-  { "width": "5%"  , "class": "text-center"},
+  { "width": "10%" , "class": "text-left"},
+  { "width": "20%" , "class": "text-center"},
+  { "width": "20%"  , "class": "text-center"},
+  { "width": "20%"  , "class": "text-left"},
+  { "width": "40%"  , "class": "text-center"},
 
 ]
 
@@ -124,6 +132,13 @@ var form_validte = $("#form_companymanage").validate({
 });
 
 function companymanageShow(type,ID_Company =null){
+  //clear ค่าเก่า
+  $('#form_companymanage input').attr('readonly' , false);
+  $('#form_companymanage select').attr("disabled", false); 
+  $('#button_companymanageModal').show();
+
+
+  
   var title = "";
 
   /* clear old form value */
@@ -143,46 +158,21 @@ function companymanageShow(type,ID_Company =null){
       //clear error if exists
       form_validte.resetForm();
 
-      $.ajax({
-        url: "index.php?controller=Company&action=findbyID",
-        data: {
-          "ID_Company" : ID_Company
-        },
-        type: "POST",
-        dataType: 'json',
-        async:false,
-        success: function(response, status) {
-          /* set input value */
-          $('#div_idcompany').hide();
-
-           $('#ID_Company').val(response.data.ID_Company);
-          $('#Name_Company').val(response.data.Name_Company);
-          $('#Address_Company').val(response.data.Address_Company);
-          $("#Tel_Company").val(response.data.Tel_Company);
-          $('#Email_Company').val(response.data.Email_Company);
-          $('#Tax_Number_Company').val(response.data.Tax_Number_Company);
-          $('#Credit_Limit_Company').val(response.data.Credit_Limit_Company);
-          $("#Credit_Term_Company").val(response.data.Credit_Term_Company);
-          // case: dropdown
-          $('#Cluster_Shop')
-            .val(response.data.Cluster_Shop)
-            .trigger('change');
-          $('#Contact_Name_Company').val(response.data.Contact_Name_Company);
-          // case: dropdown
-          $('#IS_Blacklist')
-            .val(response.data.IS_Blacklist)
-            .trigger('change');
-          $('#Cause_Blacklist').val(response.data.Cause_Blacklist);
-          // set id
-          $('#button_companymanageModal').attr("data-id" , ID_Company);
-        },
-        error: function(xhr, status, exception) {
-          //console.log(xhr);
-        }
-      });
-
+      onaction_getinptval(ID_Company);
 
       break;
+      case 'view':
+        title = "บริษัทลูกค้า ";
+        //clear error if exists
+        form_validte.resetForm();
+
+        onaction_getinptval(ID_Company);
+
+      $('#form_companymanage input').attr('readonly', 'readonly');
+      $('#form_companymanage select').attr("disabled", true); 
+      $('#button_companymanageModal').hide();
+  
+        break;
     default:
       // ..
       break;
@@ -196,6 +186,46 @@ function companymanageShow(type,ID_Company =null){
 
   /* modal show  */
   $('#companymanageModal').modal('show');
+}
+
+function onaction_getinptval(ID_Company){
+  $.ajax({
+    url: "index.php?controller=Company&action=findbyID",
+    data: {
+      "ID_Company" : ID_Company
+    },
+    type: "POST",
+    dataType: 'json',
+    async:false,
+    success: function(response, status) {
+      /* set input value */
+      $('#div_idcompany').hide();
+
+       $('#ID_Company').val(response.data.ID_Company);
+      $('#Name_Company').val(response.data.Name_Company);
+      $('#Address_Company').val(response.data.Address_Company);
+      $("#Tel_Company").val(response.data.Tel_Company);
+      $('#Email_Company').val(response.data.Email_Company);
+      $('#Tax_Number_Company').val(response.data.Tax_Number_Company);
+      $('#Credit_Limit_Company').val(response.data.Credit_Limit_Company);
+      $("#Credit_Term_Company").val(response.data.Credit_Term_Company);
+      // case: dropdown
+      $('#Cluster_Shop')
+        .val(response.data.Cluster_Shop)
+        .trigger('change');
+      $('#Contact_Name_Company').val(response.data.Contact_Name_Company);
+      // case: dropdown
+      $('#IS_Blacklist')
+        .val(response.data.IS_Blacklist)
+        .trigger('change');
+      $('#Cause_Blacklist').val(response.data.Cause_Blacklist);
+      // set id
+      $('#button_companymanageModal').attr("data-id" , ID_Company);
+    },
+    error: function(xhr, status, exception) {
+      //console.log(xhr);
+    }
+  });
 }
 function onaction_deletecompany(ID_Company){
   Swal.fire({

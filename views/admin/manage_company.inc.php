@@ -55,14 +55,14 @@ try {
                                             <th>ชื่อบริษัท</th>
                                             <th>ที่อยู่บริษัท</th>
                                             <th>เบอร์บริษัท</th>
-                                            <th>อีเมล์บริษัท</th>
+                                            <!-- <th>อีเมล์บริษัท</th>
                                             <th>เลขผู้เสียภาษี</th>
                                             <th>Credit Limit</th>
                                             <th>Credit Term</th>
                                             <th>Cluster</th>
                                             <th>ชื่อที่ติดต่อ</th>
                                             <th>ติด Blacklist</th>
-                                            <th>สาเหตุที่ติด</th>
+                                            <th>สาเหตุที่ติด</th> -->
                                             <th>การกระทำ</th>
                                         </tr>
                                         </thead>
@@ -74,20 +74,24 @@ try {
                                                 <td><?php echo $value->getName_Company();?></td>
                                                 <td><?php echo $value->getAddress_Company();?></td>
                                                 <td><?php echo $value->getTel_Company();?></td>
-                                                <td><?php echo $value->getEmail_Company();?></td>
+                                                <!-- <td><?php echo $value->getEmail_Company();?></td>
                                                 <td><?php echo $value->getTax_Number_Company();?></td>
                                                 <td><?php echo number_format($value->getCredit_Limit_Company(),2);?></td>
                                                 <td><?php echo $value->getCredit_Term_Company();?></td>
                                                 <td><?php echo $value->getCluster_Shop();?></td>
                                                 <td><?php echo $value->getContact_Name_Company();?></td>
                                                 <td><?php echo $value->getIS_Blacklist();?></td>
-                                                <td><?php echo $value->getCause_Blacklist();?></td>
-                                                <td class=" last">
+                                                <td><?php echo $value->getCause_Blacklist();?></td> -->
+                                                <td class=" last text-center">
+                                                    <a href="#"  onclick="companymanageShow('view','<?php echo $value->getID_Company();?>')">
+                                                        <button type="button" class="btn btn-round btn-info" style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;"><i class="fa fa-eye"></i>เพิ่มเติม</button>
+                                                    </a>
+
                                                     <a href="#"  onclick="companymanageShow('edit','<?php echo $value->getID_Company();?>')">
-                                                        <button type="button" class="btn btn-round btn-warning" style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i class="fa fa-wrench"></i> เเก้ไข</button>
+                                                        <button type="button" class="btn btn-round btn-warning" style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;"><i class="fa fa-wrench"></i> เเก้ไข</button>
                                                     </a>
                                                     <a href="#" onclick="onaction_deletecompany('<?php echo $value->getID_Company();?>')">
-                                                        <button type="button" class="btn btn-round btn-danger" style=" font-size: 13px; padding: 0 10px; margin-bottom: inherit;"><i class="fa fa-trash"></i> ลบ</button>
+                                                        <button type="button" class="btn btn-round btn-danger" style=" font-size: 13px; padding: 0 10px; margin-bottom: inherit;width:96px !important;"><i class="fa fa-trash"></i> ลบ</button>
                                                     </a>
                                                 </td>
                                             </tr>
