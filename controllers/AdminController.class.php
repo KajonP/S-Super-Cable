@@ -53,30 +53,68 @@ class AdminController
         $path = $FILES["tmp_name"];
         $object = PHPExcel_IOFactory::load($path);
         $params = array();
+        
+        //case: การอัพโหลดไฟล์ excel ถ้าลืมใส่ column ไหนให้บอกผิด row ไหน
+        $EXCEL_HeaderCol = array("ID_Employee" => array("name"=> "ไอดีพนักงาน","status" => false,"error" => "ไม่พบข้อมูลคอลัมน์ ไอดีพนักงาน")
+            ,"Name_Employee" => array("name"=> "ชื่อพนักงาน","status" => false ,"error" => "ไม่พบข้อมูลคอลัมน์ ชื่อพนักงาน" )
+            ,"Surname_Employee" => array("name"=> "นามสกุลพนักงาน","status" => false ,"error" => "ไม่พบข้อมูลคอลัมน์ นามสกุลพนักงาน")
+            ,"Username_Employee" => array("name"=> "ชื่อผุ้ใช้","status" => false ,"error" => "ไม่พบข้อมูลคอลัมน์ ชื่อผุ้ใช้")
+            ,"Email_Employee" => array("name"=> "อีเมล์","status" => false ,"error" => "ไม่พบข้อมูลคอลัมน์ อีเมล์")
+            ,"Password_Employee" => array("name"=> "รหัสผ่าน","status" => false ,"error" => "ไม่พบข้อมูลคอลัมน์ รหัสผ่าน")
+            ,"User_Status_Employee" => array("name"=> "สถานะ","status" => false ,"error" => "ไม่พบข้อมูลคอลัมน์ สถานะ")
+        );
+        $count = 0;
         foreach ($object->getWorksheetIterator() as $worksheet) {
             $highestRow = $worksheet->getHighestRow();
             $highestColumn = $worksheet->getHighestColumn();
             //  echo $highestRow;exit();
             // row = 2 คือ row แรก ไม่รวม header
+            #เช็คหัวตารางชื่อตรงกันไหมใน array ที่ hardcode ไว้
+            if($count != 1){
+            for($col_ =0; $col_ < 7;$col_ ++){
+                        $col__cc = strval($worksheet->getCellByColumnAndRow($col_, 1)->getValue());
+                        if($col__cc == ''){
+                            $c = array_values($EXCEL_HeaderCol);
+                            $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูลไม่พบคอลัมน์  ".$c[$col_]['name'];
+                            return json_encode(array("status" => false , "message" => $message));  
+                            
+                        }else{
+                            $ccc = array_key_exists($col__cc , $EXCEL_HeaderCol);
+                            if(!$ccc){                  
+                                $c = array_values($EXCEL_HeaderCol);
+                                $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูลไม่พบคอลัมน์  ".$c[$col_]['name'];
+                                return json_encode(array("status" => false , "message" => $message));  
+                            }
+                        }
+                    }
+                    ++ $count;
+            }
+
+            #eof
+           
+
             for ($row = 2; $row <= $highestRow; $row++) {
                 if ($worksheet->getCellByColumnAndRow(0, $row)->getValue() != '') {
-                $ID_Employee = $worksheet->getCellByColumnAndRow(0, $row)->getValue();
-                $Name_Employee = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
-                $Surname_Employee = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
-                $Username_Employee = $worksheet->getCellByColumnAndRow(3, $row)->getValue();
-                $Email_Employee = $worksheet->getCellByColumnAndRow(4, $row)->getValue();
-                $Password_Employee = $worksheet->getCellByColumnAndRow(5, $row)->getValue();
-                $User_Status_Employee = $worksheet->getCellByColumnAndRow(6, $row)->getValue();
+                    
+                    $getCellArray = $this->checkemptycell($worksheet , $row);
+                    if($getCellArray['status'] == false){
+                        $c = array_values($EXCEL_HeaderCol);
+                        $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูลไม่พบข้อมูลในแถวที่{$row}(รวมหัวตาราง) ในคอลัมน์คือ ".$c[$getCellArray["column"]]['name'] .'';
+                        return json_encode(array("status" => false , "message" => $message));     
+                    }
 
-                $push_array = array("ID_Employee" => $ID_Employee,
-                    "Name_Employee" => $Name_Employee,
-                    "Surname_Employee" => $Surname_Employee,
-                    "Username_Employee" => $Username_Employee,
-                    "Email_Employee" => $Email_Employee,
-                    "Password_Employee" => $Password_Employee,
-                    "User_Status_Employee" => $User_Status_Employee
-                );
-                array_push($params, $push_array);
+                    $push_array = array("ID_Employee" => $getCellArray["data"][0],
+                        "Name_Employee" => $getCellArray["data"][1],
+                        "Surname_Employee" => $getCellArray["data"][2],
+                        "Username_Employee" => $getCellArray["data"][3],
+                        "Email_Employee" => $getCellArray["data"][4],
+                        "Password_Employee" => $getCellArray["data"][5],
+                        "User_Status_Employee" => $getCellArray["data"][6]
+                    );
+                    array_push($params, $push_array);
+                }else{
+
+                      
                 }
             }
         }
@@ -92,7 +130,20 @@ class AdminController
         }
         return json_encode($result);
     }
+    
+    private function checkemptycell( $worksheet,$row){
+        $push_array = array();
+        for($i =0;$i < 7; $i++){
+            if(empty($worksheet->getCellByColumnAndRow($i, $row)->getValue())){
+                return array("status" => false , "column"=>$i ,"row" => $row);
+            }else{
+                $push_array[$i] = $worksheet->getCellByColumnAndRow($i, $row)->getValue();
+            }
+        }
 
+        return array("status" => true , "data" => $push_array);
+        
+    }
     private function error_handle(string $message)
     {
         $this->index($message);

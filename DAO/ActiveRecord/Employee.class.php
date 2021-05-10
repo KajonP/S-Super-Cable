@@ -196,6 +196,9 @@ class Employee
     }
      # จัดการผู้ใช้  ( เพิ่มผู้ใช้ )
      public function create_user_at_once(Array $params) {
+    
+        //$status_header_column = true;
+
         $con = Db::getInstance();
         // turn of auto commit
         $con->beginTransaction();
@@ -229,6 +232,11 @@ class Employee
                 return array("status" => false , "message" => $message); 
             }
             #eof check duplicate
+            
+            #check การอัพโหลดไฟล์ excel ถ้าลืมใส่ column ไหนให้บอกผิด row ไหน
+            
+            #eof
+            
             #check first char contains only letters
             //เช็คถ้าตัวอักษรตัวแรกไม่ใช่ภาษาอังกฤษ return error กลับไปครับ
             $first_char = substr($v['ID_Employee'], 0, 1);
