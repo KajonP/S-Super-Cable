@@ -242,6 +242,18 @@ class Company
         return array("status" => true);
     }
 
+    public function file_log(string $file_name, int $id)
+    {
+        $query = "UPDATE file_log SET file_name = '{$file_name}' where id = {$id} ";
+        //echo $query;exit();
+        $con = Db::getInstance();
+        if ($con->exec($query)) {
+
+            return array("status" => true);
+        }
+
+    }
+
     # แก้ไข company
     public function edit_company(array $params, string $ID_Company)
     {
@@ -271,6 +283,11 @@ class Company
         } else {
             return array("status" => false);
         }
+    }
+
+    public function export_excel(string $page)
+    {
+
     }
 }
 

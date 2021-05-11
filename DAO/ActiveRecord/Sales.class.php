@@ -185,6 +185,18 @@ class Sales
         return array("status" => true);
     }
 
+    public function file_log(string $file_name, int $id)
+    {
+        $query = "UPDATE file_log SET file_name = '{$file_name}' where id = {$id} ";
+        //echo $query;exit();
+        $con = Db::getInstance();
+        if ($con->exec($query)) {
+
+            return array("status" => true);
+        }
+
+    }
+
     # แก้ไข ยอดขาย
     public function edit_sales(array $params, string $ID_Excel)
     {
@@ -206,7 +218,7 @@ class Sales
         }
     }
 
-    # ลบ company
+    # ลบ ยอดขาย
     public function delete_sales($ID_Excel)
     {
         $query = "DELETE FROM " . self::TABLE . " WHERE ID_Excel = '{$ID_Excel}' ";

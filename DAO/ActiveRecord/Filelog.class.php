@@ -23,7 +23,7 @@ class Filelog
         $this->ID = $ID;
     }
 
-    public function setPage(string $ID)
+    public function setPage(string $page)
     {
         $this->page = $page;
     }

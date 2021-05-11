@@ -38,7 +38,8 @@ class CompanyController
                 break;
             case "import_excel":
                 $FILES = isset($params["FILES"]["file"]) ? $params["FILES"]["file"] : "";
-                $result = $this->$action($params["POST"], $FILES);
+                $FILE_IMG = isset($params["FILES"]["examfile"]) ? $params["FILES"]["examfile"] : "";
+                $result = $this->$action($params["POST"], $FILES, $FILE_IMG);
                 echo $result;
                 break;
             case "findbyID":
@@ -49,63 +50,147 @@ class CompanyController
                     echo $result;
                 }
                 break;
+            case "export_excel_test":
+                $result = $this->$action($params["POST"]);
+                echo $result;
+                break;
+            case "export_excel":
+                $result = $this->$action($params["POST"]);
+                echo $result;
+                break;
             default:
                 break;
         }
 
     }
 
-    private function import_excel(array $params, array $FILES)
+    private function import_excel(array $params, array $FILES, array $FILE_IMG)
     {
         $excel = new Excel();
-        $path = $FILES["tmp_name"];
-        $object = PHPExcel_IOFactory::load($path);
-        $params = array();
-        foreach ($object->getWorksheetIterator() as $worksheet) {
-            $highestRow = $worksheet->getHighestRow();
-            //$h = $worksheet->getRowIterator();
-            $highestColumn = $worksheet->getHighestColumn();
-            //  echo $highestRow;exit();
-            // row = 2 คือ row แรก ไม่รวม header
-            //$row = 2;
-            // foreach ($h as $rows)
-            for ($row = 2; $row <= $highestRow; $row++) {
-                if ($worksheet->getCellByColumnAndRow(0, $row)->getValue() != '') {
-                    $ID_Company = $worksheet->getCellByColumnAndRow(0, $row)->getValue();
-                    $Name_Company = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
-                    $Address_Company = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
-                    $Tel_Company = $worksheet->getCellByColumnAndRow(3, $row)->getValue();
-                    $Email_Company = $worksheet->getCellByColumnAndRow(4, $row)->getValue();
-                    $Tax_Number_Company = $worksheet->getCellByColumnAndRow(5, $row)->getValue();
-                    $Credit_Limit_Company = $worksheet->getCellByColumnAndRow(6, $row)->getValue();
-                    $Credit_Term_Company = $worksheet->getCellByColumnAndRow(7, $row)->getValue();
-                    $Cluster_Shop = $worksheet->getCellByColumnAndRow(8, $row)->getValue();
-                    $Contact_Name_Company = $worksheet->getCellByColumnAndRow(9, $row)->getValue();
-                    $IS_Blacklist = $worksheet->getCellByColumnAndRow(10, $row)->getValue();
-                    $Cause_Blacklist = $worksheet->getCellByColumnAndRow(11, $row)->getValue();
+        #UPLOAD IMAGE
+        if (!empty($FILE_IMG) && !empty($FILE_IMG['name'])) {
+            # update new pic
+            $target_file_img = Router::getSourcePath() . "images/" . $FILE_IMG['name'];
 
-                    $push_array = array("ID_Company" => $ID_Company,
-                        "Name_Company" => $Name_Company,
-                        "Address_Company" => $Address_Company,
-                        "Tel_Company" => $Tel_Company,
-                        "Email_Company" => $Email_Company,
-                        "Tax_Number_Company" => $Tax_Number_Company,
-                        "Credit_Limit_Company" => $Credit_Limit_Company,
-                        "Credit_Term_Company" => $Credit_Term_Company,
-                        "Cluster_Shop" => $Cluster_Shop,
-                        "Contact_Name_Company" => $Contact_Name_Company,
-                        "IS_Blacklist" => $IS_Blacklist,
-                        "Cause_Blacklist" => $Cause_Blacklist
-                    );
-                    array_push($params, $push_array);
+            if (!empty($FILE_IMG) && isset($FILE_IMG['name'])) {
+                if (!empty($FILE_IMG['name'])) {
+                    move_uploaded_file($FILE_IMG["tmp_name"], $target_file_img);
+
+                    $company_ = new Company();
+                    $company_->file_log($FILE_IMG['name'], 2);
+                }
+            }
+
+        }
+        #UPLOAD EXCEL
+
+        if (!empty($FILES) && !empty($FILES['name'])) {
+            $path = $FILES["tmp_name"];
+            $object = PHPExcel_IOFactory::load($path);
+            $params = array();
+
+            //case: การอัพโหลดไฟล์ excel ถ้าลืมใส่ column ไหนให้บอกผิด row ไหน
+            $EXCEL_HeaderCol = array("ID_Company" => array("name" => "ไอดีบริษัท", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ ไอดีบริษัท")
+            , "Name_Company" => array("name" => "ชื่อบริษัท", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ ชื่อบริษัท")
+            , "Address_Company" => array("name" => "ที่อยู่บริษัท", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ ที่อยู่บริษัท")
+            , "Tel_Company" => array("name" => "เบอร์บริษัท", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ เบอร์บริษัท")
+            , "Email_Company" => array("name" => "อีเมล์บริษัท", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ อีเมล์บริษัท")
+            , "Tax_Number_Company" => array("name" => "เลขผู้เสียภาษี", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ เลขผู้เสียภาษี")
+            , "Credit_Limit_Company" => array("name" => "วงเงินสูงสุด", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ วงเงินสูงสุด")
+            , "Credit_Term_Company" => array("name" => "เครดิตเทอม", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ เครดิตเทอม")
+            , "Cluster_Shop" => array("name" => "คลัสเตอร์", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ คลัสเตอร์")
+            , "Contact_Name_Company" => array("name" => "ชื่อที่ติดต่อ", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ ชื่อที่ติดต่อ")
+            , "IS_Blacklist" => array("name" => "บัญชีดำ", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ บัญชีดำ")
+            , "Cause_Blacklist" => array("name" => "สาเหตุที่ติดบัญชีดำ", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ สาเหตุที่ติดบัญชีดำ")
+            );
+            $count = 0;
+            foreach ($object->getWorksheetIterator() as $worksheet) {
+                $highestRow = $worksheet->getHighestRow();
+                $highestColumn = $worksheet->getHighestColumn();
+                //  echo $highestRow;exit();
+                // row = 2 คือ row แรก ไม่รวม header
+                #เช็คหัวตารางชื่อตรงกันไหมใน array ที่ hardcode ไว้
+                if ($count != 1) {
+                    for ($col_ = 0; $col_ < 12; $col_++) {
+                        $col__cc = strval($worksheet->getCellByColumnAndRow($col_, 1)->getValue());
+                        if ($col__cc == '') {
+                            $c = array_values($EXCEL_HeaderCol);
+                            $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูลไม่พบคอลัมน์  " . $c[$col_]['name'];
+                            return json_encode(array("status" => false, "message" => $message));
+
+                        } else {
+                            $ccc = array_key_exists($col__cc, $EXCEL_HeaderCol);
+                            if (!$ccc) {
+                                $c = array_values($EXCEL_HeaderCol);
+                                $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูลไม่พบคอลัมน์  " . $c[$col_]['name'];
+                                return json_encode(array("status" => false, "message" => $message));
+                            }
+                        }
+                    }
+                    ++$count;
                 }
 
+                #eof
+                for ($row = 2; $row <= $highestRow; $row++) {
+                    if ($worksheet->getCellByColumnAndRow(0, $row)->getValue() != '') {
+                        $getCellArray = $this->checkemptycell($worksheet, $row);
+                        if ($getCellArray['status'] == false) {
+                            $c = array_values($EXCEL_HeaderCol);
+                            $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูลไม่พบข้อมูลในแถวที่{$row}(รวมหัวตาราง) ในคอลัมน์คือ " . $c[$getCellArray["column"]]['name'] . '';
+                            return json_encode(array("status" => false, "message" => $message));
+                        }
+
+
+                        $push_array = array("ID_Company" => $getCellArray["data"][0],
+                            "Name_Company" => $getCellArray["data"][1],
+                            "Address_Company" => $getCellArray["data"][2],
+                            "Tel_Company" => $getCellArray["data"][3],
+                            "Email_Company" => $getCellArray["data"][4],
+                            "Tax_Number_Company" => $getCellArray["data"][5],
+                            "Credit_Limit_Company" => $getCellArray["data"][6],
+                            "Credit_Term_Company" => $getCellArray["data"][7],
+                            "Cluster_Shop" => $getCellArray["data"][8],
+                            "Contact_Name_Company" => $getCellArray["data"][9],
+                            "IS_Blacklist" => $getCellArray["data"][10],
+                            "Cause_Blacklist" => $getCellArray["data"][11]
+                        );
+                        array_push($params, $push_array);
+                    } else {
+
+
+                    }
+                }
+            }
+            // # create user ใหม่
+            $company_ = new Company();
+            $result = $company_->create_company_at_once($params);
+            # update new pic
+            $target_file = Router::getSourcePath() . "uploads/" . $FILES['name'];
+            if (!empty($FILES) && isset($FILES['name'])) {
+                if (!empty($FILES['name'])) {
+                    move_uploaded_file($FILES["tmp_name"], $target_file);
+                }
+            }
+            return json_encode($result);
+        }
+
+        #
+        return json_encode(array("status" => true));
+    }
+
+    private function checkemptycell($worksheet, $row)
+    {
+        $push_array = array();
+        for ($i = 0; $i < 12; $i++) {
+            if (empty($worksheet->getCellByColumnAndRow($i, $row)->getValue())) {
+                return array("status" => false, "column" => $i, "row" => $row);
+            } else {
+                $push_array[$i] = $worksheet->getCellByColumnAndRow($i, $row)->getValue();
             }
         }
-        // # create company ใหม่
-        $company_ = new Company();
-        $result = $company_->create_company_at_once($params);
-        return json_encode($result);
+
+        return array("status" => true, "data" => $push_array);
+
     }
 
     private function error_handle(string $message)
@@ -181,8 +266,251 @@ class CompanyController
         $employee = $_SESSION["employee"];
         # retrieve data
         $company = Company::findAll();
+        $file_log = Filelog::findByPage('manage_company');
 
         include Router::getSourcePath() . "views/admin/manage_company.inc.php";
     }
+
+    private function export_excel_test($params = null)
+    {
+        $exportExcel = new Employee();
+        $exportExcelEmployee = Employee::findAll();
+
+        try {
+            // ob_end_clean();
+
+            // เรียนกใช้ PHPExcel
+            $objPHPExcel = new PHPExcel();
+            // กำหนดค่าต่างๆ ของเอกสาร excel
+            $objPHPExcel->getProperties()->setCreator("bp.com")
+                ->setLastModifiedBy("bp.com")
+                ->setTitle("PHPExcel Test Document")
+                ->setSubject("PHPExcel Test Document")
+                ->setDescription("Test document for PHPExcel, generated using PHP classes.")
+                ->setKeywords("office PHPExcel php")
+                ->setCategory("Test result file");
+
+            // กำหนดชื่อให้กับ worksheet ที่ใช้งาน
+            $objPHPExcel->getActiveSheet()->setTitle('Report');
+
+            // กำหนด worksheet ที่ต้องการให้เปิดมาแล้วแสดง ค่าจะเริ่มจาก 0 , 1 , 2 , ......
+            $objPHPExcel->setActiveSheetIndex(0);
+
+            // การจัดรูปแบบของ cell
+            $objPHPExcel->getDefaultStyle()
+                ->getAlignment()
+                ->setVertical(PHPExcel_Style_Alignment::VERTICAL_TOP)
+                ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+            //HORIZONTAL_CENTER //VERTICAL_CENTER
+
+            // จัดความกว้างของคอลัมน์
+            $objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('F')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('G')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('H')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('I')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('J')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('K')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('L')->setWidth(20);
+
+
+            // กำหนดหัวข้อให้กับแถวแรก
+            $objPHPExcel->setActiveSheetIndex(0)
+                ->setCellValue('A1', 'ID_Company')
+                ->setCellValue('B1', 'Name_Company')
+                ->setCellValue('C1', 'Address_Company')
+                ->setCellValue('D1', 'Tel_Company')
+                ->setCellValue('E1', 'Email_Company')
+                ->setCellValue('F1', 'Tax_Number_Company')
+                ->setCellValue('G1', 'Credit_Limit_Company')
+                ->setCellValue('H1', 'Credit_Term_Company')
+                ->setCellValue('I1', 'Cluster_Shop')
+                ->setCellValue('J1', 'Contact_Name_Company')
+                ->setCellValue('K1', 'IS_Blacklist')
+                ->setCellValue('L1', 'Cause_Blacklist');
+
+            $start_row = 2;
+            $objPHPExcel->setActiveSheetIndex(0)
+                ->setCellValue('A' . $start_row, "111")
+                ->setCellValue('B' . $start_row, "FIRSTSTEP")
+                ->setCellValue('C' . $start_row, "300/15 montisuriyawong")
+                ->setCellValue('D' . $start_row, "1234567890")
+                ->setCellValue('E' . $start_row, "exam@gmail.com")
+                ->setCellValue('F' . $start_row, "1234567891233")
+                ->setCellValue('G' . $start_row, "15000")
+                ->setCellValue('H' . $start_row, "30 วัน")
+                ->setCellValue('I' . $start_row, "ภาคเอกชน")
+                ->setCellValue('J' . $start_row, "คุณณัฐวัฒน์")
+                ->setCellValue('K' . $start_row, "ใช่")
+                ->setCellValue('L' . $start_row, "ค้างจ่ายอยู่ 2 อินวอยน์");
+
+            $i = 0;
+
+            $filename = 'Company-' . date("dmYHis") . '.xlsx'; //  กำหนดชือ่ไฟล์ นามสกุล xls หรือ xlsx
+
+            $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');  // Excel2007 (xlsx) หรือ Excel5 (xls)
+            ob_clean();
+
+            $objWriter->save('./uploads/' . $filename);
+
+            //download
+            header('Content-Type: application/octet-stream');
+            header("Content-Transfer-Encoding: Binary");
+            header("Content-disposition: attachment; filename=\"" . $filename . "\"");
+            echo file_get_contents("./uploads/" . $filename);
+            die;
+
+
+            return json_encode(array('status' => true, "filename" => $filename));
+            //ob_end_clean();
+
+            // die($objWriter);
+            //die;
+
+
+        } catch (Exception $e) {
+            // status that return to frontend
+            $status = false;
+            // error message handle
+            $message = $e->getMessage();
+        }
+
+
+        return json_encode(array('status' => true));
+    }
+
+    private function export_excel($params = null)
+    {
+        $exportExcel = new Company();
+        $exportExcelEmployee = Company::findAll();
+
+        try {
+            // เรียกใช้ PHPExcel
+            $objPHPExcel = new PHPExcel();
+            // กำหนดค่าต่างๆ ของเอกสาร excel
+            $objPHPExcel->getProperties()->setCreator("bp.com")
+                ->setLastModifiedBy("bp.com")
+                ->setTitle("PHPExcel Test Document")
+                ->setSubject("PHPExcel Test Document")
+                ->setDescription("Test document for PHPExcel, generated using PHP classes.")
+                ->setKeywords("office PHPExcel php")
+                ->setCategory("Test result file");
+
+            // กำหนดชื่อให้กับ worksheet ที่ใช้งาน
+            $objPHPExcel->getActiveSheet()->setTitle('Report');
+
+            // กำหนด worksheet ที่ต้องการให้เปิดมาแล้วแสดง ค่าจะเริ่มจาก 0 , 1 , 2 , ......
+            $objPHPExcel->setActiveSheetIndex(0);
+
+            // การจัดรูปแบบของ cell
+            $objPHPExcel->getDefaultStyle()
+                ->getAlignment()
+                ->setVertical(PHPExcel_Style_Alignment::VERTICAL_TOP)
+                ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+            //HORIZONTAL_CENTER //VERTICAL_CENTER
+
+            // จัดความกว้างของคอลัมน์
+            $objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('F')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('G')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('H')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('I')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('J')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('K')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('L')->setWidth(20);
+
+            // กำหนดหัวข้อให้กับแถวแรก
+            $objPHPExcel->setActiveSheetIndex(0)
+                ->setCellValue('A1', 'ไอดีบริษัท')
+                ->setCellValue('B1', 'ชื่อบริษัท')
+                ->setCellValue('C1', 'ที่อยู่บริษัท')
+                ->setCellValue('D1', 'เบอร์บริษัท')
+                ->setCellValue('E1', 'อีเมล์บริษัท')
+                ->setCellValue('F1', 'เลขผู้เสียภาษี')
+                ->setCellValue('G1', 'วงเงินสูงสุด')
+                ->setCellValue('H1', 'เครดิตเทอม')
+                ->setCellValue('I1', 'คลัสเตอร์')
+                ->setCellValue('J1', 'ชื่อที่ติดต่อ')
+                ->setCellValue('K1', 'บัญชีดำ')
+                ->setCellValue('L1', 'สาเหตุที่ติดบัญชีดำ');
+
+            $start_row = 2;
+
+            if (!empty($exportExcelCompany)) {
+                $i = 0;
+
+                foreach ($exportExcelCompany as $i => $result_array) {
+                    // หากอยากจัดข้อมูลราคาให้ชิดขวา
+                    $objPHPExcel->getActiveSheet()
+                        ->getStyle('C' . $start_row)
+                        ->getAlignment()
+                        ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);
+
+                    // หากอยากจัดให้รหัสสินค้ามีเลย 0 ด้านหน้า และแสดง 3     หลักเช่น 001 002
+                    // $objPHPExcel->getActiveSheet()
+                    // 	->getStyle('B'.$start_row)
+                    // 	->getNumberFormat()
+                    // 	->setFormatCode('000');
+
+                    // เพิ่มข้อมูลลงแต่ละเซลล์
+                    if (isset($exportExcelCompany[$i])) {
+
+                        $objPHPExcel->setActiveSheetIndex(0)
+                            ->setCellValue('A' . $start_row, $exportExcelCompany[$i]->getID_Company())
+                            ->setCellValue('B' . $start_row, $exportExcelCompany[$i]->getID_Name())
+                            ->setCellValue('C' . $start_row, $exportExcelCompany[$i]->getAddress_Company())
+                            ->setCellValue('D' . $start_row, $exportExcelCompany[$i]->getTel_Company())
+                            ->setCellValue('E' . $start_row, $exportExcelCompany[$i]->getEmail_Company())
+                            ->setCellValue('F' . $start_row, $exportExcelCompany[$i]->getTax_Number_Company())
+                            ->setCellValue('G' . $start_row, $exportExcelCompany[$i]->getCredit_Limit_Company())
+                            ->setCellValue('H' . $start_row, $exportExcelCompany[$i]->getCredit_Term_Company())
+                            ->setCellValue('I' . $start_row, $exportExcelCompany[$i]->getCluster_Shop())
+                            ->setCellValue('J' . $start_row, $exportExcelCompany[$i]->getContact_Name_Company())
+                            ->setCellValue('K' . $start_row, $exportExcelCompany[$i]->getIS_Blacklist())
+                            ->setCellValue('L' . $start_row, $exportExcelCompany[$i]->getCause_Blacklist());
+                    }
+
+                    ++$start_row;
+                }
+                // กำหนดรูปแบบของไฟล์ที่ต้องการเขียนว่าเป็นไฟล์ excel แบบไหน ในที่นี้เป้นนามสกุล xlsx  ใช้คำว่า Excel2007
+                // แต่หากต้องการกำหนดเป็นไฟล์ xls ใช้กับโปรแกรม excel รุ่นเก่าๆ ได้ ให้กำหนดเป็น  Excel5
+                ob_start();
+                $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');  // Excel2007 (xlsx) หรือ Excel5 (xls)
+
+                $filename = 'Company-' . date("dmYHi") . '.xlsx'; //  กำหนดชือ่ไฟล์ นามสกุล xls หรือ xlsx
+                // บังคับให้ทำการดาวน์ดหลดไฟล์
+                header('Content-Type: application/vnd.ms-excel'); //mime type
+                header('Content-Disposition: attachment;filename="' . $filename . '"'); //tell browser what's the file name
+                header('Cache-Control: max-age=0'); //no cache
+                ob_end_clean();
+                $objWriter->save('php://output'); // ดาวน์โหลดไฟล์รายงาน
+                //die($objWriter);
+
+            } else {
+                // status that return to frontend
+                $status = false;
+                // error message handle
+                $message = "ไม่พบข้อมูล";
+            }
+
+        } catch (Exception $e) {
+            // status that return to frontend
+            $status = false;
+            // error message handle
+            $message = $e->getMessage();
+        }
+
+
+        return json_encode(array('status' => true));
+    }
+
 
 }

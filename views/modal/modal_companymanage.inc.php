@@ -44,17 +44,17 @@
                                value="" required="required">
                     </div>
                     <div class="form-group">
-                        <label for="Credit_Limit_Company" class="col-form-label">Credit Limit:</label>
+                        <label for="Credit_Limit_Company" class="col-form-label">วงเงินสูงสุด:</label>
                         <input type="number" class="form-control" id="Credit_Limit_Company" name="Credit_Limit_Company"
                                value="" min='0' required="required">
                     </div>
                     <div class="form-group">
-                        <label for="Credit_Term_Company" class="col-form-label">Credit Term:</label>
+                        <label for="Credit_Term_Company" class="col-form-label">เครดิตเทอม:</label>
                         <input type="text" class="form-control" id="Credit_Term_Company" name="Credit_Term_Company"
                                value="" required="required">
                     </div>
                     <div class="form-group">
-                        <label for="Cluster_Shop" class="col-form-label">Cluster:</label>
+                        <label for="Cluster_Shop" class="col-form-label">คลัสเตอร์:</label>
                         <select name="Cluster_Shop" class="form-control" id="Cluster_Shop">
                             <option value="ภาครัฐ">ภาครัฐ</option>
                             <option value="ภาคเอกชน">ภาคเอกชน</option>
@@ -67,14 +67,14 @@
                                value="">
                     </div>
                     <div class="form-group">
-                        <label for="IS_Blacklist" class="col-form-label">ติด Blacklist:</label>
+                        <label for="IS_Blacklist" class="col-form-label">บัญชีดำ:</label>
                         <select name="IS_Blacklist" class="form-control" id="IS_Blacklist">
                             <option value="ใช่">ใช่</option>
                             <option value="ไม่ใช่">ไม่ใช่</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="Cause_Blacklist" class="col-form-label">สาเหตุที่ติด Blacklist:</label>
+                        <label for="Cause_Blacklist" class="col-form-label">สาเหตุที่ติดบัญชีดำ:</label>
                         <input type="text" class="form-control" id="Cause_Blacklist" name="Cause_Blacklist" value="">
                     </div>
                 </form>

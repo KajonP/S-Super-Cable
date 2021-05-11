@@ -15,7 +15,12 @@ var dataTable_ = $('#tbl_salesmanagement').DataTable({
   "bFilter": true,
   "bInfo": true,
   "searching": true,
-
+  "language": {
+    "paginate": {
+      "previous": "ก่อนหน้า",
+      "next": "ถัดไป"
+    }
+  },
 
   // "responsive": true,
   rowReorder: {
@@ -181,25 +186,81 @@ function onaction_deletesales(ID_Excel) {
   })
 }
 
+// case: ตอนอัพโหลดไฟล์ excel validate ว่าใช่ไฟล์ excel ไหมถ้าไม่ใช่ขึ้นแจ้งเตือนว่า type ไม่ตรง
+$('#form_importexcel').validate({
+  rules: {
+    file: {
+
+      extension: "xlsx|xls|csv|xlsm",
+
+    }
+  },
+  messages: {
+    file: "กรุณาอัพโหลดไฟล์ Excel ที่นามสกุล .xlsx, .xlsm, .xls เท่านั้น"
+  },
+  errorPlacement: function (error, element) {
+    //แจ้งเตือนผิด format
+    Swal.fire({
+      icon: 'error',
+      title: 'ขออภัย...',
+      text: "กรุณาอัปโหลดไฟล์รูป ที่นามสกุล .png, .jpeg, .jpg, .gif เท่านั้น",
+      confirmButtonText: 'ตกลง',
+    }).then((result) => {
+      // break
+      location.reload();
+
+    });
+  }
+});
+
+// eof
+function downloadExcel() {
+  var url_string = "index.php?controller=Sales&action=export_excel";
+  $.ajax({
+    type: "POST",
+    url: "index.php?controller=Sales&action=export_excel",
+    data: {
+      "page": 'manage_sales'
+    },
+
+    dataType: 'json',
+
+    success: function (data, status, xhr) {
+
+      console.log(data);
+      var filename = data.filename;
+      //alert(data.filename);
+      //window.location.href = "./uploads/" + filename;
+
+
+    }
+  });
+}
+
 $("#button_importsalesModal").on('click', function (event) {
   var form_importexcel = $('#form_importexcel')[0];
   var formData_importexcel = new FormData(form_importexcel);
+
+  // case: ตอนอัพโหลดไฟล์ excel validate ว่าใช่ไฟล์ excel ไหมถ้าไม่ใช่ขึ้นแจ้งเตือนว่า type ไม่ตรง
+  $("#form_importexcel").validate().form();
+  /* eof */
+
   var url_string = "index.php?controller=Sales&action=import_excel";
-  if ($('#form_importexcel input[type=file]').val() != '') {
+  if ($('#form_importexcel #examfile').val() != '' || $('#form_importexcel #file').val() != '') {
     $.ajax({
       type: "POST",
       url: url_string,
       processData: false,
       contentType: false,
       data: formData_importexcel,
-      success: function (res, status, xhr) {
-        console.log(res);
-        var data = JSON.parse(res);
+      success: function (data, status, xhr) {
+        var data = JSON.parse(data);
         console.log(data);
         if (data.status == true) {
           Swal.fire({
             icon: 'success',
             title: 'สำเร็จ',
+            confirmButtonText: 'ตกลง',
           }).then((result) => {
             location.reload();
 
@@ -209,11 +270,13 @@ $("#button_importsalesModal").on('click', function (event) {
             icon: 'error',
             title: 'ขออภัย...',
             text: data.message,
+            confirmButtonText: 'ตกลง',
           }).then((result) => {
             location.reload();
 
           });
         }
+
 
       }
     });
@@ -224,6 +287,7 @@ $("#button_importsalesModal").on('click', function (event) {
       icon: 'error',
       title: 'ขออภัย...',
       text: 'กรุณาตรวจสอบข้อมูลให้ถูกต้อง',
+      confirmButtonText: 'ตกลง',
     }).then((result) => {
       return;
 
@@ -247,6 +311,7 @@ function onaction_createorupdate(ID_Excel = null) { //มันมาเข้�
           icon: 'error',
           title: 'ขออภัย...',
           text: 'กรุณาตรวจสอบข้อมูลให้ถูกต้อง',
+          confirmButtonText: 'ตกลง',
         }).then((result) => {
           return;
 
@@ -266,6 +331,7 @@ function onaction_createorupdate(ID_Excel = null) { //มันมาเข้�
               Swal.fire({
                 icon: 'success',
                 title: 'สำเร็จ',
+                confirmButtonText: 'ตกลง',
               }).then((result) => {
                 location.reload();
 
@@ -275,6 +341,7 @@ function onaction_createorupdate(ID_Excel = null) { //มันมาเข้�
                 icon: 'error',
                 title: 'ขออภัย...',
                 text: 'มีบางอย่างผิดพลาด , อาจจะมีข้อมูลอยู่ในฐานข้อมูลเเล้ว , โปรดลองอีกครั้ง',
+                confirmButtonText: 'ตกลง',
               }).then((result) => {
                 location.reload();
 
@@ -294,6 +361,7 @@ function onaction_createorupdate(ID_Excel = null) { //มันมาเข้�
           icon: 'error',
           title: 'ขออภัย...',
           text: 'กรุณาตรวจสอบข้อมูลให้ถูกต้อง',
+          confirmButtonText: 'ตกลง',
         }).then((result) => {
           return;
 
@@ -312,6 +380,7 @@ function onaction_createorupdate(ID_Excel = null) { //มันมาเข้�
               Swal.fire({
                 icon: 'success',
                 title: 'สำเร็จ',
+                confirmButtonText: 'ตกลง',
               }).then((result) => {
                 location.reload();
 
@@ -321,6 +390,7 @@ function onaction_createorupdate(ID_Excel = null) { //มันมาเข้�
                 icon: 'error',
                 title: 'ขออภัย...',
                 text: 'มีบางอย่างผิดพลาด',
+                confirmButtonText: 'ตกลง',
               }).then((result) => {
                 location.reload();
 

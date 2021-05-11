@@ -1,52 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="update">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="code formatter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/modal_dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/modal_dialog.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Company.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Company.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Employee.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Employee.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Filelog.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Filelog.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Sales.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Sales.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/Db.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/Db.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Excel.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Excel.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Router.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Router.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.ini.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connectDB.php" beforeDir="false" afterPath="$PROJECT_DIR$/connectDB.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User-11052021181316.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/User-11052021181319.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/AdminController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/EmployeeController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/EmployeeController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/ErrorHandleController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ErrorHandleController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/HomepageController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/HomepageController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/IndexController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/IndexController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/CompanyController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/SalesController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SalesController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/UserController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/UserController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sales/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sales/sidebar_menu.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sidebar_profile.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sidebar_profile.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/sidebar_menu.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/dashboard.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/dashboard.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/excelcompany.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/excelcompany.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/admin/manage_company.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_company.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/admin/manage_sales.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_sales.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/manage_user.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_user.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/error_handle.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/error_handle.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index_admin.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index_admin.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index_sale.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index_sale.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index_user.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index_user.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/login.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/modal/modal_companymanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_companymanage.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/modal/modal_editprofile.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_editprofile.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/modal/modal_importcompany.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importcompany.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/modal/modal_importsales.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importsales.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/modal/modal_importuser.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importuser.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/modal/modal_salesmanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_salesmanage.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/modal/modal_usermanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_usermanage.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +72,8 @@
       <workItem from="1620751301099" duration="555000" />
       <workItem from="1620751994659" duration="202000" />
       <workItem from="1620752214462" duration="486000" />
+      <workItem from="1620752761371" duration="298000" />
+      <workItem from="1620753147295" duration="13549000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>
@@ -106,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620566299697</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="code formatter">
+      <created>1620752814681</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1620752814681</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +109,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="code formatter" />
+    <option name="LAST_COMMIT_MESSAGE" value="code formatter" />
   </component>
 </project>
