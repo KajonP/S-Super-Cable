@@ -236,6 +236,8 @@ class AdminController
         $exportExcelEmployee = Employee::findAll();
         
         try {
+            // ob_end_clean(); 
+            
 			// เรียนกใช้ PHPExcel  
 			$objPHPExcel = new PHPExcel();   
 			// กำหนดค่าต่างๆ ของเอกสาร excel
@@ -307,17 +309,34 @@ class AdminController
 				}
 				// กำหนดรูปแบบของไฟล์ที่ต้องการเขียนว่าเป็นไฟล์ excel แบบไหน ในที่นี้เป้นนามสกุล xlsx  ใช้คำว่า Excel2007
 				// แต่หากต้องการกำหนดเป็นไฟล์ xls ใช้กับโปรแกรม excel รุ่นเก่าๆ ได้ ให้กำหนดเป็น  Excel5
-				ob_start();
-				$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');  // Excel2007 (xlsx) หรือ Excel5 (xls)        
 				
-				$filename='User-'.date("dmYHi").'.xlsx'; //  กำหนดชือ่ไฟล์ นามสกุล xls หรือ xlsx
-				// บังคับให้ทำการดาวน์ดหลดไฟล์
-				header('Content-Type: application/vnd.ms-excel'); //mime type
-				header('Content-Disposition: attachment;filename="'.$filename.'"'); //tell browser what's the file name
-				header('Cache-Control: max-age=0'); //no cache
-				ob_end_clean();     
-				$objWriter->save('php://output'); // ดาวน์โหลดไฟล์รายงาน
-				//die($objWriter);
+			
+				$filename= 'User-'.date("dmYHis").'.xlsx'; //  กำหนดชือ่ไฟล์ นามสกุล xls หรือ xlsx
+				//echo $filename;exit();
+                // บังคับให้ทำการดาวน์ดหลดไฟล์
+				// header('Content-Type: application/vnd.ms-excel'); //mime type
+				// header('Content-Disposition: attachment;filename="'.$filename.'"'); //tell browser what's the file name
+				// header('Cache-Control: max-age=0'); //no cache
+				//ob_end_clean();     
+                $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');  // Excel2007 (xlsx) หรือ Excel5 (xls)        
+				ob_clean();  
+				//$objWriter->save('php://output'); // ดาวน์โหลดไฟล์รายงาน
+                //save log
+                $objWriter->save('./uploads/'.$filename);
+
+                //download
+                header('Content-Type: application/octet-stream');
+                header("Content-Transfer-Encoding: Binary"); 
+                header("Content-disposition: attachment; filename=\"".$filename."\""); 
+                echo file_get_contents("./uploads/".$filename);
+                die;
+
+
+                return json_encode(array('status'=>true , "filename" => $filename) );
+                //ob_end_clean();
+                
+				// die($objWriter);
+                //die;
 
 			}else{
 				// status that return to frontend
