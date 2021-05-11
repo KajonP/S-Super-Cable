@@ -38,7 +38,8 @@ class AdminController
                 break;
             case "import_excel":
                 $FILES = isset($params["FILES"]["file"]) ? $params["FILES"]["file"] : "";
-                $result = $this->$action($params["POST"], $FILES);
+                $FILE_IMG = isset($params["FILES"]["examfile"]) ? $params["FILES"]["examfile"] : "";
+                $result = $this->$action($params["POST"], $FILES , $FILE_IMG);
                 echo $result;
                 break;
             default:
@@ -47,88 +48,109 @@ class AdminController
 
     }
 
-    private function import_excel(array $params, array $FILES)
+    private function import_excel(array $params, array $FILES , array $FILE_IMG)
     {
         $excel = new Excel();
-        $path = $FILES["tmp_name"];
-        $object = PHPExcel_IOFactory::load($path);
-        $params = array();
+        #UPLOAD IMAGE
+        if(!empty($FILE_IMG) && !empty($FILE_IMG['name'])){
+             # update new pic
+             $target_file_img = Router::getSourcePath() . "images/" . "format_excel.png";
+            
+             if (!empty($FILE_IMG) && isset($FILE_IMG['name'])) {
+                 if (!empty($FILE_IMG['name'])) {
+                     move_uploaded_file($FILE_IMG["tmp_name"], $target_file_img);
+                     
+                 }
+             }
+            
+        }
         
-        //case: การอัพโหลดไฟล์ excel ถ้าลืมใส่ column ไหนให้บอกผิด row ไหน
-        $EXCEL_HeaderCol = array("ID_Employee" => array("name"=> "ไอดีพนักงาน","status" => false,"error" => "ไม่พบข้อมูลคอลัมน์ ไอดีพนักงาน")
-            ,"Name_Employee" => array("name"=> "ชื่อพนักงาน","status" => false ,"error" => "ไม่พบข้อมูลคอลัมน์ ชื่อพนักงาน" )
-            ,"Surname_Employee" => array("name"=> "นามสกุลพนักงาน","status" => false ,"error" => "ไม่พบข้อมูลคอลัมน์ นามสกุลพนักงาน")
-            ,"Username_Employee" => array("name"=> "ชื่อผุ้ใช้","status" => false ,"error" => "ไม่พบข้อมูลคอลัมน์ ชื่อผุ้ใช้")
-            ,"Email_Employee" => array("name"=> "อีเมล์","status" => false ,"error" => "ไม่พบข้อมูลคอลัมน์ อีเมล์")
-            ,"Password_Employee" => array("name"=> "รหัสผ่าน","status" => false ,"error" => "ไม่พบข้อมูลคอลัมน์ รหัสผ่าน")
-            ,"User_Status_Employee" => array("name"=> "สถานะ","status" => false ,"error" => "ไม่พบข้อมูลคอลัมน์ สถานะ")
-        );
-        $count = 0;
-        foreach ($object->getWorksheetIterator() as $worksheet) {
-            $highestRow = $worksheet->getHighestRow();
-            $highestColumn = $worksheet->getHighestColumn();
-            //  echo $highestRow;exit();
-            // row = 2 คือ row แรก ไม่รวม header
-            #เช็คหัวตารางชื่อตรงกันไหมใน array ที่ hardcode ไว้
-            if($count != 1){
-            for($col_ =0; $col_ < 7;$col_ ++){
-                        $col__cc = strval($worksheet->getCellByColumnAndRow($col_, 1)->getValue());
-                        if($col__cc == ''){
-                            $c = array_values($EXCEL_HeaderCol);
-                            $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูลไม่พบคอลัมน์  ".$c[$col_]['name'];
-                            return json_encode(array("status" => false , "message" => $message));  
-                            
-                        }else{
-                            $ccc = array_key_exists($col__cc , $EXCEL_HeaderCol);
-                            if(!$ccc){                  
-                                $c = array_values($EXCEL_HeaderCol);
-                                $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูลไม่พบคอลัมน์  ".$c[$col_]['name'];
-                                return json_encode(array("status" => false , "message" => $message));  
+        #UPLOAD EXCEL
+       
+        if(!empty($FILES) && !empty($FILES['name'])){
+                $path = $FILES["tmp_name"];
+                $object = PHPExcel_IOFactory::load($path);
+                $params = array();
+                
+                //case: การอัพโหลดไฟล์ excel ถ้าลืมใส่ column ไหนให้บอกผิด row ไหน
+                $EXCEL_HeaderCol = array("ID_Employee" => array("name"=> "ไอดีพนักงาน","status" => false,"error" => "ไม่พบข้อมูลคอลัมน์ ไอดีพนักงาน")
+                    ,"Name_Employee" => array("name"=> "ชื่อพนักงาน","status" => false ,"error" => "ไม่พบข้อมูลคอลัมน์ ชื่อพนักงาน" )
+                    ,"Surname_Employee" => array("name"=> "นามสกุลพนักงาน","status" => false ,"error" => "ไม่พบข้อมูลคอลัมน์ นามสกุลพนักงาน")
+                    ,"Username_Employee" => array("name"=> "ชื่อผุ้ใช้","status" => false ,"error" => "ไม่พบข้อมูลคอลัมน์ ชื่อผุ้ใช้")
+                    ,"Email_Employee" => array("name"=> "อีเมล์","status" => false ,"error" => "ไม่พบข้อมูลคอลัมน์ อีเมล์")
+                    ,"Password_Employee" => array("name"=> "รหัสผ่าน","status" => false ,"error" => "ไม่พบข้อมูลคอลัมน์ รหัสผ่าน")
+                    ,"User_Status_Employee" => array("name"=> "สถานะ","status" => false ,"error" => "ไม่พบข้อมูลคอลัมน์ สถานะ")
+                );
+                $count = 0;
+                foreach ($object->getWorksheetIterator() as $worksheet) {
+                    $highestRow = $worksheet->getHighestRow();
+                    $highestColumn = $worksheet->getHighestColumn();
+                    //  echo $highestRow;exit();
+                    // row = 2 คือ row แรก ไม่รวม header
+                    #เช็คหัวตารางชื่อตรงกันไหมใน array ที่ hardcode ไว้
+                    if($count != 1){
+                    for($col_ =0; $col_ < 7;$col_ ++){
+                                $col__cc = strval($worksheet->getCellByColumnAndRow($col_, 1)->getValue());
+                                if($col__cc == ''){
+                                    $c = array_values($EXCEL_HeaderCol);
+                                    $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูลไม่พบคอลัมน์  ".$c[$col_]['name'];
+                                    return json_encode(array("status" => false , "message" => $message));  
+                                    
+                                }else{
+                                    $ccc = array_key_exists($col__cc , $EXCEL_HeaderCol);
+                                    if(!$ccc){                  
+                                        $c = array_values($EXCEL_HeaderCol);
+                                        $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูลไม่พบคอลัมน์  ".$c[$col_]['name'];
+                                        return json_encode(array("status" => false , "message" => $message));  
+                                    }
+                                }
                             }
+                            ++ $count;
+                    }
+
+                    #eof
+                
+
+                    for ($row = 2; $row <= $highestRow; $row++) {
+                        if ($worksheet->getCellByColumnAndRow(0, $row)->getValue() != '') {
+                            
+                            $getCellArray = $this->checkemptycell($worksheet , $row);
+                            if($getCellArray['status'] == false){
+                                $c = array_values($EXCEL_HeaderCol);
+                                $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูลไม่พบข้อมูลในแถวที่{$row}(รวมหัวตาราง) ในคอลัมน์คือ ".$c[$getCellArray["column"]]['name'] .'';
+                                return json_encode(array("status" => false , "message" => $message));     
+                            }
+
+                            $push_array = array("ID_Employee" => $getCellArray["data"][0],
+                                "Name_Employee" => $getCellArray["data"][1],
+                                "Surname_Employee" => $getCellArray["data"][2],
+                                "Username_Employee" => $getCellArray["data"][3],
+                                "Email_Employee" => $getCellArray["data"][4],
+                                "Password_Employee" => $getCellArray["data"][5],
+                                "User_Status_Employee" => $getCellArray["data"][6]
+                            );
+                            array_push($params, $push_array);
+                        }else{
+
+                            
                         }
                     }
-                    ++ $count;
-            }
-
-            #eof
-           
-
-            for ($row = 2; $row <= $highestRow; $row++) {
-                if ($worksheet->getCellByColumnAndRow(0, $row)->getValue() != '') {
-                    
-                    $getCellArray = $this->checkemptycell($worksheet , $row);
-                    if($getCellArray['status'] == false){
-                        $c = array_values($EXCEL_HeaderCol);
-                        $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูลไม่พบข้อมูลในแถวที่{$row}(รวมหัวตาราง) ในคอลัมน์คือ ".$c[$getCellArray["column"]]['name'] .'';
-                        return json_encode(array("status" => false , "message" => $message));     
-                    }
-
-                    $push_array = array("ID_Employee" => $getCellArray["data"][0],
-                        "Name_Employee" => $getCellArray["data"][1],
-                        "Surname_Employee" => $getCellArray["data"][2],
-                        "Username_Employee" => $getCellArray["data"][3],
-                        "Email_Employee" => $getCellArray["data"][4],
-                        "Password_Employee" => $getCellArray["data"][5],
-                        "User_Status_Employee" => $getCellArray["data"][6]
-                    );
-                    array_push($params, $push_array);
-                }else{
-
-                      
                 }
-            }
+                // # create user ใหม่
+                $employee_ = new Employee();
+                $result = $employee_->create_user_at_once($params);
+                # update new pic
+                $target_file = Router::getSourcePath() . "uploads/" . $FILES['name'];
+                if (!empty($FILES) && isset($FILES['name'])) {
+                    if (!empty($FILES['name'])) {
+                        move_uploaded_file($FILES["tmp_name"], $target_file);
+                    }
+                }
+                return json_encode($result);
         }
-        // # create user ใหม่
-        $employee_ = new Employee();
-        $result = $employee_->create_user_at_once($params);
-        # update new pic
-        $target_file = Router::getSourcePath() . "uploads/" . $FILES['name'];
-        if (!empty($FILES) && isset($FILES['name'])) {
-            if (!empty($FILES['name'])) {
-                move_uploaded_file($FILES["tmp_name"], $target_file);
-            }
-        }
-        return json_encode($result);
+
+        # 
+        return json_encode(array("status"=>true));
     }
     
     private function checkemptycell( $worksheet,$row){

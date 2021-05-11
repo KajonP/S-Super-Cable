@@ -73,7 +73,13 @@ class EmployeeController {
             $employee = $_SESSION["employee"];
             # update profile
             $access_employee = new Employee();
-       
+            //echo '<PRE>';
+            //print_r($Params);exit();
+            if(isset($Params["profile"])){
+                if(empty($Params["profile"])){
+                    unset($Params["profile"]);
+                }
+            }
             if(isset($Params["Password_Employee_Profile"])){
                 $Params["Password_Employee"] = $Params["Password_Employee_Profile"];
                 unset($Params["Password_Employee_Profile"]);

@@ -250,7 +250,7 @@ $("#resetpassword").on('click', function(event) {
 $('#form_importexcel').validate({
     rules: {
         file: {
-            required: true,
+            
             extension: "xlsx|xls|csv|xlsm",
            
         }
@@ -276,13 +276,13 @@ $('#form_importexcel').validate({
 $("#button_importuserModal").on('click', function(event) {
     var form_importexcel = $('#form_importexcel')[0];
     var formData_importexcel = new FormData(form_importexcel);
-    
+   
     // case: ตอนอัพโหลดไฟล์ excel validate ว่าใช่ไฟล์ excel ไหมถ้าไม่ใช่ขึ้นแจ้งเตือนว่า type ไม่ตรง
        $("#form_importexcel").validate().form();
     /* eof */
 
     var url_string  =  "index.php?controller=Admin&action=import_excel";
-       if($('#form_importexcel input[type=file]').val() != ''){
+       if($('#form_importexcel #examfile').val() != '' || $('#form_importexcel #file').val() != ''){
         $.ajax({
             type: "POST",
             url:  url_string,
