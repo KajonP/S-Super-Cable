@@ -10,7 +10,7 @@
       <div class="modal-body">
           <form id="form_importexcel" method='post' action='' enctype="multipart/form-data">
             <p>ตัวอย่าง format การนำข้อมูลเข้าระบบ</p>
-            <img src="<?php echo Router::getSourcePath(). "images/format_excel.png"?>" width="100%">  
+            <img src="<?php echo Router::getSourcePath(). "images/" . $file_log['file_name']?>" width="100%">  
            
             <h6 class="pt-4">อัพโหลดไฟล์รูปภาพตัวอย่าง</h6>
             <input id="examfile" name="examfile" type="file"  accept=".png, .jpg,.jpeg,.gif"style=""   >

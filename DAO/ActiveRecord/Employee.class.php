@@ -302,6 +302,18 @@ class Employee
             return array("status" => false  );
         }
     }
+
+
+    public function file_log(string $file_name ,int $id){
+        $query = "UPDATE file_log SET file_name = '{$file_name}' where id = {$id} ";
+        //echo $query;exit();
+        $con = Db::getInstance();
+        if($con->exec($query)){
+
+            return array("status" => true);
+        }
+
+    }
     # แก้ไข profile
     public function updateProfile(
      Array $params

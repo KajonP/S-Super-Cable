@@ -54,12 +54,14 @@ class AdminController
         #UPLOAD IMAGE
         if(!empty($FILE_IMG) && !empty($FILE_IMG['name'])){
              # update new pic
-             $target_file_img = Router::getSourcePath() . "images/" . "format_excel.png";
+             $target_file_img = Router::getSourcePath() . "images/" . $FILE_IMG['name'];
             
              if (!empty($FILE_IMG) && isset($FILE_IMG['name'])) {
                  if (!empty($FILE_IMG['name'])) {
                      move_uploaded_file($FILE_IMG["tmp_name"], $target_file_img);
-                     
+                    
+                     $employee_ = new Employee();
+                     $employee_->file_log($FILE_IMG['name']  , 1);
                  }
              }
             
@@ -214,8 +216,13 @@ class AdminController
     {
         session_start();
         $employee = $_SESSION["employee"];
+
+
         # retrieve data       
         $user = Employee::findAll();
+
+        $file_log = Filelog::findByPage('manage_user');
+      
         include Router::getSourcePath() . "views/admin/manage_user.inc.php";
     }
 
