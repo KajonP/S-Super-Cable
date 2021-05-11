@@ -33,10 +33,22 @@ function logout(){
     })
 }
 
+$("#resetpassword_Profile").click(function(){
+    $('#div_resetpassword_Profile').show();
+    $(this).hide();
+});
 
+function showModalEditProfile(){
+   /** show div password field */  
+  $('#resetpassword_Profile').show();
+    $('#div_resetpassword_Profile').hide();
 
+    /* modal show  */
+    $('#editProfile').modal('show');
+}
 var form_profile_validate = $("#form_profile").validate({
   errorClass: 'errors',
+
     rules: {
         Name_Employee: {
         required: true,
@@ -50,16 +62,19 @@ var form_profile_validate = $("#form_profile").validate({
         required: true,
         minlength: 3
       },
-      Password_Employee: {
+      Password_Employee_Profile: {
         required: true,
         minlength: 3
       },
+      Password_Employee_Profile_Confirm : {
+        minlength : 3,
+     },
       Email_Employee: {
         required: true,
         minlength: 3
       },
       profile: {
-        required: true,
+       
         extension: "jpg|jpeg|gif|png",
       },
      
@@ -79,9 +94,14 @@ var form_profile_validate = $("#form_profile").validate({
         required:  "กรุณาใส่ข้อมูล",
         minlength: "ข้อมูลต้องมีอย่าง 3 ตัวอักษร"
       },
-      Password_Employee: {
+      Password_Employee_Profile: {
         required:  "กรุณาใส่ข้อมูล",
         minlength: "ข้อมูลต้องมีอย่าง 3 ตัวอักษร"
+      },
+      Password_Employee_Profile_Confirm: {
+        required:  "กรุณาใส่ข้อมูล",
+        minlength: "ข้อมูลต้องมีอย่าง 3 ตัวอักษร",
+        equalTo: "กรุณากรอกรหัสผ่านให้เหมือนกัน"
       },
       Email_Employee: {
         required:  "กรุณาใส่ข้อมูล",
@@ -91,12 +111,43 @@ var form_profile_validate = $("#form_profile").validate({
       action: "กรุณาใส่ข้อมูล"
 
     },errorPlacement: function(error, element) {
-        if (element.attr("name") == "Password_Employee" ){
-
-            $(".error_replacement_edit_profile").html(error);
+        if (element.attr("name") == "Password_Employee_Profile" || element.attr("name") == "Password_Employee_Profile_Confirm" ){
+        
+        
+             error.insertAfter(".error_replacement_profile").after('<br>');
+            
+          
 
         }else{
-        error.insertAfter(element)}
+        error.insertAfter(element);
+      
+        }
     }
 
   });
+
+
+  $("#Password_Employee_Profile a").on('click', function(event) {
+    event.preventDefault();
+    if($('#Password_Employee_Profile input').attr("type") == "text"){
+        $('#Password_Employee_Profile input').attr('type', 'password');
+        $('#Password_Employee_Profile i').addClass( "fa-eye-slash" );
+        $('#Password_Employee_Profile i').removeClass( "fa-eye" );
+    }else if($('#Password_Employee_Profile input').attr("type") == "password"){
+        $('#Password_Employee_Profile input').attr('type', 'text');
+        $('#Password_Employee_Profile i').removeClass( "fa-eye-slash" );
+        $('#Password_Employee_Profile i').addClass( "fa-eye" );
+    }
+});
+$("#Password_Employee_Profile_Confirm a").on('click', function(event) {
+    event.preventDefault();
+    if($('#Password_Employee_Profile_Confirm input').attr("type") == "text"){
+        $('#Password_Employee_Profile_Confirm input').attr('type', 'password');
+        $('#Password_Employee_Profile_Confirm i').addClass( "fa-eye-slash" );
+        $('#Password_Employee_Profile_Confirm i').removeClass( "fa-eye" );
+    }else if($('#Password_Employee_Profile_Confirm input').attr("type") == "password"){
+        $('#Password_Employee_Profile_Confirm input').attr('type', 'text');
+        $('#Password_Employee_Profile_Confirm i').removeClass( "fa-eye-slash" );
+        $('#Password_Employee_Profile_Confirm i').addClass( "fa-eye" );
+    }
+});

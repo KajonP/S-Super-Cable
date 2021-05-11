@@ -10,7 +10,7 @@
           <img src="<?php echo empty($employee->Picuture_Employee) ?  "AdminLTE/dist/img/no_img.png":  "images/" .$employee->Picuture_Employee; ?>" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-          <a href="#"  data-toggle="modal" data-target="#editProfile" class="d-block"><?php echo $employee->getName_Employee() . " " . $employee->getSurname_Employee();?></a>
+          <a href="#"  onclick="showModalEditProfile()" class="d-block"><?php echo $employee->getName_Employee() . " " . $employee->getSurname_Employee();?></a>
    
       </div>
   </div>

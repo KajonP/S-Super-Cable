@@ -40,8 +40,9 @@ function readURL(input, id) {
         reader.readAsDataURL(input.files[0]);
     }
 }
-function editProfile(form_serialize){
 
+function editProfile(form_serialize){
+    
     var form = $('#form_profile')[0];
     console.log(form);
     var formData = new FormData(form);

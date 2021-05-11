@@ -106,7 +106,7 @@ var form_validte = $("#form_usermanage").validate({
     },errorPlacement: function(error, element) {
         if (element.attr("name") == "Password_Employee" || element.attr("name") == "Password_Employee_Confirm" ){
             
-            error.insertAfter(".error_replacement");
+            error.insertAfter(".error_replacement").after('<br>');
 
         }else{
         error.insertAfter(element)}
