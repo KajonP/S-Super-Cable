@@ -1,19 +1,19 @@
 var columns = [
-  { "width": "1%" , "class": "text-left"},
-  { "width": "5%" , "class": "text-center"},
-  { "width": "5%"  , "class": "text-center"},
-  { "width": "5%"  , "class": "text-center"},
-  { "width": "5%"  , "class": "text-right"},
-  { "width": "5%"  , "class": "text-center"},
+  {"width": "1%", "class": "text-left"},
+  {"width": "5%", "class": "text-center"},
+  {"width": "5%", "class": "text-center"},
+  {"width": "5%", "class": "text-center"},
+  {"width": "5%", "class": "text-right"},
+  {"width": "5%", "class": "text-center"},
 
 ]
 
-var dataTable_ = $('#tbl_salesmanagement').DataTable( {
+var dataTable_ = $('#tbl_salesmanagement').DataTable({
   "processing": true,
   "bDestroy": true,
-  "bPaginate":true,
-  "bFilter":true,
-  "bInfo" : true,
+  "bPaginate": true,
+  "bFilter": true,
+  "bInfo": true,
   "searching": true,
 
 
@@ -23,9 +23,9 @@ var dataTable_ = $('#tbl_salesmanagement').DataTable( {
   },
   responsive: true,
 
-  initComplete: function(){
+  initComplete: function () {
 
-  } ,
+  },
   "columns": columns
 
 
@@ -41,7 +41,7 @@ var form_validte = $("#form_salesmanage").validate({
     },
     ID_Company: {
       required: true,
-     // minlength: 3
+      // minlength: 3
     },
     ID_Employee: {
       required: true,
@@ -53,7 +53,7 @@ var form_validte = $("#form_salesmanage").validate({
   },
   messages: {
     ID_Excel: {
-     // required: "กรุณาใส่ข้อมูล",
+      // required: "กรุณาใส่ข้อมูล",
     },
     Date_Sales: {
       required: "กรุณาใส่ข้อมูล",
@@ -69,25 +69,27 @@ var form_validte = $("#form_salesmanage").validate({
       required: "กรุณาใส่ข้อมูล",
     },
     action: "กรุณาใส่ข้อมูล"
-  },errorPlacement: function(error, element) { {
-    error.insertAfter(element)}
+  }, errorPlacement: function (error, element) {
+    {
+      error.insertAfter(element)
+    }
   }
 });
 
-function salesmanageShow(type,ID_Excel =null){
+function salesmanageShow(type, ID_Excel = null) {
   var title = "";
 
   /* clear old form value */
   $('#form_salesmanage')[0].reset();
 
-  switch(type) {
+  switch (type) {
     case 'create':
       title = "สร้างยอดขาย";
 
       $('#div_idsales').show();
 
       // set id
-      $('#button_salesmanageModal').attr("data-id" , null);
+      $('#button_salesmanageModal').attr("data-id", null);
       break;
     case 'edit':
       title = "เเก่ไขยอดขาย";
@@ -97,12 +99,12 @@ function salesmanageShow(type,ID_Excel =null){
       $.ajax({
         url: "index.php?controller=Sales&action=findbyID",
         data: {
-          "ID_Excel" : ID_Excel
+          "ID_Excel": ID_Excel
         },
         type: "POST",
         dataType: 'json',
-        async:false,
-        success: function(response, status) {
+        async: false,
+        success: function (response, status) {
           /* set input value */
           $('#div_idsales').hide();
 
@@ -113,9 +115,9 @@ function salesmanageShow(type,ID_Excel =null){
           $('#Result_Sales').val(response.data.Result_Sales);
 
           // set id
-          $('#button_salesmanageModal').attr("data-id" , ID_Excel);
+          $('#button_salesmanageModal').attr("data-id", ID_Excel);
         },
-        error: function(xhr, status, exception) {
+        error: function (xhr, status, exception) {
           //console.log(xhr);
         }
       });
@@ -131,12 +133,13 @@ function salesmanageShow(type,ID_Excel =null){
   $('#salesmanageTitle').html(title);
 
   /* set button event  */
-  $('#button_salesmanageModal').attr("data-status" , type);
+  $('#button_salesmanageModal').attr("data-status", type);
 
   /* modal show  */
   $('#salesmanageModal').modal('show');
 }
-function onaction_deletesales(ID_Excel){
+
+function onaction_deletesales(ID_Excel) {
   Swal.fire({
     title: 'คุณเเน่ใจใช่ไหม?',
     text: "คุณต้องการลบข้อมูลนี้ใช่ไหม?",
@@ -151,13 +154,13 @@ function onaction_deletesales(ID_Excel){
       $.ajax({
         url: "index.php?controller=Sales&action=delete_sales",
         data: {
-          "ID_Excel" : ID_Excel
+          "ID_Excel": ID_Excel
         },
         type: "POST",
         dataType: 'json',
-        async:false,
-        success: function(data, status) {
-          if(data.status == true){
+        async: false,
+        success: function (data, status) {
+          if (data.status == true) {
             Swal.fire(
               'ลบเรียบร้อย!',
               'ข้อมูลคุณถูกลบเรียบร้อยเเล้ว',
@@ -169,7 +172,7 @@ function onaction_deletesales(ID_Excel){
           }
 
         },
-        error: function(xhr, status, exception) {
+        error: function (xhr, status, exception) {
           //console.log(xhr);
         }
       });
@@ -178,22 +181,22 @@ function onaction_deletesales(ID_Excel){
   })
 }
 
-$("#button_importsalesModal").on('click', function(event) {
+$("#button_importsalesModal").on('click', function (event) {
   var form_importexcel = $('#form_importexcel')[0];
   var formData_importexcel = new FormData(form_importexcel);
-  var url_string  =  "index.php?controller=Sales&action=import_excel";
-  if($('#form_importexcel input[type=file]').val() != ''){
+  var url_string = "index.php?controller=Sales&action=import_excel";
+  if ($('#form_importexcel input[type=file]').val() != '') {
     $.ajax({
       type: "POST",
-      url:  url_string,
+      url: url_string,
       processData: false,
       contentType: false,
       data: formData_importexcel,
-      success: function(res,status,xhr){
+      success: function (res, status, xhr) {
         console.log(res);
         var data = JSON.parse(res);
         console.log(data);
-        if(data.status == true){
+        if (data.status == true) {
           Swal.fire({
             icon: 'success',
             title: 'สำเร็จ',
@@ -201,7 +204,7 @@ $("#button_importsalesModal").on('click', function(event) {
             location.reload();
 
           });
-        }else{
+        } else {
           Swal.fire({
             icon: 'error',
             title: 'ขออภัย...',
@@ -215,7 +218,7 @@ $("#button_importsalesModal").on('click', function(event) {
       }
     });
 
-  }else{
+  } else {
     // error handle
     Swal.fire({
       icon: 'error',
@@ -229,16 +232,16 @@ $("#button_importsalesModal").on('click', function(event) {
 
 });
 
-function onaction_createorupdate(ID_Excel = null){ //มันมาเข้า method นี้
+function onaction_createorupdate(ID_Excel = null) { //มันมาเข้า method นี้
 
   var type = $('#button_salesmanageModal').attr("data-status");
 
   var form = $('#form_salesmanage')[0];
   var formData = new FormData(form);
 
-  switch(type) {
+  switch (type) {
     case 'create':
-      var url_string  =  "index.php?controller=Sales&action=create_sales";
+      var url_string = "index.php?controller=Sales&action=create_sales";
       if (!$("#form_salesmanage").validate().form()) {
         Swal.fire({
           icon: 'error',
@@ -248,18 +251,18 @@ function onaction_createorupdate(ID_Excel = null){ //มันมาเข้า
           return;
 
         });
-      }else{
+      } else {
         console.log(formData);
         $.ajax({
           type: "POST",
-          url:  url_string,
+          url: url_string,
           data: formData,
           processData: false,
           contentType: false,
-          success: function(res,status,xhr){
+          success: function (res, status, xhr) {
             var data = JSON.parse(res);
             console.log(data);
-            if(data.status == true){
+            if (data.status == true) {
               Swal.fire({
                 icon: 'success',
                 title: 'สำเร็จ',
@@ -267,7 +270,7 @@ function onaction_createorupdate(ID_Excel = null){ //มันมาเข้า
                 location.reload();
 
               });
-            }else{
+            } else {
               Swal.fire({
                 icon: 'error',
                 title: 'ขออภัย...',
@@ -285,7 +288,7 @@ function onaction_createorupdate(ID_Excel = null){ //มันมาเข้า
     case 'edit':
       var ID_Excel = $("#button_salesmanageModal").attr("data-id");
 
-      var url_string  =  "index.php?controller=Sales&action=edit_sales&ID_Excel=" + ID_Excel;
+      var url_string = "index.php?controller=Sales&action=edit_sales&ID_Excel=" + ID_Excel;
       if (!$("#form_salesmanage").validate().form()) {
         Swal.fire({
           icon: 'error',
@@ -295,17 +298,17 @@ function onaction_createorupdate(ID_Excel = null){ //มันมาเข้า
           return;
 
         });
-      }else{
+      } else {
         $.ajax({
           type: "POST",
-          url:  url_string,
+          url: url_string,
           data: formData,
           processData: false,
           contentType: false,
-          success: function(data,status,xhr){
+          success: function (data, status, xhr) {
             var data = JSON.parse(data);
             console.log(data);
-            if(data.status == true){
+            if (data.status == true) {
               Swal.fire({
                 icon: 'success',
                 title: 'สำเร็จ',
@@ -313,7 +316,7 @@ function onaction_createorupdate(ID_Excel = null){ //มันมาเข้า
                 location.reload();
 
               });
-            }else{
+            } else {
               Swal.fire({
                 icon: 'error',
                 title: 'ขออภัย...',
@@ -335,7 +338,7 @@ function onaction_createorupdate(ID_Excel = null){ //มันมาเข้า
 }
 
 
-function importShow(){
+function importShow() {
 
   /* modal show  */
   $('#importsalesModal').modal('show');

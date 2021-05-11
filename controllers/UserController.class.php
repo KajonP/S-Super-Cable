@@ -1,6 +1,7 @@
 <?php
 
-class UserController {
+class UserController
+{
 
     /**
      * handleRequest จะทำการตรวจสอบ action และพารามิเตอร์ที่ส่งเข้ามาจาก Router
@@ -9,7 +10,8 @@ class UserController {
      * @param string $action ชื่อ action ที่ผู้ใช้ต้องการทำ
      * @param array $params พารามิเตอร์ที่ใช้เพื่อในการทำ action หนึ่งๆ
      */
-    public function handleRequest(string $action="index", array $params) {
+    public function handleRequest(string $action = "index", array $params)
+    {
         switch ($action) {
             case "index":
                 $this->index();
@@ -19,14 +21,17 @@ class UserController {
         }
     }
 
-    private function error_handle(string $message) {
+    private function error_handle(string $message)
+    {
         $this->index($message);
     }
+
     // ควรมีสำหรับ controller ทุกตัว
-    private function index($message =null) {
+    private function index($message = null)
+    {
         session_start();
         $employee = $_SESSION["employee"];
-        include Router::getSourcePath()."views/index_user.inc.php";
+        include Router::getSourcePath() . "views/index_user.inc.php";
 
     }
 

@@ -2,548 +2,58 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="update">
-      <change beforePath="$PROJECT_DIR$/AdminLTE/.bundlewatch.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/.bundlewatch.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/.stylelintignore" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/.stylelintignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/CODE_OF_CONDUCT.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/config/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/config/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/config/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/config/postcss.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/js/AdminLTE.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/js/AdminLTE.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/js/CardRefresh.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/js/CardRefresh.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/js/CardWidget.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/js/CardWidget.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/js/ControlSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/js/ControlSidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/js/Dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/js/Dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/js/ExpandableTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/js/ExpandableTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/js/Fullscreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/js/Fullscreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/js/IFrame.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/js/IFrame.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/js/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/js/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/js/NavbarSearch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/js/PushMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/js/PushMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/js/SidebarSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/js/SidebarSearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/js/Treeview.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/js/Treeview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/npm/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/npm/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/npm/DocsPublish.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/npm/DocsPublish.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/npm/Plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/npm/Plugins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/npm/vnu-jar.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/npm/vnu-jar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_adminlte.raw.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_adminlte.raw.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_alerts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_alerts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_animation-effects.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_bootstrap-variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_bootstrap-variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_callout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_callout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_cards.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_cards.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_colors.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_direct-chat.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_direct-chat.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_dropdown.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_forms.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_info-box.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_info-box.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_main-header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_main-header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_main-sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_main-sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_miscellaneous.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_miscellaneous.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_modals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_modals.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_navs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_navs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_pagination.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_preloader.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_products.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_products.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_progress-bars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_progress-bars.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_root.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_sidebar-mini.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_sidebar-mini.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_table.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_table.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_text.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_timeline.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_timeline.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_toasts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_toasts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_users-list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_users-list.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_variables-alt.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/adminlte.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/adminlte.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/mixins/_accent.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/mixins/_accent.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/mixins/_animations.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/mixins/_cards.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/mixins/_cards.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/mixins/_dark-mode.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/mixins/_miscellaneous.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/mixins/_miscellaneous.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/mixins/_navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/mixins/_navbar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/mixins/_scrollbar.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/mixins/_sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/mixins/_sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/mixins/_touch-support.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/pages/_iframe.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/pages/_iframe.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/pages/_invoice.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/pages/_invoice.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/pages/_kanban.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/pages/_kanban.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/pages/_lockscreen.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/pages/_lockscreen.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/pages/_login_and_register.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/pages/_login_and_register.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/pages/_profile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/pages/_profile.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/parts/_core.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/parts/_core.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/parts/adminlte.components.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/parts/adminlte.components.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/parts/adminlte.core.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/parts/adminlte.core.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/parts/adminlte.extra-components.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/parts/adminlte.extra-components.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/parts/adminlte.light.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/parts/adminlte.pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/parts/adminlte.pages.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/parts/adminlte.plugins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/parts/adminlte.plugins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/plugins/_bootstrap-slider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/plugins/_bootstrap-slider.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/plugins/_bootstrap-switch.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/plugins/_bootstrap-switch.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/plugins/_icheck-bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/plugins/_icheck-bootstrap.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/plugins/_miscellaneous.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/plugins/_miscellaneous.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/plugins/_select2.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/plugins/_select2.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/build/scss/plugins/_sweetalert2.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/build/scss/plugins/_sweetalert2.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/_includes/foot.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/_includes/foot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/_includes/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/_includes/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/_includes/preloader.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/_includes/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/_includes/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/_layouts/default.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/_layouts/page.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/_layouts/page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/adminlte.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/adminlte.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/adminlte.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/adminlte.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/adminlte.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/adminlte.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/adminlte.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/adminlte.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.components.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.components.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.components.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.components.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.components.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.components.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.components.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.components.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.core.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.core.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.core.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.core.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.core.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.core.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.core.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.core.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.extra-components.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.extra-components.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.extra-components.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.extra-components.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.extra-components.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.extra-components.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.extra-components.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.extra-components.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.pages.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.pages.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.pages.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.pages.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.pages.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.pages.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.pages.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.pages.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.plugins.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.plugins.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.plugins.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.plugins.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.plugins.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.plugins.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.plugins.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/alt/adminlte.plugins.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/css/docs.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/css/docs.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/js/adminlte.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/js/adminlte.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/js/adminlte.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/js/adminlte.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/js/adminlte.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/js/adminlte.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/js/adminlte.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/js/adminlte.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/js/demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/js/demo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/js/pages/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/js/pages/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/js/pages/dashboard2.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/js/pages/dashboard2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/js/pages/dashboard3.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/js/pages/dashboard3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/bootstrap/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/bootstrap/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/bootstrap/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/bootstrap/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/bootstrap/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/bootstrap/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/bootstrap/js/bootstrap.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/bootstrap/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/all.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/all.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/all.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/all.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/brands.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/brands.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/brands.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/brands.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/fontawesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/fontawesome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/fontawesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/fontawesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/regular.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/regular.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/regular.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/regular.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/solid.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/solid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/solid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/solid.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/svg-with-js.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/svg-with-js.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/svg-with-js.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/svg-with-js.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/v4-shims.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/v4-shims.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/v4-shims.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/css/v4-shims.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.eot" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.woff" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.eot" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.woff" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.eot" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.svg" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.woff" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/jquery/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/jquery/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/jquery/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/jquery/jquery.min.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/jquery/jquery.min.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/jquery/jquery.slim.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/jquery/jquery.slim.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/jquery/jquery.slim.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/jquery/jquery.slim.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/jquery/jquery.slim.min.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/jquery/jquery.slim.min.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/overlayScrollbars/css/OverlayScrollbars.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/overlayScrollbars/css/OverlayScrollbars.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/overlayScrollbars/js/OverlayScrollbars.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/overlayScrollbars/js/OverlayScrollbars.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/overlayScrollbars/js/OverlayScrollbars.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/overlayScrollbars/js/OverlayScrollbars.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/components/direct-chat.md" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/components/direct-chat.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/components/main-header.md" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/components/main-header.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/dependencies.md" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/dependencies.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/how-to-contribute.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/implementations.md" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/implementations.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/javascript/control-sidebar.md" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/javascript/control-sidebar.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/javascript/iframe.md" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/javascript/iframe.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/javascript/layout.md" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/javascript/layout.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/javascript/navbar-search.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/docs/layout.md" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/docs/layout.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/iframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/iframe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/index2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/index3.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/index3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/UI/buttons.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/UI/buttons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/UI/general.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/UI/general.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/UI/icons.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/UI/icons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/UI/modals.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/UI/modals.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/UI/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/UI/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/UI/ribbons.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/UI/ribbons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/UI/sliders.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/UI/sliders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/UI/timeline.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/UI/timeline.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/calendar.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/calendar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/charts/chartjs.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/charts/chartjs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/charts/flot.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/charts/flot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/charts/inline.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/charts/inline.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/charts/uplot.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/charts/uplot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/examples/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/examples/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/examples/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/examples/500.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/examples/blank.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/examples/blank.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/examples/contact-us.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/examples/contact-us.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/examples/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/examples/contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/examples/e-commerce.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/examples/e-commerce.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/examples/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/examples/faq.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/examples/invoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/examples/invoice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/examples/language-menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/examples/language-menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/examples/legacy-user-menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/examples/legacy-user-menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/examples/lockscreen.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/examples/lockscreen.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/examples/pace.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/examples/pace.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/examples/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/examples/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/examples/project-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/examples/project-add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/examples/project-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/examples/project-detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/examples/project-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/examples/project-edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/examples/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/examples/projects.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/forms/advanced.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/forms/advanced.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/forms/editors.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/forms/editors.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/forms/general.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/forms/general.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/forms/validation.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/forms/validation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/gallery.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/kanban.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/kanban.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/layout/boxed.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/layout/boxed.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/layout/collapsed-sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/layout/collapsed-sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/layout/fixed-footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/layout/fixed-footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/layout/fixed-sidebar-custom.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/layout/fixed-sidebar-custom.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/layout/fixed-sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/layout/fixed-sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/layout/fixed-topnav.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/layout/fixed-topnav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/layout/top-nav-sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/layout/top-nav-sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/layout/top-nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/layout/top-nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/mailbox/compose.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/mailbox/compose.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/mailbox/mailbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/mailbox/mailbox.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/mailbox/read-mail.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/mailbox/read-mail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/search/enhanced-results.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/search/enhanced-results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/search/enhanced.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/search/enhanced.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/search/simple-results.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/search/simple-results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/search/simple.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/search/simple.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/tables/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/tables/data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/tables/jsgrid.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/tables/jsgrid.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/tables/simple.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/tables/simple.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/pages/widgets.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/pages/widgets.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/bootstrap/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/bootstrap/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/bootstrap/js/bootstrap.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/bootstrap/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/display/panel.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/display/panel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/edit/closebrackets.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/edit/closebrackets.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/edit/continuelist.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/edit/continuelist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/edit/matchbrackets.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/edit/matchbrackets.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/fold/brace-fold.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/fold/brace-fold.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/hint/javascript-hint.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/hint/javascript-hint.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/hint/show-hint.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/hint/show-hint.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/hint/sql-hint.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/hint/sql-hint.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/lint/lint.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/lint/lint.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/mode/multiplex.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/mode/multiplex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/mode/multiplex_test.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/mode/multiplex_test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/mode/simple.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/mode/simple.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/search/jump-to-line.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/search/jump-to-line.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/search/match-highlighter.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/search/match-highlighter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/search/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/search/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/wrap/hardwrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/addon/wrap/hardwrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/codemirror.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/codemirror.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/keymap/emacs.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/keymap/emacs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/keymap/sublime.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/keymap/sublime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/keymap/vim.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/keymap/vim.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/asn.1/asn.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/asn.1/asn.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/clike/clike.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/clike/clike.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/clojure/clojure.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/clojure/clojure.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/crystal/crystal.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/crystal/crystal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/css/css.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/css/css.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/cypher/cypher.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/cypher/cypher.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/dtd/dtd.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/dtd/dtd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/ebnf/ebnf.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/ebnf/ebnf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/erlang/erlang.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/erlang/erlang.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/factor/factor.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/factor/factor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/gas/gas.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/gas/gas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/haml/haml.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/haml/haml.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/idl/idl.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/idl/idl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/javascript/javascript.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/javascript/javascript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/julia/julia.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/julia/julia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/lua/lua.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/lua/lua.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/markdown/markdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/markdown/markdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/meta.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/meta.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/modelica/modelica.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/modelica/modelica.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/mscgen/mscgen.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/mscgen/mscgen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/mumps/mumps.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/mumps/mumps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/oz/oz.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/oz/oz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/pegjs/pegjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/pegjs/pegjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/perl/perl.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/perl/perl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/php/php.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/php/php.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/pug/pug.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/pug/pug.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/puppet/puppet.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/puppet/puppet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/python/python.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/python/python.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/rpm/rpm.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/rpm/rpm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/sass/sass.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/sass/sass.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/scheme/scheme.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/scheme/scheme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/shell/shell.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/shell/shell.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/sieve/sieve.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/sieve/sieve.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/soy/soy.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/soy/soy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/sql/sql.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/sql/sql.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/stylus/stylus.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/stylus/stylus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/tiddlywiki/tiddlywiki.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/tiddlywiki/tiddlywiki.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/vbscript/vbscript.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/vbscript/vbscript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/velocity/velocity.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/velocity/velocity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/verilog/verilog.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/verilog/verilog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/wast/wast.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/wast/wast.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/yaml-frontmatter/yaml-frontmatter.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/yaml-frontmatter/yaml-frontmatter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/yaml/yaml.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/mode/yaml/yaml.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/theme/solarized.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/codemirror/theme/solarized.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-buttons/js/dataTables.buttons.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-buttons/js/dataTables.buttons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-buttons/js/dataTables.buttons.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-buttons/js/dataTables.buttons.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-colreorder/css/colReorder.bootstrap4.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-colreorder/css/colReorder.bootstrap4.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-colreorder/js/dataTables.colReorder.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-colreorder/js/dataTables.colReorder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-colreorder/js/dataTables.colReorder.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-colreorder/js/dataTables.colReorder.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-fixedheader/js/dataTables.fixedHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-fixedheader/js/dataTables.fixedHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-fixedheader/js/dataTables.fixedHeader.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-fixedheader/js/dataTables.fixedHeader.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-keytable/js/dataTables.keyTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-keytable/js/dataTables.keyTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-keytable/js/dataTables.keyTable.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-keytable/js/dataTables.keyTable.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-responsive/js/dataTables.responsive.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-responsive/js/dataTables.responsive.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-responsive/js/dataTables.responsive.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-responsive/js/dataTables.responsive.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-searchbuilder/css/searchBuilder.bootstrap4.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-searchbuilder/css/searchBuilder.bootstrap4.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-searchbuilder/js/dataTables.searchBuilder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-searchbuilder/js/dataTables.searchBuilder.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-searchbuilder/js/searchBuilder.bootstrap4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-searchbuilder/js/searchBuilder.bootstrap4.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-searchpanes/css/searchPanes.bootstrap4.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-searchpanes/css/searchPanes.bootstrap4.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-searchpanes/css/searchPanes.bootstrap4.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-searchpanes/css/searchPanes.bootstrap4.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-searchpanes/js/dataTables.searchPanes.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-searchpanes/js/dataTables.searchPanes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-searchpanes/js/dataTables.searchPanes.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-searchpanes/js/dataTables.searchPanes.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-select/css/select.bootstrap4.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-select/css/select.bootstrap4.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-select/css/select.bootstrap4.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-select/css/select.bootstrap4.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-select/js/dataTables.select.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-select/js/dataTables.select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables-select/js/dataTables.select.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables-select/js/dataTables.select.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables/jquery.dataTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables/jquery.dataTables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/datatables/jquery.dataTables.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/datatables/jquery.dataTables.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/dropzone/basic.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/dropzone/basic.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/dropzone/dropzone-amd-module.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/dropzone/dropzone-amd-module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/dropzone/dropzone.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/dropzone/dropzone.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/dropzone/dropzone.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/dropzone/dropzone.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/dropzone/min/basic.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/dropzone/min/basic.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/dropzone/min/basic.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/dropzone/min/dropzone-amd-module.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/dropzone/min/dropzone-amd-module.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/dropzone/min/dropzone.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/dropzone/min/dropzone.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/dropzone/min/dropzone.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/dropzone/min/dropzone.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/dropzone/min/dropzone.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/flot/jquery.flot.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/flot/jquery.flot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/flot/plugins/jquery.flot.stack.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/flot/plugins/jquery.flot.stack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/all.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/all.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/all.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/all.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/brands.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/brands.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/brands.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/brands.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/fontawesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/fontawesome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/fontawesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/fontawesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/regular.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/regular.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/regular.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/regular.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/solid.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/solid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/solid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/solid.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/svg-with-js.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/svg-with-js.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/svg-with-js.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/svg-with-js.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/v4-shims.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/v4-shims.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/v4-shims.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/css/v4-shims.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-brands-400.eot" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-brands-400.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-brands-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-brands-400.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-brands-400.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-brands-400.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-brands-400.woff" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-brands-400.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-brands-400.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-brands-400.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-regular-400.eot" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-regular-400.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-regular-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-regular-400.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-regular-400.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-regular-400.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-regular-400.woff" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-regular-400.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-regular-400.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-regular-400.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-solid-900.eot" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-solid-900.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-solid-900.svg" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-solid-900.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-solid-900.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-solid-900.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-solid-900.woff" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-solid-900.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-solid-900.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fontawesome-free/webfonts/fa-solid-900.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales-all.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales-all.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales-all.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales-all.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/az.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/az.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/bg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/bs.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/bs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/cs.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/cs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/cy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/de-at.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/de.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/de.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/eo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/et.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/et.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/fa.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/fa.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/hi.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/hi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/hr.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/hr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/hy-am.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/it.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/it.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/ja.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/ja.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/ka.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/ka.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/kk.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/kk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/lv.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/lv.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/mk.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/mk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/ms.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/ms.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/nl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/pt-br.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/pt-br.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/ro.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/ro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/ru.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/ru.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/sk.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/sk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/sq.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/sq.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/sr-cyrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/sr-cyrl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/sr.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/sr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/ta-in.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/uk.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/uk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/uz.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/uz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/vi.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/vi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/zh-cn.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/locales/zh-cn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/main.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/fullcalendar/main.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/additional-methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/additional-methods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/additional-methods.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/additional-methods.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/jquery.validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/jquery.validate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/jquery.validate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/jquery.validate.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_ar.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_ar.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_az.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_az.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_bg.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_bg.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_bn_BD.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_bn_BD.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_ca.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_ca.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_cs.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_cs.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_da.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_da.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_de.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_de.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_el.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_el.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_es.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_es.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_es_AR.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_es_AR.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_es_PE.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_es_PE.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_et.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_et.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_eu.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_eu.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_fa.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_fa.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_fi.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_fi.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_fr.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_fr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_fr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_fr.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_ge.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_ge.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_gl.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_gl.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_he.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_he.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_hr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_hr.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_hu.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_hu.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_hy_AM.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_hy_AM.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_id.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_id.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_is.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_is.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_it.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_it.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_ja.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_ja.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_ka.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_ka.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_kk.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_kk.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_ko.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_ko.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_lt.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_lt.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_lv.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_lv.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_mk.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_mk.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_my.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_my.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_nl.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_nl.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_no.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_no.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_pl.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_pl.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_pt_BR.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_pt_BR.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_pt_PT.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_pt_PT.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_ro.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_ro.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_ru.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_ru.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_sd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_sd.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_si.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_si.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_sk.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_sk.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_sl.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_sl.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_sr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_sr.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_sr_lat.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_sr_lat.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_sv.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_sv.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_th.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_th.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_tj.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_tj.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_tr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_tr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_tr.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_uk.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_uk.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_ur.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_ur.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_vi.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_vi.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_zh.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_zh.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_zh_TW.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/messages_zh_TW.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/methods_de.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/methods_de.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/methods_es_CL.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/methods_es_CL.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/methods_fi.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/methods_fi.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/methods_it.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/methods_it.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/methods_nl.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/methods_nl.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/methods_pt.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery-validation/localization/methods_pt.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery/jquery.min.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery/jquery.min.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery/jquery.slim.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery/jquery.slim.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery/jquery.slim.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery/jquery.slim.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jquery/jquery.slim.min.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jquery/jquery.slim.min.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jszip/jszip.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jszip/jszip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/jszip/jszip.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/jszip/jszip.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/overlayScrollbars/js/OverlayScrollbars.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/overlayScrollbars/js/OverlayScrollbars.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/overlayScrollbars/js/OverlayScrollbars.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/overlayScrollbars/js/OverlayScrollbars.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/pdfmake/pdfmake.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/pdfmake/pdfmake.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/pdfmake/pdfmake.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/pdfmake/pdfmake.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/pdfmake/pdfmake.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/pdfmake/pdfmake.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/pdfmake/pdfmake.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/pdfmake/pdfmake.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/select2-bootstrap4-theme/select2-bootstrap4.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/select2-bootstrap4-theme/select2-bootstrap4.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/sweetalert2/sweetalert2.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/sweetalert2/sweetalert2.all.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/sweetalert2/sweetalert2.all.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/sweetalert2/sweetalert2.all.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/sweetalert2/sweetalert2.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/sweetalert2/sweetalert2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/sweetalert2/sweetalert2.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/sweetalert2/sweetalert2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/sweetalert2/sweetalert2.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/sweetalert2/sweetalert2.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/sweetalert2/sweetalert2.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/sweetalert2/sweetalert2.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/uplot/uPlot.cjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/uplot/uPlot.cjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/uplot/uPlot.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/uplot/uPlot.esm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/uplot/uPlot.iife.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/uplot/uPlot.iife.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/uplot/uPlot.iife.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/uplot/uPlot.iife.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/plugins/uplot/uPlot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/plugins/uplot/uPlot.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/starter.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/starter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/modal_dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/modal_dialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Company.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Company.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Employee.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Employee.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Filelog.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Filelog.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Sales.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Sales.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/Db.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/Db.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Excel.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Excel.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Router.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Router.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.ini.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connectDB.php" beforeDir="false" afterPath="$PROJECT_DIR$/connectDB.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AdminController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/EmployeeController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/EmployeeController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/ErrorHandleController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ErrorHandleController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/HomepageController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/HomepageController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/IndexController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/IndexController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/SalesController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SalesController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/UserController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/UserController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/header.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sales/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sales/sidebar_menu.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sidebar_profile.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sidebar_profile.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/sidebar_menu.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/dashboard.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/dashboard.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/manage_company.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_company.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/manage_sales.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_sales.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/manage_user.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_user.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/error_handle.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/error_handle.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index_admin.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index_admin.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index_sale.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index_sale.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index_user.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index_user.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/login.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_companymanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_companymanage.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_editprofile.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_editprofile.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_importcompany.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importcompany.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_importsales.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importsales.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_importuser.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importuser.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_salesmanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_salesmanage.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_usermanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_usermanage.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" notifyAboutMissingVendor="false" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/AdminLTE/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -568,6 +78,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -581,6 +92,12 @@
       <workItem from="1620565801130" duration="550000" />
       <workItem from="1620566376588" duration="197000" />
       <workItem from="1620566721577" duration="365000" />
+      <workItem from="1620749659818" duration="918000" />
+      <workItem from="1620750769618" duration="425000" />
+      <workItem from="1620751237961" duration="20000" />
+      <workItem from="1620751301099" duration="555000" />
+      <workItem from="1620751994659" duration="202000" />
+      <workItem from="1620752214462" duration="486000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>

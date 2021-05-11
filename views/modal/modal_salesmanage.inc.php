@@ -13,9 +13,9 @@
                 <!-- Form -->
                 <form id="form_salesmanage" method='post' action='' enctype="multipart/form-data">
                     <!-- <input type="hidden" name="ID_Excel" value=""/> -->
-                     <div class="form-group" id="div_idsales">
-                         <!--   <label for="ID_Excel" class="col-form-label">ไอดียอดขาย:</label> -->
-   <!--                        <input type="text" class="form-control" id="ID_Excel" name="ID_Excel" value=""> -->
+                    <div class="form-group" id="div_idsales">
+                        <!--   <label for="ID_Excel" class="col-form-label">ไอดียอดขาย:</label> -->
+                        <!--                        <input type="text" class="form-control" id="ID_Excel" name="ID_Excel" value=""> -->
                     </div>
                     <div class="form-group ">
                         <label for="Date_Sales" class="col-form-label">วันที่ขาย:</label>
@@ -28,7 +28,7 @@
                             <?php
                             foreach ($companyList as $company) {
                                 ?>
-                                <option value="<?php echo $company->getID_Company()?>"><?php echo $company->getName_Company()?></option>
+                                <option value="<?php echo $company->getID_Company() ?>"><?php echo $company->getName_Company() ?></option>
                                 <?php
                             }
                             ?>
@@ -40,7 +40,7 @@
                         <label for="ID_Employee" class="col-form-label">ชื่อพนักงาน:</label>
                         <select class="form-control" name="ID_Employee">
                             <?php foreach ($employeeList as $employee) { ?>
-                                <option value="<?php echo $employee->getID_Employee(); ?>"><?php echo $employee->getName_Employee(). " " . $employee->getSurname_Employee(); ?></option>
+                                <option value="<?php echo $employee->getID_Employee(); ?>"><?php echo $employee->getName_Employee() . " " . $employee->getSurname_Employee(); ?></option>
                             <?php } ?>
                         </select>
                         <!--                        <input type="text" class="form-control" id="ID_Employee" name="ID_Employee" value="" required="required" >-->
@@ -48,13 +48,14 @@
                     <div class="form-group">
                         <label for="Result_Sales" class="col-form-label">ยอดขาย:</label>
                         <input type="number" class="form-control" id="Result_Sales" name="Result_Sales" value=""
-                               required="required" min ="0">
+                               required="required" min="0">
                     </div>
                 </form>
             </div>
 
             <div class="modal-footer">
-                <a href="#" id="button_salesmanageModal" onclick="onaction_createorupdate()" data-status="" data-id="" class="btn btn-primary">ตกลง</a>
+                <a href="#" id="button_salesmanageModal" onclick="onaction_createorupdate()" data-status="" data-id=""
+                   class="btn btn-primary">ตกลง</a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
             </div>
 

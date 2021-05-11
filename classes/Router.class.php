@@ -1,5 +1,7 @@
 <?php
-class Router {
+
+class Router
+{
 
     //--------------- Properties
     private $controller; // target controller
@@ -14,30 +16,36 @@ class Router {
     private static $sourcePath; // path ของไฟล์ที่เรียกใช้ router เทียบกับ root folder
 
     //--------------- Constructor
-    public function __construct(string $path) {
+    public function __construct(string $path)
+    {
         self::$sourcePath = $path;
     }
 
     //--------------- Methods
-    public static function getSourcePath(): string {
+    public static function getSourcePath(): string
+    {
         return self::$sourcePath;
     }
-    public function load() {
+
+    public function load()
+    {
         $this->getController();
-        $class = $this->controller."Controller";
+        $class = $this->controller . "Controller";
         $controller = new $class();
         // Call action of target controller
-        $controller->handleRequest($this->action,$this->params);
+        $controller->handleRequest($this->action, $this->params);
     }
-    private function getController() {
-        $this->controller = $_GET['controller']??"Index";
-        $this->action = $_GET['action']??"index";
-        $this->file = "./controllers/".$this->controller."Controller.class.php";
+
+    private function getController()
+    {
+        $this->controller = $_GET['controller'] ?? "Index";
+        $this->action = $_GET['action'] ?? "index";
+        $this->file = "./controllers/" . $this->controller . "Controller.class.php";
         $this->params["GET"] = $_GET;
         $this->params["POST"] = $_POST;
 
-        if(isset($_FILES)){
-            $this->params["FILES"] = $_FILES; 
+        if (isset($_FILES)) {
+            $this->params["FILES"] = $_FILES;
         }
     }
 }

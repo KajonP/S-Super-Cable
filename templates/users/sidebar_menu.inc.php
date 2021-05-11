@@ -11,7 +11,7 @@
             <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
             <li class="nav-item menu-open">
-                <a  class="nav-link active">
+                <a class="nav-link active">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
                         หน้าหลัก
@@ -29,7 +29,7 @@
                     </li>
                 </ul>
             <li class="nav-item menu-open">
-                <a  class="nav-link active">
+                <a class="nav-link active">
                     <i class="nav-icon  fas fa-gift"></i>
                     <p>
                         เบิก/คืน
@@ -48,7 +48,7 @@
                 </ul>
 
             <li class="nav-item menu-open">
-                <a  class="nav-link active">
+                <a class="nav-link active">
                     <i class="nav-icon fas fa-sign-out-alt"></i>
                     <p>
                         ออกจากระบบ
