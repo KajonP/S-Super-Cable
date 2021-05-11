@@ -272,7 +272,25 @@ $('#form_importexcel').validate({
     }
 });
 // eof
+function downloadExcel(){
+    var url_string  =  "index.php?controller=Admin&action=export_excel";
+    // $.ajax({
+    //     type: "POST",
+    //     url: "index.php?controller=Admin&action=export_excel",
+    //     data: {
+    //         "page" : 'manage_user'
+    //     },
+    //     type: "POST",
+    //     dataType: 'json',
+    //     async:false,
+    //     success: function(data,status,xhr){
+    //                 var data = JSON.parse(data);
+                    
 
+
+    //         }
+    //     });
+}
 $("#button_importuserModal").on('click', function(event) {
     var form_importexcel = $('#form_importexcel')[0];
     var formData_importexcel = new FormData(form_importexcel);

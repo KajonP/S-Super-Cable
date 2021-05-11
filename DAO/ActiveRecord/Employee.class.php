@@ -367,4 +367,9 @@ class Employee
         
     }
 
+
+    public function export_excel(string $page){
+        
+    }
+
 }
