@@ -266,47 +266,59 @@ class AdminController
 			$objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(20);
 			$objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(20);
 			$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(20);     
-			$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(20);                                              
+			$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(20);  
+            $objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(20);  
+            $objPHPExcel->getActiveSheet()->getColumnDimension('F')->setWidth(20);  
+            $objPHPExcel->getActiveSheet()->getColumnDimension('G')->setWidth(20);                                              
 			 
 			// กำหนดหัวข้อให้กับแถวแรก
 			$objPHPExcel->setActiveSheetIndex(0)  
-						->setCellValue('A1', 'ไอดีพนักงาน')    
-						->setCellValue('B1', 'ชื่อ') 
-						->setCellValue('C1', 'นามสกุล')  
-						->setCellValue('D1', 'ชื่อผู้ใช้')
-                        ->setCellValue('E1', 'สถานะ');
+						->setCellValue('A1', 'ID_Employee')    
+						->setCellValue('B1', 'Name_Employee') 
+						->setCellValue('C1', 'Surname_Employee')  
+						->setCellValue('D1', 'Username_Employee')
+                        ->setCellValue('E1', 'Email_Employee')
+                        ->setCellValue('F1', 'Password_Employee')
+                        ->setCellValue('G1', 'User_Status_Employee');
 
 			$start_row=2; 
+                        $objPHPExcel->setActiveSheetIndex(0)  
+                        ->setCellValue('A'.$start_row, "x99")    
+                        ->setCellValue('B'.$start_row, "firstname")  
+                        ->setCellValue('C'.$start_row, "lastname")  
+                        ->setCellValue('D'.$start_row, "username")
+                        ->setCellValue('E'.$start_row, "exam@gmail.com")
+                        ->setCellValue('F'.$start_row, "example123E$")
+                        ->setCellValue('G'.$start_row, "Admin");
 		
-			if(!empty($exportExcelEmployee)){
 				$i =0;
 				
-				foreach($exportExcelEmployee as $i => $result_array){
-					 // หากอยากจัดข้อมูลราคาให้ชิดขวา
-					$objPHPExcel->getActiveSheet()
-						->getStyle('C'.$start_row)
-						->getAlignment()  
-						->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);         
+				// foreach($exportExcelEmployee as $i => $result_array){
+				// 	 // หากอยากจัดข้อมูลราคาให้ชิดขวา
+				// 	$objPHPExcel->getActiveSheet()
+				// 		->getStyle('C'.$start_row)
+				// 		->getAlignment()  
+				// 		->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);         
 						
-					// หากอยากจัดให้รหัสสินค้ามีเลย 0 ด้านหน้า และแสดง 3     หลักเช่น 001 002
-					// $objPHPExcel->getActiveSheet()
-					// 	->getStyle('B'.$start_row)
-					// 	->getNumberFormat()
-					// 	->setFormatCode('000');          
+				// 	// หากอยากจัดให้รหัสสินค้ามีเลย 0 ด้านหน้า และแสดง 3     หลักเช่น 001 002
+				// 	// $objPHPExcel->getActiveSheet()
+				// 	// 	->getStyle('B'.$start_row)
+				// 	// 	->getNumberFormat()
+				// 	// 	->setFormatCode('000');          
 						
-					// เพิ่มข้อมูลลงแต่ละเซลล์      
-					if(isset($exportExcelEmployee[$i])){          
+				// 	// เพิ่มข้อมูลลงแต่ละเซลล์      
+				// 	if(isset($exportExcelEmployee[$i])){          
 					
-						$objPHPExcel->setActiveSheetIndex(0)  
-									->setCellValue('A'.$start_row, $exportExcelEmployee[$i]->getID_Employee())    
-									->setCellValue('B'.$start_row, $exportExcelEmployee[$i]->getName_Employee())  
-									->setCellValue('C'.$start_row, $exportExcelEmployee[$i]->getSurname_Employee())  
-									->setCellValue('D'.$start_row, $exportExcelEmployee[$i]->getUsername_Employee())
-                                    ->setCellValue('E'.$start_row, $exportExcelEmployee[$i]->getUser_Status_Employee());
-					}
+				// 		$objPHPExcel->setActiveSheetIndex(0)  
+				// 					->setCellValue('A'.$start_row, $exportExcelEmployee[$i]->getID_Employee())    
+				// 					->setCellValue('B'.$start_row, $exportExcelEmployee[$i]->getName_Employee())  
+				// 					->setCellValue('C'.$start_row, $exportExcelEmployee[$i]->getSurname_Employee())  
+				// 					->setCellValue('D'.$start_row, $exportExcelEmployee[$i]->getUsername_Employee())
+                //                     ->setCellValue('E'.$start_row, $exportExcelEmployee[$i]->getUser_Status_Employee());
+				// 	}
 					
-					++ $start_row;
-				}
+				// 	++ $start_row;
+				// }
 				// กำหนดรูปแบบของไฟล์ที่ต้องการเขียนว่าเป็นไฟล์ excel แบบไหน ในที่นี้เป้นนามสกุล xlsx  ใช้คำว่า Excel2007
 				// แต่หากต้องการกำหนดเป็นไฟล์ xls ใช้กับโปรแกรม excel รุ่นเก่าๆ ได้ ให้กำหนดเป็น  Excel5
 				
@@ -338,12 +350,7 @@ class AdminController
 				// die($objWriter);
                 //die;
 
-			}else{
-				// status that return to frontend
-				$status = false;
-				// error message handle
-				$message = "ไม่พบข้อมูล";
-			}
+			
             
         } catch (Exception $e) {
 			// status that return to frontend
