@@ -2,7 +2,8 @@
 # excel library
 include Router::getSourcePath() . 'classes/Excel.class.php';
 
-class SalesController {
+class SalesController
+{
 
     /**
      * handleRequest จะทำการตรวจสอบ action และพารามิเตอร์ที่ส่งเข้ามาจาก Router
@@ -11,7 +12,8 @@ class SalesController {
      * @param string $action ชื่อ action ที่ผู้ใช้ต้องการทำ
      * @param array $params พารามิเตอร์ที่ใช้เพื่อในการทำ action หนึ่งๆ
      */
-    public function handleRequest(string $action="index", array $params) {
+    public function handleRequest(string $action = "index", array $params)
+    {
         switch ($action) {
             case "index":
                 $this->index();
@@ -25,7 +27,7 @@ class SalesController {
                 break;
             case "edit_sales" :
                 $ID_Excel = isset($params["GET"]["ID_Excel"]) ? $params["GET"]["ID_Excel"] : "";
-                $result = $this->$action($params["POST"] , $ID_Excel);
+                $result = $this->$action($params["POST"], $ID_Excel);
                 echo $result;
                 break;
             case "delete_sales":
@@ -34,13 +36,13 @@ class SalesController {
                 break;
             case "import_excel":
                 $FILES = isset($params["FILES"]["file"]) ? $params["FILES"]["file"] : "";
-                $result = $this->$action($params["POST"] , $FILES );
+                $result = $this->$action($params["POST"], $FILES);
                 echo $result;
                 break;
             case "findbyID":
                 $ID_Excel = isset($params["POST"]["ID_Excel"]) ? $params["POST"]["ID_Excel"] : "";
 
-                if(!empty($ID_Excel)){
+                if (!empty($ID_Excel)) {
                     $result = $this->$action($ID_Excel);
                     echo $result;
                 }
@@ -49,13 +51,14 @@ class SalesController {
                 break;
         }
     }
-    private function import_excel(array $params , array $FILES){
+
+    private function import_excel(array $params, array $FILES)
+    {
         $excel = new Excel();
         $path = $FILES["tmp_name"];
         $object = PHPExcel_IOFactory::load($path);
         $params = array();
-        foreach($object->getWorksheetIterator() as $worksheet)
-        {
+        foreach ($object->getWorksheetIterator() as $worksheet) {
             $highestRow = $worksheet->getHighestRow();
             $highestColumn = $worksheet->getHighestColumn();
             //  echo $highestRow;exit();
@@ -71,10 +74,10 @@ class SalesController {
 
                     $strStartDate = "1900-01-01";
                     $date = $Date_Sales;
-                    $strto_dayte =  strtotime("+" . $date . "days", strtotime($strStartDate));
+                    $strto_dayte = strtotime("+" . $date . "days", strtotime($strStartDate));
 
                     $push_array = array(//"ID_Excel" => $ID_Excel,
-                        "Date_Sales" =>date("Y-m-d", $strto_dayte),
+                        "Date_Sales" => date("Y-m-d", $strto_dayte),
                         "ID_Company" => $ID_Company,
                         "ID_Employee" => $ID_Employee,
                         "Result_Sales" => $Result_Sales
@@ -89,9 +92,12 @@ class SalesController {
         $result = $sales_->create_sales_at_once($params);
         return json_encode($result);
     }
-    private function error_handle(string $message) {
+
+    private function error_handle(string $message)
+    {
         $this->index($message);
     }
+
     private function create_sales($params)
     {
         # สร้างยอดขาย

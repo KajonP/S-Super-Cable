@@ -1,4 +1,3 @@
-
 // var columns = [
 //   { "width": "5%" , "class": "text-left"},
 //   { "width": "5%" , "class": "text-center"},
@@ -16,20 +15,20 @@
 
 // ]
 var columns = [
-  { "width": "10%" , "class": "text-left"},
-  { "width": "20%" , "class": "text-center"},
-  { "width": "20%"  , "class": "text-center"},
-  { "width": "20%"  , "class": "text-left"},
-  { "width": "40%"  , "class": "text-center"},
+  {"width": "10%", "class": "text-left"},
+  {"width": "20%", "class": "text-center"},
+  {"width": "20%", "class": "text-center"},
+  {"width": "20%", "class": "text-left"},
+  {"width": "40%", "class": "text-center"},
 
 ]
 
-var dataTable_ = $('#tbl_companymanagement').DataTable( {
+var dataTable_ = $('#tbl_companymanagement').DataTable({
   "processing": true,
   "bDestroy": true,
-  "bPaginate":true,
-  "bFilter":true,
-  "bInfo" : true,
+  "bPaginate": true,
+  "bFilter": true,
+  "bInfo": true,
   "searching": true,
 
 
@@ -39,9 +38,9 @@ var dataTable_ = $('#tbl_companymanagement').DataTable( {
   },
   responsive: true,
 
-  initComplete: function(){
+  initComplete: function () {
 
-  } ,
+  },
 
   "columns": columns
 
@@ -83,7 +82,7 @@ var form_validte = $("#form_companymanage").validate({
     Cluster_Shop: {
       required: true,
     },
-    Contact_Name_Company :{
+    Contact_Name_Company: {
       required: false,
     },
     IS_Blacklist: {
@@ -96,7 +95,7 @@ var form_validte = $("#form_companymanage").validate({
   },
   messages: {
     ID_Company: {
-     // required: "กรุณาใส่ข้อมูล",
+      // required: "กรุณาใส่ข้อมูล",
     },
     Name_Company: {
       required: "กรุณาใส่ข้อมูล",
@@ -126,32 +125,33 @@ var form_validte = $("#form_companymanage").validate({
       minlength: "ข้อมูลต้องมีอย่าง 3 ตัวอักษร"
     },
     action: "กรุณาใส่ข้อมูล"
-  },errorPlacement: function(error, element) { {
-      error.insertAfter(element)}
+  }, errorPlacement: function (error, element) {
+    {
+      error.insertAfter(element)
+    }
   }
 });
 
-function companymanageShow(type,ID_Company =null){
+function companymanageShow(type, ID_Company = null) {
   //clear ค่าเก่า
-  $('#form_companymanage input').attr('readonly' , false);
-  $('#form_companymanage select').attr("disabled", false); 
+  $('#form_companymanage input').attr('readonly', false);
+  $('#form_companymanage select').attr("disabled", false);
   $('#button_companymanageModal').show();
 
 
-  
   var title = "";
 
   /* clear old form value */
   $('#form_companymanage')[0].reset();
 
-  switch(type) {
+  switch (type) {
     case 'create':
       title = "สร้างบริษัทลูกค้า";
 
       $('#div_idcompany').show();
 
       // set id
-      $('#button_companymanageModal').attr("data-id" , null);
+      $('#button_companymanageModal').attr("data-id", null);
       break;
     case 'edit':
       title = "เเก้ไขบริษัทลูกค้า ";
@@ -161,18 +161,18 @@ function companymanageShow(type,ID_Company =null){
       onaction_getinptval(ID_Company);
 
       break;
-      case 'view':
-        title = "บริษัทลูกค้า ";
-        //clear error if exists
-        form_validte.resetForm();
+    case 'view':
+      title = "บริษัทลูกค้า ";
+      //clear error if exists
+      form_validte.resetForm();
 
-        onaction_getinptval(ID_Company);
+      onaction_getinptval(ID_Company);
 
       $('#form_companymanage input').attr('readonly', 'readonly');
-      $('#form_companymanage select').attr("disabled", true); 
+      $('#form_companymanage select').attr("disabled", true);
       $('#button_companymanageModal').hide();
-  
-        break;
+
+      break;
     default:
       // ..
       break;
@@ -182,26 +182,26 @@ function companymanageShow(type,ID_Company =null){
   $('#companymanageTitle').html(title);
 
   /* set button event  */
-  $('#button_companymanageModal').attr("data-status" , type);
+  $('#button_companymanageModal').attr("data-status", type);
 
   /* modal show  */
   $('#companymanageModal').modal('show');
 }
 
-function onaction_getinptval(ID_Company){
+function onaction_getinptval(ID_Company) {
   $.ajax({
     url: "index.php?controller=Company&action=findbyID",
     data: {
-      "ID_Company" : ID_Company
+      "ID_Company": ID_Company
     },
     type: "POST",
     dataType: 'json',
-    async:false,
-    success: function(response, status) {
+    async: false,
+    success: function (response, status) {
       /* set input value */
       $('#div_idcompany').hide();
 
-       $('#ID_Company').val(response.data.ID_Company);
+      $('#ID_Company').val(response.data.ID_Company);
       $('#Name_Company').val(response.data.Name_Company);
       $('#Address_Company').val(response.data.Address_Company);
       $("#Tel_Company").val(response.data.Tel_Company);
@@ -220,14 +220,15 @@ function onaction_getinptval(ID_Company){
         .trigger('change');
       $('#Cause_Blacklist').val(response.data.Cause_Blacklist);
       // set id
-      $('#button_companymanageModal').attr("data-id" , ID_Company);
+      $('#button_companymanageModal').attr("data-id", ID_Company);
     },
-    error: function(xhr, status, exception) {
+    error: function (xhr, status, exception) {
       //console.log(xhr);
     }
   });
 }
-function onaction_deletecompany(ID_Company){
+
+function onaction_deletecompany(ID_Company) {
   Swal.fire({
     title: 'คุณเเน่ใจใช่ไหม?',
     text: "คุณต้องการลบข้อมูลนี้ใช่ไหม?",
@@ -243,13 +244,13 @@ function onaction_deletecompany(ID_Company){
       $.ajax({
         url: "index.php?controller=Company&action=delete_company",
         data: {
-          "ID_Company" : ID_Company
+          "ID_Company": ID_Company
         },
         type: "POST",
         dataType: 'json',
-        async:false,
-        success: function(data, status) {
-          if(data.status == true){
+        async: false,
+        success: function (data, status) {
+          if (data.status == true) {
             Swal.fire(
               'ลบเรียบร้อย!',
               'ข้อมูลคุณถูกลบเรียบร้อยเเล้ว',
@@ -261,7 +262,7 @@ function onaction_deletecompany(ID_Company){
           }
 
         },
-        error: function(xhr, status, exception) {
+        error: function (xhr, status, exception) {
           //console.log(xhr);
         }
       });
@@ -270,22 +271,22 @@ function onaction_deletecompany(ID_Company){
   })
 }
 
-$("#button_importcompanyModal").on('click', function(event) {
+$("#button_importcompanyModal").on('click', function (event) {
   var form_importexcel = $('#form_importexcel')[0];
   var formData_importexcel = new FormData(form_importexcel);
-  var url_string  =  "index.php?controller=Company&action=import_excel";
-  if($('#form_importexcel input[type=file]').val() != ''){
+  var url_string = "index.php?controller=Company&action=import_excel";
+  if ($('#form_importexcel input[type=file]').val() != '') {
     $.ajax({
       type: "POST",
-      url:  url_string,
+      url: url_string,
       processData: false,
       contentType: false,
       data: formData_importexcel,
-      success: function(res,status,xhr){
+      success: function (res, status, xhr) {
         console.log(res);
         var data = JSON.parse(res);
         console.log(data);
-        if(data.status == true){
+        if (data.status == true) {
           Swal.fire({
             icon: 'success',
             title: 'สำเร็จ',
@@ -293,7 +294,7 @@ $("#button_importcompanyModal").on('click', function(event) {
             location.reload();
 
           });
-        }else{
+        } else {
           Swal.fire({
             icon: 'error',
             title: 'ขออภัย...',
@@ -307,7 +308,7 @@ $("#button_importcompanyModal").on('click', function(event) {
       }
     });
 
-  }else{
+  } else {
     // error handle
     Swal.fire({
       icon: 'error',
@@ -321,16 +322,16 @@ $("#button_importcompanyModal").on('click', function(event) {
 
 });
 
-function onaction_createorupdate(ID_Company = null){
+function onaction_createorupdate(ID_Company = null) {
 
   var type = $('#button_companymanageModal').attr("data-status");
 
   var form = $('#form_companymanage')[0];
   var formData = new FormData(form);
 
-  switch(type) {
+  switch (type) {
     case 'create':
-      var url_string  =  "index.php?controller=Company&action=create_company";
+      var url_string = "index.php?controller=Company&action=create_company";
       if (!$("#form_companymanage").validate().form()) {
         Swal.fire({
           icon: 'error',
@@ -340,16 +341,16 @@ function onaction_createorupdate(ID_Company = null){
           return;
 
         });
-      }else{
+      } else {
         $.ajax({
           type: "POST",
-          url:  url_string,
+          url: url_string,
           data: formData,
           processData: false,
           contentType: false,
-          success: function(data,status,xhr){
+          success: function (data, status, xhr) {
             var data = JSON.parse(data);
-            if(data.status == true){
+            if (data.status == true) {
               Swal.fire({
                 icon: 'success',
                 title: 'สำเร็จ',
@@ -357,7 +358,7 @@ function onaction_createorupdate(ID_Company = null){
                 location.reload();
 
               });
-            }else{
+            } else {
               Swal.fire({
                 icon: 'error',
                 title: 'ขออภัย...',
@@ -375,7 +376,7 @@ function onaction_createorupdate(ID_Company = null){
     case 'edit':
       var ID_Company = $("#button_companymanageModal").attr("data-id");
 
-      var url_string  =  "index.php?controller=Company&action=edit_company&ID_Company=" + ID_Company;
+      var url_string = "index.php?controller=Company&action=edit_company&ID_Company=" + ID_Company;
       if (!$("#form_companymanage").validate().form()) {
         Swal.fire({
           icon: 'error',
@@ -385,17 +386,17 @@ function onaction_createorupdate(ID_Company = null){
           return;
 
         });
-      }else{
+      } else {
         $.ajax({
           type: "POST",
-          url:  url_string,
+          url: url_string,
           data: formData,
           processData: false,
           contentType: false,
-          success: function(data,status,xhr){
+          success: function (data, status, xhr) {
             var data = JSON.parse(data);
             console.log(data);
-            if(data.status == true){
+            if (data.status == true) {
               Swal.fire({
                 icon: 'success',
                 title: 'สำเร็จ',
@@ -403,7 +404,7 @@ function onaction_createorupdate(ID_Company = null){
                 location.reload();
 
               });
-            }else{
+            } else {
               Swal.fire({
                 icon: 'error',
                 title: 'ขออภัย...',
@@ -425,7 +426,7 @@ function onaction_createorupdate(ID_Company = null){
 }
 
 
-function importShow(){
+function importShow() {
 
   /* modal show  */
   $('#importcompanyModal').modal('show');

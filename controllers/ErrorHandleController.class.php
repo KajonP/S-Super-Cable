@@ -1,6 +1,7 @@
 <?php
 
-class ErrorHandleController {
+class ErrorHandleController
+{
 
     /**
      * handleRequest จะทำการตรวจสอบ action และพารามิเตอร์ที่ส่งเข้ามาจาก Router
@@ -9,10 +10,11 @@ class ErrorHandleController {
      * @param string $action ชื่อ action ที่ผู้ใช้ต้องการทำ
      * @param array $params พารามิเตอร์ที่ใช้เพื่อในการทำ action หนึ่งๆ
      */
-    public function handleRequest(string $action="index", array $params) {
+    public function handleRequest(string $action = "index", array $params)
+    {
         switch ($action) {
             case "error_handle":
-                $message = $params["GET"]["message"]??"";
+                $message = $params["GET"]["message"] ?? "";
                 $this->$action($message);
                 break;
             default:
@@ -20,14 +22,16 @@ class ErrorHandleController {
         }
     }
 
-    private function error_handle(string $message) {
+    private function error_handle(string $message)
+    {
         $this->index($message);
     }
 
- 
+
     // ควรมีสำหรับ controller ทุกตัว
-    private function index($message) {
-        include Router::getSourcePath()."views/error_handle.inc.php";
+    private function index($message)
+    {
+        include Router::getSourcePath() . "views/error_handle.inc.php";
     }
 
 }

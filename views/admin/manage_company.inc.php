@@ -37,12 +37,18 @@ try {
                             <!-- /.card-header -->
                             <div class="form-group row mt-2 mb-2 mr-1">
                                 <div class="col-md-12 text-right">
-                                    <a href="#"  onclick="importShow()" class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">
-                                        <span class="btn btn-round btn-success" style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i class="fa fa-file"></i> อัปโหลดไฟล์ excel </span>
+                                    <a href="#" onclick="importShow()" class="collapse-link text-right mt-2 mb-2 mr-2"
+                                       style="color: #415468;">
+                                        <span class="btn btn-round btn-success"
+                                              style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i
+                                                    class="fa fa-file"></i> อัปโหลดไฟล์ excel </span>
                                     </a>
 
-                                    <a href="#"  onclick="companymanageShow('create')" class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">
-                                        <span class="btn btn-round btn-success" style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i class="fa fa-plus"></i> สร้างบริษัทลูกค้า </span>
+                                    <a href="#" onclick="companymanageShow('create')"
+                                       class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">
+                                        <span class="btn btn-round btn-success"
+                                              style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i
+                                                    class="fa fa-plus"></i> สร้างบริษัทลูกค้า </span>
                                     </a>
                                 </div>
                             </div>
@@ -67,31 +73,43 @@ try {
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <?php $i = 1;?>
-                                        <?php  foreach($company as $key => $value) {?>
+                                        <?php $i = 1; ?>
+                                        <?php foreach ($company as $key => $value) { ?>
                                             <tr>
                                                 <td><?php echo $i++; ?></td>
-                                                <td><?php echo $value->getName_Company();?></td>
-                                                <td><?php echo $value->getAddress_Company();?></td>
-                                                <td><?php echo $value->getTel_Company();?></td>
-                                                <!-- <td><?php echo $value->getEmail_Company();?></td>
-                                                <td><?php echo $value->getTax_Number_Company();?></td>
-                                                <td><?php echo number_format($value->getCredit_Limit_Company(),2);?></td>
-                                                <td><?php echo $value->getCredit_Term_Company();?></td>
-                                                <td><?php echo $value->getCluster_Shop();?></td>
-                                                <td><?php echo $value->getContact_Name_Company();?></td>
-                                                <td><?php echo $value->getIS_Blacklist();?></td>
-                                                <td><?php echo $value->getCause_Blacklist();?></td> -->
+                                                <td><?php echo $value->getName_Company(); ?></td>
+                                                <td><?php echo $value->getAddress_Company(); ?></td>
+                                                <td><?php echo $value->getTel_Company(); ?></td>
+                                                <!-- <td><?php echo $value->getEmail_Company(); ?></td>
+                                                <td><?php echo $value->getTax_Number_Company(); ?></td>
+                                                <td><?php echo number_format($value->getCredit_Limit_Company(), 2); ?></td>
+                                                <td><?php echo $value->getCredit_Term_Company(); ?></td>
+                                                <td><?php echo $value->getCluster_Shop(); ?></td>
+                                                <td><?php echo $value->getContact_Name_Company(); ?></td>
+                                                <td><?php echo $value->getIS_Blacklist(); ?></td>
+                                                <td><?php echo $value->getCause_Blacklist(); ?></td> -->
                                                 <td class=" last text-center">
-                                                    <a href="#"  onclick="companymanageShow('view','<?php echo $value->getID_Company();?>')">
-                                                        <button type="button" class="btn btn-round btn-info" style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;"><i class="fa fa-eye"></i>เพิ่มเติม</button>
+                                                    <a href="#"
+                                                       onclick="companymanageShow('view','<?php echo $value->getID_Company(); ?>')">
+                                                        <button type="button" class="btn btn-round btn-info"
+                                                                style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
+                                                            <i class="fa fa-eye"></i>เพิ่มเติม
+                                                        </button>
                                                     </a>
 
-                                                    <a href="#"  onclick="companymanageShow('edit','<?php echo $value->getID_Company();?>')">
-                                                        <button type="button" class="btn btn-round btn-warning" style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;"><i class="fa fa-wrench"></i> เเก้ไข</button>
+                                                    <a href="#"
+                                                       onclick="companymanageShow('edit','<?php echo $value->getID_Company(); ?>')">
+                                                        <button type="button" class="btn btn-round btn-warning"
+                                                                style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
+                                                            <i class="fa fa-wrench"></i> เเก้ไข
+                                                        </button>
                                                     </a>
-                                                    <a href="#" onclick="onaction_deletecompany('<?php echo $value->getID_Company();?>')">
-                                                        <button type="button" class="btn btn-round btn-danger" style=" font-size: 13px; padding: 0 10px; margin-bottom: inherit;width:96px !important;"><i class="fa fa-trash"></i> ลบ</button>
+                                                    <a href="#"
+                                                       onclick="onaction_deletecompany('<?php echo $value->getID_Company(); ?>')">
+                                                        <button type="button" class="btn btn-round btn-danger"
+                                                                style=" font-size: 13px; padding: 0 10px; margin-bottom: inherit;width:96px !important;">
+                                                            <i class="fa fa-trash"></i> ลบ
+                                                        </button>
                                                     </a>
                                                 </td>
                                             </tr>
@@ -117,7 +135,8 @@ try {
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a class="brand-link">
-            <img src="AdminLTE/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <img src="AdminLTE/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
             <span class="brand-text font-weight-light">S Super Cable</span>
         </a>
         <!-- Sidebar -->
@@ -127,11 +146,11 @@ try {
 
     <?php
     # modal dialog ( edit profile )
-    include Router::getSourcePath()."views/modal/modal_editprofile.inc.php";
+    include Router::getSourcePath() . "views/modal/modal_editprofile.inc.php";
     # modal dialog ( company manage )
-    include Router::getSourcePath()."views/modal/modal_companymanage.inc.php";
+    include Router::getSourcePath() . "views/modal/modal_companymanage.inc.php";
     # modal dialog ( import excel company  )
-    include Router::getSourcePath()."views/modal/modal_importcompany.inc.php";
+    include Router::getSourcePath() . "views/modal/modal_importcompany.inc.php";
     ?>
 
 
@@ -148,7 +167,7 @@ try {
     // $user_jsonencode = json_encode($user);
     // echo '<PRE>';
     // print_r(ob_get_clean());exit();
-    include Router::getSourcePath()."templates/layout.php";
+    include Router::getSourcePath() . "templates/layout.php";
 } catch (Throwable $e) { // PHP 7++
     echo "Access denied: No Permission to view this page";
     exit(1);

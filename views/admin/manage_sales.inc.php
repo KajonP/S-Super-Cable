@@ -37,12 +37,18 @@ try {
                             <!-- /.card-header -->
                             <div class="form-group row mt-2 mb-2 mr-1">
                                 <div class="col-md-12 text-right">
-                                    <a href="#"  onclick="importShow()" class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">
-                                        <span class="btn btn-round btn-success" style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i class="fa fa-file"></i> อัปโหลดไฟล์ excel </span>
+                                    <a href="#" onclick="importShow()" class="collapse-link text-right mt-2 mb-2 mr-2"
+                                       style="color: #415468;">
+                                        <span class="btn btn-round btn-success"
+                                              style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i
+                                                    class="fa fa-file"></i> อัปโหลดไฟล์ excel </span>
                                     </a>
 
-                                    <a href="#"  onclick="salesmanageShow('create')" class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">
-                                        <span class="btn btn-round btn-success" style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i class="fa fa-plus"></i> สร้างยอดขาย </span>
+                                    <a href="#" onclick="salesmanageShow('create')"
+                                       class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">
+                                        <span class="btn btn-round btn-success"
+                                              style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i
+                                                    class="fa fa-plus"></i> สร้างยอดขาย </span>
                                     </a>
                                 </div>
                             </div>
@@ -63,19 +69,29 @@ try {
                                         <?php
                                         // print_r($sales);exit();
                                         ?>
-                                        <?php  $i = 1; foreach($sales as $key => $value) {?>
+                                        <?php $i = 1;
+                                        foreach ($sales as $key => $value) { ?>
                                             <tr>
                                                 <td><?php echo $i++; ?></td>
-                                                <td><?php $date = date_create($value->getDate_Sales()); echo date_format($date, 'd/m/Y');?></td>
-                                                <td><?php echo $value->getName_Company();?></td>
-                                                <td><?php echo $value->getName_Employee();?></td>
-                                                <td><?php echo number_format($value->getResult_Sales(),2);?></td>
+                                                <td><?php $date = date_create($value->getDate_Sales());
+                                                    echo date_format($date, 'd/m/Y'); ?></td>
+                                                <td><?php echo $value->getName_Company(); ?></td>
+                                                <td><?php echo $value->getName_Employee(); ?></td>
+                                                <td><?php echo number_format($value->getResult_Sales(), 2); ?></td>
                                                 <td class=" last">
-                                                    <a href="#"  onclick="salesmanageShow('edit','<?php echo $value->getID_Excel();?>')">
-                                                        <button type="button" class="btn btn-round btn-warning" style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i class="fa fa-wrench"></i> เเก้ไข</button>
+                                                    <a href="#"
+                                                       onclick="salesmanageShow('edit','<?php echo $value->getID_Excel(); ?>')">
+                                                        <button type="button" class="btn btn-round btn-warning"
+                                                                style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;">
+                                                            <i class="fa fa-wrench"></i> เเก้ไข
+                                                        </button>
                                                     </a>
-                                                    <a href="#" onclick="onaction_deletesales('<?php echo $value->getID_Excel();?>')">
-                                                        <button type="button" class="btn btn-round btn-danger" style=" font-size: 13px; padding: 0 10px; margin-bottom: inherit;"><i class="fa fa-trash"></i> ลบ</button>
+                                                    <a href="#"
+                                                       onclick="onaction_deletesales('<?php echo $value->getID_Excel(); ?>')">
+                                                        <button type="button" class="btn btn-round btn-danger"
+                                                                style=" font-size: 13px; padding: 0 10px; margin-bottom: inherit;">
+                                                            <i class="fa fa-trash"></i> ลบ
+                                                        </button>
                                                     </a>
                                                 </td>
                                             </tr>
@@ -101,7 +117,8 @@ try {
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a class="brand-link">
-            <img src="AdminLTE/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <img src="AdminLTE/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
             <span class="brand-text font-weight-light">S Super Cable</span>
         </a>
         <!-- Sidebar -->
@@ -111,11 +128,11 @@ try {
 
     <?php
     # modal dialog ( edit profile )
-    include Router::getSourcePath()."views/modal/modal_editprofile.inc.php";
+    include Router::getSourcePath() . "views/modal/modal_editprofile.inc.php";
     # modal dialog ( sales manage )
-    include Router::getSourcePath()."views/modal/modal_salesmanage.inc.php";
+    include Router::getSourcePath() . "views/modal/modal_salesmanage.inc.php";
     # modal dialog ( import excel sales  )
-    include Router::getSourcePath()."views/modal/modal_importsales.inc.php";
+    include Router::getSourcePath() . "views/modal/modal_importsales.inc.php";
     ?>
 
 
@@ -132,7 +149,7 @@ try {
     // $user_jsonencode = json_encode($user);
     // echo '<PRE>';
     // print_r(ob_get_clean());exit();
-    include Router::getSourcePath()."templates/layout.php";
+    include Router::getSourcePath() . "templates/layout.php";
 } catch (Throwable $e) { // PHP 7++
     echo "Access denied: No Permission to view this page";
     exit(1);
