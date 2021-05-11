@@ -354,6 +354,7 @@ class Employee
         foreach ($params as $prop => $val) {
             # case : update password
             if ($prop == "Password_Employee") {
+               
                 $new_password = $val;
                 $val = sha1($val);
             }
@@ -373,6 +374,7 @@ class Employee
         }
         $query = substr($query, 0, -1);
         $query .= " WHERE ID_Employee = '" . $employee_id . "'";
+        //echo $query;exit();
         $con = Db::getInstance();
         if ($con->exec($query)) {
             # update new pic

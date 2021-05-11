@@ -84,11 +84,22 @@ class EmployeeController
                 unset($Params["profile"]);
             }
         }
+       
         if (isset($Params["Password_Employee_Profile"])) {
-            $Params["Password_Employee"] = $Params["Password_Employee_Profile"];
-            unset($Params["Password_Employee_Profile"]);
-            unset($Params["Password_Employee_Profile_Confirm"]);
+          
+            
+                $Params["Password_Employee"] = strlen($Params["Password_Employee_Profile"]) <= 0 ?  $_SESSION['employee']->current_password:  $Params["Password_Employee_Profile"];
+                unset($Params["Password_Employee_Profile"]);
+                unset($Params["Password_Employee_Profile_Confirm"]);
+            
+            
+           
+          
+        }else{
+            $Params["Password_Employee"] = $_SESSION['employee']->current_password;
         }
+     
+  
 
 
         $employee_update_result = $access_employee->updateProfile(
