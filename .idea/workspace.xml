@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : ใส่ * ในหัวข้อที่ต้องกรอก">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update date format sales">
+      <change beforePath="$PROJECT_DIR$/controllers/CompanyController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/SalesController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SalesController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/manage_company.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_company.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/manage_sales.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_sales.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/manage_user.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_user.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +63,7 @@
       <workItem from="1620767390583" duration="199000" />
       <workItem from="1620781056668" duration="1607000" />
       <workItem from="1620782698767" duration="175000" />
-      <workItem from="1620786107542" duration="1820000" />
+      <workItem from="1620786107542" duration="2325000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>
@@ -90,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620782750122</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="case : update date format sales">
+      <created>1620788215554</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620788215554</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +123,7 @@
     <MESSAGE value="code formatter" />
     <MESSAGE value="case : ทุกอย่างที่เเก้สำหรับ sales เเละ company" />
     <MESSAGE value="case : ใส่ * ในหัวข้อที่ต้องกรอก" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : ใส่ * ในหัวข้อที่ต้องกรอก" />
+    <MESSAGE value="case : update date format sales" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update date format sales" />
   </component>
 </project>

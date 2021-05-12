@@ -52,10 +52,6 @@ class SalesController
                 $result = $this->$action($params["POST"]);
                 echo $result;
                 break;
-            case "export_excel":
-                $result = $this->$action($params["POST"]);
-                echo $result;
-                break;
             default:
                 break;
         }
@@ -343,113 +339,5 @@ class SalesController
 
         return json_encode(array('status' => true));
     }
-
-    private function export_excel($params = null)
-    {
-        $exportExcel = new Sales();
-        $exportExcelSales = Sales::findAll();
-
-        try {
-            // เรียนกใช้ PHPExcel
-            $objPHPExcel = new PHPExcel();
-            // กำหนดค่าต่างๆ ของเอกสาร excel
-            $objPHPExcel->getProperties()->setCreator("bp.com")
-                ->setLastModifiedBy("bp.com")
-                ->setTitle("PHPExcel Test Document")
-                ->setSubject("PHPExcel Test Document")
-                ->setDescription("Test document for PHPExcel, generated using PHP classes.")
-                ->setKeywords("office PHPExcel php")
-                ->setCategory("Test result file");
-
-            // กำหนดชื่อให้กับ worksheet ที่ใช้งาน
-            $objPHPExcel->getActiveSheet()->setTitle('Report');
-
-            // กำหนด worksheet ที่ต้องการให้เปิดมาแล้วแสดง ค่าจะเริ่มจาก 0 , 1 , 2 , ......
-            $objPHPExcel->setActiveSheetIndex(0);
-
-            // การจัดรูปแบบของ cell
-            $objPHPExcel->getDefaultStyle()
-                ->getAlignment()
-                ->setVertical(PHPExcel_Style_Alignment::VERTICAL_TOP)
-                ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
-            //HORIZONTAL_CENTER //VERTICAL_CENTER
-
-            // จัดความกว้างของคอลัมน์
-            $objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(20);
-            $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(20);
-            $objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(20);
-            $objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(20);
-
-
-            // กำหนดหัวข้อให้กับแถวแรก
-            $objPHPExcel->setActiveSheetIndex(0)
-                ->setCellValue('A1', 'วันที่ขาย')
-                ->setCellValue('B1', 'ชื่อบริษัท')
-                ->setCellValue('C1', 'ชื่อพนักงานขาย')
-                ->setCellValue('D1', 'ยอดขาย');
-
-
-            $start_row = 2;
-
-            if (!empty($exportExcelSales)) {
-                $i = 0;
-
-                foreach ($exportExcelSales as $i => $result_array) {
-                    // หากอยากจัดข้อมูลราคาให้ชิดขวา
-                    $objPHPExcel->getActiveSheet()
-                        ->getStyle('C' . $start_row)
-                        ->getAlignment()
-                        ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);
-
-                    // หากอยากจัดให้รหัสสินค้ามีเลย 0 ด้านหน้า และแสดง 3     หลักเช่น 001 002
-                    // $objPHPExcel->getActiveSheet()
-                    // 	->getStyle('B'.$start_row)
-                    // 	->getNumberFormat()
-                    // 	->setFormatCode('000');
-
-                    // เพิ่มข้อมูลลงแต่ละเซลล์
-                    if (isset($exportExcelSales[$i])) {
-
-                        $objPHPExcel->setActiveSheetIndex(0)
-                            ->setCellValue('A' . $start_row, $exportExcelSales[$i]->getDate_Sales())
-                            ->setCellValue('B' . $start_row, $exportExcelSales[$i]->getName_Company())
-                            ->setCellValue('C' . $start_row, $exportExcelSales[$i]->getName_Employee())
-                            ->setCellValue('D' . $start_row, $exportExcelSales[$i]->getResult_Sales());
-                    }
-
-                    ++$start_row;
-                }
-                // กำหนดรูปแบบของไฟล์ที่ต้องการเขียนว่าเป็นไฟล์ excel แบบไหน ในที่นี้เป้นนามสกุล xlsx  ใช้คำว่า Excel2007
-                // แต่หากต้องการกำหนดเป็นไฟล์ xls ใช้กับโปรแกรม excel รุ่นเก่าๆ ได้ ให้กำหนดเป็น  Excel5
-                ob_start();
-                $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');  // Excel2007 (xlsx) หรือ Excel5 (xls)
-
-                $filename = 'Sales-' . date("dmYHi") . '.xlsx'; //  กำหนดชือ่ไฟล์ นามสกุล xls หรือ xlsx
-                // บังคับให้ทำการดาวน์ดหลดไฟล์
-                header('Content-Type: application/vnd.ms-excel'); //mime type
-                header('Content-Disposition: attachment;filename="' . $filename . '"'); //tell browser what's the file name
-                header('Cache-Control: max-age=0'); //no cache
-                ob_end_clean();
-                $objWriter->save('php://output'); // ดาวน์โหลดไฟล์รายงาน
-                //die($objWriter);
-
-            } else {
-                // status that return to frontend
-                $status = false;
-                // error message handle
-                $message = "ไม่พบข้อมูล";
-            }
-
-        } catch (Exception $e) {
-            // status that return to frontend
-            $status = false;
-            // error message handle
-            $message = $e->getMessage();
-        }
-
-
-        return json_encode(array('status' => true));
-    }
-
 
 }

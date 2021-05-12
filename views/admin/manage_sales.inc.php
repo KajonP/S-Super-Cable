@@ -37,12 +37,12 @@ try {
                             <!-- /.card-header -->
                             <div class="form-group row mt-2 mb-2 mr-1">
                                 <div class="col-md-12 text-right">
-                                    <a href="index.php?controller=Sales&action=export_excel"
-                                       class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">
-                                        <span class="btn btn-round btn-success"
-                                              style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i
-                                                    class="fa fa-file"></i> ดาวน์โหลดไฟล์ excel </span>
-                                    </a>
+<!--                                    <a href="index.php?controller=Sales&action=export_pdf"-->
+<!--                                       class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">-->
+<!--                                        <span class="btn btn-round btn-success"-->
+<!--                                              style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i-->
+<!--                                                    class="fa fa-file"></i> ดาวน์โหลดไฟล์ excel </span>-->
+<!--                                    </a>-->
                                     <a href="#" onclick="importShow()" class="collapse-link text-right mt-2 mb-2 mr-2"
                                        style="color: #415468;">
                                         <span class="btn btn-round btn-success"
