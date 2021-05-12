@@ -132,7 +132,7 @@ function usermanageShow(type, ID_Employee = null) {
       $('#resetpassword').hide();
 
       // change password label text
-      $('#lbl_Password_Employee').html("Password:");
+     // $('#lbl_Password_Employee').html("รหัสผ่าน:");
 
       // set id
       $('#button_usermanageModal').attr("data-id", null);
@@ -148,7 +148,7 @@ function usermanageShow(type, ID_Employee = null) {
       $('#resetpassword').show();
 
       // change password label text
-      $('#lbl_Password_Employee').html("New Password:");
+     // $('#lbl_Password_Employee').html("New Password:");
       $.ajax({
         url: "index.php?controller=Employee&action=findbyID",
         data: {

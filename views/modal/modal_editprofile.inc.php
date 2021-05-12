@@ -60,15 +60,15 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="username" class="col-form-label">Username:</label>
+                        <label for="username" class="col-form-label">ชื่อผู้ใช้:</label>
                         <input type="text" class="form-control" id="username" name="Username_Employee"
                                value="<?php echo $employee->getUsername_Employee() ?>" required="required">
                     </div>
                     <a href="#" id="resetpassword_Profile" class="btn btn-primary btn-block"><i class="fa fa-key"></i>
-                        Reset Password</a>
+                        รีเซ็ตรหัสผ่าน</a>
                     <div class="form-group" id="div_resetpassword_Profile" style="display:none;">
                         <label for="Password_Employee_Profile" id="lbl_Password_Employee_Profile"
-                               class="col-form-label">Password:</label>
+                               class="col-form-label">รหัสผ่าน:<span class="text-danger" >*</span></label>
                         <!-- <input type="password" class="form-control" id="Password_Employee_Profile" name="Password_Employee_Profile" value="" > -->
                         <div class="input-group" id="Password_Employee_Profile" required="required">
                             <input class="form-control" id="passEmProfile" name="Password_Employee_Profile"
@@ -79,7 +79,7 @@
                             </div>
                         </div>
                         <label for="Password_Employee_Profile" id="lbl_Password_Employee_Profile"
-                               class="col-form-label">Confirm Password:</label>
+                               class="col-form-label">ยืนยันรหัสผ่าน:<span class="text-danger" >*</span></label>
                         <div class="input-group" id="Password_Employee_Profile_Confirm" required="required">
                             <input class="form-control" name="Password_Employee_Profile_Confirm"
                                    data-rule-equalTo="#passEmProfile" type="password">
@@ -106,7 +106,7 @@
             </div> -->
 
                     <div class="form-group">
-                        <label for="email" class="col-form-label">อีเมล์:</label>
+                        <label for="email" class="col-form-label">อีเมล์:<span class="text-danger" >*</span></label>
                         <input type="email" class="form-control" id="email" name="Email_Employee"
                                value="<?php echo $employee->getEmail_Employee(); ?>" required="required">
                     </div>

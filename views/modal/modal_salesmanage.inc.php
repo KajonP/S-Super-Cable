@@ -18,12 +18,12 @@
                         <!--                        <input type="text" class="form-control" id="ID_Excel" name="ID_Excel" value=""> -->
                     </div>
                     <div class="form-group ">
-                        <label for="Date_Sales" class="col-form-label">วันที่ขาย:</label>
+                        <label for="Date_Sales" class="col-form-label">วันที่ขาย:<span class="text-danger" >*</span></label>
                         <input type="date" class="form-control" id="Date_Sales" name="Date_Sales" value=""
                                required="required">
                     </div>
                     <div class="form-group">
-                        <label for="ID_Company" class="col-form-label">ชื่อบริษัทลูกค้า:</label>
+                        <label for="ID_Company" class="col-form-label">ชื่อบริษัทลูกค้า:<span class="text-danger" >*</span></label>
                         <select class="form-control" name="ID_Company">
                             <?php
                             foreach ($companyList as $company) {
@@ -37,7 +37,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="ID_Employee" class="col-form-label">ชื่อพนักงาน:</label>
+                        <label for="ID_Employee" class="col-form-label">ชื่อพนักงาน:<span class="text-danger" >*</span></label>
                         <select class="form-control" name="ID_Employee">
                             <?php foreach ($employeeList as $employee) { ?>
                                 <option value="<?php echo $employee->getID_Employee(); ?>"><?php echo $employee->getName_Employee() . " " . $employee->getSurname_Employee(); ?></option>
@@ -46,7 +46,7 @@
                         <!--                        <input type="text" class="form-control" id="ID_Employee" name="ID_Employee" value="" required="required" >-->
                     </div>
                     <div class="form-group">
-                        <label for="Result_Sales" class="col-form-label">ยอดขาย:</label>
+                        <label for="Result_Sales" class="col-form-label">ยอดขาย:<span class="text-danger" >*</span></label>
                         <input type="number" class="form-control" id="Result_Sales" name="Result_Sales" value=""
                                required="required" min="0">
                     </div>

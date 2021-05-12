@@ -18,43 +18,43 @@
                         <!--   <input type="text" class="form-control" id="ID_Company" name="ID_Company" value=""  required="required"  > -->
                     </div>
                     <div class="form-group ">
-                        <label for="Name_Company" class="col-form-label">ชื่อบริษัท:</label>
+                        <label for="Name_Company" class="col-form-label">ชื่อบริษัท:<span class="text-danger" >*</span></label>
                         <input type="text" class="form-control" id="Name_Company" name="Name_Company" value=""
                                required="required">
                     </div>
                     <div class="form-group">
-                        <label for="Address_Company" class="col-form-label">ที่อยู่บริษัท:</label>
+                        <label for="Address_Company" class="col-form-label">ที่อยู่บริษัท:<span class="text-danger" >*</span></label>
                         <input type="text" class="form-control" id="Address_Company" name="Address_Company" value=""
                                required="required">
                     </div>
 
                     <div class="form-group">
-                        <label for="Tel_Company" class="col-form-label">เบอร์บริษัท:</label>
+                        <label for="Tel_Company" class="col-form-label">เบอร์บริษัท:<span class="text-danger" >*</span></label>
                         <input type="tel" class="form-control" id="Tel_Company" name="Tel_Company" value=""
                                required="required">
                     </div>
                     <div class="form-group">
-                        <label for="Email_Company" class="col-form-label">อีเมล์บริษัท:</label>
+                        <label for="Email_Company" class="col-form-label">อีเมล์บริษัท:<span class="text-danger" >*</span></label>
                         <input type="email" class="form-control" id="Email_Company" name="Email_Company" value=""
                                required="required">
                     </div>
                     <div class="form-group">
-                        <label for="Tax_Number_Company" class="col-form-label">เลขผู้เสียภาษี:</label>
+                        <label for="Tax_Number_Company" class="col-form-label">เลขผู้เสียภาษี:<span class="text-danger" >*</span></label>
                         <input type="tel" class="form-control" id="Tax_Number_Company" name="Tax_Number_Company"
                                value="" required="required">
                     </div>
                     <div class="form-group">
-                        <label for="Credit_Limit_Company" class="col-form-label">วงเงินสูงสุด:</label>
+                        <label for="Credit_Limit_Company" class="col-form-label">วงเงินสูงสุด:<span class="text-danger" >*</span></label>
                         <input type="number" class="form-control" id="Credit_Limit_Company" name="Credit_Limit_Company"
                                value="" min='0' required="required">
                     </div>
                     <div class="form-group">
-                        <label for="Credit_Term_Company" class="col-form-label">เครดิตเทอม:</label>
+                        <label for="Credit_Term_Company" class="col-form-label">เครดิตเทอม:<span class="text-danger" >*</span></label>
                         <input type="text" class="form-control" id="Credit_Term_Company" name="Credit_Term_Company"
                                value="" required="required">
                     </div>
                     <div class="form-group">
-                        <label for="Cluster_Shop" class="col-form-label">คลัสเตอร์:</label>
+                        <label for="Cluster_Shop" class="col-form-label">คลัสเตอร์:<span class="text-danger" >*</span></label>
                         <select name="Cluster_Shop" class="form-control" id="Cluster_Shop">
                             <option value="ภาครัฐ">ภาครัฐ</option>
                             <option value="ภาคเอกชน">ภาคเอกชน</option>
@@ -67,7 +67,7 @@
                                value="">
                     </div>
                     <div class="form-group">
-                        <label for="IS_Blacklist" class="col-form-label">บัญชีดำ:</label>
+                        <label for="IS_Blacklist" class="col-form-label">บัญชีดำ:<span class="text-danger" >*</span></label>
                         <select name="IS_Blacklist" class="form-control" id="IS_Blacklist">
                             <option value="ใช่">ใช่</option>
                             <option value="ไม่ใช่">ไม่ใช่</option>

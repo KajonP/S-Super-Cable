@@ -49,7 +49,7 @@ try {
                             <div class="icheck-primary">
                                 <input type="checkbox" id="RememberMe" name="RememberMe">
                                 <label for="RememberMe">
-                                    Remember Me
+                                    จดจำฉัน
                                 </label>
                             </div>
                         </div>
