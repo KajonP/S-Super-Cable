@@ -131,9 +131,12 @@ class SalesController
                                 $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูลไม่พบข้อมูลในแถวที่{$row}(รวมหัวตาราง) ในคอลัมน์คือ " . $c[$getCellArray["column"]]['name'] . '';
                                 return json_encode(array("status" => false, "message" => $message));
                             }
+                            $strStartDate = "1900-01-01";
+                            $date = $getCellArray["data"][0];
+                            $strto_dayte =  strtotime("+" . $date . "days", strtotime($strStartDate));
 
                             $push_array = array(//"ID_Excel" => $ID_Excel,
-                                "Date_Sales" => $getCellArray["data"][0],
+                                "Date_Sales" => date("Y-m-d", $strto_dayte),
                                 "ID_Company" => $getCellArray["data"][1],
                                 "ID_Employee" => $getCellArray["data"][2],
                                 "Result_Sales" => $getCellArray["data"][3],
