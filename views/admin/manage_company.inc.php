@@ -65,16 +65,16 @@ try {
                                         <tr>
                                             <th>เลขที่</th>
                                             <th>ชื่อบริษัท</th>
-                                            <th>ที่อยู่บริษัท</th>
+                                            <!--<th>ที่อยู่บริษัท</th>-->
                                             <th>เบอร์บริษัท</th>
                                             <!-- <th>อีเมล์บริษัท</th>
-                                            <th>เลขผู้เสียภาษี</th>
-                                            <th>Credit Limit</th>
-                                            <th>Credit Term</th>
-                                            <th>Cluster</th>
-                                            <th>ชื่อที่ติดต่อ</th>
-                                            <th>ติด Blacklist</th>
-                                            <th>สาเหตุที่ติด</th> -->
+                                            <th>เลขผู้เสียภาษี</th> -->
+                                            <th>วงเงินสูงสุด</th>
+                                            <!-- <th>Credit Term</th>
+                                             <th>Cluster</th>
+                                             <th>ชื่อที่ติดต่อ</th>
+                                             <th>ติด Blacklist</th>
+                                             <th>สาเหตุที่ติด</th> -->
                                             <th>การกระทำ</th>
                                         </tr>
                                         </thead>
@@ -84,12 +84,12 @@ try {
                                             <tr>
                                                 <td><?php echo $i++; ?></td>
                                                 <td><?php echo $value->getName_Company(); ?></td>
-                                                <td><?php echo $value->getAddress_Company(); ?></td>
+                                                <!--  <td><?php echo $value->getAddress_Company(); ?></td>-->
                                                 <td><?php echo $value->getTel_Company(); ?></td>
                                                 <!-- <td><?php echo $value->getEmail_Company(); ?></td>
-                                                <td><?php echo $value->getTax_Number_Company(); ?></td>
+                                                <td><?php echo $value->getTax_Number_Company(); ?></td>-->
                                                 <td><?php echo number_format($value->getCredit_Limit_Company(), 2); ?></td>
-                                                <td><?php echo $value->getCredit_Term_Company(); ?></td>
+                                                <!-- <td><?php echo $value->getCredit_Term_Company(); ?></td>
                                                 <td><?php echo $value->getCluster_Shop(); ?></td>
                                                 <td><?php echo $value->getContact_Name_Company(); ?></td>
                                                 <td><?php echo $value->getIS_Blacklist(); ?></td>

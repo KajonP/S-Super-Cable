@@ -1,8 +1,8 @@
 var columns = [
   {"width": "10%", "class": "text-left"},
   {"width": "20%", "class": "text-center"},
-  {"width": "20%", "class": "text-center"},
-  {"width": "20%", "class": "text-left"},
+  {"width": "15%", "class": "text-left"},
+  {"width": "15%", "class": "text-right"},
   {"width": "40%", "class": "text-center"},
 
 ]
