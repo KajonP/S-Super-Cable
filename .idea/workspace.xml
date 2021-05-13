@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update date format sales">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/CompanyController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/SalesController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SalesController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/manage_company.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_company.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/manage_sales.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_sales.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/manage_user.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_user.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_companymanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_companymanage.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +63,7 @@
       <workItem from="1620781056668" duration="1607000" />
       <workItem from="1620782698767" duration="175000" />
       <workItem from="1620786107542" duration="2325000" />
+      <workItem from="1620905713914" duration="4544000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>

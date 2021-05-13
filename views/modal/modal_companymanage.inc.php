@@ -27,7 +27,32 @@
                         <input type="text" class="form-control" id="Address_Company" name="Address_Company" value=""
                                required="required">
                     </div>
-
+                    <div class="form-group">
+                        <label for="PROVINCE_ID" class="col-form-label">จังหวัด:<span class="text-danger" >*</span></label>
+                        <select class="form-control" name="PROVINCE_ID">
+                            <option value="" selected disabled>-กรุณาเลือกจังหวัด-</option>
+                            <?php
+                            foreach ($provinceList as $province) {
+                                ?>
+                                <option value="<?php echo $province->getPROVINCE_ID() ?>"><?php echo $province->getPROVINCE_NAME() ?></option>
+                                <?php
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="AMPHUR_ID" class="col-form-label">อำเภอ:<span class="text-danger" >*</span></label>
+                        <select class="form-control" name="AMPHUR_ID">
+                            <option value="" selected disabled>-กรุณาเลือกอำเภอ-</option>
+                            <?php
+                            foreach ($amphurList as $amphur) {
+                                ?>
+                                <option value="<?php echo $amphur->getAMPHUR_ID() ?>"><?php echo $amphur->getAMPHUR_NAME() ?></option>
+                                <?php
+                            }
+                            ?>
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label for="Tel_Company" class="col-form-label">เบอร์บริษัท:<span class="text-danger" >*</span></label>
                         <input type="tel" class="form-control" id="Tel_Company" name="Tel_Company" value=""

@@ -49,6 +49,9 @@ var form_validte = $("#form_companymanage").validate({
       required: true,
       minlength: 3
     },
+    AMPHUR_ID: {
+      required: true,
+    },
     Tel_Company: {
       required: true,
       minlength: 10
@@ -93,6 +96,9 @@ var form_validte = $("#form_companymanage").validate({
     Address_Company: {
       required: "กรุณาใส่ข้อมูล",
       minlength: "ข้อมูลต้องมีอย่าง 3 ตัวอักษร"
+    },
+    AMPHUR_ID: {
+      required: "กรุณาใส่ข้อมูล",
     },
     Tel_Company: {
       required: "กรุณาใส่ข้อมูล",
@@ -208,6 +214,10 @@ function onaction_getinptval(ID_Company) {
         .val(response.data.IS_Blacklist)
         .trigger('change');
       $('#Cause_Blacklist').val(response.data.Cause_Blacklist);
+      // case: dropdown
+      $('#AMPHUR_ID')
+        .val(response.data.AMPHUR_ID)
+        .trigger('change');
       // set id
       $('#button_companymanageModal').attr("data-id", ID_Company);
     },
@@ -483,8 +493,6 @@ function onaction_createorupdate(ID_Company = null) {
       break;
   }
 }
-
-
 function importShow() {
 
   /* modal show  */

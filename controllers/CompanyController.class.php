@@ -241,7 +241,7 @@ class CompanyController
             "Cluster_Shop" => $company->getCluster_Shop(),
             "Contact_Name_Company" => $company->getContact_Name_Company(),
             "IS_Blacklist" => $company->getIS_Blacklist(),
-            "Cause_Blacklist" => $company->getCause_Blacklist()
+            "Cause_Blacklist" => $company->getCause_Blacklist(),
         );
         echo json_encode(array("data" => $data_sendback));
 
@@ -263,14 +263,15 @@ class CompanyController
         # retrieve data
         $company = Company::findAll();
         $file_log = Filelog::findByPage('manage_company');
-
+        $provinceList = Province::findAll();
+        $amphurList = Amphur::findAll();
         include Router::getSourcePath() . "views/admin/manage_company.inc.php";
     }
 
     private function export_excel_test($params = null)
     {
-        $exportExcel = new Employee();
-        $exportExcelEmployee = Employee::findAll();
+        $exportExcel = new Company();
+        $exportExcelCompany = Company::findAll();
 
         try {
             // ob_end_clean();
