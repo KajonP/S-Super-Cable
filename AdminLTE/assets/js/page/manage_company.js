@@ -1,3 +1,62 @@
+$(document).ready(function(){
+  
+
+});
+
+
+$('#province').on('change', function () {
+   var province_id = $('#province').val();
+   getAmphur(province_id);
+  
+ });
+ 
+ 
+ function getAmphur(provice_id) {
+  
+   var optionStr = createOptionPlaceholder("กรุณาเลือกอำเภอ");
+   
+   $.ajax({
+        url: "index.php?controller=Company&action=getAmphur",
+        data: {
+          "PROVINCE_ID": provice_id
+        },
+        type: "POST",
+        dataType: 'json',
+        async: false,
+       success: function (response) {
+           let amphures = response;
+           console.log(response);
+           $.each(response, function (index, amphure) {
+           
+             optionStr += createOption(amphure.AMPHUR_ID, amphure.AMPHUR_NAME);
+             
+           });
+           $('#amphure_id').html(optionStr);          
+
+       },
+       error: function (request, status, error) {
+           console.log(request.responseText);
+       }
+   });
+
+ }
+ 
+ 
+ 
+ function createOption(value, text) {
+   return '<option value="' + value + '">' + text + '</option>';
+ }
+ function createOptionPlaceholder(text) {
+   return '<option value="" disabled selected>' + text + '</option>';
+ }
+ 
+
+ 
+
+
+
+
+
 var columns = [
   {"width": "10%", "class": "text-left"},
   {"width": "20%", "class": "text-center"},
@@ -49,6 +108,9 @@ var form_validte = $("#form_companymanage").validate({
       required: true,
       minlength: 3
     },
+    PROVINCE_ID: {
+      required: true,
+    },
     AMPHUR_ID: {
       required: true,
     },
@@ -96,6 +158,9 @@ var form_validte = $("#form_companymanage").validate({
     Address_Company: {
       required: "กรุณาใส่ข้อมูล",
       minlength: "ข้อมูลต้องมีอย่าง 3 ตัวอักษร"
+    },
+    PROVINCE_ID: {
+      required: "กรุณาใส่ข้อมูล",
     },
     AMPHUR_ID: {
       required: "กรุณาใส่ข้อมูล",
@@ -195,7 +260,7 @@ function onaction_getinptval(ID_Company) {
     success: function (response, status) {
       /* set input value */
       $('#div_idcompany').hide();
-
+     
       $('#ID_Company').val(response.data.ID_Company);
       $('#Name_Company').val(response.data.Name_Company);
       $('#Address_Company').val(response.data.Address_Company);
@@ -215,7 +280,11 @@ function onaction_getinptval(ID_Company) {
         .trigger('change');
       $('#Cause_Blacklist').val(response.data.Cause_Blacklist);
       // case: dropdown
-      $('#AMPHUR_ID')
+      $('#province')
+      .val(response.data.PROVINCE_ID)
+      .trigger('change');
+
+      $('#amphure_id')
         .val(response.data.AMPHUR_ID)
         .trigger('change');
       // set id

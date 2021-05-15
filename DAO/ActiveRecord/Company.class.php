@@ -15,6 +15,11 @@ class Company
     private $Contact_Name_Company;
     private $IS_Blacklist;
     private $Cause_Blacklist;
+    private $AMPHUR_ID;
+    private $AMPHUR_CODE;
+    private $AMPHUR_NAME;
+    private $PROVINCE_ID;
+    
     private const TABLE = "company";
 
     //----------- Getters & Setters
@@ -145,6 +150,60 @@ class Company
         $this->Cause_Blacklist = $Cause_Blacklist;
     }
 
+    public function getAMPHUR_ID(): string
+    {
+        if ($this->AMPHUR_ID == null)
+            return "-";
+        else
+            return $this->AMPHUR_ID;
+    }
+
+    public function setAMPHUR_ID(string $AMPHUR_ID)
+    {
+        $this->AMPHUR_ID = $AMPHUR_ID;
+    }
+    public function getAMPHUR_CODE(): string
+    {
+        if ($this->AMPHUR_CODE == null)
+            return "-";
+        else
+            return $this->AMPHUR_CODE;
+    }
+
+    public function setAMPHUR_CODE(string $AMPHUR_CODE)
+    {
+        $this->AMPHUR_CODE = $AMPHUR_CODE;
+    }
+
+    public function getAMPHUR_NAME(): string
+    {
+        if ($this->AMPHUR_NAME == null)
+            return "-";
+        else
+            return $this->AMPHUR_NAME;
+    }
+
+    public function setAMPHUR_NAME(string $AMPHUR_NAME)
+    {
+        $this->AMPHUR_NAME = $AMPHUR_NAME;
+    }
+
+    public function getPROVINCE_ID(): string
+    {
+        if ($this->PROVINCE_ID == null)
+            return "-";
+        else
+            return $this->PROVINCE_ID;
+    }
+
+    public function setPROVINCE_ID(string $PROVINCE_ID)
+    {
+        $this->PROVINCE_ID = $PROVINCE_ID;
+    }
+
+    
+
+
     //----------- CRUD
     public static function findAll(): array
     {
@@ -164,10 +223,12 @@ class Company
     {
         $con = Db::getInstance();
         $query = "SELECT * FROM " . self::TABLE . " WHERE ID_Company = '$ID_Company'";
+       
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Company");
         $stmt->execute();
         if ($prod = $stmt->fetch()) {
+        
             return $prod;
         }
         return null;
@@ -288,6 +349,34 @@ class Company
     public function export_excel(string $page)
     {
 
+    }
+
+
+    public function getAmphur(int $PROVINCE_ID){
+        $con = Db::getInstance();
+        $query = "SELECT * FROM amphur WHERE PROVINCE_ID = '$PROVINCE_ID'";
+        //echo $query;exit();
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "amphur");
+        $stmt->execute();
+        $returndata = array();
+       
+        if ($prod = $stmt->fetch()) {
+            
+            while ($prod = $stmt->fetch()) {
+                $array_pushs = array("AMPHUR_ID" => $prod->getAMPHUR_ID()
+                , "AMPHUR_CODE" => $prod->getAMPHUR_CODE()
+                , "AMPHUR_NAME" => $prod->getAMPHUR_NAME()
+                , "PROVINCE_ID" => $prod->getPROVINCE_ID());
+                
+                array_push($returndata , $array_pushs);
+            }
+        }
+        if(!empty($returndata)){
+            return $returndata;
+        }else{
+            return null;
+        }
     }
 }
 

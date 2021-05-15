@@ -50,6 +50,15 @@ class CompanyController
                     echo $result;
                 }
                 break;
+            case "getAmphur":
+                $PROVINCE_ID = isset($params["POST"]["PROVINCE_ID"]) ? $params["POST"]["PROVINCE_ID"] : "";
+
+                if (!empty($PROVINCE_ID)) {
+                    $result = $this->$action($PROVINCE_ID);
+                   
+                    echo $result;
+                }
+                break;
             case "export_excel_test":
                 $result = $this->$action($params["POST"]);
                 echo $result;
@@ -189,6 +198,15 @@ class CompanyController
 
     }
 
+    private function getAmphur($PROVINCE_ID){
+        $access_company = new Company();
+        $amphur_result = $access_company->getAmphur(
+            $PROVINCE_ID
+        );
+        
+        echo json_encode($amphur_result);
+
+    }
     private function error_handle(string $message)
     {
         $this->index($message);
@@ -242,6 +260,8 @@ class CompanyController
             "Contact_Name_Company" => $company->getContact_Name_Company(),
             "IS_Blacklist" => $company->getIS_Blacklist(),
             "Cause_Blacklist" => $company->getCause_Blacklist(),
+            "AMPHUR_ID" => $company->getAMPHUR_ID(),
+            "PROVINCE_ID" => $company->getPROVINCE_ID(),
         );
         echo json_encode(array("data" => $data_sendback));
 

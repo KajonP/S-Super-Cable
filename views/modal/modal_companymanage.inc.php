@@ -29,9 +29,10 @@
                     </div>
                     <div class="form-group">
                         <label for="PROVINCE_ID" class="col-form-label">จังหวัด:<span class="text-danger" >*</span></label>
-                        <select class="form-control" name="PROVINCE_ID">
+                        <select class="form-control" name="PROVINCE_ID" id="province">
                             <option value="" selected disabled>-กรุณาเลือกจังหวัด-</option>
                             <?php
+                            
                             foreach ($provinceList as $province) {
                                 ?>
                                 <option value="<?php echo $province->getPROVINCE_ID() ?>"><?php echo $province->getPROVINCE_NAME() ?></option>
@@ -42,7 +43,7 @@
                     </div>
                     <div class="form-group">
                         <label for="AMPHUR_ID" class="col-form-label">อำเภอ:<span class="text-danger" >*</span></label>
-                        <select class="form-control" name="AMPHUR_ID">
+                        <select class="form-control" name="AMPHUR_ID" id="amphure_id">
                             <option value="" selected disabled>-กรุณาเลือกอำเภอ-</option>
                             <?php
                             foreach ($amphurList as $amphur) {
