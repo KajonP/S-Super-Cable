@@ -75,25 +75,26 @@ try {
                                              <th>ชื่อที่ติดต่อ</th>
                                              <th>ติด Blacklist</th>
                                              <th>สาเหตุที่ติด</th> -->
+                                             <th>จังหวัด</th>
+                                             <th>อำเภอ</th>
                                             <th>การกระทำ</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <?php $i = 1; ?>
-                                        <?php foreach ($company as $key => $value) { ?>
+                                        <?php foreach ($company as $key => $value) { 
+                                            
+                                            ?>
                                             <tr>
                                                 <td><?php echo $i++; ?></td>
                                                 <td><?php echo $value->getName_Company(); ?></td>
-                                                <!--  <td><?php echo $value->getAddress_Company(); ?></td>-->
+                                             
                                                 <td><?php echo $value->getTel_Company(); ?></td>
-                                                <!-- <td><?php echo $value->getEmail_Company(); ?></td>
-                                                <td><?php echo $value->getTax_Number_Company(); ?></td>-->
+                                            
                                                 <td><?php echo number_format($value->getCredit_Limit_Company(), 2); ?></td>
-                                                <!-- <td><?php echo $value->getCredit_Term_Company(); ?></td>
-                                                <td><?php echo $value->getCluster_Shop(); ?></td>
-                                                <td><?php echo $value->getContact_Name_Company(); ?></td>
-                                                <td><?php echo $value->getIS_Blacklist(); ?></td>
-                                                <td><?php echo $value->getCause_Blacklist(); ?></td> -->
+                                           
+                                                <td><?php echo $value->getPROVINCE_NAME(); ?></td>
+                                                <td><?php echo $value->getAMPHUR_NAME(); ?></td>
                                                 <td class=" last text-center">
                                                     <a href="#"
                                                        onclick="companymanageShow('view','<?php echo $value->getID_Company(); ?>')">

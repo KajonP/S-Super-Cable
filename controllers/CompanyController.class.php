@@ -44,7 +44,7 @@ class CompanyController
                 break;
             case "findbyID":
                 $ID_Company = isset($params["POST"]["ID_Company"]) ? $params["POST"]["ID_Company"] : "";
-
+                //print_r($ID_Company);exit();
                 if (!empty($ID_Company)) {
                     $result = $this->$action($ID_Company);
                     echo $result;
@@ -282,6 +282,7 @@ class CompanyController
         $employee = $_SESSION["employee"];
         # retrieve data
         $company = Company::findAll();
+        
         $file_log = Filelog::findByPage('manage_company');
         $provinceList = Province::findAll();
         $amphurList = Amphur::findAll();

@@ -1,8 +1,10 @@
 var columns = [
   {"width": "10%", "class": "text-left"},
-  {"width": "20%", "class": "text-center"},
+  {"width": "10%", "class": "text-center"},
   {"width": "15%", "class": "text-left"},
   {"width": "15%", "class": "text-right"},
+  {"width": "5%", "class": "text-right"},
+  {"width": "5%", "class": "text-right"},
   {"width": "40%", "class": "text-center"},
 
 ]
@@ -55,6 +57,12 @@ var form_validte = $("#form_companymanage").validate({
     AMPHUR_ID: {
       required: true,
     },
+    AMPHUR_NAME: {
+     // required: true,
+    },
+    PROVINCE_NAME: {
+      //required: true,
+    },
     Tel_Company: {
       required: true,
       minlength: 10
@@ -106,6 +114,12 @@ var form_validte = $("#form_companymanage").validate({
     AMPHUR_ID: {
       required: "กรุณาใส่ข้อมูล",
     },
+    AMPHUR_NAME: {
+      // required: "กรุณาใส่ข้อมูล",
+     },
+     PROVINCE_NAME: {
+      // required: "กรุณาใส่ข้อมูล",
+     },
     Tel_Company: {
       required: "กรุณาใส่ข้อมูล",
       minlength: "ข้อมูลต้องมีอย่าง 10 ตัวอักษร"
