@@ -77,7 +77,7 @@ try {
 } // -- try
 catch (Throwable $e) {
     ob_clean(); // ล้าง output เดิมที่ค้างอยู่จากการสร้าง page
-    echo "Access denied: No Permission to view this page";
+    echo "การเข้าถึงถูกปฏิเสธ: ไม่ได้รับอนุญาตให้ดูหน้านี้";
     exit(1);
 }
 ?>

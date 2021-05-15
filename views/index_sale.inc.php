@@ -70,7 +70,7 @@ try {
 
     include Router::getSourcePath() . "templates/layout.php";
 } catch (Throwable $e) { // PHP 7++
-    echo "Access denied: No Permission to view this page";
+    echo "การเข้าถึงถูกปฏิเสธ: ไม่ได้รับอนุญาตให้ดูหน้านี้";
     exit(1);
 }
 ?>
