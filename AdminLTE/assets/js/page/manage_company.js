@@ -300,10 +300,10 @@ $('#form_importexcel').validate({
 
 // eof
 function downloadExcel() {
-  var url_string = "index.php?controller=Company&action=export_excel";
+  var url_string = "index.php?controller=Company&action=export_excel_test";
   $.ajax({
     type: "POST",
-    url: "index.php?controller=Company&action=export_excel",
+    url: "index.php?controller=Company&action=export_excel_test",
     data: {
       "page": 'manage_company'
     },
