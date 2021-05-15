@@ -4,8 +4,9 @@
     <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : select จ.+อำเภอหน้าจัดการบริษัทลูกค้า (เหลือ ajax มาช่วย)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uploads/formatexcel_user.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/formatexcel_user.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/manage_company.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_company.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +65,10 @@
       <workItem from="1620782698767" duration="175000" />
       <workItem from="1620786107542" duration="2325000" />
       <workItem from="1620905713914" duration="4656000" />
-      <workItem from="1620913763657" duration="298000" />
+      <workItem from="1620913763657" duration="336000" />
+      <workItem from="1620999056240" duration="605000" />
+      <workItem from="1621000639053" duration="11000" />
+      <workItem from="1621038081340" duration="334000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>
@@ -108,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620912956334</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="case : select จ.+อำเภอหน้าจัดการบริษัทลูกค้า (เหลือ ajax มาช่วย)">
+      <created>1620914091110</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1620914091110</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

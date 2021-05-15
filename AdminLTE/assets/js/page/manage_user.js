@@ -265,7 +265,7 @@ $('#form_importexcel').validate({
     Swal.fire({
       icon: 'error',
       title: 'ขออภัย...',
-      text: "กรุณาอัปโหลดไฟล์รูป ที่นามสกุล .png, .jpeg, .jpg, .gif เท่านั้น",
+      text: "กรุณาอัพโหลดไฟล์ Excel ที่นามสกุล .xlsx, .xlsm, .xls เท่านั้น",
       confirmButtonText: 'ตกลง',
     }).then((result) => {
       // break
