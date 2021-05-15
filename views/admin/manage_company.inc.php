@@ -75,8 +75,7 @@ try {
                                              <th>ชื่อที่ติดต่อ</th>
                                              <th>ติด Blacklist</th>
                                              <th>สาเหตุที่ติด</th> -->
-                                             <th>จังหวัด</th>
-                                             <th>อำเภอ</th>
+                                             <th>อำเภอ/จังหวัด</th>
                                             <th>การกระทำ</th>
                                         </tr>
                                         </thead>
@@ -93,8 +92,7 @@ try {
                                             
                                                 <td><?php echo number_format($value->getCredit_Limit_Company(), 2); ?></td>
                                            
-                                                <td><?php echo $value->getPROVINCE_NAME(); ?></td>
-                                                <td><?php echo $value->getAMPHUR_NAME(); ?></td>
+                                                <td><?php echo $value->getAMPHUR_NAME(). "/" .$value->getPROVINCE_NAME(); ?></td>
                                                 <td class=" last text-center">
                                                     <a href="#"
                                                        onclick="companymanageShow('view','<?php echo $value->getID_Company(); ?>')">
