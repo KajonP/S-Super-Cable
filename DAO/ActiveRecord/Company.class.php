@@ -19,6 +19,7 @@ class Company
     private $AMPHUR_CODE;
     private $AMPHUR_NAME;
     private $PROVINCE_ID;
+    private $PROVINCE_NAME;
     
     private const TABLE = "company";
 
@@ -201,6 +202,19 @@ class Company
         $this->PROVINCE_ID = $PROVINCE_ID;
     }
 
+    public function getPROVINCE_NAME(): string
+    {
+        if ($this->PROVINCE_NAME == null)
+            return "-";
+        else
+            return $this->PROVINCE_NAME;
+    }
+
+    public function setPROVINCE_NAME(string $PROVINCE_NAME)
+    {
+        $this->PROVINCE_NAME = $PROVINCE_NAME;
+    }
+
     
 
 
@@ -208,7 +222,12 @@ class Company
     public static function findAll(): array
     {
         $con = Db::getInstance();
-        $query = "SELECT * FROM " . self::TABLE;
+        //$query = "SELECT * FROM " . self::TABLE;
+        $query = "SELECT " . self::TABLE . ".*,province.PROVINCE_NAME
+        ,amphur.AMPHUR_NAME  FROM " . self::TABLE . " 
+         JOIN province ON " . self::TABLE . ".PROVINCE_ID = province.PROVINCE_ID 
+         JOIN amphur ON " . self::TABLE . ".AMPHUR_ID = amphur.AMPHUR_ID  " ;
+        // echo $query;exit();
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Company");
         $stmt->execute();
