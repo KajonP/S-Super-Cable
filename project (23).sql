@@ -1,16 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: May 15, 2021 at 12:54 AM
--- Server version: 5.7.24
--- PHP Version: 7.3.27
+-- Host: 127.0.0.1
+-- Generation Time: May 15, 2021 at 03:11 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
-SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -32,7 +30,7 @@ CREATE TABLE `amphur` (
   `AMPHUR_ID` int(5) NOT NULL,
   `AMPHUR_CODE` varchar(4) COLLATE utf8_unicode_ci NOT NULL,
   `AMPHUR_NAME` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
-  `PROVINCE_ID` int(5) NOT NULL DEFAULT '0'
+  `PROVINCE_ID` int(5) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -1048,7 +1046,7 @@ INSERT INTO `amphur` (`AMPHUR_ID`, `AMPHUR_CODE`, `AMPHUR_NAME`, `PROVINCE_ID`) 
 CREATE TABLE `award` (
   `ID_Award` int(10) NOT NULL,
   `Tittle_Award` varchar(255) NOT NULL,
-  `Picture_Award` text,
+  `Picture_Award` text NOT NULL,
   `Date_Award` datetime NOT NULL,
   `ID_Employee` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -1083,21 +1081,25 @@ CREATE TABLE `company` (
   `Credit_Limit_Company` int(10) NOT NULL,
   `Credit_Term_Company` varchar(255) NOT NULL,
   `Cluster_Shop` enum('ภาครัฐ','ภาคเอกชน','รัฐวิสาหกิจ') NOT NULL,
-  `Contact_Name_Company` text,
+  `Contact_Name_Company` text DEFAULT NULL,
   `IS_Blacklist` enum('ใช่','ไม่ใช่') NOT NULL,
-  `Cause_Blacklist` text,
-  `AMPHUR_ID` int(5) NOT NULL
+  `Cause_Blacklist` text DEFAULT NULL,
+  `AMPHUR_ID` int(5) NOT NULL,
+  `PROVINCE_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `company`
 --
 
-INSERT INTO `company` (`ID_Company`, `Name_Company`, `Address_Company`, `Tel_Company`, `Email_Company`, `Tax_Number_Company`, `Credit_Limit_Company`, `Credit_Term_Company`, `Cluster_Shop`, `Contact_Name_Company`, `IS_Blacklist`, `Cause_Blacklist`, `AMPHUR_ID`) VALUES
-(1, '111', '0001', '9999999996', '0001@gmail.com', '9999999999999', 500000, '3 เดือน', 'ภาคเอกชน', '-', 'ไม่ใช่', '-', 0),
-(2, '0002', '0002', '999999991', '0002@hotmail.com', '0', 50000, '3 เดือน', 'ภาครัฐ', '', 'ใช่', '', 0),
-(3, '0003', '0003', '3111111', 'Natthawat.suetrong@gmail.com', '1111111111111', 200000, '3 เดือน', 'รัฐวิสาหกิจ', '', 'ไม่ใช่', '', 0),
-(110, 'FIRSTSTEP', '300/15 montisuriyawong', '1234567890', 'firststep11@gmail.com', '1234567891233', 15000, '30 วัน', 'รัฐวิสาหกิจ', 'คุณณัฐวัฒน์', 'ใช่', 'ค้างจ่ายอยู่ 2 อินวอยน์', 0);
+INSERT INTO `company` (`ID_Company`, `Name_Company`, `Address_Company`, `Tel_Company`, `Email_Company`, `Tax_Number_Company`, `Credit_Limit_Company`, `Credit_Term_Company`, `Cluster_Shop`, `Contact_Name_Company`, `IS_Blacklist`, `Cause_Blacklist`, `AMPHUR_ID`, `PROVINCE_ID`) VALUES
+(1, '111', '0001', '9999999996', '0001@gmail.com', '9999999999999', 500000, '3 เดือน', 'ภาคเอกชน', '-', 'ไม่ใช่', '-', 2, 1),
+(2, '0002', '0002', '999999991', '0002@hotmail.com', '0', 50000, '3 เดือน', 'ภาครัฐ', '', 'ใช่', '', 2, 1),
+(3, '0003', '0003', '3111111', 'Natthawat.suetrong@gmail.com', '1111111111111', 200000, '3 เดือน', 'รัฐวิสาหกิจ', '', 'ไม่ใช่', '', 2, 1),
+(110, 'FIRSTSTEP', '300/15 montisuriyawong', '1234567890', 'firststep11@gmail.com', '1234567891233', 15000, '30 วัน', 'รัฐวิสาหกิจ', 'คุณณัฐวัฒน์', 'ใช่', 'ค้างจ่ายอยู่ 2 อินวอยน์', 2, 1),
+(111, '333', '3333', '3333333333', '332@hotmailc', '3333333333333', 333333, '3333', 'ภาครัฐ', '33333', 'ใช่', '3333', 92, 6),
+(113, 'ttttt', 'ttt', '4444444444', '444444@hotmail.com', 'dwadwadwadwad', 33333333, '33333333333', 'ภาครัฐ', '33333', 'ใช่', '3333', 143, 11),
+(114, 'test', 'test', '0111111111', '111@gmail.com', 'testtesttestt', 333333, '333333333', 'ภาครัฐ', '33333333', 'ใช่', '333333333', 145, 11);
 
 -- --------------------------------------------------------
 
@@ -1112,7 +1114,7 @@ CREATE TABLE `employee` (
   `Username_Employee` text NOT NULL,
   `Password_Employee` text NOT NULL,
   `Email_Employee` text NOT NULL,
-  `Picuture_Employee` text,
+  `Picuture_Employee` text DEFAULT NULL,
   `User_Status_Employee` enum('Admin','Sales','User','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -1149,7 +1151,7 @@ CREATE TABLE `file_log` (
   `id` int(11) NOT NULL,
   `file_name` varchar(255) NOT NULL,
   `page` varchar(50) NOT NULL,
-  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -1157,9 +1159,9 @@ CREATE TABLE `file_log` (
 --
 
 INSERT INTO `file_log` (`id`, `file_name`, `page`, `updated`) VALUES
-(1, 'format_excel.png', 'manage_user', '2021-05-11 06:26:20'),
-(2, 'format_excel_company.png', 'manage_company', '2021-05-11 06:34:17'),
-(3, 'format_excel_sales.png', 'manage_sales', '2021-05-11 07:05:54');
+(1, 'format_excel.png', 'manage_user', '2021-05-11 13:26:20'),
+(2, 'format_excel_company.png', 'manage_company', '2021-05-11 13:34:17'),
+(3, 'format_excel_sales.png', 'manage_sales', '2021-05-11 14:05:54');
 
 -- --------------------------------------------------------
 
@@ -1170,7 +1172,7 @@ INSERT INTO `file_log` (`id`, `file_name`, `page`, `updated`) VALUES
 CREATE TABLE `goods` (
   `ID_Goods` int(10) NOT NULL,
   `Name_Goods` varchar(255) NOT NULL,
-  `Picture_Goods` text,
+  `Picture_Goods` text NOT NULL,
   `Price_Goods` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -1184,7 +1186,7 @@ CREATE TABLE `message` (
   `ID_Message` int(10) NOT NULL,
   `Tittle_Message` varchar(255) NOT NULL,
   `Text_Message` text NOT NULL,
-  `Picture_Message` text,
+  `Picture_Message` text NOT NULL,
   `Date_Message` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -1433,7 +1435,7 @@ ALTER TABLE `borroworreturn`
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `ID_Company` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `ID_Company` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 
 --
 -- AUTO_INCREMENT for table `file`
