@@ -349,14 +349,14 @@ $('#form_importexcel').validate({
     }
   },
   messages: {
-    file: "กรุณาอัพโหลดไฟล์ Excelที่นามสกุล .xlsx, .xlsm, .xls เท่านั้น"
+    file: "กรุณาอัพโหลดไฟล์ Excel ที่นามสกุล .xlsx, .xlsm, .xls เท่านั้น"
   },
   errorPlacement: function (error, element) {
     //แจ้งเตือนผิด format
     Swal.fire({
       icon: 'error',
       title: 'ขออภัย...',
-      text: "กรุณาอัปโหลดไฟล์รูป ที่นามสกุล .png, .jpeg, .jpg, .gif เท่านั้น",
+      text: "กรุณาอัพโหลดไฟล์ Excel ที่นามสกุล .xlsx, .xlsm, .xls เท่านั้น",
       confirmButtonText: 'ตกลง',
 
     }).then((result) => {
@@ -369,10 +369,10 @@ $('#form_importexcel').validate({
 
 // eof
 function downloadExcel() {
-  var url_string = "index.php?controller=Company&action=export_excel";
+  var url_string = "index.php?controller=Company&action=export_excel_test";
   $.ajax({
     type: "POST",
-    url: "index.php?controller=Company&action=export_excel",
+    url: "index.php?controller=Company&action=export_excel_test",
     data: {
       "page": 'manage_company'
     },

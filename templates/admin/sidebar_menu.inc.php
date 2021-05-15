@@ -78,6 +78,16 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
+                        <a href="pages/goods.html" class="nav-link">
+                            <i class="nav-icon fas fa-boxes"></i>
+                            <p>
+                                สินค้า
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
                         <a href="pages/goodspromotion.html" class="nav-link">
                             <i class="nav-icon fas fa-gifts"></i>
                             <p>

@@ -265,7 +265,7 @@ $('#form_importexcel').validate({
     Swal.fire({
       icon: 'error',
       title: 'ขออภัย...',
-      text: "กรุณาอัปโหลดไฟล์รูป ที่นามสกุล .png, .jpeg, .jpg, .gif เท่านั้น",
+      text: "กรุณาอัพโหลดไฟล์ Excel ที่นามสกุล .xlsx, .xlsm, .xls เท่านั้น",
       confirmButtonText: 'ตกลง',
     }).then((result) => {
       // break
@@ -277,10 +277,10 @@ $('#form_importexcel').validate({
 
 // eof
 function downloadExcel() {
-  var url_string = "index.php?controller=Admin&action=export_excel";
+  var url_string = "index.php?controller=Admin&action=export_excel_test";
   $.ajax({
     type: "POST",
-    url: "index.php?controller=Admin&action=export_excel",
+    url: "index.php?controller=Admin&action=export_excel_test",
     data: {
       "page": 'manage_user'
     },
