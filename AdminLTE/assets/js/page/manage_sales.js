@@ -102,7 +102,7 @@ function salesmanageShow(type, ID_Excel = null) {
       form_validte.resetForm();
 
       $.ajax({
-        url: "index.php?controller=Sales&action=findbyID",
+        url: "index.php?controller=Admin&action=findbyID_Sales",
         data: {
           "ID_Excel": ID_Excel
         },
@@ -157,7 +157,7 @@ function onaction_deletesales(ID_Excel) {
   }).then((result) => {
     if (result.isConfirmed) {
       $.ajax({
-        url: "index.php?controller=Sales&action=delete_sales",
+        url: "index.php?controller=Admin&action=delete_sales",
         data: {
           "ID_Excel": ID_Excel
         },
@@ -218,7 +218,7 @@ function downloadExcel() {
   var url_string = "index.php?controller=Sales&action=export_excel_test";
   $.ajax({
     type: "POST",
-    url: "index.php?controller=Sales&action=export_excel_test",
+    url: "index.php?controller=Admin&action=export_excel_test_sales",
     data: {
       "page": 'manage_sales'
     },
@@ -245,7 +245,7 @@ $("#button_importsalesModal").on('click', function (event) {
   $("#form_importexcel").validate().form();
   /* eof */
 
-  var url_string = "index.php?controller=Sales&action=import_excel";
+  var url_string = "index.php?controller=Admin&action=import_excel_sales";
   if ($('#form_importexcel #examfile').val() != '' || $('#form_importexcel #file').val() != '') {
     $.ajax({
       type: "POST",
@@ -305,7 +305,7 @@ function onaction_createorupdate(ID_Excel = null) { //มันมาเข้�
 
   switch (type) {
     case 'create':
-      var url_string = "index.php?controller=Sales&action=create_sales";
+      var url_string = "index.php?controller=Admin&action=create_sales";
       if (!$("#form_salesmanage").validate().form()) {
         Swal.fire({
           icon: 'error',
@@ -355,7 +355,7 @@ function onaction_createorupdate(ID_Excel = null) { //มันมาเข้�
     case 'edit':
       var ID_Excel = $("#button_salesmanageModal").attr("data-id");
 
-      var url_string = "index.php?controller=Sales&action=edit_sales&ID_Excel=" + ID_Excel;
+      var url_string = "index.php?controller=Admin&action=edit_sales&ID_Excel=" + ID_Excel;
       if (!$("#form_salesmanage").validate().form()) {
         Swal.fire({
           icon: 'error',
