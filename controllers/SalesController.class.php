@@ -31,7 +31,7 @@ class SalesController
     {
         session_start();
         $employee = $_SESSION["employee"];
-        include Router::getSourcePath() . "views/index_sale.inc.php";
+        include Router::getSourcePath() . "views/index_sales.inc.php";
 
     }
 
