@@ -637,6 +637,7 @@ class AdminController
     {
         $sales = Sales::findById($ID_Excel);//echo json_encode($sales);
 
+
         $data_sendback = array(
             "ID_Excel" => $sales->getID_Excel(),
             "Date_Sales" => $sales->getDate_Sales(),
@@ -672,7 +673,7 @@ class AdminController
         include Router::getSourcePath() . "views/admin/manage_user.inc.php";
     }
 
-
+    //หน้า export ไฟล์ตัวอย่าง excel ผู้ใช้
     private function export_excel_test_user($params = null)
     {
         $exportExcel = new Employee();
@@ -768,7 +769,7 @@ class AdminController
 
         return json_encode(array('status' => true));
     }
-
+    //หน้า export ไฟล์ตัวอย่าง excel ผู้ใช้
     private function export_excel_user($params = null)
     {
         $exportExcel = new Employee();
@@ -893,7 +894,7 @@ class AdminController
         $amphurList = Amphur::findAll();
         include Router::getSourcePath() . "views/admin/manage_company.inc.php";
     }
-
+    //หน้า export ไฟล์ตัวอย่าง excel บริษัทลูกค้า
     private function export_excel_test_company($params = null)
     {
         $exportExcel = new Company();
@@ -1018,7 +1019,7 @@ class AdminController
 
         include Router::getSourcePath() . "views/admin/manage_sales.inc.php";
     }
-
+    //หน้า export ไฟล์ตัวอย่าง excel ยอดขาย
     private function export_excel_test_sales($params = null)
     {
         $exportExcel = new Sales();

@@ -28,7 +28,7 @@
                             <?php
                             foreach ($companyList as $company) {
                                 ?>
-                                <option value="<?php echo $company->getID_Company() ?>"><?php echo $company->getName_Company() ?></option>
+                                <option value="<?php echo $company->getID_Company(); ?>"><?php echo $company->getName_Company(); ?></option>
                                 <?php
                             }
                             ?>

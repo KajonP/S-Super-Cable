@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : change to thai">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : change name index_sale.inc.php to index_sales.inc.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/AdminController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/CompanyController.class.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/SalesController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SalesController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/dashboard.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/dashboard.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_salesmanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_salesmanage.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +78,9 @@
       <workItem from="1621189965165" duration="86000" />
       <workItem from="1621190539797" duration="111000" />
       <workItem from="1621237038164" duration="2025000" />
-      <workItem from="1621242559052" duration="2075000" />
+      <workItem from="1621242559052" duration="2332000" />
+      <workItem from="1621245146547" duration="216000" />
+      <workItem from="1621300620892" duration="777000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>
@@ -182,7 +180,21 @@
       <option name="project" value="LOCAL" />
       <updated>1621093560162</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="case : change CompanyController.class.php and SalesController.class.php to AdminController.class.php">
+      <created>1621244774174</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1621244774174</updated>
+    </task>
+    <task id="LOCAL-00016" summary="case : change name index_sale.inc.php to index_sales.inc.php">
+      <created>1621244858909</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1621244858909</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +225,8 @@
     <MESSAGE value="case : add province &amp; amphur" />
     <MESSAGE value="case : code formatt" />
     <MESSAGE value="case : change to thai" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : change to thai" />
+    <MESSAGE value="case : change CompanyController.class.php and SalesController.class.php to AdminController.class.php" />
+    <MESSAGE value="case : change name index_sale.inc.php to index_sales.inc.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : change name index_sale.inc.php to index_sales.inc.php" />
   </component>
 </project>
