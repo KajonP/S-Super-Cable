@@ -215,7 +215,7 @@ $('#form_importexcel').validate({
 
 // eof
 function downloadExcel() {
-  var url_string = "index.php?controller=Sales&action=export_excel_test";
+  var url_string = "index.php?controller=Admin&action=export_excel_test_sales";
   $.ajax({
     type: "POST",
     url: "index.php?controller=Admin&action=export_excel_test_sales",

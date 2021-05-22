@@ -35,7 +35,7 @@
                             
                             foreach ($provinceList as $province) {
                                 ?>
-                                <option value="<?php echo $province->getPROVINCE_ID() ?>"><?php echo $province->getPROVINCE_NAME() ?></option>
+                                <option value="<?php echo $province->getPROVINCE_ID(); ?>"><?php echo $province->getPROVINCE_NAME(); ?></option>
                                 <?php
                             }
                             ?>
@@ -48,7 +48,7 @@
                             <?php
                             foreach ($amphurList as $amphur) {
                                 ?>
-                                <option value="<?php echo $amphur->getAMPHUR_ID() ?>"><?php echo $amphur->getAMPHUR_NAME() ?></option>
+                                <option value="<?php echo $amphur->getAMPHUR_ID();?>"><?php echo $amphur->getAMPHUR_NAME(); ?></option>
                                 <?php
                             }
                             ?>

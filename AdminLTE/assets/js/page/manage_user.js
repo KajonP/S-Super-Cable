@@ -277,10 +277,10 @@ $('#form_importexcel').validate({
 
 // eof
 function downloadExcel() {
-  var url_string = "index.php?controller=Admin&action=export_excel_test";
+  var url_string = "index.php?controller=Admin&action=export_excel_test_user";
   $.ajax({
     type: "POST",
-    url: "index.php?controller=Admin&action=export_excel_test",
+    url: "index.php?controller=Admin&action=export_excel_test_user",
     data: {
       "page": 'manage_user'
     },
@@ -307,7 +307,7 @@ $("#button_importuserModal").on('click', function (event) {
   $("#form_importexcel").validate().form();
   /* eof */
 
-  var url_string = "index.php?controller=Admin&action=import_excel";
+  var url_string = "index.php?controller=Admin&action=import_excel_user";
   if ($('#form_importexcel #examfile').val() != '' || $('#form_importexcel #file').val() != '') {
     $.ajax({
       type: "POST",

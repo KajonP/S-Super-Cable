@@ -25,7 +25,7 @@
             <div class="modal-footer">
                 <a href="#" id="button_importcompanyModal" data-status="" data-id="" class="btn btn-primary">ตกลง</a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                <a href="index.php?controller=Company&action=export_excel_test"
+                <a href="index.php?controller=Admin&action=export_excel_test_company"
                 <button type="button" class="btn btn-success" class="fa fa-file"></i>
                     ดาวน์โหลดไฟล์ตัวอย่าง</span></button>
                 </a>
