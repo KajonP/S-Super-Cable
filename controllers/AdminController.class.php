@@ -318,6 +318,8 @@ class AdminController
             $EXCEL_HeaderCol = array("ID_Company" => array("name" => "ไอดีบริษัท", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ ไอดีบริษัท")
             , "Name_Company" => array("name" => "ชื่อบริษัท", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ ชื่อบริษัท")
             , "Address_Company" => array("name" => "ที่อยู่บริษัท", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ ที่อยู่บริษัท")
+            , "PROVINCE_ID" => array("name" => "ไอดีจังหวัด", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ ไอดีจังหวัด")
+            , "AMPHUR_ID" => array("name" => "ไอดีอำเภอ", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ ไอดีอำเภอ")
             , "Tel_Company" => array("name" => "เบอร์บริษัท", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ เบอร์บริษัท")
             , "Email_Company" => array("name" => "อีเมล์บริษัท", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ อีเมล์บริษัท")
             , "Tax_Number_Company" => array("name" => "เลขผู้เสียภาษี", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ เลขผู้เสียภาษี")
@@ -336,7 +338,7 @@ class AdminController
                 // row = 2 คือ row แรก ไม่รวม header
                 #เช็คหัวตารางชื่อตรงกันไหมใน array ที่ hardcode ไว้
                 if ($count != 1) {
-                    for ($col_ = 0; $col_ < 12; $col_++) {
+                    for ($col_ = 0; $col_ < 14; $col_++) {
                         $col__cc = strval($worksheet->getCellByColumnAndRow($col_, 1)->getValue());
                         if ($col__cc == '') {
                             $c = array_values($EXCEL_HeaderCol);
@@ -369,15 +371,17 @@ class AdminController
                         $push_array = array("ID_Company" => $getCellArray["data"][0],
                             "Name_Company" => $getCellArray["data"][1],
                             "Address_Company" => $getCellArray["data"][2],
-                            "Tel_Company" => $getCellArray["data"][3],
-                            "Email_Company" => $getCellArray["data"][4],
-                            "Tax_Number_Company" => $getCellArray["data"][5],
-                            "Credit_Limit_Company" => $getCellArray["data"][6],
-                            "Credit_Term_Company" => $getCellArray["data"][7],
-                            "Cluster_Shop" => $getCellArray["data"][8],
-                            "Contact_Name_Company" => $getCellArray["data"][9],
-                            "IS_Blacklist" => $getCellArray["data"][10],
-                            "Cause_Blacklist" => $getCellArray["data"][11]
+                            "PROVINCE_ID" => $getCellArray["data"][3],
+                            "AMPHUR_ID" => $getCellArray["data"][4],
+                            "Tel_Company" => $getCellArray["data"][5],
+                            "Email_Company" => $getCellArray["data"][6],
+                            "Tax_Number_Company" => $getCellArray["data"][7],
+                            "Credit_Limit_Company" => $getCellArray["data"][8],
+                            "Credit_Term_Company" => $getCellArray["data"][9],
+                            "Cluster_Shop" => $getCellArray["data"][10],
+                            "Contact_Name_Company" => $getCellArray["data"][11],
+                            "IS_Blacklist" => $getCellArray["data"][12],
+                            "Cause_Blacklist" => $getCellArray["data"][13]
                         );
                         array_push($params, $push_array);
                     } else {
@@ -406,7 +410,7 @@ class AdminController
     private function checkemptycell_company($worksheet, $row)
     {
         $push_array = array();
-        for ($i = 0; $i < 12; $i++) {
+        for ($i = 0; $i < 14; $i++) {
             if (empty($worksheet->getCellByColumnAndRow($i, $row)->getValue())) {
                 return array("status" => false, "column" => $i, "row" => $row);
             } else {
@@ -467,6 +471,8 @@ class AdminController
             "ID_Company" => $company->getID_Company(),
             "Name_Company" => $company->getName_Company(),
             "Address_Company" => $company->getAddress_Company(),
+            "PROVINCE_ID" => $company->getPROVINCE_ID(),
+            "AMPHUR_ID" => $company->getAMPHUR_ID(),
             "Tel_Company" => $company->getTel_Company(),
             "Email_Company" => $company->getEmail_Company(),
             "Tax_Number_Company" => $company->getTax_Number_Company(),
@@ -476,8 +482,7 @@ class AdminController
             "Contact_Name_Company" => $company->getContact_Name_Company(),
             "IS_Blacklist" => $company->getIS_Blacklist(),
             "Cause_Blacklist" => $company->getCause_Blacklist(),
-            "AMPHUR_ID" => $company->getAMPHUR_ID(),
-            "PROVINCE_ID" => $company->getPROVINCE_ID(),
+
         );
         echo json_encode(array("data" => $data_sendback));
 
@@ -940,6 +945,8 @@ class AdminController
             $objPHPExcel->getActiveSheet()->getColumnDimension('J')->setWidth(20);
             $objPHPExcel->getActiveSheet()->getColumnDimension('K')->setWidth(20);
             $objPHPExcel->getActiveSheet()->getColumnDimension('L')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('M')->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getColumnDimension('N')->setWidth(20);
 
 
             // กำหนดหัวข้อให้กับแถวแรก
@@ -947,30 +954,35 @@ class AdminController
                 ->setCellValue('A1', 'ID_Company')
                 ->setCellValue('B1', 'Name_Company')
                 ->setCellValue('C1', 'Address_Company')
-                ->setCellValue('D1', 'Tel_Company')
-                ->setCellValue('E1', 'Email_Company')
-                ->setCellValue('F1', 'Tax_Number_Company')
-                ->setCellValue('G1', 'Credit_Limit_Company')
-                ->setCellValue('H1', 'Credit_Term_Company')
-                ->setCellValue('I1', 'Cluster_Shop')
-                ->setCellValue('J1', 'Contact_Name_Company')
-                ->setCellValue('K1', 'IS_Blacklist')
-                ->setCellValue('L1', 'Cause_Blacklist');
+                ->setCellValue('D1', 'PROVINCE_ID')
+                ->setCellValue('E1', 'AMPUHR_ID')
+                ->setCellValue('F1', 'Tel_Company')
+                ->setCellValue('G1', 'Email_Company')
+                ->setCellValue('H1', 'Tax_Number_Company')
+                ->setCellValue('I1', 'Credit_Limit_Company')
+                ->setCellValue('J1', 'Credit_Term_Company')
+                ->setCellValue('K1', 'Cluster_Shop')
+                ->setCellValue('L1', 'Contact_Name_Company')
+                ->setCellValue('M1', 'IS_Blacklist')
+                ->setCellValue('N1', 'Cause_Blacklist');;
+
 
             $start_row = 2;
             $objPHPExcel->setActiveSheetIndex(0)
                 ->setCellValue('A' . $start_row, "111")
                 ->setCellValue('B' . $start_row, "FIRSTSTEP")
                 ->setCellValue('C' . $start_row, "300/15 montisuriyawong")
-                ->setCellValue('D' . $start_row, "1234567890")
-                ->setCellValue('E' . $start_row, "exam@gmail.com")
-                ->setCellValue('F' . $start_row, "1234567891233")
-                ->setCellValue('G' . $start_row, "15000")
-                ->setCellValue('H' . $start_row, "30 วัน")
-                ->setCellValue('I' . $start_row, "ภาคเอกชน")
-                ->setCellValue('J' . $start_row, "คุณณัฐวัฒน์")
-                ->setCellValue('K' . $start_row, "ใช่")
-                ->setCellValue('L' . $start_row, "ค้างจ่ายอยู่ 2 อินวอยน์");
+                ->setCellValue('D' . $start_row, "1")
+                ->setCellValue('E' . $start_row, " ")
+                ->setCellValue('F' . $start_row, "1234567890")
+                ->setCellValue('G' . $start_row, "test_@hotmail.com")
+                ->setCellValue('H' . $start_row, "1234567891234")
+                ->setCellValue('I' . $start_row, "50000 บาท")
+                ->setCellValue('J' . $start_row, "30 วัน")
+                ->setCellValue('K' . $start_row, "ภาคเอกชน")
+                ->setCellValue('L' . $start_row, "คุณณัฐวัฒน์")
+                ->setCellValue('M' . $start_row, "ใช่")
+                ->setCellValue('N' . $start_row, "ค้างจ่าย 2 เดือน");
 
             $i = 0;
 

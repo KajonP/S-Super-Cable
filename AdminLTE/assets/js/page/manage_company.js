@@ -218,6 +218,13 @@ function onaction_getinptval(ID_Company) {
       $('#ID_Company').val(response.data.ID_Company);
       $('#Name_Company').val(response.data.Name_Company);
       $('#Address_Company').val(response.data.Address_Company);
+      // case: dropdown
+      $('#PROVINCE_ID')
+        .val(response.data.PROVINCE_ID)
+        .trigger('change');
+      $('#AMPHUR_ID')
+        .val(response.data.AMPHUR_ID)
+        .trigger('change');
       $("#Tel_Company").val(response.data.Tel_Company);
       $('#Email_Company').val(response.data.Email_Company);
       $('#Tax_Number_Company').val(response.data.Tax_Number_Company);
@@ -233,14 +240,6 @@ function onaction_getinptval(ID_Company) {
         .val(response.data.IS_Blacklist)
         .trigger('change');
       $('#Cause_Blacklist').val(response.data.Cause_Blacklist);
-      // case: dropdown
-      $('#province')
-      .val(response.data.PROVINCE_ID)
-      .trigger('change');
-
-      $('#amphure_id')
-        .val(response.data.AMPHUR_ID)
-        .trigger('change');
       // set id
       $('#button_companymanageModal').attr("data-id", ID_Company);
     },
@@ -522,11 +521,6 @@ function importShow() {
   $('#importcompanyModal').modal('show');
 
 }
-
-$(document).ready(function(){
-
-});
-
 
 $('#province').on('change', function () {
   var province_id = $('#province').val();

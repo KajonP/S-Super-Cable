@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : เพิ่ม comment">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : change controller">
+      <change afterPath="$PROJECT_DIR$/uploads/Company-26052021062943.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Company-26052021063303.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Company-26052021063434.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/stylesheetLinters/stylelint.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AdminController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/modal/modal_companymanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_companymanage.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/modal/modal_importcompany.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importcompany.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/modal/modal_importsales.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importsales.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/modal/modal_importuser.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importuser.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +36,6 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -87,7 +87,8 @@
       <workItem from="1621474559731" duration="10000" />
       <workItem from="1621561294760" duration="73000" />
       <workItem from="1621562183206" duration="888000" />
-      <workItem from="1621647257012" duration="438000" />
+      <workItem from="1621647257012" duration="660000" />
+      <workItem from="1622009745268" duration="2695000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>
@@ -208,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621301516217</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="case : change controller">
+      <created>1621647892987</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1621647892987</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +250,7 @@
     <MESSAGE value="case : change CompanyController.class.php and SalesController.class.php to AdminController.class.php" />
     <MESSAGE value="case : change name index_sale.inc.php to index_sales.inc.php" />
     <MESSAGE value="case : เพิ่ม comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : เพิ่ม comment" />
+    <MESSAGE value="case : change controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : change controller" />
   </component>
 </project>

@@ -29,7 +29,7 @@
                     </div>
                     <div class="form-group">
                         <label for="PROVINCE_ID" class="col-form-label">จังหวัด:<span class="text-danger" >*</span></label>
-                        <select class="form-control" name="PROVINCE_ID" id="province">
+                        <select class="form-control" name="PROVINCE_ID" id="PROVINCE_ID">
                             <option value="" selected disabled>-กรุณาเลือกจังหวัด-</option>
                             <?php
                             
@@ -43,7 +43,7 @@
                     </div>
                     <div class="form-group">
                         <label for="AMPHUR_ID" class="col-form-label">อำเภอ:<span class="text-danger" >*</span></label>
-                        <select class="form-control" name="AMPHUR_ID" id="amphure_id">
+                        <select class="form-control" name="AMPHUR_ID" id="AMPHUR_ID">
                             <option value="" selected disabled>-กรุณาเลือกอำเภอ-</option>
                             <?php
                             foreach ($amphurList as $amphur) {
