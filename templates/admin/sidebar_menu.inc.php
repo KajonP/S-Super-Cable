@@ -98,7 +98,8 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="pages/standardgoods.html" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=Admin&action=manage_news"; ?>" 
+                            class="nav-link">
                             <i class="nav-icon fas fa-comments"></i>
                             <p>
                                 ข่าวสาร
@@ -108,7 +109,8 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="pages/award.html" class="nav-link">
+                    <a href="<?php echo Router::getSourcePath() . "index.php?controller=Admin&action=manage_award"; ?>"  
+                            class="nav-link">
                             <i class=" nav-icon fas fa-award"></i>
                             <p>
                                 รางวัล
