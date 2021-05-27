@@ -81,5 +81,3 @@ catch (Throwable $e) {
     exit(1);
 }
 ?>
-
-<?php
