@@ -1012,7 +1012,7 @@ class AdminController
                 ->setCellValue('B1', 'Name_Company')
                 ->setCellValue('C1', 'Address_Company')
                 ->setCellValue('D1', 'PROVINCE_ID')
-                ->setCellValue('E1', 'AMPUHR_ID')
+                ->setCellValue('E1', 'AMPHUR_ID')
                 ->setCellValue('F1', 'Tel_Company')
                 ->setCellValue('G1', 'Email_Company')
                 ->setCellValue('H1', 'Tax_Number_Company')
