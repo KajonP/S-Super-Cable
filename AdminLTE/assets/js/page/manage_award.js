@@ -7,7 +7,7 @@ var columns = [
     {"width": "5%", "class": "text-center"},
   ]
 
-var dataTable_ = $("#tbl_news").DataTable({
+var dataTable_ = $("#tbl_award").DataTable({
   "processing": true,
   "bDestroy": true,
   "bPaginate": true,
@@ -222,7 +222,7 @@ function get_award_to_edit(ID_Award) {
       // set vaule to html tag
       $('#Tittle_Award').val(response.data.Tittle_Award);
       $('#ID_Employee_Award').val(response.data.ID_Employee).trigger('change')
-      $("#Picture_Award").attr("src", response.data.Picture_Award);
+      $("#thumnails_award_pic").attr("src", response.data.Picture_Award);
 
     },
     error: function (xhr, status, exception) {
