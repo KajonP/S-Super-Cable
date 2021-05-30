@@ -253,11 +253,13 @@ class AdminController
 
                 #eof
 
-
+              
                 for ($row = 2; $row <= $highestRow; $row++) {
+                    
                     if ($worksheet->getCellByColumnAndRow(0, $row)->getValue() != '') {
-
+                      
                         $getCellArray = $this->checkemptycell_user($worksheet, $row);
+                      
                         if ($getCellArray['status'] == false) {
                             $c = array_values($EXCEL_HeaderCol);
                             $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูลไม่พบข้อมูลในแถวที่{$row}(รวมหัวตาราง) ในคอลัมน์คือ " . $c[$getCellArray["column"]]['name'] . '';
@@ -274,13 +276,21 @@ class AdminController
                         );
                         array_push($params, $push_array);
                     } else {
-
+                        
+                        $getCellArray = $this->checkemptycell_user($worksheet, $row);
+                      
+                        if ($getCellArray['status'] == false) {
+                            $c = array_values($EXCEL_HeaderCol);
+                            $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูลไม่พบข้อมูลในแถวที่{$row}(รวมหัวตาราง) ในคอลัมน์คือ " . $c[$getCellArray["column"]]['name'] . '';
+                            return json_encode(array("status" => false, "message" => $message));
+                        }
 
                     }
                 }
             }
             // # create user ใหม่
             $employee_ = new Employee();
+           
             $result = $employee_->create_user_at_once($params);
             # update new pic
             $target_file = Router::getSourcePath() . "uploads/" . $FILES['name'];
@@ -619,12 +629,13 @@ class AdminController
                             $strto_dayte =  strtotime("+" . $date . "days", strtotime($strStartDate));
 
                             $push_array = array(//"ID_Excel" => $ID_Excel,
-                                "Date_Sales" => date("Y-m-d", $strto_dayte),
+                                "Date_Sales" => $getCellArray["data"][0],
                                 "ID_Company" => $getCellArray["data"][1],
                                 "ID_Employee" => $getCellArray["data"][2],
                                 "Result_Sales" => $getCellArray["data"][3],
                             );
                             array_push($params, $push_array);
+                          
                         } else {
 
 
@@ -668,6 +679,7 @@ class AdminController
     {
         # สร้างยอดขาย
         $access_sales = new Sales();
+      
         $sales_result = $access_sales->create_sales(
             $params
         );

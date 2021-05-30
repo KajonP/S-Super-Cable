@@ -112,11 +112,13 @@ function salesmanageShow(type, ID_Excel = null) {
         success: function (response, status) {
           /* set input value */
           $('#div_idsales').hide();
-
+          console.log(response);
           $('#ID_Excel').val(response.data.ID_Excel);
           $('#Date_Sales').val(response.data.Date_Sales);
-          $('#ID_Company').val(response.data.ID_Company);
-          $("#ID_Employee").val(response.data.ID_Employee);
+          // $('#ID_Company').val(response.data.ID_Company);
+          // $("#ID_Employee").val(response.data.ID_Employee);
+          $('#ID_Company').val(response.data.ID_Company).trigger("change");
+          $("#ID_Employee").val(response.data.ID_Employee).trigger("change");
           $('#Result_Sales').val(response.data.Result_Sales);
 
           // set id

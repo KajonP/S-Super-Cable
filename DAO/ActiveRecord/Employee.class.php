@@ -132,6 +132,18 @@ class Employee
         }
         return null;
     }
+    public static function findByUser(string $Username_Employee): ?Employee
+    {
+        $con = Db::getInstance();
+        $query = "SELECT * FROM " . self::TABLE . " WHERE Username_Employee = '$Username_Employee'";
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Employee");
+        $stmt->execute();
+        if ($prod = $stmt->fetch()) {
+            return $prod;
+        }
+        return null;
+    }
 
     public static function findByAccount(string $Username_Employee, string $Password_Employee): ?Employee
     {
@@ -255,8 +267,14 @@ class Employee
             }
             #eof check duplicate
 
-            #check การอัพโหลดไฟล์ excel ถ้าลืมใส่ column ไหนให้บอกผิด row ไหน
-
+            #check user name ซ้ำ 
+            $check_duplicate_user = Employee::findByUser($v['Username_Employee']);
+            if (!empty($check_duplicate_user)) {
+                # rollback when got error 
+                $con->rollBack();
+                $message = "มีบางอย่างผิดพลาด , มีผู้ใช้ {$v['Username_Employee']} ในระบบเเล้ว";
+                return array("status" => false, "message" => $message);
+            }
             #eof
 
             #check first char contains only letters

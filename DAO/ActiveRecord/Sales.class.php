@@ -141,6 +141,7 @@ class Sales
     # จัดการยอดขาย  ( เพิ่มยอดขาย excel )
     public function create_sales_at_once(array $params)
     {
+        error_reporting(0); // Turn off all error reporting
         $con = Db::getInstance();
         // turn off auto commit (ปิดคำสั่งสำหรับการยืนยันการเปลี่ยนแปลงข้อมูลที่เกิดขึ้น)
         $con->beginTransaction();
@@ -149,6 +150,13 @@ class Sales
             $columns = "";
             foreach ($v as $prop => $val) {
                 # ถ้า column แรกไม่ต้องเติมลูกน้ำ คอลัมน์อื่นเติมลูกน้ำ ..
+                
+                if($prop == "Date_Sales"){
+                    // convert format from  day/month/year to year-month-day 
+                    $val =  date("Y-m-d", strtotime($val));
+                    
+               
+                }
                 $columns = empty($columns) ? $columns .= $prop : $columns .= "," . $prop;
                 $values .= "'$val',";
             }
