@@ -1,121 +1,83 @@
 <?php
 
-class Sales
+class Goods
 {
+
     //------------- Properties
-    private $ID_Excel;
-    private $Date_Sales;
-    private $ID_Company;
-    private $Name_Company;
-    private $ID_Employee;
-    private $Result_Sales;
-    private const TABLE = "sales";
+    private $ID_Goods;
+    private $Name_Goods;
+    private $Detail_Goods;
+    private $Price_Goods;
+    private const TABLE = "goods";
 
     //----------- Getters & Setters
-    public function getID_Excel(): int
+    public function getID_Goods(): int
     {
-        return $this->ID_Excel;
+        return $this->ID_Goods;
     }
 
-    public function setID_Excel(int $ID_Excel)
+    public function setID_Goods(int $ID_Goods)
     {
-        $this->ID_Excel = $ID_Excel;
+        $this->ID_Goods = $ID_Goods;
     }
 
-    public function getDate_Sales(): string
+    public function getName_Goods() : string
     {
-        return $this->Date_Sales;
+        return $this->Name_Goods;
     }
 
-    public function setDate_Sales(string $Date_Sales)
+    public function setName_Goods(string $Name_Goods)
     {
-        $this->Date_Sales = $Date_Sales;
+        $this->Name_Goods = $Name_Goods;
     }
 
-    public function getID_Company(): int
+    public function getDetail_Goods() : string
     {
-        return $this->ID_Company;
+        return $this->Detail_Goods;
     }
 
-    public function setID_Company(int $ID_Company)
+    public function setDetail_Goods(string $Detail_Goods)
     {
-        $this->ID_Company = $ID_Company;
+        $this->Detail_Goods = $Detail_Goods;
     }
 
-    public function getName_Company(): string
+    public function getPrice_Goods() : double
     {
-        return $this->Name_Company;
+        return $this->Price_Goods;
     }
 
-    public function setName_Company(string $Name_Company)
+    public function setPrice_Goods(double $Price_Goods)
     {
-        $this->Name_Company;
+        $this->Price_Goods = $Price_Goods;
     }
-
-    public function getName_Employee(): string
-    {
-        return $this->Name_Employee;
-    }
-
-    public function setName_Employee(string $Name_Employee)
-    {
-        $this->Name_Employee;
-    }
-
-    public function getID_Employee(): string
-    {
-        return $this->ID_Employee;
-    }
-
-    public function setID_Employee(int $ID_Employee)
-    {
-        $this->ID_Employee = $ID_Employee;
-    }
-
-    public function getResult_Sales(): float
-    {
-        return $this->Result_Sales;
-    }
-
-    public function setResult_Sales(float $Result_Sales)
-    {
-        $this->Result_Sales = $Result_Sales;
-    }
-
     //----------- CRUD
     public static function findAll(): array
     {
         $con = Db::getInstance();
-        //case: จัดการยอดขายเปลี่ยนไอดีบริษัทเป็นชื่อบริษัทเปลี่ยนไอดีพนักงานเป็นชื่อพนักงาน
-        $query = "SELECT " . self::TABLE . ".* ,company.Name_Company,employee.Name_Employee  FROM " . self::TABLE . " 
-        join company on " . self::TABLE . ".ID_Company=company.ID_Company 
-        join employee on " . self::TABLE . ".ID_Employee=employee.ID_Employee 
-         ";
+        $query = "SELECT * FROM " . self::TABLE;
         $stmt = $con->prepare($query);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "Sales");
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Goods");
         $stmt->execute();
-        $salesList = array();
+        $goodsList = array();
         while ($prod = $stmt->fetch()) {
-            $salesList[$prod->getID_Excel()] = $prod;
+            $goodsList[$prod->getID_Goods()] = $prod;
         }
-        return $salesList;
+        return $goodsList;
     }
-
-    public static function findById(int $ID_Excel): ?Sales
+    public static function findById(string $ID_Goods): ?Goods
     {
         $con = Db::getInstance();
-        $query = "SELECT * FROM " . self::TABLE . " WHERE ID_Excel = '$ID_Excel'";
+        $query = "SELECT * FROM " . self::TABLE . " WHERE ID_Goods = '$ID_Goods'";
         $stmt = $con->prepare($query);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "Sales");
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Goods");
         $stmt->execute();
         if ($prod = $stmt->fetch()) {
             return $prod;
         }
         return null;
     }
-
-    # จัดการยอดขาย  ( เพิ่มยอดขาย )
-    public function create_sales(array $params)
+    # จัดการสินค้า  ( เพิ่มสินค้า )
+    public function create_goods(array $params)
     {
         $con = Db::getInstance();
         $values = "";
@@ -126,22 +88,18 @@ class Sales
             $values .= "'$val',";
         }
         $values = substr($values, 0, -1);
-        $query = "INSERT INTO " . self::TABLE . " ({$columns}) VALUES ($values)";
-        //return $query;
+        $query = "INSERT INTO " . self::TABLE . "({$columns}) VALUES ($values)";
         # execute query
         if ($con->exec($query)) {
-            $this->ID_Excel = $con->lastInsertId();
             return array("status" => true);
         } else {
             $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูล ";
             return array("status" => false, "message" => $message);
         }
     }
-
-    # จัดการยอดขาย  ( เพิ่มยอดขาย excel )
-    public function create_sales_at_once(array $params)
+    # จัดการสินค้า  ( เพิ่มสินค้า excel )
+    public function create_goods_at_once(array $params)
     {
-        error_reporting(0); // Turn off all error reporting
         $con = Db::getInstance();
         // turn off auto commit (ปิดคำสั่งสำหรับการยืนยันการเปลี่ยนแปลงข้อมูลที่เกิดขึ้น)
         $con->beginTransaction();
@@ -150,13 +108,6 @@ class Sales
             $columns = "";
             foreach ($v as $prop => $val) {
                 # ถ้า column แรกไม่ต้องเติมลูกน้ำ คอลัมน์อื่นเติมลูกน้ำ ..
-                
-                if($prop == "Date_Sales"){
-                    // convert format from  day/month/year to year-month-day 
-                    $val =  date("Y-m-d", strtotime($val));
-                    
-               
-                }
                 $columns = empty($columns) ? $columns .= $prop : $columns .= "," . $prop;
                 $values .= "'$val',";
             }
@@ -178,7 +129,6 @@ class Sales
         $con->commit();
         return array("status" => true);
     }
-
     public function file_log(string $file_name, int $id)
     {
         $query = "UPDATE file_log SET file_name = '{$file_name}' where id = {$id} ";
@@ -190,9 +140,8 @@ class Sales
         }
 
     }
-
-    # แก้ไข ยอดขาย
-    public function edit_sales(array $params, string $ID_Excel)
+    # แก้ไขสินค้า
+    public function edit_goods(array $params, string $ID_Goods)
     {
         $query = "UPDATE " . self::TABLE . " SET ";
         foreach ($params as $prop => $val) {
@@ -201,7 +150,7 @@ class Sales
             }
         }
         $query = substr($query, 0, -1);
-        $query .= " WHERE ID_Excel = '" . $ID_Excel . "'";
+        $query .= " WHERE ID_Goods = '" . $ID_Goods . "'";
         //echo $query;exit();
         $con = Db::getInstance();
         if ($con->exec($query)) {
@@ -212,10 +161,10 @@ class Sales
         }
     }
 
-    # ลบ ยอดขาย
-    public function delete_sales($ID_Excel)
+    # ลบสินค้า
+    public function delete_goods($ID_Goods)
     {
-        $query = "DELETE FROM " . self::TABLE . " WHERE ID_Excel = '{$ID_Excel}' ";
+        $query = "DELETE FROM " . self::TABLE . " WHERE ID_Goods = '{$ID_Goods}' ";
         $con = Db::getInstance();
         if ($con->exec($query)) {
             return array("status" => true);
@@ -223,7 +172,6 @@ class Sales
             return array("status" => false);
         }
     }
+
 }
-
 ?>
-

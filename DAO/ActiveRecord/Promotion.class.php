@@ -1,121 +1,81 @@
 <?php
-
-class Sales
+class Promotion
 {
     //------------- Properties
-    private $ID_Excel;
-    private $Date_Sales;
-    private $ID_Company;
-    private $Name_Company;
-    private $ID_Employee;
-    private $Result_Sales;
-    private const TABLE = "sales";
+    private $ID_Promotion;
+    private $Name_Promotion;
+    private $Unit_Promotion;
+    private $Price_Unit_Promotion;
+    private const TABLE = "promotion";
 
     //----------- Getters & Setters
-    public function getID_Excel(): int
+    public function getID_Promotion(): int
     {
-        return $this->ID_Excel;
+        return $this->ID_Promotion;
     }
 
-    public function setID_Excel(int $ID_Excel)
+    public function setID_Promotion(int $ID_Promotion)
     {
-        $this->ID_Excel = $ID_Excel;
+        $this->ID_Promotion = $ID_Promotion;
     }
 
-    public function getDate_Sales(): string
+    public function getName_Promotion() : string
     {
-        return $this->Date_Sales;
+        return $this->Name_Promotion;
     }
 
-    public function setDate_Sales(string $Date_Sales)
+    public function setName_Promotion(string $Name_Promotion)
     {
-        $this->Date_Sales = $Date_Sales;
+        $this->Name_Promotion = $Name_Promotion;
     }
 
-    public function getID_Company(): int
+    public function getUnit_Promotion() : int
     {
-        return $this->ID_Company;
+        return $this->Unit_Promotion;
     }
 
-    public function setID_Company(int $ID_Company)
+    public function setUnit_Promotion(int $Unit_Promotion)
     {
-        $this->ID_Company = $ID_Company;
+        $this->Unit_Promotion = $Unit_Promotion;
     }
 
-    public function getName_Company(): string
+    public function getPrice_Unit_Promotion() : double
     {
-        return $this->Name_Company;
+        return $this->Price_Unit_Promotion;
     }
 
-    public function setName_Company(string $Name_Company)
+    public function setPrice_Unit_Promotion(double $Price_Unit_Promotion)
     {
-        $this->Name_Company;
+        $this->Price_Unit_Promotion = $Price_Unit_Promotion;
     }
-
-    public function getName_Employee(): string
-    {
-        return $this->Name_Employee;
-    }
-
-    public function setName_Employee(string $Name_Employee)
-    {
-        $this->Name_Employee;
-    }
-
-    public function getID_Employee(): string
-    {
-        return $this->ID_Employee;
-    }
-
-    public function setID_Employee(int $ID_Employee)
-    {
-        $this->ID_Employee = $ID_Employee;
-    }
-
-    public function getResult_Sales(): float
-    {
-        return $this->Result_Sales;
-    }
-
-    public function setResult_Sales(float $Result_Sales)
-    {
-        $this->Result_Sales = $Result_Sales;
-    }
-
     //----------- CRUD
     public static function findAll(): array
     {
         $con = Db::getInstance();
-        //case: จัดการยอดขายเปลี่ยนไอดีบริษัทเป็นชื่อบริษัทเปลี่ยนไอดีพนักงานเป็นชื่อพนักงาน
-        $query = "SELECT " . self::TABLE . ".* ,company.Name_Company,employee.Name_Employee  FROM " . self::TABLE . " 
-        join company on " . self::TABLE . ".ID_Company=company.ID_Company 
-        join employee on " . self::TABLE . ".ID_Employee=employee.ID_Employee 
-         ";
+        $query = "SELECT * FROM " . self::TABLE;
         $stmt = $con->prepare($query);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "Sales");
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Promotion");
         $stmt->execute();
-        $salesList = array();
+        $promotionList = array();
         while ($prod = $stmt->fetch()) {
-            $salesList[$prod->getID_Excel()] = $prod;
+            $promotionList[$prod->getID_Promotion()] = $prod;
         }
-        return $salesList;
+        return $promotionList;
     }
-
-    public static function findById(int $ID_Excel): ?Sales
+    public static function findById(string $ID_Promotion): ?Promotion
     {
         $con = Db::getInstance();
-        $query = "SELECT * FROM " . self::TABLE . " WHERE ID_Excel = '$ID_Excel'";
+        $query = "SELECT * FROM " . self::TABLE . " WHERE ID_Promotion = '$ID_Promotion'";
         $stmt = $con->prepare($query);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "Sales");
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Promotion");
         $stmt->execute();
         if ($prod = $stmt->fetch()) {
             return $prod;
         }
         return null;
     }
-
-    # จัดการยอดขาย  ( เพิ่มยอดขาย )
-    public function create_sales(array $params)
+    # จัดการสินค้าส่งเสริมการขาย  ( เพิ่มสินค้าส่งเสริมการขาย )
+    public function create_promotion(array $params)
     {
         $con = Db::getInstance();
         $values = "";
@@ -126,22 +86,18 @@ class Sales
             $values .= "'$val',";
         }
         $values = substr($values, 0, -1);
-        $query = "INSERT INTO " . self::TABLE . " ({$columns}) VALUES ($values)";
-        //return $query;
+        $query = "INSERT INTO " . self::TABLE . "({$columns}) VALUES ($values)";
         # execute query
         if ($con->exec($query)) {
-            $this->ID_Excel = $con->lastInsertId();
             return array("status" => true);
         } else {
             $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูล ";
             return array("status" => false, "message" => $message);
         }
     }
-
-    # จัดการยอดขาย  ( เพิ่มยอดขาย excel )
-    public function create_sales_at_once(array $params)
+    # จัดการสินค้าส่งเสริมการขาย  ( เพิ่มสินค้าส่งเสริมการขาย excel )
+    public function create_promotion_at_once(array $params)
     {
-        error_reporting(0); // Turn off all error reporting
         $con = Db::getInstance();
         // turn off auto commit (ปิดคำสั่งสำหรับการยืนยันการเปลี่ยนแปลงข้อมูลที่เกิดขึ้น)
         $con->beginTransaction();
@@ -150,13 +106,6 @@ class Sales
             $columns = "";
             foreach ($v as $prop => $val) {
                 # ถ้า column แรกไม่ต้องเติมลูกน้ำ คอลัมน์อื่นเติมลูกน้ำ ..
-                
-                if($prop == "Date_Sales"){
-                    // convert format from  day/month/year to year-month-day 
-                    $val =  date("Y-m-d", strtotime($val));
-                    
-               
-                }
                 $columns = empty($columns) ? $columns .= $prop : $columns .= "," . $prop;
                 $values .= "'$val',";
             }
@@ -178,7 +127,6 @@ class Sales
         $con->commit();
         return array("status" => true);
     }
-
     public function file_log(string $file_name, int $id)
     {
         $query = "UPDATE file_log SET file_name = '{$file_name}' where id = {$id} ";
@@ -190,9 +138,8 @@ class Sales
         }
 
     }
-
-    # แก้ไข ยอดขาย
-    public function edit_sales(array $params, string $ID_Excel)
+    # แก้ไขสินค้าส่งเสริมการขาย
+    public function edit_promotion(array $params, string $ID_Promotion)
     {
         $query = "UPDATE " . self::TABLE . " SET ";
         foreach ($params as $prop => $val) {
@@ -201,7 +148,7 @@ class Sales
             }
         }
         $query = substr($query, 0, -1);
-        $query .= " WHERE ID_Excel = '" . $ID_Excel . "'";
+        $query .= " WHERE ID_Promotion = '" . $ID_Promotion . "'";
         //echo $query;exit();
         $con = Db::getInstance();
         if ($con->exec($query)) {
@@ -211,11 +158,10 @@ class Sales
             return array("status" => false);
         }
     }
-
-    # ลบ ยอดขาย
-    public function delete_sales($ID_Excel)
+    # ลบสินค้าส่งเสริมการขาย
+    public function delete_promotion($ID_Promotion)
     {
-        $query = "DELETE FROM " . self::TABLE . " WHERE ID_Excel = '{$ID_Excel}' ";
+        $query = "DELETE FROM " . self::TABLE . " WHERE ID_Promotion = '{$ID_Promotion}' ";
         $con = Db::getInstance();
         if ($con->exec($query)) {
             return array("status" => true);
@@ -223,7 +169,7 @@ class Sales
             return array("status" => false);
         }
     }
+
+
 }
-
 ?>
-
