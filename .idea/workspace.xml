@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : ติดปัญหา upload ตรง amphur_id" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : ติดปัญหา upload ตรง amphur_id">
+      <change afterPath="$PROJECT_DIR$/images/0359396fa1cd5927403adff46f489f2e.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/446a040c67f7ed688e75a64ad57a3090.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/55653b2f1d7ed6ac5d269e50d21411e0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/60bf11855e72d394ec60c6e396df1bba.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/68e4651d35d044c7620f461590394155.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/e19b352327c52ac104b45e7a00fff7b7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/e9a86a3c106957416affafa14a9fe82d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Company-28052021031406.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Company-28052021031934.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Company-28052021032020.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Sales-03062021055513.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Sales-03062021060723.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Sales-03062021060802.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,6 +95,16 @@
       <workItem from="1621562183206" duration="888000" />
       <workItem from="1621647257012" duration="660000" />
       <workItem from="1622009745268" duration="2976000" />
+      <workItem from="1622013015414" duration="62000" />
+      <workItem from="1622013388412" duration="428000" />
+      <workItem from="1622013845253" duration="53000" />
+      <workItem from="1622170520209" duration="1002000" />
+      <workItem from="1622171767429" duration="1339000" />
+      <workItem from="1622260736221" duration="26000" />
+      <workItem from="1622533284433" duration="172000" />
+      <workItem from="1622553241302" duration="471000" />
+      <workItem from="1622699873089" duration="1246000" />
+      <workItem from="1622701183030" duration="688000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>
@@ -214,7 +239,21 @@
       <option name="project" value="LOCAL" />
       <updated>1622012516499</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="case : ติดปัญหา upload ตรง amphur_id">
+      <created>1622013060354</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1622013060354</updated>
+    </task>
+    <task id="LOCAL-00021" summary="case : ติดปัญหา upload ตรง amphur_id">
+      <created>1622013809995</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1622013809995</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
