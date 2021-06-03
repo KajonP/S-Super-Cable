@@ -192,7 +192,25 @@ class Employee
         }
         return null;
     }
+    # เช็คผู้ใช้ซ้ำ
+    public function check_duplicate_username($Username_Employee , $ID_Employee = null){
+        $con = Db::getInstance();
+        $query = "SELECT * FROM " . self::TABLE;
+        $query .= " WHERE Username_Employee = '{$Username_Employee}'";
+        if(!empty($ID_Employee)){
+            $query .= " AND ID_Employee != '{$ID_Employee}'";
+        }
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Employee");
+        $stmt->execute();
+        $employeeList = array();
+        
+        if($stmt->rowCount() > 0){
+            return true;
+        }
 
+        return false;
+    }
     # จัดการผู้ใช้  ( เพิ่มผู้ใช้ )
     public function create_user(array $params)
     {
@@ -210,6 +228,17 @@ class Employee
                 $columns = empty($columns) ? $columns .= $prop : $columns .= "," . $prop;
                 $values .= "'$val',";
             }
+        }
+        # เช็คผู้ใช้งานซ้ำ
+        if(isset($params['Username_Employee'])){
+             $check_duplicate_user  = Employee::check_duplicate_username($params['Username_Employee']);
+           
+             if($check_duplicate_user === true){
+                
+                $message = "มีบางอย่างผิดพลาดพบผู้ใช้งานซ้ำ , กรุณาตรวจสอบข้อมูล ";
+                return array("status" => false, "message" => $message);
+             }
+          
         }
         # autoincrement id employee
         // $ID_Employee = $this->findLastestIDByRole($params["User_Status_Employee"]);
@@ -308,6 +337,16 @@ class Employee
     # แก้ไข user
     public function edit_user(array $params, string $employee_id)
     {
+         # เช็คผู้ใช้งานซ้ำ
+        if(isset($params['Username_Employee'])){
+                $check_duplicate_user  = Employee::check_duplicate_username($params['Username_Employee'] , $employee_id );
+                if($check_duplicate_user === true){    
+                    $message = "มีบางอย่างผิดพลาดพบผู้ใช้งานซ้ำ , กรุณาตรวจสอบข้อมูล ";
+                    return array("status" => false, "message" => $message);
+                }
+            
+        }
+
         $query = "UPDATE " . self::TABLE . " SET ";
         foreach ($params as $prop => $val) {
             # case : update password

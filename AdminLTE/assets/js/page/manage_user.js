@@ -426,7 +426,7 @@ function onaction_createorupdate(ID_Employee = null) {
               Swal.fire({
                 icon: 'error',
                 title: 'ขออภัย...',
-                text: 'มีบางอย่างผิดพลาด , อาจจะมีข้อมูลอยู่ในฐานข้อมูลเเล้ว , โปรดลองอีกครั้ง',
+                text: data.message,
                 confirmButtonText: 'ตกลง',
               }).then((result) => {
                 location.reload();
@@ -475,7 +475,7 @@ function onaction_createorupdate(ID_Employee = null) {
               Swal.fire({
                 icon: 'error',
                 title: 'ขออภัย...',
-                text: 'มีบางอย่างผิดพลาด , อาจจะมีข้อมูลอยู่ในฐานข้อมูลเเล้ว , โปรดลองอีกครั้ง',
+                text: data.message,
                 confirmButtonText: 'ตกลง',
               }).then((result) => {
                 location.reload();

@@ -153,7 +153,12 @@ class Sales
                 
                 if($prop == "Date_Sales"){
                     // convert format from  day/month/year to year-month-day 
-                    $val =  date("Y-m-d", strtotime($val));
+                    $explode_string = explode("/" , $val);
+                    $date = $explode_string[0];
+                    $month= $explode_string[1];
+                    $year = intval($explode_string[2]) - 543; // แปลงพศ. เป็น คศ
+                    
+                    $val =  date("Y-m-d", strtotime("{$year}-{$month}-{$date}"));
                     
                
                 }
