@@ -574,7 +574,7 @@ class AdminController
 
             }
             #UPLOAD EXCEL
-
+            date_default_timezone_set('Asia/Bangkok');
             if (!empty($FILES) && !empty($FILES['name'])) {
                 $path = $FILES["tmp_name"];
                 $object = PHPExcel_IOFactory::load($path);
@@ -625,11 +625,13 @@ class AdminController
                                 return json_encode(array("status" => false, "message" => $message));
                             }
                             $strStartDate = "1900-01-01";
-                            $date = $getCellArray["data"][0];
-                            $strto_dayte =  strtotime("+" . $date . "days", strtotime($strStartDate));
+                            //$date = $getCellArray["data"][0];
+                            //$date = PHPExcel_Shared_Date::ExcelToPHP( $getCellArray["data"][0]);
+                            $date = PHPExcel_Style_NumberFormat::toFormattedString($getCellArray["data"][0], "D/M/YYYY");
+                            
 
                             $push_array = array(//"ID_Excel" => $ID_Excel,
-                                "Date_Sales" => $getCellArray["data"][0],
+                                "Date_Sales" => $date,
                                 "ID_Company" => $getCellArray["data"][1],
                                 "ID_Employee" => $getCellArray["data"][2],
                                 "Result_Sales" => $getCellArray["data"][3],
