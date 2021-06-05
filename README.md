@@ -1,3 +1,3 @@
 ﻿# S-Super-Cable
 # PHP Version 7.3 only
-# Login : admin admin or user user or sales sales (Have 3 type) 
+# Login : Admin Admin or User User or Sales Sales (Have 3 type) 
