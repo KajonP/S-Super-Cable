@@ -1,7 +1,6 @@
 <?php
-$title = "S Super Cable";
-
 try {
+    $title = "S Super Cable";
     if (!isset($_SESSION['employee']) || !is_a($_SESSION['employee'], "Employee")) {
         header("Location: " . Router::getSourcePath() . "index.php");
     }
@@ -28,58 +27,55 @@ try {
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-md-12">
-                        <h1 class="m-0">จัดการข่าวสาร</h1>
+                        <h1 class="m-0">จัดการสินค้าส่งเสริมการขาย</h1>
 
                         <!-- content -->
                         <div class="card">
-                            <!-- <div class="card-header">
-                                <h3 class="card-title">User Management</h3>
-                            </div> -->
-                            <!-- /.card-header -->
+
                             <div class="form-group row mt-2 mb-2 mr-1">
                                 <div class="col-md-12 text-right">
 
-
-                                    <a href="#" onclick="newsManageShow('create')"
+                                    <a href="#" onclick="promotionmanageShow('create')"
                                        class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">
                                         <span class="btn btn-round btn-success"
                                               style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i
-                                                    class="fa fa-plus"></i> สร้างข่าวสาร </span>
+                                                class="fa fa-plus"></i> สร้างสินค้าส่งเสริมการขาย </span>
                                     </a>
                                 </div>
                             </div>
-                      
                             <div class="card-body p-0 d-flex">
                                 <div class="table-responsive">
-                                    <table id="tbl_news" class="table table-md" style="width:100%;">
+                                    <table id="tbl_promotionmanagement" class="table table-md" stlye="width:100%;">
                                         <thead>
                                         <tr>
                                             <th>เลขที่</th>
-                                            <th>หัวข่าวสาร</th>
-                                            <th>เนื้อข่าวสาร</th>
-                                            <th>วันเวลา</th>
-                                            <th>การกระทำ </th>
+                                            <th>ชื่อสินค้าส่งเสริมการขาย</th>
+                                            <th>จำนวน</th>
+                                            <th>ราคาต่อชิ้น</th>
+                                            <th>การกระทำ</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-
-                                        <?php $i = 1; foreach ($message as $key => $value) { ?>
+                                        <?php
+                                        // print_r($sales);exit();
+                                        ?>
+                                        <?php $i = 1;
+                                        foreach ($promotionList as $key => $value) { ?>
                                             <tr>
                                                 <td><?php echo $i++; ?></td>
-                                                <td><?php echo $value->getTittle_Message() ; ?></td>
-                                                <td><?php echo $value->getText_Message(); ?></td>
-                                                <td><?php echo $value->getDate_Message(); ?></td>
+                                                <td><?php echo $value->getName_Promotion(); ?></td>
+                                                <td><?php echo number_format($value->getUnit_Promotion(),2); ?></td>
+                                                <td><?php echo number_format($value->getPrice_Unit_Promotion(), 2); ?></td>
                                                 <td class=" last">
                                                     <a href="#"
-                                                       onclick="newsManageShow('edit','<?php echo $value->getID_Message(); ?>')">
-                                                        <button type="button"
-                                                                class="btn btn-round btn-warning text-center"
+                                                       onclick="promotionmanageShow('edit','<?php echo $value->getID_Promotion(); ?>')">
+                                                        <button type="button" class="btn btn-round btn-warning"
                                                                 style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
                                                             <i class="fa fa-wrench"></i> เเก้ไข
                                                         </button>
                                                     </a>
                                                     <a href="#"
-                                                       onclick="onAction_deleteMessage('<?php echo $value->getID_Message(); ?>')">
+                                                       onclick="onaction_deletepromotion('<?php echo $value->getID_Promotion(); ?>')">
                                                         <button type="button" class="btn btn-round btn-danger"
                                                                 style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
                                                             <i class="fa fa-trash"></i> ลบ
@@ -121,9 +117,8 @@ try {
     <?php
     # modal dialog ( edit profile )
     include Router::getSourcePath() . "views/modal/modal_editprofile.inc.php";
-
-    # modal dialog ( news manage )
-    include Router::getSourcePath() . "views/modal/modal_newsmanage.inc.php";
+    # modal dialog ( promotion manage )
+    include Router::getSourcePath() . "views/modal/modal_promotionmanage.inc.php";
     ?>
 
 
@@ -141,12 +136,10 @@ try {
     // echo '<PRE>';
     // print_r(ob_get_clean());exit();
     include Router::getSourcePath() . "templates/layout.php";
-
 } catch (Throwable $e) { // PHP 7++
     echo "การเข้าถึงถูกปฏิเสธ: ไม่ได้รับอนุญาตให้ดูหน้านี้";
     exit(1);
 }
 ?>
 
-
-<script type="text/javascript" src="AdminLTE/assets/js/page/manage_news.js"></script>
+<script type="text/javascript" src="AdminLTE/assets/js/page/manage_promotion.js"></script>

@@ -29,7 +29,7 @@
                         <!-- set default image  -->
                         <?php $pic = Router::getSourcePath() . "images/" . $employee->Picuture_Employee; ?>
                         <!-- select image to upload -->
-                        <img id="thumnails_new_profile" browsid="profile_news" class="thumnails-premise" src="<?= $pic ?>"  style=""/>
+                        <img id="thumnails_new_profile" browsid="profile_news" class="thumnails-premise" src="<?= $pic ?>"  style=""/><span class="text-danger" >*</span>
                         
                         <!-- chosse file -->
                         <input id="profile_news" name="profile_news" type="file" accept=".png, .jpg,.jpeg,.gif" style="" onchange="preview();" >                

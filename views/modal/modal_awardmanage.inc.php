@@ -12,8 +12,7 @@
 
                 <!-- Form -->
                 <form id="form_awardManage" method='post' action='' enctype="multipart/form-data">
-                
-            \
+
                     <div class="form-group ">
                         <label for="Tittle_Award" class="col-form-label">หัวข้อรางวัล:<span class="text-danger" >*</span></label>
                         <input type="text" class="form-control" id="Tittle_Award" name="Tittle_Award" value=""
@@ -38,7 +37,7 @@
                         <!-- set default image  -->
                         <?php $pic = Router::getSourcePath() . "images/" . $employee->Picuture_Employee; ?>
                         <!-- select image to upload -->
-                        <img id="thumnails_award_pic" browsid="award_pic" class="thumnails-premise" src="<?= $pic ?>"  style=""/>
+                        <img id="thumnails_award_pic" browsid="award_pic" class="thumnails-premise" src="<?= $pic ?>"  style=""/><span class="text-danger" >*</span>
                         <!-- chosse file -->
                         <input id="award_pic" name="award_pic" type="file" accept=".png, .jpg,.jpeg,.gif" style="" onchange="preview();" >                
                     </div>

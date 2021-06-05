@@ -183,6 +183,30 @@ class AdminController
                 // print_r($params);
                 echo $result;
                     break;
+            case "manage_promotion" :
+                $this->$action();
+                break;
+            case "create_promotion" :
+                $result = $this->$action($params["POST"]);
+                echo $result;
+                break;
+            case "edit_promotion" :
+                $ID_Promotion = isset($params["GET"]["ID_Promotion"]) ? $params["GET"]["ID_Promotion"] : "";
+                $result = $this->$action($params["POST"], $ID_Promotion);
+                echo $result;
+                break;
+            case "delete_promotion":
+                $result = $this->$action($params["POST"]["ID_Promotion"]);
+                echo $result;
+                break;
+            case "findbyID_Promotion":
+                $ID_Promotion = isset($params["POST"]["ID_Promotion"]) ? $params["POST"]["ID_Promotion"] : "";
+
+                if (!empty($ID_Promotion)) {
+                    $result = $this->$action($ID_Promotion);
+                    echo $result;
+                }
+                break;
             default:
                 break;
         }
@@ -725,7 +749,268 @@ class AdminController
         echo json_encode(array("data" => $data_sendback));
 
     }
+    private static function create_news($params, $FILE_IMG)
+    {
+        // # สร้างข่าวสารร
+        $access_news = new Message();
+        $messageid = $access_news->geneateDateTimemd() ;
+        $message_title =  $params["Tittle_Message"] ;
+        $message_text  =  isset($params["Text_Message"]) ?  $params["Text_Message"] : "";
 
+        // print_r('hello world'. '     ' . $access_news->generatePictureFilename($FILE_IMG['name'][0], $message_title));
+
+        $message_filename = !empty($FILE_IMG) ?  $access_news->generatePictureFilename($FILE_IMG['name'][0], $message_title) : "" ;
+        $message_datetime = $access_news->geneateDateTime();
+        $locate_img = "";
+
+        if (!empty($FILE_IMG) && !empty($FILE_IMG['name']))
+        {
+            $name_file =  $FILE_IMG['name'][0];
+            $name_file_type =  explode('.',$name_file)[1] ;
+            $tmp_name =  $FILE_IMG['tmp_name'][0];
+            $locate_img = Router::getSourcePath() . "images/" . $message_filename . ".".$name_file_type;
+
+            // copy original file to destination file
+            move_uploaded_file($tmp_name, $locate_img);
+        }
+
+        $access_news_params = array(
+            "ID_Message" => $messageid,
+            "Tittle_Message" => $message_title,
+            "Text_Message" => $message_text,
+            "Picture_Message" => $locate_img,
+            "Date_Message"=> $message_datetime,
+        );
+
+        $result = $access_news->create_news(
+            $access_news_params
+        );
+
+        return json_encode($result);
+    }
+
+    private function findbyID_Message($findbyID_Message)
+    {
+        $message = Message::findById($findbyID_Message);//echo json_encode($employee);
+
+        // echo json_encode(array("data" => $data_sendback));
+
+        $data_sendback = array(
+            "ID_Message" => $message->getID_Message(),
+            "Tittle_Message" => $message->getTittle_Message(),
+            "Text_Message" => $message->getText_Message(),
+            "Picture_Message" => $message->getPicture_Message(),
+            "Date_Message" => $message->getDate_Message(),
+        );
+
+        echo json_encode(array("data" => $data_sendback));
+
+    }
+
+    private function edit_news($params, $FILE_IMG, $ID_Message)
+    {
+
+        // # สร้างข่าวสารร
+        $access_news = new Message();
+        $messageid = $ID_Message ;
+        $message_title =  $params["Tittle_Message"] ;
+        $message_text  =  isset($params["Text_Message"]) ?  $params["Text_Message"] : "";
+        $message_datetime = $access_news->geneateDateTime();
+
+        $locate_img = "";
+
+        // print_r('hello world'. '     ' . $access_news->generatePictureFilename($FILE_IMG['profile_news']['name'][0], $message_title));
+
+        $message_filename = !empty($FILE_IMG) ?  $access_news->generatePictureFilename($FILE_IMG['profile_news']['name'][0], $message_title) : "" ;
+        if (!empty($FILE_IMG) && !empty($FILE_IMG['profile_news']['name']))
+        {
+            $name_file =  $FILE_IMG['profile_news']['name'][0];
+            $name_file_type =  explode('.',$name_file)[1] ;
+            $tmp_name =  $FILE_IMG['profile_news']['tmp_name'][0];
+            $locate_img = Router::getSourcePath() . "images/" . $message_filename . ".".$name_file_type;
+
+            // copy original file to destination file
+            move_uploaded_file($tmp_name, $locate_img);
+        }
+
+        $access_news_params = array(
+            "ID_Message" => $messageid,
+            "Tittle_Message" => $message_title,
+            "Text_Message" => $message_text,
+            "Picture_Message" => $locate_img,
+            "Date_Message"=> $message_datetime,
+        );
+
+
+        $result = $access_news->update_news(
+            $access_news_params
+        );
+
+        return json_encode($result);
+    }
+
+    private function delete_news($params) {
+        $access_message = new Message();
+        $result = $access_message->delete_news(
+            $params
+        );
+        return json_encode($result);
+    }
+    private function create_award($params, $FILE_IMG)
+    {
+        $access_award = new Award();
+
+        // # สร้างข่าวสารร
+        $awardid = $access_award->geneateDateTimemd() ;
+        $award_title =  $params["Tittle_Award"] ;
+        $award_filename = !empty($FILE_IMG) ?  $access_award->generatePictureFilename($FILE_IMG['name'][0], $award_title) : "" ;
+        $award_datetime = $access_award->geneateDateTime();
+        $locate_img = "";
+        $award_ID_Employee = $params["ID_Employee"];
+
+        if (!empty($FILE_IMG) && !empty($FILE_IMG['name']))
+        {
+            $name_file =  $FILE_IMG['name'][0];
+            $name_file_type =  explode('.',$name_file)[1] ;
+            $tmp_name =  $FILE_IMG['tmp_name'][0];
+            $locate_img = Router::getSourcePath() . "images/" . $award_filename . ".".$name_file_type;
+
+            // copy original file to destination file
+            move_uploaded_file($tmp_name, $locate_img);
+        }
+
+        $access_award_params = array(
+            "ID_Award" => $awardid,
+            "Tittle_Award" => $award_title,
+            "Picture_Award" => $locate_img,
+            "Date_Award"=> $award_datetime,
+            "ID_Employee" => $award_ID_Employee,
+        );
+
+        $result = $access_award->create_award(
+            $access_award_params
+        );
+
+        return json_encode($result);
+    }
+
+
+
+    private function findAwardbyID_Award($findbyID_Award)
+    {
+        $award = Award::findAward_byID($findbyID_Award);//echo json_encode($employee);
+
+        // echo json_encode(array("data" => $data_sendback));
+
+        $data_sendback = array(
+            "ID_Award" => $award->getID_Award(),
+            "Tittle_Award" => $award->getTittle_Award(),
+            "Picture_Award" => $award->getPicture_Award(),
+            "Date_Award" => $award->getDate_Award(),
+            "ID_Employee" => $award->getID_Employee(),
+        );
+
+        echo json_encode(array("data" => $data_sendback));
+    }
+
+
+    private function edit_award($params, $FILE_IMG, $ID_Award)
+    {
+
+        // # สร้างข่าวสารร
+        $access_award = new Award();
+        $awardid = $ID_Award ;
+        $award_title =  $params["Tittle_Award"] ;
+        $award_datetime = $access_award->geneateDateTime();
+
+        $locate_img = "";
+
+        // print_r('hello world'. '     ' . $access_news->generatePictureFilename($FILE_IMG['profile_news']['name'][0], $message_title));
+
+        $award_filename = !empty($FILE_IMG) ?  $access_award->generatePictureFilename($FILE_IMG['award_pic']['name'][0], $award_title) : "" ;
+        if (!empty($FILE_IMG) && !empty($FILE_IMG['award_pic']['name']))
+        {
+            $name_file =  $FILE_IMG['award_pic']['name'][0];
+            $name_file_type =  explode('.',$name_file)[1] ;
+            $tmp_name =  $FILE_IMG['award_pic']['tmp_name'][0];
+            $locate_img = Router::getSourcePath() . "images/" . $award_filename . ".".$name_file_type;
+
+            // copy original file to destination file
+            move_uploaded_file($tmp_name, $locate_img);
+        }
+
+        $access_award_params = array(
+            "ID_Award" => $awardid,
+            "Tittle_Award" => $award_title,
+            "Picture_Award" => $locate_img,
+            "Date_Award"=> $award_datetime,
+        );
+
+
+        $result = $access_award->update_award(
+            $access_award_params
+        );
+
+        return json_encode($result);
+
+    }
+
+    private function delete_award($params) {
+        $access_award = new Award();
+        $result = $access_award->delete_award(
+            $params
+        );
+        // print_r($result);
+        return json_encode($result);
+    }
+
+    private function create_promotion($params)
+    {
+        # สร้างสินค้าส่งเสริมการขาย
+        $access_promotion = new Promotion();
+
+        $promotion_result = $access_promotion->create_promotion(
+            $params
+        );
+        return json_encode($promotion_result);
+    }
+
+    private function edit_promotion($params, $ID_Promotion)
+    {
+        # อัปเดตสินค้าส่งเสริมการขาย
+        $access_promotion = new Promotion();
+        $promotion_result = $access_promotion->edit_promotion(
+            $params, $ID_Promotion
+        );
+        echo json_encode($promotion_result);
+
+    }
+
+    private function delete_promotion($ID_Promotion)
+    {
+        # ลบสินค้าส่งเสริมการขาย
+        $access_promotion = new Promotion();
+        $promotion_result = $access_promotion->delete_promotion(
+            $ID_Promotion
+        );
+        return json_encode($sales_result);
+    }
+
+    private function findbyID_Promotion(string $ID_Promotion)
+    {
+        $promotion = Promotion::findById($ID_Promotion);//echo json_encode($sales);
+
+
+        $data_sendback = array(
+            "ID_Promotion" => $promotion->getID_Promotion(),
+            "Name_Promotion" => $promotion->getName_Promotion(),
+            "Unit_Promotion" => $promotion->getUnit_Promotion(),
+            "Price_Unit_Promotion" => $promotion->getPrice_Unit_Promotion(),
+
+        );
+        echo json_encode(array("data" => $data_sendback));
+
+    }
     // ควรมีสำหรับ controller ทุกตัว
     private function index($message = null)
     {
@@ -1192,7 +1477,7 @@ class AdminController
         return json_encode(array('status' => true));
     }
 
-
+//หน้าจัดการข่าวสาร
     private function manage_news($params = null) 
     {
         session_start();
@@ -1208,116 +1493,7 @@ class AdminController
        include Router::getSourcePath() . "views/admin/manage_news.inc.php";
 
     }
-
-
-    private static function create_news($params, $FILE_IMG)
-    {
-        // # สร้างข่าวสารร
-        $access_news = new Message();
-        $messageid = $access_news->geneateDateTimemd() ;
-        $message_title =  $params["Tittle_Message"] ;
-        $message_text  =  isset($params["Text_Message"]) ?  $params["Text_Message"] : "";
-
-        // print_r('hello world'. '     ' . $access_news->generatePictureFilename($FILE_IMG['name'][0], $message_title));
-
-        $message_filename = !empty($FILE_IMG) ?  $access_news->generatePictureFilename($FILE_IMG['name'][0], $message_title) : "" ;
-        $message_datetime = $access_news->geneateDateTime();
-        $locate_img = "";
-
-        if (!empty($FILE_IMG) && !empty($FILE_IMG['name']))
-        {
-            $name_file =  $FILE_IMG['name'][0];
-            $name_file_type =  explode('.',$name_file)[1] ;
-            $tmp_name =  $FILE_IMG['tmp_name'][0];
-            $locate_img = Router::getSourcePath() . "images/" . $message_filename . ".".$name_file_type;
-            
-            // copy original file to destination file
-            move_uploaded_file($tmp_name, $locate_img);
-        }
-
-        $access_news_params = array(
-            "ID_Message" => $messageid,
-            "Tittle_Message" => $message_title,
-            "Text_Message" => $message_text,
-            "Picture_Message" => $locate_img,
-            "Date_Message"=> $message_datetime,
-        );
-
-        $result = $access_news->create_news(
-            $access_news_params
-        );
-
-        return json_encode($result);
-    }
-
-    private function findbyID_Message($findbyID_Message)
-    {
-        $message = Message::findById($findbyID_Message);//echo json_encode($employee);
-
-        // echo json_encode(array("data" => $data_sendback));
-
-        $data_sendback = array(
-            "ID_Message" => $message->getID_Message(),
-            "Tittle_Message" => $message->getTittle_Message(),
-            "Text_Message" => $message->getText_Message(),
-            "Picture_Message" => $message->getPicture_Message(),
-            "Date_Message" => $message->getDate_Message(),
-        );
-
-        echo json_encode(array("data" => $data_sendback));
-    
-    }
-
-    private function edit_news($params, $FILE_IMG, $ID_Message)
-    {   
-        
-        // # สร้างข่าวสารร
-        $access_news = new Message();
-        $messageid = $ID_Message ;
-        $message_title =  $params["Tittle_Message"] ;
-        $message_text  =  isset($params["Text_Message"]) ?  $params["Text_Message"] : "";
-        $message_datetime = $access_news->geneateDateTime();
-
-        $locate_img = "";
-        
-        // print_r('hello world'. '     ' . $access_news->generatePictureFilename($FILE_IMG['profile_news']['name'][0], $message_title));
-
-        $message_filename = !empty($FILE_IMG) ?  $access_news->generatePictureFilename($FILE_IMG['profile_news']['name'][0], $message_title) : "" ;
-        if (!empty($FILE_IMG) && !empty($FILE_IMG['profile_news']['name']))
-        {
-            $name_file =  $FILE_IMG['profile_news']['name'][0];
-            $name_file_type =  explode('.',$name_file)[1] ;
-            $tmp_name =  $FILE_IMG['profile_news']['tmp_name'][0];
-            $locate_img = Router::getSourcePath() . "images/" . $message_filename . ".".$name_file_type;
-            
-            // copy original file to destination file
-            move_uploaded_file($tmp_name, $locate_img);
-        }
-
-        $access_news_params = array(
-            "ID_Message" => $messageid,
-            "Tittle_Message" => $message_title,
-            "Text_Message" => $message_text,
-            "Picture_Message" => $locate_img,
-            "Date_Message"=> $message_datetime,
-        );
-
-    
-        $result = $access_news->update_news(
-            $access_news_params
-        );
-
-        return json_encode($result);
-    }
-
-    private function delete_news($params) {
-        $access_message = new Message();
-        $result = $access_message->delete_news(
-            $params
-        );
-        return json_encode($result);
-    }
-
+//หน้าจัดการรางวัล
     private function manage_award() 
     {
         session_start();
@@ -1332,112 +1508,16 @@ class AdminController
         include Router::getSourcePath() . "views/admin/manage_award.inc.php";
     }
 
-    private function create_award($params, $FILE_IMG)
+    //หน้าจัดการสินค้าส่งเสริมการขาย
+    private function manage_promotion($params = null)
     {
-        $access_award = new Award();
-        
-        // # สร้างข่าวสารร
-        $awardid = $access_award->geneateDateTimemd() ;
-        $award_title =  $params["Tittle_Award"] ;
-        $award_filename = !empty($FILE_IMG) ?  $access_award->generatePictureFilename($FILE_IMG['name'][0], $award_title) : "" ;
-        $award_datetime = $access_award->geneateDateTime();
-        $locate_img = "";
-        $award_ID_Employee = $params["ID_Employee"];
+        session_start();
+        $employee = $_SESSION["employee"];
 
-        if (!empty($FILE_IMG) && !empty($FILE_IMG['name']))
-        {
-            $name_file =  $FILE_IMG['name'][0];
-            $name_file_type =  explode('.',$name_file)[1] ;
-            $tmp_name =  $FILE_IMG['tmp_name'][0];
-            $locate_img = Router::getSourcePath() . "images/" . $award_filename . ".".$name_file_type;
-            
-            // copy original file to destination file
-            move_uploaded_file($tmp_name, $locate_img);
-        }
+        # retrieve data
+        $promotionList = Promotion::findAll();
 
-        $access_award_params = array(
-            "ID_Award" => $awardid,
-            "Tittle_Award" => $award_title,
-            "Picture_Award" => $locate_img,
-            "Date_Award"=> $award_datetime,
-            "ID_Employee" => $award_ID_Employee,
-        );
-
-        $result = $access_award->create_award(
-            $access_award_params
-        );
-
-        return json_encode($result);
-    } 
-
-
-
-    private function findAwardbyID_Award($findbyID_Award)
-    {
-        $award = Award::findAward_byID($findbyID_Award);//echo json_encode($employee);
-
-        // echo json_encode(array("data" => $data_sendback));
-
-        $data_sendback = array(
-            "ID_Award" => $award->getID_Award(),
-            "Tittle_Award" => $award->getTittle_Award(),
-            "Picture_Award" => $award->getPicture_Award(),
-            "Date_Award" => $award->getDate_Award(),
-            "ID_Employee" => $award->getID_Employee(),
-        );
-
-        echo json_encode(array("data" => $data_sendback));
-    }
-
-
-    private function edit_award($params, $FILE_IMG, $ID_Award)
-    {   
-        
-        // # สร้างข่าวสารร
-        $access_award = new Award();
-        $awardid = $ID_Award ;
-        $award_title =  $params["Tittle_Award"] ;
-        $award_datetime = $access_award->geneateDateTime();
-
-        $locate_img = "";
-        
-        // print_r('hello world'. '     ' . $access_news->generatePictureFilename($FILE_IMG['profile_news']['name'][0], $message_title));
-
-        $award_filename = !empty($FILE_IMG) ?  $access_award->generatePictureFilename($FILE_IMG['award_pic']['name'][0], $award_title) : "" ;
-        if (!empty($FILE_IMG) && !empty($FILE_IMG['award_pic']['name']))
-        {
-            $name_file =  $FILE_IMG['award_pic']['name'][0];
-            $name_file_type =  explode('.',$name_file)[1] ;
-            $tmp_name =  $FILE_IMG['award_pic']['tmp_name'][0];
-            $locate_img = Router::getSourcePath() . "images/" . $award_filename . ".".$name_file_type;
-            
-            // copy original file to destination file
-            move_uploaded_file($tmp_name, $locate_img);
-        }
-
-        $access_award_params = array(
-            "ID_Award" => $awardid,
-            "Tittle_Award" => $award_title,
-            "Picture_Award" => $locate_img,
-            "Date_Award"=> $award_datetime,
-        );
-
-    
-        $result = $access_award->update_award(
-            $access_award_params
-        );
-
-        return json_encode($result);
-
-    }
-
-    private function delete_award($params) {
-        $access_award = new Award();
-        $result = $access_award->delete_award(
-            $params
-        );
-        // print_r($result);
-        return json_encode($result);       
+        include Router::getSourcePath() . "views/admin/manage_promotion.inc.php";
     }
 
 }

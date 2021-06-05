@@ -50,7 +50,7 @@ try {
                                     <table id="tbl_award" class="table table-md" style="width:100%;">
                                         <thead>
                                         <tr>
-                                            <th>ไอดีรางวัล</th>
+                                            <th>เลขที่</th>
                                             <th>ชื่อรางวัล</th>
                                             <th>วันเวลา</th>
                                             <th>ลูกจ้าง</th>
@@ -59,9 +59,9 @@ try {
                                         </thead>
                                         <tbody>
 
-                                        <?php foreach ($awardList as $key => $value) { ?>
+                                        <?php $i=1; foreach ($awardList as $key => $value) { ?>
                                             <tr>
-                                                <td><?php echo $value->getID_Award(); ?></td>
+                                                <td><?php echo $i++; ?></td>
                                                 <td><?php echo $value->getTittle_Award() ; ?></td>
                                                 <td><?php echo $value->getDate_Award(); ?></td>
                                                 <td><?php echo $value->getFullname_employee(); ?></td>

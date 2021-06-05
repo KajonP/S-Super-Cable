@@ -39,12 +39,12 @@ class Promotion
         $this->Unit_Promotion = $Unit_Promotion;
     }
 
-    public function getPrice_Unit_Promotion() : double
+    public function getPrice_Unit_Promotion() : float
     {
         return $this->Price_Unit_Promotion;
     }
 
-    public function setPrice_Unit_Promotion(double $Price_Unit_Promotion)
+    public function setPrice_Unit_Promotion(float $Price_Unit_Promotion)
     {
         $this->Price_Unit_Promotion = $Price_Unit_Promotion;
     }

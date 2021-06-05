@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update db">
-      <change afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Goods.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Promotion.class.php" afterDir="false" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update model of goods and promotion">
+      <change afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_promotion.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Company-04062021053952.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Sales-04062021052349.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/test.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/admin/manage_promotion.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/modal/modal_promotionmanage.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Sales.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Sales.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Promotion.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Promotion.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AdminController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/dashboard.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/dashboard.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/manage_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_award.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/manage_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_news.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_awardmanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_awardmanage.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_newsmanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_newsmanage.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +106,12 @@
       <workItem from="1622553241302" duration="471000" />
       <workItem from="1622699873089" duration="1246000" />
       <workItem from="1622701183030" duration="688000" />
-      <workItem from="1622702747860" duration="2317000" />
+      <workItem from="1622702747860" duration="2387000" />
+      <workItem from="1622706124690" duration="81000" />
+      <workItem from="1622783686670" duration="131000" />
+      <workItem from="1622784214594" duration="952000" />
+      <workItem from="1622788110812" duration="130000" />
+      <workItem from="1622876408539" duration="5342000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>
@@ -251,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622702774697</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="case : update model of goods and promotion">
+      <created>1622705125009</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1622705125009</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,6 +311,7 @@
     <MESSAGE value="case : change controller" />
     <MESSAGE value="case : ติดปัญหา upload ตรง amphur_id" />
     <MESSAGE value="case : update db" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : update db" />
+    <MESSAGE value="case : update model of goods and promotion" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update model of goods and promotion" />
   </component>
 </project>

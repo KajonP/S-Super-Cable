@@ -88,7 +88,8 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="pages/goodspromotion.html" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=Admin&action=manage_promotion"; ?>"
+                           class="nav-link">
                             <i class="nav-icon fas fa-gifts"></i>
                             <p>
                                 สินค้าส่งเสริมการขาย
