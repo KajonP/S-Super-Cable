@@ -118,11 +118,13 @@ class Award
 
     public static function geneateDateTimemd()
     {
+        date_default_timezone_set("Asia/Bangkok");
         return Date("YmdHis") ;
     }
 
     public static function geneateDateTime()
     {
+        date_default_timezone_set("Asia/Bangkok");
         return date("Y-m-d H:i:s") ;
     }
 
