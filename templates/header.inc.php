@@ -18,7 +18,10 @@
     <link rel="stylesheet" href="AdminLTE/plugins/sweetalert2/sweetalert2.min.css">
     <!-- Datatable -->
     <link rel="stylesheet" href="AdminLTE/plugins/datatables/datatables.min.css">
-
+	<!-- DataTables -->
+	  <link rel="stylesheet" href="AdminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+	  <link rel="stylesheet" href="AdminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+	  <link rel="stylesheet" href="AdminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
 </head>
 

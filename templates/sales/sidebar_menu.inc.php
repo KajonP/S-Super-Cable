@@ -28,6 +28,28 @@
                         </a>
                     </li>
                 </ul>
+				
+				
+				<li class="nav-item menu-open">
+                <a class="nav-link active">
+                    <i class="nav-icon  fas fa-gift"></i>
+                    <p>
+                        ข่าวสาร/รางวัล
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="index.php?controller=NewsPrices&action=index" class="nav-link">
+                            <i class="nav-icon fas fa-file-invoice"></i>
+                            <p>
+                                ข่าวสาร/รางวัล
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+				
+				
             <li class="nav-item menu-open">
                 <a class="nav-link active">
                     <i class="nav-icon fas fa-tasks"></i>
