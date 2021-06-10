@@ -1,7 +1,6 @@
-<?php
+<?php 
 $title = "S Super Cable";
-
-try {
+try { 	
     if (!isset($_SESSION['employee']) || !is_a($_SESSION['employee'], "Employee")) {
         header("Location: " . Router::getSourcePath() . "index.php");
     }
@@ -40,7 +39,7 @@ try {
                                 <div class="col-md-12 text-right">
 
 
-                                    <a href="#" onclick="newsManageShow('create')"
+                                    <a href="#" onclick="newsManageShow('create');"
                                        class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">
                                         <span class="btn btn-round btn-success"
                                               style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i
@@ -149,4 +148,4 @@ try {
 ?>
 
 
-<script type="text/javascript" src="AdminLTE/assets/js/page/manage_news.js"></script>
+<script type="text/javascript" src="AdminLTE/assets/js/page/ymanage_news.js"></script>

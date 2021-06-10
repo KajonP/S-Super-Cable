@@ -9,10 +9,19 @@ class Message
     private $Picture_Message;
     private $Date_Message;
     private const TABLE = "message";
+	private $status;
+	private $unread;
 
 
     //----------- Getters & Setters
-    
+	public function getUnread(): int
+    {
+        return $this->unread;
+    }
+    public function getStatus(): int
+    {
+        return $this->status;
+    }
     // ---- id message
     public function getID_Message(): int
     {
@@ -71,10 +80,43 @@ class Message
 
 
     //----------- CRUD
+	//----------- CRUD
+    public static function fetchCountAll(): array
+    {
+        $con = Db::getInstance();
+        $query = "select count(*) from news_status where status =0 and ID_Employee = 's0001'";
+        $stmt = $con->prepare($query);
+        #$stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
+        $stmt->execute();
+        #$list = array();
+        #while ($prod = $stmt->fetch()) {
+        #    $list[$prod->getID_Message()] = $prod;
+        #}
+		$prod = $stmt->fetch();
+		
+        return $prod;
+		#return $list;
+
+    }
     public static function fetchAll(): array
     {
         $con = Db::getInstance();
         $query = "SELECT * FROM " . self::TABLE;
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
+        $stmt->execute();
+        $list = array();
+        while ($prod = $stmt->fetch()) {
+            $list[$prod->getID_Message()] = $prod;
+        }
+        return $list;
+
+    }
+	
+	public static function fetchAllwithInner($emp_id): array
+    {
+        $con = Db::getInstance();
+        $query = "SELECT * FROM " . self::TABLE . " inner join news_status on message.ID_Message = news_status.ID_Message"." where news_status.ID_Employee = '".$emp_id."'";
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
         $stmt->execute();
@@ -108,13 +150,11 @@ class Message
 
     public static function geneateDateTimemd()
     {
-        date_default_timezone_set("Asia/Bangkok");
         return Date("YmdHis") ;
     }
 
     public static function geneateDateTime()
     {
-        date_default_timezone_set("Asia/Bangkok");
         return date("Y-m-d H:i:s") ;
     }
 
@@ -126,7 +166,7 @@ class Message
 
     // save data to
     // insert data into server.
-    public static function create_news($params)
+    public static function create_news($params, $emp_id)
     {
         $con = Db::getInstance();
         $values = "";
@@ -138,9 +178,14 @@ class Message
         }
         $values = substr($values, 0, -1);
         $query = "INSERT INTO " . self::TABLE . "({$columns}) VALUES ($values)";
-
         # execute query
         if ($con->exec($query)) {
+			$emp = new Employee();
+			$result = $emp->findAll();
+			foreach ($result as $prop => $val) {
+				$emp_id = $val->getID_Employee();
+				$con->exec("insert into news_status (ID_Employee, ID_Message) values('".$emp_id."',".$params['ID_Message'].")");
+			}
             return array("status" => true);
         } else {
             $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูล ";
@@ -162,6 +207,25 @@ class Message
         }
         $query = substr($query, 0, -1);
         $query .= " WHERE ID_Message = '" . $ID_Message . "'";
+        
+        $con = Db::getInstance();
+        if ($con->exec($query)) {
+            return array("status" => true);
+        } else {
+
+            return array("status" => false);
+        }
+
+    }
+	// update data at database
+    public static function update_news_status($ID_Employee, $ID_Message) 
+    {
+        
+        //$ID_Message = $params['ID_Message'];
+        $query = "UPDATE news_status SET status = 1 ";
+        
+        //$query = substr($query, 0, -1);
+        $query .= " WHERE ID_Message = ".$ID_Message." and ID_Employee = '".$ID_Employee."'";
         
         $con = Db::getInstance();
         if ($con->exec($query)) {

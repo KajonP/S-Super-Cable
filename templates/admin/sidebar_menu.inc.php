@@ -57,7 +57,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=Company&action=manage_company"; ?>"
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=Admin&action=manage_company"; ?>"
                            class="nav-link">
                             <i class="nav-icon fas fa-store"></i>
                             <p>
@@ -88,7 +88,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=Promotion&action=manage_promotion"; ?>"
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=Admin&action=manage_promotion"; ?>"
                            class="nav-link">
                             <i class="nav-icon fas fa-gifts"></i>
                             <p>
@@ -99,7 +99,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=News&action=manage_news"; ?>"
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=Admin&action=manage_news"; ?>" 
                             class="nav-link">
                             <i class="nav-icon fas fa-comments"></i>
                             <p>
@@ -110,7 +110,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                    <a href="<?php echo Router::getSourcePath() . "index.php?controller=Award&action=manage_award"; ?>"
+                    <a href="<?php echo Router::getSourcePath() . "index.php?controller=Admin&action=manage_award"; ?>"  
                             class="nav-link">
                             <i class=" nav-icon fas fa-award"></i>
                             <p>
@@ -131,7 +131,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=ResultSales&action=manage_sales"; ?>"
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=Admin&action=manage_sales"; ?>"
                            class="nav-link">
                             <i class="nav-icon fas fa-wallet"></i>
                             <p>ยอดขาย </p>

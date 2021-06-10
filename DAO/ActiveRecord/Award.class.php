@@ -10,10 +10,19 @@ class Award
     private $ID_Employee;
     private $fullname_employee;
     private const TABLE = "award";
+	private $status;
 
 
     //----------- Getters & Setters
-    
+	public function getStatus(): int
+    {
+        #return 1;
+		return $this->status;
+    }
+    public function setStatus(int $status)
+    {
+        $this->status = $status;
+    }
     // ---- id Award
     public function getID_Award(): int
     {
@@ -78,7 +87,23 @@ class Award
         $this->getFullname_employee = $fullname_employee;
     }
 
+	public static function fetchCountAll(): array
+    {
+        $con = Db::getInstance();
+        $query = "select count(*) from award_status where status =0 and ID_Employee = 's0001'";
+        $stmt = $con->prepare($query);
+        #$stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
+        $stmt->execute();
+        #$list = array();
+        #while ($prod = $stmt->fetch()) {
+        #    $list[$prod->getID_Message()] = $prod;
+        #}
+		$prod = $stmt->fetch();
+		
+        return $prod;
+		#return $list;
 
+    }
 
     public static function fetchAll(): array
     {
@@ -96,7 +121,22 @@ class Award
         return $list;
 
     }
+public static function fetchAllwithInner($emp_id): array
+    {
+        $con = Db::getInstance();
+		#$query = "select * from award inner join award_status on award_status.ID_Award = award.ID_Award where award_status.ID_Employee = 's0001'";
+		$query = "select *, employee.Name_Employee as fullname_employee from award inner join award_status on award_status.ID_Award = award.ID_Award inner join employee on award.ID_Employee = employee.ID_Employee where award_status.ID_Employee = '".$emp_id."'";
 
+		$stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "award");
+        $stmt->execute();
+        $list = array();
+        while ($prod = $stmt->fetch()) {
+            $list[$prod->getID_Award()] = $prod;
+        }
+        return $list;
+
+    }
     public static function findAward_byID($ID_Award): ?Award
     {
         $con = Db::getInstance();
@@ -118,13 +158,11 @@ class Award
 
     public static function geneateDateTimemd()
     {
-        date_default_timezone_set("Asia/Bangkok");
         return Date("YmdHis") ;
     }
 
     public static function geneateDateTime()
     {
-        date_default_timezone_set("Asia/Bangkok");
         return date("Y-m-d H:i:s") ;
     }
 
@@ -152,6 +190,12 @@ class Award
 
         # execute query
         if ($con->exec($query)) {
+			$emp = new Employee();
+			$result = $emp->findAll();
+			foreach ($result as $prop => $val) {
+				$emp_id = $val->getID_Employee();
+				$con->exec("insert into award_status (ID_Employee, ID_Award) values('".$emp_id."',".$awardModel['ID_Award'].")");
+			}
             return array("status" => true);
         } else {
             $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูล ";
@@ -171,6 +215,23 @@ class Award
         }
         $query = substr($query, 0, -1);
         $query .= " WHERE ID_Award = '" . $ID_Award . "'";
+        
+        $con = Db::getInstance();
+        if ($con->exec($query)) {
+            return array("status" => true);
+        } else {
+
+            return array("status" => false);
+        }
+    }
+	
+	public static function update_award_status($ID_Employee, $ID_Award)
+    {   
+        //$ID_Message = $params['ID_Message'];
+        $query = "UPDATE award_status SET status = 1 ";
+        
+        //$query = substr($query, 0, -1);
+        $query .= " WHERE ID_Award = ".$ID_Award." and ID_Employee = '".$ID_Employee."'";
         
         $con = Db::getInstance();
         if ($con->exec($query)) {
