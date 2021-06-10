@@ -42,7 +42,7 @@ var form_validte = $("#form_newsManage").validate({
       required: true,
     },
     Text_Message: {
-    
+
     },
     profile_news: {
       extension: "jpg|jpeg|gif|png",
@@ -69,13 +69,13 @@ var form_validte = $("#form_newsManage").validate({
 
 // show dialog create or edit
 function  newsManageShow(type, ID_Message ) {
-  var title = "" ; 
-  
+  var title = "" ;
+
   /* clear old form value */
   $('#form_newsManage')[0].reset();
   $("#thumnails_award_pic").attr("src", "");
 
-    switch(type) 
+    switch(type)
     {
       case "create":
         title = "สร้างข่าวสาร";
@@ -83,12 +83,12 @@ function  newsManageShow(type, ID_Message ) {
         // set id
         $('#button_newsManageModal').attr("data-id", null);
 
-        // 
+        //
         form_validte.resetForm();
-        
+
         break;
       case "edit":
-      
+
         // แก้ไขข่าวสาร
         title = "แก้ไขข่าวสาร";
 
@@ -97,7 +97,7 @@ function  newsManageShow(type, ID_Message ) {
         get_news_to_edit(ID_Message);
         // set id
         $('#button_newsManageModal').attr("data-id", ID_Message);
-        
+
         break;
 
       default:
@@ -113,7 +113,7 @@ function  newsManageShow(type, ID_Message ) {
 
     /* modal show  */
     $('#newsManageModal').modal('show');
-  
+
   }
 
 
@@ -133,27 +133,27 @@ function onaction_createoredit(ID_Message = null) {
   $.each(form_data, function (key, input) {
       data.append(input.name, input.value);
   });
-  
+
   var file_data = $('input[name="profile_news"]')[0].files;
-  
+
   if (type == "create" )
   {
       //File data
     if (file_data.length > 0)
     {
-      for (var i = 0; i < file_data.length; i++) 
+      for (var i = 0; i < file_data.length; i++)
       {
           data.append("profile_news[]", file_data[i]);
       }
     }
-  } 
-  else 
+  }
+  else
   {
     //File data
     // edit if insert picture
     if (file_data.length > 0)
     {
-      for (var i = 0; i < file_data.length; i++)  
+      for (var i = 0; i < file_data.length; i++)
       {
           data.append("profile_news[]", file_data[i]);
       }
@@ -162,7 +162,7 @@ function onaction_createoredit(ID_Message = null) {
 
   switch(type) {
     case 'create':
-      create_news(data);  
+      create_news(data);
       break;
     case 'edit':
       update_new(data);
@@ -175,7 +175,7 @@ function onaction_createoredit(ID_Message = null) {
 // call ajax to insert data into server.
 function create_news(formData)
 {
-  var url_string = "index.php?controller=Admin&action=create_news";
+  var url_string = "index.php?controller=News&action=create_news";
       if (!$("#form_newsManage").validate().form()) {
         Swal.fire({
           icon: 'error',
@@ -192,7 +192,7 @@ function create_news(formData)
           url: url_string,
           data: formData,
           processData: false,
-          contentType: false, 
+          contentType: false,
           enctype: 'multipart/form-data',
           success: function (res, status, xhr) {
             var data = JSON.parse(res);
@@ -225,7 +225,7 @@ function create_news(formData)
 // call ajax get data from server.
 function get_news_to_edit(ID_Message) {
   $.ajax({
-    url: "index.php?controller=Admin&action=findbyID_Message",
+    url: "index.php?controller=News&action=findbyID_Message",
     data: {
       "ID_Message": ID_Message
     },
@@ -234,7 +234,7 @@ function get_news_to_edit(ID_Message) {
     async: false,
     success: function (response, status) {
       /* set input value */
-      
+
       $('#Tittle_Message').val(response.data.Tittle_Message);
       $('#Text_Message').val(response.data.Text_Message);
       $("#thumnails_new_profile").attr("src", response.data.Picture_Message);
@@ -248,10 +248,10 @@ function get_news_to_edit(ID_Message) {
 }
 
 
-function update_new(formData) 
-{  
+function update_new(formData)
+{
   var ID_Message = $("#button_newsManageModal").attr("data-id");
-  var url_string = "index.php?controller=Admin&action=edit_news&ID_Message=" + ID_Message;
+  var url_string = "index.php?controller=News&action=edit_news&ID_Message=" + ID_Message;
   if (!$("#form_newsManage").validate().form()) {
     Swal.fire({
       icon: 'error',
@@ -302,8 +302,8 @@ function update_new(formData)
 }
 
 
-function delete_news(ID_Message) 
-{  
+function delete_news(ID_Message)
+{
   Swal.fire({
     title: 'คุณเเน่ใจใช่ไหม?',
     text: "คุณต้องการลบข้อมูลนี้ใช่ไหม?",
@@ -318,9 +318,9 @@ function delete_news(ID_Message)
     if (result.isConfirmed) {
       $.ajax({
         type: "POST",
-        url: "index.php?controller=Admin&action=delete_news&ID_Message=" + ID_Message,
+        url: "index.php?controller=News&action=delete_news&ID_Message=" + ID_Message,
         processData: false,
-        contentType: false, 
+        contentType: false,
         success: function (res, status, xhr) {
           var data = JSON.parse(res);
           if (data.status == true) {

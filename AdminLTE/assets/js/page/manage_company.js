@@ -204,7 +204,7 @@ function companymanageShow(type, ID_Company = null) {
 
 function onaction_getinptval(ID_Company) {
   $.ajax({
-    url: "index.php?controller=Admin&action=findbyID_Company",
+    url: "index.php?controller=Company&action=findbyID_Company",
     data: {
       "ID_Company": ID_Company
     },
@@ -263,7 +263,7 @@ function onaction_deletecompany(ID_Company) {
   }).then((result) => {
     if (result.isConfirmed) {
       $.ajax({
-        url: "index.php?controller=Admin&action=delete_company",
+        url: "index.php?controller=Company&action=delete_company",
         data: {
           "ID_Company": ID_Company
         },
@@ -322,10 +322,10 @@ $('#form_importexcel').validate({
 
 // eof
 function downloadExcel() {
-  var url_string = "index.php?controller=Admin&action=export_excel_test_company";
+  var url_string = "index.php?controller=Company&action=export_excel_test_company";
   $.ajax({
     type: "POST",
-    url: "index.php?controller=Admin&action=export_excel_test_company",
+    url: "index.php?controller=Company&action=export_excel_test_company",
     data: {
       "page": 'manage_company'
     },
@@ -347,7 +347,7 @@ function downloadExcel() {
 $("#button_importcompanyModal").on('click', function (event) {
   var form_importexcel = $('#form_importexcel')[0];
   var formData_importexcel = new FormData(form_importexcel);
-  var url_string = "index.php?controller=Admin&action=import_excel_company";
+  var url_string = "index.php?controller=Company&action=import_excel_company";
   if ($('#form_importexcel #examfile').val() != '' || $('#form_importexcel #file').val() != '') {
     $.ajax({
       type: "POST",
@@ -410,7 +410,7 @@ function onaction_createorupdate(ID_Company = null) {
 
   switch (type) {
     case 'create':
-      var url_string = "index.php?controller=Admin&action=create_company";
+      var url_string = "index.php?controller=Company&action=create_company";
       if (!$("#form_companymanage").validate().form()) {
         Swal.fire({
           icon: 'error',
@@ -461,7 +461,7 @@ function onaction_createorupdate(ID_Company = null) {
     case 'edit':
       var ID_Company = $("#button_companymanageModal").attr("data-id");
 
-      var url_string = "index.php?controller=Admin&action=edit_company&ID_Company=" + ID_Company;
+      var url_string = "index.php?controller=Company&action=edit_company&ID_Company=" + ID_Company;
       if (!$("#form_companymanage").validate().form()) {
         Swal.fire({
           icon: 'error',
@@ -522,6 +522,12 @@ function importShow() {
 
 }
 
+$(document).ready(function(){
+
+
+});
+
+
 $('#province').on('change', function () {
   var province_id = $('#province').val();
   getAmphur(province_id);
@@ -529,13 +535,12 @@ $('#province').on('change', function () {
 });
 
 
-
 function getAmphur(provice_id) {
 
-  var optionStr = createOptionPlaceholder("-กรุณาเลือกอำเภอ-");
+  var optionStr = createOptionPlaceholder("กรุณาเลือกอำเภอ");
 
   $.ajax({
-    url: "index.php?controller=Admin&action=getAmphur",
+    url: "index.php?controller=Company&action=getAmphur",
     data: {
       "PROVINCE_ID": provice_id
     },
@@ -560,16 +565,14 @@ function getAmphur(provice_id) {
 
 }
 
+
+
 function createOption(value, text) {
   return '<option value="' + value + '">' + text + '</option>';
 }
 function createOptionPlaceholder(text) {
   return '<option value="" disabled selected>' + text + '</option>';
 }
-
-
-
-
 
 
 

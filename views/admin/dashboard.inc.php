@@ -60,7 +60,7 @@ ob_start();
             <div class="icon">
                 <i class="fas fa-wallet"></i>
             </div>
-            <a href="index.php?controller=Admin&action=manage_news" class="small-box-footer">
+            <a href="index.php?controller=ResultSales&action=manage_sales" class="small-box-footer">
                 เพิ่มเติม <i class="fas fa-wallet"></i>
             </a>
         </div>
@@ -79,14 +79,14 @@ ob_start();
             <div class="icon">
                 <i class="fas fa-comments"></i>
             </div>
-            <a href="index.php?controller=Admin&action=manage_news" class="small-box-footer">
+            <a href="index.php?controller=News&action=manage_news" class="small-box-footer">
                 เพิ่มเติม <i class="fas fa-comments"></i>
             </a>
         </div>
     </div>
     <div class="col-lg-3 col-6">
         <!-- small card -->
-        <div class="small-box bg-gradient-dark ">
+        <div class="small-box bg-gradient-light ">
             <div class="inner">
                 <?php
                 # find all award
@@ -98,8 +98,27 @@ ob_start();
             <div class="icon">
                 <i class="fas fa-award"></i>
             </div>
-            <a href="index.php?controller=Admin&action=manage_award" class="small-box-footer">
+            <a href="index.php?controller=Award&action=manage_award" class="small-box-footer">
                 เพิ่มเติม <i class="fas fa-award"></i>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-6">
+        <!-- small card -->
+        <div class="small-box bg-gradient-blue ">
+            <div class="inner">
+                <?php
+                # find all promotion
+                $promotion_count = count(Promotion::findAll());
+                ?>
+                <h3><?php echo isset($promotion_count) ? $promotion_count : ""; ?> </h3>
+                <p>รางวัล</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-gifts"></i>
+            </div>
+            <a href="index.php?controller=Promotion&action=manage_promotion" class="small-box-footer">
+                เพิ่มเติม <i class="fas fa-gifts"></i>
             </a>
         </div>
     </div>

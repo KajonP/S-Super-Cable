@@ -93,7 +93,7 @@ function promotionmanageShow(type, ID_Promotion = null) {
       form_validte.resetForm();
 
       $.ajax({
-        url: "index.php?controller=Admin&action=findbyID_Promotion",
+        url: "index.php?controller=Promotion&action=findbyID_Promotion",
         data: {
           "ID_Promotion": ID_Promotion
         },
@@ -147,7 +147,7 @@ function onaction_deletepromotion(ID_Promotion) {
   }).then((result) => {
     if (result.isConfirmed) {
       $.ajax({
-        url: "index.php?controller=Admin&action=delete_promotion",
+        url: "index.php?controller=Promotion&action=delete_promotion",
         data: {
           "ID_Promotion": ID_Promotion
         },
@@ -184,7 +184,7 @@ function onaction_createorupdate(ID_Promotion = null) {
 
   switch (type) {
     case 'create':
-      var url_string = "index.php?controller=Admin&action=create_promotion";
+      var url_string = "index.php?controller=Promotion&action=create_promotion";
       if (!$("#form_promotionmanage").validate().form()) {
         Swal.fire({
           icon: 'error',
@@ -234,7 +234,7 @@ function onaction_createorupdate(ID_Promotion = null) {
     case 'edit':
       var ID_Promotion = $("#button_promotionmanageModal").attr("data-id");
 
-      var url_string = "index.php?controller=Admin&action=edit_promotion&ID_Promotion=" + ID_Promotion;
+      var url_string = "index.php?controller=Promotion&action=edit_promotion&ID_Promotion=" + ID_Promotion;
       if (!$("#form_promotionmanage").validate().form()) {
         Swal.fire({
           icon: 'error',

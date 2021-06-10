@@ -102,7 +102,7 @@ function salesmanageShow(type, ID_Excel = null) {
       form_validte.resetForm();
 
       $.ajax({
-        url: "index.php?controller=Admin&action=findbyID_Sales",
+        url: "index.php?controller=ResultSales&action=findbyID_Sales",
         data: {
           "ID_Excel": ID_Excel
         },
@@ -159,7 +159,7 @@ function onaction_deletesales(ID_Excel) {
   }).then((result) => {
     if (result.isConfirmed) {
       $.ajax({
-        url: "index.php?controller=Admin&action=delete_sales",
+        url: "index.php?controller=ResultSales&action=delete_sales",
         data: {
           "ID_Excel": ID_Excel
         },
@@ -217,10 +217,10 @@ $('#form_importexcel').validate({
 
 // eof
 function downloadExcel() {
-  var url_string = "index.php?controller=Admin&action=export_excel_test_sales";
+  var url_string = "index.php?controller=ResultSales&action=export_excel_test_sales";
   $.ajax({
     type: "POST",
-    url: "index.php?controller=Admin&action=export_excel_test_sales",
+    url: "index.php?controller=ResultSales&action=export_excel_test_sales",
     data: {
       "page": 'manage_sales'
     },
@@ -247,7 +247,7 @@ $("#button_importsalesModal").on('click', function (event) {
   $("#form_importexcel").validate().form();
   /* eof */
 
-  var url_string = "index.php?controller=Admin&action=import_excel_sales";
+  var url_string = "index.php?controller=ResultSales&action=import_excel_sales";
   if ($('#form_importexcel #examfile').val() != '' || $('#form_importexcel #file').val() != '') {
     $.ajax({
       type: "POST",
@@ -307,7 +307,7 @@ function onaction_createorupdate(ID_Excel = null) { //มันมาเข้�
 
   switch (type) {
     case 'create':
-      var url_string = "index.php?controller=Admin&action=create_sales";
+      var url_string = "index.php?controller=ResultSales&action=create_sales";
       if (!$("#form_salesmanage").validate().form()) {
         Swal.fire({
           icon: 'error',
@@ -357,7 +357,7 @@ function onaction_createorupdate(ID_Excel = null) { //มันมาเข้�
     case 'edit':
       var ID_Excel = $("#button_salesmanageModal").attr("data-id");
 
-      var url_string = "index.php?controller=Admin&action=edit_sales&ID_Excel=" + ID_Excel;
+      var url_string = "index.php?controller=ResultSales&action=edit_sales&ID_Excel=" + ID_Excel;
       if (!$("#form_salesmanage").validate().form()) {
         Swal.fire({
           icon: 'error',

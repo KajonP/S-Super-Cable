@@ -66,52 +66,52 @@ var form_validte = $("#form_awardManage").validate({
 
 // show dialog create or edit
 function  awardManageShow(type, ID_Award ) {
-    var title = "" ; 
-    
+    var title = "" ;
+
     /* clear old form value */
     $('#form_awardManage')[0].reset();
     $("#thumnails_award_pic").attr("src", "");
-  
-      switch(type) 
+
+      switch(type)
       {
         case "create":
           title = "สร้างรางวัล";
-  
+
           // set id
           $('#button_awardManageModal').attr("data-id", null);
           form_validte.resetForm();
-          
+
           break;
         case "edit":
-        
+
           title = "แก้ไขขรางวัล";
-  
+
           form_validte.resetForm();
           get_award_to_edit(ID_Award);
           // set id
           $('#button_awardManageModal').attr("data-id", ID_Award);
-          
+
           break;
-  
+
         default:
           // ..
           break;
       }
-  
+
       /* set title */
       $('#awardManageTitle').html(title);
-  
+
       /* set button event  */
       $('#button_awardManageModal').attr("data-status", type);
-  
+
       /* modal show  */
       $('#awardManageModal').modal('show');
-    
+
   }
 
 
 function onaction_createorupdate(ID_Award = null) {
-  
+
   var type = $('#button_awardManageModal').attr('data-status');
   var data = new FormData();
 
@@ -121,25 +121,25 @@ function onaction_createorupdate(ID_Award = null) {
   });
 
   var file_data = $('input[name="award_pic"]')[0].files;
-  
+
   if (type == "create" )
   {
       //File data
     if (file_data.length > 0)
     {
-      for (var i = 0; i < file_data.length; i++) 
+      for (var i = 0; i < file_data.length; i++)
       {
           data.append("award_pic[]", file_data[i]);
       }
     }
-  } 
-  else 
+  }
+  else
   {
     //File data
     // edit if insert picture
     if (file_data.length > 0)
     {
-      for (var i = 0; i < file_data.length; i++)  
+      for (var i = 0; i < file_data.length; i++)
       {
           data.append("award_pic[]", file_data[i]);
       }
@@ -148,7 +148,7 @@ function onaction_createorupdate(ID_Award = null) {
 
   switch(type) {
     case 'create':
-      create_award(data);  
+      create_award(data);
       break;
     case 'edit':
       update_award(data);
@@ -157,9 +157,9 @@ function onaction_createorupdate(ID_Award = null) {
 }
 
 
-function create_award(formData) 
+function create_award(formData)
 {
-  var url_string = "index.php?controller=Admin&action=create_award";
+  var url_string = "index.php?controller=Award&action=create_award";
   if (!$("#form_awardManage").validate().form()) {
     Swal.fire({
       icon: 'error',
@@ -176,7 +176,7 @@ function create_award(formData)
       url: url_string,
       data: formData,
       processData: false,
-      contentType: false, 
+      contentType: false,
       enctype: 'multipart/form-data',
       success: function (res, status, xhr) {
         var data = JSON.parse(res);
@@ -208,7 +208,7 @@ function create_award(formData)
 
 function get_award_to_edit(ID_Award) {
   $.ajax({
-    url: "index.php?controller=Admin&action=findAwardbyID_Award",
+    url: "index.php?controller=Award&action=findAwardbyID_Award",
     data: {
       "ID_Award": ID_Award
     },
@@ -217,7 +217,7 @@ function get_award_to_edit(ID_Award) {
     async: false,
     success: function (response, status) {
       /* set input value */
-      
+
 
       // set vaule to html tag
       $('#Tittle_Award').val(response.data.Tittle_Award);
@@ -233,10 +233,10 @@ function get_award_to_edit(ID_Award) {
 }
 
 
-function update_award(formData) 
+function update_award(formData)
 {
   var ID_Award = $("#button_awardManageModal").attr("data-id");
-  var url_string = "index.php?controller=Admin&action=edit_award&ID_Award=" + ID_Award;
+  var url_string = "index.php?controller=Award&action=edit_award&ID_Award=" + ID_Award;
   if (!$("#form_awardManage").validate().form()) {
     Swal.fire({
       icon: 'error',
@@ -288,14 +288,14 @@ function update_award(formData)
 }
 
 
-function onAction_deleteAward(ID_Award) 
+function onAction_deleteAward(ID_Award)
 {
   delete_award(ID_Award);
 }
 
 
-function delete_award(ID_Award) 
-{  
+function delete_award(ID_Award)
+{
   Swal.fire({
     title: 'คุณเเน่ใจใช่ไหม?',
     text: "คุณต้องการลบข้อมูลนี้ใช่ไหม?",
@@ -310,9 +310,9 @@ function delete_award(ID_Award)
     if (result.isConfirmed) {
       $.ajax({
         type: "POST",
-        url: "index.php?controller=Admin&action=delete_award&ID_Award=" + ID_Award,
+        url: "index.php?controller=Award&action=delete_award&ID_Award=" + ID_Award,
         processData: false,
-        contentType: false, 
+        contentType: false,
         success: function (res, status, xhr) {
           var data = JSON.parse(res);
           if (data.status == true) {
