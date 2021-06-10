@@ -156,21 +156,6 @@ class AwardController
         return json_encode($result);
     }
 
-    //หน้าจัดการผู้ใช้
-    private function manage_user($params = null)
-    {
-        session_start();
-        $employee = $_SESSION["employee"];
-
-
-        # retrieve data
-        $user = Employee::findAll();
-
-        $file_log = Filelog::findByPage('manage_user');
-
-        include Router::getSourcePath() . "views/admin/manage_user.inc.php";
-    }
-
     private function error_handle(string $message)
     {
         $this->index($message);
@@ -181,7 +166,7 @@ class AwardController
     {
         session_start();
         $employee = $_SESSION["employee"];
-        include Router::getSourcePath() . "views/index_sales.inc.php";
+        include Router::getSourcePath() . "views/index_admin.inc.php";
 
     }
     //หน้าจัดการรางวัล

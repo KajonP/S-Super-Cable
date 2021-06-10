@@ -227,6 +227,28 @@ class AdminController
         );
         return json_encode($employee_result);
     }
+    // ควรมีสำหรับ controller ทุกตัว
+    private function index($message = null)
+    {
+        session_start();
+        $employee = $_SESSION["employee"];
+        include Router::getSourcePath() . "views/index_admin.inc.php";
+
+    }
+    //หน้าจัดการผู้ใช้
+    private function manage_user($params = null)
+    {
+        session_start();
+        $employee = $_SESSION["employee"];
+
+
+        # retrieve data
+        $user = Employee::findAll();
+
+        $file_log = Filelog::findByPage('manage_user');
+
+        include Router::getSourcePath() . "views/admin/manage_user.inc.php";
+    }
     //หน้า export ไฟล์ตัวอย่าง excel ผู้ใช้
     private function export_excel_test_user($params = null)
     {

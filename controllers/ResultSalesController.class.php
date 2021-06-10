@@ -239,7 +239,7 @@ class ResultSalesController
     {
         session_start();
         $employee = $_SESSION["employee"];
-        include Router::getSourcePath() . "views/index_sales.inc.php";
+        include Router::getSourcePath() . "views/index_admin.inc.php";
 
     }
     //หน้าจัดการยอดขาย
