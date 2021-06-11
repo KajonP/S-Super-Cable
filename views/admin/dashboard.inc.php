@@ -41,7 +41,7 @@ try {
                 <div class="icon">
                     <i class="fas fa-store"></i>
                 </div>
-                <a href="index.php?controller=Admin&action=manage_company" class="small-box-footer">
+                <a href="index.php?controller=Company&action=manage_company" class="small-box-footer">
                     เพิ่มเติม <i class="fas fa-store"></i>
                 </a>
             </div>

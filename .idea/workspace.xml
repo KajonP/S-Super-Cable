@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : change controller : 1 controller to 1 model">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/AdminController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AdminController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/dashboard.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/dashboard.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +107,7 @@
       <workItem from="1623318520304" duration="2027000" />
       <workItem from="1623320656837" duration="668000" />
       <workItem from="1623403208102" duration="529000" />
-      <workItem from="1623415528272" duration="366000" />
+      <workItem from="1623415528272" duration="633000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>
@@ -291,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623317661756</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="case : update">
+      <created>1623416130865</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1623416130865</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,6 +338,7 @@
     <MESSAGE value="case : update model of goods and promotion" />
     <MESSAGE value="case : crud promotion" />
     <MESSAGE value="case : change controller : 1 controller to 1 model" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : change controller : 1 controller to 1 model" />
+    <MESSAGE value="case : update" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update" />
   </component>
 </project>
