@@ -148,4 +148,4 @@ try {
 ?>
 
 
-<script type="text/javascript" src="AdminLTE/assets/js/page/ymanage_news.js"></script>
+<script type="text/javascript" src="AdminLTE/assets/js/page/manage_news.js"></script>

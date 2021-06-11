@@ -8,9 +8,10 @@ class Message
     private $Text_Message;
     private $Picture_Message;
     private $Date_Message;
+    private $status;
+    private $unread;
     private const TABLE = "message";
-	private $status;
-	private $unread;
+
 
 
     //----------- Getters & Setters
@@ -30,7 +31,7 @@ class Message
 
     public function setID_Message(int $ID_Message)
     {
-        $this->getID_Message = $getID_Message;
+        $this->getID_Message = $ID_Message;
     }
 
     // --- title message
@@ -41,7 +42,7 @@ class Message
 
     public function setTittle_Message(string $Tittle_Message)
     {
-        $this->getTittle_Message = $getTittle_Message;
+        $this->getTittle_Message = $Tittle_Message;
     }
 
     // - text message
@@ -52,7 +53,7 @@ class Message
 
     public function setText_Message(string $Text_Message)
     {
-        $this->getText_Message = $getText_Message;
+        $this->getText_Message = $Text_Message;
     }
 
 
@@ -64,7 +65,7 @@ class Message
 
     public function setPicture_Message(string $Picture_Message)
     {
-        $this->getPicture_Message = $getPicture_Message;
+        $this->getPicture_Message = $Picture_Message;
     }
 
     // --- date message
@@ -75,16 +76,15 @@ class Message
 
     public function setDate_Message(string $Date_Message)
     {
-        $this->getDate_Message = $getDate_Message;
+        $this->getDate_Message = $Date_Message;
     }
 
 
     //----------- CRUD
-	//----------- CRUD
     public static function fetchCountAll(): array
     {
         $con = Db::getInstance();
-        $query = "select count(*) from news_status where status =0 and ID_Employee = 's0001'";
+        $query = "select count(*) from news_status where status =0 and ID_Employee = 's009'";
         $stmt = $con->prepare($query);
         #$stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
         $stmt->execute();
@@ -93,7 +93,6 @@ class Message
         #    $list[$prod->getID_Message()] = $prod;
         #}
 		$prod = $stmt->fetch();
-		
         return $prod;
 		#return $list;
 

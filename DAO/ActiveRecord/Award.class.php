@@ -9,14 +9,15 @@ class Award
     private $Date_Award;
     private $ID_Employee;
     private $fullname_employee;
+    private $status;
     private const TABLE = "award";
-	private $status;
+
 
 
     //----------- Getters & Setters
 	public function getStatus(): int
     {
-        #return 1;
+
 		return $this->status;
     }
     public function setStatus(int $status)
@@ -90,7 +91,7 @@ class Award
 	public static function fetchCountAll(): array
     {
         $con = Db::getInstance();
-        $query = "select count(*) from award_status where status =0 and ID_Employee = 's0001'";
+        $query = "select count(*) from award_status where status =0 and ID_Employee = 's009'";
         $stmt = $con->prepare($query);
         #$stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
         $stmt->execute();

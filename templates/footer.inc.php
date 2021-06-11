@@ -38,7 +38,7 @@
 <script src="AdminLTE/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <script src="AdminLTE/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
 <script src="AdminLTE/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="AdminLTEplugins/jszip/jszip.min.js"></script>
+<script src="AdminLTE/plugins/jszip/jszip.min.js"></script>
 <script src="AdminLTE/plugins/pdfmake/pdfmake.min.js"></script>
 <script src="AdminLTE/plugins/pdfmake/vfs_fonts.js"></script>
 <script src="AdminLTE/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
