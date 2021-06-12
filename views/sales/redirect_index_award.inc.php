@@ -1,4 +1,4 @@
 <?php
-header("Location: " . Router::getSourcePath() . "index.php?controller=AwardStatus&action=update_status_award");
+header("Location: " . Router::getSourcePath() . "index.php?controller=AwardStatus&action=show_award");
 ?>
 

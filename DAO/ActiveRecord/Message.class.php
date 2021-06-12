@@ -185,7 +185,7 @@ class Message
             # เข้า for loop เพือกระจาย status ของ  news
             foreach ($result as $prop => $val) {
                 $emp_id = $val->getID_Employee();
-                $con->exec("insert into news_status (ID_Employee, ID_Message) values('".$emp_id."',".$params['ID_Message'].")");
+                $con->exec("insert into message_status (ID_Employee, ID_Message) values('".$emp_id."',".$params['ID_Message'].")");
             }
             return array("status" => true);
         } else {
@@ -223,7 +223,7 @@ class Message
     {
 
         //$ID_Message = $params['ID_Message'];
-        $query = "UPDATE news_status SET status = 1 ";
+        $query = "UPDATE message_status SET status = 1 ";
 
         //$query = substr($query, 0, -1);
         $query .= " WHERE ID_Message = ".$ID_Message." and ID_Employee = '".$ID_Employee."'";
@@ -243,7 +243,7 @@ class Message
     {
 
         //$ID_Award = $params['ID_Award'];
-        $query = "UPDATE news_status SET status = 1 ";
+        $query = "UPDATE message_status SET status = 1 ";
 
         //$query = substr($query, 0, -1);
         $query .= " WHERE ID_Award = ".$ID_Award." and ID_Employee = '".$ID_Employee."'";

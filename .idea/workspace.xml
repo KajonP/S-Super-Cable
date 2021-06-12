@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : เเยก 2หน้าได้ หน้า message เเสดงผลไม่ได้ + award อ่านไม่ได้ เข้า error">
+      <change afterPath="$PROJECT_DIR$/images/66d73fd7324a54bd2a8df561ddef7e40.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/835493da9cd86c4f62ec1c15952ac3ab.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/f47c5f5c7bfe4534d4524f92e5c43b78.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AwardStatusController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AwardStatusController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/sales/redirect_index_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/redirect_index_award.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/sales/redirect_index_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/redirect_index_news.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +120,7 @@
       <workItem from="1623403208102" duration="529000" />
       <workItem from="1623415528272" duration="2810000" />
       <workItem from="1623420791072" duration="612000" />
-      <workItem from="1623488484758" duration="11218000" />
+      <workItem from="1623488484758" duration="12586000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>
@@ -332,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623499387299</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="case : เเยก 2หน้าได้ หน้า message เเสดงผลไม่ได้ + award อ่านไม่ได้ เข้า error">
+      <created>1623499922073</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1623499922073</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
