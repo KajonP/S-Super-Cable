@@ -28,6 +28,37 @@
                         </a>
                     </li>
                 </ul>
+            </li>
+            <li class="nav-item menu-open">
+                <a class="nav-link active">
+                    <i class="nav-icon fas fa-eye"></i>
+                    <p>
+                        เเสดงผล
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=NewsStatus&action=show_news"; ?>"
+                           class="nav-link">
+                            <i class="nav-icon fas fa-comment"></i>
+                            <p>
+                                ข่าวสาร
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=AwardStatus&action=show_award"; ?>"
+                           class="nav-link">
+                            <i class="nav-icon fas fa-award"></i>
+                            <p>
+                                รางวัล
+                            </p>
+                        </a>
+                    </li>
+                </ul>
             <li class="nav-item menu-open">
                 <a class="nav-link active">
                     <i class="nav-icon  fas fa-gift"></i>
@@ -46,7 +77,7 @@
                         </a>
                     </li>
                 </ul>
-
+            </li>
             <li class="nav-item menu-open">
                 <a class="nav-link active">
                     <i class="nav-icon fas fa-sign-out-alt"></i>
@@ -63,6 +94,7 @@
                         </a>
                     </li>
                 </ul>
+            </li>
         </ul>
     </nav>
     <!-- /.sidebar-menu -->

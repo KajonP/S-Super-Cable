@@ -36,11 +36,10 @@ try {
                                     <table id="example2" class="table table-md" style="width:100%;">
                                         <thead>
                                         <tr>
-                                            <th>เลขที่</th><th>รูปภาพ</th>
+                                           <th>รูปภาพ</th>
                                             <th>หัวข่าวสาร</th>
                                             <th>เนื้อข่าวสาร</th>
                                             <th>วันเวลา</th>
-											
                                             <th>การกระทำ </th>
                                         </tr>
                                         </thead>
@@ -49,7 +48,7 @@ try {
                                         <?php $i = 1; foreach ($message as $key => $value) { ?>
                                             <tr>
 											<td><img src=<?php echo $value->getPicture_Message(); ?> width=150 height=150></td>
-                                                <td><?php echo $i++; ?></td>
+
                                                 <td><?php echo $value->getTittle_Message() ; ?></td>
                                                 <td><?php echo $value->getText_Message(); ?></td>
                                                 <td><?php echo $value->getDate_Message(); ?></td>
@@ -59,24 +58,18 @@ try {
 													if ($value->getStatus() == 0) { 
 												?>
 														
-															<button type="button" onclick="location.replace('index.php?controller=NewsPrices&action=index2&ID_Message=<?=$value->getID_Message()?>');"
+															<button type="button" onclick="location.replace('index.php?controller=NewsStatus&action=update_status_news&ID_Message=<?=$value->getID_Message()?>');"
 																	class="btn btn-round btn-warning text-center"
 																	style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
 																อ่าน
 															</button>
-														
-												<?php
-													} else { 
-												?>
-														<a href="#"
-														   onclick="onAction_deleteMessage('<?php echo $value->getID_Message(); ?>')">
-															<button type="button" class="btn btn-round btn-danger"
-																	style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
-	อ่านแล้ว                                                        </button>
-														</a>
-												<?php
-													}
-												?>
+
+                                                    <?php } else { ?>
+                                                        <button type="button" class="btn btn-round btn-danger"
+                                                                style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
+                                                            อ่านแล้ว
+                                                        </button>
+                                                    <?php } ?>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -91,68 +84,10 @@ try {
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
-		
+
         <!-- Content Header (Page header) -->
-        
+
         <!-- /.content-header -->
-		<div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-md-12">
-                        <h1 class="m-0">รางวัล</h1><?php echo "ข้อความที่ไม่ได้อ่าน <font color=red>".$countAllAward[0]."</font>"; ?> 
-
-                        <!-- content -->
-                        <div class="card">
-                            <div class="card-body p-0 d-flex">
-                                <div class="table-responsive">
-                                    <table id="example3" class="table table-md" style="width:100%;">
-                                        <thead>
-                                        <tr>
-                                            <th>รูปภาพ</th><!--th>เลขที่</th-->
-                                            <th>ชื่อรางวัล</th>
-                                            <th>วันเวลา</th>
-                                            <th>ลูกจ้าง</th>
-											
-                                            <th>การกระทำ </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-
-                                        <?php $i=1; foreach ($awardList as $key => $value) { ?>
-                                            <tr>
-												<td><img src=<?php echo $value->getPicture_Award(); ?> width=200 height=200></td>
-                                                <!--td><?php echo $i++; ?></td-->
-                                                <td><?php echo $value->getTittle_Award() ; ?></td>
-                                                <td><?php echo $value->getDate_Award(); ?></td>
-                                                <td><?php echo $value->getFullname_employee(); ?></td>
-												
-                                                <td class=" last">
-											<?php
-												if ($value->getStatus() == 0) {
-											?>
-													<button type="button" onclick="location.replace('index.php?controller=NewsPrices&action=index3&ID_Award=<?=$value->getID_Award()?>');"
-															class="btn btn-round btn-warning text-center"
-															style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
-															อ่าน
-													</button>
-											<?php } else { ?>       
-													<button type="button" class="btn btn-round btn-danger"
-															style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
-															อ่านแล้ว
-													</button>
-											<?php } ?>
-                                                </td>
-                                            </tr>
-                                        <?php } ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <!-- /.card-body -->
-                        </div>
-                        <!-- /.card -->
-                        <!-- eof -->
-                    </div><!-- /.col -->
 
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->

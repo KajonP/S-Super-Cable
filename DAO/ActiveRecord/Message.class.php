@@ -81,10 +81,10 @@ class Message
 
 
     //----------- CRUD
-    public static function fetchCountAll(): array
+    public static function fetchCountAll($emp_id): array
     {
         $con = Db::getInstance();
-        $query = "select count(*) from news_status where status =0 and ID_Employee = 's009'";
+        $query = "select count(*) from news_status where status =0 and ID_Employee = '".$emp_id."'";
         $stmt = $con->prepare($query);
         #$stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
         $stmt->execute();
@@ -92,9 +92,10 @@ class Message
         #while ($prod = $stmt->fetch()) {
         #    $list[$prod->getID_Message()] = $prod;
         #}
-		$prod = $stmt->fetch();
+        $prod = $stmt->fetch();
+
         return $prod;
-		#return $list;
+        #return $list;
 
     }
     public static function fetchAll(): array
@@ -111,8 +112,8 @@ class Message
         return $list;
 
     }
-	
-	public static function fetchAllwithInner($emp_id): array
+
+    public static function fetchAllwithInner($emp_id): array
     {
         $con = Db::getInstance();
         $query = "SELECT * FROM " . self::TABLE . " inner join news_status on message.ID_Message = news_status.ID_Message"." where news_status.ID_Employee = '".$emp_id."'";
@@ -139,7 +140,7 @@ class Message
         }
         return null;
     }
-    
+
 
     public static function generateIDMessage($title_message)
     {
@@ -179,24 +180,25 @@ class Message
         $query = "INSERT INTO " . self::TABLE . "({$columns}) VALUES ($values)";
         # execute query
         if ($con->exec($query)) {
-			$emp = new Employee();
-			$result = $emp->findAll();
-			foreach ($result as $prop => $val) {
-				$emp_id = $val->getID_Employee();
-				$con->exec("insert into news_status (ID_Employee, ID_Message) values('".$emp_id."',".$params['ID_Message'].")");
-			}
+            $emp = new Employee();
+            $result = $emp->findAll();
+            # เข้า for loop เพือกระจาย status ของ  news
+            foreach ($result as $prop => $val) {
+                $emp_id = $val->getID_Employee();
+                $con->exec("insert into news_status (ID_Employee, ID_Message) values('".$emp_id."',".$params['ID_Message'].")");
+            }
             return array("status" => true);
         } else {
             $message = "มีบางอย่างผิดพลาด , กรุณาตรวจสอบข้อมูล ";
             return array("status" => false, "message" => $message);
         }
-        
+
     }
 
     // update data at database
-    public static function update_news($params) 
+    public static function update_news($params)
     {
-        
+
         $ID_Message = $params['ID_Message'];
         $query = "UPDATE " . self::TABLE . " SET ";
         foreach ($params as $prop => $val) {
@@ -206,7 +208,7 @@ class Message
         }
         $query = substr($query, 0, -1);
         $query .= " WHERE ID_Message = '" . $ID_Message . "'";
-        
+
         $con = Db::getInstance();
         if ($con->exec($query)) {
             return array("status" => true);
@@ -216,16 +218,36 @@ class Message
         }
 
     }
-	// update data at database
-    public static function update_news_status($ID_Employee, $ID_Message) 
+    // update data at database
+    public static function update_news_status($ID_Employee, $ID_Message)
     {
-        
+
         //$ID_Message = $params['ID_Message'];
         $query = "UPDATE news_status SET status = 1 ";
-        
+
         //$query = substr($query, 0, -1);
         $query .= " WHERE ID_Message = ".$ID_Message." and ID_Employee = '".$ID_Employee."'";
-        
+
+        $con = Db::getInstance();
+        if ($con->exec($query)) {
+            return array("status" => true);
+        } else {
+
+            return array("status" => false);
+        }
+
+    }
+
+    // update data at database
+    public static function update_award_status($ID_Employee, $ID_Award)
+    {
+
+        //$ID_Award = $params['ID_Award'];
+        $query = "UPDATE news_status SET status = 1 ";
+
+        //$query = substr($query, 0, -1);
+        $query .= " WHERE ID_Award = ".$ID_Award." and ID_Employee = '".$ID_Employee."'";
+
         $con = Db::getInstance();
         if ($con->exec($query)) {
             return array("status" => true);
@@ -247,7 +269,7 @@ class Message
             return array("status" => false);
         }
     }
-    
+
 
 }
 

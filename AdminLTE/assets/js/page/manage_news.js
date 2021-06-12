@@ -42,7 +42,7 @@ var form_validte = $("#form_newsManage").validate({
       required: true,
     },
     Text_Message: {
-
+      required: true,
     },
     profile_news: {
       extension: "jpg|jpeg|gif|png",

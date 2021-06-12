@@ -371,9 +371,9 @@ class CompanyController
                 ->setCellValue('I' . $start_row, "50000 บาท")
                 ->setCellValue('J' . $start_row, "30 วัน")
                 ->setCellValue('K' . $start_row, "ภาคเอกชน")
-                ->setCellValue('L' . $start_row, "คุณณัฐวัฒน์")
+                ->setCellValue('L' . $start_row, " ")
                 ->setCellValue('M' . $start_row, "ใช่")
-                ->setCellValue('N' . $start_row, "ค้างจ่าย 2 เดือน");
+                ->setCellValue('N' . $start_row, " ");
 
             $i = 0;
 

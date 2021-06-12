@@ -112,7 +112,7 @@ try {
                     $promotion_count = count(Promotion::findAll());
                     ?>
                     <h3><?php echo isset($promotion_count) ? $promotion_count : ""; ?> </h3>
-                    <p>รางวัล</p>
+                    <p>สินค้าส่งเสริมการขาย</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-gifts"></i>

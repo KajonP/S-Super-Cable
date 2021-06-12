@@ -20,8 +20,9 @@ class NewsController
                 $this->$action();
                 break;
             case "create_news" :
+                $ID_Employee = isset($params["GET"]["ID_Employee"]) ? $params["GET"]["ID_Employee"] : "";
                 $FILE_IMG = isset($params["FILES"]["profile_news"]) ? $params["FILES"]["profile_news"] : "";
-                $result = $this->$action($params["POST"], $FILE_IMG);
+                $result = $this->$action($params["POST"], $FILE_IMG, $ID_Employee);
                 echo $result;
                 break;
             case "findbyID_Message":
@@ -48,7 +49,7 @@ class NewsController
                 break;
         }
     }
-    private static function create_news($params, $FILE_IMG)
+    private static function create_news($params, $FILE_IMG, $emp_id)
     {
         // # สร้างข่าวสารร
         $access_news = new Message();
@@ -82,11 +83,12 @@ class NewsController
         );
 
         $result = $access_news->create_news(
-            $access_news_params
+            $access_news_params, $emp_id
         );
 
         return json_encode($result);
     }
+
 
     private function findbyID_Message($findbyID_Message)
     {
@@ -175,12 +177,8 @@ class NewsController
         $employee = $_SESSION["employee"];
 
         # retrieve data
-
+        $employeeList = Employee::findAll();
         $message = Message::fetchAll();
-
-        $file_log = Filelog::findByPage('manage_news');
-
-
         include Router::getSourcePath() . "views/admin/manage_news.inc.php";
 
     }
