@@ -84,7 +84,7 @@ class Message
     public static function fetchCountAll($emp_id): array
     {
         $con = Db::getInstance();
-        $query = "select count(*) from news_status where status =0 and ID_Employee = '".$emp_id."'";
+        $query = "select count(*) from message_status where status =0 and ID_Employee = '".$emp_id."'";
         $stmt = $con->prepare($query);
         #$stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
         $stmt->execute();
@@ -116,7 +116,7 @@ class Message
     public static function fetchAllwithInner($emp_id): array
     {
         $con = Db::getInstance();
-        $query = "SELECT * FROM " . self::TABLE . " inner join news_status on message.ID_Message = news_status.ID_Message"." where news_status.ID_Employee = '".$emp_id."'";
+        $query = "SELECT * FROM " . self::TABLE . " inner join message_status on message.ID_Message = message_status.ID_Message"." where message_status.ID_Employee = '".$emp_id."'";
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
         $stmt->execute();

@@ -1,69 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update">
-      <change afterPath="$PROJECT_DIR$/controllers/AwardStatusController.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/NewsStatusController.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/031c0b9827d6845a8241b05d3b35bbff.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/1081bf59839c66262d9a13d993943189.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/18363a1cfe6a60ad561d2a004ca44d22.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/2570143d5ffeef82064b0374346b1656.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/2719bb658e1f31d4a67d66fa69bacb35.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/287004469ada785f1f0712d86bfb7dcc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/28b06e384aef7d89b51f063bdfe47f16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/40e308ecf67f1fd0cea34131d9304292.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/423222e74ac183618b44935ea242896b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/4aee43fecdde38d8aa80a76233ceff80.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/4e4e165981f54eaef0b00af69d194d25.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/504b76d2d021aa7564869224a4e53737.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/505473422eed0fdcb00f88383ae08ba3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/55312b450a6b9776ef93c56d0b927ba4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/5c519dbec53e64948075f913ef9191ea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/5ca13ba665e81d5c3c25e69df5fefc4d.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/6fdbfb72cc786ea8855c34b772b1dcb7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/740b0c21acc79f165d01209d12146e73.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/7ae6e32b05282e5f6e285b09136186f2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/7c161acbeda3ade20373bf4446cf240f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/8557b8e5a288d83bf16656f281ff05e6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/8fb502a6b1377a0221940bbaf6a4491d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/8fc270a8f1b73369e8359b6d84ab34bf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/94bc81be1a5dd7781624c87ed2d7dd95.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/9734719ee7201f16fdbbeb6b627dba0b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/9c761c58ab564ea740eef50b79201b49.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/9f019f54dc58401abdd3c0bb1292c4fb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/a64fa0fead14627e5673faf99e74c5ef.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/adaf8a5692cc16ecbe299dc79c36358b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/ae585f11984b0e623c7d45c49c0381b0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/af47be942e2181d0e042336c9a5f885e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/b9b3ffb4b223bcab43cb423d91c69866.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/c1b8ab9ec40ae6a5710fe9648bd2efd9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/c7c6d3d453281dec13d84e3247066091.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/cdb1118427ab8fbdd2d94b5b2f074214.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/e33c8767da53bf46a3642d5380fce3a5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/e8eacb7a3aca9ca8c749bed9d51df1b1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/e96baf14b48b28a35e81d5490c62adfe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/f2d445030e5a990a01775e0c11e9ff1b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/Company-12062021095203.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/Company-12062021102959.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/Company-12062021103426.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/Company-12062021103839.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/Company-12062021122000.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/sales/index_award.inc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/sales/redirect_index_award.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Award.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Award.class.php" afterDir="false" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : เเยก 2หน้าได้ หน้า message เเสดงผลไม่ได้ + award อ่านไม่ได้ เข้า error">
       <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/CompanyController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/NewsController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/NewsController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/NewsPricesController.class.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sales/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sales/sidebar_menu.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/sidebar_menu.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/dashboard.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/dashboard.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/index_news.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index_prices.inc.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index_user.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index_user.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/redirect_index_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/redirect_index_news.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +113,7 @@
       <workItem from="1623403208102" duration="529000" />
       <workItem from="1623415528272" duration="2810000" />
       <workItem from="1623420791072" duration="612000" />
-      <workItem from="1623488484758" duration="10626000" />
+      <workItem from="1623488484758" duration="11218000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>
@@ -386,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623420816939</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="case : เเยก 2หน้าได้ หน้า message เเสดงผลไม่ได้ + award อ่านไม่ได้ เข้า error">
+      <created>1623499387299</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1623499387299</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,6 +373,7 @@
     <MESSAGE value="case : crud promotion" />
     <MESSAGE value="case : change controller : 1 controller to 1 model" />
     <MESSAGE value="case : update" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : update" />
+    <MESSAGE value="case : เเยก 2หน้าได้ หน้า message เเสดงผลไม่ได้ + award อ่านไม่ได้ เข้า error" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : เเยก 2หน้าได้ หน้า message เเสดงผลไม่ได้ + award อ่านไม่ได้ เข้า error" />
   </component>
 </project>
