@@ -50,7 +50,7 @@ try {
 
                                         <?php $i=1; foreach ($awardList as $key => $value) { ?>
                                             <tr>
-                                                <td><img src=<?php echo $value->getPicture_Award(); ?> width=200 height=200></td>
+                                                <td><img src=<?php echo $value->getPicture_Award(); ?> width = 350  height= 350></td>
                                                 <td><?php echo $value->getTittle_Award() ; ?></td>
                                                 <td><?php echo $value->getDate_Award(); ?></td>
                                                 <td><?php echo $value->getFullname_employee(); ?></td>
@@ -126,7 +126,7 @@ try {
 <script>
     $(function () {
         $('#example3').DataTable({
-            lengthMenu: [2, 10, 20, 50, 100, 200, 500],
+            lengthMenu: [1,5, 10, 20, 50, 100],
             "paging": true,
             "lengthChange": true,
             "searching": true,

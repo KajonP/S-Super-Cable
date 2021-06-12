@@ -47,7 +47,7 @@ try {
 
                                         <?php $i = 1; foreach ($message as $key => $value) { ?>
                                             <tr>
-											<td><img src=<?php echo $value->getPicture_Message(); ?> width=200 height=200></td>
+											<td><img src=<?php echo $value->getPicture_Message(); ?> width=350 height=350></td>
 
                                                 <td><?php echo $value->getTittle_Message() ; ?></td>
                                                 <td><?php echo $value->getText_Message(); ?></td>
@@ -132,14 +132,14 @@ try {
 <script>
   $(function () {
     $("#example1").DataTable({
-        lengthMenu: [2, 10, 20, 50, 100, 200, 500],
+        lengthMenu: [1,5, 10, 20, 50, 100],
         "responsive": true,
 	  "lengthChange": false, 
 	  "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
-        lengthMenu: [2, 10, 20, 50, 100, 200, 500],
+        lengthMenu: [1,5, 10, 20, 50, 100],
         "paging": true,
       "lengthChange": true,
       "searching": true,

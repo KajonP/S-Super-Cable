@@ -39,7 +39,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=NewsStatus&action=show_news"; ?>"
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=News&action=show_news_status"; ?>"
                            class="nav-link">
                             <i class="nav-icon fas fa-comment"></i>
                             <p>
@@ -50,7 +50,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=AwardStatus&action=show_award"; ?>"
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=Award&action=show_award_status"; ?>"
                            class="nav-link">
                             <i class="nav-icon fas fa-award"></i>
                             <p>

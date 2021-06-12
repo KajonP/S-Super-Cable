@@ -44,6 +44,43 @@ class AwardController
                 // print_r($params);
                 echo $result;
                 break;
+            case "show_award_status":
+                session_start();
+                $employee = $_SESSION["employee"];
+
+                if ($employee->getUser_Status_Employee() == "Admin") {
+                    include Router::getSourcePath() . "views/index_admin.inc.php";
+                } else if ($employee->getUser_Status_Employee() == "Sales") {
+                    # retrieve data
+                    $awardList = Award::fetchAllwithInner($employee->getID_Employee());
+                    $countAllAward = Award::fetchCountAll($employee->getID_Employee());
+                    include Router::getSourcePath() . "views/sales/index_award.inc.php";
+                } else if ($employee->getUser_Status_Employee() == "User") {
+                    # retrieve data
+                    $awardList = Award::fetchAllwithInner($employee->getID_Employee());
+                    $countAllAward = Award::fetchCountAll($employee->getID_Employee());
+                    include Router::getSourcePath() . "views/user/index_award.inc.php";
+                }
+                break;
+            case "update_status_award":
+                session_start();
+                $employee = $_SESSION['employee'];
+                $ID_Award = isset($params["GET"]["ID_Award"]) ? $params["GET"]["ID_Award"] : "";
+                if ($employee->getUser_Status_Employee() == "Admin") {
+                    include Router::getSourcePath() . "views/index_admin.inc.php";
+                } else if ($employee->getUser_Status_Employee() == "Sales") {
+                    # retrieve data
+                    $award = Award::update_award_status($employee->getID_Employee(), $ID_Award);
+                    $awardList = Award::fetchAllwithInner($employee->getID_Employee());
+                    include Router::getSourcePath() . "views/sales/redirect_index_award.inc.php";
+                } else if ($employee->getUser_Status_Employee() == "User") {
+                    # retrieve data
+                    $award = Award::update_award_status($employee->getID_Employee(), $ID_Award);
+                    $awardList = Award::fetchAllwithInner($employee->getID_Employee());
+                    include Router::getSourcePath() . "views/user/redirect_index_award.inc.php";
+
+                }
+                break;
             default:
                 break;
         }

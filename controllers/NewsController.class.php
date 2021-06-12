@@ -45,6 +45,40 @@ class NewsController
                 // print_r($params);
                 echo $result;
                 break;
+            case "show_news_status":
+                session_start();
+                $employee = $_SESSION['employee'];
+
+                if ($employee->getUser_Status_Employee() == "Admin") {
+                    include Router::getSourcePath() . "views/index_admin.inc.php";
+                } else if ($employee->getUser_Status_Employee() == "Sales") {
+                    # retrieve data
+                    $message = Message::fetchAllwithInner($employee->getID_Employee());
+                    $countAll = Message::fetchCountAll($employee->getID_Employee());
+                    include Router::getSourcePath() . "views/sales/index_news.inc.php";
+                } else if ($employee->getUser_Status_Employee() == "User") {
+                    # retrieve data
+                    $message = Message::fetchAllwithInner($employee->getID_Employee());
+                    $countAll = Message::fetchCountAll($employee->getID_Employee());
+                    include Router::getSourcePath() . "views/user/index_news.inc.php";
+                }
+                break;
+            case "update_status_news":
+                session_start();
+                $employee = $_SESSION['employee'];
+                $ID_Message = isset($params["GET"]["ID_Message"]) ? $params["GET"]["ID_Message"] : "";
+                if ($employee->getUser_Status_Employee() == "Admin") {
+                    include Router::getSourcePath() . "views/index_admin.inc.php";
+                } else if ($employee->getUser_Status_Employee() == "Sales") {
+                    # retrieve data
+                    $message = Message::update_news_status($employee->getID_Employee(), $ID_Message);
+                    include Router::getSourcePath() . "views/sales/redirect_index_news.inc.php";
+                } else if ($employee->getUser_Status_Employee() == "User") {
+                    # retrieve data
+                    $message = Message::update_news_status($employee->getID_Employee(), $ID_Message);
+                    include Router::getSourcePath() . "views/user/redirect_index_news.inc.php";
+                }
+                break;
             default:
                 break;
         }
