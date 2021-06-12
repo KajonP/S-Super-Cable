@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : award อ่านไม่ได้ เข้า error">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_award.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_award.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_promotion.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_promotion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sales/index_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/index_award.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sales/index_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/index_news.inc.php" afterDir="false" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : เเก้เเสดงผลทั้งหมด">
+      <change afterPath="$PROJECT_DIR$/views/user/index_award.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/user/index_news.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/user/redirect_index_award.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/user/redirect_index_news.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AwardStatusController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AwardStatusController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/NewsStatusController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/NewsStatusController.class.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +35,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/views/user" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -122,7 +119,7 @@
       <workItem from="1623415528272" duration="2810000" />
       <workItem from="1623420791072" duration="612000" />
       <workItem from="1623488484758" duration="12738000" />
-      <workItem from="1623501609137" duration="952000" />
+      <workItem from="1623501609137" duration="1269000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>
@@ -362,7 +359,21 @@
       <option name="project" value="LOCAL" />
       <updated>1623501314607</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="case : change to thai">
+      <created>1623502653663</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1623502653663</updated>
+    </task>
+    <task id="LOCAL-00036" summary="case : เเก้เเสดงผลทั้งหมด">
+      <created>1623502727693</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1623502727693</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,7 +403,6 @@
     <MESSAGE value="case : update sidebar admin -goods" />
     <MESSAGE value="case : add province &amp; amphur" />
     <MESSAGE value="case : code formatt" />
-    <MESSAGE value="case : change to thai" />
     <MESSAGE value="case : change CompanyController.class.php and SalesController.class.php to AdminController.class.php" />
     <MESSAGE value="case : change name index_sale.inc.php to index_sales.inc.php" />
     <MESSAGE value="case : เพิ่ม comment" />
@@ -405,6 +415,8 @@
     <MESSAGE value="case : update" />
     <MESSAGE value="case : เเยก 2หน้าได้ หน้า message เเสดงผลไม่ได้ + award อ่านไม่ได้ เข้า error" />
     <MESSAGE value="case : award อ่านไม่ได้ เข้า error" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : award อ่านไม่ได้ เข้า error" />
+    <MESSAGE value="case : change to thai" />
+    <MESSAGE value="case : เเก้เเสดงผลทั้งหมด" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : เเก้เเสดงผลทั้งหมด" />
   </component>
 </project>

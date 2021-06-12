@@ -31,7 +31,7 @@ class AwardStatusController
                     # retrieve data
                     $awardList = Award::fetchAllwithInner($employee->getID_Employee());
                     $countAllAward = Award::fetchCountAll($employee->getID_Employee());
-                    include Router::getSourcePath() . "views/sales/index_award.inc.php";
+                    include Router::getSourcePath() . "views/user/index_award.inc.php";
                 }
                 break;
             case "update_status_award":
@@ -49,7 +49,7 @@ class AwardStatusController
                     # retrieve data
                     $award = Award::update_award_status($employee->getID_Employee(), $ID_Award);
                     $awardList = Award::fetchAllwithInner($employee->getID_Employee());
-                    include Router::getSourcePath() . "views/sales/redirect_index_award.inc.php";
+                    include Router::getSourcePath() . "views/user/redirect_index_award.inc.php";
 
                 }
                 break;
