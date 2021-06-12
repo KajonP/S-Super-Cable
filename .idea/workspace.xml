@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : เเยก 2หน้าได้ หน้า message เเสดงผลไม่ได้ + award อ่านไม่ได้ เข้า error">
-      <change afterPath="$PROJECT_DIR$/images/66d73fd7324a54bd2a8df561ddef7e40.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/835493da9cd86c4f62ec1c15952ac3ab.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/f47c5f5c7bfe4534d4524f92e5c43b78.jpg" afterDir="false" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : award อ่านไม่ได้ เข้า error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/AwardStatusController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AwardStatusController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sales/redirect_index_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/redirect_index_award.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sales/redirect_index_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/redirect_index_news.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_award.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_award.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_promotion.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_promotion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/sales/index_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/index_award.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/sales/index_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/index_news.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +121,8 @@
       <workItem from="1623403208102" duration="529000" />
       <workItem from="1623415528272" duration="2810000" />
       <workItem from="1623420791072" duration="612000" />
-      <workItem from="1623488484758" duration="12586000" />
+      <workItem from="1623488484758" duration="12738000" />
+      <workItem from="1623501609137" duration="952000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>
@@ -346,7 +348,21 @@
       <option name="project" value="LOCAL" />
       <updated>1623499922073</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="case : award อ่านไม่ได้ เข้า error">
+      <created>1623501237482</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1623501237482</updated>
+    </task>
+    <task id="LOCAL-00034" summary="case : award อ่านไม่ได้ เข้า error">
+      <created>1623501314607</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1623501314607</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,6 +404,7 @@
     <MESSAGE value="case : change controller : 1 controller to 1 model" />
     <MESSAGE value="case : update" />
     <MESSAGE value="case : เเยก 2หน้าได้ หน้า message เเสดงผลไม่ได้ + award อ่านไม่ได้ เข้า error" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : เเยก 2หน้าได้ หน้า message เเสดงผลไม่ได้ + award อ่านไม่ได้ เข้า error" />
+    <MESSAGE value="case : award อ่านไม่ได้ เข้า error" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : award อ่านไม่ได้ เข้า error" />
   </component>
 </project>

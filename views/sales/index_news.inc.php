@@ -47,7 +47,7 @@ try {
 
                                         <?php $i = 1; foreach ($message as $key => $value) { ?>
                                             <tr>
-											<td><img src=<?php echo $value->getPicture_Message(); ?> width=150 height=150></td>
+											<td><img src=<?php echo $value->getPicture_Message(); ?> width=200 height=200></td>
 
                                                 <td><?php echo $value->getTittle_Message() ; ?></td>
                                                 <td><?php echo $value->getText_Message(); ?></td>
@@ -132,19 +132,37 @@ try {
 <script>
   $(function () {
     $("#example1").DataTable({
-      "responsive": true, 
+        lengthMenu: [2, 10, 20, 50, 100, 200, 500],
+        "responsive": true,
 	  "lengthChange": false, 
 	  "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
-      "paging": true,
+        lengthMenu: [2, 10, 20, 50, 100, 200, 500],
+        "paging": true,
       "lengthChange": true,
       "searching": true,
       "ordering": true,
       "info": true,
       "autoWidth": false,
       "responsive": true,
+
+        "language": {
+            "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
+            "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
+            "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
+            "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
+            "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
+            "sSearch": "ค้นหา :",
+            "aaSorting": [[0, 'desc']],
+            "paginate": {
+                "sFirst": "หน้าแรก",
+                "sPrevious": "ก่อนหน้า",
+                "sNext": "ถัดไป",
+                "sLast": "หน้าสุดท้าย"
+            }
+        },
     });
 	$('#example3').DataTable({
       "paging": true,
@@ -154,6 +172,21 @@ try {
       "info": true,
       "autoWidth": false,
       "responsive": true,
+        "language": {
+            "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
+            "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
+            "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
+            "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
+            "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
+            "sSearch": "ค้นหา :",
+            "aaSorting": [[0, 'desc']],
+            "paginate": {
+                "sFirst": "หน้าแรก",
+                "sPrevious": "ก่อนหน้า",
+                "sNext": "ถัดไป",
+                "sLast": "หน้าสุดท้าย"
+            }
+        },
     });
   });
 </script>
