@@ -33,7 +33,10 @@ class Goods
 
     public function getDetail_Goods() : string
     {
-        return $this->Detail_Goods;
+        if ($this->Detail_Goods == null)
+            return "-";
+        else
+            return $this->Detail_Goods;
     }
 
     public function setDetail_Goods(string $Detail_Goods)
@@ -41,12 +44,12 @@ class Goods
         $this->Detail_Goods = $Detail_Goods;
     }
 
-    public function getPrice_Goods() : double
+    public function getPrice_Goods() : float
     {
         return $this->Price_Goods;
     }
 
-    public function setPrice_Goods(double $Price_Goods)
+    public function setPrice_Goods(float $Price_Goods)
     {
         $this->Price_Goods = $Price_Goods;
     }
@@ -171,6 +174,10 @@ class Goods
         } else {
             return array("status" => false);
         }
+    }
+    public function export_excel(string $page)
+    {
+
     }
 
 }

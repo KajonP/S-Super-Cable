@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : เเก้เเสดงผลทั้งหมด">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : change controller and resize show images">
+      <change afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_goods.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/GoodsController.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/format_excel_goods.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Goods-12062021193807.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/admin/manage_goods.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/modal/modal_goodsmanage.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/modal/modal_importgoods.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/AwardController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AwardController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/NewsController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/NewsController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sales/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sales/sidebar_menu.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/sidebar_menu.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/user/index_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/user/index_award.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/user/index_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/user/index_news.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/user/redirect_index_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/user/redirect_index_award.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/user/redirect_index_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/user/redirect_index_news.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Goods.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Goods.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +127,7 @@
       <workItem from="1623420791072" duration="612000" />
       <workItem from="1623488484758" duration="12738000" />
       <workItem from="1623501609137" duration="1701000" />
-      <workItem from="1623522878077" duration="625000" />
+      <workItem from="1623522878077" duration="3976000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>
@@ -387,7 +388,21 @@
       <option name="project" value="LOCAL" />
       <updated>1623503018122</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="case : change controller and resize show images">
+      <created>1623523568533</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1623523568533</updated>
+    </task>
+    <task id="LOCAL-00039" summary="case : change controller and resize show images">
+      <created>1623523588802</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1623523588802</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,6 +446,7 @@
     <MESSAGE value="case : award อ่านไม่ได้ เข้า error" />
     <MESSAGE value="case : change to thai" />
     <MESSAGE value="case : เเก้เเสดงผลทั้งหมด" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : เเก้เเสดงผลทั้งหมด" />
+    <MESSAGE value="case : change controller and resize show images" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : change controller and resize show images" />
   </component>
 </project>
