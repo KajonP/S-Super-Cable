@@ -35,6 +35,7 @@ class AwardStatusController
                 }
                 break;
             case "update_status_award":
+                session_start();
                 $employee = $_SESSION['employee'];
                 $ID_Award = isset($params["GET"]["ID_Award"]) ? $params["GET"]["ID_Award"] : "";
                 if ($employee->getUser_Status_Employee() == "Admin") {
