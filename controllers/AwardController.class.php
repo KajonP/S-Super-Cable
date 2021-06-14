@@ -89,7 +89,7 @@ class AwardController
     {
         $access_award = new Award();
 
-        // # สร้างข่าวสารร
+        // # สร้างข่าวสาร
         $awardid = $access_award->geneateDateTimemd() ;
         $award_title =  $params["Tittle_Award"] ;
         $award_filename = !empty($FILE_IMG) ?  $access_award->generatePictureFilename($FILE_IMG['name'][0], $award_title) : "" ;

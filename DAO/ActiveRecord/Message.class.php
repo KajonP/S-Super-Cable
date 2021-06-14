@@ -19,9 +19,17 @@ class Message
     {
         return $this->unread;
     }
+    public function setUnread(int $unread)
+    {
+        $this->$unread = $unread;
+    }
     public function getStatus(): int
     {
         return $this->status;
+    }
+    public function setStatus(int $status)
+    {
+        $this->$status = $status;
     }
     // ---- id message
     public function getID_Message(): int
@@ -31,7 +39,7 @@ class Message
 
     public function setID_Message(int $ID_Message)
     {
-        $this->getID_Message = $ID_Message;
+        $this->ID_Message = $ID_Message;
     }
 
     // --- title message
@@ -42,7 +50,7 @@ class Message
 
     public function setTittle_Message(string $Tittle_Message)
     {
-        $this->getTittle_Message = $Tittle_Message;
+        $this->Tittle_Message = $Tittle_Message;
     }
 
     // - text message
@@ -53,7 +61,7 @@ class Message
 
     public function setText_Message(string $Text_Message)
     {
-        $this->getText_Message = $Text_Message;
+        $this->Text_Message = $Text_Message;
     }
 
 
@@ -65,7 +73,7 @@ class Message
 
     public function setPicture_Message(string $Picture_Message)
     {
-        $this->getPicture_Message = $Picture_Message;
+        $this->Picture_Message = $Picture_Message;
     }
 
     // --- date message
@@ -76,7 +84,7 @@ class Message
 
     public function setDate_Message(string $Date_Message)
     {
-        $this->getDate_Message = $Date_Message;
+        $this->Date_Message = $Date_Message;
     }
 
 

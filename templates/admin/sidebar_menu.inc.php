@@ -68,7 +68,8 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="pages/file.html" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=File&action=manage_file"; ?>"
+                           class="nav-link">
                             <i class="nav-icon fas fa-file"></i>
                             <p>
                                 เอกสาร
