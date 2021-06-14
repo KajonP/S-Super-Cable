@@ -103,7 +103,7 @@ try {
                 </a>
             </div>
         </div>
-        <div class="col-lg-3 col-6">
+        <div class="">
             <!-- small card -->
             <div class="small-box bg-gradient-blue ">
                 <div class="inner">

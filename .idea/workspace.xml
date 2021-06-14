@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : crud goods">
-      <change afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_file.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DAO/ActiveRecord/File.Class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/FileController.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/admin/manage_file.inc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/modal/modal_filemanage.inc.php" afterDir="false" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : crud file (can't upload)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/AwardController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AwardController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/Company-12062021103839.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/Company-12062021103839.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/dashboard.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/dashboard.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +122,9 @@
       <workItem from="1623488484758" duration="12738000" />
       <workItem from="1623501609137" duration="1701000" />
       <workItem from="1623522878077" duration="4197000" />
-      <workItem from="1623630403568" duration="4272000" />
+      <workItem from="1623630403568" duration="4962000" />
+      <workItem from="1623635453238" duration="433000" />
+      <workItem from="1623635912008" duration="943000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>
@@ -409,7 +406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623527093641</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="case : crud file (can't upload)">
+      <created>1623634940405</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1623634940405</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +433,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="code formatter" />
     <MESSAGE value="case : ทุกอย่างที่เเก้สำหรับ sales เเละ company" />
     <MESSAGE value="case : ใส่ * ในหัวข้อที่ต้องกรอก" />
     <MESSAGE value="case : update date format sales" />
@@ -454,6 +457,7 @@
     <MESSAGE value="case : เเก้เเสดงผลทั้งหมด" />
     <MESSAGE value="case : change controller and resize show images" />
     <MESSAGE value="case : crud goods" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : crud goods" />
+    <MESSAGE value="case : crud file (can't upload)" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : crud file (can't upload)" />
   </component>
 </project>
