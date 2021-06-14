@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : crud file (can't upload)">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update sidebar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/Company-12062021103839.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/Company-12062021103839.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/dashboard.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/dashboard.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_award.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_award.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_file.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_goods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_promotion.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_promotion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/sales/index_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/index_award.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/sales/index_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/index_news.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/user/index_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/user/index_award.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/user/index_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/user/index_news.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +133,8 @@
       <workItem from="1623522878077" duration="4197000" />
       <workItem from="1623630403568" duration="4962000" />
       <workItem from="1623635453238" duration="433000" />
-      <workItem from="1623635912008" duration="943000" />
+      <workItem from="1623635912008" duration="1148000" />
+      <workItem from="1623638206007" duration="91000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>
@@ -413,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623634940405</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="case : update sidebar">
+      <created>1623637060452</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1623637060452</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -433,7 +450,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : ทุกอย่างที่เเก้สำหรับ sales เเละ company" />
     <MESSAGE value="case : ใส่ * ในหัวข้อที่ต้องกรอก" />
     <MESSAGE value="case : update date format sales" />
     <MESSAGE value="case : select จ.+อำเภอหน้าจัดการบริษัทลูกค้า (เหลือ ajax มาช่วย)" />
@@ -458,6 +474,7 @@
     <MESSAGE value="case : change controller and resize show images" />
     <MESSAGE value="case : crud goods" />
     <MESSAGE value="case : crud file (can't upload)" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : crud file (can't upload)" />
+    <MESSAGE value="case : update sidebar" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update sidebar" />
   </component>
 </project>
