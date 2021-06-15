@@ -58,7 +58,7 @@ try {
 													if ($value->getStatus() == 0) { 
 												?>
 														
-															<button type="button" onclick="location.replace('index.php?controller=NewsStatus&action=update_status_news&ID_Message=<?=$value->getID_Message()?>');"
+															<button type="button" onclick="location.replace('index.php?controller=News&action=update_status_news&ID_Message=<?=$value->getID_Message()?>');"
 																	class="btn btn-round btn-warning text-center"
 																	style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
 																อ่าน
