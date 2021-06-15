@@ -122,7 +122,25 @@ try {
                 </a>
             </div>
         </div>
-
+        <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-gradient-gray ">
+                <div class="inner">
+                    <?php
+                    # find all goods
+                    $goods_count = count(Goods::findAll());
+                    ?>
+                    <h3><?php echo isset($goods_count) ? $goods_count : ""; ?> </h3>
+                    <p>สินค้า</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-boxes"></i>
+                </div>
+                <a href="index.php?controller=Goods&action=manage_goods" class="small-box-footer">
+                    เพิ่มเติม <i class="fas fa-boxes"></i>
+                </a>
+            </div>
+        </div>
     </div>
     <?php
     $content = ob_get_clean();
