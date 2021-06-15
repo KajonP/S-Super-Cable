@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : change to thai">
-      <change afterPath="$PROJECT_DIR$/uploads/User-15062021074949.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/dashboard.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/dashboard.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sales/redirect_index_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/redirect_index_award.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sales/redirect_index_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/redirect_index_news.inc.php" afterDir="false" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update">
+      <change afterPath="$PROJECT_DIR$/images/1eea1bd7f2878825c626a0b92241307d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/3b4242c44b9221d493d1be71dcc09825.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/sales/index_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/index_award.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/sales/index_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/index_news.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +127,7 @@
       <workItem from="1623635912008" duration="1148000" />
       <workItem from="1623638206007" duration="128000" />
       <workItem from="1623743193363" duration="281000" />
-      <workItem from="1623744464736" duration="214000" />
+      <workItem from="1623744464736" duration="563000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>
@@ -431,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623638318543</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="case : update">
+      <created>1623744747194</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1623744747194</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +473,6 @@
     <MESSAGE value="case : update model of goods and promotion" />
     <MESSAGE value="case : crud promotion" />
     <MESSAGE value="case : change controller : 1 controller to 1 model" />
-    <MESSAGE value="case : update" />
     <MESSAGE value="case : เเยก 2หน้าได้ หน้า message เเสดงผลไม่ได้ + award อ่านไม่ได้ เข้า error" />
     <MESSAGE value="case : award อ่านไม่ได้ เข้า error" />
     <MESSAGE value="case : เเก้เเสดงผลทั้งหมด" />
@@ -476,6 +481,7 @@
     <MESSAGE value="case : crud file (can't upload)" />
     <MESSAGE value="case : update sidebar" />
     <MESSAGE value="case : change to thai" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : change to thai" />
+    <MESSAGE value="case : update" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update" />
   </component>
 </project>

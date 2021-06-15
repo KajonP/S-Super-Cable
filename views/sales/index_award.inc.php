@@ -59,7 +59,7 @@ try {
                                                     <?php
                                                     if ($value->getStatus() == 0) {
                                                         ?>
-                                                        <button type="button" onclick="location.replace('index.php?controller=AwardStatus&action=update_status_award&ID_Award=<?=$value->getID_Award()?>');"
+                                                        <button type="button" onclick="location.replace('index.php?controller=Award&action=update_status_award&ID_Award=<?=$value->getID_Award()?>');"
                                                                 class="btn btn-round btn-warning text-center"
                                                                 style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
                                                             อ่าน
