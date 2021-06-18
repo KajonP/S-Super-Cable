@@ -52,7 +52,7 @@ try {
                                         <tr>
                                             <th>เลขที่</th>
                                             <th>ชื่อรางวัล</th>
-                                            <th>วันเวลา</th>
+                                            <th>วันที่เเจ้งรางวัล</th>
                                             <th>ลูกจ้าง</th>
                                             <th>การกระทำ </th>
                                         </tr>
@@ -63,7 +63,8 @@ try {
                                             <tr>
                                                 <td><?php echo $i++; ?></td>
                                                 <td><?php echo $value->getTittle_Award() ; ?></td>
-                                                <td><?php echo $value->getDate_Award(); ?></td>
+                                                <td><?php  $date = date_create($value->getDate_Award());
+                                                   echo date_format($date, 'd/m/Y'); ?></td>
                                                 <td><?php echo $value->getFullname_employee(); ?></td>
                                                 <td class=" last">
                                                     <a href="#"

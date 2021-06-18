@@ -56,7 +56,7 @@ try {
                                             <th>เลขที่</th>
                                             <th>หัวข่าวสาร</th>
                                             <th>เนื้อข่าวสาร</th>
-                                            <th>วันเวลา</th>
+                                            <th>วันที่เเจ้งข่าวสาร</th>
                                             <th>การกระทำ </th>
                                         </tr>
                                         </thead>
@@ -67,7 +67,8 @@ try {
                                                 <td><?php echo $i++; ?></td>
                                                 <td><?php echo $value->getTittle_Message() ; ?></td>
                                                 <td><?php echo $value->getText_Message(); ?></td>
-                                                <td><?php echo $value->getDate_Message(); ?></td>
+                                                <td><?php  $date = date_create($value->getDate_Message());
+                                                    echo date_format($date, 'd/m/Y'); ?></td>
                                                 <td class=" last">
                                                     <a href="#"
                                                        onclick="newsManageShow('edit','<?php echo $value->getID_Message(); ?>')">

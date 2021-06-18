@@ -1,5 +1,5 @@
 var columns = [
-  {"width": "5%", "class": "text-left"},
+  {"width": "5%", "class": "text-center"},
   {"width": "5%", "class": "text-center"},
   {"width": "5%", "class": "text-center"},
   {"width": "5%", "class": "text-center"},
