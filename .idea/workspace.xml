@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update">
-      <change afterPath="$PROJECT_DIR$/uploads/Goods-15062021084001.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/Sales-15062021083348.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/02-request-sick.pdf.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/5920504102_สำเนาบัตรนิสิต.pdf.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_goods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/manage_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_award.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/manage_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_news.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_file.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/FileController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/FileController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_filemanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_filemanage.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,6 +131,8 @@
       <workItem from="1623743193363" duration="281000" />
       <workItem from="1623744464736" duration="1395000" />
       <workItem from="1623752518297" duration="888000" />
+      <workItem from="1624012981675" duration="1487000" />
+      <workItem from="1624020299694" duration="679000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>
@@ -457,7 +456,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623745204271</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="case : update">
+      <created>1624013101043</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1624013101043</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

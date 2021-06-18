@@ -53,7 +53,7 @@ var form_validte = $("#form_fileManage").validate({
       required: true,
     },
     Path_File: {
-      extension: "ppt|pptx|doc|docx|pdf",
+      extension: "pdf",
     },
 
     action: "required"
@@ -62,7 +62,7 @@ var form_validte = $("#form_fileManage").validate({
     Name_Fle: {
       required: "กรุณาใส่ข้อมูล",
     },
-    Path_File: "กรุณาอัพโหลดไฟล์ที่มีนามสกุลไฟล์คือ .ppt ,.pptx ,.doc ,.docx ,.pdf เท่านั้น",
+    Path_File: "กรุณาอัพโหลดไฟล์ที่มีนามสกุลไฟล์คือ .pdf เท่านั้น",
     action: "กรุณาใส่ข้อมูล"
   }, errorPlacement: function (error, element) {
     {
@@ -95,7 +95,7 @@ function  fileManageShow(type, ID_File ) {
     case "edit":
 
       // แก้ไขข่าวสาร
-      title = "แก้ไขขไฟล์";
+      title = "แก้ไขไฟล์";
 
       //clear error if exists
       form_validte.resetForm();
@@ -128,7 +128,7 @@ function onAction_deleteFile(ID_File) {
 }
 
 
-function onaction_createoredit(ID_File = null) {
+function onaction_createorupdate(ID_File = null) {
 
   var type = $('#button_fileManageModal').attr('data-status');
 
@@ -167,10 +167,10 @@ function onaction_createoredit(ID_File = null) {
 
   switch(type) {
     case 'create':
-      create_news(data);
+      create_file(data);
       break;
     case 'edit':
-      update_new(data);
+      update_file(data);
       break;
   }
 

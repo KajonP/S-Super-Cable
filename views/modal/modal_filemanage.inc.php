@@ -21,7 +21,7 @@
 
                     <div class="form-group">
                         <label for="Path_File" class="col-form-label">อัปโหลดไฟล์:<span class="text-danger" >*</span></label>
-                        <input type="file" name="Path_File"  accept= "application/pdf, .docx, .doc, .ppt, .pptx">
+                        <input type="file" name="Path_File"  accept= "application/pdf">
                     </div>
 
                 </form>

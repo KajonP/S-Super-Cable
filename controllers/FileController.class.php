@@ -46,7 +46,7 @@ class FileController
                 break;
         }
     }
-    private function create_award($params, $FILE)
+    private function create_file($params, $FILE)
     {
         $access_file = new File();
 
@@ -58,10 +58,8 @@ class FileController
 
         if (!empty($FILE) && !empty($FILE['name']))
         {
-            $Name_File =  $FILE['name'][0];
-            $Name_File_Type =  explode('.',$Name_File)[1] ;
             $tmp_name =  $FILE['tmp_name'][0];
-            $locate = Router::getSourcePath() . "uploads/" . $Path_File . ".".$Name_File_Type;
+            $locate = Router::getSourcePath() . "uploads/" . $Path_File ;
 
             // copy original file to destination file
             move_uploaded_file($tmp_name, $locate);
