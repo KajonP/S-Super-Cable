@@ -142,7 +142,9 @@ try {
             </div>
         </div>
     </div>
+
     <?php
+
     $content = ob_get_clean();
     // $user_jsonencode = json_encode($user);
     // echo '<PRE>';

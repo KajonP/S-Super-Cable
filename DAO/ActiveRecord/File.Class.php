@@ -6,6 +6,8 @@ class File
     private $ID_File;
     private $Name_File;
     private $Path_File;
+    private $Detail_File;
+    private $Date_Upload_File;
     private const TABLE = "file";
 
     //----------- Getters & Setters
@@ -21,7 +23,7 @@ class File
     {
         return $this->Name_File;
     }
-    public function setName_File(int $Name_File)
+    public function setName_File(string $Name_File)
     {
         $this->Name_File = $Name_File;
     }
@@ -29,17 +31,28 @@ class File
     {
         return $this->Path_File;
     }
-    public function setPath_File(int $Path_File)
+    public function setPath_File(string $Path_File)
     {
         $this->Path_File = $Path_File;
     }
-    public function getSize_File(): int
+    public function getDetail_File(): string
     {
-        return $this->Size_File;
+        if ($this->Detail_File == null)
+            return "-";
+        else
+            return $this->Detail_File;
     }
-    public function setSize_File(int $Size_File)
+    public function setDetail_File(string $Detail_File)
     {
-        $this->Size_File = $Size_File;
+        $this->Detail_File = $Detail_File;
+    }
+    public function getDate_Upload_File(): string
+    {
+        return $this->Date_Upload_File;
+    }
+    public function setDate_Upload_File(string $Date_Upload_File)
+    {
+        $this->Date_Upload_File = $Date_Upload_File;
     }
     //----------- CRUD
     public static function findAll(): array

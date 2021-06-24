@@ -15,8 +15,7 @@
 
                     <div class="form-group ">
                         <label for="Name_File" class="col-form-label">ชื่อไฟล์:<span class="text-danger" >*</span></label>
-                        <input type="text" class="form-control" id="Name_File" name="Name_File" value=""
-                               required="required">
+                        <input type="text" class="form-control" id="Name_File" name="Name_File" value="">
                     </div>
 
                     <div class="form-group">
@@ -24,6 +23,10 @@
                         <input type="file" name="Path_File"  accept= "application/pdf">
                     </div>
 
+                    <div class="form-group ">
+                        <label for="Detail_File" class="col-form-label">รายละเอียดไฟล์:</label>
+                        <input type="text" class="form-control" id="Detail_File" name="Detail_File" value="" >
+                    </div>
                 </form>
             </div>
 

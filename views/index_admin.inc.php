@@ -32,10 +32,8 @@ try {
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">แดชบอร์ด</h1>
-
-                        <?php include("views/admin/dashboard.inc.php"); ?>
-
+                        <h1 class="m-0">แดชบอร์ด </h1>
+                        <?php include Router::getSourcePath() . "views/admin/dashboard.inc.php" ?>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
@@ -54,7 +52,7 @@ try {
         </a>
 
         <!-- Sidebar -->
-        <?php include("templates/admin/sidebar_menu.inc.php"); ?>
+        <?php   include Router::getSourcePath() . "templates/admin/sidebar_menu.inc.php"; ?>
         <!-- /.sidebar -->
     </aside>
 

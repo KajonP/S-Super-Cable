@@ -2,6 +2,8 @@ var columns = [
   {"width": "5%", "class": "text-center"},
   {"width": "5%", "class": "text-center"},
   {"width": "5%", "class": "text-center"},
+  {"width": "5%", "class": "text-center"},
+  {"width": "5%", "class": "text-center"},
 ]
 
 var dataTable_ = $("#tbl_file").DataTable({
@@ -49,18 +51,30 @@ var dataTable_ = $("#tbl_file").DataTable({
 
 var form_validte = $("#form_fileManage").validate({
   rules: {
-    Name_Fle: {
+    Name_File: {
       required: true,
     },
     Path_File: {
       extension: "pdf",
     },
+    Detail_File :
+      {
+        required: false,
+      },
+    Date_Upload_File :
+      {
+        required: false,
+      },
 
     action: "required"
   },
   messages: {
-    Name_Fle: {
+    Name_File: {
       required: "กรุณาใส่ข้อมูล",
+    },
+    Detail_File: {
+    },
+    Date_Upload_File: {
     },
     Path_File: "กรุณาอัพโหลดไฟล์ที่มีนามสกุลไฟล์คือ .pdf เท่านั้น",
     action: "กรุณาใส่ข้อมูล"
@@ -78,7 +92,7 @@ function  fileManageShow(type, ID_File ) {
 
   /* clear old form value */
   $('#form_fileManage')[0].reset();
-  $("#Path_File").attr("src", "");
+  $('#Path_File').attr("src", "");
 
   switch(type)
   {
@@ -94,7 +108,7 @@ function  fileManageShow(type, ID_File ) {
       break;
     case "edit":
 
-      // แก้ไขข่าวสาร
+      // แก้ไขไฟล์
       title = "แก้ไขไฟล์";
 
       //clear error if exists
@@ -144,18 +158,6 @@ function onaction_createorupdate(ID_File = null) {
   if (type == "create" )
   {
     //File data
-    if (file_data.length > 0)
-    {
-      for (var i = 0; i < file_data.length; i++)
-      {
-        data.append("Path_File[]", file_data[i]);
-      }
-    }
-  }
-  else
-  {
-    //File data
-    // edit if insert picture
     if (file_data.length > 0)
     {
       for (var i = 0; i < file_data.length; i++)
@@ -230,7 +232,7 @@ function create_file(formData)
 // call ajax get data from server.
 function get_file_to_edit(ID_File) {
   $.ajax({
-    url: "index.php?controller=File&action=findbyId",
+    url: "index.php?controller=File&action=findById",
     data: {
       "ID_File": ID_File
     },
@@ -242,6 +244,8 @@ function get_file_to_edit(ID_File) {
       $('#ID_File').val(response.data.ID_File);
       $('#Name_File').val(response.data.Name_File);
       $("#Path_File").attr("src", response.data.Path_File);
+      $("#Detail_File").val(response.data.Detail_File);
+      $("#Date_Upload_File").val(response.data.Date_Upload_File);
 
     },
     error: function (xhr, status, exception) {

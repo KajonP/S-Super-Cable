@@ -53,7 +53,7 @@ class FileController
          # สร้างไฟล์
         $Name_File =  $params["Name_File"] ;
         $Path_File = !empty($FILE) ?  $FILE['name'][0] : "" ;
-
+        $Detail_File =  $params["Detail_File"] ;
         $locate = "";
 
         if (!empty($FILE) && !empty($FILE['name']))
@@ -68,6 +68,7 @@ class FileController
         $access_file_params = array(
             "Name_File" => $Name_File,
             "Path_File" => $locate,
+            "Detail_File" => $Detail_File,
         );
 
         $result = $access_file->create_file(
@@ -86,6 +87,8 @@ class FileController
             "ID_File" => $file->getID_File(),
             "Name_FIle" => $file->getName_File(),
             "Path_File" => $file->getPath_File(),
+            "Detail_File" => $file->getDetail_File(),
+            "Date_Upload_File" => $file->getDate_Upload_File(),
         );
 
         echo json_encode(array("data" => $data_sendback));
@@ -96,29 +99,28 @@ class FileController
 
          # อัปเดตไฟล์
         $access_file = new File();
-        $ID_File = $ID_File ;
         $Name_File =  $params["Name_File"] ;
+        $Detail_File =  $params["Detail_File"] ;
+        $Date_Upload_File =  $params["Date_Upload_File"] ;
 
         $locate = "";
 
-        // print_r('hello world'. '     ' . $access_news->generatePictureFilename($FILE_IMG['profile_news']['name'][0], $message_title));
 
-        $Path_File = !empty($FILE) ?  $FILE['Name_File']['name'][0] : "" ;
-        if (!empty($FILE) && !empty($FILE['Name_File']['name']))
+        $Path_File = !empty($FILE) ?  $FILE['name'][0] : "" ;
+        if (!empty($FILE) && !empty($FILE['name']))
         {
-            $Name_File =  $FILE['Name_File']['name'][0];
-            $Name_File_Type =  explode('.',$Name_File)[1] ;
-            $tmp_name =  $FILE['Name_File']['tmp_name'][0];
-            $locate = Router::getSourcePath() . "uploads/" . $Name_File . ".".$Name_File_Type;
+            $tmp_name =  $FILE['tmp_name'][0];
+            $locate = Router::getSourcePath() . "uploads/" . $Path_File ;
 
             // copy original file to destination file
             move_uploaded_file($tmp_name, $locate);
         }
 
         $access_file_params = array(
-            "ID_File" => ID_File,
+            "ID_File" => $ID_File,
             "Name_File" => $Name_File,
             "Path_File" => $locate,
+            "Detail_File" => $Detail_File,
         );
 
 

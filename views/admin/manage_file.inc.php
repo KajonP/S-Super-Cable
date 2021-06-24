@@ -52,6 +52,8 @@ try {
                                         <tr>
                                             <th>เลขที่</th>
                                             <th>ชื่อไฟล์</th>
+                                            <th>รายละเอียดไฟล์</th>
+                                            <th>วันที่อัปโหลดไฟล์</th>
                                             <th>การกระทำ </th>
                                         </tr>
                                         </thead>
@@ -61,6 +63,9 @@ try {
                                             <tr>
                                                 <td><?php echo $i++; ?></td>
                                                 <td><?php echo $value->getName_File() ; ?></td>
+                                                <td><?php echo $value->getDetail_File() ; ?></td>
+                                                <td><?php  $date = date_create($value->getDate_Upload_File()) ;
+                                                    echo date_format($date, 'd/m/Y'); ?></td>
                                                 <td class=" last">
                                                     <a href="#"
                                                        onclick="fileManageShow('edit','<?php echo $value->getID_File(); ?>')">
