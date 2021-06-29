@@ -189,7 +189,8 @@ class CompanyController
     {
         $push_array = array();
         for ($i = 0; $i < 14; $i++) {
-            if (empty($worksheet->getCellByColumnAndRow($i, $row)->getValue())) {
+            $columnValue = $worksheet->getCellByColumnAndRow($i, $row)->getValue();
+            if(trim($columnValue)==''){
                 return array("status" => false, "column" => $i, "row" => $row);
             } else {
                 $push_array[$i] = $worksheet->getCellByColumnAndRow($i, $row)->getValue();
