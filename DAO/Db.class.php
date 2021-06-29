@@ -1,11 +1,12 @@
 <?php
+include('./config.ini.php');
 
 class Db
 {
     private static $instance = NULL;
-    private static $dsn = "mysql:dbname=project;host=localhost";
-    private static $user = "root";
-    private static $pass = "";
+    private static $dsn = DSN;
+    private static $user = USER;
+    private static $pass = PASS;
 
     private function __construct()
     {
