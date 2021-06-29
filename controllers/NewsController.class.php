@@ -93,11 +93,15 @@ class NewsController
 
         // print_r('hello world'. '     ' . $access_news->generatePictureFilename($FILE_IMG['name'][0], $message_title));
 
-        $message_filename = !empty($FILE_IMG) ?  $access_news->generatePictureFilename($FILE_IMG['name'][0], $message_title) : "" ;
+        $message_filename = !empty($FILE_IMG['name'][0]) ?  $access_news->generatePictureFilename($FILE_IMG['name'][0], $message_title) : "" ;
+        $message_filename2 = !empty($FILE_IMG['name'][1]) ?  $access_news->generatePictureFilename($FILE_IMG['name'][1], $message_title) : "" ;
+        $message_filename3 = !empty($FILE_IMG['name'][2]) ?  $access_news->generatePictureFilename($FILE_IMG['name'][2], $message_title) : "" ;
         $message_datetime = $access_news->geneateDateTime();
         $locate_img = "";
-
-        if (!empty($FILE_IMG) && !empty($FILE_IMG['name']))
+        $locate_img2 = "";
+        $locate_img3 = "";
+        //echo ">>".$FILE_IMG['name'][1];
+        if (!empty($FILE_IMG) && !empty($FILE_IMG['name'][0]))
         {
             $name_file =  $FILE_IMG['name'][0];
             $name_file_type =  explode('.',$name_file)[1] ;
@@ -108,11 +112,35 @@ class NewsController
             move_uploaded_file($tmp_name, $locate_img);
         }
 
+        if (!empty($FILE_IMG) && !empty($FILE_IMG['name'][1]))
+        {
+            $name_file2 =  $FILE_IMG['name'][1];
+            $name_file_type2 =  explode('.',$name_file2)[1] ;
+            $tmp_name2 =  $FILE_IMG['tmp_name'][1];
+            $locate_img2 = Router::getSourcePath() . "images/" . $message_filename2 . ".".$name_file_type2;
+
+            // copy original file to destination file
+            move_uploaded_file($tmp_name2, $locate_img2);
+        }
+
+        if (!empty($FILE_IMG) && !empty($FILE_IMG['name'][2]))
+        {
+            $name_file3 =  $FILE_IMG['name'][2];
+            $name_file_type3 =  explode('.',$name_file3)[1] ;
+            $tmp_name3 =  $FILE_IMG['tmp_name'][2];
+            $locate_img3 = Router::getSourcePath() . "images/" . $message_filename3 . ".".$name_file_type3;
+
+            // copy original file to destination file
+            move_uploaded_file($tmp_name3, $locate_img3);
+        }
+
         $access_news_params = array(
             "ID_Message" => $messageid,
             "Tittle_Message" => $message_title,
             "Text_Message" => $message_text,
             "Picture_Message" => $locate_img,
+            "Picture_Message2" => $locate_img2,
+            "Picture_Message3" => $locate_img3,
             "Date_Message"=> $message_datetime,
         );
 
@@ -135,6 +163,8 @@ class NewsController
             "Tittle_Message" => $message->getTittle_Message(),
             "Text_Message" => $message->getText_Message(),
             "Picture_Message" => $message->getPicture_Message(),
+            "Picture_Message2" => $message->getPicture_Message2(),
+            "Picture_Message3" => $message->getPicture_Message3(),
             "Date_Message" => $message->getDate_Message(),
         );
 
@@ -153,10 +183,17 @@ class NewsController
         $message_datetime = $access_news->geneateDateTime();
 
         $locate_img = "";
+        $locate_img2 = "";
+        $locate_img3 = "";
 
         // print_r('hello world'. '     ' . $access_news->generatePictureFilename($FILE_IMG['profile_news']['name'][0], $message_title));
+        //print_r($FILE_IMG['profile_news']);
+        $message_filename = !empty($FILE_IMG['profile_news']['name'][0]) ?  $access_news->generatePictureFilename($FILE_IMG['profile_news']['name'][0], $message_title) : "" ;
 
-        $message_filename = !empty($FILE_IMG) ?  $access_news->generatePictureFilename($FILE_IMG['profile_news']['name'][0], $message_title) : "" ;
+        $message_filename2 = !empty($FILE_IMG['profile_news']['name'][1]) ?  $access_news->generatePictureFilename($FILE_IMG['profile_news']['name'][1], $message_title) : "" ;
+
+         $message_filename3 = !empty($FILE_IMG['profile_news']['name'][2]) ?  $access_news->generatePictureFilename($FILE_IMG['profile_news']['name'][2], $message_title) : "" ;
+         
         if (!empty($FILE_IMG) && !empty($FILE_IMG['profile_news']['name']))
         {
             $name_file =  $FILE_IMG['profile_news']['name'][0];
@@ -168,11 +205,35 @@ class NewsController
             move_uploaded_file($tmp_name, $locate_img);
         }
 
+         if (!empty($FILE_IMG) && !empty($FILE_IMG['profile_news']['name'][1]))
+        {
+            $name_file2 =  $FILE_IMG['profile_news']['name'][1];
+            $name_file_type2 =  explode('.',$name_file2)[1] ;
+            $tmp_name2 =  $FILE_IMG['profile_news']['tmp_name'][1];
+            $locate_img2 = Router::getSourcePath() . "images/" . $message_filename2 . ".".$name_file_type2;
+
+            // copy original file to destination file
+            move_uploaded_file($tmp_name2, $locate_img2);
+        }
+
+        if (!empty($FILE_IMG) && !empty($FILE_IMG['profile_news']['name'][2]))
+        {
+            $name_file3 =  $FILE_IMG['profile_news']['name'][2];
+            $name_file_type3 =  explode('.',$name_file3)[1] ;
+            $tmp_name3 =  $FILE_IMG['profile_news']['tmp_name'][2];
+            $locate_img3 = Router::getSourcePath() . "images/" . $message_filename3 . ".".$name_file_type3;
+
+            // copy original file to destination file
+            move_uploaded_file($tmp_name3, $locate_img3);
+        }
+
         $access_news_params = array(
             "ID_Message" => $messageid,
             "Tittle_Message" => $message_title,
             "Text_Message" => $message_text,
             "Picture_Message" => $locate_img,
+            "Picture_Message2" => $locate_img2,
+            "Picture_Message3" => $locate_img3,
             "Date_Message"=> $message_datetime,
         );
 

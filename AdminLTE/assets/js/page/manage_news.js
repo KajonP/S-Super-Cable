@@ -138,6 +138,10 @@ function onAction_deleteMessage(ID_Message) {
 
 function onaction_createoredit(ID_Message = null) {
 
+  for (var i in CKEDITOR.instances) {
+    CKEDITOR.instances[i].updateElement();
+  };
+
   var type = $('#button_newsManageModal').attr('data-status');
 
   var data = new FormData();
@@ -148,6 +152,8 @@ function onaction_createoredit(ID_Message = null) {
   });
 
   var file_data = $('input[name="profile_news"]')[0].files;
+  var file_data2 = $('input[name="profile_news2"]')[0].files;
+  var file_data3 = $('input[name="profile_news3"]')[0].files;
 
   if (type == "create" )
   {
@@ -159,6 +165,23 @@ function onaction_createoredit(ID_Message = null) {
           data.append("profile_news[]", file_data[i]);
       }
     }
+
+    if (file_data2.length > 0)
+    {
+      for (var i = 0; i < file_data2.length; i++)
+      {
+          data.append("profile_news[]", file_data2[i]);
+      }
+    }
+
+    if (file_data3.length > 0)
+    {
+      for (var i = 0; i < file_data3.length; i++)
+      {
+          data.append("profile_news[]", file_data3[i]);
+      }
+    }
+
   }
   else
   {
@@ -171,6 +194,24 @@ function onaction_createoredit(ID_Message = null) {
           data.append("profile_news[]", file_data[i]);
       }
     }
+
+    if (file_data2.length > 0)
+    {
+      for (var i = 0; i < file_data2.length; i++)
+      {
+          data.append("profile_news[]", file_data2[i]);
+      }
+    }
+
+    if (file_data3.length > 0)
+    {
+      for (var i = 0; i < file_data3.length; i++)
+      {
+          data.append("profile_news[]", file_data3[i]);
+      }
+    }
+
+
   }
 
   switch(type) {
@@ -237,6 +278,7 @@ function create_news(formData)
 // set value into html tag
 // call ajax get data from server.
 function get_news_to_edit(ID_Message) {
+ 
   $.ajax({
     url: "index.php?controller=News&action=findbyID_Message",
     data: {
@@ -249,8 +291,11 @@ function get_news_to_edit(ID_Message) {
       /* set input value */
 
       $('#Tittle_Message').val(response.data.Tittle_Message);
-      $('#Text_Message').val(response.data.Text_Message);
+      //$('#Text_Message').val(response.data.Text_Message);
+      CKEDITOR.instances['Text_Message'].setData(response.data.Text_Message);
       $("#thumnails_new_profile").attr("src", response.data.Picture_Message);
+      $("#thumnails_new_profile2").attr("src", response.data.Picture_Message2);
+      $("#thumnails_new_profile3").attr("src", response.data.Picture_Message3);
 
     },
     error: function (xhr, status, exception) {

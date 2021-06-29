@@ -7,6 +7,8 @@ class Message
     private $Tittle_Message;
     private $Text_Message;
     private $Picture_Message;
+    private $Picture_Message2;
+    private $Picture_Message3;
     private $Date_Message;
     private $status;
     private $unread;
@@ -70,6 +72,20 @@ class Message
     {
         return $this->Picture_Message;
     }
+
+    // --- picture message
+    public function getPicture_Message2(): string 
+    {
+        return $this->Picture_Message2;
+    }
+
+
+    // --- picture message
+    public function getPicture_Message3(): string 
+    {
+        return $this->Picture_Message3;
+    }
+
 
     public function setPicture_Message(string $Picture_Message)
     {
