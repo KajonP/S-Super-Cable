@@ -146,6 +146,7 @@ class EmployeeController
             if ($employee->getUser_Status_Employee() == "Admin") {
                 include Router::getSourcePath() . "views/index_admin.inc.php";
             } else if ($employee->getUser_Status_Employee() == "Sales") {
+                $message = Message::select("ORDER BY Date_Message DESC LIMIT 5");
                 include Router::getSourcePath() . "views/index_sales.inc.php";
             } else if ($employee->getUser_Status_Employee() == "User") {
                 include Router::getSourcePath() . "views/index_user.inc.php";
