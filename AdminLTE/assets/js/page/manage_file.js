@@ -72,11 +72,11 @@ var form_validte = $("#form_fileManage").validate({
     Name_File: {
       required: "กรุณาใส่ข้อมูล",
     },
+    Path_File: "กรุณาอัพโหลดไฟล์ที่มีนามสกุลไฟล์คือ .pdf เท่านั้น",
     Detail_File: {
     },
     Date_Upload_File: {
     },
-    Path_File: "กรุณาอัพโหลดไฟล์ที่มีนามสกุลไฟล์คือ .pdf เท่านั้น",
     action: "กรุณาใส่ข้อมูล"
   }, errorPlacement: function (error, element) {
     {
@@ -165,6 +165,18 @@ function onaction_createorupdate(ID_File = null) {
         data.append("Path_File[]", file_data[i]);
       }
     }
+    else
+    {
+      //File data
+      // edit if insert picture
+      if (file_data.length > 0)
+      {
+        for (var i = 0; i < file_data.length; i++)
+        {
+          data.append("Path_File[]", file_data[i]);
+        }
+      }
+    }
   }
 
   switch(type) {
@@ -241,8 +253,8 @@ function get_file_to_edit(ID_File) {
     async: false,
     success: function (response, status) {
       /* set input value */
-      $('#ID_File').val(response.data.ID_File);
-      $('#Name_File').val(response.data.Name_File);
+      $("#ID_File").val(response.data.ID_File);
+      $("#Name_File").val(response.data.Name_File);
       $("#Path_File").attr("src", response.data.Path_File);
       $("#Detail_File").val(response.data.Detail_File);
       $("#Date_Upload_File").val(response.data.Date_Upload_File);

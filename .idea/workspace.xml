@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : crud file">
-      <change afterPath="$PROJECT_DIR$/uploads/5920504102_สำเนาบัตรนิสิต.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/5920504102_สำเนาหน้าบัญชี.pdf" afterDir="false" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : crud file (still can't update file + edit db table file)">
+      <change afterPath="$PROJECT_DIR$/uploads/Array" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_file.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Award.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Award.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/File.Class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/File.Class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/FileController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/FileController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/dashboard.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/dashboard.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/manage_file.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_file.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index_admin.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index_admin.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/modal/modal_filemanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_filemanage.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +136,17 @@
       <workItem from="1624020299694" duration="891000" />
       <workItem from="1624557070871" duration="1917000" />
       <workItem from="1624559205240" duration="291000" />
-      <workItem from="1624559579568" duration="6535000" />
+      <workItem from="1624559579568" duration="6780000" />
+      <workItem from="1624842523805" duration="3075000" />
+      <workItem from="1624851630743" duration="706000" />
+      <workItem from="1624855259614" duration="294000" />
+      <workItem from="1624926023903" duration="723000" />
+      <workItem from="1624928353593" duration="1306000" />
+      <workItem from="1624929769539" duration="487000" />
+      <workItem from="1624930378517" duration="258000" />
+      <workItem from="1624930663549" duration="131000" />
+      <workItem from="1624931211406" duration="462000" />
+      <workItem from="1624931877531" duration="526000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1620566299697</created>
@@ -478,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624021144470</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="case : crud file (still can't update file + edit db table file)">
+      <created>1624571019399</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1624571019399</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,7 +511,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : update date format sales" />
     <MESSAGE value="case : select จ.+อำเภอหน้าจัดการบริษัทลูกค้า (เหลือ ajax มาช่วย)" />
     <MESSAGE value="case : update เเจ้งเตือนเมื่ออัปโหลดไฟล์ที่ไม่ใช่ไฟล์ excel" />
     <MESSAGE value="case : update sidebar admin -goods" />
@@ -523,7 +535,8 @@
     <MESSAGE value="case : change to thai" />
     <MESSAGE value="case : update" />
     <MESSAGE value="case : crud file" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : crud file" />
+    <MESSAGE value="case : crud file (still can't update file + edit db table file)" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : crud file (still can't update file + edit db table file)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

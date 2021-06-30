@@ -48,10 +48,12 @@ class File
     }
     public function getDate_Upload_File(): string
     {
+        date_default_timezone_set('Asia/Bangkok');
         return $this->Date_Upload_File;
     }
     public function setDate_Upload_File(string $Date_Upload_File)
     {
+        date_default_timezone_set('Asia/Bangkok');
         $this->Date_Upload_File = $Date_Upload_File;
     }
     //----------- CRUD
@@ -68,7 +70,7 @@ class File
         }
         return $fileList;
     }
-    public static function findById(string $ID_File): ?File
+    public static function findById(int $ID_File): ?File
     {
         $con = Db::getInstance();
         $query = "SELECT * FROM " . self::TABLE . " WHERE ID_File = '$ID_File'";
@@ -102,17 +104,18 @@ class File
         }
     }
     # แก้ไขไฟล์
-    public function edit_file(array $params, string $ID_File)
+    public function edit_file(array $params)
     {
+        $ID_File = $params['ID_File'];
         $query = "UPDATE " . self::TABLE . " SET ";
         foreach ($params as $prop => $val) {
-            if (!empty($val)) {
+            if($val != '') {
                 $query .= " $prop='$val',";
             }
         }
         $query = substr($query, 0, -1);
         $query .= " WHERE ID_File = '" . $ID_File . "'";
-        //echo $query;exit();
+
         $con = Db::getInstance();
         if ($con->exec($query)) {
             return array("status" => true);

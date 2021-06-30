@@ -77,7 +77,7 @@ class FileController
 
         return json_encode($result);
     }
-    private function findById(string $ID_File)
+    private function findById(int $ID_File)
     {
         $file = File::findById($ID_File);//echo json_encode($employee);
 
@@ -85,7 +85,7 @@ class FileController
 
         $data_sendback = array(
             "ID_File" => $file->getID_File(),
-            "Name_FIle" => $file->getName_File(),
+            "Name_File" => $file->getName_File(),
             "Path_File" => $file->getPath_File(),
             "Detail_File" => $file->getDetail_File(),
             "Date_Upload_File" => $file->getDate_Upload_File(),
@@ -96,17 +96,15 @@ class FileController
     }
     private function edit_file($params, $FILE, $ID_File)
     {
-
-         # อัปเดตไฟล์
         $access_file = new File();
-        $Name_File =  $params["Name_File"] ;
-        $Detail_File =  $params["Detail_File"] ;
-        $Date_Upload_File =  $params["Date_Upload_File"] ;
 
+        # อัปเดตไฟล์
+        //$ID_File = $ID_File;
+        $Name_File =  $params["Name_File"] ;
+        $Path_File = !empty($FILE) ?  $FILE['name'][0] : "" ;
+        $Detail_File =  isset($params["Detail_File"]) ?  $params["Detail_File"] : "" ;
         $locate = "";
 
-
-        $Path_File = !empty($FILE) ?  $FILE['name'][0] : "" ;
         if (!empty($FILE) && !empty($FILE['name']))
         {
             $tmp_name =  $FILE['tmp_name'][0];
@@ -123,8 +121,7 @@ class FileController
             "Detail_File" => $Detail_File,
         );
 
-
-        $result = $access_file->update_file(
+        $result = $access_file->edit_file(
             $access_file_params
         );
 
