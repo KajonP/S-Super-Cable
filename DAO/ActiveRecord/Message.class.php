@@ -295,5 +295,20 @@ class Message
     }
 
 
+    public static function select($where=''): array
+    {
+        $con = Db::getInstance();
+        $query = "SELECT * FROM " . self::TABLE." ".$where;
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
+        $stmt->execute();
+        $list = array();
+        while ($prod = $stmt->fetch()) {
+            $list[$prod->getID_Message()] = $prod;
+        }
+        return $list;
+
+    }
+
 }
 

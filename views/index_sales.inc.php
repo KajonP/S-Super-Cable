@@ -29,8 +29,30 @@ try {
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <h1 class="m-0">แดชบอร์ด</h1>
+                        <!-- content -->
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                  <i class="fas fa-bullhorn"></i>
+                                  ข่าว
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <?php $i = 1; foreach ($message as $key => $value) { ?>
+                                <div class="callout callout-info">
+                                    <h5><?php echo $value->getTittle_Message() ; ?></h5>
+                                    <p><?php echo $value->getText_Message(); ?></p>
+                                    <?php
+                                        $date = date_create($value->getDate_Message());
+                                    ?>
+                                    <div>วันที่ : <?php echo date_format($date, 'd/m/Y'); ?></div>
+                                </div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                        <!-- end content -->
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
