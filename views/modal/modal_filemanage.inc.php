@@ -25,7 +25,7 @@
 
                     <div class="form-group ">
                         <label for="Detail_File" class="col-form-label">รายละเอียดไฟล์:</label>
-                        <input type="text" class="form-control" id="Detail_File" name="Detail_File" value="" >
+                        <textarea name="Detail_File" id="Detail_File" rows="5" cols="60"></textarea>
                     </div>
                 </form>
             </div>
