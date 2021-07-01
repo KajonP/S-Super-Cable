@@ -18,11 +18,19 @@ class HomepageController
                 $employee = $_SESSION['employee'];
 
                 if ($employee->getUser_Status_Employee() == "Admin") {
-                    # find all employee
+                    //dashboard
                     $user_count = count(Employee::findAll());
+                    $company_count = count(Company::findAll());
+                    $sales_count = count(Sales::findAll());
+                    $news_count = count(Message::fetchAll());
+                    $award_count = count(Award::fetchAll());
+                    $promotion_count = count(Promotion::findAll());
+                    $goods_count = count(Goods::findAll());
+
                     include Router::getSourcePath() . "views/index_admin.inc.php";
                 } else if ($employee->getUser_Status_Employee() == "Sales") {
-
+                    //dashboard
+                    $message = Message::fetchAll();
                     include Router::getSourcePath() . "views/index_sales.inc.php";
                 } else if ($employee->getUser_Status_Employee() == "User") {
 

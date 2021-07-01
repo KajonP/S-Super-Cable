@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : change ckeditor path">
-      <change afterPath="$PROJECT_DIR$/images/6c9537cc8708d7aabd74139d58d28395.jpg" afterDir="false" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : change something to textarea">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/ckeditor/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/library/ckeditor/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project (1).sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project (18).sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project (20).sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project (21).sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project (22).sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project (23).sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project (26).sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project (27).sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project (29).sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project (30).sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/modal/modal_companymanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_companymanage.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/HomepageController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/HomepageController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/dashboard.inc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index_admin.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index_admin.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,14 +145,8 @@
       <workItem from="1624931211406" duration="462000" />
       <workItem from="1624931877531" duration="526000" />
       <workItem from="1625095113906" duration="2020000" />
-      <workItem from="1625097854833" duration="2149000" />
-    </task>
-    <task id="LOCAL-00003" summary="case : ทุกอย่างที่เเก้สำหรับ sales เเละ company">
-      <created>1620767541964</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1620767541964</updated>
+      <workItem from="1625097854833" duration="2337000" />
+      <workItem from="1625102551738" duration="293000" />
     </task>
     <task id="LOCAL-00004" summary="case : ใส่ * ในหัวข้อที่ต้องกรอก">
       <created>1620782750122</created>
@@ -500,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625098517688</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="case : change something to textarea">
+      <created>1625101354580</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1625101354580</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +511,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : update sidebar admin -goods" />
     <MESSAGE value="case : add province &amp; amphur" />
     <MESSAGE value="case : code formatt" />
     <MESSAGE value="case : change CompanyController.class.php and SalesController.class.php to AdminController.class.php" />
@@ -545,7 +535,8 @@
     <MESSAGE value="case : crud file (still can't update file + edit db table file)" />
     <MESSAGE value="case : crud file (still can't update path file)" />
     <MESSAGE value="case : change ckeditor path" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : change ckeditor path" />
+    <MESSAGE value="case : change something to textarea" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : change something to textarea" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
