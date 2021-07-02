@@ -170,6 +170,18 @@ class Promotion
         }
     }
 
-
+    public static function listArray(): array
+    {
+        $con = Db::getInstance();
+        $query = "SELECT * FROM " . self::TABLE;
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Promotion");
+        $stmt->execute();
+        $promotionList = array();
+        while ($prod = $stmt->fetch()) {
+            $promotionList[] = $prod;
+        }
+        return $promotionList;
+    }
 }
 ?>
