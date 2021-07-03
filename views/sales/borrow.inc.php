@@ -34,7 +34,7 @@ try {
 
                             <div class="form-group row mt-2 mb-2 mr-1">
                                 <div class="col-md-12 text-right">
-                                    <a href="#" onclick="goodsmanageShow('create')"
+                                    <a href="#" onclick="modalShow('create')"
                                        class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">
                                         <span class="btn btn-round btn-success"
                                               style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i
@@ -44,51 +44,41 @@ try {
                             </div>
                             <div class="card-body p-0 d-flex">
                                 <div class="table-responsive">
-                                    <table id="tbl_goodsmanagement" class="table table-md" stlye="width:100%;">
+                                    <table id="tbl" class="table table-md" stlye="width:100%;">
                                         <thead>
                                         <tr>
-                                            <th>เลขที่</th>
-                                            <th>ชื่อสินค้า</th>
-                                            <th>รายละเอียดสินค้า</th>
-                                            <th>ราคา</th>
+                                            <th>วันที่ยืม</th>
+                                            <th>ชื่อสินค้าที่ยืม</th>
+                                            <th>รายละเอียด</th>
+                                            <th>จำนวน</th>
+                                            <th>สถานะ</th>
                                             <th>การกระทำ</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <?php $i = 1; ?>
-                                        <?php 
-                                        if(isset($goods)){
-                                            foreach ($goods as $key => $value) {
-
-                                            ?>
+                                        <?php
+                                            if(count($borrow)>0){
+                                                foreach($borrow as $key => $val){
+                                                    $status_approve_txt = "รออนุมัติ";
+                                                    $status_approve = $val->getApprove_BorrowOrReturn();
+                                                    if($status_approve=='1'){
+                                                        $status_approve_txt = "อนุมัติ";
+                                                    }else if($status_approve=='2'){
+                                                        $status_approve_txt = "ไม่อนุมัติ";
+                                                    }
+                                        ?>
                                             <tr>
-                                                <td><?php echo $i++; ?></td>
-                                                <td><?php echo $value->getName_Goods(); ?></td>
-
-                                                <td><?php echo $value->getDetail_Goods(); ?></td>
-
-                                                <td><?php echo number_format($value->getPrice_Goods(), 2); ?></td>
-
-                                                <td class=" last text-center">
-                                                    <a href="#"
-                                                       onclick="goodsmanageShow('edit','<?php echo $value->getID_Goods(); ?>')">
-                                                        <button type="button" class="btn btn-round btn-warning"
-                                                                style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
-                                                            <i class="fa fa-wrench"></i> เเก้ไข
-                                                        </button>
-                                                    </a>
-                                                    <a href="#"
-                                                       onclick="onaction_deletegoods('<?php echo $value->getID_Goods(); ?>')">
-                                                        <button type="button" class="btn btn-round btn-danger"
-                                                                style=" font-size: 13px; padding: 0 10px; margin-bottom: inherit;width:96px !important;">
-                                                            <i class="fa fa-trash"></i> ลบ
-                                                        </button>
-                                                    </a>
-                                                </td>
+                                                <td><?php echo $val->getDate_BorrowOrReturn(); ?></td>
+                                                <td><?php echo $val->getName_Promotion(); ?></td>
+                                                <td><?php echo $val->getDetail_BorrowOrReturn(); ?></td>
+                                                <td><?php echo $val->getAmount_BorrowOrReturn(); ?></td>
+                                                <td><?php echo $status_approve_txt; ?></td>
+                                                <td></td>
                                             </tr>
-                                        <?php 
+                                        <?php
+                                                }
                                             }
-                                        } ?>
+                                        ?>
                                         </tbody>
                                     </table>
                                 </div>

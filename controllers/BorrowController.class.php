@@ -17,6 +17,10 @@ class BorrowController
                 session_start();
                 $this->borrow();
                 break;
+             case "borrow_insert":
+                session_start();
+                $this->borrowInsert();
+                break;
             default:
                 break;
         }
@@ -27,11 +31,30 @@ class BorrowController
         //print_r($_SESSION);
         $employee = $_SESSION['employee'];
         $promotion = Promotion::listArray();
-        //print_r($promotion);
+        $borrow = BorrowOrReturn::find([]);
+        //print_r($borrow);
         //exit;
+        //print_r($_SESSION['employee']->getID_Employee());
+        //$b = BorrowOrReturn::findAll();
         include Router::getSourcePath() . "views/sales/borrow.inc.php";
     }
 
+    private function borrowInsert(){
+        $access = new BorrowOrReturn();
+        $access_params = array(
+            'ID_Promotion' => $_POST['ID_Promotion'],
+            'Amount_BorrowOrReturn' => $_POST['Amount_BorrowOrReturn'],
+            'Date_BorrowOrReturn' => date('Y-m-d'),
+            'Detail_BorrowOrReturn' => $_POST['Detail_BorrowOrReturn'],
+            'ID_Employee' => $_SESSION['employee']->getID_Employee(),
+            'Type_BorrowOrReturn' => '1',
+            'Approve_BorrowOrReturn' => '0'
+        );
+
+        $result = $access->create($access_params);
+        header('Content-type: application/json');
+        echo json_encode(["status" => true]);
+    }
     
     // ควรมีสำหรับ controller ทุกตัว
     private function index()
