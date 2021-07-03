@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : change something to textarea">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : change dashboard">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/EmployeeController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/EmployeeController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/HomepageController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/HomepageController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/dashboard.inc.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index_admin.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index_admin.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,14 +145,10 @@
       <workItem from="1624931877531" duration="526000" />
       <workItem from="1625095113906" duration="2020000" />
       <workItem from="1625097854833" duration="2337000" />
-      <workItem from="1625102551738" duration="293000" />
-    </task>
-    <task id="LOCAL-00004" summary="case : ใส่ * ในหัวข้อที่ต้องกรอก">
-      <created>1620782750122</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1620782750122</updated>
+      <workItem from="1625102551738" duration="458000" />
+      <workItem from="1625103669413" duration="543000" />
+      <workItem from="1625111523172" duration="74000" />
+      <workItem from="1625281989126" duration="2266000" />
     </task>
     <task id="LOCAL-00005" summary="case : update date format sales">
       <created>1620788215554</created>
@@ -491,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625101354580</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="case : change dashboard">
+      <created>1625102997755</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1625102997756</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +513,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : add province &amp; amphur" />
     <MESSAGE value="case : code formatt" />
     <MESSAGE value="case : change CompanyController.class.php and SalesController.class.php to AdminController.class.php" />
     <MESSAGE value="case : change name index_sale.inc.php to index_sales.inc.php" />
@@ -536,7 +537,8 @@
     <MESSAGE value="case : crud file (still can't update path file)" />
     <MESSAGE value="case : change ckeditor path" />
     <MESSAGE value="case : change something to textarea" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : change something to textarea" />
+    <MESSAGE value="case : change dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : change dashboard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -144,11 +144,22 @@ class EmployeeController
             }
             // print_r($employee -> getUser_Status_Employee());
             if ($employee->getUser_Status_Employee() == "Admin") {
+                //dashboard
+                $user_count = count(Employee::findAll());
+                $company_count = count(Company::findAll());
+                $sales_count = count(Sales::findAll());
+                $news_count = count(Message::fetchAll());
+                $award_count = count(Award::fetchAll());
+                $promotion_count = count(Promotion::findAll());
+                $goods_count = count(Goods::findAll());
+
                 include Router::getSourcePath() . "views/index_admin.inc.php";
             } else if ($employee->getUser_Status_Employee() == "Sales") {
-                $message = Message::select("ORDER BY Date_Message DESC LIMIT 5");
+                //dashboard
+                $message = Message::select("ORDER BY Date_Message DESC LIMIT 1");
                 include Router::getSourcePath() . "views/index_sales.inc.php";
             } else if ($employee->getUser_Status_Employee() == "User") {
+
                 include Router::getSourcePath() . "views/index_user.inc.php";
             }
         } else {
