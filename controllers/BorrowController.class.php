@@ -17,9 +17,25 @@ class BorrowController
                 session_start();
                 $this->borrow();
                 break;
-             case "borrow_insert":
+            case "borrow_insert":
                 session_start();
                 $this->borrowInsert();
+                break;
+            case "borrow_delete":
+                session_start();
+                $this->borrowDelete();
+                break;
+            case "borrow_approve_list":
+                session_start();
+                $this->borrowApproveList();
+                break;
+            case "borrow_approve_dis":
+                session_start();
+                $this->borrowDisApprove();
+                break;
+            case "borrow_approve_save":
+                session_start();
+                $this->borrowApproveSave();
                 break;
             default:
                 break;
@@ -55,7 +71,48 @@ class BorrowController
         header('Content-type: application/json');
         echo json_encode(["status" => true]);
     }
-    
+
+    private function borrowDelete(){
+        $access = new BorrowOrReturn();
+        $result = $access->delete($_GET['id']);
+        header('Content-type: application/json');
+        echo json_encode(["status" => true]);
+    }
+
+    private function borrowApproveList()
+    {
+        $employee = $_SESSION['employee'];
+        $promotion = Promotion::listArray();
+        $borrow = BorrowOrReturn::find(['Approve_BorrowOrReturn' => '0']);
+        include Router::getSourcePath() . "views/admin/borrow_approve_list.inc.php";
+    }
+
+    private function borrowDisApprove(){
+        $access = new BorrowOrReturn();
+        $result = $access->edit(['Approve_BorrowOrReturn' => '2'], $_GET['id']);
+        header('Content-type: application/json');
+        echo json_encode(["status" => true]);
+    }
+
+    private function borrowApproveSave(){
+        $borrow = BorrowOrReturn::find(['ID_BorrowOrReturn' => $_GET['id']]);
+        $borrow_qty = $borrow[0]->getAmount_BorrowOrReturn();
+        $promotion = Promotion::findById($borrow[0]->getID_Promotion());
+        if($promotion->getUnit_Promotion() < $borrow_qty){
+            header('Content-type: application/json');
+            echo json_encode(["status" => false,"msg" => "จำนวนสินค้าไม่พอ"]);
+        }
+        $qty = $promotion->getUnit_Promotion() - $borrow_qty;
+        $access = new BorrowOrReturn();
+        $result = $access->edit(['Approve_BorrowOrReturn' => '1'], $_GET['id']);
+
+        $access = new Promotion();
+        $access->edit_promotion(['Unit_Promotion' => $qty],$borrow[0]->getID_Promotion());
+        header('Content-type: application/json');
+        echo json_encode(["status" => true]);
+       
+    }
+
     // ควรมีสำหรับ controller ทุกตัว
     private function index()
     {

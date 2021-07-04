@@ -4,7 +4,7 @@ var columns = [
   {"width": "5%", "class": "text-center"},
   {"width": "5%", "class": "text-right"},
   {"width": "5%", "class": "text-center"},
-  {"width": "5%", "class": "text-center"},
+  {"width": "10%", "class": "text-center"},
 ]
 
 var dataTable_ = $('#tbl').DataTable({
@@ -181,6 +181,95 @@ function onaction_delete(id){
         }
       });
 
+    }
+  })
+}
+
+
+function onaction_disApprove(id){
+  Swal.fire({
+    title: 'คุณเเน่ใจใช่ไหม?',
+    text: "คุณต้องการไม่อนุมัติการยิมนี้?",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'ตกลง',
+    cancelButtonText: 'ยกเลิก'
+
+  }).then((result) => {
+    if (result.isConfirmed) {
+      $.ajax({
+        type: "POST",
+        url: "index.php?controller=borrow&action=borrow_approve_dis&id=" + id,
+        processData: false,
+        contentType: false,
+        success: function (res, status, xhr) {
+          var data = res;
+          if (data.status == true) {
+            Swal.fire({
+              icon: 'success',
+              title: 'สำเร็จ',
+              confirmButtonText: 'ตกลง',
+            }).then((result) => {
+              location.reload();
+            });
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'ขออภัย...',
+              text: 'มีบางอย่างผิดพลาด , อาจจะมีข้อมูลอยู่ในฐานข้อมูลเเล้ว , โปรดลองอีกครั้ง',
+              confirmButtonText: 'ตกลง',
+            }).then((result) => {
+              location.reload();
+            });
+          }
+        }
+      });
+    }
+  })
+}
+
+function onaction_Approve(id){
+  Swal.fire({
+    title: 'คุณเเน่ใจใช่ไหม?',
+    text: "คุณต้องการอนุมัติการยิมนี้?",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'ตกลง',
+    cancelButtonText: 'ยกเลิก'
+
+  }).then((result) => {
+    if (result.isConfirmed) {
+      $.ajax({
+        type: "POST",
+        url: "index.php?controller=borrow&action=borrow_approve_save&id=" + id,
+        processData: false,
+        contentType: false,
+        success: function (res, status, xhr) {
+          var data = res;
+          if (data.status == true) {
+            Swal.fire({
+              icon: 'success',
+              title: 'สำเร็จ',
+              confirmButtonText: 'ตกลง',
+            }).then((result) => {
+              location.reload();
+            });
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'ขออภัย...',
+              text: 'มีบางอย่างผิดพลาด , อาจจะมีข้อมูลอยู่ในฐานข้อมูลเเล้ว , โปรดลองอีกครั้ง',
+              confirmButtonText: 'ตกลง',
+            }).then((result) => {
+              location.reload();
+            });
+          }
+        }
+      });
     }
   })
 }

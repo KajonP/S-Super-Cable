@@ -18,7 +18,7 @@ class BorrowOrReturn
     private const TABLE = "borroworreturn";
 
     //----------- Getters & Setters
-    public function ID_BorrowOrReturn(): int
+    public function getID_BorrowOrReturn(): int
     {
         return $this->ID_BorrowOrReturn;
     }

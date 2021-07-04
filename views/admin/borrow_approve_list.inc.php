@@ -27,19 +27,14 @@ try {
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-md-12">
-                        <h1 class="m-0">รายการยืมสินค้า</h1>
+                        <h1 class="m-0">อนุมัติรายการยืมสินค้า</h1>
 
                         <!-- content -->
                         <div class="card">
 
                             <div class="form-group row mt-2 mb-2 mr-1">
                                 <div class="col-md-12 text-right">
-                                    <a href="#" onclick="modalShow('create')"
-                                       class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">
-                                        <span class="btn btn-round btn-success"
-                                              style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i
-                                                class="fa fa-plus"></i> ยืมสินค้า </span>
-                                    </a>
+                                    
                                 </div>
                             </div>
                             <div class="card-body p-0 d-flex">
@@ -74,21 +69,19 @@ try {
                                                 <td><?php echo $val->getAmount_BorrowOrReturn(); ?></td>
                                                 <td><?php echo $status_approve_txt; ?></td>
                                                 <td class=" last">
-                                                <?php if($status_approve=='1'){ ?>
+                                                <?php if($status_approve=='0'){ ?>
                                                     <a href="#"
-                                                       onclick="">
+                                                       onclick="onaction_Approve('<?php echo $val->getID_BorrowOrReturn(); ?>')">
                                                         <button type="button" class="btn btn-round btn-success"
                                                                 style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
-                                                            <i class="fas fa-exchange-alt"></i> คืนสินค้า
+                                                            <i class="fas fa-check"></i> อนุมัติ
                                                         </button>
                                                     </a>
-                                                <?php } ?>
-                                                <?php if($status_approve=='0' || $status_approve=='2'){ ?>
                                                     <a href="#"
-                                                       onclick="onaction_delete('<?php echo $val->getID_BorrowOrReturn(); ?>')">
+                                                       onclick="onaction_disApprove('<?php echo $val->getID_BorrowOrReturn(); ?>')">
                                                         <button type="button" class="btn btn-round btn-danger"
                                                                 style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
-                                                            <i class="fa fa-trash"></i> ลบ
+                                                           <i class="fas fa-times"></i> ไม่อนุมัติ
                                                         </button>
                                                     </a>
                                                 <?php } ?>
@@ -158,4 +151,4 @@ try {
 }
 ?>
 
-<script type="text/javascript" src="AdminLTE/assets/js/page/borrow.js"></script>
+<script type="text/javascript" src="AdminLTE/assets/js/page/borrow_approve_list.js"></script>
