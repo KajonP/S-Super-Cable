@@ -27,7 +27,7 @@ try {
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-md-12">
-                        <h1 class="m-0">รายการยืมสินค้า</h1>
+                        <h1 class="m-0">รายการยืม-คืน สินค้า</h1>
 
                         <!-- content -->
                         <div class="card">
@@ -38,7 +38,7 @@ try {
                                        class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">
                                         <span class="btn btn-round btn-success"
                                               style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i
-                                                class="fa fa-plus"></i> ยืมสินค้า </span>
+                                                class="fa fa-plus"></i> ยืม-คืน สินค้า </span>
                                     </a>
                                 </div>
                             </div>
@@ -48,7 +48,8 @@ try {
                                         <thead>
                                         <tr>
                                             <th>วันที่ยืม</th>
-                                            <th>ชื่อสินค้าที่ยืม</th>
+                                            <th>ยืม-คืน</th>
+                                            <th>ชื่อสินค้าที่ยืม-คืน</th>
                                             <th>รายละเอียด</th>
                                             <th>จำนวน</th>
                                             <th>สถานะ</th>
@@ -66,9 +67,15 @@ try {
                                                     }else if($status_approve=='2'){
                                                         $status_approve_txt = "ไม่อนุมัติ";
                                                     }
+
+                                                    $type = "ยืม";
+                                                     if($val->getType_BorrowOrReturn()=='2'){
+                                                        $type = "คืน";
+                                                    }
                                         ?>
                                             <tr>
                                                 <td><?php echo $val->getDate_BorrowOrReturn(); ?></td>
+                                                <td><?php echo $type; ?></td>
                                                 <td><?php echo $val->getName_Promotion(); ?></td>
                                                 <td><?php echo $val->getDetail_BorrowOrReturn(); ?></td>
                                                 <td><?php echo $val->getAmount_BorrowOrReturn(); ?></td>
@@ -129,12 +136,7 @@ try {
     </aside>
 
     <?php
-    # modal dialog ( edit profile )
-    //include Router::getSourcePath() . "views/modal/modal_editprofile.inc.php";
-    # modal dialog ( goods manage )
     include Router::getSourcePath() . "views/modal/modal_borrow.inc.php";
-    # modal dialog ( import excel goods  )
-    //include Router::getSourcePath() . "views/modal/modal_importgoods.inc.php";
     ?>
 
 

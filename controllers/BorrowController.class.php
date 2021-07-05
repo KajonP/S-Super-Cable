@@ -63,7 +63,7 @@ class BorrowController
             'Date_BorrowOrReturn' => date('Y-m-d'),
             'Detail_BorrowOrReturn' => $_POST['Detail_BorrowOrReturn'],
             'ID_Employee' => $_SESSION['employee']->getID_Employee(),
-            'Type_BorrowOrReturn' => '1',
+            'Type_BorrowOrReturn' => $_POST['Type_BorrowOrReturn'],
             'Approve_BorrowOrReturn' => '0'
         );
 
@@ -98,11 +98,16 @@ class BorrowController
         $borrow = BorrowOrReturn::find(['ID_BorrowOrReturn' => $_GET['id']]);
         $borrow_qty = $borrow[0]->getAmount_BorrowOrReturn();
         $promotion = Promotion::findById($borrow[0]->getID_Promotion());
-        if($promotion->getUnit_Promotion() < $borrow_qty){
+        if($promotion->getUnit_Promotion() < $borrow_qty && $borrow->getType_BorrowOrReturn()=='1'){
             header('Content-type: application/json');
             echo json_encode(["status" => false,"msg" => "จำนวนสินค้าไม่พอ"]);
         }
-        $qty = $promotion->getUnit_Promotion() - $borrow_qty;
+
+        if($borrow[0]->getType_BorrowOrReturn()=='1'){
+            $qty = $promotion->getUnit_Promotion() - $borrow_qty;
+        }else{
+            $qty = $promotion->getUnit_Promotion() + $borrow_qty;
+        }
         $access = new BorrowOrReturn();
         $result = $access->edit(['Approve_BorrowOrReturn' => '1'], $_GET['id']);
 

@@ -2,6 +2,7 @@ var columns = [
   {"width": "5%", "class": "text-center"},
   {"width": "5%", "class": "text-center"},
   {"width": "5%", "class": "text-center"},
+  {"width": "5%", "class": "text-center"},
   {"width": "5%", "class": "text-right"},
   {"width": "5%", "class": "text-center"},
   {"width": "5%", "class": "text-center"},
@@ -55,6 +56,9 @@ var form_validte = $("#form_modal").validate({
     },
     Amount_BorrowOrReturn: {
       required: true,
+    },
+    Type_BorrowOrReturn:{
+      required: true,
     }
   },
   messages: {
@@ -62,6 +66,9 @@ var form_validte = $("#form_modal").validate({
       required: "กรุณาใส่ข้อมูล",
     },
     Amount_BorrowOrReturn: {
+      required: "กรุณาใส่ข้อมูล",
+    },
+    Type_BorrowOrReturn: {
       required: "กรุณาใส่ข้อมูล",
     }
   }, 
