@@ -99,9 +99,8 @@ class PromotionController
     // ควรมีสำหรับ controller ทุกตัว
     private function index($message = null)
     {
-        session_start();
-        $employee = $_SESSION["employee"];
-        include Router::getSourcePath() . "views/index_admin.inc.php";
+        include Router::getSourcePath() . "views/login.inc.php";
+
     }
     //หน้าจัดการสินค้าส่งเสริมการขาย
     private function manage_promotion($params = null)

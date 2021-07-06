@@ -18,14 +18,14 @@
                         <input type="text" class="form-control" id="Name_File" name="Name_File" value="">
                     </div>
 
-                    <div class="form-group">
-                        <label for="Path_File" class="col-form-label">อัปโหลดไฟล์:<span class="text-danger" >*</span></label>
-                        <input type="file" name="Path_File"  accept= "application/pdf">
+                    <div class="form-group" >
+                        <label  for="Path_File" class="col-form-label">อัปโหลดไฟล์:<span class="text-danger" >*</span></label>
+                        <input  type="file" name="Path_File"  accept= "application/pdf">
                     </div>
 
                     <div class="form-group ">
                         <label for="Detail_File" class="col-form-label">รายละเอียดไฟล์:</label>
-                        <textarea name="Detail_File" id="Detail_File" rows="5" cols="60"></textarea>
+                        <textarea class="form-control" name="Detail_File" id="Detail_File" rows="5" cols="60"></textarea>
                     </div>
                 </form>
             </div>

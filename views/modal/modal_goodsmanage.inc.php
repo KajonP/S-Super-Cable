@@ -24,7 +24,7 @@
                     </div>
                     <div class="form-group">
                         <label for="Detail_Goods" class="col-form-label">รายละเอียดสินค้า:</label>
-                        <textarea name="Detail_Goods" id="Detail_Goods" rows="5" cols="60"></textarea>
+                        <textarea class="form-control" name="Detail_Goods" id="Detail_Goods" rows="5" cols="60"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="Price_Goods" class="col-form-label">ราคาสินค้า:<span class="text-danger" >*</span></label>

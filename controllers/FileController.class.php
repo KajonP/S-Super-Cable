@@ -99,7 +99,7 @@ class FileController
         $access_file = new File();
 
         # อัปเดตไฟล์
-        //$ID_File = $ID_File;
+        $ID_File = $ID_File;
         $Name_File =  $params["Name_File"] ;
         $Path_File = !empty($FILE) ?  $FILE['name'][0] : "" ;
         $Detail_File =  isset($params["Detail_File"]) ?  $params["Detail_File"] : "" ;
@@ -141,10 +141,7 @@ class FileController
     // ควรมีสำหรับ controller ทุกตัว
     private function index($message = null)
     {
-        session_start();
-        $employee = $_SESSION["employee"];
-        include Router::getSourcePath() . "views/index_admin.inc.php";
-
+        include Router::getSourcePath() . "views/login.inc.php";
     }
     //หน้าจัดการไฟล์
     private function manage_file($params = null)

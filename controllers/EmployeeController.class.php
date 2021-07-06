@@ -21,7 +21,7 @@ class EmployeeController
                     $this->$action($Username_Employee, $Password_Employee, $RememberMe);
                 } else {
                     # error handle : if empty username or password
-                    $message = json_encode("Username หรือ Password ไม่สามารถว่างได้ , โปรดลองอีกครั้ง ");
+                    $message = json_encode("ชื่อผู้ใช้ หรือ รหัสผ่าน ไม่สามารถว่างได้ , โปรดลองอีกครั้ง ");
                     header("Location: " . Router::getSourcePath() . "index.php?controller=ErrorHandle&action=error_handle&message={$message}");
                 }
                 break;
@@ -165,7 +165,7 @@ class EmployeeController
         } else {
 
             # error handle : if username or password incorrect
-            $message = json_encode("Username or Password incorrect ");
+            $message = json_encode("ชื่อผู้ใช้ หรือ รหัสผ่านผิดพลาด ");
             header("Location: " . Router::getSourcePath() . "index.php?controller=ErrorHandle&action=error_handle&message={$message}");
         }
 

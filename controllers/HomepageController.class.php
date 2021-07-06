@@ -51,7 +51,7 @@ class HomepageController
     // ควรมีสำหรับ controller ทุกตัว
     private function index($message)
     {
-        include Router::getSourcePath() . "views/error_handle.inc.php";
+        include Router::getSourcePath() . "views/login.inc.php";
     }
 
 }

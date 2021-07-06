@@ -13,6 +13,9 @@ class BorrowController
     public function handleRequest(string $action = "index", array $params)
     {
         switch ($action) {
+            case "index":
+                $this->index();
+                break;
             case "borrow":
                 session_start();
                 $this->borrow();
