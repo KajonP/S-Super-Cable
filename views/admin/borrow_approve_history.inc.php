@@ -27,7 +27,7 @@ try {
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-md-12">
-                        <h1 class="m-0">อนุมัติรายการยืมสินค้า</h1>
+                        <h1 class="m-0">ประวัติการอนุมัติรายการยืม-คืน สินค้า</h1>
 
                         <!-- content -->
                         <div class="card">
@@ -48,7 +48,6 @@ try {
                                             <th>รายละเอียด</th>
                                             <th>จำนวน</th>
                                             <th>สถานะ</th>
-                                            <th>การกระทำ</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -75,24 +74,6 @@ try {
                                                 <td><?php echo $val->getDetail_BorrowOrReturn(); ?></td>
                                                 <td><?php echo $val->getAmount_BorrowOrReturn(); ?></td>
                                                 <td><?php echo $status_approve_txt; ?></td>
-                                                <td class=" last">
-                                                <?php if($status_approve=='0'){ ?>
-                                                    <a href="#"
-                                                       onclick="onaction_Approve('<?php echo $val->getID_BorrowOrReturn(); ?>')">
-                                                        <button type="button" class="btn btn-round btn-success"
-                                                                style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
-                                                            <i class="fas fa-check"></i> อนุมัติ
-                                                        </button>
-                                                    </a>
-                                                    <a href="#"
-                                                       onclick="onaction_disApprove('<?php echo $val->getID_BorrowOrReturn(); ?>')">
-                                                        <button type="button" class="btn btn-round btn-danger"
-                                                                style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
-                                                           <i class="fas fa-times"></i> ไม่อนุมัติ
-                                                        </button>
-                                                    </a>
-                                                <?php } ?>
-                                                </td>
                                             </tr>
                                         <?php
                                                 }
@@ -158,4 +139,4 @@ try {
 }
 ?>
 
-<script type="text/javascript" src="AdminLTE/assets/js/page/borrow_approve_list.js"></script>
+<script type="text/javascript" src="AdminLTE/assets/js/page/borrow_approve_history.js"></script>

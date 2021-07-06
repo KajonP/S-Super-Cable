@@ -40,6 +40,10 @@ class BorrowController
                 session_start();
                 $this->borrowApproveSave();
                 break;
+            case "borrow_approve_history":
+                session_start();
+                $this->borrowApproveHistory();
+                break;
             default:
                 break;
         }
@@ -120,6 +124,16 @@ class BorrowController
         echo json_encode(["status" => true]);
        
     }
+
+
+    private function borrowApproveHistory()
+    {
+        $employee = $_SESSION['employee'];
+        $promotion = Promotion::listArray();
+        $borrow = BorrowOrReturn::findApproveHistory();
+        include Router::getSourcePath() . "views/admin/borrow_approve_history.inc.php";
+    }
+
 
     // ควรมีสำหรับ controller ทุกตัว
     private function index()

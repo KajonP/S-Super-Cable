@@ -131,7 +131,16 @@ try {
             <span class="brand-text font-weight-light">S Super Cable</span>
         </a>
         <!-- Sidebar -->
-        <?php include("templates/sales/sidebar_menu.inc.php"); ?>
+        <?php
+        $user_status = $_SESSION['employee']->getUser_Status_Employee();
+        if(strtolower($user_status)=='sales'){
+            include("templates/sales/sidebar_menu.inc.php");
+        }else if(strtolower($user_status)=='admin'){
+            include("templates/admin/sidebar_menu.inc.php");
+        }else if(strtolower($user_status)=='user'){
+            include("templates/users/sidebar_menu.inc.php");
+        }
+        ?>
         <!-- /.sidebar -->
     </aside>
 

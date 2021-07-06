@@ -152,7 +152,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="pages/promotion.html" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=borrow&action=borrow"; ?>" class="nav-link">
                             <i class="nav-icon fas fa-gift "></i>
                             <p>
                                 ส่งเสริมการขาย
@@ -162,7 +162,15 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="pages/promotion.html" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=borrow&action=borrow_approve_list"; ?>" class="nav-link">
+                            <i class="nav-icon fas fa-history "></i>
+                            <p>
+                               การอนุมัติ
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=borrow&action=borrow_approve_history"; ?>" class="nav-link">
                             <i class="nav-icon fas fa-history "></i>
                             <p>
                                 ประวัติการอนุมัติ

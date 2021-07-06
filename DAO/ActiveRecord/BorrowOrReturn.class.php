@@ -170,6 +170,10 @@ class BorrowOrReturn
             $where .= " AND borroworreturn.Approve_BorrowOrReturn = '".$search['Approve_BorrowOrReturn']."'";
         }
 
+        if(isset($search['date_start']) && $search['date_end']!=''){
+            $where .= " AND borroworreturn.Date_BorrowOrReturn BETWEEN '".$search['date_start']."' AND '".$search['date_end']."'";
+        }
+
         $con = Db::getInstance();
         $query = "SELECT borroworreturn.* , 
                     employee.Name_Employee , 
@@ -241,6 +245,28 @@ class BorrowOrReturn
         } else {
             return array("status" => false);
         }
+    }
+
+    public static function findApproveHistory(): array
+    {
+        $con = Db::getInstance();
+        $where = " WHERE borroworreturn.Approve_BorrowOrReturn='1' OR borroworreturn.Approve_BorrowOrReturn='2'";
+        $query = "SELECT borroworreturn.* , 
+                    employee.Name_Employee , 
+                    employee.Surname_Employee ,
+                    promotion.Name_Promotion 
+                    FROM " . self::TABLE . " 
+                    LEFT JOIN employee ON employee.ID_Employee = borroworreturn.ID_Employee 
+                    LEFT JOIN promotion ON promotion.ID_Promotion = borroworreturn.ID_Promotion
+                    ".$where;
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "borroworreturn");
+        $stmt->execute();
+        $dataList = array();
+        while ($prod = $stmt->fetch()) {
+            $dataList[] = $prod;
+        }
+        return $dataList;
     }
 
 }
