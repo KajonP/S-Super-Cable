@@ -98,8 +98,6 @@ class BorrowOrReturn
         $this->Approve_BorrowOrReturn = $Approve_BorrowOrReturn;
     }
 
-   
-
     ////
     public function getName_Promotion() : string
     {
@@ -267,6 +265,63 @@ class BorrowOrReturn
             $dataList[] = $prod;
         }
         return $dataList;
+    }
+
+
+    public static function report(array $search): array
+    {
+        $where = " WHERE borroworreturn.Approve_BorrowOrReturn=1 ";
+        if(isset($search['ID_BorrowOrReturn']) && $search['ID_BorrowOrReturn']!=''){
+            $where .= " AND borroworreturn.ID_BorrowOrReturn = '".$search['ID_BorrowOrReturn']."'";
+        }
+
+        if(isset($search['ID_Promotion']) && $search['ID_Promotion']!=''){
+            $where .= " AND borroworreturn.ID_Promotion = '".$search['ID_Promotion']."'";
+        }
+
+        if(isset($search['Date_BorrowOrReturn']) && $search['Date_BorrowOrReturn']!=''){
+            $where .= " AND borroworreturn.Date_BorrowOrReturn = '".$search['Date_BorrowOrReturn']."'";
+        }
+
+        if(isset($search['ID_Employee']) && $search['ID_Employee']!=''){
+            $where .= " AND borroworreturn.ID_Employee = '".$search['ID_Employee']."'";
+        }
+
+        if(isset($search['Type_BorrowOrReturn']) && $search['Type_BorrowOrReturn']!=''){
+            $where .= " AND borroworreturn.Type_BorrowOrReturn = '".$search['Type_BorrowOrReturn']."'";
+        }
+
+        if(isset($search['Approve_BorrowOrReturn']) && $search['Approve_BorrowOrReturn']!=''){
+            $where .= " AND borroworreturn.Approve_BorrowOrReturn = '".$search['Approve_BorrowOrReturn']."'";
+        }
+
+        if(isset($search['date_start']) && $search['date_end']!=''){
+            $where .= " AND borroworreturn.Date_BorrowOrReturn BETWEEN '".$search['date_start']."' AND '".$search['date_end']."'";
+        }
+
+        $con = Db::getInstance();
+        $query = "SELECT SUM(Amount_BorrowOrReturn) AS qty 
+                    FROM " . self::TABLE . " ".$where." AND borroworreturn.Type_BorrowOrReturn=1 ";
+
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "borroworreturn");
+        $stmt->execute();
+        $data1 = 0;
+        while ($prod = $stmt->fetch()) {
+            $data1 = $prod->qty;
+        }
+
+        $query = "SELECT SUM(Amount_BorrowOrReturn) AS qty 
+                    FROM " . self::TABLE . " ".$where." AND borroworreturn.Type_BorrowOrReturn=2 ";
+                    
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "borroworreturn");
+        $stmt->execute();
+        $data2 = 0;
+        while ($prod = $stmt->fetch()) {
+            $data2 = $prod->qty;
+        }
+        return ['borrow' => $data1,'borrow_return' => $data2];
     }
 
 }

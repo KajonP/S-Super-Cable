@@ -82,13 +82,7 @@ try {
                                                 <td><?php echo $status_approve_txt; ?></td>
                                                 <td class=" last">
                                                 <?php if($status_approve=='1'){ ?>
-                                                    <a href="#"
-                                                       onclick="">
-                                                        <button type="button" class="btn btn-round btn-success"
-                                                                style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
-                                                            <i class="fas fa-exchange-alt"></i> คืนสินค้า
-                                                        </button>
-                                                    </a>
+                                                   
                                                 <?php } ?>
                                                 <?php if($status_approve=='0' || $status_approve=='2'){ ?>
                                                     <a href="#"

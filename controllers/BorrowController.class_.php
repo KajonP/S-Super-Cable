@@ -13,9 +13,6 @@ class BorrowController
     public function handleRequest(string $action = "index", array $params)
     {
         switch ($action) {
-            case "index":
-                $this->index();
-                break;
             case "borrow":
                 session_start();
                 $this->borrow();
@@ -40,6 +37,10 @@ class BorrowController
                 session_start();
                 $this->borrowApproveSave();
                 break;
+            case "borrow_approve_history":
+                session_start();
+                $this->borrowApproveHistory();
+                break;
             default:
                 break;
         }
@@ -50,7 +51,7 @@ class BorrowController
         //print_r($_SESSION);
         $employee = $_SESSION['employee'];
         $promotion = Promotion::listArray();
-        $borrow = BorrowOrReturn::find(['ID_Employee'=>$employee->getID_Employee()]);
+        $borrow = BorrowOrReturn::find([]);
         //print_r($borrow);
         //exit;
         //print_r($_SESSION['employee']->getID_Employee());
