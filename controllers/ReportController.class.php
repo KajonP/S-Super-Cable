@@ -20,6 +20,10 @@ class ReportController
                 session_start();
                 $this->borrow();
                 break;
+            case "borrow_print":
+                session_start();
+                $this->borrow_print();
+                break;
             default:
                 break;
         }
@@ -48,6 +52,46 @@ class ReportController
         $borrow_array = json_encode($borrow);
         $borrow_return_array = json_encode($borrow_return);
         include Router::getSourcePath() . "views/admin/report_borrow.inc.php";
+    }
+
+
+    private function borrow_print()
+    {
+        //print_r($_SESSION);
+        $employee = $_SESSION['employee'];
+        $date_start = isset($_GET['date_start']) ? $_GET['date_start'] : date('Y-m-d');
+        $date_end =  isset($_GET['date_end']) ? $_GET['date_end'] : date('Y-m-d');
+        $promotion = Promotion::listArray();
+        $emp = Employee::findAll();
+        $pro_name = [];
+        $borrow = [];
+        $borrow_return = [];
+        if(count($promotion)>0){
+            foreach($promotion as $val){
+                $pro_id = $val->getID_Promotion();
+                $pro_name[] = ['name' => $val->getName_Promotion() , 'id' => $pro_id];
+                if(count($emp)>0){
+                    foreach($emp as $emp_val){
+                        $empId = $emp_val->getID_Employee();
+                        $qty = BorrowOrReturn::report([
+                            'ID_Promotion'=> $pro_id , 
+                            'date_start' => $date_start , 
+                            'date_end' => $date_end,
+                            'ID_Employee' => $empId
+                        ]);
+                        $borrow = (int) $qty['borrow'];
+                        $borrow_return = (int) $qty['borrow_return'];
+                        $report[$empId][$pro_id] = ['emp_name' => '' ,'borrow' => $borrow ];
+
+                    }
+                }
+            }
+        }
+        $promotion_array = json_encode($pro_name);
+        $borrow_array = json_encode($borrow);
+        $borrow_return_array = json_encode($borrow_return);
+        //include Router::getSourcePath() . "views/admin/report_borrow.inc.php";
+        include "test-pdf.php";
     }
 
     

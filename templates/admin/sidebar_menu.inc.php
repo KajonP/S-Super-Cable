@@ -237,7 +237,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link">
+                        <a href="index.php?controller=report&action=borrow" class="nav-link">
                             <i class="nav-icon fas fa-gift "></i>
                             <p>ส่งเสริมการขาย </p>
                         </a>

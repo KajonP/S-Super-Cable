@@ -302,7 +302,7 @@ class BorrowOrReturn
         $con = Db::getInstance();
         $query = "SELECT SUM(Amount_BorrowOrReturn) AS qty 
                     FROM " . self::TABLE . " ".$where." AND borroworreturn.Type_BorrowOrReturn=1 ";
-
+        //echo $query.'<br/>';            
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "borroworreturn");
         $stmt->execute();
@@ -323,6 +323,9 @@ class BorrowOrReturn
         }
         return ['borrow' => $data1,'borrow_return' => $data2];
     }
+
+
+    
 
 }
 ?>

@@ -53,8 +53,18 @@ class NewsController
                     include Router::getSourcePath() . "views/index_admin.inc.php";
                 } else if ($employee->getUser_Status_Employee() == "Sales") {
                     # retrieve data
-                    $message = Message::fetchAllwithInner($employee->getID_Employee());
                     $countAll = Message::fetchCountAll($employee->getID_Employee());
+                    $n = $countAll[0];
+                    $count_page = ceil($n/10);
+                    $start = 0;
+                    $get_page = 1;
+                    if(isset($_GET['page'])){
+                        $get_page = $_GET['page'];
+                    }
+                    $start = ($get_page*10)-10;
+                    $message = Message::fetchAllwithInnerLimit($employee->getID_Employee(),$start,10);
+                    //echo $n.':'.$count_page;
+                    //exit;
                     include Router::getSourcePath() . "views/sales/index_news.inc.php";
                 } else if ($employee->getUser_Status_Employee() == "User") {
                     # retrieve data
@@ -78,6 +88,9 @@ class NewsController
                     $message = Message::update_news_status($employee->getID_Employee(), $ID_Message);
                     include Router::getSourcePath() . "views/user/redirect_index_news.inc.php";
                 }
+                break;
+             case "show" :
+                $this->show();
                 break;
             default:
                 break;
@@ -272,6 +285,15 @@ class NewsController
         $employeeList = Employee::findAll();
         $message = Message::fetchAll();
         include Router::getSourcePath() . "views/admin/manage_news.inc.php";
+
+    }
+
+    private function show($params = null)
+    {
+        session_start();
+        $employee = $_SESSION["employee"];
+        $message = Message::findById($_GET['id']);
+        include Router::getSourcePath() . "views/sales/news.inc.php";
 
     }
 
