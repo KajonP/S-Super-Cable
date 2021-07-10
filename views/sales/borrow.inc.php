@@ -84,7 +84,7 @@ try {
                                                 <?php if($status_approve=='1'){ ?>
                                                    
                                                 <?php } ?>
-                                                <?php if($status_approve=='0' || $status_approve=='2'){ ?>
+                                                <?php if($status_approve=='0'){ ?>
                                                     <a href="#"
                                                        onclick="onaction_delete('<?php echo $val->getID_BorrowOrReturn(); ?>')">
                                                         <button type="button" class="btn btn-round btn-danger"

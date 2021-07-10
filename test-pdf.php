@@ -118,8 +118,8 @@ tr:nth-child(even) {
 <?php
 $html = ob_get_contents();
 $mpdf->WriteHTML($html);
-$mpdf->Output("report.pdf");
+$mpdf->Output("./download/report_borroworreturn.pdf");
 
-header('location:./report.pdf');
+header('location:./download/report_borroworreturn.pdf');
 exit(0);
 ?>

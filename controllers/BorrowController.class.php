@@ -40,6 +40,10 @@ class BorrowController
                 session_start();
                 $this->borrowApproveSave();
                 break;
+            case "borrow_approve_history":
+                session_start();
+                $this->borrowApproveHistory();
+                break;
             default:
                 break;
         }
