@@ -139,6 +139,9 @@ try {
     </aside>
 
     <?php
+    # modal dialog ( edit profile )
+    include Router::getSourcePath() . "views/modal/modal_editprofile.inc.php";
+    # modal dialog ( manage borrow )
     include Router::getSourcePath() . "views/modal/modal_borrow.inc.php";
     ?>
 

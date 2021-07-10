@@ -1,4 +1,4 @@
-<div class="modal fade" id="formDataModal" tabindex="-1" role="dialog" aria-labelledby="goodsmanageModalDialog"aria-hidden="true">
+<div class="modal fade" id="formDataModal" tabindex="-1" role="dialog" aria-labelledby="borrowmanageModalDialog"aria-hidden="true">
     <div class="modal-dialog" role="document">
     <!-- Form -->
         <form id="form_modal" method='post' action='' enctype="multipart/form-data">
@@ -34,11 +34,11 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="Detail_Goods" class="col-form-label">รายละเอียดการยืม:</label>
+                        <label for="Detail_BorrowOrReturns" class="col-form-label">รายละเอียดการยืม:</label>
                         <textarea class="form-control" name="Detail_BorrowOrReturn" id="Detail_BorrowOrReturns" rows="5" cols="60"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="Price_Goods" class="col-form-label">จำนวน:<span class="text-danger" >*</span></label>
+                        <label for="Amount_BorrowOrReturn" class="col-form-label">จำนวน:<span class="text-danger" >*</span></label>
                         <input type="number" class="form-control" id="Amount_BorrowOrReturn" name="Amount_BorrowOrReturn" value="" required="required" min="1">
                     </div>
                 </div>

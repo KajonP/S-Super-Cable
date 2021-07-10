@@ -130,11 +130,7 @@ try {
 
     <?php
     # modal dialog ( edit profile )
-    //include Router::getSourcePath() . "views/modal/modal_editprofile.inc.php";
-    # modal dialog ( goods manage )
-    include Router::getSourcePath() . "views/modal/modal_borrow.inc.php";
-    # modal dialog ( import excel goods  )
-    //include Router::getSourcePath() . "views/modal/modal_importgoods.inc.php";
+    include Router::getSourcePath() . "views/modal/modal_editprofile.inc.php";
     ?>
 
 

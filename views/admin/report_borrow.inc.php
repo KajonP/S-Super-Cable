@@ -39,7 +39,7 @@ try {
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label">วันที่เริ่ม</label>
                                             <div class="col-sm-3">
-                                                <input type="text" name="date_start" class="form-control" value="<?php echo $date_start ?>" data-date-format='yyyy-mm-dd' >
+                                                <input type="text" name="date_start" class="form-control" value="<?php echo $date_start ?>"  >
                                             </div>
                                             <label for="" class="col-sm-2 col-form-label">วันที่สิ้นสุด</label>
                                             <div class="col-sm-3">
@@ -92,6 +92,9 @@ try {
     </aside>
 
     <?php
+    # modal dialog ( edit profile )
+    include Router::getSourcePath() . "views/modal/modal_editprofile.inc.php";
+    # modal dialog ( borrow manage )
     include Router::getSourcePath() . "views/modal/modal_borrow.inc.php";
     ?>
 
@@ -119,7 +122,6 @@ try {
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script type="text/javascript" src="AdminLTE/assets/js/page/report_borrow.js"></script>
 <script>
 var ctx = document.getElementById('myChart').getContext('2d');
 var data = {
@@ -151,6 +153,7 @@ var myChart = new Chart(ctx, {
 
 $('input[name="date_start"]').datepicker({
     format: 'yyyy-mm-dd'
+
 });
 
 $('input[name="date_end"]').datepicker({
