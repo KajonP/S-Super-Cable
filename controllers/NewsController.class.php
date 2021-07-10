@@ -90,6 +90,9 @@ class NewsController
                 }
                 break;
              case "show" :
+                session_start();
+                $employee = $_SESSION['employee'];
+                Message::update_news_status($employee->getID_Employee(), $_GET['id']);
                 $this->show();
                 break;
             default:
@@ -290,7 +293,7 @@ class NewsController
 
     private function show($params = null)
     {
-        session_start();
+        
         $employee = $_SESSION["employee"];
         $message = Message::findById($_GET['id']);
         include Router::getSourcePath() . "views/sales/news.inc.php";
