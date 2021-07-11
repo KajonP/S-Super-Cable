@@ -93,7 +93,7 @@ tr:nth-child(even) {
           $pro = Promotion::findById($item['id']);
           $price = $pro->getPrice_Unit_Promotion();
           $borrow_qty = $report[$get_emp_id][$item['id']]['borrow'];
-          $total = $borrow_qty*$price;
+          $total = ($borrow_qty*$price)+$total;
           if($borrow_qty=='0'){
             $borrow_qty = '-';
           }

@@ -44,13 +44,13 @@
                         <img id="thumnails_new_profile2" browsid="profile_news2" class="thumnails-premise" src="<?= $pic ?>"  style=""/><span class="text-danger" >*</span>
                         
                         <!-- chosse file -->
-                        <input id="profile_news2" name="profile_news2" type="file" accept=".png, .jpg,.jpeg,.gif" style="" onchange="preview();" >        
+                        <input id="profile_news2" name="profile_news2" type="file" accept=".png, .jpg,.jpeg,.gif" style="" onchange="preview2();" >        
                         <!-- -->  
                         <br/><br/>
                         <img id="thumnails_new_profile3" browsid="profile_news3" class="thumnails-premise" src="<?= $pic ?>"  style=""/><span class="text-danger" >*</span>
                         
                         <!-- chosse file -->
-                        <input id="profile_news3" name="profile_news3" type="file" accept=".png, .jpg,.jpeg,.gif" style="" onchange="preview();" >          
+                        <input id="profile_news3" name="profile_news3" type="file" accept=".png, .jpg,.jpeg,.gif" style="" onchange="preview3();" >          
                     </div>
 
                 </form>
