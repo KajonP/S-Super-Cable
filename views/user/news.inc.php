@@ -27,55 +27,21 @@ try {
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
-                <div class="row mb-2">
+                <div class="row mb-12">
                     <div class="col-md-12">
-                        <h1 class="m-0">ข่าวสาร</h1><?php echo "ข้อความที่ไม่ได้อ่าน <font color=red>".$countAll[0]."</font>"; ?> 
+                        <h1 class="m-0" >หัวข้อ : <?php  echo $message->getTittle_Message(); ?></h1></font>
 						<div class="card">
-                            <div class="card-body p-0 d-flex">
-                                <div class="table-responsive">
-                                    <table id="example2" class="table table-md" style="width:100%;">
-                                        <thead>
-                                        <tr>
-                                           <th>รูปภาพ</th>
-                                            <th>หัวข่าวสาร</th>
-                                            <th>เนื้อข่าวสาร</th>
-                                            <th>วันเวลา</th>
-                                            <th>การกระทำ </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-
-                                        <?php $i = 1; foreach ($message as $key => $value) { ?>
-                                            <tr>
-											<td><img src=<?php echo $value->getPicture_Message(); ?> width=200 height=200></td>
-
-                                                <td><?php echo $value->getTittle_Message() ; ?></td>
-                                                <td><?php echo $value->getText_Message(); ?></td>
-                                                <td><?php echo $value->getDate_Message(); ?></td>
-												
-                                                <td class=" last">
-												<?php 
-													if ($value->getStatus() == 0) { 
-												?>
-														
-															<button type="button" onclick="location.replace('index.php?controller=News&action=update_status_news&ID_Message=<?=$value->getID_Message()?>');"
-																	class="btn btn-round btn-warning text-center"
-																	style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
-																อ่าน
-															</button>
-
-                                                    <?php } else { ?>
-                                                        <button type="button" class="btn btn-round btn-danger"
-                                                                style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
-                                                            อ่านแล้ว
-                                                        </button>
-                                                    <?php } ?>
-                                                </td>
-                                            </tr>
-                                        <?php } ?>
-                                        </tbody>
-                                    </table>
-                                </div>
+                            <div class="card-body p-2">                            
+                                <!-- content -->
+                               
+                                    <?php
+                                    $img = $message->getPicture_Message();
+                                    $date = date_create($message->getDate_Message());
+                                    ?>
+                                วันที่ : <?php echo date_format($date, 'd/m/Y'); ?>
+                                <center> <img src="<?php echo $img; ?>" width="70%"><br> </center>
+                                <center> <p> <?php echo $message->getText_Message(); ?></p> </center>
+                                <!-- end content -->
                             </div>
                             <!-- /.card-body -->
                         </div>
@@ -103,23 +69,17 @@ try {
             <span class="brand-text font-weight-light">S Super Cable</span>
         </a>
         <!-- Sidebar -->
-        <?php include("templates/sales/sidebar_menu.inc.php"); ?>
+        <?php include("templates/users/sidebar_menu.inc.php"); ?>
         <!-- /.sidebar -->
     </aside>
 
     <?php
     # modal dialog ( edit profile )
     include Router::getSourcePath() . "views/modal/modal_editprofile.inc.php";
+    include Router::getSourcePath() . "templates/footer_page.inc.php";
+
     ?>
 
-
-    <footer class="main-footer">
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-        All rights reserved.
-        <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> 3.1.0-rc
-        </div>
-    </footer>
     <?php
     $content = ob_get_clean();
 

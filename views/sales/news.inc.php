@@ -29,7 +29,7 @@ try {
             <div class="container-fluid">
                 <div class="row mb-12">
                     <div class="col-md-12">
-                        <h1 class="m-0"><?php echo $message->getTittle_Message(); ?></h1></font>
+                        <h1 class="m-0" >หัวข้อ : <?php  echo $message->getTittle_Message(); ?></h1></font>
 						<div class="card">
                             <div class="card-body p-2">                            
                                 <!-- content -->
@@ -38,9 +38,9 @@ try {
                                     $img = $message->getPicture_Message();
                                     $date = date_create($message->getDate_Message());
                                     ?>
-                                    วันที่ : <?php echo date_format($date, 'd/m/Y'); ?>
-                                    <img src="<?php echo $img; ?>" width="100%">
-                                    <p><?php echo $message->getText_Message(); ?></p>
+                                วันที่ : <?php echo date_format($date, 'd/m/Y'); ?>
+                                <center> <img src="<?php echo $img; ?>" width="70%"><br> </center>
+                                <center> <p> <?php echo $message->getText_Message(); ?></p> </center>
                                 <!-- end content -->
                             </div>
                             <!-- /.card-body -->
@@ -76,16 +76,11 @@ try {
     <?php
     # modal dialog ( edit profile )
     include Router::getSourcePath() . "views/modal/modal_editprofile.inc.php";
+    include Router::getSourcePath() . "templates/footer_page.inc.php";
+
     ?>
 
 
-    <footer class="main-footer">
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-        All rights reserved.
-        <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> 3.1.0-rc
-        </div>
-    </footer>
     <?php
     $content = ob_get_clean();
 

@@ -129,17 +129,12 @@ try {
     include Router::getSourcePath() . "views/modal/modal_goodsmanage.inc.php";
     # modal dialog ( import excel goods  )
     include Router::getSourcePath() . "views/modal/modal_importgoods.inc.php";
+    include Router::getSourcePath() . "templates/footer_page.inc.php";
+
     ?>
 
 
-    <footer class="main-footer">
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-        All rights reserved.
-        <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> 3.1.0-rc
-        </div>
-    </footer>
-    </div>
+
     <?php
     $content = ob_get_clean();
     // $user_jsonencode = json_encode($user);

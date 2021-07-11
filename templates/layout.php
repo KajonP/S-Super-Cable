@@ -16,6 +16,7 @@
     <div id="footer">
         <?php include("templates/footer.inc.php"); ?>
     </div>
+
 </div>
 </body>
 </html>
