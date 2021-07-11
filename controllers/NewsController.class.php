@@ -55,21 +55,31 @@ class NewsController
                     # retrieve data
                     $countAll = Message::fetchCountAll($employee->getID_Employee());
                     $n = $countAll[0];
-                    $count_page = ceil($n/10);
+                    $count_page = ceil($n/5);
                     $start = 0;
                     $get_page = 1;
                     if(isset($_GET['page'])){
                         $get_page = $_GET['page'];
                     }
-                    $start = ($get_page*10)-10;
-                    $message = Message::fetchAllwithInnerLimit($employee->getID_Employee(),$start,10);
+                    $start = ($get_page*5)-5;
+                    $message = Message::fetchAllwithInnerLimit($employee->getID_Employee(),$start,5);
                     //echo $n.':'.$count_page;
                     //exit;
                     include Router::getSourcePath() . "views/sales/index_news.inc.php";
                 } else if ($employee->getUser_Status_Employee() == "User") {
                     # retrieve data
-                    $message = Message::fetchAllwithInner($employee->getID_Employee());
                     $countAll = Message::fetchCountAll($employee->getID_Employee());
+                    $n = $countAll[0];
+                    $count_page = ceil($n/5);
+                    $start = 0;
+                    $get_page = 1;
+                    if(isset($_GET['page'])){
+                        $get_page = $_GET['page'];
+                    }
+                    $start = ($get_page*5)-5;
+                    $message = Message::fetchAllwithInnerLimit($employee->getID_Employee(),$start,5);
+                    //echo $n.':'.$count_page;
+                    //exit;
                     include Router::getSourcePath() . "views/user/index_news.inc.php";
                 }
                 break;
@@ -296,8 +306,13 @@ class NewsController
         
         $employee = $_SESSION["employee"];
         $message = Message::findById($_GET['id']);
-        include Router::getSourcePath() . "views/sales/news.inc.php";
-
+        if ($employee->getUser_Status_Employee() == "Admin") {
+            include Router::getSourcePath() . "views/index_admin.inc.php";
+        } else if ($employee->getUser_Status_Employee() == "Sales") {
+            include Router::getSourcePath() . "views/sales/news.inc.php";
+        } else if ($employee->getUser_Status_Employee() == "User") {
+            include Router::getSourcePath() . "views/user/news.inc.php";
+        }
     }
 
 }

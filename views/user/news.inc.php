@@ -69,7 +69,7 @@ try {
             <span class="brand-text font-weight-light">S Super Cable</span>
         </a>
         <!-- Sidebar -->
-        <?php include("templates/sales/sidebar_menu.inc.php"); ?>
+        <?php include("templates/users/sidebar_menu.inc.php"); ?>
         <!-- /.sidebar -->
     </aside>
 

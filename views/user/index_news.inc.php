@@ -23,59 +23,46 @@ try {
     <!-- /.navbar -->
 
     <div class=" content-wrapper">
-	
+
         <!-- Content Header (Page header) -->
-        <div class="content-header">
+        <div class="content-header" \>
             <div class="container-fluid">
-                <div class="row mb-2">
+                <div class="row mb-12">
                     <div class="col-md-12">
-                        <h1 class="m-0">ข่าวสาร</h1><?php echo "ข้อความที่ไม่ได้อ่าน <font color=red>".$countAll[0]."</font>"; ?> 
-						<div class="card">
-                            <div class="card-body p-0 d-flex">
-                                <div class="table-responsive">
-                                    <table id="example2" class="table table-md" style="width:100%;">
-                                        <thead>
-                                        <tr>
-                                           <th>รูปภาพ</th>
-                                            <th>หัวข่าวสาร</th>
-                                            <th>เนื้อข่าวสาร</th>
-                                            <th>วันเวลา</th>
-                                            <th>การกระทำ </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-
-                                        <?php $i = 1; foreach ($message as $key => $value) { ?>
-                                            <tr>
-											<td><img src=<?php echo $value->getPicture_Message(); ?> width=350 height=350></td>
-
-                                                <td><?php echo $value->getTittle_Message() ; ?></td>
-                                                <td><?php echo $value->getText_Message(); ?></td>
-                                                <td><?php echo $value->getDate_Message(); ?></td>
-												
-                                                <td class=" last">
-												<?php 
-													if ($value->getStatus() == 0) { 
-												?>
-														
-															<button type="button" onclick="location.replace('index.php?controller=News&action=update_status_news&ID_Message=<?=$value->getID_Message()?>');"
-																	class="btn btn-round btn-warning text-center"
-																	style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
-																อ่าน
-															</button>
-
-                                                    <?php } else { ?>
-                                                        <button type="button" class="btn btn-round btn-danger"
-                                                                style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
-                                                            อ่านแล้ว
-                                                        </button>
-                                                    <?php } ?>
+                        <h1 class="m-0">ข่าวสาร</h1><?php echo "ข้อความที่ไม่ได้อ่าน <font color=red>".$countAll[0]."</font>"; ?>
+                        <div class="card">
+                            <div class="card-body p-0" >
+                                <!-- content -->
+                                <div class="callout callout-info" >
+                                    <?php $i = 1;
+                                    foreach ($message as $key => $value) {
+                                        $img = $value->getPicture_Message();
+                                        $date = date_create($value->getDate_Message());
+                                        ?>
+                                        <table width="100%" style="margin-bottom:20px;" >
+                                            <tr valign="top">
+                                                <td width="30%">
+                                                    <img src="<?php echo $img; ?>" width="100%">
+                                                </td>
+                                                <td width="70%" style="padding:5px;">
+                                                    วันที่ : <?php echo date_format($date, 'd/m/Y'); ?>
+                                                    <br/>
+                                                    <a href="index.php?controller=News&action=show&id=<?php echo $value->getID_Message(); ?>"><?php echo $value->getTittle_Message(); ?></a>
                                                 </td>
                                             </tr>
-                                        <?php } ?>
-                                        </tbody>
-                                    </table>
+                                        </table>
+                                    <?php } ?>
+                                    <ul class="pagination pagination-sm">
+                                        <?php
+                                        for($i=1;$i<=$count_page;$i++){
+                                            ?>
+                                            <li class="page-item"><a href="index.php?controller=News&action=show_news_status&page=<?php echo $i; ?>" class="page-link"><?php echo $i; ?></a></li>
+                                            <?php
+                                        }
+                                        ?>
+                                    </ul>
                                 </div>
+                                <!-- end content -->
                             </div>
                             <!-- /.card-body -->
                         </div>
@@ -89,9 +76,9 @@ try {
 
         <!-- /.content-header -->
 
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </div>
+    </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+    </div>
     </div>
 
     <!-- Main Sidebar Container -->
@@ -130,68 +117,68 @@ try {
 }
 ?>
 <script>
-  $(function () {
-    $("#example1").DataTable({
-        lengthMenu: [1,5, 10, 20, 50, 100],
-        "responsive": true,
-	  "lengthChange": false, 
-	  "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-        lengthMenu: [1,5, 10, 20, 50, 100],
-        "paging": true,
-      "lengthChange": true,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
+    $(function () {
+        $("#example1").DataTable({
+            lengthMenu: [2, 10, 20, 50, 100, 200, 500],
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            lengthMenu: [2, 10, 20, 50, 100, 200, 500],
+            "paging": true,
+            "lengthChange": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
 
-        "language": {
-            "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
-            "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
-            "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
-            "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
-            "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
-            "sSearch": "ค้นหา :",
-            "aaSorting": [[0, 'desc']],
-            "paginate": {
-                "sFirst": "หน้าแรก",
-                "sPrevious": "ก่อนหน้า",
-                "sNext": "ถัดไป",
-                "sLast": "หน้าสุดท้าย"
-            }
-        },
-    });
-	$('#example3').DataTable({
-      "paging": true,
-      "lengthChange": true,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-        "language": {
-            "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
-            "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
-            "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
-            "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
-            "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
-            "sSearch": "ค้นหา :",
-            "aaSorting": [[0, 'desc']],
-            "paginate": {
-                "sFirst": "หน้าแรก",
-                "sPrevious": "ก่อนหน้า",
-                "sNext": "ถัดไป",
-                "sLast": "หน้าสุดท้าย",
-                "oAria": {
-                    "sSortAscending":  ": เปิดใช้งานการเรียงข้อมูลจากน้อยไปมาก",
-                    "sSortDescending": ": เปิดใช้งานการเรียงข้อมูลจากมากไปน้อย"
+            "language": {
+                "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
+                "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
+                "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
+                "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
+                "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
+                "sSearch": "ค้นหา :",
+                "aaSorting": [[0, 'desc']],
+                "paginate": {
+                    "sFirst": "หน้าแรก",
+                    "sPrevious": "ก่อนหน้า",
+                    "sNext": "ถัดไป",
+                    "sLast": "หน้าสุดท้าย"
                 }
-            }
-        },
+            },
+        });
+        $('#example3').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+            "language": {
+                "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
+                "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
+                "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
+                "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
+                "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
+                "sSearch": "ค้นหา :",
+                "aaSorting": [[0, 'desc']],
+                "paginate": {
+                    "sFirst": "หน้าแรก",
+                    "sPrevious": "ก่อนหน้า",
+                    "sNext": "ถัดไป",
+                    "sLast": "หน้าสุดท้าย",
+                    "oAria": {
+                        "sSortAscending":  ": เปิดใช้งานการเรียงข้อมูลจากน้อยไปมาก",
+                        "sSortDescending": ": เปิดใช้งานการเรียงข้อมูลจากมากไปน้อย"
+                    }
+                }
+            },
+        });
     });
-  });
 </script>
 <script type="text/javascript" src="AdminLTE/assets/js/page/manage_news.js"></script> <!-- -->

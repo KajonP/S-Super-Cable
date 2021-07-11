@@ -25,21 +25,21 @@ try {
     <div class=" content-wrapper">
 	
         <!-- Content Header (Page header) -->
-        <div class="content-header">
+        <div class="content-header" \>
             <div class="container-fluid">
                 <div class="row mb-12">
                     <div class="col-md-12">
                         <h1 class="m-0">ข่าวสาร</h1><?php echo "ข้อความที่ไม่ได้อ่าน <font color=red>".$countAll[0]."</font>"; ?> 
 						<div class="card">
-                            <div class="card-body p-0">                            
+                            <div class="card-body p-0" >
                                 <!-- content -->
-                                <div class="callout callout-info">
+                                <div class="callout callout-info" >
                                 <?php $i = 1; 
                                 foreach ($message as $key => $value) { 
                                     $img = $value->getPicture_Message();
                                     $date = date_create($value->getDate_Message());
                                 ?>
-                                    <table width="100%" style="margin-bottom:20px;">
+                                    <table width="100%" style="margin-bottom:20px;" >
                                         <tr valign="top">
                                             <td width="30%">
                                                 <img src="<?php echo $img; ?>" width="100%">
