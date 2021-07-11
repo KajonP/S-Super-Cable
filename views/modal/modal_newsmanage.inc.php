@@ -21,7 +21,7 @@
                     
                    <!-- Text_Message -->
                    <div class="form-group ">
-                    <label for="Text_Message" class="col-form-label">เนื้อข่าวสาร:<span class="text-danger" >*</span></label>
+                    <label for="Text_Message" class="col-form-label">เนื้อข่าวสาร:</label>
                         <!--<input type="text" class="form-control" id="Text_Message" name="Text_Message" value="">-->
                         <textarea name="Text_Message" id="Text_Message" rows="10" cols="80"></textarea>
                         <script>
@@ -32,22 +32,20 @@
                     </div>
                     
                     <div class="form-group">
-                        <!-- set default image  -->
-                        <?php $pic = Router::getSourcePath() . "images/" . $employee->Picuture_Employee; ?>
                         <!-- select image to upload -->
-                        <img id="thumnails_new_profile" browsid="profile_news" class="thumnails-premise" src="<?= $pic ?>"  style=""/><span class="text-danger" >*</span>
+                        <img id="thumnails_new_profile" browsid="profile_news" class="thumnails-premise"  src="" style=""/>
                         
                         <!-- chosse file -->
                         <input id="profile_news" name="profile_news" type="file" accept=".png, .jpg,.jpeg,.gif" style="" onchange="preview();" >      
                         <!-- -->
                         <br/><br/>
-                        <img id="thumnails_new_profile2" browsid="profile_news2" class="thumnails-premise" src="<?= $pic ?>"  style=""/><span class="text-danger" >*</span>
+                        <img id="thumnails_new_profile2" browsid="profile_news2" class="thumnails-premise"   src="" style=""/>
                         
                         <!-- chosse file -->
                         <input id="profile_news2" name="profile_news2" type="file" accept=".png, .jpg,.jpeg,.gif" style="" onchange="preview2();" >        
                         <!-- -->  
                         <br/><br/>
-                        <img id="thumnails_new_profile3" browsid="profile_news3" class="thumnails-premise" src="<?= $pic ?>"  style=""/><span class="text-danger" >*</span>
+                        <img id="thumnails_new_profile3" browsid="profile_news3" class="thumnails-premise" src=""  style=""/>
                         
                         <!-- chosse file -->
                         <input id="profile_news3" name="profile_news3" type="file" accept=".png, .jpg,.jpeg,.gif" style="" onchange="preview3();" >          

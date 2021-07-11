@@ -157,9 +157,12 @@ class EmployeeController
             } else if ($employee->getUser_Status_Employee() == "Sales") {
                 //dashboard
                 $message = Message::select("ORDER BY Date_Message DESC LIMIT 1");
+                $award = Award::select("ORDER BY `Date_Award` DESC LIMIT 1");
+
                 include Router::getSourcePath() . "views/index_sales.inc.php";
             } else if ($employee->getUser_Status_Employee() == "User") {
-
+                $message = Message::select("ORDER BY `Date_Message` DESC LIMIT 1");
+                $award = Award::select("ORDER BY `Date_Award` DESC LIMIT 1");
                 include Router::getSourcePath() . "views/index_user.inc.php";
             }
         } else {

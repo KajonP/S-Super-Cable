@@ -97,7 +97,7 @@ function  awardManageShow(type, ID_Award ) {
           break;
         case "edit":
 
-          title = "แก้ไขขรางวัล";
+          title = "แก้ไขรางวัล";
 
           form_validte.resetForm();
           get_award_to_edit(ID_Award);
@@ -134,17 +134,36 @@ function onaction_createorupdate(ID_Award = null) {
   });
 
   var file_data = $('input[name="award_pic"]')[0].files;
+  var file_data2 = $('input[name="award_pic2"]')[0].files;
+  var file_data3 = $('input[name="award_pic3"]')[0].files;
 
   if (type == "create" )
   {
-      //File data
+    //File data
     if (file_data.length > 0)
     {
       for (var i = 0; i < file_data.length; i++)
       {
-          data.append("award_pic[]", file_data[i]);
+        data.append("award_pic[]", file_data[i]);
       }
     }
+
+    if (file_data2.length > 0)
+    {
+      for (var i = 0; i < file_data2.length; i++)
+      {
+        data.append("award_pic[]", file_data2[i]);
+      }
+    }
+
+    if (file_data3.length > 0)
+    {
+      for (var i = 0; i < file_data3.length; i++)
+      {
+        data.append("award_pic[]", file_data3[i]);
+      }
+    }
+
   }
   else
   {
@@ -154,9 +173,26 @@ function onaction_createorupdate(ID_Award = null) {
     {
       for (var i = 0; i < file_data.length; i++)
       {
-          data.append("award_pic[]", file_data[i]);
+        data.append("award_pic[]", file_data[i]);
       }
     }
+
+    if (file_data2.length > 0)
+    {
+      for (var i = 0; i < file_data2.length; i++)
+      {
+        data.append("award_pic[]", file_data2[i]);
+      }
+    }
+
+    if (file_data3.length > 0)
+    {
+      for (var i = 0; i < file_data3.length; i++)
+      {
+        data.append("award_pic[]", file_data3[i]);
+      }
+    }
+
   }
 
   switch(type) {
@@ -232,10 +268,12 @@ function get_award_to_edit(ID_Award) {
       /* set input value */
 
 
-      // set vaule to html tag
+      // set value to html tag
       $('#Tittle_Award').val(response.data.Tittle_Award);
       $('#ID_Employee_Award').val(response.data.ID_Employee).trigger('change')
       $("#thumnails_award_pic").attr("src", response.data.Picture_Award);
+      $("#thumnails_award_pic2").attr("src", response.data.Picture_Award2);
+      $("#thumnails_award_pic3").attr("src", response.data.Picture_Award3);
 
     },
     error: function (xhr, status, exception) {

@@ -4,9 +4,7 @@ $title = "S Super Cable";
 try {
     if (!isset($_SESSION['employee']) || !is_a($_SESSION['employee'], "Employee")) {
         header("Location: " . Router::getSourcePath() . "index.php");
-
     }
-
     ob_start();
     ?>
     <!-- Navbar -->
@@ -25,52 +23,45 @@ try {
     <!-- /.navbar -->
 
     <div class=" content-wrapper">
+
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0">แดชบอร์ด</h1>
-                        <!-- content -->
-                        <div class="card card-default">
-                            <div class="card-header">
-                                <h3 class="card-title">
-                                    <i class="fas fa-bullhorn"></i>
-                                    ข่าว/รางวัล
-                                </h3>
+                <div class="row mb-12">
+                    <div class="col-md-12">
+                        <h1 class="m-0" >หัวข้อ : <?php  echo $award->getTittle_Award(); ?></h1></font>
+                        <div class="card">
+                            <div class="card-body p-2">
+                                <!-- content -->
+
+                                <?php
+                                $img = $award->getPicture_Award();
+                                $img2 = $award->getPicture_Award2();
+                                $img3 = $award->getPicture_Award3();
+
+                                $date = date_create($award->getDate_Award());
+                                ?>
+                                วันที่ : <?php echo date_format($date, 'd/m/Y'); ?>
+
+                                <center> <img src="<?php echo $img; ?>" width="30%"><img src="<?php echo $img2; ?>" width="30%"> <img src="<?php echo $img3; ?>" width="30%"><br> </center>
+                                <!-- end content -->
                             </div>
-                            <div class="card-body" >
-                                <?php $i = 1; foreach ($message as $key => $value) { ?>
-                                    <div class="callout callout-info">
-                                        <h5><?php echo $value->getTittle_Message() ; ?></h5>
-                                        <?php echo $value->getText_Message(); ?>
-                                        <?php
-                                        $date = date_create($value->getDate_Message());
-                                        ?>
-                                        วันที่ : <?php echo date_format($date, 'd/m/Y'); ?>
-                                    </div>
-                                <?php } ?>
-                            </div>
-                            <div class="card-body">
-                                <?php $i = 1; foreach ($award as $key => $value) { ?>
-                                    <div class="callout callout-info">
-                                        <h5><?php echo $value->getTittle_Award() ; ?></h5>
-                                        <?php
-                                        $date = date_create($value->getDate_Award());
-                                        ?>
-                                        <div>วันที่ : <?php echo date_format($date, 'd/m/Y'); ?></div>
-                                    </div>
-                                <?php } ?>
-                            </div>
+                            <!-- /.card-body -->
                         </div>
-                        <!-- end content -->
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
+
+        <!-- Content Header (Page header) -->
+
+        <!-- /.content-header -->
+
+    </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
     </div>
-    <!-- /.content-wrapper -->
+    </div>
 
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -80,12 +71,10 @@ try {
                  style="opacity: .8">
             <span class="brand-text font-weight-light">S Super Cable</span>
         </a>
-
         <!-- Sidebar -->
         <?php include("templates/sales/sidebar_menu.inc.php"); ?>
         <!-- /.sidebar -->
     </aside>
-
 
     <?php
     # modal dialog ( edit profile )
@@ -93,6 +82,8 @@ try {
     include Router::getSourcePath() . "templates/footer_page.inc.php";
 
     ?>
+
+
     <?php
     $content = ob_get_clean();
 
@@ -102,3 +93,4 @@ try {
     exit(1);
 }
 ?>
+<script type="text/javascript" src="AdminLTE/assets/js/page/manage_award.js"></script> <!-- -->

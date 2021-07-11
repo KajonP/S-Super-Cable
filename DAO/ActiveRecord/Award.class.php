@@ -6,6 +6,8 @@ class Award
     private $ID_Award;
     private $Tittle_Award;
     private $Picture_Award;
+    private $Picture_Award2;
+    private $Picture_Award3;
     private $Date_Award;
     private $ID_Employee;
     private $fullname_employee;
@@ -32,7 +34,7 @@ class Award
 
     public function setID_Award(int $ID_Award)
     {
-        $this->getID_Award = $getID_Award;
+        $this->ID_Award = $ID_Award;
     }
 
     // --- title Award
@@ -43,7 +45,7 @@ class Award
 
     public function setTittle_Award(string $Tittle_Award)
     {
-        $this->getTittle_Award = $getTittle_Award;
+        $this->Tittle_Award = $Tittle_Award;
     }
 
     // --- picture Award
@@ -54,7 +56,25 @@ class Award
 
     public function setPicture_Award(string $Picture_Award)
     {
-        $this->getPicture_Award = $getPicture_Award;
+        $this->Picture_Award = $Picture_Award;
+    }
+    public function getPicture_Award2(): string
+    {
+        return $this->Picture_Award2;
+    }
+
+    public function setPicture_Award2(string $Picture_Award2)
+    {
+        $this->Picture_Award2 = $Picture_Award2;
+    }
+    public function getPicture_Award3(): string
+    {
+        return $this->Picture_Award3;
+    }
+
+    public function setPicture_Award3(string $Picture_Award3)
+    {
+        $this->Picture_Award3 = $Picture_Award3;
     }
 
     // --- date Award
@@ -65,7 +85,7 @@ class Award
 
     public function setDate_Award(string $Date_Award)
     {
-        $this->getDate_Award = $getDate_Award;
+        $this->Date_Award = $Date_Award;
     }
 
     public function getID_Employee() : string
@@ -115,7 +135,7 @@ class Award
         LEFT JOIN employee ON " . self::TABLE . ".ID_Employee = employee.ID_Employee  " ;
 
         $stmt = $con->prepare($query);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "award");
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Award");
         $stmt->execute();
         $list = array();
         while ($prod = $stmt->fetch()) {
@@ -131,7 +151,7 @@ class Award
         $query = "select *, employee.Name_Employee as fullname_employee from award inner join award_status on award_status.ID_Award = award.ID_Award inner join employee on award.ID_Employee = employee.ID_Employee where award_status.ID_Employee = '".$emp_id."'";
 
         $stmt = $con->prepare($query);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "award");
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Award");
         $stmt->execute();
         $list = array();
         while ($prod = $stmt->fetch()) {
@@ -140,12 +160,28 @@ class Award
         return $list;
 
     }
-    public static function findAward_byID($ID_Award): ?Award
+    public static function fetchAllwithInnerLimit($emp_id,$start,$limit): array
+    {
+        $con = Db::getInstance();
+        $query = "SELECT * FROM " . self::TABLE . " inner join award_status on award.ID_Award = award_status.ID_Award"." where award_status.ID_Employee = '".$emp_id."' LIMIT ".$start." , ".$limit;
+
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Award");
+        $stmt->execute();
+        $list = array();
+        while ($prod = $stmt->fetch()) {
+            $list[$prod->getID_Award()] = $prod;
+        }
+        return $list;
+
+    }
+
+    public static function findAward_byID(int $ID_Award): ?Award
     {
         $con = Db::getInstance();
         $query = "SELECT * FROM " . self::TABLE . " WHERE ID_Award = '$ID_Award'";
         $stmt = $con->prepare($query);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "award");
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Award");
         $stmt->execute();
         if ($prod = $stmt->fetch()) {
             return $prod;
@@ -257,6 +293,20 @@ class Award
         } else {
             return array("status" => false);
         }
+    }
+    public static function select($where=''): array
+    {
+        $con = Db::getInstance();
+        $query = "SELECT * FROM " . self::TABLE." ".$where;
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Award");
+        $stmt->execute();
+        $list = array();
+        while ($prod = $stmt->fetch()) {
+            $list[$prod->getID_Award()] = $prod;
+        }
+        return $list;
+
     }
 
 }

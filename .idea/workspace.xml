@@ -1,38 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update footer">
-      <change afterPath="$PROJECT_DIR$/images/3346a0afacf4efc8583dad8cbca68b61.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/374d5cc345f8ab9020885112d715e13f.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/3df7adff492808745e7f61f593c28c0b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/55606c4cddaf33a74e323cc14998600b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/6300c6902221c00a04c0fbfc63219db5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/753494977c2db9d16713166935c9b7c4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/80abed927ea228836421cb5ea34f5e59.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/85bfc5c623bceaf9b24420ae037d5311.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/a40ec36013b44d09e0beb2180cba23d6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/af448bd5a9556a2ecaed1a8d84841cb0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/b2d6c6ab87be7d21870a06fb34da94b3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/b655092d65a1f01a429fc9c27242d566.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/c2b3b99bd9023b8f5bff9b3a32ac99fc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/cb4dcff8b9393b76e338f8cd04353261.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/d0cdd6d2c1b0145860ec90958e285803.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/e3fe52693e0269fcb1af51a052925b91.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/f9d22d85f077344f5a573b4e11c74cfb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project (37).sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/Company-11072021071508.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/test-123.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update news and company and report">
+      <change afterPath="$PROJECT_DIR$/images/066f072255f2573b5a1d487520d76b09.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/3b0ca8138bf3f704cf2d808491ccc024.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/41920cb0ccf6407412048516f666a7c1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/4d41b2f2696f85a0fadde78267cc12c7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/6e60211798b2b1b1b60eba7af2a997e1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/bfe0ee6e99a58983aecade3aedea4ecf.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/c029fedc7fa559df1dc579c75e7e17be.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/c9449f3d3ce0ee055459ed1a4bdf0e58.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/d0aab6545a5e39c9899a4a7097b17dea.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/f542957975a3e8f951257c0339d41dc5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project (40).sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/sales/award.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/user/award.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Company.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Company.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/CompanyController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/NewsController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/NewsController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_award.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_award.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_upload_pic_award.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_upload_pic_award.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Award.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Award.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AwardController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AwardController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/EmployeeController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/EmployeeController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/HomepageController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/HomepageController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/download/report_borroworreturn.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/report_borroworreturn.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/manage_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_news.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sales/news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/news.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/user/news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/user/news.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index_sales.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index_sales.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index_user.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index_user.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_awardmanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_awardmanage.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_newsmanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_newsmanage.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/sales/index_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/index_award.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/user/index_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/user/index_award.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +41,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1sIh1CrJxmlMKdNWW2CJdcfnSpx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -187,14 +191,8 @@
       <workItem from="1625541491370" duration="613000" />
       <workItem from="1625916021382" duration="479000" />
       <workItem from="1625916522266" duration="1853000" />
-      <workItem from="1625981703967" duration="10552000" />
-    </task>
-    <task id="LOCAL-00010" summary="case : update sidebar admin -goods">
-      <created>1621039651956</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1621039651956</updated>
+      <workItem from="1625981703967" duration="10661000" />
+      <workItem from="1626000370000" duration="7256000" />
     </task>
     <task id="LOCAL-00011" summary="case : add province &amp; amphur">
       <created>1621087185165</created>
@@ -532,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625986695252</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="case : update news and company and report">
+      <created>1625992376059</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1625992376059</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,7 +557,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : ติดปัญหา upload ตรง amphur_id" />
     <MESSAGE value="case : update db" />
     <MESSAGE value="case : update model of goods and promotion" />
     <MESSAGE value="case : crud promotion" />
@@ -577,14 +581,15 @@
     <MESSAGE value="case : update modal dialog ( edit profile )" />
     <MESSAGE value="case : update user news" />
     <MESSAGE value="case : update footer" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : update footer" />
+    <MESSAGE value="case : update news and company and report" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update news and company and report" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/controllers/AwardController.class.php</url>
-          <line>97</line>
+          <line>127</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

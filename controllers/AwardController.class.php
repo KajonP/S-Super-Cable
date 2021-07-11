@@ -20,8 +20,9 @@ class AwardController
                 $this->$action();
                 break;
             case "create_award":
+                $ID_Employee = isset($params["GET"]["ID_Employee"]) ? $params["GET"]["ID_Employee"] : "";
                 $FILE_IMG = isset($params["FILES"]["award_pic"]) ? $params["FILES"]["award_pic"] : "";
-                $result = $this->$action($params["POST"], $FILE_IMG);
+                $result = $this->$action($params["POST"], $FILE_IMG,$ID_Employee);
                 echo $result;
                 break;
             case "findAwardbyID_Award" :
@@ -46,19 +47,39 @@ class AwardController
                 break;
             case "show_award_status":
                 session_start();
-                $employee = $_SESSION["employee"];
+                $employee = $_SESSION['employee'];
 
                 if ($employee->getUser_Status_Employee() == "Admin") {
                     include Router::getSourcePath() . "views/index_admin.inc.php";
                 } else if ($employee->getUser_Status_Employee() == "Sales") {
                     # retrieve data
-                    $awardList = Award::fetchAllwithInner($employee->getID_Employee());
-                    $countAllAward = Award::fetchCountAll($employee->getID_Employee());
+                    $countAll = Award::fetchCountAll($employee->getID_Employee());
+                    $n = $countAll[0];
+                    $count_page = ceil($n/5);
+                    $start = 0;
+                    $get_page = 1;
+                    if(isset($_GET['page'])){
+                        $get_page = $_GET['page'];
+                    }
+                    $start = ($get_page*5)-5;
+                    $award = Award::fetchAllwithInnerLimit($employee->getID_Employee(),$start,5);
+                    //echo $n.':'.$count_page;
+                    //exit;
                     include Router::getSourcePath() . "views/sales/index_award.inc.php";
                 } else if ($employee->getUser_Status_Employee() == "User") {
                     # retrieve data
-                    $awardList = Award::fetchAllwithInner($employee->getID_Employee());
-                    $countAllAward = Award::fetchCountAll($employee->getID_Employee());
+                    $countAll = Award::fetchCountAll($employee->getID_Employee());
+                    $n = $countAll[0];
+                    $count_page = ceil($n/5);
+                    $start = 0;
+                    $get_page = 1;
+                    if(isset($_GET['page'])){
+                        $get_page = $_GET['page'];
+                    }
+                    $start = ($get_page*5)-5;
+                    $award = Award::fetchAllwithInnerLimit($employee->getID_Employee(),$start,5);
+                    //echo $n.':'.$count_page;
+                    //exit;
                     include Router::getSourcePath() . "views/user/index_award.inc.php";
                 }
                 break;
@@ -71,15 +92,19 @@ class AwardController
                 } else if ($employee->getUser_Status_Employee() == "Sales") {
                     # retrieve data
                     $award = Award::update_award_status($employee->getID_Employee(), $ID_Award);
-                    $awardList = Award::fetchAllwithInner($employee->getID_Employee());
                     include Router::getSourcePath() . "views/sales/redirect_index_award.inc.php";
                 } else if ($employee->getUser_Status_Employee() == "User") {
                     # retrieve data
                     $award = Award::update_award_status($employee->getID_Employee(), $ID_Award);
-                    $awardList = Award::fetchAllwithInner($employee->getID_Employee());
                     include Router::getSourcePath() . "views/user/redirect_index_award.inc.php";
 
                 }
+                break;
+            case "show" :
+                session_start();
+                $employee = $_SESSION['employee'];
+                Award::update_award_status($employee->getID_Employee(), $_GET['id']);
+                $this->show();
                 break;
             default:
                 break;
@@ -89,15 +114,20 @@ class AwardController
     {
         $access_award = new Award();
 
-        // # สร้างข่าวสาร
+        // # สร้างรางวัล
         $awardid = $access_award->geneateDateTimemd() ;
         $award_title =  $params["Tittle_Award"] ;
-        $award_filename = !empty($FILE_IMG) ?  $access_award->generatePictureFilename($FILE_IMG['name'][0], $award_title) : "" ;
+        $award_filename = !empty($FILE_IMG['name'][0]) ?  $access_award->generatePictureFilename($FILE_IMG['name'][0], $award_title) : "" ;
+        $award_filename2 = !empty($FILE_IMG['name'][1]) ?  $access_award->generatePictureFilename($FILE_IMG['name'][1], $award_title) : "" ;
+        $award_filename3 = !empty($FILE_IMG['name'][2]) ?  $access_award->generatePictureFilename($FILE_IMG['name'][2], $award_title) : "" ;
+
         $award_datetime = $access_award->geneateDateTime();
         $locate_img = "";
+        $locate_img2 = "";
+        $locate_img3 = "";
         $award_ID_Employee = $params["ID_Employee"];
 
-        if (!empty($FILE_IMG) && !empty($FILE_IMG['name']))
+        if (!empty($FILE_IMG) && !empty($FILE_IMG['name'][0]))
         {
             $name_file =  $FILE_IMG['name'][0];
             $name_file_type =  explode('.',$name_file)[1] ;
@@ -108,10 +138,33 @@ class AwardController
             move_uploaded_file($tmp_name, $locate_img);
         }
 
+        if (!empty($FILE_IMG) && !empty($FILE_IMG['name'][1]))
+        {
+            $name_file2 =  $FILE_IMG['name'][1];
+            $name_file_type2 =  explode('.',$name_file2)[1] ;
+            $tmp_name2 =  $FILE_IMG['tmp_name'][1];
+            $locate_img2 = Router::getSourcePath() . "images/" . $award_filename2 . ".".$name_file_type2;
+
+            // copy original file to destination file
+            move_uploaded_file($tmp_name2, $locate_img2);
+        }
+
+        if (!empty($FILE_IMG) && !empty($FILE_IMG['name'][2]))
+        {
+            $name_file3 =  $FILE_IMG['name'][2];
+            $name_file_type3 =  explode('.',$name_file3)[1] ;
+            $tmp_name3 =  $FILE_IMG['tmp_name'][2];
+            $locate_img3 = Router::getSourcePath() . "images/" . $award_filename3 . ".".$name_file_type3;
+
+            // copy original file to destination file
+            move_uploaded_file($tmp_name3, $locate_img3);
+        }
         $access_award_params = array(
             "ID_Award" => $awardid,
             "Tittle_Award" => $award_title,
             "Picture_Award" => $locate_img,
+            "Picture_Award2" => $locate_img2,
+            "Picture_Award3" => $locate_img3,
             "Date_Award"=> $award_datetime,
             "ID_Employee" => $award_ID_Employee,
         );
@@ -135,6 +188,8 @@ class AwardController
             "ID_Award" => $award->getID_Award(),
             "Tittle_Award" => $award->getTittle_Award(),
             "Picture_Award" => $award->getPicture_Award(),
+            "Picture_Award2" => $award->getPicture_Award2(),
+            "Picture_Award3" => $award->getPicture_Award3(),
             "Date_Award" => $award->getDate_Award(),
             "ID_Employee" => $award->getID_Employee(),
         );
@@ -146,32 +201,60 @@ class AwardController
     private function edit_award($params, $FILE_IMG, $ID_Award)
     {
 
-        // # สร้างข่าวสารร
+        // # อัปเดตรางวัล
         $access_award = new Award();
         $awardid = $ID_Award ;
         $award_title =  $params["Tittle_Award"] ;
         $award_datetime = $access_award->geneateDateTime();
 
         $locate_img = "";
+        $locate_img2 = "";
+        $locate_img3 = "";
 
         // print_r('hello world'. '     ' . $access_news->generatePictureFilename($FILE_IMG['profile_news']['name'][0], $message_title));
 
-        $award_filename = !empty($FILE_IMG) ?  $access_award->generatePictureFilename($FILE_IMG['award_pic']['name'][0], $award_title) : "" ;
+        $award_filename = !empty($FILE_IMG['award_pic']['name'][0]) ?  $access_award->generatePictureFilename($FILE_IMG['award_pic']['name'][0], $award_title) : "" ;
+        $award_filename2 = !empty($FILE_IMG['award_pic']['name'][1]) ?  $access_award->generatePictureFilename($FILE_IMG['award_pic']['name'][1], $award_title) : "" ;
+        $award_filename3 = !empty($FILE_IMG['award_pic']['name'][2]) ?  $access_award->generatePictureFilename($FILE_IMG['award_pic']['name'][2], $award_title) : "" ;
+
         if (!empty($FILE_IMG) && !empty($FILE_IMG['award_pic']['name']))
+    {
+        $name_file =  $FILE_IMG['award_pic']['name'][0];
+        $name_file_type =  explode('.',$name_file)[1] ;
+        $tmp_name =  $FILE_IMG['award_pic']['tmp_name'][0];
+        $locate_img = Router::getSourcePath() . "images/" . $award_filename . ".".$name_file_type;
+
+        // copy original file to destination file
+        move_uploaded_file($tmp_name, $locate_img);
+    }
+
+         if (!empty($FILE_IMG) && !empty($FILE_IMG['award_pic']['name'][1]))
+         {
+             $name_file2 =  $FILE_IMG['award_pic']['name'][1];
+             $name_file_type2 =  explode('.',$name_file2)[1] ;
+             $tmp_name2 =  $FILE_IMG['award_pic']['tmp_name'][1];
+             $locate_img2 = Router::getSourcePath() . "images/" . $award_filename2 . ".".$name_file_type2;
+
+             // copy original file to destination file
+             move_uploaded_file($tmp_name2, $locate_img2);
+         }
+
+        if (!empty($FILE_IMG) && !empty($FILE_IMG['award_pic']['name'][2]))
         {
-            $name_file =  $FILE_IMG['award_pic']['name'][0];
-            $name_file_type =  explode('.',$name_file)[1] ;
-            $tmp_name =  $FILE_IMG['award_pic']['tmp_name'][0];
-            $locate_img = Router::getSourcePath() . "images/" . $award_filename . ".".$name_file_type;
+            $name_file3 =  $FILE_IMG['award_pic']['name'][2];
+            $name_file_type3 =  explode('.',$name_file3)[1] ;
+            $tmp_name3 =  $FILE_IMG['award_pic']['tmp_name'][2];
+            $locate_img3 = Router::getSourcePath() . "images/" . $award_filename3 . ".".$name_file_type3;
 
             // copy original file to destination file
-            move_uploaded_file($tmp_name, $locate_img);
+            move_uploaded_file($tmp_name3, $locate_img3);
         }
-
         $access_award_params = array(
             "ID_Award" => $awardid,
             "Tittle_Award" => $award_title,
             "Picture_Award" => $locate_img,
+            "Picture_Award2" => $locate_img2,
+            "Picture_Award3" => $locate_img3,
             "Date_Award"=> $award_datetime,
         );
 
@@ -217,6 +300,20 @@ class AwardController
 
 
         include Router::getSourcePath() . "views/admin/manage_award.inc.php";
+    }
+    private function show($params = null)
+    {
+
+        $employee = $_SESSION["employee"];
+
+        $award = Award::findAward_byID($_GET['id']);
+        if ($employee->getUser_Status_Employee() == "Admin") {
+            include Router::getSourcePath() . "views/index_admin.inc.php";
+        } else if ($employee->getUser_Status_Employee() == "Sales") {
+            include Router::getSourcePath() . "views/sales/award.inc.php";
+        } else if ($employee->getUser_Status_Employee() == "User") {
+            include Router::getSourcePath() . "views/user/award.inc.php";
+        }
     }
 
 }

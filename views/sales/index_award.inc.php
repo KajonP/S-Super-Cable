@@ -23,69 +23,62 @@ try {
     <!-- /.navbar -->
 
     <div class=" content-wrapper">
+
         <!-- Content Header (Page header) -->
-        <!-- /.content-header -->
-        <div class="content-header">
+        <div class="content-header" \>
             <div class="container-fluid">
-                <div class="row mb-2">
+                <div class="row mb-12">
                     <div class="col-md-12">
-                        <h1 class="m-0">รางวัล</h1><?php echo "ข้อความที่ไม่ได้อ่าน <font color=red>".$countAllAward[0]."</font>"; ?>
-
-                        <!-- content -->
+                        <h1 class="m-0">รางวัล</h1><?php echo "ข้อความที่ไม่ได้อ่าน <font color=red>".$countAll[0]."</font>"; ?>
                         <div class="card">
-                            <div class="card-body p-0 d-flex">
-                                <div class="table-responsive">
-                                    <table id="example3" class="table table-md" style="width:100%;">
-                                        <thead>
-                                        <tr>
-                                            <th>รูปภาพ</th>
-                                            <th>ชื่อรางวัล</th>
-                                            <th>วันเวลา</th>
-                                            <th>ลูกจ้าง</th>
-
-                                            <th>การกระทำ </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-
-                                        <?php $i=1; foreach ($awardList as $key => $value) { ?>
-                                            <tr>
-                                                <td><img src=<?php echo $value->getPicture_Award(); ?> width=200 height=200></td>
-                                                <td><?php echo $value->getTittle_Award() ; ?></td>
-                                                <td><?php echo $value->getDate_Award(); ?></td>
-                                                <td><?php echo $value->getFullname_employee(); ?></td>
-
-                                                <td class=" last">
-                                                    <?php
-                                                    if ($value->getStatus() == 0) {
-                                                        ?>
-                                                        <button type="button" onclick="location.replace('index.php?controller=Award&action=update_status_award&ID_Award=<?=$value->getID_Award()?>');"
-                                                                class="btn btn-round btn-warning text-center"
-                                                                style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
-                                                            อ่าน
-                                                        </button>
-                                                    <?php } else { ?>
-                                                        <button type="button" class="btn btn-round btn-danger"
-                                                                style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
-                                                            อ่านแล้ว
-                                                        </button>
-                                                    <?php } ?>
+                            <div class="card-body p-0" >
+                                <!-- content -->
+                                <div class="callout callout-info" >
+                                    <?php $i = 1;
+                                    foreach ($award as $key => $value) {
+                                        $img = $value->getPicture_Award();
+                                        $date = date_create($value->getDate_Award());
+                                        ?>
+                                        <table width="100%" style="margin-bottom:20px;" >
+                                            <tr valign="top">
+                                                <td width="30%">
+                                                    <img src="<?php echo $img; ?>" width="100%">
+                                                </td>
+                                                <td width="70%" style="padding:5px;">
+                                                    วันที่ : <?php echo date_format($date, 'd/m/Y'); ?>
+                                                    <br/>
+                                                    <a href="index.php?controller=Award&action=show&id=<?php echo $value->getID_Award(); ?>"><?php echo $value->getTittle_Award(); ?></a>
                                                 </td>
                                             </tr>
-                                        <?php } ?>
-                                        </tbody>
-                                    </table>
+                                        </table>
+                                    <?php } ?>
+                                    <ul class="pagination pagination-sm">
+                                        <?php
+                                        for($i=1;$i<=$count_page;$i++){
+                                            ?>
+                                            <li class="page-item"><a href="index.php?controller=Award&action=show_award_status&page=<?php echo $i; ?>" class="page-link"><?php echo $i; ?></a></li>
+                                            <?php
+                                        }
+                                        ?>
+                                    </ul>
                                 </div>
+                                <!-- end content -->
                             </div>
                             <!-- /.card-body -->
                         </div>
-                        <!-- /.card -->
-                        <!-- eof -->
                     </div><!-- /.col -->
-
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
+        <!-- /.content-header -->
+
+        <!-- Content Header (Page header) -->
+
+        <!-- /.content-header -->
+
+    </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+    </div>
     </div>
 
     <!-- Main Sidebar Container -->
@@ -109,7 +102,6 @@ try {
     ?>
 
 
-
     <?php
     $content = ob_get_clean();
 
@@ -121,8 +113,40 @@ try {
 ?>
 <script>
     $(function () {
-        $('#example3').DataTable({
+        $("#example1").DataTable({
             lengthMenu: [2, 10, 20, 50, 100, 200, 500],
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            lengthMenu: [2, 10, 20, 50, 100, 200, 500],
+            "paging": true,
+            "lengthChange": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+
+            "language": {
+                "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
+                "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
+                "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
+                "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
+                "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
+                "sSearch": "ค้นหา :",
+                "aaSorting": [[0, 'desc']],
+                "paginate": {
+                    "sFirst": "หน้าแรก",
+                    "sPrevious": "ก่อนหน้า",
+                    "sNext": "ถัดไป",
+                    "sLast": "หน้าสุดท้าย"
+                }
+            },
+        });
+        $('#example3').DataTable({
             "paging": true,
             "lengthChange": true,
             "searching": true,
