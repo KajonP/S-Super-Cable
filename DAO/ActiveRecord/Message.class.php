@@ -218,6 +218,7 @@ class Message
         }
         $values = substr($values, 0, -1);
         $query = "INSERT INTO " . self::TABLE . "({$columns}) VALUES ($values)";
+
         # execute query
         if ($con->exec($query)) {
             $emp = new Employee();

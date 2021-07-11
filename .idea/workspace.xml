@@ -1,39 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update user news">
-      <change afterPath="$PROJECT_DIR$/images/003e9e1d1a3cbadc08601bca33b82c47.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/44691d31d31ee55181e44c36fc9a6906.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/4e1f66abc0ed7e0df891a9ae1b7f729e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/4efdf9e1630c2e8169a182601b1ad704.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/5c0cb2e53ecf235679bab0dc62bf8c34.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/7a686493cefa0d2be3ed668f7364d1d4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/footer_page.inc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/Company-11072021061850.xlsx" afterDir="false" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update footer">
+      <change afterPath="$PROJECT_DIR$/images/3346a0afacf4efc8583dad8cbca68b61.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/374d5cc345f8ab9020885112d715e13f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/3df7adff492808745e7f61f593c28c0b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/55606c4cddaf33a74e323cc14998600b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/6300c6902221c00a04c0fbfc63219db5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/753494977c2db9d16713166935c9b7c4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/80abed927ea228836421cb5ea34f5e59.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/85bfc5c623bceaf9b24420ae037d5311.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/a40ec36013b44d09e0beb2180cba23d6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/af448bd5a9556a2ecaed1a8d84841cb0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/b2d6c6ab87be7d21870a06fb34da94b3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/b655092d65a1f01a429fc9c27242d566.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/c2b3b99bd9023b8f5bff9b3a32ac99fc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/cb4dcff8b9393b76e338f8cd04353261.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/d0cdd6d2c1b0145860ec90958e285803.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/e3fe52693e0269fcb1af51a052925b91.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/f9d22d85f077344f5a573b4e11c74cfb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project (37).sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Company-11072021071508.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/test-123.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Company.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Company.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/CompanyController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/NewsController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/NewsController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/download/report_borroworreturn.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/report_borroworreturn.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/borrow_approve_history.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/borrow_approve_history.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/borrow_approve_list.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/borrow_approve_list.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/manage_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_award.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/manage_company.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_company.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/manage_file.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_file.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/manage_goods.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_goods.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/admin/manage_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_news.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/manage_promotion.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_promotion.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/manage_sales.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_sales.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/manage_user.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_user.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/report_borrow.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/report_borrow.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index_admin.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index_admin.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index_sales.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index_sales.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index_user.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index_user.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sales/borrow.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/borrow.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sales/index_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/index_award.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sales/index_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/index_news.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sales/index_news.inc_bk.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/views/sales/news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/news.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/user/index_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/user/index_award.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/user/index_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/user/index_news.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/user/news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/user/news.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -189,14 +187,7 @@
       <workItem from="1625541491370" duration="613000" />
       <workItem from="1625916021382" duration="479000" />
       <workItem from="1625916522266" duration="1853000" />
-      <workItem from="1625981703967" duration="4921000" />
-    </task>
-    <task id="LOCAL-00009" summary="case : update เเจ้งเตือนเมื่ออัปโหลดไฟล์ที่ไม่ใช่ไฟล์ excel">
-      <created>1621038595292</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1621038595292</updated>
+      <workItem from="1625981703967" duration="10552000" />
     </task>
     <task id="LOCAL-00010" summary="case : update sidebar admin -goods">
       <created>1621039651956</created>
@@ -534,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625983138905</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="case : update footer">
+      <created>1625986695252</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1625986695252</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,7 +552,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : change controller" />
     <MESSAGE value="case : ติดปัญหา upload ตรง amphur_id" />
     <MESSAGE value="case : update db" />
     <MESSAGE value="case : update model of goods and promotion" />
@@ -579,7 +576,8 @@
     <MESSAGE value="case : update borrow_approve_history and change output path of report" />
     <MESSAGE value="case : update modal dialog ( edit profile )" />
     <MESSAGE value="case : update user news" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : update user news" />
+    <MESSAGE value="case : update footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update footer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -225,8 +225,8 @@ class Company
         //$query = "SELECT * FROM " . self::TABLE;
         $query = "SELECT " . self::TABLE . ".*,province.PROVINCE_NAME
         ,amphur.AMPHUR_NAME  FROM " . self::TABLE . " 
-         JOIN province ON " . self::TABLE . ".PROVINCE_ID = province.PROVINCE_ID 
-         JOIN amphur ON " . self::TABLE . ".AMPHUR_ID = amphur.AMPHUR_ID  " ;
+         LEFT JOIN province ON " . self::TABLE . ".PROVINCE_ID = province.PROVINCE_ID 
+         LEFT JOIN amphur ON " . self::TABLE . ".AMPHUR_ID = amphur.AMPHUR_ID  " ;
         // echo $query;exit();
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Company");
@@ -306,6 +306,7 @@ class Company
             # insert ลง db
             $values = substr($values, 0, -1);
             $query = "INSERT INTO " . self::TABLE . "({$columns}) VALUES ($values)";
+
             //echo $query;exit();
             # execute query
             if ($con->exec($query)) {

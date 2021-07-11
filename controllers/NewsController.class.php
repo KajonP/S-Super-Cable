@@ -173,7 +173,6 @@ class NewsController
         $result = $access_news->create_news(
             $access_news_params, $emp_id
         );
-
         return json_encode($result);
     }
 

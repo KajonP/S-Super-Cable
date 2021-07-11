@@ -36,10 +36,13 @@ try {
                                
                                     <?php
                                     $img = $message->getPicture_Message();
+                                    $img2 = $message->getPicture_Message2();
+                                    $img3 = $message->getPicture_Message3();
+
                                     $date = date_create($message->getDate_Message());
                                     ?>
                                 วันที่ : <?php echo date_format($date, 'd/m/Y'); ?>
-                                <center> <img src="<?php echo $img; ?>" width="70%"><br> </center>
+                                <center> <img src="<?php echo $img; ?>" width="30%"><img src="<?php echo $img2; ?>" width="30%"> <img src="<?php echo $img3; ?>" width="30%"><br> </center>
                                 <center> <p> <?php echo $message->getText_Message(); ?></p> </center>
                                 <!-- end content -->
                             </div>

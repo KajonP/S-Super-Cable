@@ -249,6 +249,7 @@ function create_news(formData)
           contentType: false,
           enctype: 'multipart/form-data',
           success: function (res, status, xhr) {
+            //var data = JSON.parse(res);
             var data = JSON.parse(res);
             if (data.status == true) {
               Swal.fire({
@@ -278,7 +279,7 @@ function create_news(formData)
 // set value into html tag
 // call ajax get data from server.
 function get_news_to_edit(ID_Message) {
- 
+
   $.ajax({
     url: "index.php?controller=News&action=findbyID_Message",
     data: {

@@ -136,6 +136,7 @@ class CompanyController
                 }
 
                 #eof
+
                 for ($row = 2; $row <= $highestRow; $row++) {
                     if ($worksheet->getCellByColumnAndRow(0, $row)->getValue() != '') {
                         $getCellArray = $this->checkemptycell_company($worksheet, $row);
@@ -162,6 +163,7 @@ class CompanyController
                             "Cause_Blacklist" => $getCellArray["data"][13]
                         );
                         array_push($params, $push_array);
+
                     } else {
 
 
@@ -170,6 +172,7 @@ class CompanyController
             }
             // # create user ใหม่
             $company_ = new Company();
+            //$result = [];
             $result = $company_->create_company_at_once($params);
             # update new pic
             $target_file = Router::getSourcePath() . "uploads/" . $FILES['name'];
