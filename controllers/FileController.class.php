@@ -42,6 +42,17 @@ class FileController
                 // print_r($params);
                 echo $result;
                 break;
+            case "show_index_download_file" :
+                $this->$action();
+                break;
+            case "download_file":
+                $ID_File = isset($params["POST"]["ID_File"]) ? $params["POST"]["ID_File"] : "";
+                if (!empty($ID_File)) {
+                    $result = $this->$action($ID_File);
+                    echo $result;
+                }
+
+                break;
             default:
                 break;
         }
@@ -58,8 +69,10 @@ class FileController
 
         if (!empty($FILE) && !empty($FILE['name']))
         {
+            $name_file =  $FILE['name'][0];
+            $name_file_type =  explode('.',$name_file)[1] ;
             $tmp_name =  $FILE['tmp_name'][0];
-            $locate = Router::getSourcePath() . "uploads/" . $Path_File ;
+            $locate = Router::getSourcePath() . "uploads/"  . $Path_File ;
 
             // copy original file to destination file
             move_uploaded_file($tmp_name, $locate);
@@ -99,23 +112,25 @@ class FileController
         $access_file = new File();
 
         # อัปเดตไฟล์
-        $ID_File = $ID_File;
+        $ID_file = $ID_File;
         $Name_File =  $params["Name_File"] ;
         $Path_File = !empty($FILE) ?  $FILE['name'][0] : "" ;
-        $Detail_File =  isset($params["Detail_File"]) ?  $params["Detail_File"] : "" ;
+        $Detail_File = $params["Detail_File"]  ;
         $locate = "";
 
         if (!empty($FILE) && !empty($FILE['name']))
         {
+            $name_file =  $FILE['name'][0];
+            $name_file_type =  explode('.',$name_file)[1] ;
             $tmp_name =  $FILE['tmp_name'][0];
-            $locate = Router::getSourcePath() . "uploads/" . $Path_File ;
+            $locate = Router::getSourcePath() . "uploads/"  . $Path_File  ;
 
             // copy original file to destination file
             move_uploaded_file($tmp_name, $locate);
         }
 
         $access_file_params = array(
-            "ID_File" => $ID_File,
+            "ID_File" => $ID_file,
             "Name_File" => $Name_File,
             "Path_File" => $locate,
             "Detail_File" => $Detail_File,
@@ -132,6 +147,26 @@ class FileController
         $result = $access_file->delete_file(
             $params
         );
+        return json_encode($result);
+    }
+    private function download_file($params)
+    {
+        $access_file = new File();
+        $result = $access_file->findById(
+            $params
+        );
+        $filepath = 'uploads/' .$access_file['name'];
+        if (file_exists($filepath)) {
+            header('Content-Description: File Transfer');
+            header('Content-Type: application/octet-stream');
+            header('Content-Disposition: attachment; filename=' . basename($filepath));
+            header('Expires: 0');
+            header('Cache-Control: must-revalidate');
+            header('Pragma: public');
+            header('Content-Length: ' . filesize('uploads/' .$access_file['name']));
+            readfile('uploads/' .$access_file['name']);
+            exit;
+        }
         return json_encode($result);
     }
     private function error_handle(string $message)
@@ -154,6 +189,20 @@ class FileController
         $file = File::findAll();
         include Router::getSourcePath() . "views/admin/manage_file.inc.php";
 
+    }
+    private function show_index_download_file($params = null)
+    {
+        session_start();
+        $employee = $_SESSION["employee"];
+
+        # retrieve data
+        $employeeList = Employee::findAll();
+        $file = File::findAll();
+        if ($employee->getUser_Status_Employee() == "Admin") {
+            include Router::getSourcePath() . "views/admin/index_download_file.inc.php";
+        } else if ($employee->getUser_Status_Employee() == "Sales") {
+            include Router::getSourcePath() . "views/sales/index_download_file.inc.php";
+        }
     }
 
 }

@@ -9,7 +9,7 @@
 <!-- AdminLTE -->
 <script src="AdminLTE/dist/js/adminlte.js"></script>
 
-<!-- OPTIONAL SCRIPTS -->
+<!-- OPTIONAL SCRIPTS chart.js-->
 <script src="AdminLTE/plugins/chart.js/Chart.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="AdminLTE/dist/js/demo.js"></script>
@@ -25,8 +25,8 @@
 <script src="AdminLTE/assets/js/page/modal_dialog.js"></script>
 
 <!-- validate -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/additional-methods.js"></script>
+<script src="AdminLTE/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="AdminLTE/plugins/jquery-validation/additional-methods.js"></script>
 
 <!-- Main -->
 <script src="AdminLTE/assets/js/page/main.js"></script>
@@ -44,6 +44,12 @@
 <script src="AdminLTE/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="AdminLTE/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="AdminLTE/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+<!--  moment.min.js-->
+<script src="AdminLTE/plugins/moment/moment.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
 
 

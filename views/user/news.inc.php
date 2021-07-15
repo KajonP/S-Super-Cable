@@ -58,9 +58,7 @@ try {
         <!-- /.content-header -->
 
                 </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </div>
-    </div>
+
 
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -91,69 +89,3 @@ try {
     exit(1);
 }
 ?>
-<script>
-  $(function () {
-    $("#example1").DataTable({
-        lengthMenu: [2, 10, 20, 50, 100, 200, 500],
-        "responsive": true,
-	  "lengthChange": false, 
-	  "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-        lengthMenu: [2, 10, 20, 50, 100, 200, 500],
-        "paging": true,
-      "lengthChange": true,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-
-        "language": {
-            "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
-            "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
-            "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
-            "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
-            "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
-            "sSearch": "ค้นหา :",
-            "aaSorting": [[0, 'desc']],
-            "paginate": {
-                "sFirst": "หน้าแรก",
-                "sPrevious": "ก่อนหน้า",
-                "sNext": "ถัดไป",
-                "sLast": "หน้าสุดท้าย"
-            }
-        },
-    });
-	$('#example3').DataTable({
-      "paging": true,
-      "lengthChange": true,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-        "language": {
-            "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
-            "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
-            "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
-            "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
-            "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
-            "sSearch": "ค้นหา :",
-            "aaSorting": [[0, 'desc']],
-            "paginate": {
-                "sFirst": "หน้าแรก",
-                "sPrevious": "ก่อนหน้า",
-                "sNext": "ถัดไป",
-                "sLast": "หน้าสุดท้าย",
-                "oAria": {
-                    "sSortAscending":  ": เปิดใช้งานการเรียงข้อมูลจากน้อยไปมาก",
-                    "sSortDescending": ": เปิดใช้งานการเรียงข้อมูลจากมากไปน้อย"
-                }
-            }
-        },
-    });
-  });
-</script>
-<script type="text/javascript" src="AdminLTE/assets/js/page/manage_news.js"></script> <!-- -->

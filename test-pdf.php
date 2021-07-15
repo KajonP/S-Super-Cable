@@ -57,8 +57,9 @@ tr:nth-child(even) {
 </head>
 <body>
 <div>
+
   <h1 class="header">สรุปรายการเบิกของ</h1>
-  <h1 class="header">วันที่ <?php echo $date_start; ?> ถึง <?php echo $date_end; ?></h1>
+  <h1 class="header">วันที่ <?php $date = date_create($date_start); echo date_format($date, 'd/m/Y'); ?> ถึง <?php $date = date_create($date_end); echo date_format($date, 'd/m/Y'); ?></h1>
 <div>
 <table>
   <tr>

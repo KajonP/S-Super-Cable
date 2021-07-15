@@ -249,6 +249,7 @@ class Message
         }
         $query = substr($query, 0, -1);
         $query .= " WHERE ID_Message = '" . $ID_Message . "'";
+        print_r($query);
 
         $con = Db::getInstance();
         if ($con->exec($query)) {

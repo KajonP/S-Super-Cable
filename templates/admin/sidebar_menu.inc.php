@@ -205,7 +205,8 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=File&action=show_index_download_file"; ?>"
+                           class="nav-link">
                             <i class="nav-icon fas fa-file"></i>
                             <p>เอกสาร </p>
                         </a>

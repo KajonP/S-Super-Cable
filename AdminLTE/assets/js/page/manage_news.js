@@ -60,6 +60,14 @@ var form_validte = $("#form_newsManage").validate({
     profile_news: {
       extension: "jpg|jpeg|gif|png",
     },
+    profile_news2: {
+      extension: "jpg|jpeg|gif|png",
+    },
+    profile_news3: {
+      extension: "jpg|jpeg|gif|png",
+    },
+
+
 
     action: "required"
   },
@@ -71,6 +79,8 @@ var form_validte = $("#form_newsManage").validate({
       required: "กรุณาใส่ข้อมูล",
     },
     profile_news: "กรุณาอัพโหลดไฟล์รูปภาพที่มีนามสกุลไฟล์คือ .png , .jpg ,.jpeg ,.gif เท่านั้น",
+    profile_news2: "กรุณาอัพโหลดไฟล์รูปภาพที่มีนามสกุลไฟล์คือ .png , .jpg ,.jpeg ,.gif เท่านั้น",
+    profile_news3: "กรุณาอัพโหลดไฟล์รูปภาพที่มีนามสกุลไฟล์คือ .png , .jpg ,.jpeg ,.gif เท่านั้น",
     action: "กรุณาใส่ข้อมูล"
   }, errorPlacement: function (error, element) {
     {

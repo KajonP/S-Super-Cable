@@ -107,7 +107,12 @@ class File
     public function edit_file(array $params)
     {
         $ID_File = $params['ID_File'];
-        $query = "UPDATE " . self::TABLE . " SET ";
+        $Name_File = $params['Name_File'];
+        $Path_File = $params['Path_File'];
+        $Detail_File = $params['Detail_File'];
+
+
+        $query = "UPDATE " . self::TABLE . " SET " ;
         foreach ($params as $prop => $val) {
             if($val != '') {
                 $query .= " $prop='$val',";
@@ -115,7 +120,7 @@ class File
         }
         $query = substr($query, 0, -1);
         $query .= " WHERE ID_File = '" . $ID_File . "'";
-
+    //print_r($query);
         $con = Db::getInstance();
         if ($con->exec($query)) {
             return array("status" => true);

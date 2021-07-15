@@ -59,9 +59,7 @@ try {
         <!-- /.content-header -->
 
     </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-    </div>
-    </div>
+
 
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -93,4 +91,3 @@ try {
     exit(1);
 }
 ?>
-<script type="text/javascript" src="AdminLTE/assets/js/page/manage_award.js"></script> <!-- -->

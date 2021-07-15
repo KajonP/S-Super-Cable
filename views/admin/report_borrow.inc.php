@@ -95,7 +95,6 @@ try {
     # modal dialog ( edit profile )
     include Router::getSourcePath() . "views/modal/modal_editprofile.inc.php";
     # modal dialog ( borrow manage )
-    include Router::getSourcePath() . "views/modal/modal_borrow.inc.php";
     include Router::getSourcePath() . "templates/footer_page.inc.php";
 
     ?>
@@ -114,16 +113,15 @@ try {
     exit(1);
 }
 ?>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script>
 var ctx = document.getElementById('myChart').getContext('2d');
+
 var data = {
     labels: <?php echo $promotion_array; ?>,
     datasets: [
         {
+
             label: "ยืม",
             backgroundColor: "blue",
             data: <?php echo $borrow_array; ?>
@@ -134,13 +132,17 @@ var data = {
             data: <?php echo $borrow_return_array; ?>
         },
     ]
+
 };
+
 var myChart = new Chart(ctx, {
+
     type: 'bar',
     data: data,
     options: {
         scales: {
             y: {
+
                 beginAtZero: true
             }
         }
