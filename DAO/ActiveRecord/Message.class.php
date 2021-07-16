@@ -70,20 +70,20 @@ class Message
     // --- picture message
     public function getPicture_Message(): string 
     {
-        return $this->Picture_Message;
+        return $this->Picture_Message === null ? "" : $this->Picture_Message;
     }
 
     // --- picture message
     public function getPicture_Message2(): string 
     {
-        return $this->Picture_Message2;
+        return $this->Picture_Message2 === null ? "" : $this->Picture_Message2;
     }
 
 
     // --- picture message
     public function getPicture_Message3(): string 
     {
-        return $this->Picture_Message3;
+        return $this->Picture_Message3 === null ? "" : $this->Picture_Message3;
     }
 
 
