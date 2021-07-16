@@ -74,7 +74,7 @@ try {
                                                     }
                                         ?>
                                             <tr>
-                                                <td><?php echo $val->getDate_BorrowOrReturn(); ?></td>
+                                                <td><?php  $date = date_create($val->getDate_BorrowOrReturn()); echo date_format($date, 'd/m/Y');; ?></td>
                                                 <td><?php echo $type; ?></td>
                                                 <td><?php echo $val->getName_Promotion(); ?></td>
                                                 <td><?php echo $val->getDetail_BorrowOrReturn(); ?></td>

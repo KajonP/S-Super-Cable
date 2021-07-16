@@ -120,7 +120,7 @@ class File
         }
         $query = substr($query, 0, -1);
         $query .= " WHERE ID_File = '" . $ID_File . "'";
-    //print_r($query);
+    print_r($query);
         $con = Db::getInstance();
         if ($con->exec($query)) {
             return array("status" => true);

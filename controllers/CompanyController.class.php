@@ -370,7 +370,7 @@ class CompanyController
                 ->setCellValue('F' . $start_row, "1234567890")
                 ->setCellValue('G' . $start_row, "test_@hotmail.com")
                 ->setCellValue('H' . $start_row, "1234567891234")
-                ->setCellValue('I' . $start_row, "50000 บาท")
+                ->setCellValue('I' . $start_row, "50000")
                 ->setCellValue('J' . $start_row, "30 วัน")
                 ->setCellValue('K' . $start_row, "ภาคเอกชน")
                 ->setCellValue('L' . $start_row, " ")

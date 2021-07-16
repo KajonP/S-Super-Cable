@@ -42,6 +42,7 @@ try {
                             <div class="card-body" >
                                 <?php $i = 1; foreach ($message as $key => $value) { ?>
                                     <div class="callout callout-info">
+                                        <i class="nav-icon fas fa-comments"></i>
                                         <h5><?php echo $value->getTittle_Message() ; ?></h5>
                                         <?php echo $value->getText_Message(); ?>
                                         <?php
@@ -54,6 +55,7 @@ try {
                             <div class="card-body">
                                 <?php $i = 1; foreach ($award as $key => $value) { ?>
                                     <div class="callout callout-info">
+                                        <i class=" nav-icon fas fa-award"></i>
                                         <h5><?php echo $value->getTittle_Award() ; ?></h5>
                                         <?php
                                         $date = date_create($value->getDate_Award());

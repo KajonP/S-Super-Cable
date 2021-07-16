@@ -27,77 +27,70 @@ try {
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-md-12">
-                        <h1 class="m-0">อนุมัติรายการยืมสินค้า</h1>
+                        <h1 class="m-0">จัดการใบเสนอราคา</h1>
 
                         <!-- content -->
                         <div class="card">
-
+                            <!-- <div class="card-header">
+                                <h3 class="card-title">User Management</h3>
+                            </div> -->
+                            <!-- /.card-header -->
                             <div class="form-group row mt-2 mb-2 mr-1">
                                 <div class="col-md-12 text-right">
-                                    
+
+                                    <a href="#" onclick="invoicemanageShow('create')"
+                                       class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">
+                                        <span class="btn btn-round btn-success"
+                                              style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i
+                                                class="fa fa-plus"></i> สร้างใบเสนอราคา </span>
+                                    </a>
                                 </div>
                             </div>
                             <div class="card-body p-0 d-flex">
                                 <div class="table-responsive">
-                                    <table id="tbl" class="table table-md" stlye="width:100%;">
+                                    <table id="tbl_invoicemanagement" class="table table-md" stlye="width:100%;">
                                         <thead>
                                         <tr>
-                                            <th>วันที่ยืม</th>
-                                            <th>ยืม-คืน</th>
-                                            <th>ชื่อสินค้าที่ยืม</th>
-                                            <th>รายละเอียด</th>
-                                            <th>จำนวน</th>
-                                            <th>สถานะ</th>
+                                            <th>เลขที่</th>
+                                            <th>ชื่อบริษัท</th>
+                                            <th>วันที่</th>
+                                            <th>ยอดรวม</th>
                                             <th>การกระทำ</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <?php
-                                            if(count($borrow)>0){
-                                                foreach($borrow as $key => $val){
-                                                    $status_approve_txt = "รออนุมัติ";
-                                                    $status_approve = $val->getApprove_BorrowOrReturn();
-                                                    if($status_approve=='1'){
-                                                        $status_approve_txt = "อนุมัติ";
-                                                    }else if($status_approve=='2'){
-                                                        $status_approve_txt = "ไม่อนุมัติ";
-                                                    }
-
-                                                    $type = "ยืม";
-                                                    if($val->getType_BorrowOrReturn()=='2'){
-                                                        $type = "คืน";
-                                                    }
-                                        ?>
+                                        <?php foreach ($invoiceList as $key => $value) {?>
                                             <tr>
-                                                <td><?php  $date = date_create($val->getDate_BorrowOrReturn()); echo date_format($date, 'd/m/Y');; ?></td>
-                                                <td><?php echo $type; ?></td>
-                                                <td><?php echo $val->getName_Promotion(); ?></td>
-                                                <td><?php echo $val->getDetail_BorrowOrReturn(); ?></td>
-                                                <td><?php echo $val->getAmount_BorrowOrReturn(); ?></td>
-                                                <td><?php echo $status_approve_txt; ?></td>
-                                                <td class=" last">
-                                                <?php if($status_approve=='0'){ ?>
+                                                <td><?php echo $value->getInvoice_No(); ?></td>
+                                                <td><?php echo $value->getName_Company(); ?></td>
+                                                <td><?php echo $value->getInvoice_Date(); ?></td>
+                                                <td><?php echo number_format($value->getGrand_Total(), 2) ?></td>
+                                                <td class=" last text-center">
                                                     <a href="#"
-                                                       onclick="onaction_Approve('<?php echo $val->getID_BorrowOrReturn(); ?>')">
-                                                        <button type="button" class="btn btn-round btn-success"
+                                                       onclick="onAction_downloadFile('<?php echo $value->getID_Company(); ?>')">
+                                                        <button type="button" class="btn btn-round btn-info"
                                                                 style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
-                                                            <i class="fas fa-check"></i> อนุมัติ
+                                                            <i class="fa fa-file-download"></i>ดาวน์โหลด
+                                                        </button>
+                                                    </a>
+
+                                                    <a href="#"
+                                                       onclick="invoicemanageShow('edit','<?php echo $value->getID_Company(); ?>')">
+                                                        <button type="button" class="btn btn-round btn-warning"
+                                                                style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
+                                                            <i class="fa fa-wrench"></i> เเก้ไข
                                                         </button>
                                                     </a>
                                                     <a href="#"
-                                                       onclick="onaction_disApprove('<?php echo $val->getID_BorrowOrReturn(); ?>')">
+                                                       onclick="onaction_deleteinvoice('<?php echo $value->getID_Company(); ?>')">
                                                         <button type="button" class="btn btn-round btn-danger"
-                                                                style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
-                                                           <i class="fas fa-times"></i> ไม่อนุมัติ
+                                                                style=" font-size: 13px; padding: 0 10px; margin-bottom: inherit;width:96px !important;">
+                                                            <i class="fa fa-trash"></i> ลบ
                                                         </button>
                                                     </a>
-                                                <?php } ?>
                                                 </td>
                                             </tr>
-                                        <?php
-                                                }
-                                            }
-                                        ?>
+                                        <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -131,7 +124,10 @@ try {
     <?php
     # modal dialog ( edit profile )
     include Router::getSourcePath() . "views/modal/modal_editprofile.inc.php";
+    # modal dialog ( invoice manage )
+    include Router::getSourcePath() . "views/modal/modal_invoicemanage.inc.php";
     include Router::getSourcePath() . "templates/footer_page.inc.php";
+
     ?>
 
     <?php
@@ -146,4 +142,4 @@ try {
 }
 ?>
 
-<script type="text/javascript" src="AdminLTE/assets/js/page/borrow_approve_list.js"></script>
+<script type="text/javascript" src="AdminLTE/assets/js/page/manage_invoice.js"></script>

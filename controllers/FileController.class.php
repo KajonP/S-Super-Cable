@@ -155,7 +155,8 @@ class FileController
         $result = $access_file->findById(
             $params
         );
-        $filepath = 'uploads/' .$access_file['name'];
+       // print_r($result);
+        $filepath = 'uploads/' .$result['Path_File'];
         if (file_exists($filepath)) {
             header('Content-Description: File Transfer');
             header('Content-Type: application/octet-stream');
@@ -163,10 +164,11 @@ class FileController
             header('Expires: 0');
             header('Cache-Control: must-revalidate');
             header('Pragma: public');
-            header('Content-Length: ' . filesize('uploads/' .$access_file['name']));
-            readfile('uploads/' .$access_file['name']);
-            exit;
+            header('Content-Length: ' . filesize('uploads/' .$result['Path_File']));
+            readfile('uploads/' .$result['Path_File']);
+
         }
+
         return json_encode($result);
     }
     private function error_handle(string $message)

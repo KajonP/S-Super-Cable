@@ -122,9 +122,28 @@
                         </a>
                     </li>
                 </ul>
+            <li class="nav-item menu-open">
+                <a class="nav-link active">
+                    <i class="nav-icon fas fa-tags"></i>
+                    <p>
+                        เสนอราคา
+                    </p>
+                </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="pages/quotation.html" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=SettingVat&action=manage_setting_vat"; ?>"
+                           class="nav-link">
+                            <i class="nav-icon fas fa-cogs"></i>
+                            <p>
+                                ตั้งค่าภาษีมูลค่าเพิ่ม
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=Invoice&action=manage_invoice"; ?>"
+                           class="nav-link">
                             <i class="nav-icon fas fa-file-invoice"></i>
                             <p>
                                 ใบเสนอราคา
@@ -132,6 +151,7 @@
                         </a>
                     </li>
                 </ul>
+            </li>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="<?php echo Router::getSourcePath() . "index.php?controller=ResultSales&action=manage_sales"; ?>"

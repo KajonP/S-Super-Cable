@@ -2,7 +2,7 @@ var columns = [
   {"width": "5%", "class": "text-center"},
   {"width": "5%", "class": "text-center"},
   {"width": "5%", "class": "text-center"},
-  {"width": "5%", "class": "text-center"},
+  {"width": "5%", "class": "text-right"},
   {"width": "5%", "class": "text-center"},
 ]
 
