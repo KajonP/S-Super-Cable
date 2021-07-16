@@ -200,10 +200,11 @@ class FileController
         # retrieve data
         $employeeList = Employee::findAll();
         $file = File::findAll();
-        if ($employee->getUser_Status_Employee() == "Admin") {
+        $user_status = $_SESSION['employee']->getUser_Status_Employee();
+        if(strtolower($user_status)=='sales'){
+            include Router::getSourcePath() ."views/admin/index_download_file.inc.php";
+        }else if(strtolower($user_status)=='admin') {
             include Router::getSourcePath() . "views/admin/index_download_file.inc.php";
-        } else if ($employee->getUser_Status_Employee() == "Sales") {
-            include Router::getSourcePath() . "views/sales/index_download_file.inc.php";
         }
     }
 
