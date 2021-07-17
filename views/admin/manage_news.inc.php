@@ -145,4 +145,4 @@ try {
 ?>
 
 
-<script type="text/javascript" src="AdminLTE/assets/js/page/manage_news.js?t=<?php echo time(); ?>"></script>
+<script type="text/javascript" src="AdminLTE/assets/js/page/manage_news.js ?>"></script>

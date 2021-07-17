@@ -97,6 +97,8 @@ function  newsManageShow(type, ID_Message ) {
   /* clear old form value */
   $('#form_newsManage')[0].reset();
   $("#thumnails_award_pic").attr("src", "");
+  $("#thumnails_award_pic2").attr("src", "");
+  $("#thumnails_award_pic3").attr("src", "");
 
     switch(type)
     {
