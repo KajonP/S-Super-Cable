@@ -59,7 +59,7 @@ try {
                                 </div>
                             </div>
                             <div class="card-body p-0 d-flex">
-                                <div class="table-responsive">
+                                <div class="">
                                     <table id="tbl_companymanagement" class="table table-md" stlye="width:100%;">
                                         <thead>
                                         <tr>

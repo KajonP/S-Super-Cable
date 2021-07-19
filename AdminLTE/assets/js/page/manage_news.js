@@ -1,9 +1,8 @@
 var columns = [
-    {"width": "5%", "class": "text-center"},
-    {"width": "5%", "class": "text-center"},
-    {"width": "5%", "class": "text-center"},
-    {"width": "5%", "class": "text-center"},
-    {"width": "5%", "class": "text-center"},
+    {"width": "15%", "class": "text-center"},
+    {"width": "40%", "class": "text-center"},
+    {"width": "20%", "class": "text-center"},
+    {"width": "30%", "class": "text-center"},
   ]
 
 var dataTable_ = $("#tbl_news").DataTable({

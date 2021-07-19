@@ -55,7 +55,6 @@ try {
                                         <tr>
                                             <th>เลขที่</th>
                                             <th>หัวข่าวสาร</th>
-                                            <th>เนื้อข่าวสาร</th>
                                             <th>วันที่เเจ้งข่าวสาร</th>
                                             <th>การกระทำ </th>
                                         </tr>
@@ -66,7 +65,6 @@ try {
                                             <tr>
                                                 <td><?php echo $i++; ?></td>
                                                 <td><?php echo $value->getTittle_Message() ; ?></td>
-                                                <td><?php echo $value->getText_Message(); ?></td>
                                                 <td><?php  $date = date_create($value->getDate_Message());
                                                     echo date_format($date, 'd/m/Y'); ?></td>
                                                 <td class=" last">
@@ -144,5 +142,5 @@ try {
 }
 ?>
 
-
-<script type="text/javascript" src="AdminLTE/assets/js/page/manage_news.js ?>"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+<script type="text/javascript" src="AdminLTE/assets/js/page/manage_news.js"></script>
