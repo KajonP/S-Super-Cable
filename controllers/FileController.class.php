@@ -110,21 +110,19 @@ class FileController
     private function edit_file($params, $FILE, $ID_File)
     {
         $access_file = new File();
-
+        $fileOld = File::findById($ID_File);
         # อัปเดตไฟล์
         $ID_file = $ID_File;
         $Name_File =  $params["Name_File"] ;
-        $Path_File = !empty($FILE) ?  $FILE['name'][0] : "" ;
+        $Path_File = !empty($FILE) ?  $FILE['Path_File']['name'][0] : "" ;
         $Detail_File = $params["Detail_File"]  ;
-        $locate = "";
-
-        if (!empty($FILE) && !empty($FILE['name']))
+        $locate = $fileOld->getPath_File();
+        if (!empty($FILE) && !empty($FILE['Path_File']['name']))
         {
-            $name_file =  $FILE['name'][0];
+            $name_file =  $FILE['Path_File']['name'][0];
             $name_file_type =  explode('.',$name_file)[1] ;
-            $tmp_name =  $FILE['tmp_name'][0];
+            $tmp_name =  $FILE['Path_File']['tmp_name'][0];
             $locate = Router::getSourcePath() . "uploads/"  . $Path_File  ;
-
             // copy original file to destination file
             move_uploaded_file($tmp_name, $locate);
         }
@@ -135,10 +133,11 @@ class FileController
             "Path_File" => $locate,
             "Detail_File" => $Detail_File,
         );
-
+        
         $result = $access_file->edit_file(
             $access_file_params
         );
+        
 
         return json_encode($result);
     }

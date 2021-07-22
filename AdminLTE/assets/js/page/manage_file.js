@@ -165,8 +165,7 @@ function onaction_createorupdate(ID_File = null) {
         data.append("Path_File[]", file_data[i]);
       }
     }
-    else
-    {
+  }else{
       //File data
       // edit if insert picture
       if (file_data.length > 0)
@@ -176,7 +175,7 @@ function onaction_createorupdate(ID_File = null) {
           data.append("Path_File[]", file_data[i]);
         }
       }
-    }
+    
   }
 
   switch(type) {
@@ -284,6 +283,7 @@ function update_file(formData)
 
     });
   } else {
+    
     $.ajax({
       type: "POST",
       url: url_string,
@@ -311,7 +311,7 @@ function update_file(formData)
             confirmButtonText: 'ตกลง',
 
           }).then((result) => {
-            location.reload();
+            //location.reload();
 
           });
         }
