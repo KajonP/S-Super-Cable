@@ -173,7 +173,7 @@ function onaction_createorupdate(ID_Award = null) {
     {
       for (var i = 0; i < file_data.length; i++)
       {
-        data.append("award_pic[]", file_data[i]);
+        data.append("award_pic[0]", file_data[i]);
       }
     }
 
@@ -181,7 +181,7 @@ function onaction_createorupdate(ID_Award = null) {
     {
       for (var i = 0; i < file_data2.length; i++)
       {
-        data.append("award_pic[]", file_data2[i]);
+        data.append("award_pic[1]", file_data2[i]);
       }
     }
 
@@ -189,7 +189,7 @@ function onaction_createorupdate(ID_Award = null) {
     {
       for (var i = 0; i < file_data3.length; i++)
       {
-        data.append("award_pic[]", file_data3[i]);
+        data.append("award_pic[2]", file_data3[i]);
       }
     }
 

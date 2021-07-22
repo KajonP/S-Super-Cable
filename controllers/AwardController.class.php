@@ -172,7 +172,7 @@ class AwardController
         $result = $access_award->create_award(
             $access_award_params
         );
-
+        
         return json_encode($result);
     }
 
@@ -200,7 +200,7 @@ class AwardController
 
     private function edit_award($params, $FILE_IMG, $ID_Award)
     {
-
+        $awardOld = Award::findAward_byID($ID_Award);
         // # อัปเดตรางวัล
         $access_award = new Award();
         $awardid = $ID_Award ;
@@ -213,20 +213,20 @@ class AwardController
 
         // print_r('hello world'. '     ' . $access_news->generatePictureFilename($FILE_IMG['profile_news']['name'][0], $message_title));
 
-        $award_filename = !empty($FILE_IMG['award_pic']['name'][0]) ?  $access_award->generatePictureFilename($FILE_IMG['award_pic']['name'][0], $award_title) : "" ;
-        $award_filename2 = !empty($FILE_IMG['award_pic']['name'][1]) ?  $access_award->generatePictureFilename($FILE_IMG['award_pic']['name'][1], $award_title) : "" ;
-        $award_filename3 = !empty($FILE_IMG['award_pic']['name'][2]) ?  $access_award->generatePictureFilename($FILE_IMG['award_pic']['name'][2], $award_title) : "" ;
+        $award_filename = !empty($FILE_IMG['award_pic']['name'][0]) ?  $access_award->generatePictureFilename($FILE_IMG['award_pic']['name'][0], $award_title) : $awardOld->getPicture_Award() ;
+        $award_filename2 = !empty($FILE_IMG['award_pic']['name'][1]) ?  $access_award->generatePictureFilename($FILE_IMG['award_pic']['name'][1], $award_title) : $awardOld->getPicture_Award2() ;
+        $award_filename3 = !empty($FILE_IMG['award_pic']['name'][2]) ?  $access_award->generatePictureFilename($FILE_IMG['award_pic']['name'][2], $award_title) : $awardOld->getPicture_Award3() ;
 
-        if (!empty($FILE_IMG) && !empty($FILE_IMG['award_pic']['name']))
-    {
-        $name_file =  $FILE_IMG['award_pic']['name'][0];
-        $name_file_type =  explode('.',$name_file)[1] ;
-        $tmp_name =  $FILE_IMG['award_pic']['tmp_name'][0];
-        $locate_img = Router::getSourcePath() . "images/" . $award_filename . ".".$name_file_type;
+        if (!empty($FILE_IMG) && !empty($FILE_IMG['award_pic']['name'][0]))
+        {
+            $name_file =  $FILE_IMG['award_pic']['name'][0];
+            $name_file_type =  explode('.',$name_file)[1] ;
+            $tmp_name =  $FILE_IMG['award_pic']['tmp_name'][0];
+            $locate_img = Router::getSourcePath() . "images/" . $award_filename . ".".$name_file_type;
 
-        // copy original file to destination file
-        move_uploaded_file($tmp_name, $locate_img);
-    }
+            // copy original file to destination file
+            move_uploaded_file($tmp_name, $locate_img);
+        }
 
          if (!empty($FILE_IMG) && !empty($FILE_IMG['award_pic']['name'][1]))
          {
@@ -245,7 +245,7 @@ class AwardController
             $name_file_type3 =  explode('.',$name_file3)[1] ;
             $tmp_name3 =  $FILE_IMG['award_pic']['tmp_name'][2];
             $locate_img3 = Router::getSourcePath() . "images/" . $award_filename3 . ".".$name_file_type3;
-
+            echo '>'.$locate_img3;
             // copy original file to destination file
             move_uploaded_file($tmp_name3, $locate_img3);
         }
@@ -258,11 +258,12 @@ class AwardController
             "Date_Award"=> $award_datetime,
         );
 
-
+        //print_r($access_award_params);
+        
         $result = $access_award->update_award(
             $access_award_params
         );
-
+        
         return json_encode($result);
 
     }

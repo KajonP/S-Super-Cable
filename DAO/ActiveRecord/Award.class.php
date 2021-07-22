@@ -257,7 +257,7 @@ class Award
         }
         $query = substr($query, 0, -1);
         $query .= " WHERE ID_Award = '" . $ID_Award . "'";
-
+        //echo $query;
         $con = Db::getInstance();
         if ($con->exec($query)) {
             return array("status" => true);

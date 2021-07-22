@@ -311,7 +311,7 @@ function update_file(formData)
             confirmButtonText: 'ตกลง',
 
           }).then((result) => {
-            //location.reload();
+            location.reload();
 
           });
         }
