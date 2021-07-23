@@ -46,10 +46,11 @@ class FileController
                 $this->$action();
                 break;
             case "download_file":
-                $ID_File = isset($params["POST"]["ID_File"]) ? $params["POST"]["ID_File"] : "";
+                //$ID_File = isset($params["POST"]["ID_File"]) ? $params["POST"]["ID_File"] : "";
+                $ID_File = $_GET['ID_File'];
                 if (!empty($ID_File)) {
                     $result = $this->$action($ID_File);
-                    echo $result;
+                    //echo $result;
                 }
 
                 break;
@@ -150,21 +151,20 @@ class FileController
     }
     private function download_file($params)
     {
+        
         $access_file = new File();
-        $result = $access_file->findById(
-            $params
-        );
-       // print_r($result);
-        $filepath = 'uploads/' .$result['Path_File'];
+        $result = $access_file->findById($_GET['ID_File']);
+        print_r($result);
+        $filepath = $result->getPath_File();
         if (file_exists($filepath)) {
             header('Content-Description: File Transfer');
             header('Content-Type: application/octet-stream');
-            header('Content-Disposition: attachment; filename=' . basename($filepath));
-            header('Expires: 0');
-            header('Cache-Control: must-revalidate');
+            header('Content-Disposition: attachment; filename="' . basename($filepath).'"');
+            //header('Expires: 0');
+            //header('Cache-Control: must-revalidate');
             header('Pragma: public');
-            header('Content-Length: ' . filesize('uploads/' .$result['Path_File']));
-            readfile('uploads/' .$result['Path_File']);
+            header('Content-Length: ' . filesize($filepath ));
+            readfile($filepath,true);
 
         }
 
