@@ -232,10 +232,10 @@ function onaction_getinptval(ID_Company) {
       $('#Name_Company').val(response.data.Name_Company);
       $('#Address_Company').val(response.data.Address_Company);
       // case: dropdown
-      $('#PROVINCE_ID')
+      $('#province')
         .val(response.data.PROVINCE_ID)
         .trigger('change');
-      $('#AMPHUR_ID')
+      $('#amphure_id')
         .val(response.data.AMPHUR_ID)
         .trigger('change');
       $("#Tel_Company").val(response.data.Tel_Company);

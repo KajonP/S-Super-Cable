@@ -65,6 +65,9 @@ function download_file(ID_File)
 
   }).then((result) => {
     if (result.isConfirmed) {
+      //alert("index.php?controller=File&action=download_file&ID_File=" + ID_File);
+      window.location = "index.php?controller=File&action=download_file&ID_File=" + ID_File;
+      /*
       $.ajax({
         type: "POST",
         url: "index.php?controller=File&action=download_file&ID_File=" + ID_File,
@@ -94,7 +97,7 @@ function download_file(ID_File)
           }
         }
       });
-
+      */
     }
   })
 }

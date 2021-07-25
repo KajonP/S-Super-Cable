@@ -245,7 +245,6 @@ class AwardController
             $name_file_type3 =  explode('.',$name_file3)[1] ;
             $tmp_name3 =  $FILE_IMG['award_pic']['tmp_name'][2];
             $locate_img3 = Router::getSourcePath() . "images/" . $award_filename3 . ".".$name_file_type3;
-            echo '>'.$locate_img3;
             // copy original file to destination file
             move_uploaded_file($tmp_name3, $locate_img3);
         }
