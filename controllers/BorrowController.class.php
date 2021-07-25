@@ -59,7 +59,7 @@ class BorrowController
         //exit;
         //print_r($_SESSION['employee']->getID_Employee());
         //$b = BorrowOrReturn::findAll();
-        include Router::getSourcePath() . "views/sales/borrow.inc.php";
+        include Router::getSourcePath() . "views/admin/borrow.inc.php";
     }
 
     private function borrowInsert(){
