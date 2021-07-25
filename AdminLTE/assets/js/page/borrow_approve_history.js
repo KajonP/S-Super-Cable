@@ -1,10 +1,11 @@
 var columns = [
-  {"width": "5%", "class": "text-center"},
-  {"width": "5%", "class": "text-center"},
-  {"width": "5%", "class": "text-center"},
-  {"width": "5%", "class": "text-center"},
-  {"width": "5%", "class": "text-right"},
-  {"width": "5%", "class": "text-center"},
+  {"width": "25%", "class": "text-center"},
+  {"width": "25%", "class": "text-center"},
+  {"width": "25%", "class": "text-center"},
+  {"width": "25%", "class": "text-center"},
+  {"width": "25%", "class": "text-center"},
+  {"width": "25%", "class": "text-right"},
+  {"width": "25%", "class": "text-center"},
 ]
 
 var dataTable_ = $('#tbl').DataTable({

@@ -48,6 +48,8 @@ try {
                                                     วันที่ : <?php echo date_format($date, 'd/m/Y'); ?>
                                                     <br/>
                                                     <a href="index.php?controller=Award&action=show&id=<?php echo $value->getID_Award(); ?>"><?php echo $value->getTittle_Award(); ?></a>
+                                                    <br/>
+                                                    ชื่อ : <?php echo $value->getFullname_employee(); ?>
                                                 </td>
                                             </tr>
                                         </table>

@@ -163,7 +163,7 @@ class Award
     public static function fetchAllwithInnerLimit($emp_id,$start,$limit): array
     {
         $con = Db::getInstance();
-        $query = "SELECT * FROM " . self::TABLE . " inner join award_status on award.ID_Award = award_status.ID_Award"." where award_status.ID_Employee = '".$emp_id."' LIMIT ".$start." , ".$limit;
+        $query = "SELECT *,employee.Name_Employee as fullname_employee  FROM " . self::TABLE . " inner join award_status on award.ID_Award = award_status.ID_Award"." inner join employee on award.ID_Employee = employee.ID_Employee where award_status.ID_Employee = '".$emp_id."' LIMIT ".$start." , ".$limit;
 
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Award");

@@ -63,6 +63,7 @@ class AwardController
                     }
                     $start = ($get_page*5)-5;
                     $award = Award::fetchAllwithInnerLimit($employee->getID_Employee(),$start,5);
+                    
                     //echo $n.':'.$count_page;
                     //exit;
                     include Router::getSourcePath() . "views/sales/index_award.inc.php";
