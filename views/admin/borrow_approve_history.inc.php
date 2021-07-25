@@ -38,9 +38,8 @@ try {
                                 </div>
                             </div>
                             <div class="card-body p-0">
-                                <div stlye="width:100%;">
-                                    <table id="tbl" class="table table-md" stlye="width:100%;">
-                            <div class="card-body p-0 d-flex">
+                                
+                            
                                 <div class="table-responsive">
                                     <table id="tbl" class="table table-md" style="width:100%;">
                                         <thead>
