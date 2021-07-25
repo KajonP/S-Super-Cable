@@ -175,7 +175,7 @@ function onaction_createorupdate(ID_File = null) {
           data.append("Path_File[]", file_data[i]);
         }
       }
-    
+
   }
 
   switch(type) {
@@ -283,7 +283,7 @@ function update_file(formData)
 
     });
   } else {
-    
+
     $.ajax({
       type: "POST",
       url: url_string,
@@ -368,4 +368,5 @@ function delete_file(ID_File)
 
     }
   })
+
 }

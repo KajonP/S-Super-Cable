@@ -69,6 +69,15 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=ResultSales&action=manage_sales"; ?>"
+                           class="nav-link">
+                            <i class="nav-icon fas fa-wallet"></i>
+                            <p>ยอดขาย </p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
                         <a href="<?php echo Router::getSourcePath() . "index.php?controller=File&action=manage_file"; ?>"
                            class="nav-link">
                             <i class="nav-icon fas fa-file"></i>
@@ -152,15 +161,6 @@
                     </li>
                 </ul>
             </li>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=ResultSales&action=manage_sales"; ?>"
-                           class="nav-link">
-                            <i class="nav-icon fas fa-wallet"></i>
-                            <p>ยอดขาย </p>
-                        </a>
-                    </li>
-                </ul>
             </li>
             <li class="nav-item menu-open">
                 <a class="nav-link active">

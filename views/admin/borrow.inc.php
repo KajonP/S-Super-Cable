@@ -27,28 +27,33 @@ try {
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-md-12">
-                        <h1 class="m-0">ประวัติการอนุมัติรายการยืม-คืน สินค้า</h1>
+                        <h1 class="m-0">รายการยืม-คืน สินค้า</h1>
 
                         <!-- content -->
-                        <div class="card">
+                        <div class="card" >
 
                             <div class="form-group row mt-2 mb-2 mr-1">
                                 <div class="col-md-12 text-right">
-                                    
+                                    <a href="#" onclick="modalShow('create')"
+                                       class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">
+                                        <span class="btn btn-round btn-success"
+                                              style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i
+                                                class="fa fa-plus"></i> ยืม-คืน สินค้า </span>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="card-body p-0">
-                                <div stlye="width:100%;">
-                                    <table id="tbl" class="table table-md" stlye="width:100%;">
+                            <div class="card-body p-0 d-flex">
+                                <div class="table-responsive">
+                                    <table id="tbl" class="table table-md" style="width:100%;">
                                         <thead>
                                         <tr>
                                             <th>วันที่ยืม</th>
-                                            <th>ชื่อ-นามสกุล</th>
                                             <th>ยืม-คืน</th>
-                                            <th>ชื่อสินค้าที่ยืม</th>
+                                            <th>ชื่อสินค้าที่ยืม-คืน</th>
                                             <th>รายละเอียด</th>
                                             <th>จำนวน</th>
                                             <th>สถานะ</th>
+                                            <th>การกระทำ</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -64,18 +69,31 @@ try {
                                                     }
 
                                                     $type = "ยืม";
-                                                    if($val->getType_BorrowOrReturn()=='2'){
+                                                     if($val->getType_BorrowOrReturn()=='2'){
                                                         $type = "คืน";
                                                     }
                                         ?>
                                             <tr>
                                                 <td><?php  $date = date_create($val->getDate_BorrowOrReturn()); echo date_format($date, 'd/m/Y');; ?></td>
-                                                <td><?php echo $val->getName_Employee().' '.$val->getSurname_Employee(); ?></td>
                                                 <td><?php echo $type; ?></td>
                                                 <td><?php echo $val->getName_Promotion(); ?></td>
                                                 <td><?php echo $val->getDetail_BorrowOrReturn(); ?></td>
                                                 <td><?php echo $val->getAmount_BorrowOrReturn(); ?></td>
                                                 <td><?php echo $status_approve_txt; ?></td>
+                                                <td class=" last">
+                                                <?php if($status_approve=='1'){ ?>
+                                                   
+                                                <?php } ?>
+                                                <?php if($status_approve=='0'){ ?>
+                                                    <a href="#"
+                                                       onclick="onaction_delete('<?php echo $val->getID_BorrowOrReturn(); ?>')">
+                                                        <button type="button" class="btn btn-round btn-danger"
+                                                                style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
+                                                            <i class="fa fa-trash"></i> ลบ
+                                                        </button>
+                                                    </a>
+                                                <?php } ?>
+                                                </td>
                                             </tr>
                                         <?php
                                                 }
@@ -107,14 +125,26 @@ try {
             <span class="brand-text font-weight-light">S Super Cable</span>
         </a>
         <!-- Sidebar -->
-        <?php include("templates/admin/sidebar_menu.inc.php"); ?>
+        <?php
+        $user_status = $_SESSION['employee']->getUser_Status_Employee();
+        if(strtolower($user_status)=='sales'){
+            include("templates/sales/sidebar_menu.inc.php");
+        }else if(strtolower($user_status)=='admin'){
+            include("templates/admin/sidebar_menu.inc.php");
+        }else if(strtolower($user_status)=='user'){
+            include("templates/users/sidebar_menu.inc.php");
+        }
+        ?>
         <!-- /.sidebar -->
     </aside>
 
     <?php
     # modal dialog ( edit profile )
     include Router::getSourcePath() . "views/modal/modal_editprofile.inc.php";
+    # modal dialog ( manage borrow )
+    include Router::getSourcePath() . "views/modal/modal_borrow.inc.php";
     include Router::getSourcePath() . "templates/footer_page.inc.php";
+
     ?>
 
 
@@ -130,4 +160,4 @@ try {
 }
 ?>
 
-<script type="text/javascript" src="AdminLTE/assets/js/page/borrow_approve_history.js"></script>
+<script type="text/javascript" src="AdminLTE/assets/js/page/borrow.js"></script>

@@ -142,5 +142,4 @@ try {
 }
 ?>
 
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 <script type="text/javascript" src="AdminLTE/assets/js/page/manage_news.js"></script>
