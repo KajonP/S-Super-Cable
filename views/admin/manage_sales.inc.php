@@ -60,7 +60,7 @@ try {
                             </div>
                             <div class="card-body p-0 d-flex">
                                 <div class="table-responsive">
-                                    <table id="tbl_salesmanagement" class="table table-md" stlye="width:100%;">
+                                    <table id="tbl_salesmanagement" class="table table-md" style="width:100%;">
                                         <thead>
                                         <tr>
                                             <th>เลขที่</th>

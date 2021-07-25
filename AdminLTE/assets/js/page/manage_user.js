@@ -266,19 +266,19 @@ $('#form_importexcel').validate({
   rules: {
     file: {
 
-      extension: "xlsx|xls|csv|xlsm",
+      extension: "xlsx|csv",
 
     }
   },
   messages: {
-    file: "กรุณาอัพโหลดไฟล์ Excel ที่นามสกุล .xlsx, .xlsm, .xls เท่านั้น"
+    file: "กรุณาอัพโหลดไฟล์ Excel ที่นามสกุล .xlsx, .csv เท่านั้น"
   },
   errorPlacement: function (error, element) {
     //แจ้งเตือนผิด format
     Swal.fire({
       icon: 'error',
       title: 'ขออภัย...',
-      text: "กรุณาอัพโหลดไฟล์ Excel ที่นามสกุล .xlsx, .xlsm, .xls เท่านั้น",
+      text: "กรุณาอัพโหลดไฟล์ Excel ที่นามสกุล .xlsx, .csv เท่านั้น",
       confirmButtonText: 'ตกลง',
     }).then((result) => {
       // break

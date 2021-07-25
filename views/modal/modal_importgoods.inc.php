@@ -18,7 +18,7 @@
 
                     <h6 class="pt-4">อัพโหลดไฟล์ Excel</h6>
                     <input type="file" name="file" id="file" value=""
-                           accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
+                           accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,.csv"/>
                 </form>
             </div>
 

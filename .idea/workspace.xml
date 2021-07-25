@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : change style datatable">
+      <change afterPath="$PROJECT_DIR$/uploads/formatexcel_user.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/formatexcel_user.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/BorrowController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/BorrowController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/manage_goods.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_goods.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sales/borrow.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/borrow.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_goods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/manage_sales.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_sales.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_importcompany.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importcompany.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_importgoods.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importgoods.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_importsales.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importsales.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_importuser.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importuser.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +65,7 @@
       <recent name="C:\laragon\www\project\views\user" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\project\views\admin" />
       <recent name="C:\laragon\www\project\templates" />
       <recent name="C:\laragon\www\project\views\sales" />
     </key>
@@ -197,14 +207,8 @@
       <workItem from="1626853684275" duration="254000" />
       <workItem from="1627033515402" duration="1083000" />
       <workItem from="1627206386763" duration="134000" />
-      <workItem from="1627214291743" duration="329000" />
-    </task>
-    <task id="LOCAL-00020" summary="case : ติดปัญหา upload ตรง amphur_id">
-      <created>1622013060354</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1622013060354</updated>
+      <workItem from="1627214291743" duration="532000" />
+      <workItem from="1627214948017" duration="1976000" />
     </task>
     <task id="LOCAL-00021" summary="case : ติดปัญหา upload ตรง amphur_id">
       <created>1622013809995</created>
@@ -542,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627206441584</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="case : change style datatable">
+      <created>1627214633138</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1627214633139</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
