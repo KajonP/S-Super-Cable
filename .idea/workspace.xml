@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : delete modal invoice">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update database">
+      <change afterPath="$PROJECT_DIR$/images/16f7ea3dc3db6221ca79de5fd6b9c3c7.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/borrow.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/borrow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/borrow_approve_history.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/borrow_approve_history.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/borrow_approve_list.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/borrow_approve_list.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/manage_company.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_company.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/manage_invoice.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_invoice.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/admin/manage_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_news.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/manage_promotion.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_promotion.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/manage_setting_vat.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_setting_vat.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,13 +199,9 @@
       <workItem from="1626431134928" duration="102000" />
       <workItem from="1626521152466" duration="274000" />
       <workItem from="1626522780227" duration="658000" />
-    </task>
-    <task id="LOCAL-00018" summary="case : change controller">
-      <created>1621647892987</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1621647892987</updated>
+      <workItem from="1626534945192" duration="47000" />
+      <workItem from="1626853684275" duration="254000" />
+      <workItem from="1627033515402" duration="1083000" />
     </task>
     <task id="LOCAL-00019" summary="case : ติดปัญหา upload ตรง amphur_id">
       <created>1622012516499</created>
@@ -536,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626429526694</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="case : update database">
+      <created>1626534980895</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1626534980895</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,7 +566,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : เเก้เเสดงผลทั้งหมด" />
     <MESSAGE value="case : change controller and resize show images" />
     <MESSAGE value="case : crud goods" />
     <MESSAGE value="case : crud file (can't upload)" />
@@ -581,7 +590,8 @@
     <MESSAGE value="case : change FileController.class.php" />
     <MESSAGE value="case : hide print_r" />
     <MESSAGE value="case : delete modal invoice" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : delete modal invoice" />
+    <MESSAGE value="case : update database" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update database" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

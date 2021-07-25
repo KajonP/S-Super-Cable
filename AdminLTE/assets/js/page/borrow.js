@@ -1,5 +1,5 @@
 var columns = [
-  {"width": "5%", "class": "text-center"},
+  {"width": "5%", "class": "text-left"},
   {"width": "5%", "class": "text-center"},
   {"width": "5%", "class": "text-center"},
   {"width": "5%", "class": "text-center"},
@@ -71,7 +71,7 @@ var form_validte = $("#form_modal").validate({
     Type_BorrowOrReturn: {
       required: "กรุณาใส่ข้อมูล",
     }
-  }, 
+  },
   errorPlacement: function (error, element) {
     {
       error.insertAfter(element)
