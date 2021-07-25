@@ -43,6 +43,7 @@ try {
                                         <thead>
                                         <tr>
                                             <th>วันที่ยืม</th>
+                                            <th>ชื่อ-นามสกุล</th>
                                             <th>ยืม-คืน</th>
                                             <th>ชื่อสินค้าที่ยืม</th>
                                             <th>รายละเอียด</th>
@@ -70,6 +71,7 @@ try {
                                         ?>
                                             <tr>
                                                 <td><?php  $date = date_create($val->getDate_BorrowOrReturn()); echo date_format($date, 'd/m/Y');; ?></td>
+                                                <td><?php echo $val->getName_Employee().' '.$val->getSurname_Employee(); ?></td>
                                                 <td><?php echo $type; ?></td>
                                                 <td><?php echo $val->getName_Promotion(); ?></td>
                                                 <td><?php echo $val->getDetail_BorrowOrReturn(); ?></td>
