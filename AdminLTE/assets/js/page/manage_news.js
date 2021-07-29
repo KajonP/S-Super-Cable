@@ -123,7 +123,18 @@ function  newsManageShow(type, ID_Message ) {
         $('#button_newsManageModal').attr("data-id", ID_Message);
 
         break;
+      case 'view':
+      title = "บริษัทลูกค้า ";
+      //clear error if exists
+      form_validte.resetForm();
 
+      get_news_to_view(ID_Message);
+
+      //$('#form_companymanage input').attr('readonly', 'readonly');
+      //$('#form_companymanage select').attr("disabled", true);
+      //$('#button_companymanageModal').hide();
+
+      break;
       default:
         // ..
         break;
@@ -136,8 +147,11 @@ function  newsManageShow(type, ID_Message ) {
     $('#button_newsManageModal').attr("data-status", type);
 
     /* modal show  */
-    $('#newsManageModal').modal('show');
-
+    if(type=='view'){
+      $('#newsManageViewModal').modal('show')
+    }else{
+      $('#newsManageModal').modal('show');
+    }
   }
 
 
@@ -308,6 +322,33 @@ function get_news_to_edit(ID_Message) {
       $("#thumnails_new_profile").attr("src", response.data.Picture_Message);
       $("#thumnails_new_profile2").attr("src", response.data.Picture_Message2);
       $("#thumnails_new_profile3").attr("src", response.data.Picture_Message3);
+
+    },
+    error: function (xhr, status, exception) {
+      console.log(xhr);
+    }
+  });
+
+}
+
+function get_news_to_view(ID_Message) {
+
+  $.ajax({
+    url: "index.php?controller=News&action=findbyID_Message",
+    data: {
+      "ID_Message": ID_Message
+    },
+    type: "POST",
+    dataType: 'json',
+    async: false,
+    success: function (response, status) {
+      /* set input value */
+
+      $('#Tittle_Message_view').val(response.data.Tittle_Message);
+      $('#Text_Message_view').html(response.data.Text_Message);
+      $("#thumnails_new_profile_view").attr("src", response.data.Picture_Message);
+      $("#thumnails_new_profile_view2").attr("src", response.data.Picture_Message2);
+      $("#thumnails_new_profile_view3").attr("src", response.data.Picture_Message3);
 
     },
     error: function (xhr, status, exception) {

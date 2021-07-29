@@ -69,6 +69,14 @@ try {
                                                     echo date_format($date, 'd/m/Y'); ?></td>
                                                 <td class=" last">
                                                     <a href="#"
+                                                       onclick="newsManageShow('view','<?php echo $value->getID_Message(); ?>')">
+                                                        <button type="button" class="btn btn-round btn-info"
+                                                                style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
+                                                            <i class="fa fa-eye"></i>เพิ่มเติม
+                                                        </button>
+                                                    </a>
+
+                                                    <a href="#"
                                                        onclick="newsManageShow('edit','<?php echo $value->getID_Message(); ?>')">
                                                         <button type="button"
                                                                 class="btn btn-round btn-warning text-center"
@@ -122,6 +130,7 @@ try {
 
     # modal dialog ( news manage )
     include Router::getSourcePath() . "views/modal/modal_newsmanage.inc.php";
+     include Router::getSourcePath() . "views/modal/modal_newsmanage2.inc.php";
     include Router::getSourcePath() . "templates/footer_page.inc.php";
 
     ?>
