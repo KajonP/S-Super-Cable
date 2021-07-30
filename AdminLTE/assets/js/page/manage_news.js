@@ -1,6 +1,6 @@
 var columns = [
     {"width": "15%", "class": "text-center"},
-    {"width": "40%", "class": "text-center"},
+    {"width": "20%", "class": "text-center"},
     {"width": "20%", "class": "text-center"},
     {"width": "30%", "class": "text-center"},
   ]
@@ -119,16 +119,17 @@ function  newsManageShow(type, ID_Message ) {
         //clear error if exists
         form_validte.resetForm();
         get_news_to_edit(ID_Message);
+
         // set id
         $('#button_newsManageModal').attr("data-id", ID_Message);
-
         break;
       case 'view':
-      title = "บริษัทลูกค้า ";
+      title = "ดูข่าวสาร ";
       //clear error if exists
       form_validte.resetForm();
 
       get_news_to_view(ID_Message);
+
 
       //$('#form_companymanage input').attr('readonly', 'readonly');
       //$('#form_companymanage select').attr("disabled", true);
@@ -344,7 +345,7 @@ function get_news_to_view(ID_Message) {
     success: function (response, status) {
       /* set input value */
 
-      $('#Tittle_Message_view').val(response.data.Tittle_Message);
+      $('#Tittle_Message_view').html(response.data.Tittle_Message);
       $('#Text_Message_view').html(response.data.Text_Message);
       $("#thumnails_new_profile_view").attr("src", response.data.Picture_Message);
       $("#thumnails_new_profile_view2").attr("src", response.data.Picture_Message2);

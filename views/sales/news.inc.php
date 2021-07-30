@@ -43,7 +43,7 @@ try {
                                     ?>
                                 วันที่ : <?php echo date_format($date, 'd/m/Y'); ?>
                                 <center> <img src="<?php echo $img; ?>" width="30%"><img src="<?php echo $img2; ?>" width="30%"> <img src="<?php echo $img3; ?>" width="30%"><br> </center>
-                                <center> <p> <?php echo $message->getText_Message(); ?></p> </center>
+                               <p> <?php echo $message->getText_Message(); ?></p>
                                 <!-- end content -->
                             </div>
                             <!-- /.card-body -->

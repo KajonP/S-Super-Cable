@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : change style datatable">
-      <change afterPath="$PROJECT_DIR$/uploads/formatexcel_user.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/formatexcel_user.xls" afterDir="false" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update accept file">
+      <change afterPath="$PROJECT_DIR$/images/0c2eb19f27304f639fb0159bfba332b6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/42f59e1562ee778f8ace6551eae61e67.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/borrow_approve_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/borrow_approve_list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_goods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/manage_sales.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_sales.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/modal/modal_importcompany.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importcompany.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/modal/modal_importgoods.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importgoods.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/modal/modal_importsales.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importsales.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/modal/modal_importuser.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importuser.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AwardController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AwardController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/NewsController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/NewsController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/borrow_approve_history.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/borrow_approve_history.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/manage_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_news.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index_user.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index_user.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_companymanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_companymanage.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_newsmanage2.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_newsmanage2.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/sales/news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/news.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/user/index_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/user/index_award.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/user/news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/user/news.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,14 +211,13 @@
       <workItem from="1627033515402" duration="1083000" />
       <workItem from="1627206386763" duration="134000" />
       <workItem from="1627214291743" duration="532000" />
-      <workItem from="1627214948017" duration="1976000" />
-    </task>
-    <task id="LOCAL-00021" summary="case : ติดปัญหา upload ตรง amphur_id">
-      <created>1622013809995</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1622013809995</updated>
+      <workItem from="1627214948017" duration="2317000" />
+      <workItem from="1627293575847" duration="64000" />
+      <workItem from="1627293742128" duration="82000" />
+      <workItem from="1627550641554" duration="172000" />
+      <workItem from="1627559377341" duration="107000" />
+      <workItem from="1627631279970" duration="103000" />
+      <workItem from="1627631437790" duration="5537000" />
     </task>
     <task id="LOCAL-00022" summary="case : update db">
       <created>1622702774697</created>
@@ -553,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627214633139</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="case : update accept file">
+      <created>1627217245681</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1627217245681</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +582,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : crud goods" />
     <MESSAGE value="case : crud file (can't upload)" />
     <MESSAGE value="case : update sidebar" />
     <MESSAGE value="case : change to thai" />
@@ -598,14 +606,15 @@
     <MESSAGE value="case : delete modal invoice" />
     <MESSAGE value="case : update database" />
     <MESSAGE value="case : change style datatable" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : change style datatable" />
+    <MESSAGE value="case : update accept file" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update accept file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/controllers/AwardController.class.php</url>
-          <line>127</line>
+          <line>128</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

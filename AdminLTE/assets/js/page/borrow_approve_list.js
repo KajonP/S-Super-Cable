@@ -66,7 +66,7 @@ var form_validte = $("#form_modal").validate({
     Amount_BorrowOrReturn: {
       required: "กรุณาใส่ข้อมูล",
     }
-  }, 
+  },
   errorPlacement: function (error, element) {
     {
       error.insertAfter(element)
@@ -191,7 +191,7 @@ function onaction_delete(id){
 function onaction_disApprove(id){
   Swal.fire({
     title: 'คุณเเน่ใจใช่ไหม?',
-    text: "คุณต้องการไม่อนุมัติการยิมนี้?",
+    text: "คุณต้องการไม่อนุมัติการยืมนี้?",
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
@@ -235,7 +235,7 @@ function onaction_disApprove(id){
 function onaction_Approve(id){
   Swal.fire({
     title: 'คุณเเน่ใจใช่ไหม?',
-    text: "คุณต้องการอนุมัติการยิมนี้?",
+    text: "คุณต้องการอนุมัติการยืมนี้?",
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
@@ -264,7 +264,7 @@ function onaction_Approve(id){
             Swal.fire({
               icon: 'error',
               title: 'ขออภัย...',
-              text: 'มีบางอย่างผิดพลาด , อาจจะมีข้อมูลอยู่ในฐานข้อมูลเเล้ว , โปรดลองอีกครั้ง',
+              text: 'มีบางอย่างผิดพลาด , จำนวนมากเกินกว่าที่มี , โปรดลองอีกครั้ง',
               confirmButtonText: 'ตกลง',
             }).then((result) => {
               location.reload();

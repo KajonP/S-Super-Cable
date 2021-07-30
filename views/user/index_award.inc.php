@@ -25,7 +25,7 @@ try {
     <div class=" content-wrapper">
 
         <!-- Content Header (Page header) -->
-        <div class="content-header" \>
+        <div class="content-header" >
             <div class="container-fluid">
                 <div class="row mb-12">
                     <div class="col-md-12">

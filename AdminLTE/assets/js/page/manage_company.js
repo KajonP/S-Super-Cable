@@ -186,10 +186,11 @@ function companymanageShow(type, ID_Company = null) {
       form_validte.resetForm();
 
       onaction_getinptval(ID_Company);
+      $('#form_companymanage textarea').attr("disabled", false);
 
       break;
     case 'view':
-      title = "บริษัทลูกค้า ";
+      title = "ดูข้อมูลบริษัทลูกค้า ";
       //clear error if exists
       form_validte.resetForm();
 
@@ -197,6 +198,7 @@ function companymanageShow(type, ID_Company = null) {
 
       $('#form_companymanage input').attr('readonly', 'readonly');
       $('#form_companymanage select').attr("disabled", true);
+      $('#form_companymanage textarea').attr("disabled", true);
       $('#button_companymanageModal').hide();
 
       break;
@@ -261,6 +263,7 @@ function onaction_getinptval(ID_Company) {
     }
   });
 }
+
 
 function onaction_deletecompany(ID_Company) {
   Swal.fire({

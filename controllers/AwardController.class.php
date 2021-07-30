@@ -55,14 +55,14 @@ class AwardController
                     # retrieve data
                     $countAll = Award::fetchCountAll($employee->getID_Employee());
                     $n = $countAll[0];
-                    $count_page = ceil($n/5);
+                    $count_page = ceil($n/4);
                     $start = 0;
                     $get_page = 1;
                     if(isset($_GET['page'])){
                         $get_page = $_GET['page'];
                     }
-                    $start = ($get_page*5)-5;
-                    $award = Award::fetchAllwithInnerLimit($employee->getID_Employee(),$start,5);
+                    $start = ($get_page*4)-4;
+                    $award = Award::fetchAllwithInnerLimit($employee->getID_Employee(),$start,4);
                     
                     //echo $n.':'.$count_page;
                     //exit;
@@ -71,14 +71,14 @@ class AwardController
                     # retrieve data
                     $countAll = Award::fetchCountAll($employee->getID_Employee());
                     $n = $countAll[0];
-                    $count_page = ceil($n/5);
+                    $count_page = ceil($n/4);
                     $start = 0;
                     $get_page = 1;
                     if(isset($_GET['page'])){
                         $get_page = $_GET['page'];
                     }
-                    $start = ($get_page*5)-5;
-                    $award = Award::fetchAllwithInnerLimit($employee->getID_Employee(),$start,5);
+                    $start = ($get_page*4)-4;
+                    $award = Award::fetchAllwithInnerLimit($employee->getID_Employee(),$start,4);
                     //echo $n.':'.$count_page;
                     //exit;
                     include Router::getSourcePath() . "views/user/index_award.inc.php";

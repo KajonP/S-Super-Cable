@@ -43,8 +43,9 @@ try {
                                 <?php $i = 1; foreach ($message as $key => $value) { ?>
                                     <div class="callout callout-info">
                                         <i class="nav-icon fas fa-comments"></i>
-                                        <h5><?php echo $value->getTittle_Message() ; ?></h5>
-                                        <?php echo $value->getText_Message(); ?>
+                                        <h5><a href="index.php?controller=News&action=show&id=<?php echo $value->getID_Message(); ?>"><?php echo $value->getTittle_Message() ; ?></a></h5>
+                                        <?php echo mb_substr(strip_tags($value->getText_Message()),0,150); ?>
+                                        <br/>
                                         <?php
                                         $date = date_create($value->getDate_Message());
                                         ?>
