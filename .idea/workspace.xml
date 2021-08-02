@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update xls">
-      <change afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_cluster_shop.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Cluster_Shop.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/ClusterShopController.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/admin/manage_cluster_shop.inc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/modal/modal_cluster_shop_manage.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/CompanyController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sales/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sales/sidebar_menu.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/excelcompany.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/excelcompany.xlsx" afterDir="false" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update sidebar(admin+sales)+crud cluster shop">
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_cluster_shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_cluster_shop.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,14 +209,7 @@
       <workItem from="1627741410919" duration="1602000" />
       <workItem from="1627743233086" duration="951000" />
       <workItem from="1627899867229" duration="1875000" />
-      <workItem from="1627901866323" duration="4163000" />
-    </task>
-    <task id="LOCAL-00026" summary="case : change controller : 1 controller to 1 model">
-      <created>1623317661756</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1623317661756</updated>
+      <workItem from="1627901866323" duration="4837000" />
     </task>
     <task id="LOCAL-00027" summary="case : update">
       <created>1623416130865</created>
@@ -563,7 +547,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627901496951</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="case : update sidebar(admin+sales)+crud cluster shop">
+      <created>1627906098246</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1627906098247</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,7 +574,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : change to thai" />
     <MESSAGE value="case : crud file" />
     <MESSAGE value="case : crud file (still can't update file + edit db table file)" />
     <MESSAGE value="case : crud file (still can't update path file)" />
@@ -608,7 +598,8 @@
     <MESSAGE value="case : update" />
     <MESSAGE value="case : update company" />
     <MESSAGE value="case : update xls" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : update xls" />
+    <MESSAGE value="case : update sidebar(admin+sales)+crud cluster shop" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update sidebar(admin+sales)+crud cluster shop" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

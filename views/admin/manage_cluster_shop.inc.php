@@ -115,9 +115,8 @@ try {
     # modal dialog ( edit profile )
     include Router::getSourcePath() . "views/modal/modal_editprofile.inc.php";
     # modal dialog ( cluster_shop manage )
-    include Router::getSourcePath() . "views/modal/modal_cluster_shop_manage.inc.php";
     include Router::getSourcePath() . "templates/footer_page.inc.php";
-
+    include Router::getSourcePath() . "views/modal/modal_cluster_shop_manage.inc.php";
     ?>
 
     <?php
