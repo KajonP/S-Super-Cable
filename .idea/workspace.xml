@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update sidebar(admin+sales)+crud cluster shop">
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_cluster_shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_cluster_shop.js" afterDir="false" />
-    </list>
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update  cluster shop js" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -209,14 +207,7 @@
       <workItem from="1627741410919" duration="1602000" />
       <workItem from="1627743233086" duration="951000" />
       <workItem from="1627899867229" duration="1875000" />
-      <workItem from="1627901866323" duration="4837000" />
-    </task>
-    <task id="LOCAL-00027" summary="case : update">
-      <created>1623416130865</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1623416130865</updated>
+      <workItem from="1627901866323" duration="5062000" />
     </task>
     <task id="LOCAL-00028" summary="case : update">
       <created>1623416183718</created>
@@ -554,7 +545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627906098247</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="case : update  cluster shop js">
+      <created>1627906899711</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1627906899712</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +572,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : crud file" />
     <MESSAGE value="case : crud file (still can't update file + edit db table file)" />
     <MESSAGE value="case : crud file (still can't update path file)" />
     <MESSAGE value="case : change ckeditor path" />
@@ -599,7 +596,8 @@
     <MESSAGE value="case : update company" />
     <MESSAGE value="case : update xls" />
     <MESSAGE value="case : update sidebar(admin+sales)+crud cluster shop" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : update sidebar(admin+sales)+crud cluster shop" />
+    <MESSAGE value="case : update  cluster shop js" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update  cluster shop js" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
