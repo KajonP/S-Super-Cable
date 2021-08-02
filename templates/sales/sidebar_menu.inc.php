@@ -99,9 +99,21 @@
                         </a>
                     </li>
                 </ul>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="./index.html"
+                           class="nav-link">
+                            <i class="nav-icon fas fa-history"></i>
+                            <p>
+                                ประวัติลูกค้า
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <li class="nav-item menu-open">
                 <a class="nav-link active">
-                    <i class="nav-icon fas fa-chart-pie"></i>
+                    <i class="nav-icon fas fa-file"></i>
                     <p>
                         รายงาน
                         <i class="right fas fa-angle-left"></i>
@@ -109,52 +121,68 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="pages/company.html" class="nav-link">
-                            <i class="nav-icon fas fa-wallet"></i>
-                            <p>
-                                เปรียบเทียบยอดขาย
-                            </p>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="pages/company.html" class="nav-link">
-                            <i class="nav-icon fas fa-wallet"></i>
-                            <p>
-                                เปรียบเทียบรายได้
-                            </p>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="pages/company.html" class="nav-link">
-                            <i class="nav-icon fas fa-file"></i>
-                            <p>
-                                ประวัติลูกค้า
-                            </p>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="pages/company.html" class="nav-link">
-                            <i class="nav-icon fas fa-store"></i>
-                            <p>
-                                ลูกค้าที่ไม่เคลื่อนไหว
-                            </p>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
                         <a href="<?php echo Router::getSourcePath() . "index.php?controller=File&action=show_index_download_file"; ?>"
                            class="nav-link">
                             <i class="nav-icon fas fa-file"></i>
-                            <p>
-                                ไฟล์เอกสาร
-                            </p>
+                            <p>เอกสาร </p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="index.php?controller=report&action=borrow" class="nav-link">
+                            <i class="nav-icon fas fa-gift "></i>
+                            <p>ส่งเสริมการขาย </p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item menu-open">
+                <a class="nav-link active">
+                    <i class="nav-icon fas fa-chart-pie"></i>
+                    <p>
+                        กราฟ
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="./index.html" class="nav-link">
+                            <i class="nav-icon fas fa-store"></i>
+                            <p>เปอร์เซ็นของกลุ่มลูกค้า </p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item menu-open">
+                <a class="nav-link active">
+                    <i class="nav-icon fas fa-chart-line"></i>
+                    <p>
+                        สถิติ
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="./index.html" class="nav-link">
+                            <i class="nav-icon fas fa-store"></i>
+                            <p>ลูกค้าที่ไม่เคลื่อนไหว </p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="./index.html" class="nav-link">
+                            <i class="nav-icon fas fa-wallet"></i>
+                            <p>ยอดขายของตัวเอง</p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="./index.html" class="nav-link">
+                            <i class="nav-icon fas fa-wallet"></i>
+                            <p>เปรียบเทียบยอดขาย </p> ของตัวเอง
                         </a>
                     </li>
                 </ul>

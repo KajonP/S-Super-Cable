@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update company">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update xls">
+      <change afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_cluster_shop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Cluster_Shop.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/ClusterShopController.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/admin/manage_cluster_shop.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/modal/modal_cluster_shop_manage.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/CompanyController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/PHPExcel-1.8/Classes/PHPExcel/Reader/Excel5.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/PHPExcel-1.8/Classes/PHPExcel/Reader/Excel5.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sales/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sales/sidebar_menu.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/excelcompany.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/excelcompany.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,21 +217,8 @@
       <workItem from="1627642567440" duration="117000" />
       <workItem from="1627741410919" duration="1602000" />
       <workItem from="1627743233086" duration="951000" />
-      <workItem from="1627899867229" duration="1414000" />
-    </task>
-    <task id="LOCAL-00024" summary="case : crud promotion">
-      <created>1622882019668</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1622882019668</updated>
-    </task>
-    <task id="LOCAL-00025" summary="case : change controller : 1 controller to 1 model">
-      <created>1623317308965</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1623317308965</updated>
+      <workItem from="1627899867229" duration="1875000" />
+      <workItem from="1627901866323" duration="4163000" />
     </task>
     <task id="LOCAL-00026" summary="case : change controller : 1 controller to 1 model">
       <created>1623317661756</created>
@@ -555,7 +549,21 @@
       <option name="project" value="LOCAL" />
       <updated>1627743352118</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="case : update xls">
+      <created>1627901481478</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1627901481478</updated>
+    </task>
+    <task id="LOCAL-00074" summary="case : update xls">
+      <created>1627901496951</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1627901496951</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -575,7 +583,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : update sidebar" />
     <MESSAGE value="case : change to thai" />
     <MESSAGE value="case : crud file" />
     <MESSAGE value="case : crud file (still can't update file + edit db table file)" />
@@ -600,7 +607,8 @@
     <MESSAGE value="case : update accept file" />
     <MESSAGE value="case : update" />
     <MESSAGE value="case : update company" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : update company" />
+    <MESSAGE value="case : update xls" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update xls" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

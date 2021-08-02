@@ -55,7 +55,6 @@ class CompanyController
 
                 if (!empty($PROVINCE_ID)) {
                     $result = $this->$action($PROVINCE_ID);
-
                     echo $result;
                 }
                 break;

@@ -58,6 +58,17 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=ClusterShop&action=manage_cluster_shop"; ?>"
+                           class="nav-link">
+                            <i class="nav-icon fas fa-layer-group"></i>
+                            <p>
+                                กลุ่มลูกค้า
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
                         <a href="<?php echo Router::getSourcePath() . "index.php?controller=Company&action=manage_company"; ?>"
                            class="nav-link">
                             <i class="nav-icon fas fa-store"></i>
@@ -183,7 +194,7 @@
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="<?php echo Router::getSourcePath() . "index.php?controller=borrow&action=borrow_approve_list"; ?>" class="nav-link">
-                            <i class="nav-icon fas fa-history "></i>
+                            <i class="nav-icon fas fa-clipboard-check"></i>
                             <p>
                                การอนุมัติ
                             </p>
@@ -201,9 +212,46 @@
             </li>
             <li class="nav-item menu-open">
                 <a class="nav-link active">
-                    <i class="nav-icon fas fa-chart-pie"></i>
+                    <i class="nav-icon fas fa-file"></i>
                     <p>
                         รายงาน
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=File&action=show_index_download_file"; ?>"
+                           class="nav-link">
+                            <i class="nav-icon fas fa-file"></i>
+                            <p>เอกสาร </p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="index.php?controller=report&action=borrow" class="nav-link">
+                            <i class="nav-icon fas fa-gift "></i>
+                            <p>ส่งเสริมการขาย </p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="./index.html"
+                           class="nav-link">
+                            <i class="nav-icon fas fa-history"></i>
+                            <p>
+                                ประวัติลูกค้า
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item menu-open">
+                <a class="nav-link active">
+                    <i class="nav-icon fas fa-chart-pie"></i>
+                    <p>
+                        กราฟ
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
@@ -218,6 +266,31 @@
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="./index.html" class="nav-link">
+                            <i class="nav-icon fas fa-wallet "></i>
+                            <p>แนวโน้มยอดขาย 1 </p> จากค่าเฉลี่ย
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="./index.html" class="nav-link">
+                            <i class="nav-icon fas fa-wallet "></i>
+                            <p>แนวโน้มยอดขาย 2 </p> จากค่า y = mx + c
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item menu-open">
+                <a class="nav-link active">
+                    <i class="nav-icon fas fa-chart-line"></i>
+                    <p>
+                        สถิติ
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="./index.html" class="nav-link">
                             <i class="nav-icon fas fa-store"></i>
                             <p>ลูกค้าที่ไม่เคลื่อนไหว </p>
                         </a>
@@ -225,10 +298,9 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=File&action=show_index_download_file"; ?>"
-                           class="nav-link">
-                            <i class="nav-icon fas fa-file"></i>
-                            <p>เอกสาร </p>
+                        <a href="./index.html" class="nav-link">
+                            <i class="nav-icon fas fa-wallet"></i>
+                            <p>ยอดขายของตัวเอง</p>
                         </a>
                     </li>
                 </ul>
@@ -244,23 +316,23 @@
                     <li class="nav-item">
                         <a href="./index.html" class="nav-link">
                             <i class="nav-icon fas fa-wallet"></i>
-                            <p>เปรียบเทียบยอดขาย</p>
+                            <p>เปรียบเทียบยอดขาย </p> ของตัวเอง
                         </a>
                     </li>
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="./index.html" class="nav-link">
-                            <i class="nav-icon fas fa-wallet "></i>
-                            <p>แนวโน้มยอดขาย </p>
+                            <i class="nav-icon fas fa-wallet"></i>
+                            <p>เปรียบเทียบยอดขาย 1</p> โดยเลือกจากบริษัทลูกค้า
                         </a>
                     </li>
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="index.php?controller=report&action=borrow" class="nav-link">
-                            <i class="nav-icon fas fa-gift "></i>
-                            <p>ส่งเสริมการขาย </p>
+                        <a href="./index.html" class="nav-link">
+                            <i class="nav-icon fas fa-wallet"></i>
+                            <p>เปรียบเทียบยอดขาย 2</p>  โดยเลือกจากพนักงานขาย
                         </a>
                     </li>
                 </ul>
