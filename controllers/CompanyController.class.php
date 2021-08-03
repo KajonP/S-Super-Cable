@@ -102,7 +102,7 @@ class CompanyController
             , "Tax_Number_Company" => array("name" => "เลขผู้เสียภาษี", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ เลขผู้เสียภาษี")
             , "Credit_Limit_Company" => array("name" => "วงเงินสูงสุด", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ วงเงินสูงสุด")
             , "Credit_Term_Company" => array("name" => "เครดิตเทอม", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ เครดิตเทอม")
-            , "Cluster_Shop" => array("name" => "คลัสเตอร์", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ คลัสเตอร์")
+            , "Cluster_Shop_ID" => array("name" => "คลัสเตอร์", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ ไอดีกลุ่มลูกค้า")
             , "Contact_Name_Company" => array("name" => "ชื่อที่ติดต่อ", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ ชื่อที่ติดต่อ")
             , "IS_Blacklist" => array("name" => "บัญชีดำ", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ บัญชีดำ")
             , "Cause_Blacklist" => array("name" => "สาเหตุที่ติดบัญชีดำ", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ สาเหตุที่ติดบัญชีดำ")
@@ -156,7 +156,7 @@ class CompanyController
                             "Tax_Number_Company" => $getCellArray["data"][7],
                             "Credit_Limit_Company" => $getCellArray["data"][8],
                             "Credit_Term_Company" => $getCellArray["data"][9],
-                            "Cluster_Shop" => $getCellArray["data"][10],
+                            "Cluster_Shop_ID" => $getCellArray["data"][10],
                             "Contact_Name_Company" => $getCellArray["data"][11],
                             "IS_Blacklist" => $getCellArray["data"][12],
                             "Cause_Blacklist" => $getCellArray["data"][13]
@@ -259,7 +259,7 @@ class CompanyController
             "Tax_Number_Company" => $company->getTax_Number_Company(),
             "Credit_Limit_Company" => $company->getCredit_Limit_Company(),
             "Credit_Term_Company" => $company->getCredit_Term_Company(),
-            "Cluster_Shop" => $company->getCluster_Shop(),
+            "Cluster_Shop_ID" => $company->getCluster_Shop_ID(),
             "Contact_Name_Company" => $company->getContact_Name_Company(),
             "IS_Blacklist" => $company->getIS_Blacklist(),
             "Cause_Blacklist" => $company->getCause_Blacklist(),
@@ -289,6 +289,7 @@ class CompanyController
         $file_log = Filelog::findByPage('manage_company');
         $provinceList = Province::findAll();
         $amphurList = Amphur::findAll();
+        $cluster_shopList = Cluster_Shop::findAll();
         include Router::getSourcePath() . "views/admin/manage_company.inc.php";
     }
     //หน้า export ไฟล์ตัวอย่าง excel บริษัทลูกค้า
@@ -353,7 +354,7 @@ class CompanyController
                 ->setCellValue('H1', 'Tax_Number_Company')
                 ->setCellValue('I1', 'Credit_Limit_Company')
                 ->setCellValue('J1', 'Credit_Term_Company')
-                ->setCellValue('K1', 'Cluster_Shop')
+                ->setCellValue('K1', 'Cluster_Shop_ID')
                 ->setCellValue('L1', 'Contact_Name_Company')
                 ->setCellValue('M1', 'IS_Blacklist')
                 ->setCellValue('N1', 'Cause_Blacklist');;
@@ -371,7 +372,7 @@ class CompanyController
                 ->setCellValue('H' . $start_row, "1234567891234")
                 ->setCellValue('I' . $start_row, "50000")
                 ->setCellValue('J' . $start_row, "30 วัน")
-                ->setCellValue('K' . $start_row, "ภาคเอกชน")
+                ->setCellValue('K' . $start_row, "1")
                 ->setCellValue('L' . $start_row, " ")
                 ->setCellValue('M' . $start_row, "ใช่")
                 ->setCellValue('N' . $start_row, " ");

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update  cluster shop js" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update  db">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Company.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Company.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/CompanyController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_companymanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_companymanage.inc.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,13 +214,8 @@
       <workItem from="1627743233086" duration="951000" />
       <workItem from="1627899867229" duration="1875000" />
       <workItem from="1627901866323" duration="5062000" />
-    </task>
-    <task id="LOCAL-00028" summary="case : update">
-      <created>1623416183718</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1623416183718</updated>
+      <workItem from="1627907093839" duration="53000" />
+      <workItem from="1627983983411" duration="1305000" />
     </task>
     <task id="LOCAL-00029" summary="case : update">
       <created>1623418312385</created>
@@ -552,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627906899712</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="case : update  db">
+      <created>1627907134205</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1627907134206</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,7 +580,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : crud file (still can't update file + edit db table file)" />
     <MESSAGE value="case : crud file (still can't update path file)" />
     <MESSAGE value="case : change ckeditor path" />
     <MESSAGE value="case : change something to textarea" />
@@ -597,7 +604,8 @@
     <MESSAGE value="case : update xls" />
     <MESSAGE value="case : update sidebar(admin+sales)+crud cluster shop" />
     <MESSAGE value="case : update  cluster shop js" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : update  cluster shop js" />
+    <MESSAGE value="case : update  db" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update  db" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

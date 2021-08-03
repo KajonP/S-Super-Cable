@@ -94,7 +94,7 @@ var form_validte = $("#form_companymanage").validate({
       required: true,
       minlength: 3
     },
-    Cluster_Shop: {
+    Cluster_Shop_ID: {
       required: true,
     },
     Contact_Name_Company: {
@@ -150,6 +150,15 @@ var form_validte = $("#form_companymanage").validate({
     Credit_Term_Company: {
       required: "กรุณาใส่ข้อมูล",
       minlength: "ข้อมูลต้องมีอย่าง 3 ตัวอักษร"
+    },
+    Cluster_Shop_ID: {
+      required: "กรุณาใส่ข้อมูล",
+    },
+    Cluster_Shop_Name: {
+      //required: "กรุณาใส่ข้อมูล",
+    },
+    IS_Blacklist: {
+      required: "กรุณาใส่ข้อมูล",
     },
     action: "กรุณาใส่ข้อมูล"
   }, errorPlacement: function (error, element) {
@@ -246,8 +255,8 @@ function onaction_getinptval(ID_Company) {
       $('#Credit_Limit_Company').val(response.data.Credit_Limit_Company);
       $("#Credit_Term_Company").val(response.data.Credit_Term_Company);
       // case: dropdown
-      $('#Cluster_Shop')
-        .val(response.data.Cluster_Shop)
+      $('#Cluster_Shop_ID')
+        .val(response.data.Cluster_Shop_ID)
         .trigger('change');
       $('#Contact_Name_Company').val(response.data.Contact_Name_Company);
       // case: dropdown

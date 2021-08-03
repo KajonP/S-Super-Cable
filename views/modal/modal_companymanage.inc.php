@@ -78,12 +78,19 @@
                         <input type="text" class="form-control" id="Credit_Term_Company" name="Credit_Term_Company"
                                value="" required="required">
                     </div>
+
                     <div class="form-group">
-                        <label for="Cluster_Shop" class="col-form-label">คลัสเตอร์:<span class="text-danger" >*</span></label>
-                        <select name="Cluster_Shop" class="form-control" id="Cluster_Shop">
-                            <option value="ภาครัฐ">ภาครัฐ</option>
-                            <option value="ภาคเอกชน">ภาคเอกชน</option>
-                            <option value="รัฐวิสาหกิจ">รัฐวิสาหกิจ</option>
+                        <label for="Cluster_Shop_ID" class="col-form-label">กลุ่มลูกค้า:<span class="text-danger" >*</span></label>
+                        <select class="form-control" name="Cluster_Shop_ID" id="Cluster_Shop_ID">
+                            <option value="" selected disabled>-กรุณากลุ่มลูกค้า-</option>
+                            <?php
+
+                            foreach ($cluster_shopList as $cluster_shop) {
+                                ?>
+                                <option value="<?php echo $cluster_shop->getCluster_Shop_ID();?>"><?php echo $cluster_shop->getCluster_Shop_Name(); ?></option>
+                                <?php
+                            }
+                            ?>
                         </select>
                     </div>
                     <div class="form-group">

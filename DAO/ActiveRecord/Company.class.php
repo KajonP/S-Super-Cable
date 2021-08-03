@@ -11,7 +11,6 @@ class Company
     private $Tax_Number_Company;
     private $Credit_Limit_Company;
     private $Credit_Term_Company;
-    private $Cluster_Shop;
     private $Contact_Name_Company;
     private $IS_Blacklist;
     private $Cause_Blacklist;
@@ -20,7 +19,10 @@ class Company
     private $AMPHUR_NAME;
     private $PROVINCE_ID;
     private $PROVINCE_NAME;
-    
+    private $Cluster_Shop_ID;
+    private $Cluster_Shop_Name;
+
+
     private const TABLE = "company";
 
     //----------- Getters & Setters
@@ -102,16 +104,6 @@ class Company
     public function setCredit_Term_Company(string $Credit_Term_Company)
     {
         $this->Credit_Term_Company = $Credit_Term_Company;
-    }
-
-    public function getCluster_Shop(): string
-    {
-        return $this->Cluster_Shop;
-    }
-
-    public function setCluster_Shop(string $Cluster_Shop)
-    {
-        $this->Cluster_Shop = $Cluster_Shop;
     }
 
     public function getContact_Name_Company(): string
@@ -214,8 +206,27 @@ class Company
     {
         $this->PROVINCE_NAME = $PROVINCE_NAME;
     }
+    public function getCluster_Shop_ID(): int
+    {
+            return $this->Cluster_Shop_ID;
+    }
 
-    
+    public function setCluster_Shop_ID(int $Cluster_Shop_ID)
+    {
+        $this->Cluster_Shop_ID = $Cluster_Shop_ID;
+    }
+    public function getCluster_Shop_Name(): string
+    {
+        return $this->Cluster_Shop_Name;
+    }
+
+    public function setCluster_Shop_Name(string $Cluster_Shop_Name)
+    {
+        $this->Cluster_Shop_Name = $Cluster_Shop_Name;
+    }
+
+
+
 
 
     //----------- CRUD
@@ -224,9 +235,10 @@ class Company
         $con = Db::getInstance();
         //$query = "SELECT * FROM " . self::TABLE;
         $query = "SELECT " . self::TABLE . ".*,province.PROVINCE_NAME
-        ,amphur.AMPHUR_NAME  FROM " . self::TABLE . " 
+        ,amphur.AMPHUR_NAME,cluster_shop.Cluster_Shop_Name  FROM " . self::TABLE . " 
          LEFT JOIN province ON " . self::TABLE . ".PROVINCE_ID = province.PROVINCE_ID 
-         LEFT JOIN amphur ON " . self::TABLE . ".AMPHUR_ID = amphur.AMPHUR_ID  " ;
+         LEFT JOIN amphur ON " . self::TABLE . ".AMPHUR_ID = amphur.AMPHUR_ID  
+          LEFT JOIN cluster_shop ON " . self::TABLE . ".Cluster_Shop_ID = cluster_shop.Cluster_Shop_ID" ;
         // echo $query;exit();
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Company");
