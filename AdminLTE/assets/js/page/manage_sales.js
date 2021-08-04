@@ -429,3 +429,8 @@ function importShow() {
   $('#importsalesModal').modal('show');
 
 }
+$.fn.modal.Constructor.prototype.enforceFocus = function () {};
+
+$(document).ready(function() {
+  $('.js-example-basic-single').select2({    dropdownAutoWidth : true   , width: 'resolve'});
+});

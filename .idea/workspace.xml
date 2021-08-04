@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update  db">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update cluster company by join cluster table">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Company.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Company.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/CompanyController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/modal/modal_companymanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_companymanage.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/dist/css/adminlte.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/dist/css/adminlte.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_salesmanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_salesmanage.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,14 +214,8 @@
       <workItem from="1627899867229" duration="1875000" />
       <workItem from="1627901866323" duration="5062000" />
       <workItem from="1627907093839" duration="53000" />
-      <workItem from="1627983983411" duration="1305000" />
-    </task>
-    <task id="LOCAL-00029" summary="case : update">
-      <created>1623418312385</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1623418312385</updated>
+      <workItem from="1627983983411" duration="1598000" />
+      <workItem from="1628078112707" duration="5900000" />
     </task>
     <task id="LOCAL-00030" summary="case : update">
       <created>1623420816939</created>
@@ -560,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627907134206</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="case : update cluster company by join cluster table">
+      <created>1627985583747</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1627985583748</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,7 +580,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : crud file (still can't update path file)" />
     <MESSAGE value="case : change ckeditor path" />
     <MESSAGE value="case : change something to textarea" />
     <MESSAGE value="case : change dashboard" />
@@ -605,7 +604,8 @@
     <MESSAGE value="case : update sidebar(admin+sales)+crud cluster shop" />
     <MESSAGE value="case : update  cluster shop js" />
     <MESSAGE value="case : update  db" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : update  db" />
+    <MESSAGE value="case : update cluster company by join cluster table" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update cluster company by join cluster table" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
