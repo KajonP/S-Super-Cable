@@ -126,6 +126,7 @@ class InvoiceController
         $amphurList = Amphur::findAll();
         $invoiceList = Invoice::findAll();
         $invoice_detailList = Invoice_Detail::findAll();
+        $goodsList = Goods::findAll();
         if ($employee->getUser_Status_Employee() == "Admin") {
             include Router::getSourcePath() . "views/admin/manage_invoice.inc.php";
         } else if ($employee->getUser_Status_Employee() == "Sales") {

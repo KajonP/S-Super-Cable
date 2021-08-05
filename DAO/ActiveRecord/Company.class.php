@@ -239,7 +239,7 @@ class Company
          LEFT JOIN province ON " . self::TABLE . ".PROVINCE_ID = province.PROVINCE_ID 
          LEFT JOIN amphur ON " . self::TABLE . ".AMPHUR_ID = amphur.AMPHUR_ID  
           LEFT JOIN cluster_shop ON " . self::TABLE . ".Cluster_Shop_ID = cluster_shop.Cluster_Shop_ID" ;
-        // echo $query;exit();
+        //echo $query;exit();
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Company");
         $stmt->execute();

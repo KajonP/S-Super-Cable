@@ -46,3 +46,67 @@ var dataTable_ = $("#tbl_invoicemanagement").DataTable({
 
 
 });
+
+function invoicemanageShow(type, ID_Message ) {
+  
+  var title = "" ;
+
+  /* clear old form value */
+ 
+
+    switch(type)
+    {
+      case "create":
+        title = "สร้าง Invoice";
+
+        // set id
+        $('#button_invManageModal').attr("data-id", null);
+
+        //
+        //form_validte.resetForm();
+
+        break;
+      case "edit":
+
+        // แก้ไขข่าวสาร
+        title = "แก้ไขข่าวสาร";
+
+        //clear error if exists
+        form_validte.resetForm();
+        get_news_to_edit(ID_Message);
+
+        // set id
+        $('#button_newsManageModal').attr("data-id", ID_Message);
+        break;
+      case 'view':
+      title = "ดูข่าวสาร ";
+      //clear error if exists
+      form_validte.resetForm();
+
+      get_news_to_view(ID_Message);
+
+
+      //$('#form_companymanage input').attr('readonly', 'readonly');
+      //$('#form_companymanage select').attr("disabled", true);
+      //$('#button_companymanageModal').hide();
+
+      break;
+      default:
+        // ..
+        break;
+    }
+
+    /* set title */
+    $('#invManageTitle').html(title);
+
+    /* set button event  */
+    $('#button_invManageModal').attr("data-status", type);
+
+    /* modal show  */
+    if(type=='view'){
+      $('#invManageViewModal').modal('show')
+    }else{
+      $('#invManageModal').modal('show');
+    }
+  }
+
