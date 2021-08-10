@@ -57,6 +57,7 @@ try {
                                 <?php $i = 1; foreach ($award as $key => $value) { ?>
                                     <div class="callout callout-info">
                                         <i class=" nav-icon fas fa-award"></i>
+                                        <h5><a href="index.php?controller=Award&action=show&id=<?php echo $value->getID_Award(); ?>"><?php echo $value->getTittle_Award() ; ?></a></h5>
                                         <h5><?php echo $value->getTittle_Award() ; ?></h5>
                                         <?php
                                         $date = date_create($value->getDate_Award());

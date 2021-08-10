@@ -48,16 +48,16 @@ var dataTable_ = $("#tbl_invoicemanagement").DataTable({
 });
 
 function invoicemanageShow(type, ID_Message ) {
-  
+
   var title = "" ;
 
   /* clear old form value */
- 
+
 
     switch(type)
     {
       case "create":
-        title = "สร้าง Invoice";
+        title = "สร้างใบเสนอราคา";
 
         // set id
         $('#button_invManageModal').attr("data-id", null);
@@ -69,7 +69,7 @@ function invoicemanageShow(type, ID_Message ) {
       case "edit":
 
         // แก้ไขข่าวสาร
-        title = "แก้ไขข่าวสาร";
+        title = "แก้ไขใบเสนอราคา";
 
         //clear error if exists
         form_validte.resetForm();

@@ -1,5 +1,5 @@
 <div class="modal fade" id="salesmanageModal"  role="dialog" aria-labelledby="salesmanageModalDialog"
-     aria-hidden="true">
+     aria-hidden="true" style="overflow:hidden;"  >
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -17,14 +17,14 @@
                         <!--   <label for="ID_Excel" class="col-form-label">ไอดียอดขาย:</label> -->
                         <!--                        <input type="text" class="form-control" id="ID_Excel" name="ID_Excel" value=""> -->
                     </div>
-                    <div class="form-group ">
+                    <div class="form-group  ">
                         <label for="Date_Sales" class="col-form-label">วันที่ขาย:<span class="text-danger" >*</span></label>
                         <input type="date" class="form-control" id="Date_Sales" name="Date_Sales" value=""
                                required="required">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group ">
                         <label for="ID_Company" class="col-form-label">ชื่อบริษัทลูกค้า:<span class="text-danger" >*</span></label>
-                        <select class="form-control js-example-basic-single " name="ID_Company" id="ID_Company">
+                        <select class="js-example-basic-single  form-control" name="ID_Company" id="ID_Company">
                             <option  value="">--กรุณาเลือกบริษัทลูกค้า--</option>
 
                             <?php
@@ -40,7 +40,7 @@
 
                     <div class="form-group">
                         <label for="ID_Employee" class="col-form-label">ชื่อพนักงาน:<span class="text-danger" >*</span></label>
-                        <select class="form-control js-example-basic-single " name="ID_Employee" id="ID_Employee">
+                        <select class=" js-example-basic-single form-control" name="ID_Employee" id="ID_Employee">
                             <option  value="">--กรุณาเลือกพนักงาน--</option>
 
                             <?php foreach ($employeeList as $employee) { ?>

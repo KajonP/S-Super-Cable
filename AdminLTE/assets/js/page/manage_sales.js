@@ -429,8 +429,10 @@ function importShow() {
   $('#importsalesModal').modal('show');
 
 }
-$.fn.modal.Constructor.prototype.enforceFocus = function () {};
+
 
 $(document).ready(function() {
-  $('.js-example-basic-single').select2({    dropdownAutoWidth : true   , width: 'resolve'});
+  $.fn.modal.Constructor.prototype._enforceFocus = function() {};
+  $('.js-example-basic-single').select2({   dropdownParent: $('#salesmanageModal'),  dropdownAutoWidth : true   , width: '100%'});
+
 });

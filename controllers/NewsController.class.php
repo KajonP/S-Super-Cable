@@ -80,7 +80,7 @@ class NewsController
                     $message = Message::fetchAllwithInnerLimit($employee->getID_Employee(),$start,4);
                     //echo $n.':'.$count_page;
                     //exit;
-                    include Router::getSourcePath() . "views/user/index_news.inc.php";
+                    include Router::getSourcePath() . "views/sales/index_news.inc.php";
                 }
                 break;
             case "update_status_news":
@@ -96,7 +96,7 @@ class NewsController
                 } else if ($employee->getUser_Status_Employee() == "User") {
                     # retrieve data
                     $message = Message::update_news_status($employee->getID_Employee(), $ID_Message);
-                    include Router::getSourcePath() . "views/user/redirect_index_news.inc.php";
+                    include Router::getSourcePath() . "views/sales/redirect_index_news.inc.php";
                 }
                 break;
              case "show" :
@@ -310,7 +310,7 @@ class NewsController
         } else if ($employee->getUser_Status_Employee() == "Sales") {
             include Router::getSourcePath() . "views/sales/news.inc.php";
         } else if ($employee->getUser_Status_Employee() == "User") {
-            include Router::getSourcePath() . "views/user/news.inc.php";
+            include Router::getSourcePath() . "views/sales/news.inc.php";
         }
     }
 

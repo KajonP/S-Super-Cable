@@ -44,7 +44,7 @@ try {
                                     <div class="callout callout-info">
                                         <i class="nav-icon fas fa-comments"></i>
                                         <h5><a href="index.php?controller=News&action=show&id=<?php echo $value->getID_Message(); ?>"><?php echo $value->getTittle_Message() ; ?></a></h5>
-                                        <?php echo mb_substr(strip_tags($value->getText_Message()),0,150); ?>
+                                        เนื้อหาข่าวสาร : <?php echo mb_substr(strip_tags($value->getText_Message()),0,150); ?>
                                         <br/>
                                         <?php
                                         $date = date_create($value->getDate_Message());
@@ -57,7 +57,7 @@ try {
                                 <?php $i = 1; foreach ($award as $key => $value) { ?>
                                     <div class="callout callout-info">
                                         <i class=" nav-icon fas fa-award"></i>
-                                        <h5><?php echo $value->getTittle_Award() ; ?></h5>
+                                        <h5><a href="index.php?controller=Award&action=show&id=<?php echo $value->getID_Award(); ?>"><?php echo $value->getTittle_Award() ; ?></a></h5>
                                         <?php
                                         $date = date_create($value->getDate_Award());
                                         ?>

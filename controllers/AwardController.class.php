@@ -81,7 +81,7 @@ class AwardController
                     $award = Award::fetchAllwithInnerLimit($employee->getID_Employee(),$start,4);
                     //echo $n.':'.$count_page;
                     //exit;
-                    include Router::getSourcePath() . "views/user/index_award.inc.php";
+                    include Router::getSourcePath() . "views/sales/index_award.inc.php";
                 }
                 break;
             case "update_status_award":
@@ -97,7 +97,7 @@ class AwardController
                 } else if ($employee->getUser_Status_Employee() == "User") {
                     # retrieve data
                     $award = Award::update_award_status($employee->getID_Employee(), $ID_Award);
-                    include Router::getSourcePath() . "views/user/redirect_index_award.inc.php";
+                    include Router::getSourcePath() . "views/sales/redirect_index_award.inc.php";
 
                 }
                 break;
@@ -313,7 +313,7 @@ class AwardController
         } else if ($employee->getUser_Status_Employee() == "Sales") {
             include Router::getSourcePath() . "views/sales/award.inc.php";
         } else if ($employee->getUser_Status_Employee() == "User") {
-            include Router::getSourcePath() . "views/user/award.inc.php";
+            include Router::getSourcePath() . "views/sales/award.inc.php";
         }
     }
 

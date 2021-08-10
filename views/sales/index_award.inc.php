@@ -25,7 +25,7 @@ try {
     <div class=" content-wrapper">
 
         <!-- Content Header (Page header) -->
-        <div class="content-header" \>
+        <div class="content-header" >
             <div class="container-fluid">
                 <div class="row mb-12">
                     <div class="col-md-12">
@@ -49,7 +49,7 @@ try {
                                                     <br/>
                                                     <a href="index.php?controller=Award&action=show&id=<?php echo $value->getID_Award(); ?>"><?php echo $value->getTittle_Award(); ?></a>
                                                     <br/>
-                                                    ชื่อ : <?php echo $value->getFullname_employee(); ?>
+                                                    ชื่อคนที่ได้รับรางวัล : <?php echo $value->getFullname_employee(); ?>
                                                 </td>
                                             </tr>
                                         </table>
@@ -89,8 +89,14 @@ try {
             <span class="brand-text font-weight-light">S Super Cable</span>
         </a>
         <!-- Sidebar -->
-        <?php include("templates/sales/sidebar_menu.inc.php"); ?>
-        <!-- /.sidebar -->
+        <?php
+        $user_status = $_SESSION['employee']->getUser_Status_Employee();
+        if(strtolower($user_status)=='sales'){
+            include("templates/sales/sidebar_menu.inc.php");
+        }else if(strtolower($user_status)=='user'){
+            include("templates/users/sidebar_menu.inc.php");
+        }
+        ?>        <!-- /.sidebar -->
     </aside>
 
     <?php
