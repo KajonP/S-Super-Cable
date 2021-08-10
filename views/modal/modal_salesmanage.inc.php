@@ -25,7 +25,7 @@
                     <div class="form-group ">
                         <label for="ID_Company" class="col-form-label">ชื่อบริษัทลูกค้า:<span class="text-danger" >*</span></label>
                         <select class="js-example-basic-single  form-control" name="ID_Company" id="ID_Company">
-                            <option  value="">--กรุณาเลือกบริษัทลูกค้า--</option>
+                            <option  value="" selected disabled>--กรุณาเลือกบริษัทลูกค้า--</option>
 
                             <?php
                             foreach ($companyList as $company) {
@@ -41,7 +41,7 @@
                     <div class="form-group">
                         <label for="ID_Employee" class="col-form-label">ชื่อพนักงาน:<span class="text-danger" >*</span></label>
                         <select class=" js-example-basic-single form-control" name="ID_Employee" id="ID_Employee">
-                            <option  value="">--กรุณาเลือกพนักงาน--</option>
+                            <option  value="" selected disabled >--กรุณาเลือกพนักงาน--</option>
 
                             <?php foreach ($employeeList as $employee) { ?>
                                 <option value="<?php echo $employee->getID_Employee(); ?>"><?php echo $employee->getName_Employee() . " " . $employee->getSurname_Employee(); ?></option>

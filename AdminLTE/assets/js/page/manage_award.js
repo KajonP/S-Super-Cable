@@ -4,7 +4,7 @@ var columns = [
     {"width": "5%", "class": "text-center"},
     {"width": "5%", "class": "text-center"},
     {"width": "5%", "class": "text-center"},
-    {"width": "5%", "class": "text-center"},
+    {"width": "15%", "class": "text-center"},
   ]
 
 var dataTable_ = $("#tbl_award").DataTable({
@@ -105,6 +105,17 @@ function  awardManageShow(type, ID_Award ) {
           $('#button_awardManageModal').attr("data-id", ID_Award);
 
           break;
+        case 'view':
+          title = "ดูรางวัล ";
+          //clear error if exists
+          form_validte.resetForm();
+
+          get_award_to_edit(ID_Award);
+
+
+        $('#form_awardManage input').attr('readonly', 'readonly');
+        $('#form_awardManage select').attr("disabled", true);
+        $('#button_awardManageModal').hide();
 
         default:
           // ..
@@ -120,6 +131,12 @@ function  awardManageShow(type, ID_Award ) {
       /* modal show  */
       $('#awardManageModal').modal('show');
 
+  /* modal show  */
+  if(type=='view'){
+    $('#awardManageViewModal').modal('show')
+  }else{
+    $('#awardManageModal').modal('show');
+  }
   }
 
 

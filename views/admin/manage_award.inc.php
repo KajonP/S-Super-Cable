@@ -68,6 +68,13 @@ try {
                                                 <td><?php echo $value->getFullname_employee(); ?></td>
                                                 <td class=" last">
                                                     <a href="#"
+                                                       onclick="awardManageShow('view','<?php echo $value->getID_Award(); ?>')">
+                                                        <button type="button" class="btn btn-round btn-info"
+                                                                style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
+                                                            <i class="fa fa-eye"></i>เพิ่มเติม
+                                                        </button>
+                                                    </a>
+                                                    <a href="#"
                                                        onclick="awardManageShow('edit','<?php echo $value->getID_Award(); ?>')">
                                                         <button type="button"
                                                                 class="btn btn-round btn-warning text-center"

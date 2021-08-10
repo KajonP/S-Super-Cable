@@ -1,26 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update select2">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update select2 and update award and message by using only sales (delete file of user)">
+      <change afterPath="$PROJECT_DIR$/views/modal/modal_awardmanage2.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_invoice.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_invoice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Award.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Award.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/AwardController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AwardController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/NewsController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/NewsController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index_sales.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index_sales.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index_user.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index_user.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_award.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_award.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/manage_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_award.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/modal/modal_salesmanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_salesmanage.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sales/award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/award.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sales/index_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/index_award.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sales/index_news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/index_news.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sales/news.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sales/news.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/user/award.inc.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/user/index_award.inc.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/user/index_news.inc.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/user/news.inc.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/user/redirect_index_award.inc.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/user/redirect_index_news.inc.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,14 +219,7 @@
       <workItem from="1628078112707" duration="7061000" />
       <workItem from="1628242505936" duration="645000" />
       <workItem from="1628564744125" duration="1847000" />
-      <workItem from="1628581996381" duration="2637000" />
-    </task>
-    <task id="LOCAL-00031" summary="case : เเยก 2หน้าได้ หน้า message เเสดงผลไม่ได้ + award อ่านไม่ได้ เข้า error">
-      <created>1623499387299</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1623499387299</updated>
+      <workItem from="1628581996381" duration="5065000" />
     </task>
     <task id="LOCAL-00032" summary="case : เเยก 2หน้าได้ หน้า message เเสดงผลไม่ได้ + award อ่านไม่ได้ เข้า error">
       <created>1623499922073</created>
@@ -578,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628084884106</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="case : update select2 and update award and message by using only sales (delete file of user)">
+      <created>1628589709717</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1628589709717</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,7 +584,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : change something to textarea" />
     <MESSAGE value="case : change dashboard" />
     <MESSAGE value="case : change dashboard news to show only last row" />
     <MESSAGE value="case : update borrow_approve_history and change output path of report" />
@@ -623,7 +608,8 @@
     <MESSAGE value="case : update  db" />
     <MESSAGE value="case : update cluster company by join cluster table" />
     <MESSAGE value="case : update select2" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : update select2" />
+    <MESSAGE value="case : update select2 and update award and message by using only sales (delete file of user)" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update select2 and update award and message by using only sales (delete file of user)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
