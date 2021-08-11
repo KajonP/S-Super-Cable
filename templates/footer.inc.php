@@ -6,6 +6,8 @@
 <script src="AdminLTE/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="AdminLTE/plugins/bootstrap/js/bootstrap.js"></script>
+
 <!-- AdminLTE -->
 <script src="AdminLTE/dist/js/adminlte.js"></script>
 
@@ -48,8 +50,11 @@
 <!--  moment.min.js-->
 <script src="AdminLTE/plugins/moment/moment.min.js"></script>
 
-<!--  select2.min.js-->
+<!--  select2-->
 <script src="AdminLTE/plugins/select2/js/select2.js"></script>
+<script src="AdminLTE/plugins/select2/js/i18n/th.js"></script>
+
+
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

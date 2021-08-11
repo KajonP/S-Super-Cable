@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update award">
-      <change afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Zone.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/ZoneController.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/excelsales.xlsx" afterDir="false" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update zone and resultsales">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_sales.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Sales.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Sales.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/ResultSalesController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ResultSalesController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/footer.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/header.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_salesmanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_salesmanage.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,13 +222,9 @@
       <workItem from="1628564744125" duration="1847000" />
       <workItem from="1628581996381" duration="7028000" />
       <workItem from="1628672101761" duration="3562000" />
-    </task>
-    <task id="LOCAL-00033" summary="case : award อ่านไม่ได้ เข้า error">
-      <created>1623501237482</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1623501237482</updated>
+      <workItem from="1628675995507" duration="449000" />
+      <workItem from="1628676607758" duration="107000" />
+      <workItem from="1628679763922" duration="1666000" />
     </task>
     <task id="LOCAL-00034" summary="case : award อ่านไม่ได้ เข้า error">
       <created>1623501314607</created>
@@ -567,7 +562,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628592252356</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="case : update zone and resultsales">
+      <created>1628676132770</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1628676132770</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,7 +589,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : change dashboard" />
     <MESSAGE value="case : change dashboard news to show only last row" />
     <MESSAGE value="case : update borrow_approve_history and change output path of report" />
     <MESSAGE value="case : update modal dialog ( edit profile )" />
@@ -612,7 +613,8 @@
     <MESSAGE value="case : update select2" />
     <MESSAGE value="case : update select2 and update award and message by using only sales (delete file of user)" />
     <MESSAGE value="case : update award" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : update award" />
+    <MESSAGE value="case : update zone and resultsales" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update zone and resultsales" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -181,8 +181,8 @@ class Sales
                 $values .= "'$val',";
             }
             # insert ลง db
-            $values = substr($values, 0, -1);
             $values-> findcompany();
+            $values = substr($values, 0, -1);
             $query = "INSERT INTO " . self::TABLE . "({$columns}) VALUES ($values)" ;
            // echo $query;exit();
             # execute query

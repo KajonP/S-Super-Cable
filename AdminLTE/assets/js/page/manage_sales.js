@@ -433,6 +433,8 @@ function importShow() {
 
 $(document).ready(function() {
   $.fn.modal.Constructor.prototype._enforceFocus = function() {};
-  $('.js-example-basic-single').select2({   dropdownParent: $('#salesmanageModal'),  dropdownAutoWidth : true   , width: '100%'});
+  $.fn.select2.defaults.set("theme", "classic");
+
+  $('.js-example-basic-single').select2({  language: "th",dropdownParent: $('#salesmanageModal'),  dropdownAutoWidth : true   , width: '100%'});
 
 });
