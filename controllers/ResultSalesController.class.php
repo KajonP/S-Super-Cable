@@ -86,7 +86,7 @@ class ResultSalesController
 
                 //case: การอัพโหลดไฟล์ excel ถ้าลืมใส่ column ไหนให้บอกผิด row ไหน
                 $EXCEL_HeaderCol = array("Date_Sales" => array("name" => "วันที่ขาย", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ วันที่ขาย")
-                , "ID_Company" => array("name" => "ไอดีบริษัทลูกค้า", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ ไอดีบริษัทลูกค้า")
+                , "Name_Company" => array("name" => "ชื่อบริษัทลูกค้า", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ ชื่อบริษัทลูกค้า")
                 , "ID_Employee" => array("name" => "ไอดีพนักงาน", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ ไอดีพนักงาน")
                 , "Result_Sales" => array("name" => "ยอดขาย", "status" => false, "error" => "ไม่พบข้อมูลคอลัมน์ ยอดขาย")
                 );

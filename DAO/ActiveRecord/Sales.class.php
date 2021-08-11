@@ -100,6 +100,19 @@ class Sales
         }
         return $salesList;
     }
+    public static function findcompany(): array
+    {
+        $con = Db::getInstance();
+        $query = "SELECT * FROM ". self::TABLE ."inner join company on company.ID_Company =". self::TABLE .".ID_Company where Name_Company = $Name_Company ";
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Sales");
+        $stmt->execute();
+        $salesList = array();
+        while ($prod = $stmt->fetch()) {
+            $salesList[$prod->getID_Excel()] = $prod;
+        }
+        return $salesList;
+    }
 
     public static function findById(int $ID_Excel): ?Sales
     {
@@ -169,8 +182,9 @@ class Sales
             }
             # insert ลง db
             $values = substr($values, 0, -1);
-            $query = "INSERT INTO " . self::TABLE . "({$columns}) VALUES ($values)";
-            //echo $query;exit();
+            $values-> findcompany();
+            $query = "INSERT INTO " . self::TABLE . "({$columns}) VALUES ($values)" ;
+           // echo $query;exit();
             # execute query
             if ($con->exec($query)) {
                 # do something
