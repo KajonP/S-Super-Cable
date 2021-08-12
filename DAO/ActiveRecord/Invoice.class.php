@@ -293,6 +293,7 @@ class Invoice
     public static function customerReport($Cluster_Shop_ID,$startDate,$endDate)
     {
         $con = Db::getInstance();
+        /*
         $where = " invoice.Invoice_Date BETWEEN '".$startDate."' AND '".$endDate."'";
         $where .= " AND cluster_shop.Cluster_Shop_ID='".$Cluster_Shop_ID."' ";
         $query = "SELECT SUM(Grand_Total) AS TOTAL_SUM FROM invoice 
@@ -301,8 +302,17 @@ class Invoice
                     WHERE ".$where." ";
         //echo $query;
         //exit;
+        */
+        $where = " sales.Date_Sales BETWEEN '".$startDate."' AND '".$endDate."'";
+        $where .= " AND cluster_shop.Cluster_Shop_ID='".$Cluster_Shop_ID."' ";
+        $query = "SELECT SUM(Result_Sales) AS TOTAL_SUM FROM sales
+                    LEFT JOIN company ON company.ID_Company = sales.ID_Company 
+                    LEFT JOIN cluster_shop ON cluster_shop.Cluster_Shop_ID = company.Cluster_Shop_ID 
+                    WHERE ".$where." ";
+        //echo $query;
+        //exit;
         $stmt = $con->prepare($query);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "Invoice");
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "sales");
         $stmt->execute();
         $total = array();
         while ($prod = $stmt->fetch()) {
