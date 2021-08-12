@@ -56,7 +56,10 @@ class Zone
     public static function findAll(): array
     {
         $con = Db::getInstance();
-        $query = "SELECT * FROM " . self::TABLE;
+        $query = "SELECT * FROM " . self::TABLE. " inner join Employee on " . self::TABLE.".ID_Employee = Employee.ID_Employee
+        inner join Company on ". self::TABLE.".ID_Company = Company.ID_Company inner join PROVINCE on ". self::TABLE.".PROVINCE_ID = PROVINCE.PROVINCE_ID
+        inner join AMPHUR on ". self::TABLE.".AMPHUR_ID = AMPHUR.AMPHUR_ID";
+        //echo $query;exit();
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Zone");
         $stmt->execute();

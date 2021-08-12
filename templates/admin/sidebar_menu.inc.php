@@ -48,7 +48,8 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="pages/zone.html" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=Zone&action=manage_zone"; ?>"
+                           class="nav-link">
                             <i class="nav-icon fas fa-network-wired"></i>
                             <p>
                                 โซนพนักงาน
