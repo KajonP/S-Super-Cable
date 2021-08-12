@@ -67,7 +67,7 @@ var form_validte = $("#form_companymanage").validate({
       required: true,
     },
     AMPHUR_ID: {
-      required: true,
+      //required: true,
     },
     AMPHUR_NAME: {
      // required: true,
@@ -123,9 +123,9 @@ var form_validte = $("#form_companymanage").validate({
     PROVINCE_ID: {
       required: "กรุณาใส่ข้อมูล",
     },
-    AMPHUR_ID: {
-      required: "กรุณาใส่ข้อมูล",
-    },
+     AMPHUR_ID: {
+    //   required: "กรุณาใส่ข้อมูล",
+     },
     AMPHUR_NAME: {
       // required: "กรุณาใส่ข้อมูล",
      },
@@ -327,14 +327,14 @@ $('#form_importexcel').validate({
     }
   },
   messages: {
-    file: "กรุณาอัพโหลดไฟล์ Excel ที่นามสกุล .xlsx, .xls , .csv เท่านั้น"
+    file: "กรุณาอัพโหลดไฟล์ Excel ที่นามสกุล .xls , .xlsx, .csv เท่านั้น"
   },
   errorPlacement: function (error, element) {
     //แจ้งเตือนผิด format
     Swal.fire({
       icon: 'error',
       title: 'ขออภัย...',
-      text: "กรุณาอัพโหลดไฟล์ Excel ที่นามสกุล .xlsx, .xls , .csv เท่านั้น",
+      text: "กรุณาอัพโหลดไฟล์ Excel ที่นามสกุล .xls , .xlsx,  .csv เท่านั้น",
       confirmButtonText: 'ตกลง',
 
     }).then((result) => {

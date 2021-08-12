@@ -41,7 +41,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="AMPHUR_ID" class="col-form-label">อำเภอ:<span class="text-danger" >*</span></label>
+                        <label for="AMPHUR_ID" class="col-form-label">อำเภอ:</label>
                         <select class="form-control" name="AMPHUR_ID" id="amphure_id">
                             <option value="" selected disabled>-กรุณาเลือกอำเภอ-</option>
                             <?php
@@ -101,6 +101,7 @@
                     <div class="form-group">
                         <label for="IS_Blacklist" class="col-form-label">บัญชีดำ:<span class="text-danger" >*</span></label>
                         <select name="IS_Blacklist" class="form-control" id="IS_Blacklist">
+                            <option value="" selected disabled>-กรุณาเลือก-</option>
                             <option value="ใช่">ใช่</option>
                             <option value="ไม่ใช่">ไม่ใช่</option>
                         </select>

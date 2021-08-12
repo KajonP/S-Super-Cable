@@ -102,7 +102,11 @@ function  awardManageShow(type, ID_Award ) {
           form_validte.resetForm();
           get_award_to_edit(ID_Award);
           // set id
+
           $('#button_awardManageModal').attr("data-id", ID_Award);
+          $('#form_awardManage input').attr('disabled', false);
+          $('#form_awardManage input').attr('readonly',false);
+          $('#form_awardManage select').attr("disabled", false);
 
           break;
         case 'view':
@@ -114,8 +118,11 @@ function  awardManageShow(type, ID_Award ) {
 
 
         $('#form_awardManage input').attr('readonly', 'readonly');
-        $('#form_awardManage select').attr("disabled", true);
-        $('#button_awardManageModal').hide();
+        $('#form_awardManage input').attr('disabled',true);
+
+          $('#form_awardManage select').attr("disabled", true);
+
+          $('#button_awardManageModal').hide();
 
         default:
           // ..
@@ -131,12 +138,7 @@ function  awardManageShow(type, ID_Award ) {
       /* modal show  */
       $('#awardManageModal').modal('show');
 
-  /* modal show  */
-  if(type=='view'){
-    $('#awardManageViewModal').modal('show')
-  }else{
-    $('#awardManageModal').modal('show');
-  }
+
   }
 
 

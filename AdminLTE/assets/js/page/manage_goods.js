@@ -194,12 +194,12 @@ $('#form_importexcel').validate({
   rules: {
     file: {
 
-      extension: "xlsx|csv",
+      extension: "xls|xlsx|csv",
 
     }
   },
   messages: {
-    file: "กรุณาอัพโหลดไฟล์ Excel ที่นามสกุล .xlsx, .csv เท่านั้น"
+    file: "กรุณาอัพโหลดไฟล์ Excel ที่นามสกุล .xls , .xlsx, .csv เท่านั้น"
   },
   errorPlacement: function (error, element) {
     //แจ้งเตือนผิด format
