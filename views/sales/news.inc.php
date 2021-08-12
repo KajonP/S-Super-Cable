@@ -22,48 +22,36 @@ try {
     </nav>
     <!-- /.navbar -->
 
-    <div class=" content-wrapper">
-	
-        <!-- Content Header (Page header) -->
+    <div class="content-wrapper">
+        <!-- -->
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-12">
                     <div class="col-md-12">
                         <h1 class="m-0" >หัวข้อ : <?php  echo $message->getTittle_Message(); ?></h1></font>
-						<div class="card">
-                            <div class="card-body p-2">                            
-                                <!-- content -->
-                               
-                                    <?php
-                                    $img = $message->getPicture_Message();
-                                    $img2 = $message->getPicture_Message2();
-                                    $img3 = $message->getPicture_Message3();
-
-                                    $date = date_create($message->getDate_Message());
-                                    ?>
-                                วันที่ : <?php echo date_format($date, 'd/m/Y'); ?>
-                                <center> <img src="<?php echo $img; ?>" width="30%"><img src="<?php echo $img2; ?>" width="30%"> <img src="<?php echo $img3; ?>" width="30%"><br> </center>
-                               <p> <?php echo $message->getText_Message(); ?></p>
-                                <!-- end content -->
-                            </div>
-                            <!-- /.card-body -->
-                        </div>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
-        <!-- /.content-header -->
-
-        <!-- Content Header (Page header) -->
-
-        <!-- /.content-header -->
-
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </div>
+        <!-- -->
+        <section class="content">
+            <div class="card">
+                <div class="card-body">
+                    <?php
+                        $img = $message->getPicture_Message();
+                        $img2 = $message->getPicture_Message2();
+                        $img3 = $message->getPicture_Message3();
+                        $date = date_create($message->getDate_Message());
+                    ?>
+                    วันที่ : <?php echo date_format($date, 'd/m/Y'); ?>
+                    <center> <img src="<?php echo $img; ?>" width="30%"><img src="<?php echo $img2; ?>" width="30%"> <img src="<?php echo $img3; ?>" width="30%"><br> </center>
+                    <p> <?php echo $message->getText_Message(); ?></p>
+                </div>
+            </div>
+        </section>
+        <!-- -->
     </div>
-
-    <!-- Main Sidebar Container -->
+    
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a class="brand-link">
@@ -98,4 +86,3 @@ try {
     exit(1);
 }
 ?>
-

@@ -10,7 +10,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group ">
+                    <div class="form-group " style="display: none;">
                         <label for="ID_Promotion" class="col-form-label">ยืม-คืน:<span class="text-danger" >*</span></label>
                         <select  class="form-control" id="Type_BorrowOrReturn" name="Type_BorrowOrReturn" readonly>
                             <option value="">--เลือก--</option>
