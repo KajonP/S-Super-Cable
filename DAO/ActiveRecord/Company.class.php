@@ -254,12 +254,10 @@ class Company
     {
         $con = Db::getInstance();
         $query = "SELECT * FROM " . self::TABLE . " WHERE ID_Company = '$ID_Company'";
-       
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Company");
         $stmt->execute();
         if ($prod = $stmt->fetch()) {
-        
             return $prod;
         }
         return null;

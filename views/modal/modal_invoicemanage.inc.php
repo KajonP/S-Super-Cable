@@ -15,10 +15,8 @@
                 <!-- -->
                 <div class="form-group">
                     <label>Inv No. <span class="text-danger" >*</span></label>
-                    <input type="text" name="Invoice_No" class="form-control">
+                    <input type="text" name="Invoice_No" id="Invoice_No" class="form-control">
                 </div>
-                <!-- -->
-
                 <!-- -->
                 <div class="form-group">
                     <label>ลูกค้า</label>
@@ -36,7 +34,10 @@
                     </select>
                 </div>
                 <!-- -->
-
+                <div class="form-group">
+                    <label>บริษัท</label>
+                    <input type="text" name="Name_Company" id="Name_Company" class="form-control">
+                </div>
                 <!-- -->
                 <div class="form-group" style="display:none;">
                     <label>จำนวนเงิน</label>

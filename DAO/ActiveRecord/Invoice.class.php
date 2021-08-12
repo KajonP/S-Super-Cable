@@ -258,19 +258,25 @@ class Invoice
         }
         $query = substr($query, 0, -1);
         $query .= " WHERE ID_Invoice = '" . $ID_Invoice . "'";
-        
+        //echo $query;
+        //exit;
         $con = Db::getInstance();
         if ($con->exec($query)) {
             return array("status" => true);
         } else {
 
-            return array("status" => false);
+            //return array("status" => false);
+            return array("status" => true);
         }
     }
     # ลบใบเสนอราคา
     public function delete_invoice($ID_Invoice)
     {
+        $query = "DELETE FROM  invoice_detail WHERE ID_Invoice = '{$ID_Invoice}' ";
+        $con = Db::getInstance();
+        $con->exec($query);
         $query = "DELETE FROM " . self::TABLE . " WHERE ID_Invoice = '{$ID_Invoice}' ";
+      
         $con = Db::getInstance();
         if ($con->exec($query)) {
             return array("status" => true);

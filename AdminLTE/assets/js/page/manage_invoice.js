@@ -371,7 +371,8 @@ function get_inv_to_edit(id){
       }
     });
 }
-function onaction_deleteinvoice(ID_Invoice) {
+
+function onaction_deleteinvoice(ID_Invoice){
   Swal.fire({
     title: 'คุณเเน่ใจใช่ไหม?',
     text: "คุณต้องการลบข้อมูลนี้ใช่ไหม?",
@@ -381,6 +382,7 @@ function onaction_deleteinvoice(ID_Invoice) {
     cancelButtonColor: '#d33',
     confirmButtonText: 'ตกลง',
     cancelButtonText: 'ยกเลิก'
+
   }).then((result) => {
     if (result.isConfirmed) {
       $.ajax({
@@ -411,8 +413,46 @@ function onaction_deleteinvoice(ID_Invoice) {
 
     }
   })
-
 }
-  $('input[name="Invoice_Date"]').datepicker({
+
+$("#ID_Company").change(function() {
+  get_company($(this).val());
+});
+
+function get_company(ID_Company){
+   $.ajax({
+      url: "index.php?controller=Invoice&action=get_company",
+      data: {
+        "ID_Company": ID_Company
+      },
+      type: "POST",
+      dataType: 'json',
+      async: false,
+      success: function (response, status) {
+        //alert(JSON.stringify(response.data));
+        var data = response.data;
+        
+        $('#Credit_Term_Company').val(data.Credit_Term_Company);
+        $('#Name_Company').val(data.Name_Company);
+        $('#Contact_Name_Company').val(data.Contact_Name_Company);
+        $('#Address_Company').val(data.Address_Company);
+        $('#PROVINCE_ID').val(data.PROVINCE_ID);
+        $('#AMPHUR_ID').val(data.AMPHUR_ID);
+        $('#Email_Company').val(data.Email_Company);
+        $('#Tel_Company').val(data.Tel_Company);
+        $('#Tax_Number_Company').val(data.Tax_Number_Company);
+        $('#ID_Company').val(data.ID_Company);
+        //$('#ID_Setting_Vat').val(data.ID_Setting_Vat);
+        
+
+      },
+      error: function (xhr, status, exception) {
+        //console.log(xhr);
+      }
+    });
+}
+
+$('input[name="Invoice_Date"]').datepicker({
     format: 'yyyy-mm-dd'
 });
+

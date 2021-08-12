@@ -101,11 +101,11 @@ body {
         ?>
         <tr>
           <td colspan="4" style="text-align: right;">รวม</td>
-          <td><?php echo $data_sendback['Vat']; ?></td>
+          <td><?php echo $data_sendback['Total']; ?></td>
         </tr>
         <tr>
           <td colspan="4" style="text-align: right;">ภาษี</td>
-          <td><?php echo $data_sendback['Total']; ?></td>
+          <td><?php echo $data_sendback['Vat']; ?></td>
         </tr>
         <tr>
           <td colspan="4" style="text-align: right;">จำนวนเงินทั้งหมด</td>

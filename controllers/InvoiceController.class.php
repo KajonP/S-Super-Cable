@@ -47,6 +47,14 @@ class InvoiceController
                     echo $result;
                 }
                 break;
+            case "get_company":
+                $ID_Company = isset($params["POST"]["ID_Company"]) ? $params["POST"]["ID_Company"] : "";
+
+                if (!empty($ID_Company)) {
+                    $result = $this->$action($ID_Company);
+                    echo $result;
+                }
+                break;
             default:
                 break;
         }
@@ -69,7 +77,7 @@ class InvoiceController
             'Tel_Company' => $params['Tel_Company'],
             'Tax_Number_Company' => $params['Tax_Number_Company'],
             'Vat_Type' => 'novat',
-            'Percent_Vat' => isset($params['Percent_Vat']) ? $params['Percent_Vat'] : '',
+            'Percent_Vat' => isset($params['Percent_Vat']) ? $params['Percent_Vat'] : '0',
             'Vat' => isset($params['Vat']) ? $params['Vat'] : '0',
             'Discount' => isset($params['Discount']) ? $params['Discount'] : '0',
             'Total' => isset($params['Total']) ? $params['Total'] : '0',
@@ -83,6 +91,7 @@ class InvoiceController
         $inv_id = $get_inv->getID_Invoice();
         $qty = $params['qty_array'];
         $access_invoice_detail = new Invoice_Detail();
+        $Total = 0;
         if($invoice_result['status']==true){
             if(count($params['goods_array'])>0){
                 foreach($params['goods_array'] as $key => $item){
@@ -95,8 +104,20 @@ class InvoiceController
                         'ID_Goods' => $item,
                         'ID_Invoice' => $inv_id
                     ]);
+                    $Total = $Total+$qty[$key]*$goods->getPrice_Goods();
                 }
             }
+
+            $percent_Vat = isset($params['Percent_Vat']) ? $params['Percent_Vat'] : '0';
+            $vat = $Total*($percent_Vat/100);
+            $GrandTotal = $Total+$vat;
+            $invoice_result = $access_invoice->edit_invoice(
+                [
+                    'Vat' => $vat,
+                    'Total' => $Total,
+                    'Grand_Total' => $GrandTotal
+                ], $inv_id
+            );
         }
         return json_encode($invoice_result);
     }
@@ -112,8 +133,8 @@ class InvoiceController
                 'Name_Company' =>  isset($params['Name_Company']) ? $params['Name_Company'] : '' ,
                 'Contact_Name_Company' =>  $params['Contact_Name_Company'],
                 'Address_Company' =>  $params['Address_Company'],
-                'PROVINCE_ID' => '',
-                'AMPHUR_ID' => '',
+                'PROVINCE_ID' => isset($params['PROVINCE_ID']) ? $params['PROVINCE_ID'] : '0',
+                'AMPHUR_ID' => isset($params['AMPHUR_ID']) ? $params['AMPHUR_ID'] : '0',
                 'Email_Company' => $params['Email_Company'],
                 'Tel_Company' => $params['Tel_Company'],
                 'Tax_Number_Company' => $params['Tax_Number_Company'],
@@ -132,6 +153,7 @@ class InvoiceController
         $qty = $params['qty_array'];
         $access_invoice_detail = new Invoice_Detail();
         Invoice_Detail::delete_invoice_detail_by_inv($inv_id);
+        $Total = 0;
         if($invoice_result['status']==true){
             if(count($params['goods_array'])>0){
                 foreach($params['goods_array'] as $key => $item){
@@ -144,8 +166,19 @@ class InvoiceController
                         'ID_Goods' => $item,
                         'ID_Invoice' => $inv_id
                     ]);
+                    $Total = $Total+$qty[$key]*$goods->getPrice_Goods();
                 }
             }
+            $percent_Vat = isset($params['Percent_Vat']) ? $params['Percent_Vat'] : '0';
+            $vat = $Total*($percent_Vat/100);
+            $GrandTotal = $Total+$vat;
+            $invoice_result = $access_invoice->edit_invoice(
+                [
+                    'Vat' => $vat,
+                    'Total' => $Total,
+                    'Grand_Total' => $GrandTotal
+                ], $ID_Invoice
+            );
         }
         echo json_encode($invoice_result);
 
@@ -280,5 +313,28 @@ class InvoiceController
         );
         //echo json_encode(array("data" => $data_sendback));
         include "inv.php";
+    }
+
+    private function get_company(string $ID_Company)
+    {
+        $company = Company::findById($ID_Company);//echo json_encode($sales);
+        $data_sendback = array(
+            "ID_Company" => $company->getID_Company(),
+            "Name_Company" => $company->getName_Company(),
+            "Address_Company" => $company->getAddress_Company(),
+            "PROVINCE_ID" => $company->getPROVINCE_ID(),
+            "AMPHUR_ID" => $company->getAMPHUR_ID(),
+            "Tel_Company" => $company->getTel_Company(),
+            "Email_Company" => $company->getEmail_Company(),
+            "Tax_Number_Company" => $company->getTax_Number_Company(),
+            "Credit_Limit_Company" => $company->getCredit_Limit_Company(),
+            "Credit_Term_Company" => $company->getCredit_Term_Company(),
+            "Cluster_Shop_ID" => $company->getCluster_Shop_ID(),
+            "Contact_Name_Company" => $company->getContact_Name_Company(),
+            "IS_Blacklist" => $company->getIS_Blacklist(),
+            "Cause_Blacklist" => $company->getCause_Blacklist(),
+
+        );
+        echo json_encode(array("data" => $data_sendback));
     }
 }
