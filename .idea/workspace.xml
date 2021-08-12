@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update xls and input disable">
-      <change afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_zone.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/admin/manage_zone.inc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/modal/modal_zone_manage.inc.php" afterDir="false" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update zone">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Zone.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Zone.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/borrow.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/borrow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_promotion.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_promotion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/Db.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/Db.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/borrow.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/borrow.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_promotionmanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_promotionmanage.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,13 +228,8 @@
       <workItem from="1628757294850" duration="1692000" />
       <workItem from="1628759487597" duration="2539000" />
       <workItem from="1628762566788" duration="276000" />
-    </task>
-    <task id="LOCAL-00036" summary="case : เเก้เเสดงผลทั้งหมด">
-      <created>1623502727693</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1623502727693</updated>
+      <workItem from="1628762877686" duration="40000" />
+      <workItem from="1628768028855" duration="2419000" />
     </task>
     <task id="LOCAL-00037" summary="case : เเก้เเสดงผลทั้งหมด">
       <created>1623503018122</created>
@@ -572,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628758713578</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="case : update zone">
+      <created>1628762908983</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1628762908983</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -592,7 +594,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : update borrow_approve_history and change output path of report" />
     <MESSAGE value="case : update modal dialog ( edit profile )" />
     <MESSAGE value="case : update user news" />
     <MESSAGE value="case : update footer" />
@@ -617,7 +618,8 @@
     <MESSAGE value="case : update zone and resultsales" />
     <MESSAGE value="case : update select2" />
     <MESSAGE value="case : update xls and input disable" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : update xls and input disable" />
+    <MESSAGE value="case : update zone" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update zone" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -38,7 +38,7 @@ try {
                                        class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">
                                         <span class="btn btn-round btn-success"
                                               style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i
-                                                class="fa fa-plus"></i> ยืม-คืน สินค้า </span>
+                                                class="fa fa-plus"></i> ยืมสินค้า </span>
                                     </a>
                                 </div>
                             </div>

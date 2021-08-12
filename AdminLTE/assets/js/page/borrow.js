@@ -59,6 +59,9 @@ var form_validte = $("#form_modal").validate({
     },
     Type_BorrowOrReturn:{
       required: true,
+    },
+    Have_To_Return:{
+      required: true,
     }
   },
   messages: {
@@ -71,6 +74,7 @@ var form_validte = $("#form_modal").validate({
     Type_BorrowOrReturn: {
       required: "กรุณาใส่ข้อมูล",
     }
+
   },
   errorPlacement: function (error, element) {
     {
@@ -95,6 +99,7 @@ function modalShow(type, selectID = null) {
       title = "ยืมสินค้า";
       $('#button_modal').attr("data-id","");
       $('#Type_BorrowOrReturn').val('1');
+
       $('#devDetail_BorrowOrReturns').show();
       break;
     case 'edit':

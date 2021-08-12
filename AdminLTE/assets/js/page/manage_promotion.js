@@ -62,6 +62,9 @@ var form_validte = $("#form_promotionmanage").validate({
     Price_Unit_Promotion: {
       required: true,
     },
+    Have_To_Return: {
+      required: true,
+    },
     action: "required"
   },
   messages: {
@@ -75,6 +78,9 @@ var form_validte = $("#form_promotionmanage").validate({
       required: "กรุณาใส่ข้อมูล",
     },
     Price_Unit_Promotion: {
+      required: "กรุณาใส่ข้อมูล",
+    },
+    Have_To_Return: {
       required: "กรุณาใส่ข้อมูล",
     },
     action: "กรุณาใส่ข้อมูล"
@@ -121,6 +127,10 @@ function promotionmanageShow(type, ID_Promotion = null) {
           $('#Name_Promotion').val(response.data.Name_Promotion);
           $('#Unit_Promotion').val(response.data.Unit_Promotion);
           $('#Price_Unit_Promotion').val(response.data.Price_Unit_Promotion);
+          // case: dropdown
+          $('#Have_To_Return')
+            .val(response.data.Have_To_Return)
+            .trigger('change');
 
           // set id
           $('#button_promotionmanageModal').attr("data-id", ID_Promotion);

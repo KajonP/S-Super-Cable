@@ -29,6 +29,14 @@
                         <label for="Price_Unit_Promotion" class="col-form-label">ราคาต่อชิ้น:<span class="text-danger" >*</span></label>
                         <input type="number" class="form-control" id="Price_Unit_Promotion" name="Price_Unit_Promotion" value=""  required="required" min="0">
                     </div>
+                    <div class="form-group ">
+                        <label for="Have_To_Return" class="col-form-label">ต้องคืนหรือไม่:<span class="text-danger" >*</span></label>
+                        <select  class="form-control" id="Have_To_Return" name="Have_To_Return" >
+                            <option value="">--กรุณาเลือก--</option>
+                            <option value="1">คืน</option>
+                            <option value="0">ไม่คืน</option>
+                        </select>
+                    </div>
                 </form>
             </div>
 
