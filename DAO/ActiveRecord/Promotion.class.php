@@ -6,6 +6,7 @@ class Promotion
     private $Name_Promotion;
     private $Unit_Promotion;
     private $Price_Unit_Promotion;
+    private $Have_To_Return;
     private const TABLE = "promotion";
 
     //----------- Getters & Setters
@@ -47,6 +48,16 @@ class Promotion
     public function setPrice_Unit_Promotion(float $Price_Unit_Promotion)
     {
         $this->Price_Unit_Promotion = $Price_Unit_Promotion;
+    }
+
+    public function getHave_To_Return() : int
+    {
+        return $this->Have_To_Return;
+    }
+
+    public function setHave_To_Return(int $Have_To_Return)
+    {
+        $this->Have_To_Return = $Have_To_Return;
     }
     //----------- CRUD
     public static function findAll(): array

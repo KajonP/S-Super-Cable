@@ -3,9 +3,9 @@
 class Db
 {
     private static $instance = NULL;
-    private static $dsn = "mysql:dbname=project;host=localhost";
+    private static $dsn = "mysql:dbname=project_s_super_cable2;host=localhost";
     private static $user = "root";
-    private static $pass = "";
+    private static $pass = "root";
 
     private function __construct()
     {

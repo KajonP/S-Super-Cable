@@ -14,6 +14,16 @@
                 <form id="form_invManage" method='post' action='' enctype="multipart/form-data">
                 <!-- -->
                 <div class="form-group">
+                    <label>Inv No. <span class="text-danger" >*</span></label>
+                    <input type="text" name="Invoice_No" class="form-control">
+                </div>
+                <!-- -->
+                <div class="form-group">
+                    <label>บริษัท <span class="text-danger" >*</span></label>
+                    <input type="text" name="Name_Company" class="form-control">
+                </div>
+                <!-- -->
+                <div class="form-group">
                     <label>ลูกค้า</label>
                     <select class="form-control" name="ID_Company" id="ID_Company">
                         <option value="">--เลือก--</option>
@@ -76,7 +86,7 @@
                 <!-- -->
                  <div class="form-group">
                     <label>วันที่เอกสาร</label>
-                    <input type="text" name="Invoice_Date" id="Invoice_Date" class="form-control">
+                    <input type="text" autocomplete="off" name="Invoice_Date" id="Invoice_Date" class="form-control">
                 </div>
                 <!-- -->
                  <div class="form-group" style="display:none;">
@@ -90,17 +100,60 @@
                     <input type="text" name="Credit_Term_Company" id="Credit_Term_Company" class="form-control">
                 </div>
                 <!-- -->
-                <table class="table">
+                <div class="form-group">
+                    <label>Vat</label>
+                    <select class="form-control" name="Percent_Vat" id="Percent_Vat">
+                        <option value="">--เลือก--</option>
+                        <?php
+                        if(count($vat) > 0){
+                            foreach($vat as $val){
+                        ?>
+                        <option value="<?php echo $val->getPercent_Vat(); ?>"><?php echo $val->getPercent_Vat(); ?></option>
+                        <?php
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+                <fieldset style="margin-bottom:30px;">
+                    <legend>เพิ้่มรายการสินค้า</legend>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <select class="form-control" name="id_goods" id="id_goods">
+                                <option value="">--เลือกสินค้า--</option>
+                                <?php
+                                if(count($goodsList) > 0){
+                                    foreach($goodsList as $val){
+                                ?>
+                                <option value="<?php echo $val->getID_Goods(); ?>"><?php echo $val->getName_Goods(); ?></option>
+                                <?php
+                                    }
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <!-- /.col-lg-6 -->
+                        <div class="col-lg-2">
+                           <input type="text" id="qty" class="form-control" placeholder="จำนวนสินค้า">
+                        </div>
+                        <div class="col-lg-2">
+                           <button type="button" class="btn btn-block btn-primary" onclick="addItem()" >เพิ่ม</button>
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+                </fieldset>
+                <!-- -->
+                <table class="table" id="productList">
                     <thead>
                         <tr class="table-secondary">
-                        <th scope="col" style="width: 10%;">#</th>
-                        <th scope="col" style="width: 20%; font-size: 12px;">รหัสสินค้า</th>
-                        <th scope="col" style="width: 20%; font-size: 12px;">สินค้า</th>
-                        <th scope="col" class="text-center" style="width: 10%; font-size: 12px;">จำนวน</th>
-                        <th scope="col" style="width: 15%; font-size: 12px;" class="text-right">ราคา/หน่วย</th>
-                        <th scope="col" style="width: 15%; font-size: 12px;" class="text-right">รวมเป็นเงิน</th>
-                        <th scope="col" style="width: 15%; font-size: 12px;" class="text-center">&nbsp;</th>
+                            <th scope="col" style="width: 10%;">#</th>
+                            <th scope="col" style="width: 20%; font-size: 12px;">สินค้า</th>
+                            <th scope="col" class="text-center" style="width: 10%; font-size: 12px;">จำนวน</th>
+                            <th scope="col" style="width: 15%; font-size: 12px;" class="text-center">ราคา/หน่วย</th>
+                            <th scope="col" style="width: 15%; font-size: 12px;" class="text-center">รวมเป็นเงิน</th>
+                            <th scope="col" style="width: 15%; font-size: 12px;" class="text-center">&nbsp;</th>
                         </tr>
+                        <tbody></tbody>
                     </thead>
                 </table>
                 <!-- -->

@@ -53,7 +53,9 @@ class BorrowController
     {
         //print_r($_SESSION);
         $employee = $_SESSION['employee'];
-        $promotion = Promotion::listArray();
+        $promotionList = Promotion::listArray();
+        //print_r($promotion);
+        //exit;
         $borrow = BorrowOrReturn::find(['ID_Employee'=>$employee->getID_Employee()]);
         //print_r($borrow);
         //exit;
@@ -64,6 +66,13 @@ class BorrowController
 
     private function borrowInsert(){
         $access = new BorrowOrReturn();
+        $promotion = Promotion::findById($_POST['ID_Promotion']);
+        $qty = $promotion->getUnit_Promotion();
+        if($_POST['Amount_BorrowOrReturn']>$qty && $_POST['Type_BorrowOrReturn']=='1'){
+            header('Content-type: application/json');
+            echo json_encode(["status" => false, "message" => "จำนวนสินค้าไม่พอ"]);
+            exit;
+        }
         $access_params = array(
             'ID_Promotion' => $_POST['ID_Promotion'],
             'Amount_BorrowOrReturn' => $_POST['Amount_BorrowOrReturn'],

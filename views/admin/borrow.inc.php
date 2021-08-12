@@ -69,7 +69,12 @@ try {
                                                     }
 
                                                     $type = "ยืม";
-                                                     if($val->getType_BorrowOrReturn()=='2'){
+                                                    $promotion = Promotion::findById($val->getID_Promotion());
+                                                    $showBtn = 0;
+                                                    if($val->getType_BorrowOrReturn()=='1' && $promotion->getHave_To_Return()=='1'){
+                                                        $showBtn = 1;
+                                                    }
+                                                    if($val->getType_BorrowOrReturn()=='2'){
                                                         $type = "คืน";
                                                     }
                                         ?>
@@ -81,8 +86,17 @@ try {
                                                 <td><?php echo $val->getAmount_BorrowOrReturn(); ?></td>
                                                 <td><?php echo $status_approve_txt; ?></td>
                                                 <td class=" last">
-                                                <?php if($status_approve=='1'){ ?>
-                                                   
+                                                <?php if($showBtn=='1'){ ?>
+                                                    <a href="#"
+                                                       onclick="onaction_edit('<?php echo $val->getID_Promotion(); ?>')">
+                                                        <button type="button" class="btn btn-round btn-info"
+                                                                style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
+                                                            <i class="fas fa-exchange-alt"></i> คืน
+                                                        </button>
+                                                    </a>
+                                                <?php } ?>
+                                                <?php if($status_approve=='0'){ ?>
+
                                                 <?php } ?>
                                                 <?php if($status_approve=='0'){ ?>
                                                     <a href="#"

@@ -12,19 +12,20 @@
                 <div class="modal-body">
                     <div class="form-group ">
                         <label for="ID_Promotion" class="col-form-label">ยืม-คืน:<span class="text-danger" >*</span></label>
-                        <select  class="form-control" id="Type_BorrowOrReturn" name="Type_BorrowOrReturn">
+                        <select  class="form-control" id="Type_BorrowOrReturn" name="Type_BorrowOrReturn" readonly>
                             <option value="">--เลือก--</option>
                             <option value="1">ยืม</option>
                             <option value="2">คืน</option>
                         </select>
                     </div>
                     <div class="form-group ">
+
                         <label for="ID_Promotion" class="col-form-label">สินค้า:<span class="text-danger" >*</span></label>
                         <select  class="form-control" id="ID_Promotion" name="ID_Promotion">
                             <option value="">--เลือก--</option>
                             <?php
-                            if(count($promotion)>0){
-                                foreach($promotion as $val){
+                            if(count($promotionList)>0){
+                                foreach($promotionList as $val){
                             ?>
                              <option value="<?php echo $val->getID_Promotion(); ?>"><?php echo $val->getName_Promotion(); ?></option>
                             <?php
@@ -33,7 +34,7 @@
                             ?>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="devDetail_BorrowOrReturns">
                         <label for="Detail_BorrowOrReturns" class="col-form-label">รายละเอียดการยืม:</label>
                         <textarea class="form-control" name="Detail_BorrowOrReturn" id="Detail_BorrowOrReturns" rows="5" cols="60"></textarea>
                     </div>

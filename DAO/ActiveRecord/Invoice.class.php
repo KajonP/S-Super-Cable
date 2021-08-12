@@ -256,7 +256,7 @@ class Invoice
         }
         $query = substr($query, 0, -1);
         $query .= " WHERE ID_Invoice = '" . $ID_Invoice . "'";
-        //echo $query;exit();
+        
         $con = Db::getInstance();
         if ($con->exec($query)) {
             return array("status" => true);
@@ -275,6 +275,56 @@ class Invoice
         } else {
             return array("status" => false);
         }
+    }
+    # ดึง Id ล่าสุด
+    public static function maxId(): ?Invoice
+    {
+        $con = Db::getInstance();
+        $query = "SELECT * FROM " . self::TABLE . " ORDER BY ID_Invoice DESC LIMIT 1";
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Invoice");
+        $stmt->execute();
+        if ($prod = $stmt->fetch()) {
+            return $prod;
+        }
+        return null;
+    }
+
+    public static function customerReport($Cluster_Shop_ID,$startDate,$endDate)
+    {
+        $con = Db::getInstance();
+        $where = " invoice.Invoice_Date BETWEEN '".$startDate."' AND '".$endDate."'";
+        $where .= " AND cluster_shop.Cluster_Shop_ID='".$Cluster_Shop_ID."' ";
+        $query = "SELECT SUM(Grand_Total) AS TOTAL_SUM FROM invoice 
+                    LEFT JOIN company ON company.ID_Company = invoice.ID_Company 
+                    LEFT JOIN cluster_shop ON cluster_shop.Cluster_Shop_ID = company.Cluster_Shop_ID 
+                    WHERE ".$where." ";
+        //echo $query;
+        //exit;
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Invoice");
+        $stmt->execute();
+        $total = array();
+        while ($prod = $stmt->fetch()) {
+            $total = $prod->TOTAL_SUM;
+        }
+        return $total;
+    }
+
+    public static function customerNotMovingReport($startDate,$endDate) : array
+    {
+        $con = Db::getInstance();
+        $where = "SELECT invoice.ID_Company FROM invoice WHERE invoice.Invoice_Date BETWEEN '".$startDate."' 
+                    AND '".$endDate."'  ";
+        $query = "SELECT * FROM company WHERE company.ID_Company NOT IN (".$where.") ";
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Company");
+        $stmt->execute();
+        $rows = array();
+        while ($prod = $stmt->fetch()) {
+            $rows[] = $prod;
+        }
+        return $rows;
     }
 
 }

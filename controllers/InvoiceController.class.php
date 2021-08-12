@@ -40,6 +40,13 @@ class InvoiceController
                     echo $result;
                 }
                 break;
+            case "download" :
+                $ID_Invoice = $_GET["ID_Invoice"];
+                if (!empty($ID_Invoice)) {
+                    $result = $this->$action($ID_Invoice);
+                    echo $result;
+                }
+                break;
             default:
                 break;
         }
@@ -48,10 +55,49 @@ class InvoiceController
     {
         # สร้างใบเสนอราคา
         $access_invoice = new Invoice();
-
-        $invoice_result = $access_invoice->create_invoice(
-            $params
-        );
+    
+        $invoice_result = $access_invoice->create_invoice([
+            'Invoice_No' => $params['Invoice_No'],
+            'Invoice_Date' => '2020-01-12',
+            'Credit_Term_Company' => $params['Credit_Term_Company'],
+            'Name_Company' =>  isset($params['Name_Company']) ? $params['Name_Company'] : '' ,
+            'Contact_Name_Company' =>  $params['Contact_Name_Company'],
+            'Address_Company' =>  $params['Address_Company'],
+            'PROVINCE_ID' => '',
+            'AMPHUR_ID' => '',
+            'Email_Company' => $params['Email_Company'],
+            'Tel_Company' => $params['Tel_Company'],
+            'Tax_Number_Company' => $params['Tax_Number_Company'],
+            'Vat_Type' => 'novat',
+            'Percent_Vat' => isset($params['Percent_Vat']) ? $params['Percent_Vat'] : '',
+            'Vat' => isset($params['Vat']) ? $params['Vat'] : '',
+            'Discount' => isset($params['Discount']) ? $params['Discount'] : '',
+            'Total' => isset($params['Total']) ? $params['Total'] : '',
+            'Grand_Total' => isset($params['Grand_Total']) ? $params['Grand_Total'] : '',
+            'ID_Company' => isset($params['ID_Company']) ? $params['ID_Company'] : '',
+            'ID_Setting_Vat' => isset($params['ID_Setting_Vat']) ? $params['ID_Setting_Vat'] : '1'
+        ]);
+        
+        $get_inv = Invoice::maxId();
+        //print_r($get_inv);
+        $inv_id = $get_inv->getID_Invoice();
+        $qty = $params['qty_array'];
+        $access_invoice_detail = new Invoice_Detail();
+        if($invoice_result['status']==true){
+            if(count($params['goods_array'])>0){
+                foreach($params['goods_array'] as $key => $item){
+                    $goods = Goods::findById($item);
+                    $access_invoice_detail->create_invoice_detail([
+                        'Name_Goods' => $goods->getName_Goods(),
+                        'Quantity_Goods' => $qty[$key],
+                        'Price_Goods' => $goods->getPrice_Goods(),
+                        'Total' => $qty[$key]*$goods->getPrice_Goods(),
+                        'ID_Goods' => $item,
+                        'ID_Invoice' => $inv_id
+                    ]);
+                }
+            }
+        }
         return json_encode($invoice_result);
     }
     private function edit_invoice($params, $ID_Invoice)
@@ -59,8 +105,48 @@ class InvoiceController
         # อัปเดตสินค้าส่งเสริมการขาย
         $access_invoice = new Invoice();
         $invoice_result = $access_invoice->edit_invoice(
-            $params, $ID_Invoice
+            [
+                'Invoice_No' => $params['Invoice_No'],
+                'Invoice_Date' => isset($params['Invoice_Date']) ? $params['Invoice_Date'] : '2020-01-12',
+                'Credit_Term_Company' => $params['Credit_Term_Company'],
+                'Name_Company' =>  isset($params['Name_Company']) ? $params['Name_Company'] : '' ,
+                'Contact_Name_Company' =>  $params['Contact_Name_Company'],
+                'Address_Company' =>  $params['Address_Company'],
+                'PROVINCE_ID' => '',
+                'AMPHUR_ID' => '',
+                'Email_Company' => $params['Email_Company'],
+                'Tel_Company' => $params['Tel_Company'],
+                'Tax_Number_Company' => $params['Tax_Number_Company'],
+                'Vat_Type' => 'novat',
+                'Percent_Vat' => isset($params['Percent_Vat']) ? $params['Percent_Vat'] : '',
+                'Vat' => isset($params['Vat']) ? $params['Vat'] : '',
+                'Discount' => isset($params['Discount']) ? $params['Discount'] : '',
+                'Total' => isset($params['Total']) ? $params['Total'] : '',
+                'Grand_Total' => isset($params['Grand_Total']) ? $params['Grand_Total'] : '',
+                'ID_Company' => isset($params['ID_Company']) ? $params['ID_Company'] : '',
+                'ID_Setting_Vat' => isset($params['ID_Setting_Vat']) ? $params['ID_Setting_Vat'] : '1'
+            ], $ID_Invoice
         );
+
+        $inv_id = $ID_Invoice;
+        $qty = $params['qty_array'];
+        $access_invoice_detail = new Invoice_Detail();
+        Invoice_Detail::delete_invoice_detail_by_inv($inv_id);
+        if($invoice_result['status']==true){
+            if(count($params['goods_array'])>0){
+                foreach($params['goods_array'] as $key => $item){
+                    $goods = Goods::findById($item);
+                    $access_invoice_detail->create_invoice_detail([
+                        'Name_Goods' => $goods->getName_Goods(),
+                        'Quantity_Goods' => $qty[$key],
+                        'Price_Goods' => $goods->getPrice_Goods(),
+                        'Total' => $qty[$key]*$goods->getPrice_Goods(),
+                        'ID_Goods' => $item,
+                        'ID_Invoice' => $inv_id
+                    ]);
+                }
+            }
+        }
         echo json_encode($invoice_result);
 
     }
@@ -76,7 +162,21 @@ class InvoiceController
     private function findbyID(string $ID_Invoice)
     {
         $invoice = Invoice::findById($ID_Invoice);//echo json_encode($sales);
-
+        $invoice_detail = Invoice_Detail::findByInv($ID_Invoice);
+        $invoice_arr = [];
+        if(count($invoice_detail)>0){
+            foreach($invoice_detail as $val){
+                $invoice_arr[] = [
+                    'ID_Invoice_Detail' => $val->getID_Invoice_Detail(),
+                    'Name_Goods' => $val->getName_Goods(),
+                    'Quantity_Goods' => $val->getQuantity_Goods(),
+                    'Price_Goods' => $val->getPrice_Goods(),
+                    'Total' => $val->getTotal(),
+                    'ID_Goods' => $val->getID_Goods(),
+                    'ID_Invoice' => $val->getID_Invoice()
+                ];
+            }
+        }
 
         $data_sendback = array(
             "ID_Invoice" => $invoice->getID_Invoice(),
@@ -99,6 +199,7 @@ class InvoiceController
             "Grand_Total" => $invoice->getGrand_Total(),
             "ID_Company" => $invoice->getID_Company(),
             "ID_Setting_Vat" => $invoice->getID_Setting_Vat(),
+            "invoice_detail" => $invoice_arr
         );
         echo json_encode(array("data" => $data_sendback));
 
@@ -125,6 +226,7 @@ class InvoiceController
         $provinceList = Province::findAll();
         $amphurList = Amphur::findAll();
         $invoiceList = Invoice::findAll();
+        $vat = Setting_Vat::findAll();
         $invoice_detailList = Invoice_Detail::findAll();
         $goodsList = Goods::findAll();
         if ($employee->getUser_Status_Employee() == "Admin") {
@@ -132,5 +234,51 @@ class InvoiceController
         } else if ($employee->getUser_Status_Employee() == "Sales") {
             include Router::getSourcePath() . "views/sales/manage_invoice.inc.php";
         }
+    }
+
+    private function download(string $ID_Invoice)
+    {
+        $invoice = Invoice::findById($ID_Invoice);//echo json_encode($sales);
+        $invoice_detail = Invoice_Detail::findByInv($ID_Invoice);
+        $invoice_arr = [];
+        if(count($invoice_detail)>0){
+            foreach($invoice_detail as $val){
+                $invoice_arr[] = [
+                    'ID_Invoice_Detail' => $val->getID_Invoice_Detail(),
+                    'Name_Goods' => $val->getName_Goods(),
+                    'Quantity_Goods' => $val->getQuantity_Goods(),
+                    'Price_Goods' => $val->getPrice_Goods(),
+                    'Total' => $val->getTotal(),
+                    'ID_Goods' => $val->getID_Goods(),
+                    'ID_Invoice' => $val->getID_Invoice()
+                ];
+            }
+        }
+
+        $data_sendback = array(
+            "ID_Invoice" => $invoice->getID_Invoice(),
+            "Invoice_No" => $invoice->getInvoice_No(),
+            "Invoice_Date" => $invoice->getInvoice_Date(),
+            "Credit_Term_Company" => $invoice->getCredit_Term_Company(),
+            "Name_Company" => $invoice->getName_Company(),
+            "Contact_Name_Company" => $invoice->getContact_Name_Company(),
+            "Address_Company" => $invoice->getAddress_Company(),
+            "PROVINCE_ID" => $invoice->getPROVINCE_ID(),
+            "AMPHUR_ID" => $invoice->getAMPHUR_ID(),
+            "Email_Company" => $invoice->getEmail_Company(),
+            "Tel_Company" => $invoice->getTel_Company(),
+            "Tax_Number_Company" => $invoice->getTax_Number_Company(),
+            "Vat_Type" => $invoice->getVat_Type(),
+            "Percent_Vat" => $invoice->getPercent_Vat(),
+            "Vat" => $invoice->getVat(),
+            "Discount" => $invoice->getDiscount(),
+            "Total" => $invoice->getTotal(),
+            "Grand_Total" => $invoice->getGrand_Total(),
+            "ID_Company" => $invoice->getID_Company(),
+            "ID_Setting_Vat" => $invoice->getID_Setting_Vat(),
+            "invoice_detail" => $invoice_arr
+        );
+        //echo json_encode(array("data" => $data_sendback));
+        include "inv.php";
     }
 }

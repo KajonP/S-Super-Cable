@@ -66,8 +66,7 @@ try {
                                                 <td><?php echo $value->getInvoice_Date(); ?></td>
                                                 <td><?php echo number_format($value->getGrand_Total(), 2) ?></td>
                                                 <td class=" last text-center">
-                                                    <a href="#"
-                                                       onclick="onAction_downloadFile('<?php echo $value->getID_Company(); ?>')">
+                                                    <a href="index.php?controller=Invoice&action=download&ID_Invoice=<?php echo $value->getID_Invoice(); ?>">
                                                         <button type="button" class="btn btn-round btn-info"
                                                                 style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
                                                             <i class="fa fa-file-download"></i>ดาวน์โหลด
@@ -75,7 +74,7 @@ try {
                                                     </a>
 
                                                     <a href="#"
-                                                       onclick="invoicemanageShow('edit','<?php echo $value->getID_Company(); ?>')">
+                                                       onclick="invoicemanageShow('edit','<?php echo $value->getID_Invoice(); ?>')">
                                                         <button type="button" class="btn btn-round btn-warning"
                                                                 style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
                                                             <i class="fa fa-wrench"></i> เเก้ไข

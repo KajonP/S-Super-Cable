@@ -55,7 +55,7 @@ class Invoice_Detail
     }
     public function getID_Goods(): int
     {
-        return $this->Total;
+        return $this->ID_Goods;
     }
     public function setID_Goods(int $ID_Goods)
     {
@@ -81,6 +81,19 @@ class Invoice_Detail
         $invoice_detailList = array();
         while ($prod = $stmt->fetch()) {
             $invoice_detailList[$prod->getID_Invoice_Detail()] = $prod;
+        }
+        return $invoice_detailList;
+    }
+    public static function findByInv($ID_Invoice): array
+    {
+        $con = Db::getInstance();
+        $query = "SELECT * FROM " . self::TABLE . " WHERE ID_Invoice= '$ID_Invoice' ";
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Invoice_Detail");
+        $stmt->execute();
+        $invoice_detailList = array();
+        while ($prod = $stmt->fetch()) {
+            $invoice_detailList[] = $prod;
         }
         return $invoice_detailList;
     }
@@ -143,6 +156,17 @@ class Invoice_Detail
     public function delete_invoice_detail($ID_Invoice_Detail)
     {
         $query = "DELETE FROM " . self::TABLE . " WHERE ID_Invoice_Detail = '{$ID_Invoice_Detail}' ";
+        $con = Db::getInstance();
+        if ($con->exec($query)) {
+            return array("status" => true);
+        } else {
+            return array("status" => false);
+        }
+    }
+
+    public function delete_invoice_detail_by_inv($ID_Invoice)
+    {
+        $query = "DELETE FROM " . self::TABLE . " WHERE ID_Invoice = '{$ID_Invoice}' ";
         $con = Db::getInstance();
         if ($con->exec($query)) {
             return array("status" => true);

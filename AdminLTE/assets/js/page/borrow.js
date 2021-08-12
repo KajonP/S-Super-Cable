@@ -94,6 +94,8 @@ function modalShow(type, selectID = null) {
     case 'create':
       title = "ยืมสินค้า";
       $('#button_modal').attr("data-id","");
+      $('#Type_BorrowOrReturn').val('1');
+      $('#devDetail_BorrowOrReturns').show();
       break;
     case 'edit':
       title = "เเก้ไขสินค้า";
@@ -134,7 +136,7 @@ function onaction_insert() {
         Swal.fire({
           icon: 'error',
           title: 'ขออภัย...',
-          text: 'มีบางอย่างผิดพลาด , อาจจะมีข้อมูลอยู่ในฐานข้อมูลเเล้ว , โปรดลองอีกครั้ง',
+          text: res.message,
           confirmButtonText: 'ตกลง',
         }).then((result) => {
           location.reload();
@@ -190,5 +192,16 @@ function onaction_delete(id){
 
     }
   })
+}
+
+function onaction_edit(id){
+  $('#modelTitle').html("คืนสินค้า");
+  /* set button event  */
+  $('#button_modal').attr("data-status", 'create');
+  /* modal show  */
+  $('#formDataModal').modal('show');
+  $('#Type_BorrowOrReturn').val('2');
+  $('#devDetail_BorrowOrReturns').hide();
+  //$('#ID_Promotion').val(id);
 }
 
