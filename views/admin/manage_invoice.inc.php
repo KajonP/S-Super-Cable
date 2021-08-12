@@ -81,7 +81,7 @@ try {
                                                         </button>
                                                     </a>
                                                     <a href="#"
-                                                       onclick="onaction_deleteinvoice('<?php echo $value->getID_Company(); ?>')">
+                                                       onclick="onaction_deleteinvoice('<?php echo $value->getID_Invoice(); ?>')">
                                                         <button type="button" class="btn btn-round btn-danger"
                                                                 style=" font-size: 13px; padding: 0 10px; margin-bottom: inherit;width:96px !important;">
                                                             <i class="fa fa-trash"></i> ลบ

@@ -235,6 +235,8 @@ class Invoice
         }
         $values = substr($values, 0, -1);
         $query = "INSERT INTO " . self::TABLE . " ({$columns}) VALUES ($values)";
+        //echo $query;
+        //exit;
         //return $query;
         # execute query
         if ($con->exec($query)) {

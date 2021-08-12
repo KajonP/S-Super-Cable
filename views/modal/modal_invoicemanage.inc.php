@@ -18,10 +18,7 @@
                     <input type="text" name="Invoice_No" class="form-control">
                 </div>
                 <!-- -->
-                <div class="form-group">
-                    <label>บริษัท <span class="text-danger" >*</span></label>
-                    <input type="text" name="Name_Company" class="form-control">
-                </div>
+
                 <!-- -->
                 <div class="form-group">
                     <label>ลูกค้า</label>
@@ -39,10 +36,7 @@
                     </select>
                 </div>
                 <!-- -->
-                <div class="form-group">
-                    <label>สถานะ</label>
-                    <input type="text" class="form-control">
-                </div>
+
                 <!-- -->
                 <div class="form-group" style="display:none;">
                     <label>จำนวนเงิน</label>
@@ -54,10 +48,7 @@
                     <input type="text" name="Tax_Number_Company" id="Tax_Number_Company" class="form-control">
                 </div>
                 <!-- -->
-                <div class="form-group" style="display:none;">
-                    <label>สาขา</label>
-                    <input type="text" class="form-control">
-                </div>
+
                 <!-- -->
                 <div class="form-group">
                     <label>ที่อยู่ลูกค้า</label>

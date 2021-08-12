@@ -88,8 +88,8 @@ tr:nth-child(even) {
 <?php
 $html = ob_get_contents();
 $mpdf->WriteHTML($html);
-$mpdf->Output("./download/report_customer.pdf");
+$mpdf->Output("./download/report_customer_notmoving.pdf");
 
-header('location:./download/report_customer.pdf');
+header('location:./download/report_customer_notmoving.pdf');
 exit(0);
 ?>

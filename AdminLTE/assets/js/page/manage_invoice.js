@@ -3,7 +3,7 @@ var columns = [
   {"width": "5%", "class": "text-center"},
   {"width": "5%", "class": "text-center"},
   {"width": "5%", "class": "text-center"},
-  {"width": "5%", "class": "text-center"},
+  {"width": "20%", "class": "text-center"},
 ]
 
 var dataTable_ = $("#tbl_invoicemanagement").DataTable({
@@ -74,16 +74,16 @@ var form_validte = $("#form_invManage").validate({
 
 
 function invoicemanageShow(type, ID_Message ) {
- 
+
   var title = "" ;
 
   /* clear old form value */
- 
+
 
     switch(type)
     {
       case "create":
-        title = "สร้าง Invoice";
+        title = "สร้างใบเสนอราคา";
 
         // set id
         $('#button_invManageModal').attr("data-id", null);
@@ -95,7 +95,7 @@ function invoicemanageShow(type, ID_Message ) {
       case "edit":
 
         // แก้ไขข่าวสาร
-        title = "แก้ไข Invoice";
+        title = "แก้ไขใบเสนอราคา";
 
         //clear error if exists
         //form_validte.resetForm();
@@ -209,7 +209,7 @@ function invoicemanageShow(type, ID_Message ) {
   function onaction_createoredit(ID_Goods = null) {
 
     var type = $('#button_invManageModal').attr("data-status");
-   
+
     var form = $('#form_invManage')[0];
     var formData = new FormData(form);
 
@@ -262,7 +262,7 @@ function invoicemanageShow(type, ID_Message ) {
           //alert("Edit");
           var ID_Invoice = $("#button_invManageModal").attr("data-id");
           var url_string = "index.php?controller=Invoice&action=edit_invoice&ID_Invoice="+ID_Invoice;
-         
+
           if (!$("#form_invManage").validate().form()) {
           Swal.fire({
             icon: 'error',
@@ -309,7 +309,7 @@ function invoicemanageShow(type, ID_Message ) {
       // ..
       break;
     }
-    
+
   }
 
 function get_inv_to_edit(id){
@@ -364,7 +364,7 @@ function get_inv_to_edit(id){
             $("#productList").append(html);
           }
         }
-      
+
       },
       error: function (xhr, status, exception) {
         //console.log(xhr);
