@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update have to return promotion">
-      <change afterPath="$PROJECT_DIR$/download/report_customer.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Invoice.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Invoice.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/InvoiceController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/InvoiceController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report-customer-not-moving.php" beforeDir="false" afterPath="$PROJECT_DIR$/report-customer-not-moving.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sidebar_profile.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sidebar_profile.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/modal/modal_invoicemanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_invoicemanage.inc.php" afterDir="false" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update inovice">
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_invoice.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_invoice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,14 +226,7 @@
       <workItem from="1628762877686" duration="40000" />
       <workItem from="1628768028855" duration="5981000" />
       <workItem from="1628775885948" duration="389000" />
-      <workItem from="1628776871719" duration="752000" />
-    </task>
-    <task id="LOCAL-00038" summary="case : change controller and resize show images">
-      <created>1623523568533</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1623523568533</updated>
+      <workItem from="1628776871719" duration="1131000" />
     </task>
     <task id="LOCAL-00039" summary="case : change controller and resize show images">
       <created>1623523588802</created>
@@ -577,7 +564,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628770581886</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="case : update inovice">
+      <created>1628777934886</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1628777934887</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,7 +591,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : update user news" />
     <MESSAGE value="case : update footer" />
     <MESSAGE value="case : update news and company and report" />
     <MESSAGE value="case : update download file" />
@@ -622,7 +615,8 @@
     <MESSAGE value="case : update xls and input disable" />
     <MESSAGE value="case : update zone" />
     <MESSAGE value="case : update have to return promotion" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : update have to return promotion" />
+    <MESSAGE value="case : update inovice" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update inovice" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

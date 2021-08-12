@@ -371,8 +371,48 @@ function get_inv_to_edit(id){
       }
     });
 }
+function onaction_deleteinvoice(ID_Invoice) {
+  Swal.fire({
+    title: 'คุณเเน่ใจใช่ไหม?',
+    text: "คุณต้องการลบข้อมูลนี้ใช่ไหม?",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'ตกลง',
+    cancelButtonText: 'ยกเลิก'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      $.ajax({
+        url: "index.php?controller=Invoice&action=delete_invoice",
+        data: {
+          "ID_Invoice": ID_Invoice
+        },
+        type: "POST",
+        dataType: 'json',
+        async: false,
+        success: function (data, status) {
+          if (data.status == true) {
+            Swal.fire(
+              'ลบเรียบร้อย!',
+              'ข้อมูลคุณถูกลบเรียบร้อยเเล้ว',
+              'success'
+            ).then((result) => {
+              location.reload();
 
-$('input[name="Invoice_Date"]').datepicker({
+            });
+          }
+
+        },
+        error: function (xhr, status, exception) {
+          //console.log(xhr);
+        }
+      });
+
+    }
+  })
+
+}
+  $('input[name="Invoice_Date"]').datepicker({
     format: 'yyyy-mm-dd'
 });
-
