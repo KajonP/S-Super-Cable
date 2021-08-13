@@ -147,7 +147,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link">
+                        <a href="index.php?controller=reportcustomer&action=customer" class="nav-link">
                             <i class="nav-icon fas fa-store"></i>
                             <p>เปอร์เซ็นของกลุ่มลูกค้า </p>
                         </a>
@@ -164,7 +164,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link">
+                        <a href="index.php?controller=reportcustomernotmoving&action=customer_not_moving" class="nav-link">
                             <i class="nav-icon fas fa-store"></i>
                             <p>ลูกค้าที่ไม่เคลื่อนไหว </p>
                         </a>

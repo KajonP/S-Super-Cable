@@ -63,7 +63,8 @@ try {
                                             <tr>
                                                 <td><?php echo $value->getInvoice_No(); ?></td>
                                                 <td><?php echo $value->getName_Company(); ?></td>
-                                                <td><?php echo $value->getInvoice_Date(); ?></td>
+                                                <td><?php $date = date_create($value->getInvoice_Date());
+                                                    echo date_format($date, 'd/m/Y'); ?></td>
                                                 <td><?php echo number_format($value->getGrand_Total(), 2) ?></td>
                                                 <td class=" last text-center">
                                                     <a href="index.php?controller=Invoice&action=download&ID_Invoice=<?php echo $value->getID_Invoice(); ?>">
