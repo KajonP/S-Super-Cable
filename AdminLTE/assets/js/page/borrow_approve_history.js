@@ -1,10 +1,10 @@
 var columns = [
+  {"width": "5%", "class": "text-center"},
+  {"width": "20%", "class": "text-center"},
+  {"width": "5%", "class": "text-center"},
+  {"width": "20%", "class": "text-center"},
   {"width": "25%", "class": "text-center"},
-  {"width": "25%", "class": "text-center"},
-  {"width": "25%", "class": "text-center"},
-  {"width": "25%", "class": "text-center"},
-  {"width": "25%", "class": "text-center"},
-  {"width": "25%", "class": "text-right"},
+  {"width": "5%", "class": "text-right"},
   {"width": "25%", "class": "text-center"},
 ]
 
@@ -65,7 +65,7 @@ var form_validte = $("#form_modal").validate({
     Amount_BorrowOrReturn: {
       required: "กรุณาใส่ข้อมูล",
     }
-  }, 
+  },
   errorPlacement: function (error, element) {
     {
       error.insertAfter(element)

@@ -92,6 +92,9 @@ function  awardManageShow(type, ID_Award ) {
 
           // set id
           $('#button_awardManageModal').attr("data-id", null);
+          $('#form_awardManage input').attr('disabled', false);
+          $('#form_awardManage input').attr('readonly',false);
+          $('#form_awardManage select').attr("disabled", false);
           form_validte.resetForm();
 
           break;

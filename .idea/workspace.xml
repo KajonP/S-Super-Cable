@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : delete invoice">
-      <change afterPath="$PROJECT_DIR$/download/inv.pdf" afterDir="false" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update sales">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/borrow_approve_history.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/borrow_approve_history.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_award.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_award.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download/inv.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/inv.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download/report_borroworreturn.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/report_borroworreturn.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sales/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sales/sidebar_menu.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/admin/manage_invoice.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_invoice.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/report_customer.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/report_customer.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,13 +236,7 @@
       <workItem from="1628775885948" duration="389000" />
       <workItem from="1628776871719" duration="2371000" />
       <workItem from="1628779374361" duration="43000" />
-    </task>
-    <task id="LOCAL-00040" summary="case : crud goods">
-      <created>1623527093641</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1623527093641</updated>
+      <workItem from="1628837007189" duration="4742000" />
     </task>
     <task id="LOCAL-00041" summary="case : crud file (can't upload)">
       <created>1623634940405</created>
@@ -574,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628778214057</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="case : update sales">
+      <created>1628837166927</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1628837166927</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +601,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : update news and company and report" />
     <MESSAGE value="case : update download file" />
     <MESSAGE value="case : update date format+icon dashboard in sale and user" />
     <MESSAGE value="case : change FileController.class.php" />
@@ -619,7 +625,8 @@
     <MESSAGE value="case : update have to return promotion" />
     <MESSAGE value="case : update inovice" />
     <MESSAGE value="case : delete invoice" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : delete invoice" />
+    <MESSAGE value="case : update sales" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update sales" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

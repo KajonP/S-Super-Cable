@@ -41,7 +41,8 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="pages/company.html" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=Invoice&action=manage_invoice"; ?>"
+                           class="nav-link">
                             <i class="nav-icon fas fa-file-invoice"></i>
                             <p>
                                 เสนอราคา

@@ -188,6 +188,10 @@ function companymanageShow(type, ID_Company = null) {
 
       // set id
       $('#button_companymanageModal').attr("data-id", null);
+      $('#form_companymanage textarea').attr("disabled", false);
+      $('#form_companymanage textarea').attr("readonly", false);
+
+
       break;
     case 'edit':
       title = "เเก้ไขบริษัทลูกค้า ";

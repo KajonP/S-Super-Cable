@@ -121,8 +121,6 @@ var data = {
     labels: <?php echo $cluster_array; ?>,
     datasets: [
         {
-
-            label: "ยืม",
             backgroundColor: <?php echo $bg_array; ?>,
             data: <?php echo $company_array; ?>
         },
