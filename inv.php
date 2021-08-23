@@ -59,7 +59,7 @@ body {
 </style>
 </head>
 <body>
-  <div style="text-align: center;"><h2>ใบแจ้งหนี้</h2></div>
+  <div style="text-align: center;"><h2>ใบเสนอราคา</h2></div>
     <table width="100%" border="0">
       <tr>
         <td width="50%">
@@ -70,7 +70,7 @@ body {
         <td width="50%" style="text-align:right;">
           Invoice No : <?php echo $data_sendback['Address_Company']; ?>
           <br/>
-          วันที่ : <?php echo $data_sendback['Invoice_Date']; ?>
+          วันที่ : <?php $date = date_create($data_sendback['Invoice_Date']) ;echo date_format($date, 'd/m/Y'); ?>
         </td>
       </tr>
     </table>

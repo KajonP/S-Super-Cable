@@ -68,9 +68,9 @@ try {
                                                 <td><?php echo number_format($value->getGrand_Total(), 2) ?></td>
                                                 <td class=" last text-center">
                                                     <a href="index.php?controller=Invoice&action=download&ID_Invoice=<?php echo $value->getID_Invoice(); ?>">
-                                                        <button type="button" class="btn btn-round btn-info"
+                                                        <button type="button" class="btn btn-round btn-primary"
                                                                 style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
-                                                            <i class="fa fa-file-download"></i>ดาวน์โหลด
+                                                            <i class="fa fa-file-download"></i> ดาวน์โหลด
                                                         </button>
                                                     </a>
 

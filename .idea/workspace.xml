@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update sales">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/borrow_approve_history.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/borrow_approve_history.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_award.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_award.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_company.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/Db.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/Db.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/download/inv.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/inv.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/download/report_borroworreturn.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/report_borroworreturn.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sales/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sales/sidebar_menu.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inv.php" beforeDir="false" afterPath="$PROJECT_DIR$/inv.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/admin/manage_invoice.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_invoice.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/report_customer.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/report_customer.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +42,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/views/sales" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -237,13 +233,8 @@
       <workItem from="1628776871719" duration="2371000" />
       <workItem from="1628779374361" duration="43000" />
       <workItem from="1628837007189" duration="4742000" />
-    </task>
-    <task id="LOCAL-00041" summary="case : crud file (can't upload)">
-      <created>1623634940405</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1623634940405</updated>
+      <workItem from="1628862560985" duration="961000" />
+      <workItem from="1629712973314" duration="786000" />
     </task>
     <task id="LOCAL-00042" summary="case : update sidebar">
       <created>1623637060452</created>
@@ -581,7 +572,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628837166927</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="case : update">
+      <created>1628862658121</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1628862658122</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -609,7 +607,6 @@
     <MESSAGE value="case : update database" />
     <MESSAGE value="case : change style datatable" />
     <MESSAGE value="case : update accept file" />
-    <MESSAGE value="case : update" />
     <MESSAGE value="case : update company" />
     <MESSAGE value="case : update xls" />
     <MESSAGE value="case : update sidebar(admin+sales)+crud cluster shop" />
@@ -626,7 +623,8 @@
     <MESSAGE value="case : update inovice" />
     <MESSAGE value="case : delete invoice" />
     <MESSAGE value="case : update sales" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : update sales" />
+    <MESSAGE value="case : update" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
