@@ -86,6 +86,7 @@ try {
                                                 <td><?php echo $val->getAmount_BorrowOrReturn(); ?></td>
                                                 <td><?php echo $status_approve_txt; ?></td>
                                                 <td class=" last">
+                                                    
                                                 <?php if($showBtn=='1'){ ?>
                                                     <a href="#"
                                                        onclick="onaction_edit('<?php echo $val->getID_Promotion(); ?>')">

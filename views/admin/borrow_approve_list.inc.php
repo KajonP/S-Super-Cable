@@ -78,6 +78,10 @@ try {
                                                 <td><?php echo $val->getAmount_BorrowOrReturn(); ?></td>
                                                 <td><?php echo $status_approve_txt; ?></td>
                                                 <td class=" last">
+                                                    <button onclick="onaction_edit('<?php echo $val->getID_BorrowOrReturn(); ?>')" type="button" class="btn btn-round btn-info"
+                                                                style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
+                                                            <i class="fas fa-edit"></i> แก้ไข
+                                                    </button>    
                                                 <?php if($status_approve=='0'){ ?>
                                                     <a href="#"
                                                        onclick="onaction_Approve('<?php echo $val->getID_BorrowOrReturn(); ?>')">
@@ -134,6 +138,9 @@ try {
     # modal dialog ( edit profile )
     include Router::getSourcePath() . "views/modal/modal_editprofile.inc.php";
     include Router::getSourcePath() . "templates/footer_page.inc.php";
+
+    # modal dialog ( edit borrow approve )
+    include Router::getSourcePath() . "views/modal/modal_borrow_approve_edit.inc.php";
     ?>
 
     <?php

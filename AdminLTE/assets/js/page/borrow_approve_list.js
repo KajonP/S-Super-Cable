@@ -276,3 +276,54 @@ function onaction_Approve(id){
   })
 }
 
+function onaction_edit(id){
+  
+  $('#modelTitle').html("แก้ไขข้อมูล");
+  /* set button event  */
+  $('#button_modal').attr("data-status", 'create');
+  /* modal show  */
+  $('#formDataModal2').modal('show');
+  $('#Type_BorrowOrReturn').val('2');
+  $('#devDetail_BorrowOrReturns').hide();
+  $.ajax({
+    type: "GET",
+    url: "index.php?controller=borrow&action=borrowById&ID_BorrowOrReturn=" + id,
+    processData: false,
+    contentType: false,
+    success: function (res, status, xhr) {
+      $("#Amount_BorrowOrReturn").val(res.data.Amount_BorrowOrReturn);
+      $("#ID_Promotion").val(res.data.ID_Promotion);
+      $("#hid").val(id);
+    }
+  });
+}
+
+function edit(){
+
+  $.ajax({
+    type: "POST",
+    url: "index.php?controller=borrow&action=borrow_update",
+    data: $("#form_modal2").serialize(),
+    success: function (res, status, xhr) {
+      if (res.status == true) {
+        Swal.fire({
+          icon: 'success',
+          title: 'สำเร็จ',
+          confirmButtonText: 'ตกลง',
+        }).then((result) => {
+          location.reload();
+        });
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'ขออภัย...',
+          text: 'มีบางอย่างผิดพลาด , อาจจะมีข้อมูลอยู่ในฐานข้อมูลเเล้ว , โปรดลองอีกครั้ง',
+          confirmButtonText: 'ตกลง',
+        }).then((result) => {
+          location.reload();
+        });
+      }
+    }
+  });
+}
+

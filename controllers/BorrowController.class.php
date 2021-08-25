@@ -44,6 +44,13 @@ class BorrowController
                 session_start();
                 $this->borrowApproveHistory();
                 break;
+            case "borrowById":
+                session_start();
+                $this->borrowById();
+                break;
+            case "borrow_update":
+                $this->borrow_update();
+                break;
             default:
                 break;
         }
@@ -99,6 +106,7 @@ class BorrowController
     {
         $employee = $_SESSION['employee'];
         $promotion = Promotion::listArray();
+        $promotionList = Promotion::listArray();
         $borrow = BorrowOrReturn::find(['Approve_BorrowOrReturn' => '0']);
         include Router::getSourcePath() . "views/admin/borrow_approve_list.inc.php";
     }
@@ -148,6 +156,45 @@ class BorrowController
     private function index()
     {
         include Router::getSourcePath() . "views/login.inc.php";
+    }
+
+    private function borrowById(){
+       
+        $row =  BorrowOrReturn::findById($_GET['ID_BorrowOrReturn']);
+        $data = [
+            'ID_BorrowOrReturn' => $row->getID_BorrowOrReturn(),
+            'ID_Promotion' => $row->getID_Promotion(),
+            'Amount_BorrowOrReturn' => $row->getAmount_BorrowOrReturn()
+        ];
+        header('Content-type: application/json');
+        echo json_encode(["status" => true,"data" => $data]);
+    }
+
+
+    private function borrow_update(){
+        /*
+        $borrow = BorrowOrReturn::find(['ID_BorrowOrReturn' => $_GET['id']]);
+        $borrow_qty = $borrow[0]->getAmount_BorrowOrReturn();
+        $promotion = Promotion::findById($borrow[0]->getID_Promotion());
+        if($promotion->getUnit_Promotion() < $borrow_qty && $borrow->getType_BorrowOrReturn()=='1'){
+            header('Content-type: application/json');
+            echo json_encode(["status" => false,"msg" => "จำนวนสินค้าไม่พอ"]);
+        }
+
+        if($borrow[0]->getType_BorrowOrReturn()=='1'){
+            $qty = $promotion->getUnit_Promotion() - $borrow_qty;
+        }else{
+            $qty = $promotion->getUnit_Promotion() + $borrow_qty;
+        }
+        */
+        $access = new BorrowOrReturn();
+        $result = $access->edit(['Amount_BorrowOrReturn' => $_POST['Amount_BorrowOrReturn']], $_POST['hid']);
+
+        //$access = new Promotion();
+        //$access->edit_promotion(['Unit_Promotion' => $qty],$borrow[0]->getID_Promotion());
+        header('Content-type: application/json');
+        echo json_encode(["status" => true]);
+       
     }
 
 }
