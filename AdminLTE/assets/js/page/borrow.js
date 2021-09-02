@@ -119,6 +119,8 @@ function modalShow(type, selectID = null) {
 
   /* modal show  */
   $('#formDataModal').modal('show');
+
+  $('#ID_Promotion option').attr("disabled", false);
 }
 
 
@@ -200,6 +202,7 @@ function onaction_delete(id){
 }
 
 function onaction_edit(id){
+ 
   $('#modelTitle').html("คืนสินค้า");
   /* set button event  */
   $('#button_modal').attr("data-status", 'create');
@@ -208,5 +211,17 @@ function onaction_edit(id){
   $('#Type_BorrowOrReturn').val('2');
   $('#devDetail_BorrowOrReturns').hide();
   //$('#ID_Promotion').val(id);
+  $('#ID_Promotion option').attr("disabled", true);
+  $.ajax({
+    type: "GET",
+    url: "index.php?controller=borrow&action=borrowById&ID_BorrowOrReturn=" + id,
+    processData: false,
+    contentType: false,
+    success: function (res, status, xhr) {
+      $("#Amount_BorrowOrReturn").val(res.data.Amount_BorrowOrReturn);
+      $("#ID_Promotion").val(res.data.ID_Promotion);
+      
+    }
+  });
 }
 

@@ -8,15 +8,13 @@
     </div>
 </head>
 <body>
-<div id="container">
-
-    <div id="content">
-        <?= $content ?>
+    <div class="wrapper" id="container">
+        <div id="content">
+            <?= $content ?>
+        </div>
+        <div id="footer">
+            <?php include("templates/footer.inc.php"); ?>
+        </div>
     </div>
-    <div id="footer">
-        <?php include("templates/footer.inc.php"); ?>
-    </div>
-
-</div>
 </body>
 </html>

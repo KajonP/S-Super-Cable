@@ -93,19 +93,24 @@
                 </div>
                 <!-- -->
                 <div class="form-group">
-                    <label>Vat</label>
-                    <select class="form-control" name="Percent_Vat" id="Percent_Vat">
-                        <option value="">--เลือก--</option>
-                        <?php
-                        if(count($vat) > 0){
-                            foreach($vat as $val){
-                        ?>
-                        <option value="<?php echo $val->getPercent_Vat(); ?>"><?php echo $val->getPercent_Vat(); ?></option>
-                        <?php
-                            }
-                        }
-                        ?>
+                    <label>ประเภท Vat</label>
+                    <select class="form-control" name="Vat_Type" id="Vat_Type">
+                        <option value="exclude">Exclude</option>
+                        <option value="include">Include</option>
+                        <option value="novat">Novat</option>
                     </select>
+                </div>
+                <!-- -->
+                <div class="form-group">
+                    <label>Vat</label>
+                    <?php
+                    if(count($vat) > 0){
+                        foreach($vat as $val){
+                            $vatValue = $val->getPercent_Vat();
+                        }
+                    }
+                    ?>
+                    <input type="text" name="Percent_Vat"  id="Percent_Vat" class="form-control" value="<?php echo $vatValue; ?>">
                 </div>
                 <fieldset style="margin-bottom:30px;">
                     <legend>เพิ้่มรายการสินค้า</legend>

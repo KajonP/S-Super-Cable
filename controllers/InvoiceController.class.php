@@ -63,10 +63,9 @@ class InvoiceController
     {
         # สร้างใบเสนอราคา
         $access_invoice = new Invoice();
-    
         $invoice_result = $access_invoice->create_invoice([
             'Invoice_No' => $params['Invoice_No'],
-            'Invoice_Date' => '2020-01-12',
+            'Invoice_Date' => isset($params['Invoice_Date']) ? $params['Invoice_Date'] : '' ,
             'Credit_Term_Company' => $params['Credit_Term_Company'],
             'Name_Company' =>  isset($params['Name_Company']) ? $params['Name_Company'] : '' ,
             'Contact_Name_Company' =>  $params['Contact_Name_Company'],
@@ -76,7 +75,7 @@ class InvoiceController
             'Email_Company' => $params['Email_Company'],
             'Tel_Company' => $params['Tel_Company'],
             'Tax_Number_Company' => $params['Tax_Number_Company'],
-            'Vat_Type' => 'novat',
+            'Vat_Type' => isset($params['Vat_Type']) ? $params['Vat_Type'] : '0',
             'Percent_Vat' => isset($params['Percent_Vat']) ? $params['Percent_Vat'] : '0',
             'Vat' => isset($params['Vat']) ? $params['Vat'] : '0',
             'Discount' => isset($params['Discount']) ? $params['Discount'] : '0',
@@ -109,7 +108,12 @@ class InvoiceController
             }
 
             $percent_Vat = isset($params['Percent_Vat']) ? $params['Percent_Vat'] : '0';
-            $vat = $Total*($percent_Vat/100);
+            $vat = 0;
+            if($params['Vat_Type']=='exclude'){
+                $vat = $Total*($percent_Vat/100);
+            }else if($params['Vat_Type']=='include'){
+                $vat = $Total*($percent_Vat/107);
+            }
             $GrandTotal = $Total+$vat;
             $invoice_result = $access_invoice->edit_invoice(
                 [

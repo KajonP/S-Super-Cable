@@ -77,11 +77,11 @@ try {
                                                 <td><?php echo $val->getDetail_BorrowOrReturn(); ?></td>
                                                 <td><?php echo $val->getAmount_BorrowOrReturn(); ?></td>
                                                 <td><?php echo $status_approve_txt; ?></td>
-                                                <td class=" last">
-                                                    <button onclick="onaction_edit('<?php echo $val->getID_BorrowOrReturn(); ?>')" type="button" class="btn btn-round btn-info"
+                                                <td class="last">
+                                                    <!--<button onclick="onaction_edit('<?php echo $val->getID_BorrowOrReturn(); ?>')" type="button" class="btn btn-round btn-info"
                                                                 style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
                                                             <i class="fas fa-edit"></i> แก้ไข
-                                                    </button>    
+                                                    </button>-->   
                                                 <?php if($status_approve=='0'){ ?>
                                                     <a href="#"
                                                        onclick="onaction_Approve('<?php echo $val->getID_BorrowOrReturn(); ?>')">
