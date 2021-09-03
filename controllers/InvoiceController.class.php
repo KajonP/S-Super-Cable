@@ -112,7 +112,7 @@ class InvoiceController
             if($params['Vat_Type']=='exclude'){
                 $vat = $Total*($percent_Vat/100);
             }else if($params['Vat_Type']=='include'){
-                $vat = $Total*($percent_Vat/107);
+                $vat = $Total*($percent_Vat/(100+$percent_Vat));
             }
             $GrandTotal = $Total+$vat;
             $invoice_result = $access_invoice->edit_invoice(
