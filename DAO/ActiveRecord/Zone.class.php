@@ -57,9 +57,9 @@ class Zone
     {
         $con = Db::getInstance();
         $query = "SELECT * FROM " . self::TABLE. " inner join Employee on " . self::TABLE.".ID_Employee = Employee.ID_Employee
-        inner join Company on ". self::TABLE.".ID_Company = Company.ID_Company inner join PROVINCE on ". self::TABLE.".PROVINCE_ID = PROVINCE.PROVINCE_ID
-        inner join AMPHUR on ". self::TABLE.".AMPHUR_ID = AMPHUR.AMPHUR_ID";
-        //echo $query;exit();
+            inner join PROVINCE on ". self::TABLE.".PROVINCE_ID = PROVINCE.PROVINCE_ID
+            left join AMPHUR on ". self::TABLE.".AMPHUR_ID = AMPHUR.AMPHUR_ID";
+       
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Zone");
         $stmt->execute();
@@ -69,6 +69,7 @@ class Zone
         }
         return $zoneList;
     }
+
     public static function findById(string $ID_Zone): ?Zone
     {
         $con = Db::getInstance();
@@ -108,13 +109,14 @@ class Zone
     {
         $query = "UPDATE " . self::TABLE . " SET ";
         foreach ($params as $prop => $val) {
-            if (!empty($val)) {
+            //if (!empty($val)) {
                 $query .= " $prop='$val',";
-            }
+            //}
         }
         $query = substr($query, 0, -1);
         $query .= " WHERE ID_Zone = '" . $ID_Zone . "'";
-        //echo $query;exit();
+        //echo $query;
+        //exit();
         $con = Db::getInstance();
         if ($con->exec($query)) {
             return array("status" => true);

@@ -48,24 +48,39 @@ class ZoneController
     {
         # สร้างโซน
         $access_zone = new Zone();
-
-        $zone_result = $access_zone->create_zone(
-            $params
-        );
+        if(count($params['ID_Employee']) > 0){
+            foreach($params['ID_Employee'] as $val){
+                $data_arr = array(
+                                'ID_Employee' => $val,
+                                'AMPHUR_ID' => $params['AMPHUR_ID'],
+                                'PROVINCE_ID' => $params['PROVINCE_ID']
+                            );
+                $zone_result = $access_zone->create_zone($data_arr);
+            }
+        }
         return json_encode($zone_result);
     }
     private function edit_zone($params, $ID_Zone)
     {
         # อัปเดตโซน
+        $am = isset($params['AMPHUR_ID']) ? $params['AMPHUR_ID'] : NULL;
+        if($params['PROVINCE_ID']!='1'){
+            $am = NULL;
+        }
+        $data_arr = array(
+                        'ID_Employee' => $params['ID_Employee'][0],
+                        'AMPHUR_ID' => $am,
+                        'PROVINCE_ID' => $params['PROVINCE_ID']
+                    );
         $access_zone = new Zone();
         $zone_result = $access_zone->edit_zone(
-            $params, $ID_Zone
+            $data_arr, $ID_Zone
         );
         echo json_encode($zone_result);
 
     }
 
-    private function delete_promotion($ID_Zone)
+    private function delete_zone($ID_Zone)
     {
         # ลบโซน
         $access_zone = new Zone();
@@ -82,7 +97,7 @@ class ZoneController
         $data_sendback = array(
             "ID_Zone" => $zone->getID_Zone(),
             "ID_Employee" => $zone->getID_Employee(),
-            "ID_Company" => $zone->getID_Company(),
+            //"ID_Company" => $zone->getID_Company(),
             "AMPHUR_ID" => $zone->getAMPHUR_ID(),
             "PROVINCE_ID" => $zone->getPROVINCE_ID(),
 
@@ -106,7 +121,6 @@ class ZoneController
     {
         session_start();
         $employee = $_SESSION["employee"];
-
         # retrieve data
         $zoneList = Zone::findAll();
         $employeeList = Employee::findAll();

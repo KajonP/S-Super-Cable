@@ -3,7 +3,6 @@ var columns = [
   {"width": "20%", "class": "text-center"},
   {"width": "20%", "class": "text-center"},
   {"width": "20%", "class": "text-center"},
-  {"width": "20%", "class": "text-center"},
 
 ]
 var dataTable_ = $('#tbl_zonemanagement').DataTable({
@@ -45,6 +44,15 @@ var dataTable_ = $('#tbl_zonemanagement').DataTable({
   "columns": columns
 
 
+});
+
+$("#ID_Employee").select2();
+$("#province").change(function() {
+  if($(this).val()=='1'){
+    //$("#amphure_id").prop('disabled', false);
+  }else{
+    //$("#amphure_id").prop('disabled', true);
+  }
 });
 
 var form_validte = $("#form_zonemanage").validate({
@@ -100,12 +108,13 @@ function zonemanageShow(type, ID_Zone = null) {
 
       // set id
       $('#button_zonemanageModal').attr("data-id", null);
+      $("#ID_Employee").attr('multiple','multiple');
       break;
     case 'edit':
       title = "เเก้ไขโซนพนักงาน";
       //clear error if exists
       form_validte.resetForm();
-
+      $("#ID_Employee").removeAttr('multiple');
       $.ajax({
         url: "index.php?controller=Zone&action=findbyID_Zone",
         data: {
@@ -251,10 +260,10 @@ function onaction_createorupdate(ID_Zone = null) {
 
       break;
     case 'edit':
-      var ID_Promotion = $("#button_zonemanageModal").attr("data-id");
+      var ID_Zone = $("#button_zonemanageModal").attr("data-id");
 
       var url_string = "index.php?controller=Zone&action=edit_zone&ID_Zone=" + ID_Zone;
-      if (!$("#form_promotionmanage").validate().form()) {
+      if (!$("#form_zonemanage").validate().form()) {
         Swal.fire({
           icon: 'error',
           title: 'ขออภัย...',

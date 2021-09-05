@@ -51,21 +51,27 @@ try {
                                         <tr>
                                             <th>ไอดีโซนพนักงาน</th>
                                             <th>ชื่อพนักงาน</th>
-                                            <th>ชื่อบริษัท</th>
+                                            <!--<th>ชื่อบริษัท</th>-->
                                             <th>จังหวัด/อำเภอ</th>
                                             <th>การกระทำ</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <?php foreach ($zoneList as $key => $value) {
+                                        <?php 
+                                      
+                                        foreach ($zoneList as $key => $value) {
 
                                             ?>
                                             <tr>
                                                 <td><?php echo $value->getID_Zone(); ?></td>
-                                                <td><?php echo $value->getID_Name(); ?></td>
-                                                <td><?php echo $value->getName_Company(); ?></td>
-                                                <td><?php echo $value->getAMPHUR_Name(). "/" .$value->getPROVINCE_Name(); ?></td>
-
+                                                <td><?php echo $value->Name_Employee.' '.$value->Surname_Employee; ?></td>
+                                                <!--<td><?php echo ''; ?></td>-->
+                                                <td>
+                                                    <?php if($value->AMPHUR_NAME!=''){
+                                                        echo $value->AMPHUR_NAME.'/';
+                                                    } ?>
+                                                    <?php echo $value->PROVINCE_NAME; ?>
+                                                </td>
                                                 <td class=" last text-center">
 
                                                     <a href="#"
@@ -130,6 +136,7 @@ try {
     // print_r(ob_get_clean());exit();
     include Router::getSourcePath() . "templates/layout.php";
 } catch (Throwable $e) { // PHP 7++
+    print_r($e);
     echo "การเข้าถึงถูกปฏิเสธ: ไม่ได้รับอนุญาตให้ดูหน้านี้";
     exit(1);
 }
