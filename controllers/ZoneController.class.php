@@ -52,7 +52,7 @@ class ZoneController
             foreach($params['ID_Employee'] as $val){
                 $data_arr = array(
                                 'ID_Employee' => $val,
-                                'AMPHUR_ID' => $params['AMPHUR_ID'],
+                                'AMPHUR_ID' => isset($params['AMPHUR_ID']) ? $params['AMPHUR_ID'] : NULL,
                                 'PROVINCE_ID' => $params['PROVINCE_ID']
                             );
                 $zone_result = $access_zone->create_zone($data_arr);
