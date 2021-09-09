@@ -113,7 +113,7 @@ try {
     exit(1);
 }
 ?>
-
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.4.0/dist/chartjs-plugin-datalabels.min.js"></script> 
 <script>
 var ctx = document.getElementById('myChart').getContext('2d');
 
@@ -128,21 +128,33 @@ var data = {
 
 };
 
+
+ var options = {
+   tooltips: {
+     enabled: false
+   },
+   plugins: {
+     datalabels: {
+       formatter: (value, ctx) => {
+         let datasets = ctx.chart.data.datasets;
+         if (datasets.indexOf(ctx.dataset) === datasets.length - 1) {
+           let sum = datasets[0].data.reduce((a, b) => a + b, 0);
+           let percentage = Math.round((value / sum) * 100) + '%';
+           return percentage;
+         } else {
+           return percentage;
+         }
+       },
+       color: '#fff',
+     }
+   }
+ };
+
+
 var myChart = new Chart(ctx, {
     type: 'pie',
     data: data,
-    options: {
-        responsive: true,
-        plugins: {
-            legend: {
-                position: 'top',
-            },
-            title: {
-                display: true,
-                text: 'Chart.js Pie Chart'
-            }
-        }
-    },
+    options: options
 });
 
 $('input[name="date_start"]').datepicker({

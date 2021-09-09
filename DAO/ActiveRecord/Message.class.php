@@ -154,7 +154,8 @@ class Message
     public static function fetchAllwithInnerLimit($emp_id,$start,$limit): array
     {
         $con = Db::getInstance();
-        $query = "SELECT * FROM " . self::TABLE . " inner join message_status on message.ID_Message = message_status.ID_Message"." where message_status.ID_Employee = '".$emp_id."' LIMIT ".$start." , ".$limit;
+        $query = "SELECT * FROM " . self::TABLE . " inner join message_status on message.ID_Message = message_status.ID_Message"." where message_status.ID_Employee = '".$emp_id."' GROUP BY message_status.ID_Message LIMIT ".$start." , ".$limit.' ';
+       
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
         $stmt->execute();

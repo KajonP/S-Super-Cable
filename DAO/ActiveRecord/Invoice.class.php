@@ -332,7 +332,7 @@ class Invoice
     public static function customerNotMovingReport($startDate,$endDate) : array
     {
         $con = Db::getInstance();
-        $where = "SELECT invoice.ID_Company FROM invoice WHERE invoice.Invoice_Date BETWEEN '".$startDate."' 
+        $where = "SELECT sales.ID_Company FROM sales WHERE sales.Date_Sales BETWEEN '".$startDate."' 
                     AND '".$endDate."'  ";
         $query = "SELECT * FROM company WHERE company.ID_Company NOT IN (".$where.") ";
         $stmt = $con->prepare($query);

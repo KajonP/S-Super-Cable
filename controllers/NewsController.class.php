@@ -48,21 +48,21 @@ class NewsController
             case "show_news_status":
                 session_start();
                 $employee = $_SESSION['employee'];
-
+                $show_row = 4;
                 if ($employee->getUser_Status_Employee() == "Admin") {
                     include Router::getSourcePath() . "views/index_admin.inc.php";
                 } else if ($employee->getUser_Status_Employee() == "Sales") {
                     # retrieve data
                     $countAll = Message::fetchCountAll($employee->getID_Employee());
                     $n = $countAll[0];
-                    $count_page = ceil($n/4);
+                    $count_page = ceil($n/$show_row);
                     $start = 0;
                     $get_page = 1;
                     if(isset($_GET['page'])){
                         $get_page = $_GET['page'];
                     }
-                    $start = ($get_page*4)-4;
-                    $message = Message::fetchAllwithInnerLimit($employee->getID_Employee(),$start,4);
+                    $start = ($get_page*$show_row)-$show_row;
+                    $message = Message::fetchAllwithInnerLimit($employee->getID_Employee(),$start,$show_row);
                     //echo $n.':'.$count_page;
                     //exit;
                     include Router::getSourcePath() . "views/sales/index_news.inc.php";
@@ -70,14 +70,14 @@ class NewsController
                     # retrieve data
                     $countAll = Message::fetchCountAll($employee->getID_Employee());
                     $n = $countAll[0];
-                    $count_page = ceil($n/4);
+                    $count_page = ceil($n/$show_row);
                     $start = 0;
                     $get_page = 1;
                     if(isset($_GET['page'])){
                         $get_page = $_GET['page'];
                     }
-                    $start = ($get_page*4)-4;
-                    $message = Message::fetchAllwithInnerLimit($employee->getID_Employee(),$start,4);
+                    $start = ($get_page*$show_row)-$show_row;
+                    $message = Message::fetchAllwithInnerLimit($employee->getID_Employee(),$start,$show_row);
                     //echo $n.':'.$count_page;
                     //exit;
                     include Router::getSourcePath() . "views/sales/index_news.inc.php";
