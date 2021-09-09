@@ -109,14 +109,13 @@ var form_validte = $("#form_newsManage").validate({
 // show dialog create or edit
 function  newsManageShow(type, ID_Message ) {
   var title = "" ;
-
+  //$('.dz-preview').remove();
+ 
   /* clear old form value */
   $('#form_newsManage')[0].reset();
   $("#thumnails_award_pic").attr("src", "");
   $("#thumnails_award_pic2").attr("src", "");
   $("#thumnails_award_pic3").attr("src", "");
-
-    myDropzone.removeAllFiles( true );
 
     switch(type)
     {
@@ -182,6 +181,7 @@ function onAction_deleteMessage(ID_Message) {
 
 
 function onaction_createoredit(ID_Message = null) {
+
 
   for (var i in CKEDITOR.instances) {
     CKEDITOR.instances[i].updateElement();
@@ -265,6 +265,7 @@ function onaction_createoredit(ID_Message = null) {
   */
   var ImgFile = myDropzone.getFilesWithStatus(Dropzone.ADDED);
   ImgFile.forEach((o)=>{
+     alert('vv');
      data.append("profile_news[]", o);
   });
 
@@ -493,7 +494,6 @@ function delete_news(ID_Message)
 }
 
 function addImgView(f){
-  $('.dz-preview').remove();
   if(f.length > 0){
     for(var i=0;i<f.length;i++){
       var mocFile = {
@@ -505,7 +505,17 @@ function addImgView(f){
         myDropzone.emit("addedfile",mocFile);
         myDropzone.emit("thumbnail",mocFile,f[i]);
         myDropzone.emit("complete",mocFile);
+        filesList.push(mocFile);
       }
     }
   }
 }
+
+$('#newsManageModal').on('hidden.bs.modal', function () {
+  //window.alert('hidden event fired!');
+  if(filesList.length>0){
+    for(var i=0; i<filesList.length;i++){
+      myDropzone.removeFile(filesList[i]);
+    }
+  }
+});

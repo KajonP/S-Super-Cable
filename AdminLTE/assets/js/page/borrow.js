@@ -212,7 +212,8 @@ function onaction_edit(id){
   $('#Type_BorrowOrReturn').val('2');
   $('#devDetail_BorrowOrReturns').hide();
   //$('#ID_Promotion').val(id);
-  $('#ID_Promotion option').attr("disabled", true);
+  //$('#ID_Promotion option').attr("disabled", true);
+  $('#ID_Promotion').attr("readonly", "readonly");
   $.ajax({
     type: "GET",
     url: "index.php?controller=borrow&action=borrowById&ID_BorrowOrReturn=" + id,
