@@ -31,7 +31,7 @@
                         </script>
                     </div>
                     
-                    <div class="form-group">
+                    <div class="form-group" style="display: none;">
                         <!-- select image to upload -->
                         <img id="thumnails_new_profile" browsid="profile_news" class="thumnails-premise"  src="" style=""/>
                         
@@ -50,7 +50,9 @@
                         <!-- chosse file -->
                         <input id="profile_news3" name="profile_news3" type="file"  style="" onchange="preview3();" >          
                     </div>
-
+                    <div class="dropzone" id="dropzoneId">
+                       
+                    </div>
                 </form>
 
             </div>

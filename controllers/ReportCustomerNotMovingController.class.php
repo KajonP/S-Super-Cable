@@ -33,8 +33,20 @@ class ReportCustomerNotMovingController
     {
         //print_r($_SESSION);
         $employee = $_SESSION['employee'];
-        $date_start = isset($_GET['date_start']) ? $_GET['date_start'] : date('Y-m-d');
-        $date_end =  isset($_GET['date_end']) ? $_GET['date_end'] : date('Y-m-d');
+        $y = date('Y');
+        $date_start = $y.'-01-01';
+        $date_end = $y.'-03-31';
+        //กำหนดช่วงวันที่จะค้นหา
+        if(isset($_GET['type']) && $_GET['type']=='1'){
+            $date_start = $y.'-01-01';
+            $date_end = $y.'-03-31';
+        }else if(isset($_GET['type']) && $_GET['type']=='2'){
+            $date_start = $y.'-01-01';
+            $date_end = $y.'-06-31';
+        }else if(isset($_GET['type']) && $_GET['type']=='3'){
+            $date_start = $y.'-01-01';
+            $date_end = $y.'-12-31';
+        }
         $company = Invoice::customerNotMovingReport($date_start,$date_end);
         //print_r($company);
         include Router::getSourcePath() . "views/admin/report_customer_not_moving.inc.php";
@@ -44,8 +56,19 @@ class ReportCustomerNotMovingController
     private function customer_not_moving_print()
     {
         $employee = $_SESSION['employee'];
-        $date_start = isset($_GET['date_start']) ? $_GET['date_start'] : date('Y-m-d');
-        $date_end =  isset($_GET['date_end']) ? $_GET['date_end'] : date('Y-m-d');
+        $date_start = $y.'-01-01';
+        $date_end = $y.'-03-31';
+        $y = date('Y');
+        if(isset($_GET['type']) && $_GET['type']=='1'){
+            $date_start = $y.'-01-01';
+            $date_end = $y.'-03-31';
+        }else if(isset($_GET['type']) && $_GET['type']=='2'){
+            $date_start = $y.'-01-01';
+            $date_end = $y.'-06-31';
+        }else if(isset($_GET['type']) && $_GET['type']=='3'){
+            $date_start = $y.'-01-01';
+            $date_end = $y.'-12-31';
+        }
         $company = Invoice::customerNotMovingReport($date_start,$date_end);
         //print_r($company);
         include "report-customer-not-moving.php";

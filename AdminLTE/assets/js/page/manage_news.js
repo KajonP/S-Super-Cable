@@ -47,6 +47,23 @@ var dataTable_ = $("#tbl_news").DataTable({
 });
 
 
+var filesList = [];
+var myDropzone = new Dropzone("div#dropzoneId",{ 
+  url: "/file/post",
+  acceptedFiles: 'image/*',
+  maxFiles: 3,
+  autoQueue: false,
+  addRemoveLinks: true, 
+  init: function(){
+    this.on("addedfile",function(file){
+      myDropzone.emit("complete",file);
+      filesList.push(file);
+    });
+    this.on("maxfilesexceeded", function(file){
+      this.removeFile(file);
+    });
+  }
+});
 
 var form_validte = $("#form_newsManage").validate({
   rules: {
@@ -98,6 +115,8 @@ function  newsManageShow(type, ID_Message ) {
   $("#thumnails_award_pic").attr("src", "");
   $("#thumnails_award_pic2").attr("src", "");
   $("#thumnails_award_pic3").attr("src", "");
+
+    myDropzone.removeAllFiles( true );
 
     switch(type)
     {
@@ -181,6 +200,8 @@ function onaction_createoredit(ID_Message = null) {
   var file_data2 = $('input[name="profile_news2"]')[0].files;
   var file_data3 = $('input[name="profile_news3"]')[0].files;
 
+
+  /*
   if (type == "create" )
   {
       //File data
@@ -240,6 +261,13 @@ function onaction_createoredit(ID_Message = null) {
 
   }
 
+  alert(filesList);
+  */
+  var ImgFile = myDropzone.getFilesWithStatus(Dropzone.ADDED);
+  ImgFile.forEach((o)=>{
+     data.append("profile_news[]", o);
+  });
+
   switch(type) {
     case 'create':
       create_news(data);
@@ -256,6 +284,7 @@ function onaction_createoredit(ID_Message = null) {
 function create_news(formData)
 {
   var url_string = "index.php?controller=News&action=create_news";
+
       if (!$("#form_newsManage").validate().form()) {
         Swal.fire({
           icon: 'error',
@@ -323,7 +352,8 @@ function get_news_to_edit(ID_Message) {
       $("#thumnails_new_profile").attr("src", response.data.Picture_Message);
       $("#thumnails_new_profile2").attr("src", response.data.Picture_Message2);
       $("#thumnails_new_profile3").attr("src", response.data.Picture_Message3);
-
+      var fArr = [response.data.Picture_Message,response.data.Picture_Message2,response.data.Picture_Message3];
+      addImgView(fArr);
     },
     error: function (xhr, status, exception) {
       console.log(xhr);
@@ -460,4 +490,22 @@ function delete_news(ID_Message)
 
     }
   })
+}
+
+function addImgView(f){
+  $('.dz-preview').remove();
+  if(f.length > 0){
+    for(var i=0;i<f.length;i++){
+      var mocFile = {
+          id: i,
+          name: f[i],
+          path: f[i]
+        };
+      if(f[i]!=''){
+        myDropzone.emit("addedfile",mocFile);
+        myDropzone.emit("thumbnail",mocFile,f[i]);
+        myDropzone.emit("complete",mocFile);
+      }
+    }
+  }
 }

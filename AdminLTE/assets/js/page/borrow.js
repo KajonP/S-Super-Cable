@@ -105,6 +105,7 @@ function modalShow(type, selectID = null) {
     case 'edit':
       title = "เเก้ไขสินค้า";
       //clear error if exists
+      onaction_edit(selectID);
       break;
     default:
       // ..

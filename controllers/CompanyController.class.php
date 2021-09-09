@@ -263,6 +263,7 @@ class CompanyController
             "Contact_Name_Company" => $company->getContact_Name_Company(),
             "IS_Blacklist" => $company->getIS_Blacklist(),
             "Cause_Blacklist" => $company->getCause_Blacklist(),
+            "ID_Employee" => $company->getID_Employee()
 
         );
         echo json_encode(array("data" => $data_sendback));
@@ -290,6 +291,7 @@ class CompanyController
         $provinceList = Province::findAll();
         $amphurList = Amphur::findAll();
         $cluster_shopList = Cluster_Shop::findAll();
+        $employeeList = Employee::findAll();
         include Router::getSourcePath() . "views/admin/manage_company.inc.php";
     }
     //หน้า export ไฟล์ตัวอย่าง excel บริษัทลูกค้า

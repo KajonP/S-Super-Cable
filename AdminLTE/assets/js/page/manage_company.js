@@ -191,6 +191,7 @@ function companymanageShow(type, ID_Company = null) {
       $('#form_companymanage textarea').attr("disabled", false);
       $('#form_companymanage textarea').attr("readonly", false);
 
+      $('#ID_Employee').val('');
 
       break;
     case 'edit':
@@ -268,6 +269,7 @@ function onaction_getinptval(ID_Company) {
         .val(response.data.IS_Blacklist)
         .trigger('change');
       $('#Cause_Blacklist').val(response.data.Cause_Blacklist);
+      $('#ID_Employee').val(response.data.ID_Employee);
       // set id
       $('#button_companymanageModal').attr("data-id", ID_Company);
     },

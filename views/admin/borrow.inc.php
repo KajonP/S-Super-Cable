@@ -89,7 +89,7 @@ try {
                                                     
                                                 <?php if($showBtn=='1'){ ?>
                                                     <a href="#"
-                                                       onclick="onaction_edit('<?php echo $val->getID_Promotion(); ?>')">
+                                                       onclick="onaction_edit('<?php echo $val->getID_BorrowOrReturn(); ?>')">
                                                         <button type="button" class="btn btn-round btn-info"
                                                                 style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
                                                             <i class="fas fa-exchange-alt"></i> คืน

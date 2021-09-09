@@ -238,7 +238,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="./index.html"
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=reportcustomerhistory&action=index"; ?>"
                            class="nav-link">
                             <i class="nav-icon fas fa-history"></i>
                             <p>
@@ -275,7 +275,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link">
+                        <a href="index.php?controller=AverageOne&action=manage_sale" class="nav-link">
                             <i class="nav-icon fas fa-wallet "></i>
                             <p>แนวโน้มยอดขาย 1 </p> จากค่าเฉลี่ย
                         </a>
@@ -316,7 +316,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link">
+                        <a href="index.php?controller=salesstatistics&action=manage_sale" class="nav-link">
                             <i class="nav-icon fas fa-wallet"></i>
                             <p>ยอดขายเเต่ละคน</p>
                         </a>
@@ -332,7 +332,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link">
+                        <a href="index.php?controller=SalesCustomerStatistics&action=manage_sale" class="nav-link">
                             <i class="nav-icon fas fa-wallet"></i>
                             <p>เปรียบเทียบยอดขาย 1</p> โดยเลือกจากบริษัทลูกค้า
                         </a>
@@ -340,7 +340,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link">
+                        <a href="index.php?controller=EmpStatistics&action=manage_sale" class="nav-link">
                             <i class="nav-icon fas fa-wallet"></i>
                             <p>เปรียบเทียบยอดขาย 2</p>  โดยเลือกจากพนักงานขาย
                         </a>

@@ -36,7 +36,7 @@ try {
                                     <form class="form-horizontal" method='get' action='' enctype="multipart/form-data">
                                         <input type="hidden" name="controller" value="reportcustomernotmoving">
                                         <input type="hidden" name="action" value="customer_not_moving">
-                                        <div class="form-group row">
+                                        <!--<div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label">วันที่เริ่ม</label>
                                             <div class="col-sm-3">
                                                 <input type="text" name="date_start" class="form-control" value="<?php echo $date_start ?>"  >
@@ -44,6 +44,19 @@ try {
                                             <label for="" class="col-sm-2 col-form-label">วันที่สิ้นสุด</label>
                                             <div class="col-sm-3">
                                                 <input type="text"  name="date_end" class="form-control" value="<?php echo $date_end ?>">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                 <button type="submit" class="btn btn-info">ค้นหา</button>
+                                            </div>
+                                        </div>-->
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-2 col-form-label" style="text-align:right;">ค้นหา</label>
+                                            <div class="col-sm-3">
+                                                <select class="form-control" name="type">
+                                                    <option value="1">3 เดือน</option>
+                                                    <option value="2">6 เดือน</option>
+                                                    <option value="3">1 ปี</option>
+                                                </select>
                                             </div>
                                             <div class="col-sm-2">
                                                  <button type="submit" class="btn btn-info">ค้นหา</button>

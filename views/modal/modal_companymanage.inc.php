@@ -110,6 +110,20 @@
                         <label for="Cause_Blacklist" class="col-form-label">สาเหตุที่ติดบัญชีดำ:</label>
                         <input type="text" class="form-control" id="Cause_Blacklist" name="Cause_Blacklist" value="">
                     </div>
+                    <div class="form-group">
+                        <label for="ID_Employee" class="col-form-label">พนักงาน:<span class="text-danger" >*</span></label>
+                        <select class="form-control" name="ID_Employee" id="ID_Employee">
+                            <option value="" selected disabled>-กรุณาเลือกพนักงาน-</option>
+                            <?php
+
+                            foreach ($employeeList as $item) {
+                                ?>
+                                <option value="<?php echo $item->getID_Employee();?>"><?php echo $item->getName_Employee().' '.$item->getSurname_Employee(); ?></option>
+                                <?php
+                            }
+                            ?>
+                        </select>
+                    </div>
                 </form>
             </div>
 
