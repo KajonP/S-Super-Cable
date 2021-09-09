@@ -54,6 +54,9 @@
 <script src="AdminLTE/plugins/select2/js/select2.js"></script>
 <script src="AdminLTE/plugins/select2/js/i18n/th.js"></script>
 
+<!--  dropzone-->
+<script src="AdminLTE/plugins/dropzone/dropzone.js"></script>
+
 
 
 

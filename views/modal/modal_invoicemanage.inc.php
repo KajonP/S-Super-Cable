@@ -113,7 +113,7 @@
                     <input type="text" name="Percent_Vat"  id="Percent_Vat" class="form-control" value="<?php echo $vatValue; ?>">
                 </div>
                 <fieldset style="margin-bottom:30px;">
-                    <legend>เพิ้่มรายการสินค้า</legend>
+                    <legend>เพิ่มรายการสินค้า</legend>
                     <div class="row">
                         <div class="col-lg-8">
                             <select class="form-control" name="id_goods" id="id_goods">

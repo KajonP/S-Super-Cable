@@ -78,6 +78,7 @@ function invoicemanageShow(type, ID_Message ) {
   var title = "" ;
 
   /* clear old form value */
+  $('#form_invManage')[0].reset();
 
 
     switch(type)
@@ -431,7 +432,7 @@ function get_company(ID_Company){
       success: function (response, status) {
         //alert(JSON.stringify(response.data));
         var data = response.data;
-        
+
         $('#Credit_Term_Company').val(data.Credit_Term_Company);
         $('#Name_Company').val(data.Name_Company);
         $('#Contact_Name_Company').val(data.Contact_Name_Company);
@@ -443,7 +444,7 @@ function get_company(ID_Company){
         $('#Tax_Number_Company').val(data.Tax_Number_Company);
         $('#ID_Company').val(data.ID_Company);
         //$('#ID_Setting_Vat').val(data.ID_Setting_Vat);
-        
+
 
       },
       error: function (xhr, status, exception) {

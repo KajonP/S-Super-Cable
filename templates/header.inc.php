@@ -27,6 +27,8 @@
     <!-- select2 -->
     <link rel="stylesheet" href="AdminLTE/plugins/select2/css/select2.css">
     <link rel="stylesheet" href="AdminLTE/plugins/select2/css/select2.min.css">
+    <!--  dropzone-->
+    <link rel="stylesheet" type="text/css" href="AdminLTE/plugins/dropzone/dropzone.css">
 
 
 

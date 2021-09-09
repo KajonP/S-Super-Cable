@@ -238,7 +238,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=reportcustomerhistory&action=index"; ?>"
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=reportcustomerhistory&action=customer"; ?>"
                            class="nav-link">
                             <i class="nav-icon fas fa-history"></i>
                             <p>

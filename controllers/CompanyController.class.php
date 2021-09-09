@@ -291,7 +291,6 @@ class CompanyController
         $provinceList = Province::findAll();
         $amphurList = Amphur::findAll();
         $cluster_shopList = Cluster_Shop::findAll();
-        $employeeList = Employee::findAll();
         include Router::getSourcePath() . "views/admin/manage_company.inc.php";
     }
     //หน้า export ไฟล์ตัวอย่าง excel บริษัทลูกค้า

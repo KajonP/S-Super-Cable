@@ -152,6 +152,5 @@ try {
     exit(1);
 }
 ?>
-<link rel="stylesheet" type="text/css" href="./dropzone/dist/dropzone.css">
-<script src="./dropzone/dist/dropzone.js"></script>
+
 <script type="text/javascript" src="AdminLTE/assets/js/page/manage_news.js"></script>
