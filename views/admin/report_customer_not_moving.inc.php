@@ -53,9 +53,9 @@ try {
                                             <label for="" class="col-sm-2 col-form-label" style="text-align:right;">ค้นหา</label>
                                             <div class="col-sm-3">
                                                 <select class="form-control" name="type">
-                                                    <option value="1" <?php if($_GET['type']=='1'){ ?> selected <?php } ?>>3 เดือน</option>
-                                                    <option value="2" <?php if($_GET['type']=='2'){ ?> selected <?php } ?>>6 เดือน</option>
-                                                    <option value="3" <?php if($_GET['type']=='3'){ ?> selected <?php } ?>>1 ปี</option>
+                                                    <option value="1" <?php if(isset($_GET['type']) and $_GET['type']=='1'){ ?> selected <?php } ?>>3 เดือน</option>
+                                                    <option value="2" <?php if(isset($_GET['type']) and $_GET['type']=='2'){ ?> selected <?php } ?>>6 เดือน</option>
+                                                    <option value="3" <?php if(isset($_GET['type']) and $_GET['type']=='3'){ ?> selected <?php } ?>>1 ปี</option>
                                                 </select>
                                             </div>
                                             <div class="col-sm-2">
