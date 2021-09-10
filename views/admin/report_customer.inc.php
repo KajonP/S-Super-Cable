@@ -113,7 +113,6 @@ try {
     exit(1);
 }
 ?>
- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.4.0/dist/chartjs-plugin-datalabels.min.js"></script> 
 <script>
 var ctx = document.getElementById('myChart').getContext('2d');
 

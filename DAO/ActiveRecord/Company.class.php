@@ -224,20 +224,6 @@ class Company
     {
         $this->Cluster_Shop_Name = $Cluster_Shop_Name;
     }
-
-    public function getID_Employee(): string
-    {
-        return $this->ID_Employee;
-    }
-    public function setID_Employee(string $ID_Employee)
-    {
-        $this->$ID_Employee = $ID_Employee;
-    }
-
-
-
-
-
     //----------- CRUD
     public static function findAll(): array
     {

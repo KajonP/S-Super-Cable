@@ -263,8 +263,6 @@ class CompanyController
             "Contact_Name_Company" => $company->getContact_Name_Company(),
             "IS_Blacklist" => $company->getIS_Blacklist(),
             "Cause_Blacklist" => $company->getCause_Blacklist(),
-            "ID_Employee" => $company->getID_Employee()
-
         );
         echo json_encode(array("data" => $data_sendback));
 
