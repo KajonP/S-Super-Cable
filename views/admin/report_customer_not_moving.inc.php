@@ -148,17 +148,5 @@ try {
 }
 ?>
 
-<script>
 
-$('#myTable').DataTable({"searching": false});
-
-$('input[name="date_start"]').datepicker({
-    format: 'yyyy-mm-dd'
-
-});
-
-$('input[name="date_end"]').datepicker({
-    format: 'yyyy-mm-dd'
-});
-</script>
 

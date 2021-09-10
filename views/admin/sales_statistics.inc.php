@@ -85,7 +85,6 @@ try {
     include Router::getSourcePath() . "views/modal/modal_editprofile.inc.php";
     # modal dialog (zone manage )
     include Router::getSourcePath() . "templates/footer_page.inc.php";
-    include Router::getSourcePath() . "views/modal/modal_zone_manage.inc.php";
     ?>
 
     <?php
