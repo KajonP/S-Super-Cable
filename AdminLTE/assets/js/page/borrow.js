@@ -135,7 +135,7 @@ function onaction_insert() {
       if (res.status == true) {
         Swal.fire({
           icon: 'success',
-          title: 'สำเร็จ',
+          title: 'รอดำเนินการอนุมัติ',
           confirmButtonText: 'ตกลง',
         }).then((result) => {
           location.reload();
@@ -203,7 +203,7 @@ function onaction_delete(id){
 }
 
 function onaction_edit(id){
- 
+
   $('#modelTitle').html("คืนสินค้า");
   /* set button event  */
   $('#button_modal').attr("data-status", 'create');
@@ -222,7 +222,7 @@ function onaction_edit(id){
     success: function (res, status, xhr) {
       $("#Amount_BorrowOrReturn").val(res.data.Amount_BorrowOrReturn);
       $("#ID_Promotion").val(res.data.ID_Promotion);
-      
+
     }
   });
 }

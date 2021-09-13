@@ -48,12 +48,15 @@ var dataTable_ = $("#tbl_news").DataTable({
 
 
 var filesList = [];
-var myDropzone = new Dropzone("div#dropzoneId",{ 
+var myDropzone = new Dropzone("div#dropzoneId",{
   url: "/file/post",
   acceptedFiles: 'image/*',
   maxFiles: 3,
   autoQueue: false,
-  addRemoveLinks: true, 
+  addRemoveLinks: true,
+  dictDefaultMessage : 'วางไฟล์ที่นี่เพื่ออัพโหลด',
+  dictRemoveFile : 'ลบไฟล์',
+  dictInvalidFileType: 'คุณไม่สามารถอัปโหลดไฟล์ประเภทนี้ได้',
   init: function(){
     this.on("addedfile",function(file){
       myDropzone.emit("complete",file);
@@ -110,7 +113,7 @@ var form_validte = $("#form_newsManage").validate({
 function  newsManageShow(type, ID_Message ) {
   var title = "" ;
   //$('.dz-preview').remove();
- 
+
   /* clear old form value */
   $('#form_newsManage')[0].reset();
   $("#thumnails_award_pic").attr("src", "");
@@ -265,7 +268,7 @@ function onaction_createoredit(ID_Message = null) {
   */
   var ImgFile = myDropzone.getFilesWithStatus(Dropzone.ADDED);
   ImgFile.forEach((o)=>{
-     alert('vv');
+     //alert('vv');
      data.append("profile_news[]", o);
   });
 
@@ -519,3 +522,6 @@ $('#newsManageModal').on('hidden.bs.modal', function () {
     }
   }
 });
+
+
+

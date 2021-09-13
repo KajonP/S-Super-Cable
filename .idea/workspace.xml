@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : change dropzone">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : delete some function not used">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Company.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Company.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/CompanyController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/SalesStatisticsController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SalesStatisticsController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/borrow.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/borrow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/download/inv.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/inv.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/download/report_customer_notmoving.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/report_customer_notmoving.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/footer.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/report_customer.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/report_customer.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/report_customer_not_moving.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/report_customer_not_moving.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/sales_statistics.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/sales_statistics.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download/report_customer.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/report_customer.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_newsmanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_newsmanage.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,14 +242,9 @@
       <workItem from="1630980490230" duration="669000" />
       <workItem from="1631197711127" duration="7026000" />
       <workItem from="1631205393501" duration="946000" />
-      <workItem from="1631253234836" duration="2471000" />
-    </task>
-    <task id="LOCAL-00045" summary="case : update">
-      <created>1623745042147</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1623745042147</updated>
+      <workItem from="1631253234836" duration="7261000" />
+      <workItem from="1631496930273" duration="977000" />
+      <workItem from="1631498047764" duration="567000" />
     </task>
     <task id="LOCAL-00046" summary="case : update">
       <created>1623745204271</created>
@@ -591,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631204714279</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="case : delete some function not used">
+      <created>1631255908961</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1631255908961</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,8 +609,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : change FileController.class.php" />
-    <MESSAGE value="case : hide print_r" />
     <MESSAGE value="case : delete modal invoice" />
     <MESSAGE value="case : update database" />
     <MESSAGE value="case : change style datatable" />
@@ -636,7 +632,9 @@
     <MESSAGE value="case : update" />
     <MESSAGE value="case : update date format" />
     <MESSAGE value="case : change dropzone" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : change dropzone" />
+    <MESSAGE value="case : change some function not used" />
+    <MESSAGE value="case : delete some function not used" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : delete some function not used" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
