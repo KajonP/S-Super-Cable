@@ -32,14 +32,39 @@ try {
                             <div class="card-body">
                             <form id="form_search" method='post' action='' enctype="multipart/form-data" class="form-horizontal">
                                 <div class="form-group row">
-                                    <label for="ID_Employee" class="col-sm-2 col-form-label" style="text-align:right;">พนักงาน:</label>
-                                    <div class="col-sm-6">
-                                        <select class="form-control" name="ID_Employee" id="ID_Employee">
+                                    <label for="ID_Employee" class="col-sm-1 col-form-label" style="text-align:right;">บริษัท:</label>
+                                    <div class="col-sm-3">
+                                        <select class="form-control" name="ID_Company" id="ID_Company">
                                             <option value="">-กรุณาเลือกบริษัท-</option>
                                             <?php
                                                 foreach ($companyList as $item) {
                                             ?>
                                                 <option value="<?php echo $item->getID_Company();?>"><?php echo $item->getName_Company(); ?></option>
+                                            <?php
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <label for="year1" class="col-sm-1 col-form-label" style="text-align:right;">ปี:</label>
+                                    <div class="col-sm-2">
+                                        <select class="form-control" name="year1" id="year1">
+                                            <option value="">-กรุณาเลือกปี-</option>
+                                            <?php
+                                               for($i=date('Y')-4;$i<=date('Y');$i++){
+                                            ?>
+                                                <option value="<?php echo $i;?>"><?php echo $i; ?></option>
+                                            <?php
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <select class="form-control" name="year2" id="year2">
+                                            <option value="">-กรุณาเลือกปี-</option>
+                                            <?php
+                                               for($i=date('Y')-4;$i<=date('Y');$i++){
+                                            ?>
+                                                <option value="<?php echo $i;?>"><?php echo $i; ?></option>
                                             <?php
                                             }
                                             ?>

@@ -4,6 +4,7 @@ var columns = [
   {"width": "10%", "class": "text-left"},
   {"width": "10%", "class": "text-right"},
   {"width": "20%", "class": "text-center"},
+  {"width": "20%", "class": "text-center"},
   {"width": "25%", "class": "text-center"},
 
 ]

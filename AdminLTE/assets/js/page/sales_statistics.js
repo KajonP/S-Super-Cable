@@ -22,7 +22,12 @@ $("#form_search").submit(function(){
           htmlTB += '<td>ต.ค.</td>';
           htmlTB += '<td>พ.ย.</td>';
           htmlTB += '<td>ธ.ค.</td>';
+          htmlTB += '<td>รวม</td>';
           htmlTB += '</tr>';
+          var t = [];
+          for(var i=1;i<=12;i++){
+            t[i] = 0;
+          }
           $.each(data, function() {
               $.each(this, function(a,b) {
                 console.log('year',b.month[8]);
@@ -33,11 +38,33 @@ $("#form_search").submit(function(){
                 for(var i=1;i<=12;i++){
                   htmlTB += '<td>'+b.month[i]+'</td>';
                   total = total+b.month[i];
+                  t[i] = t[i]-b.month[i];
                 }
+                htmlTB += '<td>'+total+'</td>';
                 htmlTB += '</tr>';
                 valArr.push(total);
               });
           });
+          var total_all = 0;
+          for(var i=1;i<=12;i++){
+            total_all = total_all+t[i];
+          }
+          htmlTB += '<tr>';
+          htmlTB += '<td>เปรียบเทียบ</td>';
+          htmlTB += '<td>'+t[1]+'</td>';
+          htmlTB += '<td>'+t[2]+'</td>';
+          htmlTB += '<td>'+t[3]+'</td>';
+          htmlTB += '<td>'+t[4]+'</td>';
+          htmlTB += '<td>'+t[5]+'</td>';
+          htmlTB += '<td>'+t[6]+'</td>';
+          htmlTB += '<td>'+t[7]+'</td>';
+          htmlTB += '<td>'+t[8]+'</td>';
+          htmlTB += '<td>'+t[9]+'</td>';
+          htmlTB += '<td>'+t[10]+'</td>';
+          htmlTB += '<td>'+t[11]+'</td>';
+          htmlTB += '<td>'+t[12]+'</td>';
+          htmlTB += '<td>'+total_all+'</td>';
+          htmlTB += '</tr>';
           htmlTB += '</table>';
           $("#tb").html(htmlTB);
           addChart(yearArr,valArr);
@@ -53,7 +80,7 @@ function addChart(year,val){
     data: {
         labels: year,
         datasets: [{
-            label: '# of Votes',
+            label: 'ยอดขาย',
             data: val,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
