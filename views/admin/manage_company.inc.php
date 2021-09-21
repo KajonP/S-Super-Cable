@@ -94,7 +94,7 @@ try {
                                                 <td><?php echo number_format($value->getCredit_Limit_Company(), 2); ?></td>
                                            
                                                 <td><?php echo $value->getAMPHUR_NAME(). "/" .$value->getPROVINCE_NAME(); ?></td>
-                                                <td>xxx</td>
+                                                <td><?php echo $this->getEmp($value->getPROVINCE_ID(),$value->getAMPHUR_ID()); ?></td>
                                                 <td class=" last text-center">
                                                     <a href="#"
                                                        onclick="companymanageShow('view','<?php echo $value->getID_Company(); ?>')">

@@ -258,7 +258,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="index.php?controller=reportcustomer&action=customer" class="nav-link">
+                        <a href="index.php?controller=reportcustomer&action=customer2" class="nav-link">
                             <i class="nav-icon fas fa-store"></i>
                             <p>เปอร์เซ็นของกลุ่มลูกค้า </p> เเบบที่ 1
                         </a>
@@ -266,7 +266,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href=""
+                        <a href="index.php?controller=reportcustomer&action=customer"
                            class="nav-link">
                             <i class="nav-icon fas fa-store"></i>
                             <p>เปอร์เซ็นของกลุ่มลูกค้า </p>เเบบที่ 2

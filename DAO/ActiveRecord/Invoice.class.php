@@ -329,6 +329,37 @@ class Invoice
         return $total;
     }
 
+    public static function customerReport2($Cluster_Shop_ID,$startDate,$endDate)
+    {
+        $con = Db::getInstance();
+        /*
+        $where = " invoice.Invoice_Date BETWEEN '".$startDate."' AND '".$endDate."'";
+        $where .= " AND cluster_shop.Cluster_Shop_ID='".$Cluster_Shop_ID."' ";
+        $query = "SELECT SUM(Grand_Total) AS TOTAL_SUM FROM invoice 
+                    LEFT JOIN company ON company.ID_Company = invoice.ID_Company 
+                    LEFT JOIN cluster_shop ON cluster_shop.Cluster_Shop_ID = company.Cluster_Shop_ID 
+                    WHERE ".$where." ";
+        //echo $query;
+        //exit;
+        */
+        $where = " sales.Date_Sales BETWEEN '".$startDate."' AND '".$endDate."'";
+        $where .= " AND cluster_shop.Cluster_Shop_ID='".$Cluster_Shop_ID."' ";
+        $query = "SELECT COUNT(Result_Sales) AS TOTAL_SUM FROM sales
+                    LEFT JOIN company ON company.ID_Company = sales.ID_Company 
+                    LEFT JOIN cluster_shop ON cluster_shop.Cluster_Shop_ID = company.Cluster_Shop_ID 
+                    WHERE ".$where." ";
+        //echo $query;
+        //exit;
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "sales");
+        $stmt->execute();
+        $total = array();
+        while ($prod = $stmt->fetch()) {
+            $total = $prod->TOTAL_SUM;
+        }
+        return $total;
+    }
+
     public static function customerNotMovingReport($startDate,$endDate) : array
     {
         $con = Db::getInstance();

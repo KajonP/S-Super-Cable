@@ -27,7 +27,7 @@ try {
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-md-12">
-                        <h1 class="m-0">รายงานเปอร์เซ็นของกลุ่มลูกค้า 2</h1>
+                        <h1 class="m-0">รายงานเปอร์เซ็นของกลุ่มลูกค้า 1</h1>
 
                         <!-- content -->
                         <div class="card">
@@ -35,7 +35,7 @@ try {
                                 <div>
                                     <form class="form-horizontal" method='get' action='' enctype="multipart/form-data">
                                         <input type="hidden" name="controller" value="reportcustomer">
-                                        <input type="hidden" name="action" value="customer">
+                                        <input type="hidden" name="action" value="customer2">
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label">วันที่เริ่ม</label>
                                             <div class="col-sm-3">
@@ -53,7 +53,7 @@ try {
                                 </div>
                                 <canvas id="myChart" width="100%"></canvas>
                                 <div style="text-align:center; margin-top:20px;">
-                                    <a target="_blank" href="index.php?controller=reportcustomer&action=customer_print&date_start=<?php echo $_GET['date_start']; ?>&date_end=<?php echo $_GET['date_end'] ?>">ดาวน์โหลดรายงาน</a>
+                                    <a target="_blank" href="index.php?controller=reportcustomer&action=customer_print2&date_start=<?php echo $_GET['date_start']; ?>&date_end=<?php echo $_GET['date_end'] ?>">ดาวน์โหลดรายงาน</a>
                                 </div>
                             </div>
                             <!-- /.card-body -->

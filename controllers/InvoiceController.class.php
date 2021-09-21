@@ -124,6 +124,8 @@ class InvoiceController
                 $vat =  $inc_vat;
                 $Total = $Total-$vat;
                 $GrandTotal = $Total+$vat;
+            }else{
+                $GrandTotal = $Total;
             }
             $invoice_result = $access_invoice->edit_invoice(
                 [

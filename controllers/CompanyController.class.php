@@ -291,6 +291,28 @@ class CompanyController
         $cluster_shopList = Cluster_Shop::findAll();
         include Router::getSourcePath() . "views/admin/manage_company.inc.php";
     }
+    private function getEmp($province,$amphur)
+    {
+        $sql = "SELECT employee.* FROM zone LEFT JOIN employee ON employee.ID_Employee = zone.ID_Employee WHERE zone.PROVINCE_ID='".$province."'";
+        if($amphur!=''){
+            $sql .= ' AND zone.AMPHUR_ID="'.$amphur.'"';
+        }
+        $con = Db::getInstance();
+        $stmt = $con->prepare($sql);
+        //$stmt->setFetchMode(PDO::FETCH_COLUMN);
+        $stmt->execute();
+        $dataList = array();
+        $txt = '';
+        $i = 0;
+        while ($prod = $stmt->fetch()) {
+            if($i>'0'){
+                $txt .= ',';
+            }
+            $txt .= $prod['Name_Employee'].' '.$prod['Surname_Employee'];
+            $i++;
+        }
+        return $txt;
+    }
     //หน้า export ไฟล์ตัวอย่าง excel บริษัทลูกค้า
     private function export_excel_test_company($params = null)
     {

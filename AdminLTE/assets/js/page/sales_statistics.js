@@ -28,9 +28,10 @@ $("#form_search").submit(function(){
           for(var i=1;i<=12;i++){
             t[i] = 0;
           }
+          var x = 0;
+          var old = [];
           $.each(data, function() {
               $.each(this, function(a,b) {
-                console.log('year',b.month[8]);
                 yearArr.push(b.year);
                 htmlTB += '<tr>';
                 htmlTB += '<td>'+b.year+'</td>';
@@ -38,8 +39,15 @@ $("#form_search").submit(function(){
                 for(var i=1;i<=12;i++){
                   htmlTB += '<td>'+b.month[i]+'</td>';
                   total = total+b.month[i];
-                  t[i] = t[i]-b.month[i];
+                  if(x===0){
+                     old[i] = b.month[i];
+                  }
+                  if(x>0){
+                    t[i] = old[i]-b.month[i];
+                  }
                 }
+                console.log('x='+x);
+                x++;
                 htmlTB += '<td>'+total+'</td>';
                 htmlTB += '</tr>';
                 valArr.push(total);
