@@ -65,7 +65,7 @@ tr:nth-child(even) {
   <tr>
     <th>ลำดับ</th>
     <th>กลุ่มลูกค้า</th>
-    <th>จำนวนเงิน</th>
+    <th>คิดเป็นเปอร์เซ็น</th>
   <tr>
   <tbody>
   <?php

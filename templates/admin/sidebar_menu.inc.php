@@ -260,7 +260,7 @@
                     <li class="nav-item">
                         <a href="index.php?controller=reportcustomer&action=customer2" class="nav-link">
                             <i class="nav-icon fas fa-store"></i>
-                            <p>เปอร์เซ็นของกลุ่มลูกค้า </p> เเบบที่ 1
+                            <p>เปอร์เซ็นของกลุ่มลูกค้า </p> เเบบที่ 1 นับครั้งการซื้อ
                         </a>
                     </li>
                 </ul>
@@ -269,7 +269,7 @@
                         <a href="index.php?controller=reportcustomer&action=customer"
                            class="nav-link">
                             <i class="nav-icon fas fa-store"></i>
-                            <p>เปอร์เซ็นของกลุ่มลูกค้า </p>เเบบที่ 2
+                            <p>เปอร์เซ็นของกลุ่มลูกค้า </p>เเบบที่ 2 นับจากยอดขาย
                         </a>
                     </li>
                 </ul>

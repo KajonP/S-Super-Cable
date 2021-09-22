@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : delete some function not used">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : change dropzone to thai">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/borrow.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/borrow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_news.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/download/inv.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/inv.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/download/report_customer.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/report_customer.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/modal/modal_newsmanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_newsmanage.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report-customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/report-customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,13 +244,10 @@
       <workItem from="1631253234836" duration="7261000" />
       <workItem from="1631496930273" duration="977000" />
       <workItem from="1631498047764" duration="567000" />
-    </task>
-    <task id="LOCAL-00046" summary="case : update">
-      <created>1623745204271</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1623745204271</updated>
+      <workItem from="1631498647428" duration="39000" />
+      <workItem from="1631611168783" duration="1103000" />
+      <workItem from="1631789785929" duration="490000" />
+      <workItem from="1632292051437" duration="1058000" />
     </task>
     <task id="LOCAL-00047" summary="case : update">
       <created>1624013101043</created>
@@ -589,7 +585,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631255908961</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="case : change dropzone to thai">
+      <created>1631498677700</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1631498677700</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -609,7 +612,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : delete modal invoice" />
     <MESSAGE value="case : update database" />
     <MESSAGE value="case : change style datatable" />
     <MESSAGE value="case : update accept file" />
@@ -634,7 +636,8 @@
     <MESSAGE value="case : change dropzone" />
     <MESSAGE value="case : change some function not used" />
     <MESSAGE value="case : delete some function not used" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : delete some function not used" />
+    <MESSAGE value="case : change dropzone to thai" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : change dropzone to thai" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
