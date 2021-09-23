@@ -33,13 +33,25 @@ try {
                             <form id="form_search" method='post' action='' enctype="multipart/form-data" class="form-horizontal">
                                 <div class="form-group row">
                                     <label for="ID_Employee" class="col-sm-2 col-form-label" style="text-align:right;">พนักงาน:</label>
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-4">
                                         <select class="form-control" name="ID_Employee" id="ID_Employee">
                                             <option value="">-กรุณาเลือกพนักงาน-</option>
                                             <?php
                                                 foreach ($employeeList as $item) {
                                             ?>
                                                 <option value="<?php echo $item->getID_Employee();?>"><?php echo $item->getName_Employee().' '.$item->getSurname_Employee(); ?></option>
+                                            <?php
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <select class="form-control" name="year1" id="year1">
+                                            <option value="">-กรุณาเลือกปี-</option>
+                                            <?php
+                                               for($i=date('Y')-4;$i<=date('Y');$i++){
+                                            ?>
+                                                <option value="<?php echo $i;?>"><?php echo $i; ?></option>
                                             <?php
                                             }
                                             ?>
@@ -53,7 +65,7 @@ try {
                             <div id="tb">
 
                             </div>
-                            <div style="margin-top:50px;">
+                            <div style="margin-top:50px; display: none;">
                                 <canvas id="myChart" width="400" height="400"></canvas>
                             </div>
                             </div>

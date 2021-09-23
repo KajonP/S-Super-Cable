@@ -245,6 +245,30 @@ class Company
         return $companyList;
     }
 
+    public static function findSearch($name=''): array
+    {
+        $where = '';
+        if($name!=''){
+            $where = ' WHERE company.Name_Company LIKE "%'.$name.'%"';
+        }
+        $con = Db::getInstance();
+        //$query = "SELECT * FROM " . self::TABLE;
+        $query = "SELECT " . self::TABLE . ".*,province.PROVINCE_NAME
+        ,amphur.AMPHUR_NAME,cluster_shop.Cluster_Shop_Name  FROM " . self::TABLE . " 
+         LEFT JOIN province ON " . self::TABLE . ".PROVINCE_ID = province.PROVINCE_ID 
+         LEFT JOIN amphur ON " . self::TABLE . ".AMPHUR_ID = amphur.AMPHUR_ID  
+        LEFT JOIN cluster_shop ON " . self::TABLE . ".Cluster_Shop_ID = cluster_shop.Cluster_Shop_ID ".$where ;
+        //echo $query;exit();
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Company");
+        $stmt->execute();
+        $companyList = array();
+        while ($prod = $stmt->fetch()) {
+            $companyList[$prod->getID_Company()] = $prod;
+        }
+        return $companyList;
+    }
+
     public static function findById(int $ID_Company): ?Company
     {
         $con = Db::getInstance();

@@ -26,3 +26,4 @@ function preview2() {
 function preview3() {
   thumnails_award_pic3.src=URL.createObjectURL(event.target.files[0]);
 }
+

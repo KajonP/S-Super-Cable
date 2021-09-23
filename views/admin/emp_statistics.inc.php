@@ -125,7 +125,7 @@ try {
 }
 ?>
 
-<script type="text/javascript" src="AdminLTE/assets/js/page/sales_statistics.js"></script>
+<script type="text/javascript" src="AdminLTE/assets/js/page/emp_statistics.js"></script>
 <style>
 .tb_center td{
     text-align: center;

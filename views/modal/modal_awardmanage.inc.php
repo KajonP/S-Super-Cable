@@ -33,7 +33,7 @@
                         </select>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" style="display: none;">
                         <!-- set default image  -->
                         <!-- select image to upload -->
                         <img id="thumnails_award_pic" browsid="award_pic" class="thumnails-premise" src=""  style=""/>
@@ -50,8 +50,7 @@
                         <!-- chosse file -->
                         <input id="award_pic3" name="award_pic3" type="file"  style="" onchange="preview3();" >
                     </div>
-                    
-
+                    <div class="dropzone" id="dropzoneId"></div><span class="text-danger" >*อัปโหลดไฟล์ได้มากสุด 3 ไฟล์</span>
                 </form>
             </div>
 

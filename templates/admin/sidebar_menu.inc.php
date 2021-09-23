@@ -238,7 +238,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=reportcustomerhistory&action=customer"; ?>"
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=reportcompany&action=company"; ?>"
                            class="nav-link">
                             <i class="nav-icon fas fa-history"></i>
                             <p>
@@ -275,7 +275,8 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="index.php?controller=AverageOne&action=manage_sale" class="nav-link">
+                        <!--<a href="index.php?controller=AverageOne&action=manage_sale" class="nav-link">-->
+                        <a href="index.php?controller=trend&action=trend" class="nav-link">
                             <i class="nav-icon fas fa-wallet "></i>
                             <p>แนวโน้มยอดขาย 1 </p> จากค่าเฉลี่ย
                         </a>

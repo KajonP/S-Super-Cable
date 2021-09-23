@@ -414,3 +414,59 @@ function delete_award(ID_Award)
     }
   })
 }
+
+
+var filesList = [];
+var myDropzone = new Dropzone("div#dropzoneId",{
+  url: "/file/post",
+  acceptedFiles: 'image/*',
+  maxFiles: 3,
+  autoQueue: false,
+  addRemoveLinks: true,
+  dictDefaultMessage : 'วางไฟล์ที่นี่เพื่ออัพโหลด',
+  dictRemoveFile : 'ลบไฟล์',
+  dictInvalidFileType: 'คุณไม่สามารถอัปโหลดไฟล์ประเภทนี้ได้',
+  init: function(){
+    this.on("addedfile",function(file){
+      myDropzone.emit("complete",file);
+      filesList.push(file);
+    });
+    this.on("maxfilesexceeded", function(file){
+      this.removeFile(file);
+    });
+  }
+});
+
+ var ImgFile = myDropzone.getFilesWithStatus(Dropzone.ADDED);
+  ImgFile.forEach((o)=>{
+     //alert('vv');
+     data.append("profile_news[]", o);
+  });
+
+  function addImgView(f){
+  if(f.length > 0){
+    for(var i=0;i<f.length;i++){
+      var mocFile = {
+          id: i,
+          name: f[i],
+          path: f[i]
+        };
+      if(f[i]!=''){
+        myDropzone.emit("addedfile",mocFile);
+        myDropzone.emit("thumbnail",mocFile,f[i]);
+        myDropzone.emit("complete",mocFile);
+        filesList.push(mocFile);
+      }
+    }
+  }
+}
+
+$('#awardManageModal').on('hidden.bs.modal', function () {
+  //window.alert('hidden event fired!');
+  if(filesList.length>0){
+    for(var i=0; i<filesList.length;i++){
+      myDropzone.removeFile(filesList[i]);
+    }
+  }
+});
+

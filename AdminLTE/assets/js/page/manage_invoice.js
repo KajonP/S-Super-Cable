@@ -457,3 +457,7 @@ $('input[name="Invoice_Date"]').datepicker({
     format: 'yyyy-mm-dd'
 });
 
+$('#invManageModal').on('hidden.bs.modal', function () {
+    $("#productList tbody tr").remove();
+});
+
