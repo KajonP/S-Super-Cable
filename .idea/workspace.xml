@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : change dropzone to thai">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : change name">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/download/inv.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/inv.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/download/report_customer.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/report_customer.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report-customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/report-customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_award.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_award.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Award.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Award.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/InvoiceController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/InvoiceController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/manage_award.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_award.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/trend.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/trend.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_awardmanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_awardmanage.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,14 +249,11 @@
       <workItem from="1631498647428" duration="39000" />
       <workItem from="1631611168783" duration="1103000" />
       <workItem from="1631789785929" duration="490000" />
-      <workItem from="1632292051437" duration="1058000" />
-    </task>
-    <task id="LOCAL-00047" summary="case : update">
-      <created>1624013101043</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1624013101043</updated>
+      <workItem from="1632292051437" duration="1084000" />
+      <workItem from="1632293433495" duration="227000" />
+      <workItem from="1632294913952" duration="416000" />
+      <workItem from="1632643636335" duration="1377000" />
+      <workItem from="1632646722147" duration="333000" />
     </task>
     <task id="LOCAL-00048" summary="case : crud file">
       <created>1624021144470</created>
@@ -592,7 +591,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631498677700</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="case : change name">
+      <created>1632293137718</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1632293137719</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -612,7 +618,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : update database" />
     <MESSAGE value="case : change style datatable" />
     <MESSAGE value="case : update accept file" />
     <MESSAGE value="case : update company" />
@@ -637,7 +642,8 @@
     <MESSAGE value="case : change some function not used" />
     <MESSAGE value="case : delete some function not used" />
     <MESSAGE value="case : change dropzone to thai" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : change dropzone to thai" />
+    <MESSAGE value="case : change name" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : change name" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

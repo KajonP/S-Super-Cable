@@ -281,7 +281,7 @@ class InvoiceController
         if ($employee->getUser_Status_Employee() == "Admin") {
             include Router::getSourcePath() . "views/admin/manage_invoice.inc.php";
         } else if ($employee->getUser_Status_Employee() == "Sales") {
-            include Router::getSourcePath() . "views/sales/manage_invoice.inc.php";
+            include Router::getSourcePath() . "views/admin/manage_invoice.inc.php";
         }
     }
 

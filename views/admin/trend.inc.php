@@ -126,4 +126,3 @@ try {
 }
 ?>
 
-<script type="text/javascript" src="AdminLTE/assets/js/page/manage_zone.js"></script>

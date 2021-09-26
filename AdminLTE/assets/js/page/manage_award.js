@@ -53,7 +53,7 @@ var form_validte = $("#form_awardManage").validate({
       required: true,
     },
     ID_Employee: {
-      required: true,
+      //required: true,
     },
     award_pic: {
       extension: "jpg|jpeg|gif|png",
@@ -66,7 +66,7 @@ var form_validte = $("#form_awardManage").validate({
       required: "กรุณาใส่ข้อมูล",
     },
     ID_Employee: {
-      required: "กรุณาใส่ข้อมูล",
+     // required: "กรุณาใส่ข้อมูล",
     },
     award_pic: "กรุณาอัพโหลดไฟล์รูปภาพที่มีนามสกุลไฟล์คือ .png , .jpg ,.jpeg ,.gif เท่านั้น",
     action: "กรุณาใส่ข้อมูล"

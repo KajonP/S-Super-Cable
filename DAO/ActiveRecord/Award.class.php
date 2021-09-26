@@ -90,7 +90,10 @@ class Award
 
     public function getID_Employee() : string
     {
-        return $this->ID_Employee;
+        if ($this->ID_Employee == null)
+            return "-";
+        else
+            return $this->ID_Employee;
     }
 
     public function setID_Employee(string $ID_Employee)
@@ -100,6 +103,9 @@ class Award
 
     public function getFullname_employee() : string
     {
+        if ($this->fullname_employee == null)
+            return "-";
+        else
         return $this->fullname_employee;
     }
 

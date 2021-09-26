@@ -20,10 +20,10 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="ID_Employee" class="col-form-label">ชื่อพนักงาน:<span class="text-danger" >*</span></label>
+                        <label for="ID_Employee" class="col-form-label">ชื่อพนักงาน:</label>
                         <select class="form-control" name="ID_Employee" id="ID_Employee_Award">
-                        <option value="" selected disabled>-กรุณาเลือกคนได้รับรางวัล-</option>
-                            <?php 
+                        <option value=" " >-กรุณาเลือกคนได้รับรางวัล-</option>
+                            <?php
                             foreach ($employeeList as $employee) { ?>
                                 <option value="<?php echo $employee->getID_Employee(); ?>"><?php echo $employee->getName_Employee() . " " . $employee->getSurname_Employee(); ?></option>
                                 
