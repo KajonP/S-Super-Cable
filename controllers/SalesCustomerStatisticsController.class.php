@@ -16,7 +16,7 @@ class SalesCustomerStatisticsController
             case "index":
                 $this->index();
                 break;
-            case "manage_sale" :
+            case "manage_SalesCustomerStatistics" :
                 $this->$action();
                 break;
             case "getReport":
@@ -27,7 +27,7 @@ class SalesCustomerStatisticsController
         }
     }
     
-    private function manage_sale($params = null)
+    private function manage_SalesCustomerStatistics($params = null)
     {
         session_start();
         $employee = $_SESSION["employee"];

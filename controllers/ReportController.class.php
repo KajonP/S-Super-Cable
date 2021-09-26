@@ -91,7 +91,7 @@ class ReportController
         $borrow_array = json_encode($borrow);
         $borrow_return_array = json_encode($borrow_return);
         //include Router::getSourcePath() . "views/admin/report_borrow.inc.php";
-        include "test-pdf.php";
+        include "report_borroworreturn.php";
     }
 
     

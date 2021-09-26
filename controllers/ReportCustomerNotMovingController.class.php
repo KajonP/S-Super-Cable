@@ -48,7 +48,7 @@ class ReportCustomerNotMovingController
             $date_end = date('Y-m-d', strtotime('-365 day', strtotime( $date_start )));
         }
 
-        $company = Invoice::customerNotMovingReport($date_end,$date_start);
+        $company = Sales::customerNotMovingReport($date_end,$date_start);
         //print_r($company);
         include Router::getSourcePath() . "views/admin/report_customer_not_moving.inc.php";
     }
@@ -70,7 +70,7 @@ class ReportCustomerNotMovingController
             $date_start = $y.'-01-01';
             $date_end = $y.'-12-31';
         }
-        $company = Invoice::customerNotMovingReport($date_start,$date_end);
+        $company = Sales::customerNotMovingReport($date_start,$date_end);
         //print_r($company);
         include "report-customer-not-moving.php";
     }

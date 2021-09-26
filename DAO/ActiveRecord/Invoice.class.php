@@ -360,20 +360,5 @@ class Invoice
         return $total;
     }
 
-    public static function customerNotMovingReport($startDate,$endDate) : array
-    {
-        $con = Db::getInstance();
-        $where = "SELECT sales.ID_Company FROM sales WHERE sales.Date_Sales BETWEEN '".$startDate."' 
-                    AND '".$endDate."'  ";
-        $query = "SELECT * FROM company WHERE company.ID_Company NOT IN (".$where.") ";
-        $stmt = $con->prepare($query);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "Company");
-        $stmt->execute();
-        $rows = array();
-        while ($prod = $stmt->fetch()) {
-            $rows[] = $prod;
-        }
-        return $rows;
-    }
 
 }

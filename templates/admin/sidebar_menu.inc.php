@@ -184,7 +184,8 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=borrow&action=borrow"; ?>" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=Borrow&action=borrow"; ?>"
+                           class="nav-link">
                             <i class="nav-icon fas fa-gift "></i>
                             <p>
                                 ส่งเสริมการขาย
@@ -194,7 +195,8 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=borrow&action=borrow_approve_list"; ?>" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=Borrow&action=borrow_approve_list"; ?>"
+                           class="nav-link">
                             <i class="nav-icon fas fa-clipboard-check"></i>
                             <p>
                                การอนุมัติ
@@ -202,7 +204,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=borrow&action=borrow_approve_history"; ?>" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=Borrow&action=borrow_approve_history"; ?>"
+                           class="nav-link">
                             <i class="nav-icon fas fa-history "></i>
                             <p>
                                 ประวัติการอนุมัติ
@@ -230,7 +233,8 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="index.php?controller=report&action=borrow" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=Report&action=borrow"; ?>"
+                           class="nav-link">
                             <i class="nav-icon fas fa-gift "></i>
                             <p>ส่งเสริมการขาย </p>
                         </a>
@@ -238,7 +242,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=reportcompany&action=company"; ?>"
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=ReportCompany&action=company"; ?>"
                            class="nav-link">
                             <i class="nav-icon fas fa-history"></i>
                             <p>
@@ -258,7 +262,8 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="index.php?controller=reportcustomer&action=customer2" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=ReportCustomer&action=customer2"; ?>"
+                           class="nav-link">
                             <i class="nav-icon fas fa-store"></i>
                             <p>เปอร์เซ็นของกลุ่มลูกค้า </p> เเบบที่ 1 นับครั้งการซื้อ
                         </a>
@@ -266,7 +271,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="index.php?controller=reportcustomer&action=customer"
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=ReportCustomer&action=customer"; ?>"
                            class="nav-link">
                             <i class="nav-icon fas fa-store"></i>
                             <p>เปอร์เซ็นของกลุ่มลูกค้า </p>เเบบที่ 2 นับจากยอดขาย
@@ -275,8 +280,8 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <!--<a href="index.php?controller=AverageOne&action=manage_sale" class="nav-link">-->
-                        <a href="index.php?controller=trend&action=trend" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=Trend&action=trend"; ?>"
+                           class="nav-link">
                             <i class="nav-icon fas fa-wallet "></i>
                             <p>แนวโน้มยอดขาย 1 </p> จากค่าเฉลี่ย
                         </a>
@@ -301,7 +306,8 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="index.php?controller=reportcustomernotmoving&action=customer_not_moving" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=ReportCustomerNotMoving&action=customer_not_moving"; ?>"
+                           class="nav-link">
                             <i class="nav-icon fas fa-store"></i>
                             <p>ลูกค้าที่ไม่เคลื่อนไหว </p>
                         </a>
@@ -317,7 +323,8 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="index.php?controller=salesstatistics&action=manage_sale" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=SalesStatistics&action=manage_SalesStatistics"; ?>"
+                           class="nav-link">
                             <i class="nav-icon fas fa-wallet"></i>
                             <p>ยอดขายเเต่ละคน</p>
                         </a>
@@ -333,7 +340,8 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="index.php?controller=SalesCustomerStatistics&action=manage_sale" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=SalesCustomerStatistics&action=manage_SalesCustomerStatistics"; ?>"
+                           class="nav-link">
                             <i class="nav-icon fas fa-wallet"></i>
                             <p>เปรียบเทียบยอดขาย 1</p> โดยเลือกจากบริษัทลูกค้า
                         </a>
@@ -341,7 +349,8 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="index.php?controller=EmpStatistics&action=manage_sale" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=EmpStatistics&action=manage_EmpStatistics"; ?>"
+                           class="nav-link">
                             <i class="nav-icon fas fa-wallet"></i>
                             <p>เปรียบเทียบยอดขาย 2</p>  โดยเลือกจากพนักงานขาย
                         </a>
