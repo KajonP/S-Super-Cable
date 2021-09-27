@@ -132,11 +132,17 @@ class ResultSalesController
                             //$date = $getCellArray["data"][0];
                             //$date = PHPExcel_Shared_Date::ExcelToPHP( $getCellArray["data"][0]);
                             $date = PHPExcel_Style_NumberFormat::toFormattedString($getCellArray["data"][0], "D/M/YYYY");
-
-
+                            $com_data = Company::findName($getCellArray["data"][1]);
+                            if(count($com_data)=='0'){
+                                $message = "มีบางอย่างผิดพลาด , ไม่พบข้อมูลบริษัท";
+                                return json_encode(array("status" => false, "message" => $message));
+                            }
+                            //print_r($com_data);
+                            $com_id = $com_data[0]->getID_Company();
+                            //echo  $com_id;
                             $push_array = array(//"ID_Excel" => $ID_Excel,
                                 "Date_Sales" => $date,
-                                "ID_Company" => $getCellArray["data"][1],
+                                "ID_Company" => $com_id,
                                 "ID_Employee" => $getCellArray["data"][2],
                                 "Result_Sales" => $getCellArray["data"][3],
                             );

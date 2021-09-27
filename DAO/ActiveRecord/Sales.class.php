@@ -161,6 +161,7 @@ class Sales
         foreach ($params as $k => $v) {
             $values = "";
             $columns = "";
+            $chk = 0;
             foreach ($v as $prop => $val) {
                 # ถ้า column แรกไม่ต้องเติมลูกน้ำ คอลัมน์อื่นเติมลูกน้ำ ..
                 
@@ -178,13 +179,18 @@ class Sales
                
                 }
                 $columns = empty($columns) ? $columns .= $prop : $columns .= "," . $prop;
-                $values .= "'$val',";
+                if($chk=='0'){
+                    $values .= "'$val'";
+                }else{
+                    $values .= ",'$val'";
+                }
+                $chk++;
             }
             # insert ลง db
-            $values-> findcompany();
-            $values = substr($values, 0, -1);
+            //$values-> findcompany();
+            //$values = substr($values, 0, -1);
             $query = "INSERT INTO " . self::TABLE . "({$columns}) VALUES ($values)" ;
-           // echo $query;exit();
+            //echo $query; exit();
             # execute query
             if ($con->exec($query)) {
                 # do something

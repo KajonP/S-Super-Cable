@@ -13,7 +13,7 @@
                 <!-- Form -->
                 <form id="form_invManage" method='post' action='' enctype="multipart/form-data">
                 <!-- -->
-                <div class="form-group">
+                <div class="form-group" style="display:none;">
                     <label>Inv No. <span class="text-danger" >*</span></label>
                     <input type="text" name="Invoice_No" id="Invoice_No" class="form-control">
                 </div>

@@ -31,16 +31,18 @@ try {
 
                         <!-- content -->
                         <div class="card">
-                            
+                            <div class="card-body">
                             <div class="form-group row mt-2 mb-2 mr-1">
                                 <div class="col-md-12 text-right">
                                     <form method="POST">
-                                        <input type="text" name="com_name" id="com_name" placeholder="ชื่อบริษัท">  
-                                        <button type="submit" class="btn btn-primary">ค้นหา</button>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="com_name" id="com_name" placeholder="ชื่อบริษัท">  
+                                            <button type="submit" class="btn btn-primary">ค้นหา</button>
+                                        </div>
                                     </form>                        
                                 </div>
                             </div>
-                            <div class="card-body p-0 d-flex">
+                            <div class="">
                                 <div class="table-responsive">
                                     <table id="tbl_companymanagement" class="table table-md" style="width:100%;">
                                         <thead>
@@ -88,6 +90,7 @@ try {
                             </div>
                             <!-- /.card-body -->
                         </div>
+                    </div>
                         <!-- /.card -->
                         <!-- eof -->
                     </div><!-- /.col -->

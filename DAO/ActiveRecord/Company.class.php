@@ -427,6 +427,27 @@ class Company
             return null;
         }
     }
+
+    public static function findName($name=''): array
+    {
+        $where = '';
+        if($name!=''){
+            $where = ' WHERE company.Name_Company = "'.$name.'"';
+        }
+        $con = Db::getInstance();
+        //$query = "SELECT * FROM " . self::TABLE;
+        $query = "SELECT " . self::TABLE . ".* FROM " . self::TABLE . "  ".$where;
+        //echo $query;exit();
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Company");
+        $stmt->execute();
+        $companyList = array();
+        while ($prod = $stmt->fetch()) {
+            $companyList[] = $prod;
+        }
+        return $companyList;
+    }
+
 }
 
 ?>

@@ -64,7 +64,7 @@ class InvoiceController
         # สร้างใบเสนอราคา
         $access_invoice = new Invoice();
         $invoice_result = $access_invoice->create_invoice([
-            'Invoice_No' => $params['Invoice_No'],
+            //'Invoice_No' => $params['Invoice_No'],
             'Invoice_Date' => isset($params['Invoice_Date']) ? $params['Invoice_Date'] : '' ,
             'Credit_Term_Company' => $params['Credit_Term_Company'],
             'Name_Company' =>  isset($params['Name_Company']) ? $params['Name_Company'] : '' ,
