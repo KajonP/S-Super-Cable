@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : change id_employee of award null">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : delete not use + change or rename file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Invoice.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Invoice.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Sales.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Sales.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/AverageOneController.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/CompanyController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/EmpStatisticsController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/EmpStatisticsController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/ReportCompanyController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ReportCompanyController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/ReportController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ReportController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/ReportCustomerNotMovingController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ReportCustomerNotMovingController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/SalesCustomerStatisticsController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SalesCustomerStatisticsController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/SalesStatisticsController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SalesStatisticsController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/download/report_customer_notmoving.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/report_customer_notmoving.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-pdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/report_borroworreturn.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,14 +255,8 @@
       <workItem from="1632294913952" duration="416000" />
       <workItem from="1632643636335" duration="1377000" />
       <workItem from="1632646722147" duration="659000" />
-      <workItem from="1632648537764" duration="2070000" />
-    </task>
-    <task id="LOCAL-00049" summary="case : crud file (still can't update file + edit db table file)">
-      <created>1624571019399</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1624571019399</updated>
+      <workItem from="1632648537764" duration="3098000" />
+      <workItem from="1632738690740" duration="1679000" />
     </task>
     <task id="LOCAL-00050" summary="case : crud file (still can't update path file)">
       <created>1625095184467</created>
@@ -605,7 +594,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632647299200</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="case : delete not use + change or rename file">
+      <created>1632650890173</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1632650890174</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -625,7 +621,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : update accept file" />
     <MESSAGE value="case : update company" />
     <MESSAGE value="case : update xls" />
     <MESSAGE value="case : update sidebar(admin+sales)+crud cluster shop" />
@@ -650,7 +645,8 @@
     <MESSAGE value="case : change dropzone to thai" />
     <MESSAGE value="case : change name" />
     <MESSAGE value="case : change id_employee of award null" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : change id_employee of award null" />
+    <MESSAGE value="case : delete not use + change or rename file" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : delete not use + change or rename file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

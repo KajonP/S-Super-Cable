@@ -155,7 +155,9 @@ class Message
     {
         $con = Db::getInstance();
         $query = "SELECT * FROM " . self::TABLE . " inner join message_status on message.ID_Message = message_status.ID_Message"." where message_status.ID_Employee = '".$emp_id."' GROUP BY message_status.ID_Message LIMIT ".$start." , ".$limit.' ';
-       
+
+//        echo $query;
+//        exit;
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
         $stmt->execute();

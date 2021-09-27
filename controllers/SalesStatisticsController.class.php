@@ -19,6 +19,12 @@ class SalesStatisticsController
             case "manage_SalesStatistics" :
                 $this->$action();
                 break;
+            case "getReport":
+                $result = $this->$action();
+                break;
+            case "getReport2":
+                $result = $this->$action();
+                break;
             default:
                 break;
         }
@@ -46,5 +52,68 @@ class SalesStatisticsController
         $amphurList = Amphur::findAll();
         $provinceList = Province::findAll();
         include Router::getSourcePath() . "views/admin/sales_statistics.inc.php";
+    }
+    private function getReport(){
+        $ID_Employee = $_POST['ID_Employee'];
+        //$ID_Employee = 'a004';
+        $year1 = $_POST['year1'];
+        $year2 = $_POST['year2'];
+        $year_start = date('Y')-5;
+        $year_arr = [$year1,$year2];
+        $data = [];
+        foreach($year_arr as $i){
+            for($m=1;$m<=12;$m++){
+                $date_start = $i.'-'.str_pad($m,2,"0",STR_PAD_LEFT).'-01';
+                $date_end = $i.'-'.str_pad($m,2,"0",STR_PAD_LEFT).'-31';
+                $con = Db::getInstance();
+                $sql = 'SELECT SUM(Result_Sales) AS total FROM sales 
+                WHERE Date_Sales BETWEEN "'.$date_start.'" AND "'.$date_end.'" 
+                AND ID_Employee="'. $ID_Employee.'"';
+                //echo $sql;
+                $stmt = $con->prepare($sql);
+                $stmt->setFetchMode(PDO::FETCH_CLASS, "Date_Sales");
+                $stmt->execute();
+                while ($prod = $stmt->fetch()) {
+                    //print_r($prod);
+                    $data[$i]['year'] = $i;
+                    $data[$i]['month'][$m] = (int)$prod['total'];
+                }
+            }
+        }
+
+        header('Content-type: application/json');
+        echo json_encode([$data]);
+    }
+
+    private function getReport2(){
+        $ID_Employee = $_POST['ID_Employee'];
+        //$ID_Employee = 'a004';
+        $year1 = $_POST['year1'];
+        $year2 = $_POST['year1'];
+        $year_start = date('Y')-5;
+        $year_arr = [$year1,$year2];
+        $data = [];
+        foreach($year_arr as $i){
+            for($m=1;$m<=12;$m++){
+                $date_start = $i.'-'.str_pad($m,2,"0",STR_PAD_LEFT).'-01';
+                $date_end = $i.'-'.str_pad($m,2,"0",STR_PAD_LEFT).'-31';
+                $con = Db::getInstance();
+                $sql = 'SELECT SUM(Result_Sales) AS total FROM sales 
+                WHERE Date_Sales BETWEEN "'.$date_start.'" AND "'.$date_end.'" 
+                AND ID_Employee="'. $ID_Employee.'"';
+                //echo $sql;
+                $stmt = $con->prepare($sql);
+                $stmt->setFetchMode(PDO::FETCH_CLASS, "Date_Sales");
+                $stmt->execute();
+                while ($prod = $stmt->fetch()) {
+                    //print_r($prod);
+                    $data[$i]['year'] = $i;
+                    $data[$i]['month'][$m] = (int)$prod['total'];
+                }
+            }
+        }
+
+        header('Content-type: application/json');
+        echo json_encode([$data]);
     }
 }

@@ -294,9 +294,10 @@ class CompanyController
     private function getEmp($province,$amphur)
     {
         $sql = "SELECT employee.* FROM zone LEFT JOIN employee ON employee.ID_Employee = zone.ID_Employee WHERE zone.PROVINCE_ID='".$province."'";
-        if($amphur!=''){
+        if($amphur!='' and $amphur!='-'){
             $sql .= ' AND zone.AMPHUR_ID="'.$amphur.'"';
         }
+
         $con = Db::getInstance();
         $stmt = $con->prepare($sql);
         //$stmt->setFetchMode(PDO::FETCH_COLUMN);

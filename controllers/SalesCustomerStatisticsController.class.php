@@ -43,9 +43,10 @@ class SalesCustomerStatisticsController
 
     private function getReport(){
         $ID_Company = $_POST['ID_Company'];
+
+        //$ID_Employee = $_POST['ID_Company'];
         $year1 = $_POST['year1'];
         $year2 = $_POST['year2'];
-        //$ID_Employee = $_POST['ID_Company'];
         $year_start = date('Y')-5;
         $year_arr = [$year1,$year2];
         $data = [];
