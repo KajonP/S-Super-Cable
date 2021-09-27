@@ -168,7 +168,8 @@ class InvoiceController
         $inv_id = $ID_Invoice;
         $qty = $params['qty_array'];
         $access_invoice_detail = new Invoice_Detail();
-        Invoice_Detail::delete_invoice_detail_by_inv($inv_id);
+        //Invoice_Detail::delete_invoice_detail_by_inv($inv_id);
+        $access_invoice_detail->delete_invoice_detail_by_inv($inv_id);
         $Total = 0;
         if($invoice_result['status']==true){
             if(count($params['goods_array'])>0){

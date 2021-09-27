@@ -49,7 +49,7 @@ class ReportCustomerController
             foreach($cluster_shop as $val){
                 $cluster_name[] = $val->getCluster_Shop_Name();
                 $cluster_id = $val->getCluster_Shop_ID();
-                $total = Invoice::customerReport($cluster_id,$date_start,$date_end);
+                $total = Sales::customerReport($cluster_id,$date_start,$date_end);
                 if($total==''){
                     $total = 0;
                 }
@@ -76,7 +76,7 @@ class ReportCustomerController
             foreach($cluster_shop as $val){
                 $cluster_name[] = $val->getCluster_Shop_Name();
                 $cluster_id = $val->getCluster_Shop_ID();
-                $total = Invoice::customerReport($cluster_id,$date_start,$date_end);
+                $total = Sales::customerReport($cluster_id,$date_start,$date_end);
                 if($total==''){
                     $total = 0;
                 }
@@ -106,7 +106,7 @@ class ReportCustomerController
             foreach($cluster_shop as $val){
                 $cluster_name[] = $val->getCluster_Shop_Name();
                 $cluster_id = $val->getCluster_Shop_ID();
-                $total = Invoice::customerReport2($cluster_id,$date_start,$date_end);
+                $total = Sales::customerReport2($cluster_id,$date_start,$date_end);
                 if($total==''){
                     $total = 0;
                 }
@@ -133,7 +133,7 @@ class ReportCustomerController
             foreach($cluster_shop as $val){
                 $cluster_name[] = $val->getCluster_Shop_Name();
                 $cluster_id = $val->getCluster_Shop_ID();
-                $total = Invoice::customerReport2($cluster_id,$date_start,$date_end);
+                $total = Sales::customerReport2($cluster_id,$date_start,$date_end);
                 if($total==''){
                     $total = 0;
                 }

@@ -188,10 +188,10 @@ function onaction_delete(id){
 }
 
 
-function onaction_disApprove(id){
+function onaction_disApprove(id,type){
   Swal.fire({
     title: 'คุณเเน่ใจใช่ไหม?',
-    text: "คุณต้องการไม่อนุมัติการยืมนี้?",
+    text: "คุณต้องการไม่อนุมัติการ"+type+"นี้?",
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
@@ -232,10 +232,10 @@ function onaction_disApprove(id){
   })
 }
 
-function onaction_Approve(id){
+function onaction_Approve(id,type){
   Swal.fire({
     title: 'คุณเเน่ใจใช่ไหม?',
-    text: "คุณต้องการอนุมัติการยืมนี้?",
+    text: "คุณต้องการอนุมัติการ"+type+"นี้?",
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
@@ -277,7 +277,7 @@ function onaction_Approve(id){
 }
 
 function onaction_edit(id){
-  
+
   $('#modelTitle').html("แก้ไขข้อมูล");
   /* set button event  */
   $('#button_modal').attr("data-status", 'create');

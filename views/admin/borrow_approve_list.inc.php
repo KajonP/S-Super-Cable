@@ -84,14 +84,14 @@ try {
                                                     </button>-->   
                                                 <?php if($status_approve=='0'){ ?>
                                                     <a href="#"
-                                                       onclick="onaction_Approve('<?php echo $val->getID_BorrowOrReturn(); ?>')">
+                                                       onclick="onaction_Approve('<?php echo $val->getID_BorrowOrReturn(); ?>','<?php echo $type; ?>')">
                                                         <button type="button" class="btn btn-round btn-success"
                                                                 style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
                                                             <i class="fas fa-check"></i> อนุมัติ
                                                         </button>
                                                     </a>
                                                     <a href="#"
-                                                       onclick="onaction_disApprove('<?php echo $val->getID_BorrowOrReturn(); ?>')">
+                                                       onclick="onaction_disApprove('<?php echo $val->getID_BorrowOrReturn(); ?>','<?php echo $type; ?>')">
                                                         <button type="button" class="btn btn-round btn-danger"
                                                                 style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
                                                            <i class="fas fa-times"></i> ไม่อนุมัติ

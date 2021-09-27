@@ -48,21 +48,21 @@ class AwardController
             case "show_award_status":
                 session_start();
                 $employee = $_SESSION['employee'];
-
+                $show_row = 4;
                 if ($employee->getUser_Status_Employee() == "Admin") {
                     include Router::getSourcePath() . "views/index_admin.inc.php";
                 } else if ($employee->getUser_Status_Employee() == "Sales") {
                     # retrieve data
                     $countAll = Award::fetchCountAll($employee->getID_Employee());
                     $n = $countAll[0];
-                    $count_page = ceil($n/4);
+                    $count_page = ceil($n/$show_row);
                     $start = 0;
                     $get_page = 1;
                     if(isset($_GET['page'])){
                         $get_page = $_GET['page'];
                     }
-                    $start = ($get_page*4)-4;
-                    $award = Award::fetchAllwithInnerLimit($employee->getID_Employee(),$start,4);
+                    $start = ($get_page*$show_row)-$show_row;
+                    $award = Award::fetchAllwithInnerLimit($employee->getID_Employee(),$start,$show_row);
                     
                     //echo $n.':'.$count_page;
                     //exit;
@@ -71,14 +71,14 @@ class AwardController
                     # retrieve data
                     $countAll = Award::fetchCountAll($employee->getID_Employee());
                     $n = $countAll[0];
-                    $count_page = ceil($n/4);
+                    $count_page = ceil($n/$show_row);
                     $start = 0;
                     $get_page = 1;
                     if(isset($_GET['page'])){
                         $get_page = $_GET['page'];
                     }
-                    $start = ($get_page*4)-4;
-                    $award = Award::fetchAllwithInnerLimit($employee->getID_Employee(),$start,4);
+                    $start = ($get_page*$show_row)-$show_row;
+                    $award = Award::fetchAllwithInnerLimit($employee->getID_Employee(),$start,$show_row);
                     //echo $n.':'.$count_page;
                     //exit;
                     include Router::getSourcePath() . "views/sales/index_award.inc.php";
