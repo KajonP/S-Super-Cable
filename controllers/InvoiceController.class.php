@@ -64,7 +64,7 @@ class InvoiceController
         # สร้างใบเสนอราคา
         $access_invoice = new Invoice();
         $invoice_result = $access_invoice->create_invoice([
-            //'Invoice_No' => $params['Invoice_No'],
+            //'Invoice_No' => '9999',
             'Invoice_Date' => isset($params['Invoice_Date']) ? $params['Invoice_Date'] : '' ,
             'Credit_Term_Company' => $params['Credit_Term_Company'],
             'Name_Company' =>  isset($params['Name_Company']) ? $params['Name_Company'] : '' ,
@@ -154,7 +154,7 @@ class InvoiceController
                 'Email_Company' => $params['Email_Company'],
                 'Tel_Company' => $params['Tel_Company'],
                 'Tax_Number_Company' => $params['Tax_Number_Company'],
-                'Vat_Type' => 'novat',
+                'Vat_Type' => $params['Vat_Type'],
                 'Percent_Vat' => isset($params['Percent_Vat']) ? $params['Percent_Vat'] : '',
                 'Vat' => isset($params['Vat']) ? $params['Vat'] : '',
                 'Discount' => isset($params['Discount']) ? $params['Discount'] : '',

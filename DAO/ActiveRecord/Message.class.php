@@ -122,6 +122,25 @@ class Message
         #return $list;
 
     }
+
+    public static function fetchCountRowAll($emp_id): array
+    {
+        $con = Db::getInstance();
+        $query = "select count(*) from message";
+        $stmt = $con->prepare($query);
+        #$stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
+        $stmt->execute();
+        #$list = array();
+        #while ($prod = $stmt->fetch()) {
+        #    $list[$prod->getID_Message()] = $prod;
+        #}
+        $prod = $stmt->fetch();
+
+        return $prod;
+        #return $list;
+
+    }
+
     public static function fetchAll(): array
     {
         $con = Db::getInstance();
@@ -154,10 +173,10 @@ class Message
     public static function fetchAllwithInnerLimit($emp_id,$start,$limit): array
     {
         $con = Db::getInstance();
-        $query = "SELECT * FROM " . self::TABLE . " inner join message_status on message.ID_Message = message_status.ID_Message"." where message_status.ID_Employee = '".$emp_id."' GROUP BY message_status.ID_Message LIMIT ".$start." , ".$limit.' ';
-
-//        echo $query;
-//        exit;
+        //$query = "SELECT * FROM " . self::TABLE . " inner join message_status on message.ID_Message = message_status.ID_Message"." where message_status.ID_Employee = '".$emp_id."' GROUP BY message_status.ID_Message LIMIT ".$start." , ".$limit.' ';
+        $query = "SELECT * FROM " . self::TABLE . "  LIMIT ".$start." , ".$limit.' ';
+       //echo $query;
+        //exit;
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
         $stmt->execute();

@@ -59,9 +59,10 @@ try {
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        <?php $i = 1; ?>
                                         <?php foreach ($invoiceList as $key => $value) {?>
                                             <tr>
-                                                <td><?php echo $value->getInvoice_No(); ?></td>
+                                                <td><?php echo $i++; ?></td>
                                                 <td><?php echo $value->getName_Company(); ?></td>
                                                 <td><?php $date = date_create($value->getInvoice_Date());
                                                     echo date_format($date, 'd/m/Y'); ?></td>

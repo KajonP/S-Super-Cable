@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update 2">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update news award and invoice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Award.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Award.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/AwardController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AwardController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/InvoiceController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/InvoiceController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/NewsController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/NewsController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/download/inv.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/inv.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/excelsales.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/excelsales.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/manage_invoice.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_invoice.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,13 +259,8 @@
       <workItem from="1632738690740" duration="3345000" />
       <workItem from="1632742172041" duration="47000" />
       <workItem from="1632794180420" duration="1351000" />
-    </task>
-    <task id="LOCAL-00052" summary="case : change something to textarea">
-      <created>1625101354580</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1625101354580</updated>
+      <workItem from="1632804776863" duration="162000" />
+      <workItem from="1632840826435" duration="2137000" />
     </task>
     <task id="LOCAL-00053" summary="case : change dashboard">
       <created>1625102997755</created>
@@ -598,7 +598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632742204748</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="case : update database">
+      <created>1632804817286</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1632804817287</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,8 +625,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : update xls" />
-    <MESSAGE value="case : update sidebar(admin+sales)+crud cluster shop" />
     <MESSAGE value="case : update  cluster shop js" />
     <MESSAGE value="case : update  db" />
     <MESSAGE value="case : update cluster company by join cluster table" />
@@ -643,14 +648,16 @@
     <MESSAGE value="case : delete not use + change or rename file" />
     <MESSAGE value="case : update" />
     <MESSAGE value="case : update 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : update 2" />
+    <MESSAGE value="case : update database" />
+    <MESSAGE value="case : update news award and invoice" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update news award and invoice" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/controllers/AwardController.class.php</url>
-          <line>128</line>
+          <line>130</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

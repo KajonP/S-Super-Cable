@@ -54,7 +54,8 @@ class NewsController
                 } else if ($employee->getUser_Status_Employee() == "Sales") {
                     # retrieve data
                     $countAll = Message::fetchCountAll($employee->getID_Employee());
-                    $n = $countAll[0];
+                    $countRowAll = Message::fetchCountRowAll($employee->getID_Employee());
+                    $n = $countRowAll[0];
                     $count_page = ceil($n/$show_row);
                     $start = 0;
                     $get_page = 1;
@@ -69,7 +70,8 @@ class NewsController
                 } else if ($employee->getUser_Status_Employee() == "User") {
                     # retrieve data
                     $countAll = Message::fetchCountAll($employee->getID_Employee());
-                    $n = $countAll[0];
+                    $countRowAll = Message::fetchCountRowAll($employee->getID_Employee());
+                    $n = $countRowAll[0];
                     $count_page = ceil($n/$show_row);
                     $start = 0;
                     $get_page = 1;

@@ -166,6 +166,23 @@ class Award
         return $list;
 
     }
+    public static function fetchCountRowAll($emp_id): array
+    {
+        $con = Db::getInstance();
+        $query = "select count(*) from award";
+        $stmt = $con->prepare($query);
+        #$stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
+        $stmt->execute();
+        #$list = array();
+        #while ($prod = $stmt->fetch()) {
+        #    $list[$prod->getID_Message()] = $prod;
+        #}
+        $prod = $stmt->fetch();
+
+        return $prod;
+        #return $list;
+
+    }
     public static function fetchAllwithInnerLimit($emp_id,$start,$limit): array
     {
         $con = Db::getInstance();
