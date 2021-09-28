@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/borrow_approve_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/borrow_approve_list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/AwardController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AwardController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/InvoiceController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/InvoiceController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/ReportCustomerController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ReportCustomerController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/download/inv.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/inv.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/borrow_approve_list.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/borrow_approve_list.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/excelsales.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/excelsales.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,13 +252,8 @@
       <workItem from="1632646722147" duration="659000" />
       <workItem from="1632648537764" duration="3098000" />
       <workItem from="1632738690740" duration="3345000" />
-    </task>
-    <task id="LOCAL-00051" summary="case : change ckeditor path">
-      <created>1625098517688</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1625098517688</updated>
+      <workItem from="1632742172041" duration="47000" />
+      <workItem from="1632794180420" duration="1351000" />
     </task>
     <task id="LOCAL-00052" summary="case : change something to textarea">
       <created>1625101354580</created>
@@ -600,7 +591,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632740476767</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="case : update 2">
+      <created>1632742204747</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1632742204748</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -620,7 +618,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : update company" />
     <MESSAGE value="case : update xls" />
     <MESSAGE value="case : update sidebar(admin+sales)+crud cluster shop" />
     <MESSAGE value="case : update  cluster shop js" />
@@ -645,7 +642,8 @@
     <MESSAGE value="case : change id_employee of award null" />
     <MESSAGE value="case : delete not use + change or rename file" />
     <MESSAGE value="case : update" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : update" />
+    <MESSAGE value="case : update 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
