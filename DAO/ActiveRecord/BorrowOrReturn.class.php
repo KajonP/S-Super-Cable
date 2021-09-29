@@ -15,6 +15,7 @@ class BorrowOrReturn
     private $Name_Promotion;
     private $Name_Employee;
     private $Surname_Employee;
+    private $Comment_BorrowOrReturn;
     private const TABLE = "borroworreturn";
 
     //----------- Getters & Setters
@@ -115,6 +116,16 @@ class BorrowOrReturn
     {
         return $this->Surname_Employee;
     }
+
+    public function getComment_BorrowOrReturn() : string
+    {
+        return !empty($this->Comment_BorrowOrReturn) ? $this->Comment_BorrowOrReturn : '';
+    }
+
+    public function setComment_BorrowOrReturn(int $Comment_BorrowOrReturn)
+    {
+        $this->Comment_BorrowOrReturn = $Comment_BorrowOrReturn;
+    }
     //----------- CRUD
     public static function findAll(): array
     {
@@ -181,6 +192,7 @@ class BorrowOrReturn
                     LEFT JOIN employee ON employee.ID_Employee = borroworreturn.ID_Employee 
                     LEFT JOIN promotion ON promotion.ID_Promotion = borroworreturn.ID_Promotion
                     ".$where;
+
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "borroworreturn");
         $stmt->execute();

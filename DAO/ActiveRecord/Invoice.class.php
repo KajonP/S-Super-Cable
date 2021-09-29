@@ -23,6 +23,7 @@ class Invoice
     private $Grand_Total;
     private $ID_Company;
     private $ID_Setting_Vat;
+    private $Discount_price;
     private const TABLE = "invoice";
 
     //----------- Getters & Setters
@@ -194,6 +195,11 @@ class Invoice
     public function setID_Setting_Vat(int $ID_Setting_Vat)
     {
         $this->ID_Setting_Vat = $ID_Setting_Vat;
+    }
+
+    public function getDiscount_price(): float
+    {
+        return $this->Discount_price;
     }
 
     //----------- CRUD

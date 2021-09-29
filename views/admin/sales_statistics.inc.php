@@ -65,7 +65,7 @@ try {
                             <div id="tb">
 
                             </div>
-                            <div style="margin-top:50px; display: none;">
+                            <div style="margin-top:50px; ">
                                 <canvas id="myChart" width="400" height="400"></canvas>
                             </div>
                             </div>

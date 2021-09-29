@@ -197,9 +197,49 @@ function onaction_disApprove(id,type){
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
     confirmButtonText: 'ตกลง',
-    cancelButtonText: 'ยกเลิก'
+    cancelButtonText: 'ยกเลิก',
+    input: 'text',
+    preConfirm: (msg) => {
+      if(msg==''){
+        Swal.showValidationMessage(
+          `กรุณาระบุข้อความ`
+        );
+      }else{
+        $.ajax({
+          type: "POST",
+          url: "index.php?controller=borrow&action=borrow_approve_dis&id=" + id+"&comment="+msg,
+          processData: false,
+          contentType: false,
+          success: function (res, status, xhr) {
+            var data = res;
+            if (data.status == true) {
+              Swal.fire({
+                icon: 'success',
+                title: 'สำเร็จ',
+                confirmButtonText: 'ตกลง',
+              }).then((result) => {
+                location.reload();
+              });
+            } else {
+              Swal.fire({
+                icon: 'error',
+                title: 'ขออภัย...',
+                text: 'มีบางอย่างผิดพลาด , อาจจะมีข้อมูลอยู่ในฐานข้อมูลเเล้ว , โปรดลองอีกครั้ง',
+                confirmButtonText: 'ตกลง',
+              }).then((result) => {
+                location.reload();
+              });
+            }
+          }
+        });
+      }
+      return true;
+    },
+    allowOutsideClick: () => !Swal.isLoading()
 
-  }).then((result) => {
+    }
+    ).then((result) => {
+    /*
     if (result.isConfirmed) {
       $.ajax({
         type: "POST",
@@ -229,6 +269,7 @@ function onaction_disApprove(id,type){
         }
       });
     }
+    */
   })
 }
 

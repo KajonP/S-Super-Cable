@@ -53,6 +53,7 @@ try {
                                             <th>รายละเอียด</th>
                                             <th>จำนวน</th>
                                             <th>สถานะ</th>
+                                            <th>หมายเหตุ</th>
                                             <th>การกระทำ</th>
                                         </tr>
                                         </thead>
@@ -85,6 +86,9 @@ try {
                                                 <td><?php echo $val->getDetail_BorrowOrReturn(); ?></td>
                                                 <td><?php echo $val->getAmount_BorrowOrReturn(); ?></td>
                                                 <td><?php echo $status_approve_txt; ?></td>
+                                                <td>
+                                                    <?php echo $val->getComment_BorrowOrReturn(); ?>
+                                                </td>
                                                 <td class=" last">
                                                     
                                                 <?php if($showBtn=='1'){ ?>
@@ -170,6 +174,7 @@ try {
     // print_r(ob_get_clean());exit();
     include Router::getSourcePath() . "templates/layout.php";
 } catch (Throwable $e) { // PHP 7++
+    //print_r($e);
     echo "การเข้าถึงถูกปฏิเสธ: ไม่ได้รับอนุญาตให้ดูหน้านี้";
     exit(1);
 }

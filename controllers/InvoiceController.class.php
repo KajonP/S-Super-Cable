@@ -82,9 +82,11 @@ class InvoiceController
             'Total' => isset($params['Total']) ? $params['Total'] : '0',
             'Grand_Total' => isset($params['Grand_Total']) ? $params['Grand_Total'] : '0',
             'ID_Company' => isset($params['ID_Company']) ? $params['ID_Company'] : '0',
-            'ID_Setting_Vat' => isset($params['ID_Setting_Vat']) ? $params['ID_Setting_Vat'] : '1'
+            'ID_Setting_Vat' => isset($params['ID_Setting_Vat']) ? $params['ID_Setting_Vat'] : '1',
+            'Discount'  => isset($params['Discount']) ? $params['Discount'] : '0'
         ]);
-        
+
+        $discount  = isset($params['Discount']) ? $params['Discount'] : '0';
         $get_inv = Invoice::maxId();
         //print_r($get_inv);
         $inv_id = $get_inv->getID_Invoice();
@@ -115,6 +117,13 @@ class InvoiceController
                 }
             }
 
+            $Total2 = $Total;
+            $discount_price = 0;
+            if($discount > 0){
+                $discount_price = ($discount/100)*$Total;
+                $Total = $Total - $discount_price;
+            }
+
             $vat = 0;
             if($params['Vat_Type']=='exclude'){
                 $vat = $Total*($percent_Vat/100);
@@ -130,7 +139,8 @@ class InvoiceController
             $invoice_result = $access_invoice->edit_invoice(
                 [
                     'Vat' => $vat,
-                    'Total' => $Total,
+                    'Total' => $Total2,
+                    'Discount_price' => $discount_price,
                     'Grand_Total' => $GrandTotal
                 ], $inv_id
             );
@@ -322,6 +332,7 @@ class InvoiceController
             "Percent_Vat" => $invoice->getPercent_Vat(),
             "Vat" => $invoice->getVat(),
             "Discount" => $invoice->getDiscount(),
+            "Discount_price" => $invoice->getDiscount_price(),
             "Total" => $invoice->getTotal(),
             "Grand_Total" => $invoice->getGrand_Total(),
             "ID_Company" => $invoice->getID_Company(),

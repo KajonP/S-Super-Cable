@@ -4,6 +4,20 @@ $("#form_search").submit(function(){
         url: "index.php?controller=salesstatistics&action=getReport2",
         data: $("#form_search").serialize(),
         success: function (res, status, xhr) {
+          var monthArr = [];
+          monthArr[0] = 'ม.ค.';
+          monthArr[1] = 'ก.พ.';
+          monthArr[2] = 'มี.ค.';
+          monthArr[3] = 'เม.ย.';
+          monthArr[4] = 'พ.ค.';
+          monthArr[5] = 'มิ.ย.';
+          monthArr[6] = 'ก.ค.';
+          monthArr[7] = 'ส.ค.';
+          monthArr[8] = 'ก.ย.';
+          monthArr[9] = 'ต.ค.';
+          monthArr[10] = 'พ.ย.';
+          monthArr[11] = 'ธ.ค.';
+          monthVal = [];
           var yearArr = [];
           var valArr = [];
           var data = res;
@@ -38,6 +52,7 @@ $("#form_search").submit(function(){
                 var total = 0;
                 for(var i=1;i<=12;i++){
                   htmlTB += '<td>'+b.month[i]+'</td>';
+                  monthVal[i-1] = b.month[i];
                   total = total+b.month[i];
                   if(x===0){
                      old[i] = b.month[i];
@@ -77,7 +92,7 @@ $("#form_search").submit(function(){
           htmlTB += '</table>';
           */
           $("#tb").html(htmlTB);
-          addChart(yearArr,valArr);
+          addChart(monthArr,monthVal);
         }
     });
   return false;
@@ -94,19 +109,31 @@ function addChart(year,val){
             data: val,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)'
             ],
             borderWidth: 1
         }]

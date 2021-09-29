@@ -41,10 +41,16 @@ class ReportCustomerController
     {
         //print_r($_SESSION);
         $employee = $_SESSION['employee'];
+        $bg_code = [
+            "#3DA2F2",
+            "#79F23D",
+            "#403DF2",
+            "#F23DDF",
+        ];
         $date_start = isset($_GET['date_start']) ? $_GET['date_start'] : date('Y-m-d');
         $date_end =  isset($_GET['date_end']) ? $_GET['date_end'] : date('Y-m-d');
         $cluster_shop = Cluster_Shop::findAll();
-
+         $a = 0;
         if(count($cluster_shop)>0){
             foreach($cluster_shop as $val){
                 $cluster_name[] = $val->getCluster_Shop_Name();
@@ -54,7 +60,9 @@ class ReportCustomerController
                     $total = 0;
                 }
                 $company[] = (int)$total;
-                $bg[] = '#' . str_pad(dechex(mt_rand(0, 0xFFFFFF)), 6, '0', STR_PAD_LEFT);
+                //$bg[] = '#' . str_pad(dechex(mt_rand(0, 0xFFFFFF)), 6, '0', STR_PAD_LEFT);
+                $bg[] = $bg_code[$a];
+                $a++;
             }
         }
         
@@ -97,11 +105,18 @@ class ReportCustomerController
     private function customer2()
     {
         //print_r($_SESSION);
+        $bg_code = [
+            "#3DA2F2",
+            "#79F23D",
+            "#403DF2",
+            "#F23DDF",
+        ];
         $employee = $_SESSION['employee'];
         $date_start = isset($_GET['date_start']) ? $_GET['date_start'] : date('Y-m-d');
         $date_end =  isset($_GET['date_end']) ? $_GET['date_end'] : date('Y-m-d');
         $cluster_shop = Cluster_Shop::findAll();
         $totalAll = 0;
+        $a = 0;
         if(count($cluster_shop)>0){
             foreach($cluster_shop as $val){
                 $cluster_name[] = $val->getCluster_Shop_Name();
@@ -112,7 +127,9 @@ class ReportCustomerController
                 }
                 $totalAll = $totalAll+$total;
                 $company[] = (int)$total;
-                $bg[] = '#' . str_pad(dechex(mt_rand(0, 0xFFFFFF)), 6, '0', STR_PAD_LEFT);
+                //$bg[] = '#' . str_pad(dechex(mt_rand(0, 0xFFFFFF)), 6, '0', STR_PAD_LEFT);
+                $bg[] = $bg_code[$a];
+                $a++;
             }
         }
         

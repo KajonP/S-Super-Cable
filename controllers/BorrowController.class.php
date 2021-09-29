@@ -113,7 +113,7 @@ class BorrowController
 
     private function borrowDisApprove(){
         $access = new BorrowOrReturn();
-        $result = $access->edit(['Approve_BorrowOrReturn' => '2'], $_GET['id']);
+        $result = $access->edit(['Approve_BorrowOrReturn' => '2' , 'Comment_BorrowOrReturn' => $_GET['comment'] ], $_GET['id']);
         header('Content-type: application/json');
         echo json_encode(["status" => true]);
     }
