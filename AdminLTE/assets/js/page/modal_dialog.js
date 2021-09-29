@@ -72,9 +72,9 @@ function editProfile(form_serialize) {
             title: 'สำเร็จ',
             text: 'เเก้ไขโปรไฟล์สำเร็จเเล้ว',
           }).then((result) => {
-            //location.reload();
+            location.reload();
 
-            window.location.href = "index.php?controller=" + data.role + "&action=index";
+
           });
         } else {
           Swal.fire({

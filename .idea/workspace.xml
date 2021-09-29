@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update news award and invoice">
+      <change afterPath="$PROJECT_DIR$/images/0834994d12e1e16035814437df5ceb8a3156052e.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/1b10309e4b8a35a8bddf0b51fd8d85c320a70c82.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/39426e63d043976e5c8ae6a884942e003b11bf1b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/4eb3783ec1857f9d338b0de0ec1e8a187133c4d3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/586daa68479124a30276e834c94374043982458e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/58dd7598b55c6751b3ce0d6814df2633d06d5f06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/75507b4ae15e63926fc175577a4efbcd314ec71c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/76e434e62bcdc7d885718f64249008bd1599bbf5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/872145860fd9b7734d0a9506380129e285478ab0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/8c5cff46242a47fe759412db531c7b9e300dd340.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/8ce19de3838d4f1ff64d1f69c84e7d75801cd8a0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/d3b0033bd6945d38701e42c35b7298ef6f4f385e.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Award.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Award.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Message.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/AwardController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AwardController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/InvoiceController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/InvoiceController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/NewsController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/NewsController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/download/inv.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/inv.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/manage_invoice.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_invoice.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/modal_dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/modal_dialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/SalesController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SalesController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_editprofile.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_editprofile.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,14 +268,8 @@
       <workItem from="1632742172041" duration="47000" />
       <workItem from="1632794180420" duration="1351000" />
       <workItem from="1632804776863" duration="162000" />
-      <workItem from="1632840826435" duration="2137000" />
-    </task>
-    <task id="LOCAL-00053" summary="case : change dashboard">
-      <created>1625102997755</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1625102997756</updated>
+      <workItem from="1632840826435" duration="2189000" />
+      <workItem from="1632894101879" duration="1016000" />
     </task>
     <task id="LOCAL-00054" summary="case : change dashboard news to show only last row">
       <created>1625284392544</created>
@@ -605,7 +607,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632804817287</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="case : update news award and invoice">
+      <created>1632843017712</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1632843017713</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

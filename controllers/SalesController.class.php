@@ -30,8 +30,8 @@ class SalesController
     private function index($message = null)
     {
         session_start();
-        $employee = $_SESSION["employee"];
-        include Router::getSourcePath() . "views/index_sales.inc.php";
+        include Router::getSourcePath() . "views/login.inc.php";
+
 
     }
 

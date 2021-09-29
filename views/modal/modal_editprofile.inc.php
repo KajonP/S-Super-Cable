@@ -41,7 +41,7 @@
                         <img id="thumnails_profile" browsid="profile" class="thumnails-premise" src="<?= $pic ?>"
                              alt="image" style=""/>
 
-                        <input id="profile" name="profile" type="file" accept=".png, .jpg,.jpeg,.gif" style="">
+                        <input id="profile" name="profile" type="file"  style="">
                         <!-- <br>
                         <label class="" style=" padding-top: 5px;">Profile Picture</label> -->
                     </div>
