@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update news award and invoice">
-      <change afterPath="$PROJECT_DIR$/images/0834994d12e1e16035814437df5ceb8a3156052e.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/1b10309e4b8a35a8bddf0b51fd8d85c320a70c82.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/39426e63d043976e5c8ae6a884942e003b11bf1b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/4eb3783ec1857f9d338b0de0ec1e8a187133c4d3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/586daa68479124a30276e834c94374043982458e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/58dd7598b55c6751b3ce0d6814df2633d06d5f06.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/75507b4ae15e63926fc175577a4efbcd314ec71c.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/76e434e62bcdc7d885718f64249008bd1599bbf5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/872145860fd9b7734d0a9506380129e285478ab0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/8c5cff46242a47fe759412db531c7b9e300dd340.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/8ce19de3838d4f1ff64d1f69c84e7d75801cd8a0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/d3b0033bd6945d38701e42c35b7298ef6f4f385e.png" afterDir="false" />
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update db">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/modal_dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/modal_dialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/SalesController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SalesController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/modal/modal_editprofile.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_editprofile.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Invoice.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Invoice.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/ResultSalesController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ResultSalesController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download/inv.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/inv.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download/report_borroworreturn.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/report_borroworreturn.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/format_excel_sales.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/format_excel_sales.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project (49).sql" beforeDir="false" afterPath="$PROJECT_DIR$/project (49).sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/excelsales.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/excelsales.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,21 +261,9 @@
       <workItem from="1632794180420" duration="1351000" />
       <workItem from="1632804776863" duration="162000" />
       <workItem from="1632840826435" duration="2189000" />
-      <workItem from="1632894101879" duration="1016000" />
-    </task>
-    <task id="LOCAL-00054" summary="case : change dashboard news to show only last row">
-      <created>1625284392544</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1625284392544</updated>
-    </task>
-    <task id="LOCAL-00055" summary="case : update borrow_approve_history and change output path of report">
-      <created>1625916776669</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1625916776669</updated>
+      <workItem from="1632894101879" duration="2909000" />
+      <workItem from="1632903967679" duration="1353000" />
+      <workItem from="1633340947753" duration="1167000" />
     </task>
     <task id="LOCAL-00056" summary="case : update modal dialog ( edit profile )">
       <created>1625918365822</created>
@@ -614,7 +594,21 @@
       <option name="project" value="LOCAL" />
       <updated>1632843017713</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="case : update edit profile">
+      <created>1632895154828</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1632895154828</updated>
+    </task>
+    <task id="LOCAL-00104" summary="case : update db">
+      <created>1632895227144</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1632895227144</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,8 +628,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : update  cluster shop js" />
-    <MESSAGE value="case : update  db" />
     <MESSAGE value="case : update cluster company by join cluster table" />
     <MESSAGE value="case : update select2 and update award and message by using only sales (delete file of user)" />
     <MESSAGE value="case : update award" />
@@ -659,7 +651,9 @@
     <MESSAGE value="case : update 2" />
     <MESSAGE value="case : update database" />
     <MESSAGE value="case : update news award and invoice" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : update news award and invoice" />
+    <MESSAGE value="case : update edit profile" />
+    <MESSAGE value="case : update db" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update db" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

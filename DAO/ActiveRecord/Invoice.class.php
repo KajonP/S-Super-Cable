@@ -37,7 +37,10 @@ class Invoice
     }
     public function getInvoice_No(): string
     {
-        return $this->Invoice_No;
+        if ($this->Invoice_No == null)
+            return "-";
+        else
+            return $this->Invoice_No;
     }
     public function setInvoice_No(string $Invoice_No)
     {

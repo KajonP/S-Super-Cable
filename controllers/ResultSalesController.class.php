@@ -301,14 +301,14 @@ class ResultSalesController
             // กำหนดหัวข้อให้กับแถวแรก
             $objPHPExcel->setActiveSheetIndex(0)
                 ->setCellValue('A1', 'Date_Sales')
-                ->setCellValue('B1', 'ID_Company')
+                ->setCellValue('B1', 'Name_Company')
                 ->setCellValue('C1', 'ID_Employee')
                 ->setCellValue('D1', 'Result_Sales');
 
             $start_row = 2;
             $objPHPExcel->setActiveSheetIndex(0)
                 ->setCellValue('A' . $start_row, "12/05/2564")
-                ->setCellValue('B' . $start_row, "2")
+                ->setCellValue('B' . $start_row, "111")
                 ->setCellValue('C' . $start_row, "s009")
                 ->setCellValue('D' . $start_row, "5000");
 
