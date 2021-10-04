@@ -169,7 +169,7 @@ class AwardController
             "Picture_Award2" => $locate_img2,
             "Picture_Award3" => $locate_img3,
             "Date_Award"=> $award_datetime,
-            "ID_Employee" => $award_ID_Employee,
+            "ID_Employee" => !empty($award_ID_Employee) ? $award_ID_Employee : NULL ,
         );
 
         $result = $access_award->create_award(

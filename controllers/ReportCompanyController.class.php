@@ -45,9 +45,10 @@ class ReportCompanyController
         //$company = Company::findAll();
         $com_name = !empty($_POST['com_name']) ? $_POST['com_name'] : '';
         $company = [];
-        if($com_name!=''){
-            $company = Company::findSearch($com_name);
-        }
+        //if($com_name!=''){
+            //$company = Company::findSearch($com_name);
+            $company = Company::findAll();
+        //}
         $file_log = Filelog::findByPage('manage_company');
         $provinceList = Province::findAll();
         $amphurList = Amphur::findAll();

@@ -162,6 +162,7 @@ function onaction_createorupdate(ID_Award = null) {
   if (type == "create" )
   {
     //File data
+    /*
     if (file_data.length > 0)
     {
       for (var i = 0; i < file_data.length; i++)
@@ -185,12 +186,19 @@ function onaction_createorupdate(ID_Award = null) {
         data.append("award_pic[]", file_data3[i]);
       }
     }
+    */
+    var ImgFile = myDropzone.getFilesWithStatus(Dropzone.ADDED);
+    ImgFile.forEach((o)=>{
+       //alert('vv');
+       data.append("award_pic[]", o);
+    });
 
   }
   else
   {
     //File data
     // edit if insert picture
+    /*
     if (file_data.length > 0)
     {
       for (var i = 0; i < file_data.length; i++)
@@ -214,7 +222,12 @@ function onaction_createorupdate(ID_Award = null) {
         data.append("award_pic[2]", file_data3[i]);
       }
     }
-
+    */
+     var ImgFile = myDropzone.getFilesWithStatus(Dropzone.ADDED);
+    ImgFile.forEach((o)=>{
+       //alert('vv');
+       data.append("award_pic[]", o);
+    });
   }
 
   switch(type) {
@@ -296,6 +309,9 @@ function get_award_to_edit(ID_Award) {
       $("#thumnails_award_pic").attr("src", response.data.Picture_Award);
       $("#thumnails_award_pic2").attr("src", response.data.Picture_Award2);
       $("#thumnails_award_pic3").attr("src", response.data.Picture_Award3);
+      //alert(response.data.Picture_Award);
+      var fArr = [response.data.Picture_Award,response.data.Picture_Award2,response.data.Picture_Award3];
+      addImgView(fArr)
 
     },
     error: function (xhr, status, exception) {

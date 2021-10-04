@@ -11,7 +11,7 @@ var dataTable_ = $('#tbl_companymanagement').DataTable({
   "bPaginate": true,
   "bFilter": true,
   "bInfo": true,
-  "searching": false,
+  "searching": true,
   "language": {
     "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
     "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
@@ -46,6 +46,11 @@ var dataTable_ = $('#tbl_companymanagement').DataTable({
 
 
 });
+
+$('#tbl_companymanagement').on( 'keyup', function () {
+  alert(this.value);
+   // table.search( this.value ).draw();
+} );
 
 var form_validte = $("#form_companymanage").validate({
   rules: {
