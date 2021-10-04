@@ -76,7 +76,7 @@ tr:nth-child(even) {
   <tr>
     <td><?php echo $no; ?></td>
     <td><?php echo $val; ?></td>
-    <td><?php echo ($company[$key]/$totalAll)*100; ?>%</td>
+    <td><?php echo number_format(($company[$key]/$totalAll)*100,2); ?>%</td>
   </tr>
   <?php
     }

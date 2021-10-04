@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update db">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/ActiveRecord/Invoice.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/ActiveRecord/Invoice.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/ResultSalesController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ResultSalesController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/download/inv.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/inv.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/download/report_borroworreturn.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/report_borroworreturn.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/format_excel_sales.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/format_excel_sales.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project (49).sql" beforeDir="false" afterPath="$PROJECT_DIR$/project (49).sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/excelsales.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/excelsales.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download/report_customer.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/report_customer.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report-customer2.php" beforeDir="false" afterPath="$PROJECT_DIR$/report-customer2.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,14 +258,7 @@
       <workItem from="1632840826435" duration="2189000" />
       <workItem from="1632894101879" duration="2909000" />
       <workItem from="1632903967679" duration="1353000" />
-      <workItem from="1633340947753" duration="1167000" />
-    </task>
-    <task id="LOCAL-00056" summary="case : update modal dialog ( edit profile )">
-      <created>1625918365822</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1625918365822</updated>
+      <workItem from="1633340947753" duration="1862000" />
     </task>
     <task id="LOCAL-00057" summary="case : update user news">
       <created>1625983138904</created>
@@ -608,7 +596,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632895227144</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="case : update">
+      <created>1633343260851</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1633343260852</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -647,13 +642,13 @@
     <MESSAGE value="case : change name" />
     <MESSAGE value="case : change id_employee of award null" />
     <MESSAGE value="case : delete not use + change or rename file" />
-    <MESSAGE value="case : update" />
     <MESSAGE value="case : update 2" />
     <MESSAGE value="case : update database" />
     <MESSAGE value="case : update news award and invoice" />
     <MESSAGE value="case : update edit profile" />
     <MESSAGE value="case : update db" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : update db" />
+    <MESSAGE value="case : update" />
+    <option name="LAST_COMMIT_MESSAGE" value="case : update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
