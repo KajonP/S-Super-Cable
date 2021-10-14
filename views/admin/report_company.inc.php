@@ -32,17 +32,28 @@ try {
                         <!-- content -->
                         <div class="card">
                             <div class="card-body">
-                            <!--<div class="form-group row mt-2 mb-2 mr-1">
+                            <div class="form-group row mt-2 mb-2 mr-1">
                                 <div class="col-md-12 text-right">
                                     <form method="POST">
                                         <div class="input-group">
                                             <input type="text" class="form-control" name="com_name" id="com_name" placeholder="ชื่อบริษัท">  
-                                            <button type="submit" class="btn btn-primary">ค้นหา</button>
+                                            <!--<button type="submit" class="btn btn-primary">ค้นหา</button>-->
                                         </div>
                                     </form>                        
                                 </div>
-                            </div>-->
-                            <div class="">
+                            </div>
+                            <table id="com_tb" class="table table-md">
+                                <thead>
+                                    <tr>
+                                        <th>ชื่อบริษัท</th>
+                                        <th>พนักงาน</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                            <div class="" style="display:none;">
                                 <div class="table-responsive">
                                     <table id="tbl_companymanagement" class="table table-md" style="width:100%;">
                                         <thead>

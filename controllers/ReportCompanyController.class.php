@@ -19,6 +19,9 @@ class ReportCompanyController
             case "company" :
                 $this->$action();
                 break;
+            case "getAjax" :
+                $this->$action();
+                break;
             default:
                 break;
         }
@@ -54,6 +57,28 @@ class ReportCompanyController
         $amphurList = Amphur::findAll();
         $cluster_shopList = Cluster_Shop::findAll();
         include Router::getSourcePath() . "views/admin/report_company.inc.php";
+    }
+
+    private function getAjax()
+    {
+        session_start();
+        $employee = $_SESSION["employee"];
+        # retrieve data
+        //$company = Company::findAll();
+        $com_name = !empty($_POST['com_name']) ? $_POST['com_name'] : '';
+        $company = [];
+        $company = Company::findSearch($_POST['keyword']);
+        $file_log = Filelog::findByPage('manage_company');
+        $provinceList = Province::findAll();
+        $amphurList = Amphur::findAll();
+        $cluster_shopList = Cluster_Shop::findAll();
+        $html = '';
+        if(count($company)>0){
+            foreach($company as $val){
+                $html .= '<tr><td>'.$val->getName_Company().'</td><td>'.$this->getEmp($val->getPROVINCE_ID(),$val->getAMPHUR_ID()).'</td></tr>';
+            }
+        }
+        echo $html;
     }
 
     private function getEmp($province, $amphur)

@@ -612,4 +612,25 @@ function search(){
 }
 
 
+$(document).ready(function() {
+    $("#com_name").keyup(function () {
+      //alert($(this).val());
+      //
 
+      $.ajax({
+        url: "index.php?controller=ReportCompany&action=getAjax",
+        data: {keyword:$(this).val()},
+        type: "POST",
+        async: false,
+        success: function (response) {
+          let amphures = response;
+          //alert(response);
+          $("#com_tb tbody").html(response);
+        },
+        error: function (request, status, error) {
+          console.log(request.responseText);
+        }
+      });
+      //
+    });
+});
