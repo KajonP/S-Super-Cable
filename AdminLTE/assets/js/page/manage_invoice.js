@@ -141,6 +141,7 @@ function invoicemanageShow(type, ID_Message ) {
   function addItem(){
     var id_goods = $("#id_goods").val();
     var qty = $("#qty").val();
+    var p_discout_price = $("#p_discout_price").val();
     if(qty===''){
       alert('ใส่จำนวน');
       return false;
@@ -167,6 +168,9 @@ function invoicemanageShow(type, ID_Message ) {
         */
         //alert(JSON.stringify(response.data));
         var total = qty*response.data.Price_Goods;
+        if(p_discout_price!==undefined && p_discout_price!==null){
+          total = total-parseInt(p_discout_price);
+        }
         var chk = true;
         $('input[name^="goods_array"]').each(function(index,data){
           var value = $(this).val();
@@ -175,6 +179,10 @@ function invoicemanageShow(type, ID_Message ) {
             var getQty = $('#qty_'+value).val();
             var newQty = parseInt(getQty)+qty;
             total = newQty*response.data.Price_Goods
+            if(p_discout_price!==undefined && p_discout_price!==null){
+              alert('99');
+              total = total-parseInt(p_discout_price);
+            }
             $('#td_qty_'+value).text(newQty);
             $('#qty_'+value).val(newQty);
             $('#td_total_'+value).text(total);
@@ -186,10 +194,12 @@ function invoicemanageShow(type, ID_Message ) {
         html += '<td>'+response.data.Name_Goods+'</td>';
         html += '<td style="text-align: center;" id="td_qty_'+id_goods+'">'+qty+'</td>';
         html += '<td style="text-align: center;">'+response.data.Price_Goods+'</td>';
+        html += '<td style="text-align: center;">'+p_discout_price+'</td>';
         html += '<td style="text-align: center;" id="td_total_'+id_goods+'">'+total+'</td>';
         html += '<td>';
         html += '<input type="hidden" name="goods_array[]" value="'+id_goods+'"/>';
         html += '<input type="hidden" name="qty_array[]" id="qty_'+id_goods+'" value="'+qty+'"/>';
+        html += '<input type="hidden" name="p_discout_price[]" id="qty_'+id_goods+'" value="'+p_discout_price+'"/>';
         html += '<a href="javascript:void(0)" onclick="delItem('+id_goods+')"><i class="fas fa-trash-alt"></i></a></td>';
         html += '</tr>';
         if(chk===true){

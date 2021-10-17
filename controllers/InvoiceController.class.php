@@ -91,6 +91,7 @@ class InvoiceController
         //print_r($get_inv);
         $inv_id = $get_inv->getID_Invoice();
         $qty = $params['qty_array'];
+        $p_discout_price = $params['p_discout_price'];
         $access_invoice_detail = new Invoice_Detail();
         $Total = 0;
         $percent_Vat = isset($params['Percent_Vat']) ? $params['Percent_Vat'] : '0';
@@ -109,9 +110,10 @@ class InvoiceController
                         'Name_Goods' => $goods->getName_Goods(),
                         'Quantity_Goods' => $qty[$key],
                         'Price_Goods' => $g_pricr,
-                        'Total' => $qty[$key]*$g_pricr,
+                        'Total' => ($qty[$key]*$g_pricr)-$p_discout_price[$key],
                         'ID_Goods' => $item,
-                        'ID_Invoice' => $inv_id
+                        'ID_Invoice' => $inv_id,
+                        'Discout_Price' => $p_discout_price[$key]
                     ]);
                     $Total = $Total+$qty[$key]*$goods->getPrice_Goods();
                 }

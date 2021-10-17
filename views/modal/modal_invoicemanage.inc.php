@@ -119,7 +119,7 @@
                 <fieldset style="margin-bottom:30px;">
                     <legend>เพิ่มรายการสินค้า</legend>
                     <div class="row">
-                        <div class="col-lg-8">
+                        <div class="col-lg-6">
                             <select class="form-control" name="id_goods" id="id_goods">
                                 <option value="">--เลือกสินค้า--</option>
                                 <?php
@@ -138,6 +138,9 @@
                            <input type="text" id="qty" class="form-control" placeholder="จำนวนสินค้า">
                         </div>
                         <div class="col-lg-2">
+                           <input type="text" id="p_discout_price" class="form-control" placeholder="ส่วนลด">
+                        </div>
+                        <div class="col-lg-2">
                            <button type="button" class="btn btn-block btn-primary" onclick="addItem()" >เพิ่ม</button>
                         </div>
                         <!-- /.col-lg-6 -->
@@ -151,6 +154,7 @@
                             <th scope="col" style="width: 20%; font-size: 12px;">สินค้า</th>
                             <th scope="col" class="text-center" style="width: 10%; font-size: 12px;">จำนวน</th>
                             <th scope="col" style="width: 15%; font-size: 12px;" class="text-center">ราคา/หน่วย</th>
+                            <th scope="col" style="width: 15%; font-size: 12px;" class="text-center">ส่วนลด</th>
                             <th scope="col" style="width: 15%; font-size: 12px;" class="text-center">รวมเป็นเงิน</th>
                             <th scope="col" style="width: 15%; font-size: 12px;" class="text-center">&nbsp;</th>
                         </tr>

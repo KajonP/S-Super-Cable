@@ -51,8 +51,8 @@ try {
                                         </div>
                                     </form>
                                 </div>
-                                <canvas id="myChart" width="100%"></canvas>
-                                <div style="text-align:center; margin-top:20px;">
+                                
+                                <div style="text-align:center; margin-top:20px; display: none;">
                                     <a target="_blank" href="index.php?controller=reportcustomer&action=customer_print2&date_start=<?php echo $_GET['date_start']; ?>&date_end=<?php echo $_GET['date_end'] ?>">ดาวน์โหลดรายงาน</a>
                                 </div>
                             </div>
@@ -63,6 +63,78 @@ try {
                     </div><!-- /.col -->
 
                 </div><!-- /.row -->
+
+                <div class="row mb-2">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                รายงานเปอร์เซ็นของกลุ่มลูกค้า 1
+                                <canvas id="myChart" width="100%"></canvas>
+                                <br/>
+                                <table width="100%">
+                                  <tr>
+                                    <th>ลำดับ</th>
+                                    <th>กลุ่มลูกค้า</th>
+                                    <th>คิดเป็นเปอร์เซ็น</th>
+                                  <tr>
+                                  <tbody>
+                                  <?php
+                                    $no = 0;
+                                    foreach($cluster_name as $key => $val){
+                                      $no++;
+                                  ?>
+                                  <tr>
+                                    <td><?php echo $no; ?></td>
+                                    <td><?php echo $val; ?></td>
+                                    <td><?php echo number_format(($company[$key]/$totalAll)*100,2); ?>%</td>
+                                  </tr>
+                                  <?php
+                                    }
+                                  ?>
+                                  </tbody>
+                                </table>
+                                <div style="text-align:center; margin-top:20px;">
+                                    <a target="_blank" href="index.php?controller=reportcustomer&action=customer_print2&date_start=<?php echo $_GET['date_start']; ?>&date_end=<?php echo $_GET['date_end'] ?>">ดาวน์โหลดรายงาน</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                รายงานเปอร์เซ็นของกลุ่มลูกค้า 2
+                                <canvas id="myChart2" width="100%"></canvas>
+                                <br/>
+                                <table width="100%">
+                                  <tr>
+                                    <th>ลำดับ</th>
+                                    <th>กลุ่มลูกค้า</th>
+                                    <th>คิดเป็นเปอร์เซ็น</th>
+                                  <tr>
+                                  <tbody>
+                                  <?php
+                                    $no = 0;
+                                    foreach($cluster_name as $key => $val){
+                                      $no++;
+                                  ?>
+                                  <tr>
+                                    <td><?php echo $no; ?></td>
+                                    <td><?php echo $val; ?></td>
+                                    <td><?php echo number_format(($company[$key]/$totalAll)*100,2); ?>%</td>
+                                  </tr>
+                                  <?php
+                                    }
+                                  ?>
+                                  </tbody>
+                                </table>
+                                <div style="text-align:center; margin-top:20px;">
+                                    <a target="_blank" href="index.php?controller=reportcustomer&action=customer_print2&date_start=<?php echo $_GET['date_start']; ?>&date_end=<?php echo $_GET['date_end'] ?>">ดาวน์โหลดรายงาน</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
@@ -155,6 +227,15 @@ var myChart = new Chart(ctx, {
     data: data,
     options: options
 });
+
+
+var ctx2 = document.getElementById('myChart2').getContext('2d');
+var myChart = new Chart(ctx2, {
+    type: 'pie',
+    data: data,
+    options: options
+});
+
 
 $('input[name="date_start"]').datepicker({
     format: 'yyyy-mm-dd'

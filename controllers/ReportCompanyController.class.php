@@ -75,7 +75,17 @@ class ReportCompanyController
         $html = '';
         if(count($company)>0){
             foreach($company as $val){
-                $html .= '<tr><td>'.$val->getName_Company().'</td><td>'.$this->getEmp($val->getPROVINCE_ID(),$val->getAMPHUR_ID()).'</td></tr>';
+                $html .= '<tr>
+                            <td>'.$val->getName_Company().'</td>
+                            <td>'.$this->getEmp($val->getPROVINCE_ID(),$val->getAMPHUR_ID()).'</td>
+                            <td>
+                                <a href="#" onclick="companymanageShow(\'view\',\''.$val->getID_Company().'\')">
+                                <button type="button" class="btn btn-round btn-info" style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;width:96px !important;">
+                                    <i class="fa fa-eye"></i>เพิ่มเติม
+                                </button>
+                                </a>
+                            </td>
+                        </tr>';
             }
         }
         echo $html;

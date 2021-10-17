@@ -27,7 +27,7 @@ try {
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-md-12">
-                        <h1 class="m-0">รายการยืม-คืน สินค้า</h1>
+                        <h1 class="m-0">รายการเบิก-คืน สินค้า</h1>
 
                         <!-- content -->
                         <div class="card" >
@@ -38,7 +38,7 @@ try {
                                        class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">
                                         <span class="btn btn-round btn-success"
                                               style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i
-                                                class="fa fa-plus"></i> ยืมสินค้า </span>
+                                                class="fa fa-plus"></i> เบิกสินค้า </span>
                                     </a>
                                 </div>
                             </div>
@@ -48,8 +48,8 @@ try {
                                         <thead>
                                         <tr>
                                             <th>วันที่ยืม</th>
-                                            <th>ยืม-คืน</th>
-                                            <th>ชื่อสินค้าที่ยืม-คืน</th>
+                                            <th>เบิก-คืน</th>
+                                            <th>ชื่อสินค้าที่เบิก-คืน</th>
                                             <th>รายละเอียด</th>
                                             <th>จำนวน</th>
                                             <th>สถานะ</th>
