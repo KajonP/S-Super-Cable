@@ -178,7 +178,7 @@
                 <a class="nav-link active">
                     <i class="nav-icon  fas fa-gift"></i>
                     <p>
-                        เบิก/คืน
+                        เบิก/ยืม - คืน
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
@@ -265,19 +265,11 @@
                         <a href="<?php echo Router::getSourcePath() . "index.php?controller=ReportCustomer&action=customer2"; ?>"
                            class="nav-link">
                             <i class="nav-icon fas fa-store"></i>
-                            <p>เปอร์เซ็นของกลุ่มลูกค้า </p> เเบบที่ 1 นับครั้งการซื้อ
+                            <p>เปอร์เซ็นของกลุ่มลูกค้า </p> ทั้งสองเเบบ
                         </a>
                     </li>
                 </ul>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=ReportCustomer&action=customer"; ?>"
-                           class="nav-link">
-                            <i class="nav-icon fas fa-store"></i>
-                            <p>เปอร์เซ็นของกลุ่มลูกค้า </p>เเบบที่ 2 นับจากยอดขาย
-                        </a>
-                    </li>
-                </ul>
+
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="<?php echo Router::getSourcePath() . "index.php?controller=Trend&action=trend"; ?>"

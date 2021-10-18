@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download/inv.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/inv.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/download/report_customer.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/report_customer.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report-customer2.php" beforeDir="false" afterPath="$PROJECT_DIR$/report-customer2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,10 +47,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.stylelint" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -259,6 +265,8 @@
       <workItem from="1632894101879" duration="2909000" />
       <workItem from="1632903967679" duration="1353000" />
       <workItem from="1633340947753" duration="1862000" />
+      <workItem from="1634284802176" duration="264000" />
+      <workItem from="1634532978343" duration="1892000" />
     </task>
     <task id="LOCAL-00057" summary="case : update user news">
       <created>1625983138904</created>
