@@ -44,15 +44,21 @@ $("#form_search").submit(function(){
           }
           var x = 0;
           var old = [];
+          var dataIndex = 0;
+          var dataYear = [];
+          var dataMonth = new Array(3);
           $.each(data, function() {
+              dataMonth[dataIndex] = new Array(12);
               $.each(this, function(a,b) {
                 yearArr.push(b.year);
+                dataYear.push(b.year);
                 htmlTB += '<tr>';
                 htmlTB += '<td>'+b.year+'</td>';
                 var total = 0;
                 for(var i=1;i<=12;i++){
                   htmlTB += '<td>'+b.month[i]+'</td>';
                   monthVal[i-1] = b.month[i];
+                  dataMonth[dataIndex][i-1] = b.month[i];
                   total = total+b.month[i];
                   if(x===0){
                      old[i] = b.month[i];
@@ -67,6 +73,7 @@ $("#form_search").submit(function(){
                 htmlTB += '</tr>';
                 valArr.push(total);
               });
+            dataIndex++;
           });
           var total_all = 0;
           for(var i=1;i<=12;i++){
@@ -92,21 +99,21 @@ $("#form_search").submit(function(){
           htmlTB += '</table>';
           */
           $("#tb").html(htmlTB);
-          addChart(monthArr,monthVal);
+          addChart(monthArr,monthVal,dataYear,dataMonth);
         }
     });
   return false;
 });
 
-function addChart(year,val){
+function addChart(year,val,dataYear,dataMonth){
   var ctx = document.getElementById('myChart').getContext('2d');
   var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: year,
         datasets: [{
-            label: 'ยอดขาย',
-            data: val,
+            label: dataYear[0],
+            data: dataMonth[0],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(255, 99, 132, 0.2)',
@@ -136,7 +143,74 @@ function addChart(year,val){
                 'rgba(255, 99, 132, 1)'
             ],
             borderWidth: 1
-        }]
+        },
+        {
+            label: dataYear[1],
+            data: dataMonth[1],
+            backgroundColor: [
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+            ],
+            borderColor: [
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+                'rgba(54, 39, 245, 0.8)',
+            ],
+            borderWidth: 1
+        },
+        {
+            label: dataYear[2],
+            data: dataMonth[2],
+            backgroundColor: [
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+            ],
+            borderColor: [
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+                'rgba(230, 245, 39, 0.8)',
+            ],
+            borderWidth: 1
+        }
+        ]
     },
     options: {
         scales: {

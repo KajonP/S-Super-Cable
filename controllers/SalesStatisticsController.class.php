@@ -88,10 +88,13 @@ class SalesStatisticsController
     private function getReport2(){
         $ID_Employee = $_POST['ID_Employee'];
         //$ID_Employee = 'a004';
-        $year1 = $_POST['year1'];
-        $year2 = $_POST['year1'];
+        //$year1 = $_POST['year1'];
+        //$year2 = $_POST['year1'];
+        $year1 = date('Y');
+        $year2 = date('Y')-1;
+        $year3 = date('Y')-2;
         $year_start = date('Y')-5;
-        $year_arr = [$year1,$year2];
+        $year_arr = [$year1,$year2,$year3];
         $data = [];
         foreach($year_arr as $i){
             for($m=1;$m<=12;$m++){

@@ -45,7 +45,7 @@ try {
                                             ?>
                                         </select>
                                     </div>
-                                    <div class="col-sm-2">
+                                    <div class="col-sm-2" style="display:none;">
                                         <select class="form-control" name="year1" id="year1">
                                             <option value="">-กรุณาเลือกปี-</option>
                                             <?php
