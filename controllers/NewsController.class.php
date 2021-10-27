@@ -119,56 +119,32 @@ class NewsController
         $message_title =  $params["Tittle_Message"] ;
         $message_text  =  isset($params["Text_Message"]) ?  $params["Text_Message"] : "";
 
-        // print_r('hello world'. '     ' . $access_news->generatePictureFilename($FILE_IMG['name'][0], $message_title));
-
-        $message_filename = !empty($FILE_IMG['name'][0]) ?  $access_news->generatePictureFilename($FILE_IMG['name'][0], $message_title) : "" ;
-        $message_filename2 = !empty($FILE_IMG['name'][1]) ?  $access_news->generatePictureFilename($FILE_IMG['name'][1], $message_title) : "" ;
-        $message_filename3 = !empty($FILE_IMG['name'][2]) ?  $access_news->generatePictureFilename($FILE_IMG['name'][2], $message_title) : "" ;
         $message_datetime = $access_news->geneateDateTime();
-        $locate_img = "";
-        $locate_img2 = "";
-        $locate_img3 = "";
-        //echo ">>".$FILE_IMG['name'][1];
-        if (!empty($FILE_IMG) && !empty($FILE_IMG['name'][0]))
-        {
-            $name_file =  $FILE_IMG['name'][0];
-            $name_file_type =  explode('.',$name_file)[1] ;
-            $tmp_name =  $FILE_IMG['tmp_name'][0];
-            $locate_img = Router::getSourcePath() . "images/" . $message_filename . ".".$name_file_type;
-
-            // copy original file to destination file
-            move_uploaded_file($tmp_name, $locate_img);
+        for($i=0;$i<=2;$i++){
+            if(!empty($FILE_IMG) && !empty($FILE_IMG['name'][$i])){
+                $name_file =  $FILE_IMG['name'][$i];
+                $ex =  explode('.',$name_file) ;
+                $name_file_type = end($ex);
+                $tmp_name =  $FILE_IMG['tmp_name'][$i];
+                $message_filename = md5(date('YmdHis').rand(1,999999)).".".$name_file_type;
+                $locate_img = Router::getSourcePath() . "images/" . $message_filename;
+                move_uploaded_file($tmp_name, $locate_img);
+                $message_image = new Message_Image();
+                $message_image->create_images([
+                    'ID_Message' => $messageid,
+                    'Image_name' => $message_filename
+                ]);
+            }
         }
-
-        if (!empty($FILE_IMG) && !empty($FILE_IMG['name'][1]))
-        {
-            $name_file2 =  $FILE_IMG['name'][1];
-            $name_file_type2 =  explode('.',$name_file2)[1] ;
-            $tmp_name2 =  $FILE_IMG['tmp_name'][1];
-            $locate_img2 = Router::getSourcePath() . "images/" . $message_filename2 . ".".$name_file_type2;
-
-            // copy original file to destination file
-            move_uploaded_file($tmp_name2, $locate_img2);
-        }
-
-        if (!empty($FILE_IMG) && !empty($FILE_IMG['name'][2]))
-        {
-            $name_file3 =  $FILE_IMG['name'][2];
-            $name_file_type3 =  explode('.',$name_file3)[1] ;
-            $tmp_name3 =  $FILE_IMG['tmp_name'][2];
-            $locate_img3 = Router::getSourcePath() . "images/" . $message_filename3 . ".".$name_file_type3;
-
-            // copy original file to destination file
-            move_uploaded_file($tmp_name3, $locate_img3);
-        }
+       
 
         $access_news_params = array(
             "ID_Message" => $messageid,
             "Tittle_Message" => $message_title,
             "Text_Message" => $message_text,
-            "Picture_Message" => $locate_img,
-            "Picture_Message2" => $locate_img2,
-            "Picture_Message3" => $locate_img3,
+            "Picture_Message" => '',
+            "Picture_Message2" => '',
+            "Picture_Message3" => '',
             "Date_Message"=> $message_datetime,
         );
 
@@ -182,16 +158,16 @@ class NewsController
     private function findbyID_Message($findbyID_Message)
     {
         $message = Message::findById($findbyID_Message);//echo json_encode($employee);
-
+        $img =  Message_Image::get_images($findbyID_Message);
         // echo json_encode(array("data" => $data_sendback));
 
         $data_sendback = array(
             "ID_Message" => $message->getID_Message(),
             "Tittle_Message" => $message->getTittle_Message(),
             "Text_Message" => $message->getText_Message(),
-            "Picture_Message" => $message->getPicture_Message(),
-            "Picture_Message2" => $message->getPicture_Message2(),
-            "Picture_Message3" => $message->getPicture_Message3(),
+            "Picture_Message" => isset($img[0]) ? Router::getSourcePath() . "images/".$img[0]->getImage_name() : "",
+            "Picture_Message2" => isset($img[1]) ? Router::getSourcePath() . "images/".$img[1]->getImage_name() : "",
+            "Picture_Message3" => isset($img[2]) ? Router::getSourcePath() . "images/".$img[2]->getImage_name() : "",
             "Date_Message" => $message->getDate_Message(),
         );
 

@@ -48,25 +48,13 @@ var dataTable_ = $("#tbl_news").DataTable({
 
 
 var filesList = [];
-var myDropzone = new Dropzone("div#dropzoneId",{
-  url: "/file/post",
-  acceptedFiles: 'image/*',
-  maxFiles: 3,
-  autoQueue: false,
-  addRemoveLinks: true,
-  dictDefaultMessage : 'วางไฟล์ที่นี่เพื่ออัพโหลด',
-  dictRemoveFile : 'ลบไฟล์',
-  dictInvalidFileType: 'คุณไม่สามารถอัปโหลดไฟล์ประเภทนี้ได้',
-  init: function(){
-    this.on("addedfile",function(file){
-      myDropzone.emit("complete",file);
-      filesList.push(file);
-    });
-    this.on("maxfilesexceeded", function(file){
-      this.removeFile(file);
-    });
-  }
+var myDropzone;
+Dropzone.autoDiscover = false;
+$(document).ready(function () {
+  
+
 });
+
 
 var form_validte = $("#form_newsManage").validate({
   rules: {
@@ -113,7 +101,6 @@ var form_validte = $("#form_newsManage").validate({
 function  newsManageShow(type, ID_Message ) {
   var title = "" ;
   //$('.dz-preview').remove();
-
   /* clear old form value */
   $('#form_newsManage')[0].reset();
   $("#thumnails_award_pic").attr("src", "");
@@ -203,69 +190,6 @@ function onaction_createoredit(ID_Message = null) {
   var file_data2 = $('input[name="profile_news2"]')[0].files;
   var file_data3 = $('input[name="profile_news3"]')[0].files;
 
-
-  /*
-  if (type == "create" )
-  {
-      //File data
-    if (file_data.length > 0)
-    {
-      for (var i = 0; i < file_data.length; i++)
-      {
-          data.append("profile_news[]", file_data[i]);
-      }
-    }
-
-    if (file_data2.length > 0)
-    {
-      for (var i = 0; i < file_data2.length; i++)
-      {
-          data.append("profile_news[]", file_data2[i]);
-      }
-    }
-
-    if (file_data3.length > 0)
-    {
-      for (var i = 0; i < file_data3.length; i++)
-      {
-          data.append("profile_news[]", file_data3[i]);
-      }
-    }
-
-  }
-  else
-  {
-    //File data
-    // edit if insert picture
-    if (file_data.length > 0)
-    {
-      for (var i = 0; i < file_data.length; i++)
-      {
-          data.append("profile_news[]", file_data[i]);
-      }
-    }
-
-    if (file_data2.length > 0)
-    {
-      for (var i = 0; i < file_data2.length; i++)
-      {
-          data.append("profile_news[]", file_data2[i]);
-      }
-    }
-
-    if (file_data3.length > 0)
-    {
-      for (var i = 0; i < file_data3.length; i++)
-      {
-          data.append("profile_news[]", file_data3[i]);
-      }
-    }
-
-
-  }
-
-  alert(filesList);
-  */
   var ImgFile = myDropzone.getFilesWithStatus(Dropzone.ADDED);
   ImgFile.forEach((o)=>{
      //alert('vv');
@@ -337,6 +261,7 @@ function create_news(formData)
 
 // set value into html tag
 // call ajax get data from server.
+var fArr = [];
 function get_news_to_edit(ID_Message) {
 
   $.ajax({
@@ -351,12 +276,8 @@ function get_news_to_edit(ID_Message) {
       /* set input value */
 
       $('#Tittle_Message').val(response.data.Tittle_Message);
-      //$('#Text_Message').val(response.data.Text_Message);
       CKEDITOR.instances['Text_Message'].setData(response.data.Text_Message);
-      $("#thumnails_new_profile").attr("src", response.data.Picture_Message);
-      $("#thumnails_new_profile2").attr("src", response.data.Picture_Message2);
-      $("#thumnails_new_profile3").attr("src", response.data.Picture_Message3);
-      var fArr = [response.data.Picture_Message,response.data.Picture_Message2,response.data.Picture_Message3];
+      fArr = [response.data.Picture_Message,response.data.Picture_Message2,response.data.Picture_Message3];
       addImgView(fArr);
     },
     error: function (xhr, status, exception) {
@@ -502,17 +423,25 @@ function addImgView(f){
       var mocFile = {
           id: i,
           name: f[i],
-          path: f[i]
+          path: f[i],
         };
       if(f[i]!=''){
         myDropzone.emit("addedfile",mocFile);
         myDropzone.emit("thumbnail",mocFile,f[i]);
-        myDropzone.emit("complete",mocFile);
-        filesList.push(mocFile);
+        //myDropzone.emit("complete",mocFile);
+        //filesList.push(mocFile);
       }
     }
   }
+  //myDropzone.options.maxFiles = 3 - f.length;
 }
+
+
+$('#newsManageModal').on('shown.bs.modal', function (e) {
+  ////
+  intDropzone();
+  addImgView(fArr);
+});
 
 $('#newsManageModal').on('hidden.bs.modal', function () {
   //window.alert('hidden event fired!');
@@ -521,7 +450,34 @@ $('#newsManageModal').on('hidden.bs.modal', function () {
       myDropzone.removeFile(filesList[i]);
     }
   }
+  filesList = [];
+  fArr = [];
+  myDropzone.destroy();
 });
 
+function intDropzone(){
+   myDropzone = new Dropzone("div#dropzoneId",{
+    url: "/file/post",
+    acceptedFiles: 'image/*',
+    //maxFiles: 3,
+    autoQueue: false,
+    addRemoveLinks: true,
+    dictDefaultMessage : 'วางไฟล์ที่นี่เพื่ออัพโหลด',
+    dictRemoveFile : 'ลบไฟล์',
+    dictInvalidFileType: 'คุณไม่สามารถอัปโหลดไฟล์ประเภทนี้ได้',
+    thumbnailWidth: 120,
+    thumbnailHeight: 120,
+    init: function(){
+      this.on("addedfile",function(file){
+        this.emit("complete",file);
+        filesList.push(file);
+      });
+      this.on("maxfilesexceeded", function(file){
+        //alert("bb");
+        this.removeFile(file);
+      });
+    }
+  });
+}
 
 
