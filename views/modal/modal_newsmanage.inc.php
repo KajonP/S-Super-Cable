@@ -51,7 +51,7 @@
                         <input id="profile_news3" name="profile_news3" type="file"  style="" onchange="preview3();" >          
                     </div>
                     <div class="dropzone" id="dropzoneId">
-                    </div><span class="text-danger" >*อัปโหลดไฟล์ได้มากสุด 3 ไฟล์</span>
+                    </div>
 
                 </form>
 

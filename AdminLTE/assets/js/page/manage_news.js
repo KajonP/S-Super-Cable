@@ -48,11 +48,11 @@ var dataTable_ = $("#tbl_news").DataTable({
 
 
 var filesList = [];
+var del_files = [];
 var myDropzone;
 Dropzone.autoDiscover = false;
 $(document).ready(function () {
-  
-
+   intDropzone();
 });
 
 
@@ -64,18 +64,6 @@ var form_validte = $("#form_newsManage").validate({
     Text_Message: {
       required: true,
     },
-    profile_news: {
-      extension: "jpg|jpeg|gif|png",
-    },
-    profile_news2: {
-      extension: "jpg|jpeg|gif|png",
-    },
-    profile_news3: {
-      extension: "jpg|jpeg|gif|png",
-    },
-
-
-
     action: "required"
   },
   messages: {
@@ -85,9 +73,6 @@ var form_validte = $("#form_newsManage").validate({
     Text_Message: {
       required: "กรุณาใส่ข้อมูล",
     },
-    profile_news: "กรุณาอัพโหลดไฟล์รูปภาพที่มีนามสกุลไฟล์คือ .png , .jpg ,.jpeg ,.gif เท่านั้น",
-    profile_news2: "กรุณาอัพโหลดไฟล์รูปภาพที่มีนามสกุลไฟล์คือ .png , .jpg ,.jpeg ,.gif เท่านั้น",
-    profile_news3: "กรุณาอัพโหลดไฟล์รูปภาพที่มีนามสกุลไฟล์คือ .png , .jpg ,.jpeg ,.gif เท่านั้น",
     action: "กรุณาใส่ข้อมูล"
   }, errorPlacement: function (error, element) {
     {
@@ -186,14 +171,14 @@ function onaction_createoredit(ID_Message = null) {
       data.append(input.name, input.value);
   });
 
-  var file_data = $('input[name="profile_news"]')[0].files;
-  var file_data2 = $('input[name="profile_news2"]')[0].files;
-  var file_data3 = $('input[name="profile_news3"]')[0].files;
-
   var ImgFile = myDropzone.getFilesWithStatus(Dropzone.ADDED);
   ImgFile.forEach((o)=>{
      //alert('vv');
      data.append("profile_news[]", o);
+  });
+
+  del_files.forEach((o)=>{
+     data.append("del_files[]", o);
   });
 
   switch(type) {
@@ -277,8 +262,11 @@ function get_news_to_edit(ID_Message) {
 
       $('#Tittle_Message').val(response.data.Tittle_Message);
       CKEDITOR.instances['Text_Message'].setData(response.data.Text_Message);
-      fArr = [response.data.Picture_Message,response.data.Picture_Message2,response.data.Picture_Message3];
-      addImgView(fArr);
+      //fArr = [response.data.Picture_Message,response.data.Picture_Message2,response.data.Picture_Message3];
+      response.data.img.forEach((o)=>{
+        fArr.push(o);
+      });
+      //addImgView(fArr);
     },
     error: function (xhr, status, exception) {
       console.log(xhr);
@@ -439,7 +427,7 @@ function addImgView(f){
 
 $('#newsManageModal').on('shown.bs.modal', function (e) {
   ////
-  intDropzone();
+  //intDropzone();
   addImgView(fArr);
 });
 
@@ -452,7 +440,8 @@ $('#newsManageModal').on('hidden.bs.modal', function () {
   }
   filesList = [];
   fArr = [];
-  myDropzone.destroy();
+  del_files = [];
+  //myDropzone.destroy();
 });
 
 function intDropzone(){
@@ -476,7 +465,11 @@ function intDropzone(){
         //alert("bb");
         this.removeFile(file);
       });
-    }
+      this.on("removedfile", function(file) {
+        //alert(JSON.stringify(file));
+        del_files.push(file.name);
+      });
+    },
   });
 }
 

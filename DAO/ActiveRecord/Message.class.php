@@ -350,5 +350,51 @@ class Message
 
     }
 
+    public static function message_unread($ID_Employee){
+        $con = Db::getInstance();
+        $query = "SELECT * FROM " . self::TABLE;
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
+        $stmt->execute();
+        $msg = array();
+        while ($prod = $stmt->fetch()) {
+            $msg[] = $prod;
+        }
+        $countMsg = count($msg);
+
+        $query = "SELECT * FROM message_status WHERE ID_Employee='".$ID_Employee."'";
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
+        $stmt->execute();
+        $read = array();
+        while ($prod = $stmt->fetch()) {
+            $read[] = $prod;
+        }
+        return $countMsg-count($read);
+    }
+
+
+     public static function update_message_status($ID_Employee, $ID_message)
+    {
+        $con = Db::getInstance();
+        $query = "SELECT * FROM message_status WHERE ID_Employee='".$ID_Employee."' AND ID_Message='".$ID_message."'";
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
+        $stmt->execute();
+        $read = array();
+        while ($prod = $stmt->fetch()) {
+            $read[] = $prod;
+        }
+        
+        if(count($read)=='0'){
+            $query = 'INSERT INTO message_status(ID_Employee,ID_Message,status) VALUES("'.$ID_Employee.'","'.$ID_message.'","0")';
+            $con->exec($query);
+        }
+       
+        return array("status" => true);
+
+    }
+
+
 }
 

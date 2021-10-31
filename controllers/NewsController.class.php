@@ -36,11 +36,18 @@ class NewsController
                 $FILE_IMG = isset($params["FILES"]) ? $params["FILES"] : "";
                 $Params= isset($params["POST"]) ? $params["POST"] : "";
                 $ID_Message = isset($params["GET"]["ID_Message"]) ? $params["GET"]["ID_Message"] : "";
+                $FILE_IMG = isset($params["FILES"]["profile_news"]) ? $params["FILES"]["profile_news"] : "";
                 $result = $this->$action($params["POST"] ,$FILE_IMG, $ID_Message);
                 echo $result;
                 break;
             case "delete_news":
                 $params = isset($params["GET"]["ID_Message"]) ? $params["GET"]["ID_Message"] : "";
+                $result = $this->$action($params);
+                // print_r($params);
+                echo $result;
+                break;
+            case "delete_img":
+                $params = $_GET["file_name"];
                 $result = $this->$action($params);
                 // print_r($params);
                 echo $result;
@@ -66,6 +73,7 @@ class NewsController
                     $message = Message::fetchAllwithInnerLimit($employee->getID_Employee(),$start,$show_row);
                     //echo $n.':'.$count_page;
                     //exit;
+                    $emp_id = $employee->getID_Employee();
                     include Router::getSourcePath() . "views/sales/index_news.inc.php";
                 } else if ($employee->getUser_Status_Employee() == "User") {
                     # retrieve data
@@ -82,6 +90,7 @@ class NewsController
                     $message = Message::fetchAllwithInnerLimit($employee->getID_Employee(),$start,$show_row);
                     //echo $n.':'.$count_page;
                     //exit;
+                    $emp_id = $employee->getID_Employee();
                     include Router::getSourcePath() . "views/sales/index_news.inc.php";
                 }
                 break;
@@ -104,7 +113,7 @@ class NewsController
              case "show" :
                 session_start();
                 $employee = $_SESSION['employee'];
-                Message::update_news_status($employee->getID_Employee(), $_GET['id']);
+                Message::update_message_status($employee->getID_Employee(), $_GET['id']);
                 $this->show();
                 break;
             default:
@@ -120,7 +129,7 @@ class NewsController
         $message_text  =  isset($params["Text_Message"]) ?  $params["Text_Message"] : "";
 
         $message_datetime = $access_news->geneateDateTime();
-        for($i=0;$i<=2;$i++){
+        for($i=0;$i<=count($FILE_IMG['name']);$i++){
             if(!empty($FILE_IMG) && !empty($FILE_IMG['name'][$i])){
                 $name_file =  $FILE_IMG['name'][$i];
                 $ex =  explode('.',$name_file) ;
@@ -160,7 +169,12 @@ class NewsController
         $message = Message::findById($findbyID_Message);//echo json_encode($employee);
         $img =  Message_Image::get_images($findbyID_Message);
         // echo json_encode(array("data" => $data_sendback));
-
+        $img_arr = [];
+        if(count($img) > 0 ){
+            foreach($img as $val){
+                $img_arr[] = Router::getSourcePath() . "images/".$val->getImage_name();
+            }
+        }
         $data_sendback = array(
             "ID_Message" => $message->getID_Message(),
             "Tittle_Message" => $message->getTittle_Message(),
@@ -169,6 +183,7 @@ class NewsController
             "Picture_Message2" => isset($img[1]) ? Router::getSourcePath() . "images/".$img[1]->getImage_name() : "",
             "Picture_Message3" => isset($img[2]) ? Router::getSourcePath() . "images/".$img[2]->getImage_name() : "",
             "Date_Message" => $message->getDate_Message(),
+            "img" => $img_arr
         );
 
         echo json_encode(array("data" => $data_sendback));
@@ -184,59 +199,34 @@ class NewsController
         $message_title =  $params["Tittle_Message"] ;
         $message_text  =  isset($params["Text_Message"]) ?  $params["Text_Message"] : "";
         $message_datetime = $access_news->geneateDateTime();
-
-        $locate_img = "";
-        $locate_img2 = "";
-        $locate_img3 = "";
-
-        // print_r('hello world'. '     ' . $access_news->generatePictureFilename($FILE_IMG['profile_news']['name'][0], $message_title));
-        //print_r($FILE_IMG['profile_news']);
-        $message_filename = !empty($FILE_IMG['profile_news']['name'][0]) ?  $access_news->generatePictureFilename($FILE_IMG['profile_news']['name'][0], $message_title) : "" ;
-
-        $message_filename2 = !empty($FILE_IMG['profile_news']['name'][1]) ?  $access_news->generatePictureFilename($FILE_IMG['profile_news']['name'][1], $message_title) : "" ;
-
-         $message_filename3 = !empty($FILE_IMG['profile_news']['name'][2]) ?  $access_news->generatePictureFilename($FILE_IMG['profile_news']['name'][2], $message_title) : "" ;
-         
-        if (!empty($FILE_IMG) && !empty($FILE_IMG['profile_news']['name']))
-        {
-            $name_file =  $FILE_IMG['profile_news']['name'][0];
-            $name_file_type =  explode('.',$name_file)[1] ;
-            $tmp_name =  $FILE_IMG['profile_news']['tmp_name'][0];
-            $locate_img = Router::getSourcePath() . "images/" . $message_filename . ".".$name_file_type;
-
-            // copy original file to destination file
-            move_uploaded_file($tmp_name, $locate_img);
+        
+        if(isset($FILE_IMG['name'])){
+            for($i=0;$i<=count($FILE_IMG['name']);$i++){
+                if(!empty($FILE_IMG) && !empty($FILE_IMG['name'][$i])){
+                    $name_file =  $FILE_IMG['name'][$i];
+                    $ex =  explode('.',$name_file) ;
+                    $name_file_type = end($ex);
+                    $tmp_name =  $FILE_IMG['tmp_name'][$i];
+                    $message_filename = md5(date('YmdHis').rand(1,999999)).".".$name_file_type;
+                    $locate_img = Router::getSourcePath() . "images/" . $message_filename;
+                    move_uploaded_file($tmp_name, $locate_img);
+                    $message_image = new Message_Image();
+                    $message_image->create_images([
+                        'ID_Message' => $messageid,
+                        'Image_name' => $message_filename
+                    ]);
+                }
+            }
         }
-
-         if (!empty($FILE_IMG) && !empty($FILE_IMG['profile_news']['name'][1]))
-        {
-            $name_file2 =  $FILE_IMG['profile_news']['name'][1];
-            $name_file_type2 =  explode('.',$name_file2)[1] ;
-            $tmp_name2 =  $FILE_IMG['profile_news']['tmp_name'][1];
-            $locate_img2 = Router::getSourcePath() . "images/" . $message_filename2 . ".".$name_file_type2;
-
-            // copy original file to destination file
-            move_uploaded_file($tmp_name2, $locate_img2);
-        }
-
-        if (!empty($FILE_IMG) && !empty($FILE_IMG['profile_news']['name'][2]))
-        {
-            $name_file3 =  $FILE_IMG['profile_news']['name'][2];
-            $name_file_type3 =  explode('.',$name_file3)[1] ;
-            $tmp_name3 =  $FILE_IMG['profile_news']['tmp_name'][2];
-            $locate_img3 = Router::getSourcePath() . "images/" . $message_filename3 . ".".$name_file_type3;
-
-            // copy original file to destination file
-            move_uploaded_file($tmp_name3, $locate_img3);
-        }
+       
 
         $access_news_params = array(
             "ID_Message" => $messageid,
             "Tittle_Message" => $message_title,
             "Text_Message" => $message_text,
-            "Picture_Message" => $locate_img,
-            "Picture_Message2" => $locate_img2,
-            "Picture_Message3" => $locate_img3,
+            "Picture_Message" => '',
+            "Picture_Message2" => '',
+            "Picture_Message3" => '',
             "Date_Message"=> $message_datetime,
         );
 
@@ -244,6 +234,12 @@ class NewsController
         $result = $access_news->update_news(
             $access_news_params
         );
+
+        if(isset($_POST['del_files']) && count($_POST['del_files']) > 0){
+            foreach($_POST['del_files'] as $val){
+                $this->delete_img($val);
+            }
+        }
 
         return json_encode($result);
     }
@@ -283,6 +279,7 @@ class NewsController
         
         $employee = $_SESSION["employee"];
         $message = Message::findById($_GET['id']);
+        $img = Message_Image::get_images($_GET['id']);
         if ($employee->getUser_Status_Employee() == "Admin") {
             include Router::getSourcePath() . "views/index_admin.inc.php";
         } else if ($employee->getUser_Status_Employee() == "Sales") {
@@ -290,6 +287,13 @@ class NewsController
         } else if ($employee->getUser_Status_Employee() == "User") {
             include Router::getSourcePath() . "views/sales/news.inc.php";
         }
+    }
+
+    private function delete_img($filename) {
+        $get_file_name = explode('/',$filename);
+        $file_name = end($get_file_name);
+        $result = Message_Image::delete_images($file_name);
+        return json_encode($result);
     }
 
 }

@@ -38,13 +38,21 @@ try {
             <div class="card">
                 <div class="card-body">
                     <?php
-                        $img = $message->getPicture_Message();
-                        $img2 = $message->getPicture_Message2();
-                        $img3 = $message->getPicture_Message3();
                         $date = date_create($message->getDate_Message());
                     ?>
                     วันที่ : <?php echo date_format($date, 'd/m/Y'); ?>
-                    <center> <img src="<?php echo $img; ?>" width="30%"><img src="<?php echo $img2; ?>" width="30%"> <img src="<?php echo $img3; ?>" width="30%"><br> </center>
+                    <div class="row"> 
+                        <?php 
+                        if(count($img)>0){ 
+                            foreach($img as $img_val){
+                                $img_data = Router::getSourcePath() . "images/".$img_val->getImage_name();
+                        ?>
+                            <div class="col-xs-6 col-md-3"><img src="<?php echo $img_data; ?>" width="100%" height="100%"></div>
+                        <?php 
+                            }
+                        } 
+                        ?>
+                    </div>
                     <p> <?php echo $message->getText_Message(); ?></p>
                 </div>
             </div>

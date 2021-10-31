@@ -47,29 +47,24 @@ var dataTable_ = $("#tbl_award").DataTable({
 
 });
 
+var filesList = [];
+var del_files = [];
+var myDropzone;
+Dropzone.autoDiscover = false;
+$(document).ready(function () {
+   intDropzone();
+});
+
 var form_validte = $("#form_awardManage").validate({
   rules: {
     Tittle_Award: {
       required: true,
     },
-    ID_Employee: {
-      //required: true,
-    },
-    award_pic: {
-      extension: "jpg|jpeg|gif|png",
-    },
-
-    action: "required"
   },
   messages: {
     Tittle_Award: {
       required: "กรุณาใส่ข้อมูล",
     },
-    ID_Employee: {
-     // required: "กรุณาใส่ข้อมูล",
-    },
-    award_pic: "กรุณาอัพโหลดไฟล์รูปภาพที่มีนามสกุลไฟล์คือ .png , .jpg ,.jpeg ,.gif เท่านั้น",
-    action: "กรุณาใส่ข้อมูล"
   }, errorPlacement: function (error, element) {
     {
       error.insertAfter(element)
@@ -84,19 +79,16 @@ function  awardManageShow(type, ID_Award ) {
     /* clear old form value */
     $('#form_awardManage')[0].reset();
     $("#thumnails_award_pic").attr("src", "");
-
       switch(type)
       {
         case "create":
           title = "สร้างรางวัล";
-
           // set id
           $('#button_awardManageModal').attr("data-id", null);
           $('#form_awardManage input').attr('disabled', false);
           $('#form_awardManage input').attr('readonly',false);
           $('#form_awardManage select').attr("disabled", false);
           form_validte.resetForm();
-
           break;
         case "edit":
 
@@ -104,32 +96,23 @@ function  awardManageShow(type, ID_Award ) {
 
           form_validte.resetForm();
           get_award_to_edit(ID_Award);
-          // set id
-
           $('#button_awardManageModal').attr("data-id", ID_Award);
           $('#form_awardManage input').attr('disabled', false);
           $('#form_awardManage input').attr('readonly',false);
           $('#form_awardManage select').attr("disabled", false);
-
           break;
         case 'view':
           title = "ดูรางวัล ";
           //clear error if exists
           form_validte.resetForm();
-
           get_award_to_edit(ID_Award);
-
-
-        $('#form_awardManage input').attr('readonly', 'readonly');
-        $('#form_awardManage input').attr('disabled',true);
-
+          $('#form_awardManage input').attr('readonly', 'readonly');
+          $('#form_awardManage input').attr('disabled',true);
           $('#form_awardManage select').attr("disabled", true);
-
           $('#button_awardManageModal').hide();
-
         default:
           // ..
-          break;
+        break;
       }
 
       /* set title */
@@ -161,73 +144,24 @@ function onaction_createorupdate(ID_Award = null) {
 
   if (type == "create" )
   {
-    //File data
-    /*
-    if (file_data.length > 0)
-    {
-      for (var i = 0; i < file_data.length; i++)
-      {
-        data.append("award_pic[]", file_data[i]);
-      }
-    }
-
-    if (file_data2.length > 0)
-    {
-      for (var i = 0; i < file_data2.length; i++)
-      {
-        data.append("award_pic[]", file_data2[i]);
-      }
-    }
-
-    if (file_data3.length > 0)
-    {
-      for (var i = 0; i < file_data3.length; i++)
-      {
-        data.append("award_pic[]", file_data3[i]);
-      }
-    }
-    */
+    
     var ImgFile = myDropzone.getFilesWithStatus(Dropzone.ADDED);
     ImgFile.forEach((o)=>{
-       //alert('vv');
        data.append("award_pic[]", o);
     });
-
   }
   else
   {
-    //File data
-    // edit if insert picture
-    /*
-    if (file_data.length > 0)
-    {
-      for (var i = 0; i < file_data.length; i++)
-      {
-        data.append("award_pic[0]", file_data[i]);
-      }
-    }
-
-    if (file_data2.length > 0)
-    {
-      for (var i = 0; i < file_data2.length; i++)
-      {
-        data.append("award_pic[1]", file_data2[i]);
-      }
-    }
-
-    if (file_data3.length > 0)
-    {
-      for (var i = 0; i < file_data3.length; i++)
-      {
-        data.append("award_pic[2]", file_data3[i]);
-      }
-    }
-    */
-     var ImgFile = myDropzone.getFilesWithStatus(Dropzone.ADDED);
+   
+    var ImgFile = myDropzone.getFilesWithStatus(Dropzone.ADDED);
     ImgFile.forEach((o)=>{
-       //alert('vv');
        data.append("award_pic[]", o);
     });
+
+    del_files.forEach((o)=>{
+     data.append("del_files[]", o);
+    });
+
   }
 
   switch(type) {
@@ -289,7 +223,7 @@ function create_award(formData)
   }
 }
 
-
+var fArr = [];
 function get_award_to_edit(ID_Award) {
   $.ajax({
     url: "index.php?controller=Award&action=findAwardbyID_Award",
@@ -305,14 +239,11 @@ function get_award_to_edit(ID_Award) {
 
       // set value to html tag
       $('#Tittle_Award').val(response.data.Tittle_Award);
-      $('#ID_Employee_Award').val(response.data.ID_Employee).trigger('change')
-      $("#thumnails_award_pic").attr("src", response.data.Picture_Award);
-      $("#thumnails_award_pic2").attr("src", response.data.Picture_Award2);
-      $("#thumnails_award_pic3").attr("src", response.data.Picture_Award3);
-      //alert(response.data.Picture_Award);
-      var fArr = [response.data.Picture_Award,response.data.Picture_Award2,response.data.Picture_Award3];
-      addImgView(fArr)
-
+      $('#ID_Employee_Award').val(response.data.ID_Employee).trigger('change');
+      //alert(JSON.stringify(response.data.img));
+      response.data.img.forEach((o)=>{
+        fArr.push(o);
+      });
     },
     error: function (xhr, status, exception) {
       console.log(xhr);
@@ -432,50 +363,28 @@ function delete_award(ID_Award)
 }
 
 
-var filesList = [];
-var myDropzone = new Dropzone("div#dropzoneId",{
-  url: "/file/post",
-  acceptedFiles: 'image/*',
-  maxFiles: 3,
-  autoQueue: false,
-  addRemoveLinks: true,
-  dictDefaultMessage : 'วางไฟล์ที่นี่เพื่ออัพโหลด',
-  dictRemoveFile : 'ลบไฟล์',
-  dictInvalidFileType: 'คุณไม่สามารถอัปโหลดไฟล์ประเภทนี้ได้',
-  init: function(){
-    this.on("addedfile",function(file){
-      myDropzone.emit("complete",file);
-      filesList.push(file);
-    });
-    this.on("maxfilesexceeded", function(file){
-      this.removeFile(file);
-    });
-  }
-});
-
- var ImgFile = myDropzone.getFilesWithStatus(Dropzone.ADDED);
-  ImgFile.forEach((o)=>{
-     //alert('vv');
-     data.append("profile_news[]", o);
-  });
-
-  function addImgView(f){
+function addImgView(f){
   if(f.length > 0){
     for(var i=0;i<f.length;i++){
       var mocFile = {
           id: i,
           name: f[i],
-          path: f[i]
+          path: f[i],
         };
       if(f[i]!=''){
         myDropzone.emit("addedfile",mocFile);
         myDropzone.emit("thumbnail",mocFile,f[i]);
-        myDropzone.emit("complete",mocFile);
-        filesList.push(mocFile);
+        //myDropzone.emit("complete",mocFile);
+        //filesList.push(mocFile);
       }
     }
   }
 }
+
+$('#awardManageModal').on('shown.bs.modal', function (e) {
+  //alert(JSON.stringify(fArr));
+  addImgView(fArr);
+});
 
 $('#awardManageModal').on('hidden.bs.modal', function () {
   //window.alert('hidden event fired!');
@@ -484,5 +393,37 @@ $('#awardManageModal').on('hidden.bs.modal', function () {
       myDropzone.removeFile(filesList[i]);
     }
   }
+  filesList = [];
+  fArr = [];
+  del_files = [];
 });
 
+
+function intDropzone(){
+   myDropzone = new Dropzone("div#dropzoneId",{
+    url: "/file/post",
+    acceptedFiles: 'image/*',
+    //maxFiles: 3,
+    autoQueue: false,
+    addRemoveLinks: true,
+    dictDefaultMessage : 'วางไฟล์ที่นี่เพื่ออัพโหลด',
+    dictRemoveFile : 'ลบไฟล์',
+    dictInvalidFileType: 'คุณไม่สามารถอัปโหลดไฟล์ประเภทนี้ได้',
+    thumbnailWidth: 120,
+    thumbnailHeight: 120,
+    init: function(){
+      this.on("addedfile",function(file){
+        this.emit("complete",file);
+        filesList.push(file);
+      });
+      this.on("maxfilesexceeded", function(file){
+        //alert("bb");
+        this.removeFile(file);
+      });
+      this.on("removedfile", function(file) {
+        //alert(JSON.stringify(file));
+        del_files.push(file.name);
+      });
+    },
+  });
+}

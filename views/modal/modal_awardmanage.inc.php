@@ -1,6 +1,6 @@
 <div class="modal fade" id="awardManageModal" tabindex="-1" role="dialog" aria-labelledby="awardManageModalDialog"
      aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="awardManageTitle"></h5>
@@ -50,7 +50,7 @@
                         <!-- chosse file -->
                         <input id="award_pic3" name="award_pic3" type="file"  style="" onchange="preview3();" >
                     </div>
-                    <div class="dropzone" id="dropzoneId"></div><span class="text-danger" >*อัปโหลดไฟล์ได้มากสุด 3 ไฟล์</span>
+                    <div class="dropzone" id="dropzoneId"></div>
                 </form>
             </div>
 

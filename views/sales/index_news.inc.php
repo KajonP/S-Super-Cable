@@ -29,7 +29,7 @@ try {
             <div class="container-fluid">
                 <div class="row mb-12">
                     <div class="col-md-12">
-                        <h1 class="m-0">ข่าวสาร</h1><?php echo "ข้อความที่ไม่ได้อ่าน <font color=red>".$countAll[0]."</font>"; ?> 
+                        <h1 class="m-0">ข่าวสาร</h1><?php echo "ข้อความที่ไม่ได้อ่าน <font color=red>".Message::message_unread($emp_id)."</font>"; ?> 
 						<div class="card">
                             <div class="card-body p-0" >
                                 <!-- content -->
@@ -38,11 +38,21 @@ try {
                                 foreach ($message as $key => $value) { 
                                     $img = $value->getPicture_Message();
                                     $date = date_create($value->getDate_Message());
+                                    //
+                                    $img_data =  Message_Image::get_images($value->getID_Message());
+                                    $img_arr = [];
+                                    if(count($img_data) > 0 ){
+                                        foreach($img_data as $img_val){
+                                            $img_arr[] = Router::getSourcePath() . "images/".$img_val->getImage_name();
+                                        }
+                                    }
                                 ?>
                                     <table width="100%" style="margin-bottom:20px;" >
                                         <tr valign="top">
                                             <td width="30%">
-                                                <img src="<?php echo $img; ?>" width="100%">
+                                            <?php if(count($img_arr)>0){ ?>
+                                                <img src="<?php echo $img_arr[0]; ?>" width="100%">
+                                            <?php } ?>
                                             </td>
                                              <td width="70%" style="padding:5px;">
                                                 วันที่ : <?php echo date_format($date, 'd/m/Y'); ?>

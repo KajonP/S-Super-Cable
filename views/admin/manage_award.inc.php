@@ -147,3 +147,9 @@ try {
 
 
 <script type="text/javascript" src="AdminLTE/assets/js/page/manage_award.js"></script>
+<style>
+.dz-image img{
+  width: 120px !important;
+  height: 120px !important;
+}
+</style>
