@@ -56,6 +56,7 @@ class AwardController
                     # retrieve data
                     $countAll = Award::fetchCountAll($employee->getID_Employee());
                     $countRowAll = Award::fetchCountRowAll($employee->getID_Employee());
+                    
                     $n = $countRowAll[0];
                     $count_page = ceil($n/$show_row);
                     $start = 0;
@@ -65,7 +66,7 @@ class AwardController
                     }
                     $start = ($get_page*$show_row)-$show_row;
                     $award = Award::fetchAllwithInnerLimit($employee->getID_Employee(),$start,$show_row);
-                    
+                    //print_r($award);
                     //echo $n.':'.$count_page;
                     //exit;
                     include Router::getSourcePath() . "views/sales/index_award.inc.php";
@@ -95,11 +96,11 @@ class AwardController
                     include Router::getSourcePath() . "views/index_admin.inc.php";
                 } else if ($employee->getUser_Status_Employee() == "Sales") {
                     # retrieve data
-                    $award = Award::update_award_status($employee->getID_Employee(), $ID_Award);
+                    $award = Award::update_award_status2($employee->getID_Employee(), $ID_Award);
                     include Router::getSourcePath() . "views/sales/redirect_index_award.inc.php";
                 } else if ($employee->getUser_Status_Employee() == "User") {
                     # retrieve data
-                    $award = Award::update_award_status($employee->getID_Employee(), $ID_Award);
+                    $award = Award::update_award_status2($employee->getID_Employee(), $ID_Award);
                     include Router::getSourcePath() . "views/sales/redirect_index_award.inc.php";
 
                 }
@@ -107,7 +108,7 @@ class AwardController
             case "show" :
                 session_start();
                 $employee = $_SESSION['employee'];
-                Award::update_award_status($employee->getID_Employee(), $_GET['id']);
+                Award::update_award_status2($employee->getID_Employee(), $_GET['id']);
                 $this->show();
                 break;
             default:

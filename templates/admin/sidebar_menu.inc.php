@@ -281,7 +281,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=TrendTwo&action=trend"; ?>" class="nav-link">
                             <i class="nav-icon fas fa-wallet "></i>
                             <p>แนวโน้มยอดขาย 2 </p> จากค่า y = mx + c
                         </a>

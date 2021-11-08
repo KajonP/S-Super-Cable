@@ -166,21 +166,21 @@ class Award
         return $list;
 
     }
-    public static function fetchCountRowAll($emp_id): array
+    public static function fetchCountRowAll($emp_id)
     {
         $con = Db::getInstance();
         $query = "select count(*) from award";
         $stmt = $con->prepare($query);
-        #$stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
+        //$stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
         $stmt->execute();
-        #$list = array();
-        #while ($prod = $stmt->fetch()) {
-        #    $list[$prod->getID_Message()] = $prod;
-        #}
+        $list = array();
+        //while ($prod = $stmt->fetch()) {
+            //$list[$prod->getID_Message()] = $prod;
+        //}
         $prod = $stmt->fetch();
 
         return $prod;
-        #return $list;
+        //return $list;
 
     }
     public static function fetchAllwithInnerLimit($emp_id,$start,$limit): array
@@ -188,6 +188,8 @@ class Award
         $con = Db::getInstance();
         $query = "SELECT *,employee.Name_Employee as fullname_employee  FROM " . self::TABLE . " inner join award_status on award.ID_Award = award_status.ID_Award"." inner join employee on award.ID_Employee = employee.ID_Employee where award_status.ID_Employee = '".$emp_id."' LIMIT ".$start." , ".$limit;
 
+        $query = "SELECT * FROM " . self::TABLE . "  LIMIT ".$start." , ".$limit;
+        //echo $query;
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Award");
         $stmt->execute();
@@ -329,6 +331,27 @@ class Award
             $list[$prod->getID_Award()] = $prod;
         }
         return $list;
+
+    }
+
+    public static function update_award_status2($ID_Employee, $ID_Award)
+    {
+        $con = Db::getInstance();
+        $query = "SELECT * FROM award_status WHERE ID_Employee='".$ID_Employee."' AND ID_Award='".$ID_Award."'";
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Award");
+        $stmt->execute();
+        $read = array();
+        while ($prod = $stmt->fetch()) {
+            $read[] = $prod;
+        }
+        
+        if(count($read)=='0'){
+            $query = 'INSERT INTO award_status(ID_Employee,ID_Award,status) VALUES("'.$ID_Employee.'","'.$ID_Award.'","0")';
+            $con->exec($query);
+        }
+       
+        return array("status" => true);
 
     }
 

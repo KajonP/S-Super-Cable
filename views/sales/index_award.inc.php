@@ -29,7 +29,7 @@ try {
             <div class="container-fluid">
                 <div class="row mb-12">
                     <div class="col-md-12">
-                        <h1 class="m-0">รางวัล</h1><?php echo "ข้อความที่ไม่ได้อ่าน <font color=red>".$countAll[0]."</font>"; ?>
+                        <h1 class="m-0">รางวัล </h1><?php echo "ข้อความที่ไม่ได้อ่าน <font color=red>".$countAll[0]."</font>"; ?>
                         <div class="card">
                             <div class="card-body p-0" >
                                 <!-- content -->
