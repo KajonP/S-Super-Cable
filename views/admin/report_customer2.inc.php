@@ -27,7 +27,7 @@ try {
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-md-12">
-                        <h1 class="m-0">รายงานเปอร์เซ็นของกลุ่มลูกค้า 1</h1>
+                        <h1 class="m-0">รายงานเปอร์เซ็นของกลุ่มลูกค้าทั้ง 2 แบบ</h1>
 
                         <!-- content -->
                         <div class="card">
@@ -86,7 +86,12 @@ try {
                                   <tr>
                                     <td><?php echo $no; ?></td>
                                     <td><?php echo $val; ?></td>
-                                    <td><?php echo number_format(($company[$key]/$totalAll)*100,2); ?>%</td>
+                                    <td><?php
+                                     if($totalAll>'0'){
+                                         echo number_format(($company[$key]/$totalAll)*100,2);
+                                    }else{
+                                        echo '0'; 
+                                    } ?>%</td>
                                   </tr>
                                   <?php
                                     }
@@ -120,7 +125,13 @@ try {
                                   <tr>
                                     <td><?php echo $no; ?></td>
                                     <td><?php echo $val; ?></td>
-                                    <td><?php echo number_format(($company[$key]/$totalAll)*100,2); ?>%</td>
+                                    <td><?php 
+                                    if($totalAll>'0'){
+                                         echo number_format(($company[$key]/$totalAll)*100,2);
+                                    }else{
+                                        echo '0'; 
+                                    }
+                                    ?>%</td>
                                   </tr>
                                   <?php
                                     }

@@ -266,10 +266,12 @@ class Sales
 
     public static function customerNotMovingReport($startDate,$endDate) : array
     {
+
         $con = Db::getInstance();
         $where = "SELECT sales.ID_Company FROM sales WHERE sales.Date_Sales BETWEEN '".$startDate."' 
                     AND '".$endDate."'  ";
         $query = "SELECT * FROM company WHERE company.ID_Company NOT IN (".$where.") ";
+       
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Company");
         $stmt->execute();
@@ -339,6 +341,22 @@ class Sales
             $total = $prod->TOTAL_SUM;
         }
         return $total;
+    }
+
+    public static function getDay($ID_Company)
+    {
+        $con = Db::getInstance();
+        $query = "SELECT Date_Sales FROM sales WHERE sales.ID_Company='".$ID_Company."' ORDER BY Date_Sales LIMIT 0,1";
+        //echo $query;
+        //exit;
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "sales");
+        $stmt->execute();
+        $Date_Sales = '';
+        while ($prod = $stmt->fetch()) {
+            $Date_Sales = $prod->Date_Sales;
+        }
+        return $Date_Sales;
     }
 }
 

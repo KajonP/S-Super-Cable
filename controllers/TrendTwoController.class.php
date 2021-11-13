@@ -23,7 +23,7 @@ class TrendTwoController
                 break;
         }
     }
-  
+
     private function trend($params = null)
     {
         session_start();
@@ -34,6 +34,34 @@ class TrendTwoController
         $companyList = Company::findAll();
         $amphurList = Amphur::findAll();
         $provinceList = Province::findAll();
+        if(isset($_GET['type'])){
+            $type = $_GET['type'];
+            $day = [];
+            $day_start = date('Y-m-d');
+            for($i=0; $i<$type; $i++){
+                $day[] = date('Y-m-d', strtotime('+'.$i.' month', strtotime($day_start)));
+            }
+        }
         include Router::getSourcePath() . "views/admin/trend2.inc.php";
+    }
+
+    private function m($m = null)
+    {
+
+        $month = [
+                '01' => 'มกราคม',
+                '02' => 'กุมภาพันธ์',
+                '03' => 'มีนาคม',
+                '04' => 'เมษายน',
+                '05' => 'พฤษภาคม',
+                '06' => 'มิถุนายน',
+                '07' => 'กรกฎาคม',
+                '08' => 'สิงหาคม',
+                '09' => 'กันยายน',
+                '10' => 'ตุลาคม',
+                '11' => 'พฤศจิกายน',
+                '12' => 'ธันวาคม',
+            ];
+        return $month[$m];
     }
 }

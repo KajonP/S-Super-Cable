@@ -69,6 +69,7 @@ try {
                                         <thead>
                                             <th>ลำดับ</th>
                                             <th>ชื่อบริษัท</th>
+                                            <th>จำนวนวัน</th>
                                         </thead>
                                         <tbody>
                                         <?php
@@ -78,6 +79,7 @@ try {
                                             <tr>
                                                 <td><?php echo ($key+1); ?></td>
                                                 <td><?php echo $val->getName_Company(); ?></td>
+                                                <td><?php echo $this->countDay($val->getID_Company()); ?></td>
                                             </tr>
                                         <?php
                                             }

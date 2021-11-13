@@ -38,17 +38,23 @@ class ReportCustomerNotMovingController
         $date_end = $y.'-03-31';
         //กำหนดช่วงวันที่จะค้นหา
         if(isset($_GET['type']) && $_GET['type']=='1'){
-            $date_start = date('Y-m-d');
-            $date_end = date('Y-m-d', strtotime('-90 day', strtotime( $date_start )));
+            //$date_start = date('Y-m-d');
+            //$date_end = date('Y-m-d', strtotime('-90 day', strtotime( $date_start )));
+            $date_end = date('Y-m-d');
+            $date_start = date('Y-m-d', strtotime('-90 day', strtotime( date('Y-m-d') )));
         }else if(isset($_GET['type']) && $_GET['type']=='2'){
-            $date_start = date('Y-m-d');
-            $date_end = date('Y-m-d', strtotime('-180 day', strtotime( $date_start )));
+            //$date_start = date('Y-m-d');
+            //$date_end = date('Y-m-d', strtotime('-180 day', strtotime( $date_start )));
+            $date_end = date('Y-m-d');
+            $date_start = date('Y-m-d', strtotime('-180 day', strtotime( date('Y-m-d') )));
         }else if(isset($_GET['type']) && $_GET['type']=='3'){
-            $date_start = date('Y-m-d');
-            $date_end = date('Y-m-d', strtotime('-365 day', strtotime( $date_start )));
+            //$date_start = date('Y-m-d');
+            //$date_end = date('Y-m-d', strtotime('-365 day', strtotime( $date_start )));
+            $date_end= date('Y-m-d');
+            $date_start = date('Y-m-d', strtotime('-365 day', strtotime( date('Y-m-d') )));
         }
 
-        $company = Sales::customerNotMovingReport($date_end,$date_start);
+        $company = Sales::customerNotMovingReport($date_start,$date_end);
         //print_r($company);
         include Router::getSourcePath() . "views/admin/report_customer_not_moving.inc.php";
     }
@@ -60,16 +66,23 @@ class ReportCustomerNotMovingController
         $date_start = $y.'-01-01';
         $date_end = $y.'-03-31';
         $y = date('Y');
-        if(isset($_GET['type']) && $_GET['type']=='1'){
-            $date_start = $y.'-01-01';
-            $date_end = $y.'-03-31';
+       if(isset($_GET['type']) && $_GET['type']=='1'){
+            //$date_start = date('Y-m-d');
+            //$date_end = date('Y-m-d', strtotime('-90 day', strtotime( $date_start )));
+            $date_end = date('Y-m-d');
+            $date_start = date('Y-m-d', strtotime('-90 day', strtotime( date('Y-m-d') )));
         }else if(isset($_GET['type']) && $_GET['type']=='2'){
-            $date_start = $y.'-01-01';
-            $date_end = $y.'-06-31';
+            //$date_start = date('Y-m-d');
+            //$date_end = date('Y-m-d', strtotime('-180 day', strtotime( $date_start )));
+            $date_end = date('Y-m-d');
+            $date_start = date('Y-m-d', strtotime('-180 day', strtotime( date('Y-m-d') )));
         }else if(isset($_GET['type']) && $_GET['type']=='3'){
-            $date_start = $y.'-01-01';
-            $date_end = $y.'-12-31';
+            //$date_start = date('Y-m-d');
+            //$date_end = date('Y-m-d', strtotime('-365 day', strtotime( $date_start )));
+            $date_end= date('Y-m-d');
+            $date_start = date('Y-m-d', strtotime('-365 day', strtotime( date('Y-m-d') )));
         }
+
         $company = Sales::customerNotMovingReport($date_start,$date_end);
         //print_r($company);
         include "report-customer-not-moving.php";
@@ -80,6 +93,13 @@ class ReportCustomerNotMovingController
     private function index()
     {
         include Router::getSourcePath() . "views/login.inc.php";
+    }
+
+
+    private function countDay($id){
+        $d = Sales::getDay($id);
+        $d = (strtotime(date('Y-m-d')) - strtotime($d))/  ( 60 * 60 * 24 );  // 1 day = 60*60*24
+        return number_format($d);
     }
 
 }

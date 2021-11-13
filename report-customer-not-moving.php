@@ -65,6 +65,7 @@ ob_start(); // Start get HTML code
                 <tr>
                     <th>ลำดับ</th>
                     <th>กลุ่มลูกค้า</th>
+                    <th>จำนวนวัน</th>
                 <tr>
                     <tbody>
                     <?php
@@ -75,6 +76,7 @@ ob_start(); // Start get HTML code
                         <tr>
                             <td><?php echo $no; ?></td>
                             <td><?php echo $val->getName_Company(); ?></td>
+                            <td><?php echo $this->countDay($val->getID_Company()); ?></td>
                         </tr>
                         <?php
                     }

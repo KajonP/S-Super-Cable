@@ -34,13 +34,33 @@ try {
                             <!-- /.card-header -->
                             <div class="form-group row mt-2 mb-2 mr-1">
                                 <div class="col-md-12 text-right">
-
-
-                                    
+                                 <!-- -->
+                                <form class="form-horizontal" method='get' action='' enctype="multipart/form-data">
+                                        <input type="hidden" name="controller" value="TrendTwo">
+                                        <input type="hidden" name="action" value="trend">
+                                       
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-2 col-form-label" style="text-align:right;">ค้นหา</label>
+                                            <div class="col-sm-3">
+                                                <select class="form-control" name="type">
+                                                    <option value="3" <?php if(isset($_GET['type']) and $_GET['type']=='3'){ ?> selected <?php } ?>>3 เดือน</option>
+                                                    <option value="6" <?php if(isset($_GET['type']) and $_GET['type']=='6'){ ?> selected <?php } ?>>6 เดือน</option>
+                                                    <option value="12" <?php if(isset($_GET['type']) and $_GET['type']=='12'){ ?> selected <?php } ?>>1 ปี</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                 <button type="submit" class="btn btn-info">ค้นหา</button>
+                                            </div>
+                                        </div>
+                                </form>
+                                <!-- -->                                  
                                 </div>
                             </div>
                             <div class="card-body p-0 d-flex">
-                                <table border="1" width="100%">
+                               <?php
+                                if(isset($_GET['type'])){
+                                ?>
+                                <table class="table table-md dataTable no-footer dtr-inline" width="100%">
                                     <tr>
                                         <th width="20%" style="text-align:center;">เดือน</th>
                                         <th style="text-align:center;">ยอดขาย</th>
@@ -50,22 +70,23 @@ try {
                                 $m = number_format(date('m'));
                                 $total_sum = 0;
                                 $avg = '';
-                                for($i=1;$i<=12;$i++){
-                                    $startDate = date('Y').'-'.str_pad($i,2,"0",STR_PAD_LEFT).'-01';
-                                    $endDate = date('Y').'-'.str_pad($i,2,"0",STR_PAD_LEFT).'-31';
+                                foreach($day as $val){
+                                    $ex = explode('-',$val);
+                                    $startDate = $ex[0].'-'.$ex[1].'-01';
+                                    $endDate = $ex[0].'-'.$ex[1].'-31';
                                     $total = Sales::sumDate($startDate,$endDate);
                                     if($total['p']==''){
                                         $total['p'] = 0;
                                     }
                                     $total_sum = $total_sum+$total['p'];
                                     
-                                    if($i>$m and $avg == ''){
+                                    //if($i>$m and $avg == ''){
                                         $avg = $total_sum/($i-1);
-                                    }
+                                    //}
                                 ?>
                                     <tr>
                                         <td style="text-align:center;">
-                                            <?php echo $i; ?> 
+                                            <?php echo $this->m($ex[1]).' '.$ex[0]; ?> 
                                         </td>
                                         <td style="text-align:center;">
                                             <?php echo $total['p']; ?>
@@ -78,6 +99,7 @@ try {
                                 }
                                 ?>
                                 </table>
+                                <?php } ?>
                             </div>
                             <!-- /.card-body -->
                         </div>

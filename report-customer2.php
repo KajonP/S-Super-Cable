@@ -59,7 +59,12 @@ tr:nth-child(even) {
 <div>
 
   <h1 class="header">รายงานเปอร์เซ็นของกลุ่มลูกค้า</h1>
-  <h1 class="header">วันที่ <?php $date = date_create($date_start); echo date_format($date, 'd/m/Y'); ?> ถึง <?php $date = date_create($date_end); echo date_format($date, 'd/m/Y'); ?></h1>
+  <h1 class="header">วันที่ <?php 
+  $date = date_create($date_start); 
+  echo date_format(new DateTime($date), 'd/m/Y'); ?> ถึง 
+  <?php 
+  $date = date_create($date_end); 
+  echo date_format(new DateTime($date), 'd/m/Y'); ?></h1>
 <div>
 <table>
   <tr>
@@ -76,7 +81,12 @@ tr:nth-child(even) {
   <tr>
     <td><?php echo $no; ?></td>
     <td><?php echo $val; ?></td>
-    <td><?php echo number_format(($company[$key]/$totalAll)*100,2) ;?>%</td>
+    <td><?php   
+      if($totalAll>'0'){
+        echo number_format(($company[$key]/$totalAll)*100,2);
+      }else{
+        echo '0'; 
+      } ?>%</td>
   </tr>
   <?php
     }
