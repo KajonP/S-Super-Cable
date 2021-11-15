@@ -75,14 +75,8 @@ try {
                                     $startDate = $ex[0].'-'.$ex[1].'-01';
                                     $endDate = $ex[0].'-'.$ex[1].'-31';
                                     $total = Sales::sumDate($startDate,$endDate);
-                                    if($total['p']==''){
-                                        $total['p'] = 0;
-                                    }
-                                    $total_sum = $total_sum+$total['p'];
-                                    
-                                    //if($i>$m and $avg == ''){
-                                        $avg = $total_sum/($i-1);
-                                    //}
+                                    $m = number_format($ex[1]);
+                                    $avg = ($si['slope']*$m)+$si['intercept'];
                                 ?>
                                     <tr>
                                         <td style="text-align:center;">

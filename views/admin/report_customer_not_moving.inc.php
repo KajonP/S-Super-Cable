@@ -28,7 +28,6 @@ try {
                 <div class="row mb-2">
                     <div class="col-md-12">
                         <h1 class="m-0">รายงานลูกค้าที่ไม่เคลื่อนไหว  </h1>
-
                         <!-- content -->
                         <div class="card">
                             <div class="card-body">

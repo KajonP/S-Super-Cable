@@ -6,6 +6,7 @@ try {
     }
     ob_start();
     ?>
+
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
         <!-- Left navbar links -->
@@ -28,7 +29,6 @@ try {
                 <div class="row mb-2">
                     <div class="col-md-12">
                         <h1 class="m-0">รายงานเปอร์เซ็นของกลุ่มลูกค้าทั้ง 2 แบบ</h1>
-
                         <!-- content -->
                         <div class="card">
                             <div class="card-body">
@@ -229,6 +229,14 @@ var data = {
        },
        color: '#fff',
      }
+   },
+   animation: {
+        onComplete: function(e) {
+            var image = myChart.toBase64Image();
+            console.log(image);
+            //$("#test_img").attr("src",image);
+            $.post( "save_img.php", { img:image } );
+        }
    }
  };
 
@@ -238,6 +246,7 @@ var myChart = new Chart(ctx, {
     data: data,
     options: options
 });
+
 
 
 var ctx2 = document.getElementById('myChart2').getContext('2d');

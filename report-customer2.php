@@ -1,4 +1,5 @@
 <?php
+//session_start();
 // Require composer autoload
 require_once __DIR__ . '/vendor/autoload.php';
 
@@ -61,11 +62,17 @@ tr:nth-child(even) {
   <h1 class="header">รายงานเปอร์เซ็นของกลุ่มลูกค้า</h1>
   <h1 class="header">วันที่ <?php 
   $date = date_create($date_start); 
-  echo date_format(new DateTime($date), 'd/m/Y'); ?> ถึง 
+  echo date_format($date, 'd/m/Y'); 
+  ?> ถึง 
   <?php 
   $date = date_create($date_end); 
-  echo date_format(new DateTime($date), 'd/m/Y'); ?></h1>
+  echo date_format($date, 'd/m/Y'); 
+  ?></h1>
 <div>
+<div style="text-align:center;">
+  <center><img src="<?php echo $_SESSION['img']; ?>"/></center>
+</div>
+<br/>
 <table>
   <tr>
     <th>ลำดับ</th>
