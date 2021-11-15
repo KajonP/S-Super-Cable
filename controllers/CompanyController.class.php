@@ -396,7 +396,7 @@ class CompanyController
                 ->setCellValue('J' . $start_row, "30 วัน")
                 ->setCellValue('K' . $start_row, "1")
                 ->setCellValue('L' . $start_row, " ")
-                ->setCellValue('M' . $start_row, "ใช่")
+                ->setCellValue('M' . $start_row, "ไม่ใช่")
                 ->setCellValue('N' . $start_row, " ");
 
             $i = 0;
