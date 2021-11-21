@@ -107,4 +107,24 @@ class Cluster_Shop
         }
     }
 
+    public static function chkData(string $Cluster_Shop_ID)
+    {
+        $con = Db::getInstance();
+        $query = "SELECT * FROM company WHERE Cluster_Shop_ID = '$Cluster_Shop_ID'";
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "company");
+        $stmt->execute();
+        $company = [];
+        while ($prod = $stmt->fetch()) {
+            $company[] = $prod;
+        }
+        if(count($company)=='0'){
+            return true;
+        }else{
+            return false;
+        }
+        
+        //return true;
+    }
+
 }

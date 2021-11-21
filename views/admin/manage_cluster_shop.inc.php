@@ -71,6 +71,7 @@ try {
                                                             <i class="fa fa-wrench"></i> เเก้ไข
                                                         </button>
                                                     </a>
+                                                    <?php if(Cluster_Shop::chkData($value->getCluster_Shop_ID())){ ?>
                                                     <a href="#"
                                                        onclick="onaction_deleteclustershop('<?php echo $value->getCluster_Shop_ID(); ?>')">
                                                         <button type="button" class="btn btn-round btn-danger"
@@ -78,6 +79,7 @@ try {
                                                             <i class="fa fa-trash"></i> ลบ
                                                         </button>
                                                     </a>
+                                                <?php } ?>
                                                 </td>
                                             </tr>
                                         <?php } ?>

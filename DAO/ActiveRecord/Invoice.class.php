@@ -202,7 +202,7 @@ class Invoice
 
     public function getDiscount_price(): float
     {
-        return $this->Discount_price;
+        return $this->Discount_price!==null ? $this->Discount_price : '0' ;
     }
 
     //----------- CRUD
@@ -305,6 +305,20 @@ class Invoice
             return $prod;
         }
         return null;
+    }
+
+    public static function findAllByUser($emp_id): array
+    {
+        $con = Db::getInstance();
+        $query = "SELECT * FROM " . self::TABLE. " WHERE ID_Employee='".$emp_id."'";
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Invoice");
+        $stmt->execute();
+        $invoiceList = array();
+        while ($prod = $stmt->fetch()) {
+            $invoiceList[$prod->getID_Invoice()] = $prod;
+        }
+        return $invoiceList;
     }
 
 }

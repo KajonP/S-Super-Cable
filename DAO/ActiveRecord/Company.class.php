@@ -448,6 +448,26 @@ class Company
         return $companyList;
     }
 
+    public static function chkData(string $company_id)
+    {
+        $con = Db::getInstance();
+        $query = "SELECT * FROM sales WHERE ID_Company = '$company_id'";
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Sales");
+        $stmt->execute();
+        $company = [];
+        while ($prod = $stmt->fetch()) {
+            $company[] = $prod;
+        }
+        if(count($company)=='0'){
+            return true;
+        }else{
+            return false;
+        }
+        
+        //return true;
+    }
+
 }
 
 ?>

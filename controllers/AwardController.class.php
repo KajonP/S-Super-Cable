@@ -49,6 +49,7 @@ class AwardController
             case "show_award_status":
                 session_start();
                 $employee = $_SESSION['employee'];
+                $emp_id = $employee->getID_Employee();
                 $show_row = 4;
                 if ($employee->getUser_Status_Employee() == "Admin") {
                     include Router::getSourcePath() . "views/index_admin.inc.php";
@@ -284,8 +285,10 @@ class AwardController
     {
 
         $employee = $_SESSION["employee"];
-
         $award = Award::findAward_byID($_GET['id']);
+        $img99 =  Award_Image::get_images($_GET['id']);
+        //print_r($img99);
+        //exit;
         if ($employee->getUser_Status_Employee() == "Admin") {
             include Router::getSourcePath() . "views/index_admin.inc.php";
         } else if ($employee->getUser_Status_Employee() == "Sales") {

@@ -46,7 +46,19 @@ try {
                                 ชื่อคนที่ได้รับรางวัล : <?php echo $award->getFullname_employee(); ?>
 
 
-                                <center> <img src="<?php echo $img; ?>" width="30%"><img src="<?php echo $img2; ?>" width="30%"> <img src="<?php echo $img3; ?>" width="30%"><br> </center>
+                                 <div class="row"> 
+                                    <?php 
+                                    //print_r($img99);
+                                    if(count($img99)>0){ 
+                                        foreach($img99 as $img_val){
+                                            $img_data = Router::getSourcePath() . "images/".$img_val->getImage_name();
+                                    ?>
+                                        <div class="col-xs-6 col-md-3"><img src="<?php echo $img_data; ?>" width="100%" height="100%"></div>
+                                    <?php 
+                                        }
+                                    } 
+                                    ?>
+                                </div>
                                 <!-- end content -->
                             </div>
                             <!-- /.card-body -->

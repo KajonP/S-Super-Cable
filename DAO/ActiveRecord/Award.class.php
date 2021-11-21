@@ -355,4 +355,27 @@ class Award
 
     }
 
+       public static function message_unread($ID_Employee){
+        $con = Db::getInstance();
+        $query = "SELECT * FROM " . self::TABLE;
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Award");
+        $stmt->execute();
+        $msg = array();
+        while ($prod = $stmt->fetch()) {
+            $msg[] = $prod;
+        }
+        $countMsg = count($msg);
+
+        $query = "SELECT * FROM award_status WHERE ID_Employee='".$ID_Employee."'";
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Message");
+        $stmt->execute();
+        $read = array();
+        while ($prod = $stmt->fetch()) {
+            $read[] = $prod;
+        }
+        return $countMsg-count($read);
+    }
+
 }

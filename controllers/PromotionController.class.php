@@ -86,6 +86,7 @@ class PromotionController
             "Name_Promotion" => $promotion->getName_Promotion(),
             "Unit_Promotion" => $promotion->getUnit_Promotion(),
             "Price_Unit_Promotion" => $promotion->getPrice_Unit_Promotion(),
+            "Have_To_Return" => $promotion->getHave_To_Return()
 
         );
         echo json_encode(array("data" => $data_sendback));

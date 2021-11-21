@@ -29,15 +29,21 @@ try {
             <div class="container-fluid">
                 <div class="row mb-12">
                     <div class="col-md-12">
-                        <h1 class="m-0">รางวัล </h1><?php echo "ข้อความที่ไม่ได้อ่าน <font color=red>".$countAll[0]."</font>"; ?>
+                        <h1 class="m-0">รางวัล </h1><?php echo "ข้อความที่ไม่ได้อ่าน <font color=red>".Award::message_unread($emp_id)."</font>"; ?>
                         <div class="card">
                             <div class="card-body p-0" >
                                 <!-- content -->
                                 <div class="callout callout-info" >
                                     <?php $i = 1;
+
                                     foreach ($award as $key => $value) {
-                                        $img = $value->getPicture_Award();
+                                        //$img = $value->getPicture_Award();
                                         $date = date_create($value->getDate_Award());
+                                        $img = '';
+                                        $img_data =  Award_Image::get_images($value->getID_Award());
+                                        if(count($img_data)>0){
+                                            $img = Router::getSourcePath() . "images/".$img_data[0]->getImage_name();
+                                        }
                                         ?>
                                         <table width="100%" style="margin-bottom:20px;" >
                                             <tr valign="top">

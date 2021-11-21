@@ -69,7 +69,7 @@
                                value="" required="required">
                     </div>
                     <div class="form-group">
-                        <label for="Credit_Limit_Company" class="col-form-label">วงเงินสูงสุด:<span class="text-danger" >*</span></label>
+                        <label for="Credit_Limit_Company" class="col-form-label">วงเงินสูงสุด(บาท):<span class="text-danger" >*</span></label>
                         <input type="number" class="form-control" id="Credit_Limit_Company" name="Credit_Limit_Company"
                                value="" min='0' required="required">
                     </div>

@@ -21,6 +21,7 @@ $("#form_search").submit(function(){
           var yearArr = [];
           var valArr = [];
           var data = res;
+          //alert('data:'+JSON.stringify(data));
           var htmlTB = '<table width="100%" class="tb_center" border="1">';
           htmlTB += '<tr>';
           htmlTB += '<td>ปี</td>';
@@ -44,12 +45,14 @@ $("#form_search").submit(function(){
           }
           var x = 0;
           var old = [];
-          var dataIndex = 0;
+          var dataIndex = -1;
           var dataYear = [];
           var dataMonth = new Array(3);
           $.each(data, function() {
-              dataMonth[dataIndex] = new Array(12);
+              //dataMonth[dataIndex] = new Array(12);
               $.each(this, function(a,b) {
+                dataIndex++;
+                dataMonth[dataIndex] = new Array(12);
                 yearArr.push(b.year);
                 dataYear.push(b.year);
                 htmlTB += '<tr>';
@@ -73,7 +76,7 @@ $("#form_search").submit(function(){
                 htmlTB += '</tr>';
                 valArr.push(total);
               });
-            dataIndex++;
+            //dataIndex++;
           });
           var total_all = 0;
           for(var i=1;i<=12;i++){
@@ -106,6 +109,9 @@ $("#form_search").submit(function(){
 });
 
 function addChart(year,val,dataYear,dataMonth){
+  console.log('dataMonth[0]:',dataMonth[0]);
+  console.log('dataMonth[1]:',dataMonth[1]);
+  console.log('dataMonth[2]:',dataMonth[2]);
   var ctx = document.getElementById('myChart').getContext('2d');
   var myChart = new Chart(ctx, {
     type: 'bar',

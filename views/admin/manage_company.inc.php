@@ -111,6 +111,7 @@ try {
                                                             <i class="fa fa-wrench"></i> เเก้ไข
                                                         </button>
                                                     </a>
+                                                    <?php if(Company::chkData($value->getID_Company())){ ?>
                                                     <a href="#"
                                                        onclick="onaction_deletecompany('<?php echo $value->getID_Company(); ?>')">
                                                         <button type="button" class="btn btn-round btn-danger"
@@ -118,6 +119,7 @@ try {
                                                             <i class="fa fa-trash"></i> ลบ
                                                         </button>
                                                     </a>
+                                                    <?php } ?>
                                                 </td>
                                             </tr>
                                         <?php } ?>

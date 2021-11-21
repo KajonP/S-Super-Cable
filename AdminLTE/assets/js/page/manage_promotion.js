@@ -128,10 +128,14 @@ function promotionmanageShow(type, ID_Promotion = null) {
           $('#Unit_Promotion').val(response.data.Unit_Promotion);
           $('#Price_Unit_Promotion').val(response.data.Price_Unit_Promotion);
           // case: dropdown
+          /*
           $('#Have_To_Return')
             .val(response.data.Have_To_Return)
             .trigger('change');
-
+          */
+         
+           $('#Have_To_Return')
+            .val(response.data.Have_To_Return);
           // set id
           $('#button_promotionmanageModal').attr("data-id", ID_Promotion);
         },

@@ -62,6 +62,8 @@ class InvoiceController
     private function create_invoice($params)
     {
         # สร้างใบเสนอราคา
+        $employee = $_SESSION["employee"];
+        $emp_id = $employee->getID_Employee();
         $access_invoice = new Invoice();
         $invoice_result = $access_invoice->create_invoice([
             //'Invoice_No' => '9999',
@@ -83,7 +85,8 @@ class InvoiceController
             'Grand_Total' => isset($params['Grand_Total']) ? $params['Grand_Total'] : '0',
             'ID_Company' => isset($params['ID_Company']) ? $params['ID_Company'] : '0',
             'ID_Setting_Vat' => isset($params['ID_Setting_Vat']) ? $params['ID_Setting_Vat'] : '1',
-            'Discount'  => isset($params['Discount']) ? $params['Discount'] : '0'
+            'Discount'  => isset($params['Discount']) ? $params['Discount'] : '0',
+            'ID_Employee' => $emp_id
         ]);
 
         $discount  = isset($params['Discount']) ? $params['Discount'] : '0';
@@ -282,12 +285,18 @@ class InvoiceController
     {
         session_start();
         $employee = $_SESSION["employee"];
-
+        $emp_id = $employee->getID_Employee();
+        $emp_type = $employee->getUser_Status_Employee();
+        if($emp_type=='Admin'){
+            $invoiceList = Invoice::findAll();
+        }else{
+            $invoiceList = Invoice::findAllByUser($emp_id);
+        }
         # retrieve data
         $company = Company::findAll();
         $provinceList = Province::findAll();
         $amphurList = Amphur::findAll();
-        $invoiceList = Invoice::findAll();
+        //$invoiceList = Invoice::findAll();
         $vat = Setting_Vat::findAll();
         $invoice_detailList = Invoice_Detail::findAll();
         $goodsList = Goods::findAll();
@@ -317,6 +326,7 @@ class InvoiceController
             }
         }
 
+        
         $data_sendback = array(
             "ID_Invoice" => $invoice->getID_Invoice(),
             "Invoice_No" => $invoice->getInvoice_No(),

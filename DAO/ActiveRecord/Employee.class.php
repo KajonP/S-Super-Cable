@@ -109,7 +109,7 @@ class Employee
     public static function findAll(): array
     {
         $con = Db::getInstance();
-        $query = "SELECT * FROM " . self::TABLE;
+        $query = "SELECT * FROM " . self::TABLE . " WHERE status='0'";
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Employee");
         $stmt->execute();
@@ -376,8 +376,8 @@ class Employee
     # ลบ user
     public function delete_user($ID_Employee)
     {
-        $query = "DELETE FROM " . self::TABLE . " WHERE ID_Employee = '{$ID_Employee}' ";
-
+        //$query = "DELETE FROM " . self::TABLE . " WHERE ID_Employee = '{$ID_Employee}' ";
+        $query = "UPDATE " . self::TABLE . " SET status-'1' WHERE ID_Employee = '{$ID_Employee}' ";
         $con = Db::getInstance();
         if ($con->exec($query)) {
             return array("status" => true);
