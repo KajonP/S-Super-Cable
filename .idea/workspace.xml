@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update sidebar">
+    <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="ีcase update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/CompanyController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/CompanyController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/download/report_customer.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/download/report_customer.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/format_excel_bak.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/format_excel_company.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/format_excel_company.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/format_excel_goods.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/modal/modal_importcompany.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importcompany.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/modal/modal_importgoods.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importgoods.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/modal/modal_importsales.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importsales.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/modal/modal_importuser.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_importuser.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/modal/modal_promotionmanage.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/modal/modal_promotionmanage.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,14 +277,8 @@
       <workItem from="1636876126767" duration="1477000" />
       <workItem from="1636877710145" duration="749000" />
       <workItem from="1636988523839" duration="2432000" />
-      <workItem from="1636993535455" duration="992000" />
-    </task>
-    <task id="LOCAL-00058" summary="case : update footer">
-      <created>1625986695252</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1625986695252</updated>
+      <workItem from="1636993535455" duration="1459000" />
+      <workItem from="1637043650711" duration="3410000" />
     </task>
     <task id="LOCAL-00059" summary="case : update news and company and report">
       <created>1625992376059</created>
@@ -626,7 +616,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634535009602</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="ีcase update">
+      <created>1636995015884</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1636995015884</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -646,7 +643,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="case : update select2 and update award and message by using only sales (delete file of user)" />
     <MESSAGE value="case : update award" />
     <MESSAGE value="case : update zone and resultsales" />
     <MESSAGE value="case : update select2" />
@@ -671,7 +667,8 @@
     <MESSAGE value="case : update db" />
     <MESSAGE value="case : update" />
     <MESSAGE value="case : update sidebar" />
-    <option name="LAST_COMMIT_MESSAGE" value="case : update sidebar" />
+    <MESSAGE value="ีcase update" />
+    <option name="LAST_COMMIT_MESSAGE" value="ีcase update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -680,6 +677,12 @@
           <url>file://$PROJECT_DIR$/controllers/AwardController.class.php</url>
           <line>129</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/AdminLTE/assets/js/page/manage_promotion.js</url>
+          <line>137</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -32,7 +32,7 @@
                     <div class="form-group ">
                         <label for="Have_To_Return" class="col-form-label">ต้องคืนหรือไม่:<span class="text-danger" >*</span></label>
                         <select  class="form-control" id="Have_To_Return" name="Have_To_Return" >
-                            <option value="">--กรุณาเลือก--</option>
+                            <option  value="" selected disabled>--กรุณาเลือก--</option>
                             <option value="1">คืน</option>
                             <option value="0">ไม่คืน</option>
                         </select>
