@@ -38,6 +38,15 @@ class TrendController
             $type = $_GET['type'];
             $day = [];
             $day_start = date('Y-m-d');
+            //
+            $year = date('Y')-2;
+            for( $i = $year; $i < date('Y'); $i++){
+                for($a=1; $a<=12; $a++){
+                    $d = $i.'-'.str_pad($a,2,"0",STR_PAD_LEFT).'-01';
+                    //$day[] = $d;
+                }
+            }
+            //
             for($i=0; $i<$type; $i++){
                 $day[] = date('Y-m-d', strtotime('+'.$i.' month', strtotime($day_start)));
             }

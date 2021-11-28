@@ -27,7 +27,7 @@ try {
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-md-12">
-                        <h1 class="m-0">แนวโน้มยอดขายแบบที่ 1  </h1>
+                        <h1 class="m-0">แนวโน้มยอดขายแบบที่ 1 </h1>
 
                         <!-- content -->
                         <div class="card">
@@ -70,6 +70,8 @@ try {
                                 $m = number_format(date('m'));
                                 $total_sum = 0;
                                 $avg = '';
+                                $labels = [];
+                                $dataV = [];
                                 foreach($day as $val){
                                     $ex = explode('-',$val);
                                     $startDate = $ex[0].'-'.$ex[1].'-01';
@@ -86,6 +88,8 @@ try {
                                     if($avg == ''){
                                         $avg = $total_sum/($i-1);
                                     }
+                                    $labels[] = $this->m($ex[1]).' '.$ex[0];
+                                    $dataV[] = $avg;
                                 ?>
                                     <tr>
                                         <td style="text-align:center;">
@@ -108,6 +112,13 @@ try {
                         </div>
                         <!-- /.card -->
                         <!-- eof -->
+                        <?php
+                            if(isset($_GET['type'])){
+                        ?>
+                        <div class="card">
+                            <canvas id="myChart" width="100%"></canvas>
+                        </div>
+                        <?php } ?>
                     </div><!-- /.col -->
 
                 </div><!-- /.row -->
@@ -150,4 +161,25 @@ try {
     exit(1);
 }
 ?>
+<script>
+
+var ctx = document.getElementById('myChart').getContext('2d');;
+
+const labels = <?php echo json_encode($labels); ?>;
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'ทำนาย',
+    data: <?php echo json_encode($dataV); ?>,
+    fill: false,
+    borderColor: 'rgb(75, 192, 192)',
+    tension: 0.1
+  }]
+};
+const myChart = new Chart(ctx, {
+    type: 'line',
+    data: data,
+});
+
+</script>
 

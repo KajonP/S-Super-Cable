@@ -148,7 +148,7 @@ class Employee
     public static function findByAccount(string $Username_Employee, string $Password_Employee): ?Employee
     {
         $con = Db::getInstance();
-        $query = "SELECT * , '" . $Password_Employee . "' as current_password FROM " . self::TABLE . " WHERE Username_Employee = '$Username_Employee' AND Password_Employee = sha1('$Password_Employee')";
+        $query = "SELECT * , '" . $Password_Employee . "' as current_password FROM " . self::TABLE . " WHERE Username_Employee = '$Username_Employee' AND Password_Employee = sha1('$Password_Employee') AND status=0 ";
         //echo $query;exit();
         $stmt = $con->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Employee");

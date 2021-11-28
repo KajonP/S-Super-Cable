@@ -143,6 +143,28 @@
                         </a>
                     </li>
                 </ul>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=CompanyAddress&action=manage_company"; ?>"
+                           class="nav-link">
+                            <i class="nav-icon fas fa-store"></i>
+                            <p>
+                                บริษัทไม่มีที่อยู่
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=CompanySale&action=manage_company"; ?>"
+                           class="nav-link">
+                            <i class="nav-icon fas fa-store"></i>
+                            <p>
+                                บริษัทไม่มี Sale
+                            </p>
+                        </a>
+                    </li>
+                </ul>
             <li class="nav-item menu-open">
                 <a class="nav-link active">
                     <i class="nav-icon fas fa-tags"></i>
@@ -307,7 +329,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=SalesStatistics&action=manage_SalesStatistics"; ?>" class="nav-link">
                             <i class="nav-icon fas fa-wallet"></i>
                             <p>ยอดขายของตัวเอง</p>
                         </a>
@@ -315,7 +337,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=SalesStatistics&action=manage_SalesStatistics"; ?>"
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=SalesStatistics2&action=manage_SalesStatistics"; ?>"
                            class="nav-link">
                             <i class="nav-icon fas fa-wallet"></i>
                             <p>ยอดขายเเต่ละคน</p>
@@ -324,7 +346,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=EmpStatistics2&action=manage_EmpStatistics"; ?>" class="nav-link">
                             <i class="nav-icon fas fa-wallet"></i>
                             <p>เปรียบเทียบยอดขาย </p> ของตัวเอง
                         </a>
