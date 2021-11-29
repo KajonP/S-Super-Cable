@@ -377,7 +377,7 @@ class Employee
     public function delete_user($ID_Employee)
     {
         //$query = "DELETE FROM " . self::TABLE . " WHERE ID_Employee = '{$ID_Employee}' ";
-        $query = "UPDATE " . self::TABLE . " SET status-'1' WHERE ID_Employee = '{$ID_Employee}' ";
+        $query = "UPDATE " . self::TABLE . " SET status = '1' WHERE ID_Employee = '{$ID_Employee}' ";
         $con = Db::getInstance();
         if ($con->exec($query)) {
             return array("status" => true);
