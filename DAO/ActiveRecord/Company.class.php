@@ -48,6 +48,9 @@ class Company
 
     public function getAddress_Company(): string
     {
+        if ($this->Address_Company == null)
+            return "-";
+        else
         return $this->Address_Company;
     }
 
@@ -254,7 +257,7 @@ class Company
          LEFT JOIN province ON " . self::TABLE . ".PROVINCE_ID = province.PROVINCE_ID 
          LEFT JOIN amphur ON " . self::TABLE . ".AMPHUR_ID = amphur.AMPHUR_ID  
          LEFT JOIN cluster_shop ON " . self::TABLE . ".Cluster_Shop_ID = cluster_shop.Cluster_Shop_ID
-         WHERE company.PROVINCE_ID='' or company.PROVINCE_ID='0'
+         WHERE company.PROVINCE_ID='' or company.PROVINCE_ID='0' or company.Address_Company = ''
         " ;
         //echo $query;exit();
         $stmt = $con->prepare($query);

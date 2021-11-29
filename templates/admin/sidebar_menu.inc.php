@@ -268,7 +268,7 @@
                            class="nav-link">
                             <i class="nav-icon fas fa-history"></i>
                             <p>
-                                ประวัติลูกค้า
+                                ค้นหาข้อมูลลูกค้า
                             </p>
                         </a>
                     </li>
@@ -329,7 +329,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=SalesStatistics&action=manage_SalesStatistics"; ?>" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=SalesStatistics2&action=manage_SalesStatistics"; ?>" class="nav-link">
                             <i class="nav-icon fas fa-wallet"></i>
                             <p>ยอดขายของตัวเอง</p>
                         </a>
@@ -337,7 +337,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=SalesStatistics2&action=manage_SalesStatistics"; ?>"
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=SalesStatistics&action=manage_SalesStatistics"; ?>"
                            class="nav-link">
                             <i class="nav-icon fas fa-wallet"></i>
                             <p>ยอดขายเเต่ละคน</p>

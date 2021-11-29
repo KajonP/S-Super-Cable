@@ -386,7 +386,7 @@ class CompanyController
             $objPHPExcel->setActiveSheetIndex(0)
                 ->setCellValue('A' . $start_row, "111")
                 ->setCellValue('B' . $start_row, "FIRSTSTEP")
-                ->setCellValue('C' . $start_row, "300/15 montisuriyawong")
+                ->setCellValue('C' . $start_row, " ")
                 ->setCellValue('D' . $start_row, "1")
                 ->setCellValue('E' . $start_row, " ")
                 ->setCellValue('F' . $start_row, "1234567890")

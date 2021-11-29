@@ -23,7 +23,7 @@
                                required="required">
                     </div>
                     <div class="form-group">
-                        <label for="Address_Company" class="col-form-label">ที่อยู่บริษัท:<span class="text-danger" >*</span></label>
+                        <label for="Address_Company" class="col-form-label">ที่อยู่บริษัท:</label>
                         <textarea class="form-control" name="Address_Company" id="Address_Company" rows="5" cols="60" ></textarea>
                     </div>
                     <div class="form-group">

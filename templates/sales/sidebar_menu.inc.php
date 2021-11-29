@@ -102,11 +102,11 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="./index.html"
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=ReportCompany&action=company"; ?>"
                            class="nav-link">
                             <i class="nav-icon fas fa-history"></i>
                             <p>
-                                ประวัติลูกค้า
+                                ค้นหาข้อมูลลูกค้า
                             </p>
                         </a>
                     </li>
@@ -148,9 +148,10 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="index.php?controller=reportcustomer&action=customer" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=ReportCustomer&action=customer2"; ?>"
+                           class="nav-link">
                             <i class="nav-icon fas fa-store"></i>
-                            <p>เปอร์เซ็นของกลุ่มลูกค้า </p>
+                            <p>เปอร์เซ็นของกลุ่มลูกค้า </p> ทั้งสองเเบบ
                         </a>
                     </li>
                 </ul>
@@ -173,7 +174,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=SalesStatistics2&action=manage_SalesStatistics"; ?>" class="nav-link">
                             <i class="nav-icon fas fa-wallet"></i>
                             <p>ยอดขายของตัวเอง</p>
                         </a>
@@ -181,7 +182,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=EmpStatistics2&action=manage_EmpStatistics"; ?>" class="nav-link">
                             <i class="nav-icon fas fa-wallet"></i>
                             <p>เปรียบเทียบยอดขาย </p> ของตัวเอง
                         </a>

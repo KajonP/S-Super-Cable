@@ -61,8 +61,8 @@ var form_validte = $("#form_companymanage").validate({
       minlength: 3
     },
     Address_Company: {
-      required: true,
-      minlength: 3
+      // required: true,
+      // minlength: 3
     },
     PROVINCE_ID: {
       required: true,
@@ -118,8 +118,8 @@ var form_validte = $("#form_companymanage").validate({
       minlength: "ข้อมูลต้องมีอย่าง 3 ตัวอักษร"
     },
     Address_Company: {
-      required: "กรุณาใส่ข้อมูล",
-      minlength: "ข้อมูลต้องมีอย่าง 3 ตัวอักษร"
+      // required: "กรุณาใส่ข้อมูล",
+      // minlength: "ข้อมูลต้องมีอย่าง 3 ตัวอักษร"
     },
     PROVINCE_ID: {
       required: "กรุณาใส่ข้อมูล",
