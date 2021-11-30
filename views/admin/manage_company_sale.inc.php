@@ -27,7 +27,7 @@ try {
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-md-12">
-                        <h1 class="m-0">จัดการบริษัทลูกค้าไม่มี Sale</h1>
+                        <h1 class="m-0">จัดการบริษัทลูกค้าไม่มี Sale ดูเเล</h1>
 
                         <!-- content -->
                         <div class="card">
@@ -35,29 +35,29 @@ try {
                                 <h3 class="card-title">User Management</h3>
                             </div> -->
                             <!-- /.card-header -->
-                            <div class="form-group row mt-2 mb-2 mr-1" style="display:none;">
-                                <div class="col-md-12 text-right">
+<!--                            <div class="form-group row mt-2 mb-2 mr-1" style="display:none;">-->
+<!--                                <div class="col-md-12 text-right">-->
 <!--                                    <a href="index.php?controller=Company&action=export_pdf"-->
 <!--                                       class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">-->
 <!--                                        <span class="btn btn-round btn-success"-->
-<!--                                              style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i-->
+<!--                                             style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i-->
 <!--                                                    class="fa fa-file"></i> ดาวน์โหลดไฟล์ </span>-->
 <!--                                    </a>-->
-                                    <a href="#" onclick="importShow()" class="collapse-link text-right mt-2 mb-2 mr-2"
-                                       style="color: #415468;">
-                                        <span class="btn btn-round btn-success"
-                                              style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i
-                                                    class="fa fa-file"></i> อัปโหลดไฟล์ excel </span>
-                                    </a>
-
-                                    <a href="#" onclick="companymanageShow('create')"
-                                       class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">
-                                        <span class="btn btn-round btn-success"
-                                              style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i
-                                                    class="fa fa-plus"></i> สร้างบริษัทลูกค้า </span>
-                                    </a>
-                                </div>
-                            </div>
+<!--                                    <a href="#" onclick="importShow()" class="collapse-link text-right mt-2 mb-2 mr-2"-->
+<!--                                       style="color: #415468;">-->
+<!--                                        <span class="btn btn-round btn-success"-->
+<!--                                              style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i-->
+<!--                                                    class="fa fa-file"></i> อัปโหลดไฟล์ excel </span>-->
+<!--                                    </a>-->
+<!---->
+<!--                                    <a href="#" onclick="companymanageShow('create')"-->
+<!--                                       class="collapse-link text-right mt-2 mb-2 mr-2" style="color: #415468;">-->
+<!--                                        <span class="btn btn-round btn-success"-->
+<!--                                              style=" font-size: 13px; padding: 0 15px; margin-bottom: inherit;"><i-->
+<!--                                                    class="fa fa-plus"></i> สร้างบริษัทลูกค้า </span>-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                            </div>-->
                             <div class="card-body p-0 d-flex">
                                 <div class="table-responsive">
                                     <table id="tbl_companymanagement" class="table table-md" style="width:100%;">
@@ -77,7 +77,7 @@ try {
                                              <th>สาเหตุที่ติด</th> -->
                                             <th>อำเภอ/จังหวัด</th>
                                             <th>พนักงาน</th>
-                                            <th>การกระทำ</th>
+                                             <th>การกระทำ</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -161,8 +161,8 @@ try {
     include Router::getSourcePath() . "views/modal/modal_editprofile.inc.php";
     # modal dialog ( company manage )
     include Router::getSourcePath() . "views/modal/modal_companymanage.inc.php";
-    # modal dialog ( import excel company  )
-    include Router::getSourcePath() . "views/modal/modal_importcompany.inc.php";
+//    # modal dialog ( import excel company  )
+//    include Router::getSourcePath() . "views/modal/modal_importcompany.inc.php";
     include Router::getSourcePath() . "templates/footer_page.inc.php";
 
     ?>

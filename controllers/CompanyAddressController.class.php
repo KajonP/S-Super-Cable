@@ -23,89 +23,11 @@ class CompanyAddressController
             case "manage_company" :
                 $this->$action();
                 break;
-            case "edit_company" :
-                $ID_Company = isset($params["GET"]["ID_Company"]) ? $params["GET"]["ID_Company"] : "";
-                $result = $this->$action($params["POST"], $ID_Company);
-                echo $result;
+            default:
                 break;
-            case "delete_company":
-                $result = $this->$action($params["POST"]["ID_Company"]);
-                echo $result;
-                break;
-            case "findbyID_Company":
-                $ID_Company = isset($params["POST"]["ID_Company"]) ? $params["POST"]["ID_Company"] : "";
-                //print_r($ID_Company);exit();
-                if (!empty($ID_Company)) {
-                    $result = $this->$action($ID_Company);
-                    echo $result;
-                }
-                break;
-            case "getAmphur":
-                $PROVINCE_ID = isset($params["POST"]["PROVINCE_ID"]) ? $params["POST"]["PROVINCE_ID"] : "";
-
-                if (!empty($PROVINCE_ID)) {
-                    $result = $this->$action($PROVINCE_ID);
-                    echo $result;
-                }
-                break;
-
         }
     }
 
-    private function getAmphur($PROVINCE_ID){
-        $access_company = new Company();
-        $amphur_result = $access_company->getAmphur(
-            $PROVINCE_ID
-        );
-
-        echo json_encode($amphur_result);
-
-    }
-
-    private function edit_company($params, $ID_Company)
-    {
-        # อัปเดตบริษัทลูกค้า
-        $access_company = new Company();
-        $company_result = $access_company->edit_company(
-            $params, $ID_Company
-        );
-        echo json_encode($company_result);
-
-    }
-
-    private function delete_company($ID_Company)
-    {
-        # ลบบริษัทลูกค้า
-        $access_company = new Company();
-        $company_result = $access_company->delete_company(
-            $ID_Company
-        );
-        return json_encode($company_result);
-    }
-
-    private function findbyID_Company(string $ID_Company)
-    {
-        $company = Company::findById($ID_Company);//echo json_encode($employee);
-
-        $data_sendback = array(
-            "ID_Company" => $company->getID_Company(),
-            "Name_Company" => $company->getName_Company(),
-            "Address_Company" => $company->getAddress_Company(),
-            "PROVINCE_ID" => $company->getPROVINCE_ID(),
-            "AMPHUR_ID" => $company->getAMPHUR_ID(),
-            "Tel_Company" => $company->getTel_Company(),
-            "Email_Company" => $company->getEmail_Company(),
-            "Tax_Number_Company" => $company->getTax_Number_Company(),
-            "Credit_Limit_Company" => $company->getCredit_Limit_Company(),
-            "Credit_Term_Company" => $company->getCredit_Term_Company(),
-            "Cluster_Shop_ID" => $company->getCluster_Shop_ID(),
-            "Contact_Name_Company" => $company->getContact_Name_Company(),
-            "IS_Blacklist" => $company->getIS_Blacklist(),
-            "Cause_Blacklist" => $company->getCause_Blacklist(),
-        );
-        echo json_encode(array("data" => $data_sendback));
-
-    }
     private function error_handle(string $message)
     {
         $this->index($message);

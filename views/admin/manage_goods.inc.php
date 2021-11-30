@@ -82,6 +82,7 @@ try {
                                                             <i class="fa fa-wrench"></i> เเก้ไข
                                                         </button>
                                                     </a>
+                                                    <?php if(Goods::chkData($value->getID_Goods())){ ?>
                                                     <a href="#"
                                                        onclick="onaction_deletegoods('<?php echo $value->getID_Goods(); ?>')">
                                                         <button type="button" class="btn btn-round btn-danger"
@@ -89,6 +90,7 @@ try {
                                                             <i class="fa fa-trash"></i> ลบ
                                                         </button>
                                                     </a>
+                                                    <?php } ?>
                                                 </td>
                                             </tr>
                                         <?php } ?>

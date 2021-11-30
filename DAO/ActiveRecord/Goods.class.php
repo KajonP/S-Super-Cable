@@ -179,6 +179,23 @@ class Goods
     {
 
     }
+    public static function chkData(string $ID_Goods)
+    {
+        $con = Db::getInstance();
+        $query = "SELECT * FROM Invoice_Detail WHERE ID_Goods = '$ID_Goods'";
+        $stmt = $con->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Invoice_Detail");
+        $stmt->execute();
+        $goods = [];
+        while ($prod = $stmt->fetch()) {
+            $goods[] = $prod;
+        }
+        if(count($goods)=='0'){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 }
 ?>
