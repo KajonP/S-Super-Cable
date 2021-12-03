@@ -89,7 +89,7 @@ try {
                                         $avg = $total_sum/($i-1);
                                     }
                                     $labels[] = $this->m($ex[1]).' '.$ex[0];
-                                    $dataV[] = $avg;
+                                    $dataV[] = number_format($avg,2);
                                 ?>
                                     <tr>
                                         <td style="text-align:center;">
@@ -99,7 +99,7 @@ try {
                                             <?php echo $total['p']; ?>
                                         </td>
                                         <td style="text-align:center;">
-                                            <?php echo $avg; ?>
+                                            <?php echo number_format($avg,2); ?>
                                         </td>
                                     </tr>
                                 <?php   
