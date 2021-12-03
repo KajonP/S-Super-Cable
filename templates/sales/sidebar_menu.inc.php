@@ -156,6 +156,14 @@
                     </li>
                 </ul>
             </li>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="<?php echo Router::getSourcePath() . "index.php?controller=SalesStatistics2&action=manage_SalesStatistics"; ?>" class="nav-link">
+                        <i class="nav-icon fas fa-wallet"></i>
+                        <p>ยอดขายของตัวเอง</p>
+                    </a>
+                </li>
+            </ul>
             <li class="nav-item menu-open">
                 <a class="nav-link active">
                     <i class="nav-icon fas fa-chart-line"></i>
@@ -169,14 +177,6 @@
                         <a href="index.php?controller=reportcustomernotmoving&action=customer_not_moving" class="nav-link">
                             <i class="nav-icon fas fa-store"></i>
                             <p>ลูกค้าที่ไม่เคลื่อนไหว </p>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=SalesStatistics2&action=manage_SalesStatistics"; ?>" class="nav-link">
-                            <i class="nav-icon fas fa-wallet"></i>
-                            <p>ยอดขายของตัวเอง</p>
                         </a>
                     </li>
                 </ul>
