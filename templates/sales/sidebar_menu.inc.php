@@ -155,15 +155,15 @@
                         </a>
                     </li>
                 </ul>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=SalesStatistics2&action=manage_SalesStatistics"; ?>" class="nav-link">
+                            <i class="nav-icon fas fa-wallet"></i>
+                            <p>ยอดขายของตัวเอง</p>
+                        </a>
+                    </li>
+                </ul>
             </li>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="<?php echo Router::getSourcePath() . "index.php?controller=SalesStatistics2&action=manage_SalesStatistics"; ?>" class="nav-link">
-                        <i class="nav-icon fas fa-wallet"></i>
-                        <p>ยอดขายของตัวเอง</p>
-                    </a>
-                </li>
-            </ul>
             <li class="nav-item menu-open">
                 <a class="nav-link active">
                     <i class="nav-icon fas fa-chart-line"></i>
