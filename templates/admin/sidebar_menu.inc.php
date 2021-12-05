@@ -154,17 +154,6 @@
                         </a>
                     </li>
                 </ul>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=CompanySale&action=manage_company"; ?>"
-                           class="nav-link">
-                            <i class="nav-icon fas fa-store"></i>
-                            <p>
-                                บริษัทไม่มี Sale
-                            </p>
-                        </a>
-                    </li>
-                </ul>
             <li class="nav-item menu-open">
                 <a class="nav-link active">
                     <i class="nav-icon fas fa-tags"></i>
@@ -270,6 +259,17 @@
                             <p>
                                 ค้นหาข้อมูลลูกค้า
                             </p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="<?php echo Router::getSourcePath() . "index.php?controller=CompanySale&action=manage_company"; ?>"
+                           class="nav-link">
+                            <i class="nav-icon fas fa-store"></i>
+                            <p>
+                                บริษัทไม่มีพนักงาน
+                            </p>ดูเเล
                         </a>
                     </li>
                 </ul>

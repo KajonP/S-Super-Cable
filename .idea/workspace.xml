@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e7f549b-8b6b-42f9-a37d-06ac137332e7" name="Default Changelist" comment="case : update">
+      <change afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/manage_companysales.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sales/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sales/sidebar_menu.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/sales_statistics2.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/sales_statistics2.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminLTE/assets/js/page/report_company.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminLTE/assets/js/page/report_company.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar_menu.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/manage_company_sale.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/manage_company_sale.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/report_borrow.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/report_borrow.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/report_company.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/report_company.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/report_customer_not_moving.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/report_customer_not_moving.inc.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +22,13 @@
   <component name="ComposerSettings" doNotAsk="true" notifyAboutMissingVendor="false" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/AdminLTE/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -284,14 +296,7 @@
       <workItem from="1638262076311" duration="1852000" />
       <workItem from="1638527836133" duration="3046000" />
       <workItem from="1638532020228" duration="835000" />
-      <workItem from="1638683668507" duration="1919000" />
-    </task>
-    <task id="LOCAL-00066" summary="case : delete modal invoice">
-      <created>1626429526693</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1626429526694</updated>
+      <workItem from="1638683668507" duration="3163000" />
     </task>
     <task id="LOCAL-00067" summary="case : update database">
       <created>1626534980895</created>
@@ -629,7 +634,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638531768993</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="case : update">
+      <created>1638686261305</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1638686261306</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
