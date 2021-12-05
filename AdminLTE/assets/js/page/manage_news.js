@@ -94,12 +94,14 @@ function  newsManageShow(type, ID_Message ) {
       case "create":
         title = "สร้างข่าวสาร";
 
+
         // set id
         $('#button_newsManageModal').attr("data-id", null);
         $('#form_newsManage input').attr('disabled', false);
         $('#form_newsManage input').attr('readonly',false);
         $(".dz-hidden-input").prop("disabled",false);
-
+        CKEDITOR.instances['Text_Message'].setReadOnly(false);
+        CKEDITOR.instances['Text_Message'].setData('');
         //
         form_validte.resetForm();
         break;
@@ -112,7 +114,8 @@ function  newsManageShow(type, ID_Message ) {
         $('#form_newsManage input').attr('disabled', false);
         $('#form_newsManage input').attr('readonly',false);
         $(".dz-hidden-input").prop("disabled",false);
-
+        CKEDITOR.instances['Text_Message'].setReadOnly(false);
+        $(".ck-blurred p").html("")
 
 
         //clear error if exists
@@ -128,9 +131,11 @@ function  newsManageShow(type, ID_Message ) {
         $('#form_newsManage input').attr('disabled', true);
         $('#form_newsManage input').attr('readonly',true);
         $(".dz-hidden-input").prop("disabled",true);
+        CKEDITOR.instances['Text_Message'].setReadOnly(true);
 
 
-      break;
+
+        break;
       default:
         // ..
         break;
@@ -262,6 +267,7 @@ function get_news_to_edit(ID_Message) {
       $('#Tittle_Message').val(response.data.Tittle_Message);
       CKEDITOR.instances['Text_Message'].setData(response.data.Text_Message);
       //fArr = [response.data.Picture_Message,response.data.Picture_Message2,response.data.Picture_Message3];
+
       response.data.img.forEach((o)=>{
         fArr.push(o);
       });
@@ -289,7 +295,6 @@ function get_news_to_view(ID_Message) {
 
       $('#Tittle_Message').val(response.data.Tittle_Message);
       CKEDITOR.instances['Text_Message'].setData(response.data.Text_Message);
-
       //alert(JSON.stringify(response.data.img));
       response.data.img.forEach((o)=>{
         fArr.push(o);
